@@ -6,11 +6,8 @@ This is just a script-based experimental project to be perfected, it is by no me
 
 # What works?
 Updating applications and cleaning up any backup files created after each update.
-
-# What is not working?
-Installing applications from a repository using `appman -i [program]`, for this i wrote a separate `appman-install` script and a `appman-remove` script to remove them.
-I've manage my scripts to create AppImages too using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in Arch Linux with the AUR repository, but with the standalone nature of AppImages.
-Some of my scripts are already available in other repositories:
+To install applications I wrote a separate `appman-install` script, a `appman-remove` script to remove them and an `appman-sync` script to update both the previous scripts. I usually manage my scripts to create AppImages too using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in Arch Linux with the AUR repository, but with the standalone nature of AppImages.
+Some examples are already available in other repositories:
 
 [AnyDesk](https://github.com/ivan-hc/AnyDesk-AppImage-installer), the popular remote desktop's client;
 
@@ -22,7 +19,7 @@ Some of my scripts are already available in other repositories:
 
 [qBittorrent Stable](https://github.com/ivan-hc/qBittorent-Stable-AppImage), one of the best bittorrent clients.
 
-From now I'll take care of creating other scripts [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
+However, from now I'll take care of creating other scripts [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
 
 # Requirement (important)
 - [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages
