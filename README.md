@@ -63,7 +63,7 @@ Add an environment variable to your bashrc:
 # Installation
 Put [all the scripts](https://github.com/ivan-hc/AppMan/tree/main/opt/bin) in /opt/bin.
 
-NOTE: the "[appman-update](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-update)" script should only work with the already existing AppImages installed in /opt/bin (in this case they are appimagetool, appimageupdate and pkg2appimage), you must modify each line manually for the AppImages with inbuilt instructions for appimageupdate (to thest this, `appimageupdate -O [YOUR-AppImage]`, learn more [here](https://github.com/AppImage/AppImageUpdate)). You can customize the script the way you want.
+NOTE: the "[appman-update](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-update)" script should only work with the already existing AppImages installed in /opt/bin (in this case they are appimagetool, appimageupdate and pkg2appimage), you must modify each line manually for the AppImages with inbuilt instructions for appimageupdate (to test this run `appimageupdate -O [YOUR-AppImage]`, learn more about appimageupdate [here](https://github.com/AppImage/AppImageUpdate)). You can customize the script the way you want.
 
 # Script usage - Commands (what is working now)
 The scripts I wrote calls other scripts that I placed in /opt/bin, not just for AppImages (as you can see):
