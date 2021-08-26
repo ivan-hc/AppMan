@@ -19,6 +19,7 @@ mv ./tmp/ice-master ./tmp/ice.AppDir;
 chmod a+x ./tmp/ice.AppDir/AppRun;
 ARCH=x86_64 appimagetool -n ./tmp/ice.AppDir;
 rm -R ice ice.zip tmp;
+mv ./Ice-x86_64.AppImage ./ice;
 echo "[Desktop Entry]
 Version=1.0
 Encoding=UTF-8
