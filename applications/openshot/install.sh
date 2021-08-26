@@ -18,5 +18,5 @@ MimeType=application/vnd.openshot-qt-project;
 X-AppInstall-Package=openshot-qt
 Path=
 StartupNotify=true' >> /home/$USER/.local/share/applications/openshot.desktop;
-wget https://github.com/ivan-hc/AppMan/tree/main/applications/openshot/openshot.svg;
-mv ./openshot.svg /home/$USER/.local/share/icons/
+wget https://github.com/ivan-hc/AppMan/tree/main/applications/openshot/openshot.png;
+mv ./openshot.png /home/$USER/.local/share/icons/
