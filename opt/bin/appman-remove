@@ -2,6 +2,6 @@
 
 cd /opt/bin
 case "$1" in
-  'openshot') rm /opt/bin/openshot /home/$USER/.local/share/applications/openshot.desktop ;;
+  'openshot') rm /opt/bin/openshot /home/$USER/.local/share/applications/openshot.desktop /home/$USER/.local/share/icons/openshot.png;;
   *) exec /opt/bin/appman-remove ;;
 esac
