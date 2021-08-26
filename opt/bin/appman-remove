@@ -2,7 +2,10 @@
 
 cd /opt/bin
 case "$1" in
+'anydesk') rm /opt/bin/anydesk /home/$USER/.local/share/applications/anydesk.desktop /home/$USER/.local/share/icons/anydesk.svg;;
 'ice') rm /opt/bin/ice /home/$USER/.local/share/applications/ice.desktop /home/$USER/.local/share/icons/ice.png;;
+'ocenaudio') rm /opt/bin/ocenaudio /home/$USER/.local/share/applications/ocenaudio.desktop /home/$USER/.local/share/icons/ocenaudio.svg;;
 'openshot') rm /opt/bin/openshot /home/$USER/.local/share/applications/openshot.desktop /home/$USER/.local/share/icons/openshot.png;;
-  *) exec /opt/bin/appman-remove ;;
+'qbittorrent') rm /opt/bin/qbittorrent /home/$USER/.local/share/applications/qbittorrent.desktop /home/$USER/.local/share/icons/qbittorrent.svg;;
+*) exec /opt/bin/appman-remove ;;
 esac
