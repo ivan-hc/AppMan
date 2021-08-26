@@ -12,13 +12,13 @@ case "$1" in
   -c, clean	Cleans /opt/bin by removing all *zs-old backup files.
   sdk		Updates platform-tools for Android (adb, fastboot...).
   
-  Commands:
+  COMMANDS:
   
-  appman-install - Install an application.
+  appman-install [application] 	- Install an application.
   
-  appman-remove - Removes an application and its files.
+  appman-remove [application] 	- Removes an application and its files.
   
-  appman-sync - Updates the list of available applications.
+  appman-sync 			- Updates the list of available apps.
   
   For a complete list of available applications, visit:
   
@@ -35,13 +35,13 @@ case "$1" in
   -c, clean	Cleans /opt/bin by removing all *zs-old backup files.
   sdk		Updates platform-tools for Android (adb, fastboot...).
   
-  Commands:
+  COMMANDS:
   
-  appman-install - Install an application.
+  appman-install [application] 	- Install an application.
   
-  appman-remove - Removes an application and its files.
+  appman-remove [application] 	- Removes an application and its files.
   
-  appman-sync - Updates the list of available applications.
+  appman-sync 			- Updates the list of available apps.
   
   For a complete list of available applications, visit:
   
