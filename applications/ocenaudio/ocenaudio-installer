@@ -45,4 +45,5 @@ Terminal=false
 MimeType=application/ogg;audio/basic;audio/mpeg;audio/x-aiff;audio/x-mp3;audio/x-wav;application/x-ocenlink;x-scheme-handler/ocenaudio;" >> /home/$USER/.local/share/applications/ocenaudio.desktop;
 wget wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/ocenaudio/ocenaudio.svg;
 mv ./ocenaudio.svg /home/$USER/.local/share/icons/;
+mv ./ocenaudio-x86_64.AppImage ./ocenaudio
 rm /opt/bin/ocenaudio-installer
