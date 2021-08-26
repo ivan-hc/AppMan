@@ -61,7 +61,11 @@ Add an environment variable to your bashrc:
 `echo "export PATH=$PATH:/opt/bin" >> /home/$USER/.bashrc`
 
 # Installation
-Put [all the scripts](https://github.com/ivan-hc/AppMan/tree/main/opt/bin) in /opt/bin.
+Download the following scripts and put them in /opt/bin:
+
+- [appman](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman), this is a main command;
+- [appman-install](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-install), needed to install programs from [here](https://github.com/ivan-hc/AppMan/tree/main/applications);
+- [appman-remove](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-remove), needed to remove programs installed through appman-install.
 
 NOTE: the "[appman-update](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-update)" script should only work with the already existing AppImages installed in /opt/bin (in this case they are appimagetool, appimageupdate and pkg2appimage), you must modify each line manually for the AppImages with inbuilt instructions for appimageupdate (to test this run `appimageupdate -O [YOUR-AppImage]`, learn more about appimageupdate [here](https://github.com/AppImage/AppImageUpdate)). You can customize the script the way you want.
 
