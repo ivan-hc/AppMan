@@ -1,6 +1,0 @@
-#!/bin/sh
-
-cd /opt/bin;
-rm /opt/bin/appman-install /opt/bin/appman-remove;
-wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-install && chmod a+x ./appman-install;
-wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-remove && chmod a+x ./appman-remove;
