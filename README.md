@@ -65,7 +65,8 @@ Download the following scripts and put them in /opt/bin:
 
 - [appman](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman), this is a main command;
 - [appman-install](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-install), needed to install programs from [here](https://github.com/ivan-hc/AppMan/tree/main/applications);
-- [appman-remove](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-remove), needed to remove programs installed through appman-install.
+- [appman-remove](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-remove), needed to remove programs installed through appman-install;
+- [appman-update](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-update), to update those AppImages with zsync support.
 
 NOTE: the "[appman-update](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-update)" script should only work with the already existing AppImages installed in /opt/bin (in this case they are appimagetool, appimageupdate and pkg2appimage), you must modify each line manually for the AppImages with inbuilt instructions for appimageupdate (to test this run `appimageupdate -O [YOUR-AppImage]`, learn more about appimageupdate [here](https://github.com/AppImage/AppImageUpdate)). You can customize the script the way you want.
 
