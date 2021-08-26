@@ -32,7 +32,6 @@ ARCH=x86_64 appimagetool -n ./qbittorrent/qbittorrent.AppDir;
 cd ..;
 mv ./tmp/*.AppImage ./;
 rm -R tmp
-mv ./*.AppImage ./qbittorrent;
 echo "[Desktop Entry]
 Categories=Network;FileTransfer;P2P;Qt;
 Exec=/opt/bin/qbittorrent %U
@@ -225,4 +224,5 @@ GenericName[th]=โปรแกรมบิททอเร้น
 Name[th]=qBittorrent" >> /home/$USER/.local/share/applications/qbittorrent.desktop;
 wget wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/qbittorrent/qbittorrent.svg;
 mv ./qbittorrent.svg /home/$USER/.local/share/icons/;
+mv ./qBittorrent-x86_64.AppImage ./qbittorrent;
 rm /opt/bin/qbittorrent-installer
