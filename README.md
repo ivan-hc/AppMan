@@ -8,8 +8,9 @@ This is just a script-based experimental project to be perfected, it is by no me
 Updating applications and cleaning up any backup files created after each update.
 
 # What is not working?
-Installing applications from a repository using `appman -i [program]`, for this i must create a separate `appman-install` script.
-I want to manage my scripts to create AppImages using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in Arch Linux with the AUR repository, but with the indemendency of AppImages, maybe creating a script that installs the AppImage, creates a .desktop file and the icon, maybe the options `-i` or `install` command. Some of my scripts are already available in other repositories:
+Installing applications from a repository using `appman -i [program]`, for this i wrote a separate `appman-install` script and a `appman-remove` script to remove them.
+I've manage my scripts to create AppImages too using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in Arch Linux with the AUR repository, but with the standalone nature of AppImages.
+Some of my scripts are already available in other repositories:
 
 [AnyDesk](https://github.com/ivan-hc/AnyDesk-AppImage-installer), the popular remote desktop's client;
 
@@ -21,13 +22,13 @@ I want to manage my scripts to create AppImages using [pkg2appimage](https://git
 
 [qBittorrent Stable](https://github.com/ivan-hc/qBittorent-Stable-AppImage), one of the best bittorrent clients.
 
-I'll take care of creating other scripts after implementing a centralized "install" command.
+From now I'll take care of creating other scripts [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
 
 # Requirement (important)
 - [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages
 
 # Requirements 2 (optional)
-The following requirements will come in handy if I manage to implement application installations:
+The following requirements will come in handy if you want install/remove [applications](https://github.com/ivan-hc/AppMan/tree/main/applications):
 - [pkg2appimage](https://github.com/AppImage/pkg2appimage) to compile the *.ylm recipe
 - [appimagetool](https://github.com/AppImage/AppImageKit) to convert a *.AppDir folder to AppImage
 
@@ -74,7 +75,7 @@ Add an environment variable to your bashrc:
 `echo "export PATH=$PATH:/opt/bin" >> /home/$USER/.bashrc`
 
 # Script usage - Commands (what is working now)
-The script I wrote calls other scripts that I placed in /opt/bin, not just for AppImages (as you can see):
+The scripts I wrote calls other scripts that I placed in /opt/bin, not just for AppImages (as you can see):
 
 `appman [options]`
 
@@ -87,6 +88,14 @@ where options include:
 `-c` or `clean`	  Cleans /opt/bin by removing all *zs-old backup files.
 
 `sdk`		          Updates platform-tools for Android (adb, fastboot...). This is not related to an AppImage.
+
+ Commands:
+  
+  `appman-install` - Install an application, the whole list is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
+  
+  `appman-remove` - Removes an application, its launcher and icon.
+  
+  `appman-sync` - Updates [the list of available applications](https://github.com/ivan-hc/AppMan/tree/main/applications).
 
 All the scripts I use on my PC are available in this repository, you're free to modify them and implement new funcionalities for your use case. And why not? To create a new utility to manage AppImages and other software this way.
 
