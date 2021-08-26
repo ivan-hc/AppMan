@@ -38,7 +38,7 @@ Optionally do the same for [pkg2appimage](https://github.com/AppImage/pkg2appima
 
 `wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage`
 
-mv ./pkg2appimage-{VERSION}-x86_64.AppImage ./pkg2appimage && mv ./appimagetool-x86_64.AppImage ./appimagetool`
+`mv ./pkg2appimage-{VERSION}-x86_64.AppImage ./pkg2appimage && mv ./appimagetool-x86_64.AppImage ./appimagetool`
 
 `chmod a+x ./appimagetool ./pkg2appimage`
 
