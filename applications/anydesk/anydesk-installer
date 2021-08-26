@@ -9,7 +9,7 @@ ARCH=x86_64 appimagetool -n ./AnyDesk/AnyDesk.AppDir;
 cd ..;
 mv ./tmp/*.AppImage ./;
 rm -R tmp;
-mv ./*.AppImage ./anydesk;
+mv ./AnyDesk-x86_64.AppImage ./anydesk;
 echo "[Desktop Entry]
 Type=Application
 Name=AnyDesk
