@@ -2,10 +2,8 @@
 
 cd /opt/bin
 case "$1" in
-  '') bash -x "appman" ;;
-  'ice') wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/ice/ice-installer ;
-  	chmod a+x ./ice-installer ; exec /opt/bin/ice-installer ;;
-    'openshot') wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/openshot/openshot-installer ;
-  	chmod a+x ./openshot-installer ; exec /opt/bin/openshot-installer ;;
+'') bash -x "appman" ;;
+'ice') wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/ice/ice-installer ; chmod a+x ./ice-installer ; exec /opt/bin/ice-installer ;;
+'openshot') wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/openshot/openshot-installer ;	chmod a+x ./openshot-installer ; exec /opt/bin/openshot-installer ;;
   *) exec /opt/bin/appman-install ;;
 esac
