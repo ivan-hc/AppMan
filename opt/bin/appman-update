@@ -1,0 +1,68 @@
+#!/bin/sh
+
+#########################
+######## UPDATE #########
+#########################
+
+cd /opt/bin;
+echo "";
+echo "Loading...";
+sleep 2;
+echo "";
+
+echo "----------------------------------------------------------------------------";
+echo "APPIMAGETOOL, tool to deploy dependencies in AppDirs to convert to AppImages";
+echo "";
+appimageupdate -O appimagetool;
+echo "";
+
+echo "----------------------------------------------------------------------------";
+echo "APPIMAGEUPDATE, tool to update AppImages";
+echo "";
+appimageupdate -O appimageupdate;
+echo "";
+
+echo "----------------------------------------------------------------------------";
+echo "CELESTIA, real-time visual space simulation";
+echo "";
+appimageupdate -O celestia;
+echo "";
+
+echo "----------------------------------------------------------------------------";
+echo "PKG2APPIMAGE, tool to convert existing deb packages to AppImage ";
+echo "";
+appimageupdate -O pkg2appimage;
+echo "";
+
+echo "----------------------------------------------------------------------------";
+echo "WINE, Windows API implementation to run MS Windows programs";
+echo "";
+appimageupdate -O wine-staging;
+echo "";
+
+echo "----------------------------------------------------------------------------";
+echo "All portable applications are updated!";
+echo "";
+
+#########################
+######### CLEAN #########
+#########################
+
+while true; do
+read -p "Do you wish to REMOVE all the available 'zs-old' backup files (Yes/No)?" yn
+case $yn in
+[Yy]* )
+cd /opt/bin;
+echo "";
+echo "Removing all backup files available in /opt/bin...";
+sleep 1;
+echo "";
+rm *zs-old;
+echo "";
+echo "All *zs-old backup files are removed, exiting.";
+echo "";
+break;;
+[Nn]* ) exit;;
+* ) echo "Please answer yes or no.";;
+esac
+done
