@@ -20,4 +20,4 @@ Path=
 StartupNotify=true' >> /home/$USER/.local/share/applications/openshot.desktop;
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/openshot/openshot.png;
 mv ./openshot.png /home/$USER/.local/share/icons/;
-break
+exit
