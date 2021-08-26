@@ -2,10 +2,11 @@
 AppImage Manager that works like APT or Pacman.
 
 # Disclaimer
-This is just a script-based experimental project to be perfected, it is by no means finished.
+This is just a script-based experimental project to be perfected, so it is ABSOLUTELLY NOT A COMPLETE SOLUTION.
 
 # What works?
-Updating applications and cleaning up any backup files created after each update.
+Updating applications and cleaning up any backup files created after each update, through [a customizable script](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-update).
+
 To install applications I wrote a separate `appman-install` script, a `appman-remove` script to remove them and an `appman-sync` script to update both the previous scripts. I usually manage my scripts to create AppImages too using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in Arch Linux with the AUR repository, but with the standalone nature of AppImages.
 
 The list of applications is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
