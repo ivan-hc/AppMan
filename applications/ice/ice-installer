@@ -1,0 +1,37 @@
+#!/bin/sh
+
+cd /opt/bin
+mkdir tmp;
+cd tmp;
+wget https://github.com/peppermintos/ice/archive/refs/heads/master.zip;
+unzip master.zip;
+cd ..;
+echo '#!/bin/sh
+HERE="$(dirname "$(readlink -f "${0}")")"
+export PATH="${HERE}/usr/bin/${PATH:+:$PATH}"
+export LD_LIBRARY_PATH="${HERE}/usr/lib/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+export XDG_DATA_DIRS="${HERE}/usr/share/${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}"
+EXEC="${HERE}/usr/bin/ice"
+exec "${EXEC}"' >> ./tmp/ice-master/AppRun;
+cp ./tmp/ice-master/usr/share/applications/ice.desktop ./tmp/ice-master/;
+cp ./tmp/ice-master/usr/share/pixmaps/ice.png ./tmp/ice-master/;
+mv ./tmp/ice-master ./tmp/ice.AppDir;
+chmod a+x ./tmp/ice.AppDir/AppRun;
+ARCH=x86_64 appimagetool -n ./tmp/ice.AppDir;
+rm -R ice ice.zip tmp;
+echo "[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Ice
+Comment=Desktop integration for webapps
+GenericName=Ice
+Exec=ice
+Icon=ice
+Terminal=false
+Type=Application
+Categories=GTK;Network;
+StartupNotify=false
+GenericName[en_US]=Ice" >> /home/$USER/.local/share/applications/ice.desktop;
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/ice/ice.png;
+mv ./ice.png /home/$USER/.local/share/icons/;
+rm /opt/bin/ice-installer
