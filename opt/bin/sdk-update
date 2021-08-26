@@ -1,7 +1,0 @@
-#!/bin/sh
-
-cd ~/.android;
-wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip;
-rm -R ./platform-tools;
-unzip ./platform-tools-latest-linux.zip;
-rm ./platform-tools-latest-linux.zip
