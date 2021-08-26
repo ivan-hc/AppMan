@@ -4,10 +4,30 @@ AppImage Manager that works like APT or Pacman.
 # Disclaimer
 This is just a script-based experimental project to be perfected, it is by no means finished.
 
-# Requirements (important)
+# What works?
+Updating applications and cleaning up any backup files created after each update.
+
+# What is not working?
+Installing applications from a repository using `appman -i [program]`, for this i must create a separate `appman-install` script.
+I want to manage my scripts to create AppImages using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in Arch Linux with the AUR repository, but with the indemendency of AppImages, maybe creating a script that installs the AppImage, creates a .desktop file and the icon, maybe the options `-i` or `install` command. Some of my scripts are already available in other repositories:
+
+[AnyDesk](https://github.com/ivan-hc/AnyDesk-AppImage-installer), the popular remote desktop's client;
+
+[IceSSB](https://github.com/ivan-hc/Ice-SSB-AppImage), a web-app manager from Peppermint OS;
+
+[OcenAudio](https://github.com/ivan-hc/Ocenaudio-Editor-AppImage), an audio editor, the best alternative to Audacity;
+
+[OpenShot QT](https://github.com/ivan-hc/OpenShot-QT-AppImage), a powerfull video editor;
+
+[qBittorrent Stable](https://github.com/ivan-hc/qBittorent-Stable-AppImage), one of the best bittorrent clients.
+
+I'll take care of creating other scripts after implementing a centralized "install" command.
+
+# Requirement (important)
 - [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages
 
 # Requirements 2 (optional)
+The following requirements will come in handy if I manage to implement application installations:
 - [pkg2appimage](https://github.com/AppImage/pkg2appimage) to compile the *.ylm recipe
 - [appimagetool](https://github.com/AppImage/AppImageKit) to convert a *.AppDir folder to AppImage
 
@@ -68,22 +88,7 @@ where options include:
 
 `sdk`		          Updates platform-tools for Android (adb, fastboot...). This is not related to an AppImage.
 
-All the scripts I use on my PC are available in this repository, you're free to modify them and implement new funcionalities for your use case. And why not? To create a new utility to manage AppImages and other software this way. TAKE THEM JUST AS AN EXAMPLE!
-
-# The future - things to do (commands and functionalities)
-I want to manage my scripts to create AppImages using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in Arch Linux with the AUR repository, but with the indemendency of AppImages, maybe creating a script that installs the AppImage, creates a .desktop file and the icon, maybe the options `-i` or `install` command. Some of my scripts are already available in other repositories:
-
-[AnyDesk](https://github.com/ivan-hc/AnyDesk-AppImage-installer), the popular remote desktop's client;
-
-[IceSSB](https://github.com/ivan-hc/Ice-SSB-AppImage), a web-app manager from Peppermint OS;
-
-[OcenAudio](https://github.com/ivan-hc/Ocenaudio-Editor-AppImage), an audio editor, the best alternative to Audacity;
-
-[OpenShot QT](https://github.com/ivan-hc/OpenShot-QT-AppImage), a powerfull video editor;
-
-[qBittorrent Stable](https://github.com/ivan-hc/qBittorent-Stable-AppImage), one of the best bittorrent clients.
-
-I want to implement also a `-s` or `sync` option to download a list of software available. Also a `-r` or `remove` option to delete the AppImage, the launcher and the icon. I hope to succeed as soon as possible.
+All the scripts I use on my PC are available in this repository, you're free to modify them and implement new funcionalities for your use case. And why not? To create a new utility to manage AppImages and other software this way.
 
 # Why not AppImaged?
 [AppImaged](https://github.com/probonopd/go-appimage) is a great project, I love it as an idea... but its frustrating to have so much superfluous launchers (for example, command-line utilities), I can't rename the AppImage by removing the extension, launchers and wrong icons due to the way the developer he bundled the software are useless and sometime they can't be launched (for example Avidemux), the update daemon has never worked for me and requires an AppImage that doesn't work on my desktop environment... but the hatefull thing is an Applications folder that appears each time I want to remove it, in my home folder, also if all AppImages are stored into a different path.
