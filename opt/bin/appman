@@ -7,19 +7,19 @@ case "$1" in
   where options include:
   
   -h		Print this message.
+  -c, clean	Cleans /opt/bin by removing all *zs-old backup files.
+  -s, sync	Updates the list of available apps.
   -u, update	Update all the AppImages in /opt/bin using appimageupdate.
   		and asks to remove residual *zs-old backup files.
-  -c, clean	Cleans /opt/bin by removing all *zs-old backup files.
-  sdk		Updates platform-tools for Android (adb, fastboot...).
+  -a, sdk	Install the latest platform tools for Android.
   
   COMMANDS:
   
   appman-install [application] 	- Install an application.
   
   appman-remove [application] 	- Removes an application and its files.
-  
-  appman-sync 			- Updates the list of available apps.
-  
+
+
   For a complete list of available applications, visit:
   
   https://github.com/ivan-hc/AppMan/tree/main/applications
@@ -30,19 +30,19 @@ case "$1" in
   where options include:
   
   -h		Print this message.
+  -c, clean	Cleans /opt/bin by removing all *zs-old backup files.
+  -s, sync	Updates the list of available apps.
   -u, update	Update all the AppImages in /opt/bin using appimageupdate.
   		and asks to remove residual *zs-old backup files.
-  -c, clean	Cleans /opt/bin by removing all *zs-old backup files.
-  sdk		Updates platform-tools for Android (adb, fastboot...).
+  -a, sdk	Install the latest platform tools for Android.
   
   COMMANDS:
   
   appman-install [application] 	- Install an application.
   
   appman-remove [application] 	- Removes an application and its files.
-  
-  appman-sync 			- Updates the list of available apps.
-  
+
+
   For a complete list of available applications, visit:
   
   https://github.com/ivan-hc/AppMan/tree/main/applications
@@ -50,6 +50,15 @@ case "$1" in
   " ;;
   'update') exec /opt/bin/appman-update ;;  '-u') exec /opt/bin/appman-update ;;
   'clean')   exec /opt/bin/appman-clean ;;  '-c')   exec /opt/bin/appman-clean ;;
-  'sdk') exec /opt/bin/sdk-update ;;
+  'sdk') cd ~/.android;	wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip;
+  	rm -R ./platform-tools;	unzip ./platform-tools-latest-linux.zip; rm ./platform-tools-latest-linux.zip ;;
+  '-a') cd ~/.android;	wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip;
+  	rm -R ./platform-tools;	unzip ./platform-tools-latest-linux.zip; rm ./platform-tools-latest-linux.zip ;;
+  'sync') cd /opt/bin; rm /opt/bin/appman-install /opt/bin/appman-remove;
+	wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-install && chmod a+x ./appman-install;
+	wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-remove && chmod a+x ./appman-remove ;;
+  '-s') cd /opt/bin; rm /opt/bin/appman-install /opt/bin/appman-remove;
+	wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-install && chmod a+x ./appman-install;
+	wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-remove && chmod a+x ./appman-remove ;;
   *) exec /opt/bin/appman ;;
 esac
