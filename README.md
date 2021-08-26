@@ -79,20 +79,21 @@ where options include:
 
 `-h`		          Print this message.
 
-`-u` or `update`	Update all the AppImages in /opt/bin using appimageupdate and asks to remove residual *zs-old backup files.
-
 `-c` or `clean`	  Cleans /opt/bin by removing all *zs-old backup files.
 
-`sdk`		          Updates platform-tools for Android (adb, fastboot...). This is not related to an AppImage.
+`-s` or `sync`   Updates the [list of available applications](https://github.com/ivan-hc/AppMan/tree/main/applications) in "appman-install" and "appman-remove".
+
+`-u` or `update`	Update all the AppImages in /opt/bin using appimageupdate and asks to remove residual *zs-old backup files.
+
+`-a` or `sdk`		  Updates platform-tools for Android (adb, fastboot...). This is not related to an AppImage.
 
  Commands:
-  
+
   `appman-install` - Install an application, the whole list is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
   
   `appman-remove` - Removes an application, its launcher and icon.
   
-  `appman-sync` - Updates [the list of available applications](https://github.com/ivan-hc/AppMan/tree/main/applications).
-
+  
 All the scripts I use on my PC are available in this repository, you're free to modify them and implement new funcionalities for your use case. And why not? To create a new utility to manage AppImages and other software this way.
 
 # Why not AppImaged?
