@@ -74,8 +74,6 @@ All the scripts I use are available in this repository, you're free to modify th
 I want to manage my scripts to create AppImages using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in Arch Linux with the AUR repository, but with the indemendency of AppImages, maybe creating a script that installs the AppImage, creates a .desktop file and the icon, maybe the options `-i` or `install` command, or a `-s` or `sync` option to download a list of software available. Also a `-r` or `remove` option to delete the AppImage, the launcher and the icon. I hope to succeed as soon as possible.
 
 # Why not AppImaged?
-[AppImaged](https://github.com/probonopd/go-appimage) is a great project, I love it as an idea... but its frustrating to have so much superfluous launchers, I can't rename the AppImage by removing the extension, launchers and wrong icons due to the way the developer he bundled the software are useless, and the update daemon has never worked for me.
-
-Practically AppImaged contrasts with my idea of order.
+[AppImaged](https://github.com/probonopd/go-appimage) is a great project, I love it as an idea... but its frustrating to have so much superfluous launchers (for example, command-line utilities), I can't rename the AppImage by removing the extension, launchers and wrong icons due to the way the developer he bundled the software are useless and sometime they can't be launched (for example Avidemux), and the update daemon has never worked for me. Practically AppImaged contrasts with my idea of order.
 
 I believe that a centralized repository from which to install software and manage updates is the best choice, and AppImage is a format that deserves more success than Snap and Flatpak.
