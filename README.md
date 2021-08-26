@@ -68,7 +68,7 @@ where options include:
 
 `sdk`		          Updates platform-tools for Android (adb, fastboot...). This is not related to an AppImage.
 
-All the scripts I use are available in this repository, you're free to modify them and implement new funcionalities for your use case. And why not? To create a new utility to manage AppImages and other software this way. TAKE THEM JUST AS AN EXAMPLE!
+All the scripts I use on my PC are available in this repository, you're free to modify them and implement new funcionalities for your use case. And why not? To create a new utility to manage AppImages and other software this way. TAKE THEM JUST AS AN EXAMPLE!
 
 # The future - things to do (commands and functionalities)
 I want to manage my scripts to create AppImages using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in Arch Linux with the AUR repository, but with the indemendency of AppImages, maybe creating a script that installs the AppImage, creates a .desktop file and the icon, maybe the options `-i` or `install` command, or a `-s` or `sync` option to download a list of software available. Also a `-r` or `remove` option to delete the AppImage, the launcher and the icon. I hope to succeed as soon as possible.
