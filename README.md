@@ -66,7 +66,7 @@ where options include:
 
 `-c` or `clean`	  Cleans /opt/bin by removing all *zs-old backup files.
 
-`sdk`		          Updates platform-tools for Android (adb, fastboot...). This is not relatet do an AppImage.
+`sdk`		          Updates platform-tools for Android (adb, fastboot...). This is not related to an AppImage.
 
 All the scripts I use are available in this repository, you're free to modify them and implement new funcionalities for your use case. And why not? To create a new utility to manage AppImages and other software this way. TAKE THEM JUST AS AN EXAMPLE!
 
