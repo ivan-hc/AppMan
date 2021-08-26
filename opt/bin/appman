@@ -1,0 +1,31 @@
+#!/bin/sh
+
+cd /opt/bin
+case "$1" in
+  '') echo "
+  Usage: appman [options]
+  where options include:
+  
+  -h		Print this message.
+  -u, update	Update all the AppImages in /opt/bin using appimageupdate.
+  		and asks to remove residual *zs-old backup files.
+  -c, clean	Cleans /opt/bin by removing all *zs-old backup files.
+  sdk		Updates platform-tools for Android (adb, fastboot...).
+  
+  " ;;
+  '-h') echo "
+  Usage: appman [options]
+  where options include:
+  
+  -h		Print this message.
+  -u, update	Update all the AppImages in /opt/bin using appimageupdate.
+  		and asks to remove residual *zs-old backup files.
+  -c, clean	Cleans /opt/bin by removing all *zs-old backup files.
+  sdk		Updates platform-tools for Android (adb, fastboot...).
+  
+  " ;;
+  'update') exec /opt/bin/appman-update ;;  '-u') exec /opt/bin/appman-update ;;
+  'clean')   exec /opt/bin/appman-clean ;;  '-c')   exec /opt/bin/appman-clean ;;
+  'sdk') exec /opt/bin/sdk-update ;;
+  *) exec /opt/bin/appman ;;
+esac
