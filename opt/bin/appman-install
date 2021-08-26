@@ -2,7 +2,8 @@
 
 cd /opt/bin
 case "$1" in
-  'openshot') wget https://github.com/ivan-hc/AppMan/blob/main/applications/openshot/install.sh ;;
-      	chmod a+x ./install.sh ;; exec /opt/bin/install.sh ;; rm /opt/bin/install.sh ;;
+  '') bash -x "appman" ;;
+  'openshot') wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/openshot/install.sh ;
+  	chmod a+x ./install.sh ; exec /opt/bin/install.sh ; rm /opt/bin/install.sh ;;
   *) exec /opt/bin/appman-install ;;
 esac
