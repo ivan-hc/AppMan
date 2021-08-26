@@ -30,7 +30,7 @@ The following requirements will come in handy if you want install/remove [applic
 - [appimagetool](https://github.com/AppImage/AppImageKit) to convert a *.AppDir folder to AppImage
 
 # Environment setup
-I decided to concentrate all the work in a hypothetical /opt/bin folder. If you're using Debian or its derivatives (Ubuntu, Zorin, Mint, SparkyLinux...) you can rely on my [deb packages for x86_64](https://github.com/ivan-hc/AppImage-Tools-for-Debian) and bypass all the following commands.
+I decided to concentrate all the work in a hypothetical /opt/bin folder. If you're using Debian or its derivatives (Ubuntu, Zorin, Mint, SparkyLinux...) you can rely on my [deb packages for x86_64](https://github.com/ivan-hc/AppImage-Tools-for-Debian) and bypass all the following commands until the next paragraph.
 
 To create a /bin folder in /opt:
 
