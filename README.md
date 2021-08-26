@@ -7,25 +7,11 @@ This is just a script-based experimental project to be perfected, it is by no me
 # What works?
 Updating applications and cleaning up any backup files created after each update.
 To install applications I wrote a separate `appman-install` script, a `appman-remove` script to remove them and an `appman-sync` script to update both the previous scripts. I usually manage my scripts to create AppImages too using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in Arch Linux with the AUR repository, but with the standalone nature of AppImages.
-Some examples are already available in other repositories:
 
-[AnyDesk](https://github.com/ivan-hc/AnyDesk-AppImage-installer), the popular remote desktop's client;
+The list of applications is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
 
-[IceSSB](https://github.com/ivan-hc/Ice-SSB-AppImage), a web-app manager from Peppermint OS;
-
-[OcenAudio](https://github.com/ivan-hc/Ocenaudio-Editor-AppImage), an audio editor, the best alternative to Audacity;
-
-[OpenShot QT](https://github.com/ivan-hc/OpenShot-QT-AppImage), a powerfull video editor;
-
-[qBittorrent Stable](https://github.com/ivan-hc/qBittorent-Stable-AppImage), one of the best bittorrent clients.
-
-However, from now I'll take care of creating other scripts [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
-
-# Requirement (important)
+# Requirement
 - [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages
-
-# Requirements 2 (optional)
-The following requirements will come in handy if you want install/remove [applications](https://github.com/ivan-hc/AppMan/tree/main/applications):
 - [pkg2appimage](https://github.com/AppImage/pkg2appimage) to compile the *.ylm recipe
 - [appimagetool](https://github.com/AppImage/AppImageKit) to convert a *.AppDir folder to AppImage
 
