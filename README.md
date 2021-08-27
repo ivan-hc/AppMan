@@ -60,8 +60,8 @@ Add an environment variable to your bashrc:
 Download the following scripts and put them in /opt/bin:
 
 - [appman](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman), this is a main command;
-- [appman-install](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-install), needed to install programs from [here](https://github.com/ivan-hc/AppMan/tree/main/applications);
-- [appman-remove](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-remove), needed to remove programs installed through appman-install;
+- [appinstall](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appinstall), needed to install programs from [here](https://github.com/ivan-hc/AppMan/tree/main/applications);
+- [appremove](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appremove), needed to remove programs installed through appman-install;
 
 # Script usage - Commands
 The script I wrote calls other scripts that I placed in /opt/bin, not just for AppImages (as you can see):
