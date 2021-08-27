@@ -1,0 +1,26 @@
+#!/bin/sh
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget -r -A .AppImage -nd https://github.com/srevinsaju/Firefox-AppImage/releases/tag/firefox-esr-next;
+cd ..;
+mv ./tmp/firefox*AppImage ./firefox-esr;
+chmod a+x /opt/bin/firefox-esr;
+echo "[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Firefox ESR
+Comment=Web Browser
+Exec=/opt/bin/firefox-esr %u
+Terminal=false
+Type=Application
+Icon=firefox-esr
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
+StartupNotify=true
+Path=";  >> /home/$USER/.local/share/applications/firefox-esr.desktop;
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/firefox/firefox-esr.svg;
+mv ./firefox-esr.svg /home/$USER/.local/share/icons/;
+echo "Visit https://github.com/srevinsaju";
+rm -R /opt/bin/tmp
