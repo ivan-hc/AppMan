@@ -10,7 +10,6 @@ case "$1" in
   -c, clean	Cleans /opt/bin by removing all *zs-old backup files.
   -s, sync	Updates the list of available apps.
   -u, update	Update all the AppImages in /opt/bin using appimageupdate.
-  		and asks to remove residual *zs-old backup files.
   -a, sdk	Install the latest platform tools for Android.
   
   COMMANDS:
