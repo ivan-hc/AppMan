@@ -1,0 +1,23 @@
+#!/bin/sh
+
+cd /opt/bin
+wget https://download.opensuse.org/repositories/home:/munix9:/unstable/AppImage/celestia-latest-x86_64.AppImage;
+mv ./celestia*AppImage ./celestia;
+chmod a+x ./celestia;
+
+echo "[Desktop Entry]
+Version=1.0
+Name=Celestia (GTK)
+GenericName=Space Simulator (AppImage-1.6.2.2)
+GenericName[de]=Weltraum-Simulator (AppImage-1.6.2.2)
+Comment=Explore the Universe in this detailed space simulation
+Comment[de]=Erkunde das Universum in dieser detaillierten Weltraumsimulation
+Type=Application
+Categories=Astronomy;Education;Science;GTK;
+Icon=celestia
+Exec=/opt/bin/celestia %f
+Terminal=false
+MimeType=application/x-celestia-script;" >> /home/$USER/.local/share/applications/celestia.desktop;
+wget wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/celestia/celestia.svg;
+mv ./celestia.svg /home/$USER/.local/share/icons/;
+rm /opt/bin/celestia-installer
