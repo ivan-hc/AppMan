@@ -3,6 +3,7 @@
 cd /opt/bin
 case "$1" in
 '') bash -x "appman" ;;
+	'adb'|'fastboot'|'platform-tools') for i in "platform-tools"; do wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'anydesk') for i in "anydesk"; do wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'celestia') for i in "celestia"; do wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'ice') for i in "ice"; do wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
