@@ -23,4 +23,4 @@ Path=";  >> /home/$USER/.local/share/applications/firefox-dev.desktop;
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/firefox-dev/firefox-dev.svg;
 mv ./firefox-dev.svg /home/$USER/.local/share/icons/;
 echo "Visit https://github.com/srevinsaju";
-rm -R /opt/bin/tmp
+rm -R /opt/bin/tmp /opt/bin/firefox-dev-installer
