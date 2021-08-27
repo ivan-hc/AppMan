@@ -34,5 +34,5 @@ Categories=GTK;Network;
 StartupNotify=false
 GenericName[en_US]=Ice" >> /home/$USER/.local/share/applications/ice.desktop;
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/ice/ice.svg;
-mv ./ice.png /home/$USER/.local/share/icons/;
+mv ./ice.svg /home/$USER/.local/share/icons/;
 rm /opt/bin/ice-installer
