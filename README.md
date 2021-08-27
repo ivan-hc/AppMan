@@ -78,8 +78,6 @@ where options include:
 
 `-u` or `update`	Update all the AppImages in /opt/bin using appimageupdate.
 
-`-a` or `sdk`		  Updates platform-tools for Android (adb, fastboot...). This is not related to an AppImage.
-
  Commands:
 
   `appman-install` - Install an application, the whole list is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
