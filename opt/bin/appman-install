@@ -3,10 +3,15 @@
 cd /opt/bin
 case "$1" in
 '') bash -x "appman" ;;
-'anydesk') wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/anydesk/anydesk-installer ; chmod a+x ./anydesk-installer ; exec /opt/bin/anydesk-installer ;;
-'ice') wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/ice/ice-installer ; chmod a+x ./ice-installer ; exec /opt/bin/ice-installer ;;
-'ocenaudio') wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/ocenaudio/ocenaudio-installer ; chmod a+x ./ocenaudio-installer ; exec /opt/bin/ocenaudio-installer ;;
-'openshot') wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/openshot/openshot-installer ;	chmod a+x ./openshot-installer ; exec /opt/bin/openshot-installer ;;
-'qbittorrent') wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/qbittorrent/qbittorrent-installer ; chmod a+x ./qbittorrent-installer ; exec /opt/bin/qbittorrent-installer ;;
+	'anydesk') for i in "anydesk"; do wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ;
+	 chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'ice') for i in "ice"; do wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ;
+	 chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'ocenaudio') for i in "ocenaudio"; do wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ;
+	 chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'openshot') for i in "openshot"; do wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ;
+	 chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'qbittorrent') for i in "qbittorrent"; do wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ;
+	 chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 *) exec /opt/bin/appman-install ;;
 esac
