@@ -80,9 +80,9 @@ where options include:
 
  Commands:
 
-  `appman-install` - Install an application, the whole list is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
+  `appinstall [PROGRAM]` - Install an application, the whole list is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
   
-  `appman-remove` - Removes an application, its launcher and icon.
+  `appremove [PROGRAM]` - Removes an application, its launcher and icon.
   
   
 # Why not AppImaged?
