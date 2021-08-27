@@ -76,7 +76,7 @@ where options include:
 
 `-s` or `sync`   Updates the [list of available applications](https://github.com/ivan-hc/AppMan/tree/main/applications) in "appman-install" and "appman-remove".
 
-`-u` or `update`	Update all the AppImages in /opt/bin using appimageupdate and asks to remove residual *zs-old backup files.
+`-u` or `update`	Update all the AppImages in /opt/bin using appimageupdate.
 
 `-a` or `sdk`		  Updates platform-tools for Android (adb, fastboot...). This is not related to an AppImage.
 
