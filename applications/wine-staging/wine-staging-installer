@@ -6,5 +6,6 @@ cd ./tmp;
 wget -r -A .AppImage -nd https://github.com/mmtrt/WINE_AppImage/releases/tag/continuous-staging;
 cd ..;
 mv ./tmp/wine*AppImage ./wine-staging;
+chmod a+x /opt/bin/wine-staging;
 echo "Visit https://github.com/mmtrt";
 rm -R /opt/bin/tmp
