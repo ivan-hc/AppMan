@@ -18,7 +18,7 @@ case "$1" in
 	'qbittorrent') for i in "qbittorrent"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'bottles-dev'|'wine-bottles-dev') for i in "bottles-dev"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'wine-stable'|'wine') for i in "wine-stable"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
-	'wine-devel'|'wine-devel') for i in "wine-devel"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
-	'wine-staging'|'wine-staging') for i in "wine-staging"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'wine-devel'|'wine-development') for i in "wine-devel"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'wine-staging') for i in "wine-staging"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 *) exec /opt/bin/appinstall ;;
 esac
