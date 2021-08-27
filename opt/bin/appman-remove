@@ -3,17 +3,11 @@
 cd /opt/bin
 case "$1" in
 '') bash -x "appman" ;;
-	'anydesk')
-	 for i in "anydesk"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'celestia')
-	 for i in "celestia"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'ice')
-	 for i in "ice"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'ocenaudio')
-	 for i in "ocenaudio"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'openshot')
-	 for i in "openshot"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'qbittorrent')
-	 for i in "qbittorrent"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'anydesk') for i in "anydesk"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'celestia') for i in "celestia"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'ice') for i in "ice"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'ocenaudio') for i in "ocenaudio"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'openshot') for i in "openshot"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'qbittorrent') for i in "qbittorrent"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 *) exec /opt/bin/appman-remove ;;
 esac
