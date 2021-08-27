@@ -17,5 +17,5 @@ case "$1" in
 	'openshot') for i in "openshot"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'qbittorrent') for i in "qbittorrent"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'bottles-dev'|'wine-bottles-dev') for i in "bottles-dev"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
-*) exec /opt/bin/appman-install ;;
+*) exec /opt/bin/appinstall ;;
 esac
