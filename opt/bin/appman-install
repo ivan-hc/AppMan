@@ -9,6 +9,7 @@ case "$1" in
 	'celestia-dev') for i in "celestia-dev"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'ice') for i in "ice"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'ocenaudio') for i in "ocenaudio"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'onlyoffice') for i in "onlyoffice"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'openshot') for i in "openshot"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'qbittorrent') for i in "qbittorrent"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 *) exec /opt/bin/appman-install ;;
