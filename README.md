@@ -1,19 +1,15 @@
 # AppMan
 AppImage Manager that works like APT or Pacman.
 
-# Disclaimer
-This is just a script-based experimental project to be perfected, so it is ABSOLUTELLY NOT A COMPLETE SOLUTION.
+# How it works
 
-# What works?
-Updating applications and cleaning up any backup files created after each update.
+AppMan uses some [precompiled scripts](https://github.com/ivan-hc/AppMan/tree/main/applications) that can download applications from their main sites or compiling them using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in AUR, the final result is a ready to use AppImage with a launcher and its icon (where needed, command line tools like "wine" can be only used from the terminal) for your favourite application. The complete list is vailable [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
 
-To install applications I wrote a separate `appman-install` script, a `appman-remove` script to remove them. I usually manage my scripts to create AppImages too using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in Arch Linux with the AUR repository, but with the standalone nature of AppImages.
-
-The list of applications is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
+AppMan uses [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages (if zsync support is available), there is also an option to clean all backup files created after each update.
 
 # Requirement
 - [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages
-- [pkg2appimage](https://github.com/AppImage/pkg2appimage) to compile the *.ylm recipe
+- [pkg2appimage](https://github.com/AppImage/pkg2appimage) to compile *.ylm recipes
 - [appimagetool](https://github.com/AppImage/AppImageKit) to convert a *.AppDir folder to AppImage
 
 # Environment setup
@@ -23,7 +19,7 @@ To create a /bin folder in /opt:
 
 `sudo mkdir /opt/bin`
 
-If you want you can assign the classic permissions to this folder, in order to be able to operate freely with tools such as "appimageupdatetool", so:
+Assign permissions to $USER for /opt/bin, in order to be able to operate without root privileges with tools such as "appimageupdate", so:
 
 `sudo chown $USER /opt/bin`
 
@@ -39,7 +35,7 @@ Now we need to download [appimageupdatetool](https://github.com/AppImage/AppImag
 
 `sudo ln -s /opt/bin/appimageupdate /usr/bin/appimageupdate`
 
-Optionally do the same for [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit):
+Do the same for [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit):
 
 `wget https://github.com/AppImage/pkg2appimage/releases/download/continuous/pkg2appimage-{VERSION}-x86_64.AppImage`
 
@@ -53,7 +49,7 @@ Optionally do the same for [pkg2appimage](https://github.com/AppImage/pkg2appima
 
 `sudo ln -s /opt/bin/appimagetool /usr/bin/appimagetool`
 
-NOTE: also changing the AppImage name by removing the extension is optional, I do it for convenience of use when I write my own scripts to update my programs.
+NOTE: also changing the AppImage name by removing the extension is optional, I do this to write easilly my scripts.
 
 # Environment variable in /opt/bin
 Add an environment variable to your bashrc:
@@ -67,8 +63,8 @@ Download the following scripts and put them in /opt/bin:
 - [appman-install](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-install), needed to install programs from [here](https://github.com/ivan-hc/AppMan/tree/main/applications);
 - [appman-remove](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-remove), needed to remove programs installed through appman-install;
 
-# Script usage - Commands (what is working now)
-The scripts I wrote calls other scripts that I placed in /opt/bin, not just for AppImages (as you can see):
+# Script usage - Commands
+The script I wrote calls other scripts that I placed in /opt/bin, not just for AppImages (as you can see):
 
 `appman [options]`
 
@@ -91,9 +87,7 @@ where options include:
   `appman-remove` - Removes an application, its launcher and icon.
   
   
-All the scripts I use on my PC are available in this repository, you're free to modify them and implement new funcionalities for your use case. And why not? To create a new utility to manage AppImages and other software this way.
-
 # Why not AppImaged?
 [AppImaged](https://github.com/probonopd/go-appimage) is a great project, I love it as an idea... but its frustrating to have so much superfluous launchers (for example, command-line utilities), I can't rename the AppImage by removing the extension, launchers and wrong icons due to the way the developer he bundled the software are useless and sometime they can't be launched (for example Avidemux), the update daemon has never worked for me and requires an AppImage that doesn't work on my desktop environment... but the hatefull thing is an Applications folder that appears each time I want to remove it, in my home folder, also if all AppImages are stored into a different path.
 Practically AppImaged contrasts with my idea of order.
-I believe that a centralized repository from which to install software and manage updates is the best choice, and AppImage is a format that deserves more success than Snap and Flatpak.
+I believe that a centralized repository from which installing software and manage updates is the best choice, and AppImage is a format that deserves more success than Snap and Flatpak. I hope AppMan can be its home.
