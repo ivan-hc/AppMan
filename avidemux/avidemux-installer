@@ -1,0 +1,19 @@
+#!/bin/sh
+
+cd /opt/bin
+wget https://www.fosshub.com/Avidemux.html?dwl=avidemuxLinux_2.7.8_GLIBC_2.28_amd64.appImage;
+mv ./avidemux*appImage ./avidemux;
+chmod a+x /opt/bin/avidemux;
+echo "[Desktop Entry]
+Name=Avidemux
+GenericName=Video Editor
+Comment=Multiplatform video editor
+Exec=/opt/bin/avidemux %U
+Icon=avidemux
+Terminal=false
+Type=Application
+Categories=AudioVideo;AudioVideoEditing;Video;
+MimeType=video/mpeg;video/x-mpeg;video/mp4;video/x-m4v;video/quicktime;video/3gp;video/mkv;video/x-matroska;video/webm;video/flv;video/x-flv;video/dv;video/x-msvideo;video/x-ms-wmv;video/x-ms-asf;video/x-anim;" >> /home/$USER/.local/share/applications/avidemux.desktop;
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/avidemux/avidemux.svg;
+mv ./avidemux.svg /home/$USER/.local/share/icons/;
+rm /opt/bin/avidemux-installer
