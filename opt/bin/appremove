@@ -16,5 +16,5 @@ case "$1" in
 	'onlyoffice') for i in "onlyoffice"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'openshot') for i in "openshot"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'qbittorrent') for i in "qbittorrent"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-*) exec /opt/bin/appman-remove ;;
+*) exec /opt/bin/appremove ;;
 esac
