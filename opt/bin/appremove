@@ -11,6 +11,10 @@ case "$1" in
 	'celestia') for i in "celestia"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'celestia-dev') for i in "celestia-dev"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'chromium-dev') for i in "chromium-dev"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'firefox'|'firefox-stable') for i in "firefox-stable"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'firefox-esr') for i in "firefox-esr"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'firefox-nightly'|'firefox-beta') for i in "firefox-nightly"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'ice'|'ice-ssb') for i in "ice"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'ocenaudio') for i in "ocenaudio"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'onlyoffice') for i in "onlyoffice"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
@@ -19,9 +23,5 @@ case "$1" in
 	'wine-stable'|'wine') for i in "wine-stable"; do rm /opt/bin/$i; done;;
 	'wine-devel'|'wine-development') for i in "wine-devel"; do rm /opt/bin/$i; done;;
 	'wine-staging') for i in "wine-staging"; do rm /opt/bin/$i; done;;
-	'firefox'|'firefox-stable') for i in "firefox-stable"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'firefox-esr') for i in "firefox-esr"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'firefox-nightly'|'firefox-beta') for i in "firefox-nightly"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 *) exec /opt/bin/appremove ;;
 esac
