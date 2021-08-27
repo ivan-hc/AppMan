@@ -10,7 +10,6 @@ case "$1" in
   -c, clean	Cleans /opt/bin by removing all *zs-old backup files.
   -s, sync	Updates the list of available apps.
   -u, update	Update all the AppImages in /opt/bin using appimageupdate.
-  -a, sdk	Install the latest platform tools for Android.
   
   COMMANDS:
   
@@ -27,8 +26,6 @@ case "$1" in
   '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;
   '-c'|'clean') cd /opt/bin; echo ""; echo "Removing all backup files available in /opt/bin..."; sleep 1;
 	echo ""; rm *zs-old; echo ""; echo "All *zs-old backup files are removed, exiting."; echo "" ;;
-  '-a'|'sdk') cd ~/.android;	wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip;
-  	rm -R ./platform-tools;	unzip ./platform-tools-latest-linux.zip; rm ./platform-tools-latest-linux.zip ;;
   '-s'|'sync') cd /opt/bin; rm /opt/bin/appman-install /opt/bin/appman-remove;
 	wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-install && chmod a+x ./appman-install;
 	wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-remove && chmod a+x ./appman-remove ;;
