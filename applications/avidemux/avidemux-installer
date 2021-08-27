@@ -1,8 +1,8 @@
 #!/bin/sh
 
 cd /opt/bin
-mkdir /tmp
-cd tmp
+mkdir /tmp;
+cd /tmp;
 echo "app: avidemux
 binpatch: true
 
