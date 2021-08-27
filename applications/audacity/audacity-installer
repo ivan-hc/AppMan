@@ -5,7 +5,7 @@ wget https://github.com/audacity/audacity/releases/download/Audacity-3.0.4/audac
 mv ./audacity*AppImage ./audacity;
 appimageupdate -O ./audacity;
 rm ./audacit*zs-old;
-chmod ./audacity;
+chmod a+x ./audacity;
 echo "[Desktop Entry]
 Name=Audacity
 GenericName=Sound Editor
