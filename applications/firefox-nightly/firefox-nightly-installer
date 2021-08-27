@@ -23,4 +23,4 @@ Path=";  >> /home/$USER/.local/share/applications/firefox-nightly.desktop;
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/firefox-nightly/firefox-nightly.svg;
 mv ./firefox-nightly.svg /home/$USER/.local/share/icons/;
 echo "Visit https://github.com/srevinsaju";
-rm -R /opt/bin/tmp
+rm -R /opt/bin/tmp /opt/bin/firefox-nightly-installer
