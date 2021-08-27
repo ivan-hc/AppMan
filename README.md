@@ -5,9 +5,9 @@ AppImage Manager that works like APT or Pacman.
 This is just a script-based experimental project to be perfected, so it is ABSOLUTELLY NOT A COMPLETE SOLUTION.
 
 # What works?
-Updating applications and cleaning up any backup files created after each update, through [a customizable script](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-update).
+Updating applications and cleaning up any backup files created after each update.
 
-To install applications I wrote a separate `appman-install` script, a `appman-remove` script to remove them and an `appman-sync` script to update both the previous scripts. I usually manage my scripts to create AppImages too using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in Arch Linux with the AUR repository, but with the standalone nature of AppImages.
+To install applications I wrote a separate `appman-install` script, a `appman-remove` script to remove them. I usually manage my scripts to create AppImages too using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in Arch Linux with the AUR repository, but with the standalone nature of AppImages.
 
 The list of applications is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
 
@@ -66,9 +66,6 @@ Download the following scripts and put them in /opt/bin:
 - [appman](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman), this is a main command;
 - [appman-install](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-install), needed to install programs from [here](https://github.com/ivan-hc/AppMan/tree/main/applications);
 - [appman-remove](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-remove), needed to remove programs installed through appman-install;
-- [appman-update](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-update), to update those AppImages with zsync support.
-
-NOTE: the "[appman-update](https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman-update)" script should only work with the already existing AppImages installed in /opt/bin (in this case they are appimagetool, appimageupdate and pkg2appimage), you must modify each line manually for the AppImages with inbuilt instructions for appimageupdate (to test this run `appimageupdate -O [YOUR-AppImage]`, learn more about appimageupdate [here](https://github.com/AppImage/AppImageUpdate)). You can customize the script the way you want.
 
 # Script usage - Commands (what is working now)
 The scripts I wrote calls other scripts that I placed in /opt/bin, not just for AppImages (as you can see):
