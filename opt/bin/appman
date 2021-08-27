@@ -25,7 +25,7 @@ case "$1" in
   https://github.com/ivan-hc/AppMan/tree/main/applications
   
   " ;;
-  '-u'|'update') exec /opt/bin/appman-update ;;
+  '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;
   '-c'|'clean') cd /opt/bin; echo ""; echo "Removing all backup files available in /opt/bin..."; sleep 1;
 	echo ""; rm *zs-old; echo ""; echo "All *zs-old backup files are removed, exiting."; echo "" ;;
   '-a'|'sdk') cd ~/.android;	wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip;
