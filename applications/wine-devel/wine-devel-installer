@@ -8,4 +8,4 @@ cd ..;
 mv ./tmp/wine*AppImage ./wine-devel;
 chmod a+x /opt/bin/wine-devel;
 echo "Visit https://github.com/mmtrt";
-rm -R /opt/bin/tmp
+rm -R /opt/bin/tmp /opt/bin/wine-devel-installer
