@@ -11,10 +11,10 @@ case "$1" in
 	'celestia') for i in "celestia"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'celestia-dev') for i in "celestia-dev"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'chromium-dev') for i in "chromium-dev"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'ice') for i in "ice"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'ice'|'ice-ssb') for i in "ice"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'ocenaudio') for i in "ocenaudio"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'onlyoffice') for i in "onlyoffice"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'openshot') for i in "openshot"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'openshot'|'openshot-qt') for i in "openshot"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'qbittorrent') for i in "qbittorrent"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 *) exec /opt/bin/appremove ;;
 esac
