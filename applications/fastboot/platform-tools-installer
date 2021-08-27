@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cd /opt/bin;
+mkdir /home/$USER/.android;
+cd ~/.android; wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip;
+rm -R ./platform-tools;
+unzip ./platform-tools-latest-linux.zip;
+rm ./platform-tools-latest-linux.zip;
+ln -s /home/$USER/.android/platform-tools/adb /opt/bin/;
+ln -s /home/$USER/.android/platform-tools/fastboot /opt/bin/;
+rm /opt/bin/platform-tools-installer
