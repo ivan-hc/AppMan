@@ -19,7 +19,7 @@ Icon=firefox-nightly
 Categories=Network;WebBrowser;
 MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
 StartupNotify=true
-Path=";  >> /home/$USER/.local/share/applications/firefox-nightly.desktop;
+Path=;"  >> /home/$USER/.local/share/applications/firefox-nightly.desktop;
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/firefox-nightly/firefox-nightly.svg;
 mv ./firefox-nightly.svg /home/$USER/.local/share/icons/;
 echo "Visit https://github.com/srevinsaju";
