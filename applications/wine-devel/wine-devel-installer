@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget -r -A .AppImage -nd https://github.com/mmtrt/WINE_AppImage/releases/tag/continuous-devel;
+cd ..;
+mv ./tmp/wine*AppImage ./wine-devel;
+echo "Visit https://github.com/mmtrt";
+rm -R /opt/bin/tmp
