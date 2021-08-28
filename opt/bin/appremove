@@ -15,6 +15,7 @@ case "$1" in
 	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'firefox-esr') for i in "firefox-esr"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'firefox-nightly'|'firefox-beta') for i in "firefox-nightly"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'google-chrome') for i in "google-chrome"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'ice'|'ice-ssb') for i in "ice"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'ocenaudio') for i in "ocenaudio"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'onlyoffice') for i in "onlyoffice"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
