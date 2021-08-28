@@ -7,5 +7,7 @@ wget -r -A .AppImage -nd https://github.com/mmtrt/WINE_AppImage/releases/tag/con
 cd ..;
 mv ./tmp/wine*AppImage ./wine-devel;
 chmod a+x /opt/bin/wine-devel;
-echo "Visit https://github.com/mmtrt";
+echo "";
+echo " WINE AppImage is provided by https://github.com/mmtrt ";
+echo "";
 rm -R /opt/bin/tmp /opt/bin/wine-devel-installer
