@@ -8,12 +8,17 @@ AppMan uses some [precompiled scripts](https://github.com/ivan-hc/AppMan/tree/ma
 AppMan uses [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages (if zsync support is available), there is also an option to clean all backup files created after each update.
 
 # Requirement
+AppMan works with:
 - [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages
 - [pkg2appimage](https://github.com/AppImage/pkg2appimage) to compile *.ylm recipes
 - [appimagetool](https://github.com/AppImage/AppImageKit) to convert a *.AppDir folder to AppImage
 
+Each AppImage is included in the installation script.
+
 # Installation
-I decided to concentrate all the work in a hypothetical /opt/bin folder. Download the [installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) and run it AS ROOT to create the above path and symlinks for the [appimage tools needed](https://github.com/ivan-hc/AppMan/tree/main/appimage-tools) in /usr/bin:
+The installer requires privileges to create an /opt/bin directory and three symlinks for each [appimage tool needed](https://github.com/ivan-hc/AppMan/tree/main/appimage-tools) directly in /usr/bin to work. Learn more by read the [INSTALL](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) script.
+
+Download and run the INSTALL script:
 
 `wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL`
 
@@ -21,15 +26,14 @@ I decided to concentrate all the work in a hypothetical /opt/bin folder. Downloa
 
 `(sudo) ./INSTALL`
 
-Add this line at the end of your /home/$USER/.bashrc :
+Now add this line at the end of your /home/$USER/.bashrc :
 
 `export PATH=$PATH:/opt/bin`
 
-Update the application's list:
+Download the application's list (no "SUDO" privileges are needed):
 
 `appman -s` or `appman --sync`
 
-Now you're ready to go.
 
 # AppMan usage - Commands
 The script I wrote calls other scripts that I placed in /opt/bin, not just for AppImages.
@@ -43,7 +47,7 @@ The script I wrote calls other scripts that I placed in /opt/bin, not just for A
   `appman [option]`
   where option include:
   
- `-h`, `--help`	    Print this message.
+  `-h`, `--help`	    Print this message.
  
   `-c`, `--clean`	  Cleans /opt/bin by removing all *zs-old backup files.
   
