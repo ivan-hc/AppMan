@@ -13,7 +13,7 @@ AppMan works with:
 - [pkg2appimage](https://github.com/AppImage/pkg2appimage) to compile *.ylm recipes
 - [appimagetool](https://github.com/AppImage/AppImageKit) to convert a *.AppDir folder to AppImage
 
-Each AppImage is included in the installation script.
+You don't need to download them, each AppImage is included in the installation script. Keep reading!
 
 # Installation
 The installer requires privileges to create an /opt/bin directory and three symlinks for each [appimage tool needed](https://github.com/ivan-hc/AppMan/tree/main/appimage-tools) directly in /usr/bin to work. Learn more by read the [INSTALL](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) script.
