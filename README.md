@@ -72,11 +72,13 @@ where options include:
 
 `-h`		          Print this message.
 
-`-c` or `clean`	  Cleans /opt/bin by removing all *zs-old backup files.
+`-c` or `--clean`	 Cleans /opt/bin by removing all *zs-old backup files.
 
-`-s` or `sync`   Updates the [list of available applications](https://github.com/ivan-hc/AppMan/tree/main/applications) in "appman-install" and "appman-remove".
+`-l` or `--list`   Shows the list of available apps in the repository.
 
-`-u` or `update`	Update all the AppImages in /opt/bin using appimageupdate.
+`-s` or `--sync`   Updates the [list of available applications](https://github.com/ivan-hc/AppMan/tree/main/applications) in "appman-install" and "appman-remove".
+
+`-u` or `--update`	Update all the AppImages in /opt/bin using appimageupdate.
 
  Commands:
 
