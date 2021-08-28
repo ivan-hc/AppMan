@@ -15,7 +15,7 @@ case "$1" in
 	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'firefox-esr') for i in "firefox-esr"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'firefox-nightly'|'firefox-beta') for i in "firefox-nightly"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
-	'google-chrome') for i in "google-chrome"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'google-chrome'|'chrome') for i in "google-chrome"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'ice'|'ice-ssb') for i in "ice"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'ocenaudio') for i in "ocenaudio"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'onlyoffice') for i in "onlyoffice"; do appman -s; wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
