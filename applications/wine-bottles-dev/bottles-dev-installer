@@ -82,4 +82,7 @@ Keywords=wine;windows;" >> /home/$USER/.local/share/applications/bottles-dev.des
 
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/bottles-dev/bottles-dev.svg;
 mv ./bottles-dev.svg /home/$USER/.local/share/icons/;
+echo "";
+echo " WINE Bottles AppImage is provided by https://github.com/bottlesdevs ";
+echo "";
 rm /opt/bin/bottles-dev-installer
