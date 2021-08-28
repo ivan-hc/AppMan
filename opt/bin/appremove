@@ -3,26 +3,47 @@
 cd /opt/bin
 case "$1" in
 '') bash -x "appman" ;;
-	'adb'|'fastboot'|'platform-tools') for i in "platform-tools"; do rm -R /opt/bin/adb /opt/bin/fastboot ~/.android/$i; done;;
-	'anydesk') for i in "anydesk"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'audacity') for i in "audacity"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'avidemux') for i in "avidemux"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'bottles-dev'|'wine-bottles-dev') for i in "bottles-dev"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'celestia') for i in "celestia"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'celestia-dev') for i in "celestia-dev"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'chromium-dev') for i in "chromium-dev"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'firefox'|'firefox-stable') for i in "firefox-stable"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'firefox-esr') for i in "firefox-esr"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'firefox-nightly'|'firefox-beta') for i in "firefox-nightly"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'google-chrome'|'chrome') for i in "google-chrome"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'ice'|'ice-ssb') for i in "ice"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'ocenaudio') for i in "ocenaudio"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'onlyoffice') for i in "onlyoffice"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'openshot'|'openshot-qt') for i in "openshot"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'qbittorrent') for i in "qbittorrent"; do rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'wine-stable'|'wine') for i in "wine-stable"; do rm /opt/bin/$i; done;;
-	'wine-devel'|'wine-development') for i in "wine-devel"; do rm /opt/bin/$i; done;;
-	'wine-staging') for i in "wine-staging"; do rm /opt/bin/$i; done;;
+	'adb'|'fastboot'|'platform-tools') for i in "platform-tools"; do
+		rm -R /opt/bin/adb /opt/bin/fastboot ~/.android/$i; done;;
+	'anydesk') for i in "anydesk"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'audacity') for i in "audacity"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'avidemux') for i in "avidemux"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'bottles-dev'|'wine-bottles-dev') for i in "bottles-dev"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'celestia') for i in "celestia"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'celestia-dev') for i in "celestia-dev"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'chromium-dev') for i in "chromium-dev"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'firefox'|'firefox-stable') for i in "firefox-stable"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'firefox-esr') for i in "firefox-esr"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'firefox-nightly'|'firefox-beta') for i in "firefox-nightly"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'google-chrome'|'chrome') for i in "google-chrome"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'ice'|'ice-ssb') for i in "ice"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'ocenaudio') for i in "ocenaudio"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'onlyoffice') for i in "onlyoffice"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'openshot'|'openshot-qt') for i in "openshot"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'qbittorrent') for i in "qbittorrent"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'wine-stable'|'wine') for i in "wine-stable"; do
+		rm /opt/bin/$i; done;;
+	'wine-devel'|'wine-development') for i in "wine-devel"; do
+		rm /opt/bin/$i; done;;
+	'wine-staging') for i in "wine-staging"; do
+		rm /opt/bin/$i; done;;
 *) exec /opt/bin/appremove ;;
 esac
