@@ -16,7 +16,7 @@ case "$1" in
   
   -h, --help	Print this message.
   -c, --clean	Cleans /opt/bin by removing all *zs-old backup files.
-  -l, --list	Shows the list of available apps in the repository.
+  -l, --list	Shows the list of apps available in the repository.
   -s, --sync	Updates the list of available apps.
   -u, --update	Update all the AppImages in /opt/bin using appimageupdate.
   
