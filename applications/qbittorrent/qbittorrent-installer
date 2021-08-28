@@ -225,4 +225,7 @@ Name[th]=qBittorrent" >> /home/$USER/.local/share/applications/qbittorrent.deskt
 wget wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/qbittorrent/qbittorrent.svg;
 mv ./qbittorrent.svg /home/$USER/.local/share/icons/;
 mv ./qBittorrent-x86_64.AppImage ./qbittorrent;
+echo "";
+echo " qBittorrent Stable is provided by https://launchpad.net/~qbittorrent-team ";
+echo "";
 rm /opt/bin/qbittorrent-installer
