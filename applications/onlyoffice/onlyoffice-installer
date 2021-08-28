@@ -20,4 +20,7 @@ Path=
 StartupNotify=true" >> /home/$USER/.local/share/applications/onlyoffice.desktop;
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/onlyoffice/onlyoffice.svg;
 mv ./onlyoffice.svg /home/$USER/.local/share/icons/;
+echo "";
+echo " OnlyOffica AppImage is provided by https://www.onlyoffice.com ";
+echo "";
 rm /opt/bin/onlyoffice-installer
