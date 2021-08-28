@@ -46,4 +46,7 @@ MimeType=application/ogg;audio/basic;audio/mpeg;audio/x-aiff;audio/x-mp3;audio/x
 wget wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/ocenaudio/ocenaudio.svg;
 mv ./ocenaudio.svg /home/$USER/.local/share/icons/;
 mv ./ocenaudio-x86_64.AppImage ./ocenaudio
+echo "";
+echo " OcenAudio Editor is provided by https://www.ocenaudio.com ";
+echo "";
 rm /opt/bin/ocenaudio-installer
