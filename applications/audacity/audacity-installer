@@ -64,4 +64,7 @@ Terminal=false
 MimeType=application/x-audacity-project;audio/aac;audio/ac3;audio/mp4;audio/x-ms-wma;video/mpeg;audio/flac;audio/x-flac;audio/mpeg;audio/basic;audio/x-aiff;audio/x-wav;application/ogg;audio/x-vorbis+ogg;" >> /home/$USER/.local/share/applications/audacity.desktop;
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/audacity/audacity.svg;
 mv ./audacity.svg /home/$USER/.local/share/icons/;
+echo "";
+echo " Audacity AppImage is provided by https://github.com/audacity ";
+echo "";
 rm /opt/bin/audacity-installer
