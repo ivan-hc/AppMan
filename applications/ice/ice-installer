@@ -35,4 +35,7 @@ StartupNotify=false
 GenericName[en_US]=Ice" >> /home/$USER/.local/share/applications/ice.desktop;
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/ice/ice.svg;
 mv ./ice.svg /home/$USER/.local/share/icons/;
+echo "";
+echo " Ice-SSB is provided by https://github.com/peppermintos ";
+echo "";
 rm /opt/bin/ice-installer
