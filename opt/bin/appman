@@ -3,31 +3,45 @@
 cd /opt/bin
 case "$1" in
   ''|'-h'|'--help') echo "
-  Usage: appman [options]
-  where options include:
+  AppMan - App Manager for GNU/Linux that uses and creates AppImages
+  
+  Main commands:
+  
+  appman | appinstall | appremove
+  
+  Usage:
+  
+  appman [option]
+  where option include:
   
   -h, --help	Print this message.
-  -c, clean	Cleans /opt/bin by removing all *zs-old backup files.
-  -s, sync	Updates the list of available apps.
-  -u, update	Update all the AppImages in /opt/bin using appimageupdate.
+  -c, --clean	Cleans /opt/bin by removing all *zs-old backup files.
+  -l, --list	Shows the list of available apps in the repository.
+  -s, --sync	Updates the list of available apps.
+  -u, --update	Update all the AppImages in /opt/bin using appimageupdate.
   
-  COMMANDS:
+  appinstall [application]
   
-  appinstall [PROGRAM] 	- Install an application.
+  		Install an application.
   
-  appremove [PROGRAM] 	- Removes an application and its files.
-
-
-  For a complete list of available applications, visit:
+  appremove [application]
   
-  https://github.com/ivan-hc/AppMan/tree/main/applications
+  		Removes an application and its files.
+  
+  
+  AppMan Project's Website: https://github.com/ivan-hc/AppMan
   
   " ;;
-  '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;
-  '-c'|'clean') cd /opt/bin; echo ""; echo "Removing all backup files available in /opt/bin..."; sleep 1;
+  '-l'|'--list') echo ""; ls /home/$USER/.cache/appman-list 2>/dev/null ; echo "" ; echo "Run the 'appman -s' command to update this list!";;
+  '-u'|'--update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;
+  '-c'|'--clean') cd /opt/bin; echo ""; echo "Removing all backup files available in /opt/bin..."; sleep 1;
 	echo ""; rm *zs-old; echo ""; echo "All *zs-old backup files are removed, exiting."; echo "" ;;
-  '-s'|'sync') cd /opt/bin; rm /opt/bin/appinstall /opt/bin/appremove;
-	wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appinstall && chmod a+x ./appinstall;
-	wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appremove && chmod a+x ./appremove ;;
+  '-s'|'--sync') echo "AppMan is downloading the list of available applications, please wait...";
+  	cd /opt/bin; rm /opt/bin/appinstall /opt/bin/appremove;
+	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appinstall && chmod a+x ./appinstall;
+	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appremove && chmod a+x ./appremove;
+	rm -R -f /home/$USER/.cache/appman-list; mkdir /home/$USER/.cache/appman-list; cd /home/$USER/.cache/appman-list;
+	wget -q --recursive --no-parent -nd https://github.com/ivan-hc/AppMan/tree/main/applications;
+	rm ./applications ./robots.txt; echo "...done!"; echo "Run the 'appman -l' command to read the list!";;
   *) exec /opt/bin/appman ;;
 esac
