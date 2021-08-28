@@ -13,7 +13,7 @@ AppMan uses [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to 
 - [appimagetool](https://github.com/AppImage/AppImageKit) to convert a *.AppDir folder to AppImage
 
 # Installation
-I decided to concentrate all the work in a hypothetical /opt/bin folder. Download the [installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) and run it ar root to create the above path and symlinks for the [appimage tools needed](https://github.com/ivan-hc/AppMan/tree/main/appimage-tools) in /usr/bin:
+I decided to concentrate all the work in a hypothetical /opt/bin folder. Download the [installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) and run it AS ROOT to create the above path and symlinks for the [appimage tools needed](https://github.com/ivan-hc/AppMan/tree/main/appimage-tools) in /usr/bin:
 
 `wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL`
 
