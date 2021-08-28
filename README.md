@@ -74,9 +74,9 @@ where options include:
 
 `-c` or `--clean`	 Cleans /opt/bin by removing all *zs-old backup files.
 
-`-l` or `--list`   Shows the list of available apps in the repository.
+`-l` or `--list`   Shows the list of apps available in the repository.
 
-`-s` or `--sync`   Updates the [list of available applications](https://github.com/ivan-hc/AppMan/tree/main/applications) in "appman-install" and "appman-remove".
+`-s` or `--sync`   Updates the list of available apps.
 
 `-u` or `--update`	Update all the AppImages in /opt/bin using appimageupdate.
 
