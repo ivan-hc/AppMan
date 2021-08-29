@@ -11,7 +11,7 @@ case "$1" in
 		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'avidemux') for i in "avidemux"; do
 		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
-	'bottles-dev'|'wine-bottles-dev') for i in "bottles-dev"; do
+	'bottles'|'wine-bottles') for i in "wine-bottles"; do
 		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'celestia') for i in "celestia"; do
 		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
