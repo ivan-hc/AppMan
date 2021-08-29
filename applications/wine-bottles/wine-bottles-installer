@@ -2,8 +2,8 @@
 
 cd /opt/bin
 wget https://github.com/bottlesdevs/Bottles/releases/download/unstable/Bottles-devel-x86_64.AppImage;
-mv ./Bottles*AppImage ./bottles-dev;
-chmod a+x /opt/bin/bottles-dev;
+mv ./Bottles*AppImage ./wine-bottles;
+chmod a+x /opt/bin/wine-bottles;
 
 echo "[Desktop Entry]
 X-AppImage-Arch=x86_64
@@ -62,7 +62,7 @@ Comment[hu]=Könnyen kezelheti a wineprefix-et
 Comment[pl]=Łatwo zarządzaj wineprefix
 Comment=Easily manage wineprefix
 Icon=bottles-dev
-Exec=/opt/bin/bottles-dev %f
+Exec=/opt/bin/wine-bottles %f
 Terminal=false
 Type=Application
 Categories=Utility;GNOME;GTK;
@@ -78,11 +78,11 @@ Keywords[zh_Hans]=wine;windows;
 Keywords[ja]=wine;windows;
 Keywords[hr]=wine;windows;
 Keywords[hu]=tároló;windows;wine;
-Keywords=wine;windows;" >> /home/$USER/.local/share/applications/bottles-dev.desktop
+Keywords=wine;windows;" >> /home/$USER/.local/share/applications/wine-bottles.desktop
 
-wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/bottles-dev/bottles-dev.svg;
-mv ./bottles-dev.svg /home/$USER/.local/share/icons/;
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/wine-bottles/wine-bottles.svg;
+mv ./wine-bottles.svg /home/$USER/.local/share/icons/;
 echo "";
 echo " WINE Bottles AppImage is provided by https://github.com/bottlesdevs ";
 echo "";
-rm /opt/bin/bottles-dev-installer
+rm /opt/bin/wine-bottles-installer
