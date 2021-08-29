@@ -39,6 +39,8 @@ case "$1" in
 		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'qbittorrent') for i in "qbittorrent"; do
 		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
+	'thunderbird') for i in "thunderbird"; do
+		rm /opt/bin/$i ~/.local/share/applications/$i.desktop ~/.local/share/icons/$i.svg; done;;
 	'wine-stable'|'wine') for i in "wine-stable"; do
 		rm /opt/bin/$i; done;;
 	'wine-devel'|'wine-development') for i in "wine-devel"; do
