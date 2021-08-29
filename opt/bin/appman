@@ -1,5 +1,7 @@
 #!/bin/sh
 
+URL1="https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin"
+
 cd /opt/bin
 case "$1" in
   ''|'-h'|'help') echo "
@@ -34,8 +36,6 @@ case "$1" in
   
   " ;;
 
-URL1="https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin"
-
   '-a'|'apps') echo ""; echo "  Applications installed on the system:"; echo ""; ls /opt/bin; echo "" ;;
   '-l'|'list') echo ""; echo "  List of applications available in the AppMan repository:"; echo "";
   	ls /home/$USER/.cache/appman-list 2>/dev/null ; echo "" ;;
@@ -44,7 +44,8 @@ URL1="https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin"
 	echo ""; rm *zs-old; echo ""; echo "All *zs-old backup files are removed, exiting."; echo "" ;;
   '-s'|'sync') echo "Updating application's list, please wait...";
   	cd /opt/bin; rm /opt/bin/appinstall /opt/bin/appremove /opt/bin/appman;
-	wget -q $URL1/appman && chmod a+x ./appman; wget -q $URL1/appinstall && chmod a+x ./appinstall;
+	wget -q $URL1/appman && chmod a+x ./appman;
+	wget -q $URL1/appinstall && chmod a+x ./appinstall;
 	wget -q $URL1/appremove && chmod a+x ./appremove;
 	rm -R -f /home/$USER/.cache/appman-list; mkdir /home/$USER/.cache/appman-list; cd /home/$USER/.cache/appman-list;
 	wget -q --recursive --no-parent -nd https://github.com/ivan-hc/AppMan/tree/main/applications;
