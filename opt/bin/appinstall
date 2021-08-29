@@ -15,7 +15,7 @@ case "$1" in
 	'avidemux') for i in "avidemux"; do appman -s;
 		wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ;
 		chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
-	'bottles-dev'|'wine-bottles-dev') for i in "bottles-dev"; do appman -s;
+	'bottles'|'wine-bottles') for i in "wine-bottles"; do appman -s;
 		wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ;
 		chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'celestia') for i in "celestia"; do appman -s;
