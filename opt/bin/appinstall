@@ -60,9 +60,6 @@ case "$1" in
 	'thunderbird') for i in "thunderbird"; do appman -s;
 		wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ;
 		chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
-	'bottles-dev'|'wine-bottles-dev') for i in "bottles-dev"; do appman -s;
-		wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ;
-		chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'wine-stable'|'wine') for i in "wine-stable"; do appman -s;
 		wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$i/$i-installer ;
 		chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
