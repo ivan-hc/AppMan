@@ -47,9 +47,9 @@ The script I wrote calls other scripts that I placed in /opt/bin, not just for A
   `appman [option]`
   where option include:
   
-  `-a`, `apps`    Apps installed on the system.
-  
   `-h`, `help`	  Print this message.
+   
+  `-a`, `apps`    Apps installed on the system.
  
   `-c`, `clean`	  Cleans /opt/bin by removing all *zs-old backup files.
   
