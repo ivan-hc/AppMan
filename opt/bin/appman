@@ -23,14 +23,11 @@ case "$1" in
   -s, sync	Updates the list of available apps.
   -u, update	Update all the AppImages in /opt/bin using appimageupdate.
   
-  appinstall [application]
+  appinstall [application]	Install an application.
   
-  		Install an application.
+  appremove [application]	Removes an application and its files.
   
-  appremove [application]
-  
-  		Removes an application and its files.
-  
+  appman-bak	Restore AppMan in case of problems.
   
   AppMan Project's Website: https://github.com/ivan-hc/AppMan
   
