@@ -13,7 +13,8 @@ case "$1" in
   
   appman [option]
   where option include:
-  
+ 
+  -a, apps	Apps installed on the system.
   -h, help	Print this message.
   -c, clean	Cleans /opt/bin by removing all *zs-old backup files.
   -l, list	Shows the list of apps available in the repository.
@@ -32,7 +33,9 @@ case "$1" in
   AppMan Project's Website: https://github.com/ivan-hc/AppMan
   
   " ;;
-  '-l'|'list') echo ""; echo "  List of available applications"; echo ""; ls /home/$USER/.cache/appman-list 2>/dev/null ; echo "" ;;
+  '-a'|'apps') echo ""; echo "  Applications installed on the system:"; echo ""; ls /opt/bin; echo "" ;;
+  '-l'|'list') echo ""; echo "  List of applications available in the AppMan repository:"; echo "";
+  	ls /home/$USER/.cache/appman-list 2>/dev/null ; echo "" ;;
   '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;
   '-c'|'clean') cd /opt/bin; echo ""; echo "Removing all backup files available in /opt/bin..."; sleep 1;
 	echo ""; rm *zs-old; echo ""; echo "All *zs-old backup files are removed, exiting."; echo "" ;;
