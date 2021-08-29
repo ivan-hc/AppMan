@@ -3,7 +3,7 @@
 cd /opt/bin;
 mkdir tmp;
 cd tmp;
-wget https://www.ocenaudio.com/downloads/ocenaudio_mint64.deb?;
+wget https://www.ocenaudio.com/downloads/ocenaudio_mint64.deb;
 ar x ./*.deb;
 tar -xf ./*tar.xz;
 mkdir ocenaudio.AppDir;
