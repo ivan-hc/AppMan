@@ -180,9 +180,7 @@ Name[uk]=Відкрити адресну книгу
 Name[vi]=Mở sổ địa chỉ
 Name[zh_CN]=打开通讯录
 Name[zh_TW]=開啟通訊錄
-Exec=/opt/bin/thunderbird -addressbook"
-
->> /home/$USER/.local/share/applications/thunderbird.desktop;
+Exec=/opt/bin/thunderbird -addressbook" >> /home/$USER/.local/share/applications/thunderbird.desktop;
 
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/thunderbird/thunderbird.svg;
 mv ./thunderbird.svg /home/$USER/.local/share/icons/;
