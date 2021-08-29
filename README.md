@@ -63,6 +63,8 @@ The script I wrote calls other scripts that I placed in /opt/bin, not just for A
   
   `appremove [application]`  		Removes an application and its files.
   
+  `appman-bak`    This command is needed to restore AppMan in case of problems.
+  
   
 # Why not AppImaged?
 [AppImaged](https://github.com/probonopd/go-appimage) is a great project, I love it as an idea... but its frustrating to have so much superfluous launchers (for example, command-line utilities), I can't rename the AppImage by removing the extension, launchers and wrong icons due to the way the developer have bundled the software are useless and sometime they can't be launched (for example Avidemux), the update daemon has never worked for me and requires an AppImage that doesn't work on my desktop environment... but the hatefull thing is an Applications folder that appears each time I want to remove it, in my home folder, also if all AppImages are stored into a different path.
