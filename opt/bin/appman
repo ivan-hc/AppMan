@@ -14,8 +14,8 @@ case "$1" in
   appman [option]
   where option include:
  
-  -a, apps	Apps installed on the system.
   -h, help	Print this message.
+  -a, apps	Apps installed on the system.
   -c, clean	Cleans /opt/bin by removing all *zs-old backup files.
   -l, list	Shows the list of apps available in the repository.
   -s, sync	Updates the list of available apps.
