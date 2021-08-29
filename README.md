@@ -24,7 +24,9 @@ Download and run the INSTALL script:
 
 `chmod a+x ./INSTALL`
 
-`(sudo) ./INSTALL`
+`sudo ./INSTALL`
+
+`sudo chown -R $USER /opt/bin/`
 
 Now add this line at the end of your /home/$USER/.bashrc :
 
