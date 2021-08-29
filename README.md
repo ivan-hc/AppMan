@@ -32,7 +32,7 @@ Now add this line at the end of your /home/$USER/.bashrc :
 
 Download the application's list (no "SUDO" privileges are needed):
 
-`appman -s` or `appman --sync`
+`appman -s` or `appman sync`
 
 
 # AppMan usage - Commands
@@ -47,15 +47,15 @@ The script I wrote calls other scripts that I placed in /opt/bin, not just for A
   `appman [option]`
   where option include:
   
-  `-h`, `--help`	    Print this message.
+  `-h`, `help`	    Print this message.
  
-  `-c`, `--clean`	  Cleans /opt/bin by removing all *zs-old backup files.
+  `-c`, `clean`	  Cleans /opt/bin by removing all *zs-old backup files.
   
-  `-l`, `--list`	   Shows the list of apps available in the repository.
+  `-l`, `list`	   Shows the list of apps available in the repository.
   
-  `-s`, `--sync`	   Updates the list of available apps.
+  `-s`, `sync`	   Updates the list of available apps.
   
-  `-u`, `--update`	 Update all the AppImages in /opt/bin using appimageupdate.
+  `-u`, `update`	 Update all the AppImages in /opt/bin using appimageupdate.
   
   `appinstall [application]`   Install an application.
   
