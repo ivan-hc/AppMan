@@ -2,10 +2,16 @@
 AppImage Manager that works like APT or Pacman.
 
 # How it works
-
 AppMan uses some [precompiled scripts](https://github.com/ivan-hc/AppMan/tree/main/applications) that can download applications from their main sites or compiling them using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in AUR, the final result is a ready to use AppImage with a launcher and its icon (where needed, command line tools like "wine" can be only used from the terminal) for your favourite application. The complete list is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
 
 AppMan uses [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages (if zsync support is available), there is also an option to clean all backup files created after each update.
+
+# How to add applications
+On AppMan I try to add programs that can be updated as much as possible to the latest version. However, whether the application is updatable or not, a link to the official website will appear at the end of the installation or by running the `appman -a [program]` command, so that you can always be updated on the latest news of your applications favorite.
+
+The sheets I use to compile the programs on my computer are entirely in bash, and are compiled specifically to speed up the loading of the programs in the list. according to the method in which they can be ready for use.
+
+Any pull request is welcome, I will do my best to make it possible.
 
 # Requirement
 AppMan works with:
