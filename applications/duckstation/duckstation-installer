@@ -1,0 +1,28 @@
+#!/bin/sh
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget -r -A .AppImage -nd https://github.com/stenzek/duckstation/releases/download/latest/duckstation-qt-x64.AppImage;
+cd ..;
+mv ./tmp/*AppImage ./duckstation;
+chmod a+x /opt/bin/duckstation;
+
+echo "[Desktop Entry]
+Type=Application
+Name=DuckStation Qt
+GenericName=PlayStation 1 Emulator
+Comment=Fast-ish PlayStation 1 emulator
+Icon=duckstation
+TryExec=duckstation
+Exec=/opt/bin/duckstation %f
+Categories=Game;Emulator;Qt;" >> /home/$USER/.local/share/applications/duckstation.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/duckstation/duckstation.svg;
+mv ./duckstation.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " DuckStation QT - PlayStation 1 Emulator is provided by https://github.com/stenzek/duckstation ";
+echo "";
+
+rm -R /opt/bin/tmp /opt/bin/duckstation-installer
