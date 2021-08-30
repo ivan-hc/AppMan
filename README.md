@@ -9,7 +9,7 @@ AppMan uses [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to 
 # How to add applications
 On AppMan I try to add programs that can be updated as much as possible to the latest version. However, whether the application is updatable or not, a link to the official website will appear at the end of the installation or by running the `appman -a [program]` command, so that you can always be updated on the latest news of your applications favorite.
 
-The sheets I use to compile the programs on my computer are entirely in bash, and are compiled specifically to speed up the loading of the programs in the list. according to the method in which they can be ready for use.
+The [sheets I use to compile the programs on my computer are entirely in bash](https://github.com/ivan-hc/AppMan/tree/main/models), and are compiled specifically (for [pkg2appimage recipes](https://github.com/ivan-hc/AppMan/main/models/PKG2APPIMAGE-installer), [DEB packages](https://github.com/ivan-hc/AppMan/main/models/LOCALDEB-installer), [Arch Linux packages](https://github.com/ivan-hc/AppMan/main/models/LOCALARCH-installer) or [AppImages](https://github.com/ivan-hc/AppMan/main/models/WGETSIMPLE-installer)) to speed up uploading of the programs in the list. according to the method in which they can be ready for use.
 
 Any pull request is welcome, I will do my best to make it possible.
 
