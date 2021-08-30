@@ -75,7 +75,7 @@ case "$1" in
 	while [ -n "$1" ]
 	do
 	case $2 in
-	'') echo "Syntax error: 'remove' require an argoument."; echo "Which application do you want to remove?"; appman -f;;
+	'') appman -f;;
 	'adb'|'fastboot'|'platform-tools') for i in "platform-tools"; do rm -R /opt/bin/adb /opt/bin/fastboot ~/.android/$i; done;;
 	'anydesk') for i in "anydesk"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'audacity') for i in "audacity"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
