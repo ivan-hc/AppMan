@@ -1,53 +1,105 @@
 #!/bin/sh
 
 URL1="https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin"
+URL2="https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications"
+LOCAL1=".local/share/applications"
+LOCAL2=".local/share/icons"
 
 cd /opt/bin
 case "$1" in
   ''|'-h'|'help') echo "
   AppMan - App Manager for GNU/Linux that uses and creates AppImages
   
-  Main commands:
-  
-  appman | appinstall | appremove
-  
-  Usage:
-  
-  appman [option]
+  Usage:	appman [option]
+  		appman [option] [argument]
   where option include:
  
   -h, help	Print this message.
-  -a, apps	Apps installed on the system.
   -c, clean	Cleans /opt/bin by removing all *zs-old backup files.
+  -f, files	Programs installed on the system.
+  -i, install 	Install a program.
   -l, list	Shows the list of apps available in the repository.
+  -r, remove	Removes a program.
   -s, sync	Updates the list of available apps.
   -u, update	Update all the AppImages in /opt/bin using appimageupdate.
+
   
-  appinstall [application]	Install an application.
-  
-  appremove [application]	Removes an application and its files.
-  
-  appman-bak	Restore AppMan in case of problems.
-  
-  AppMan Project's Website: https://github.com/ivan-hc/AppMan
+  SITE: https://github.com/ivan-hc/AppMan
   
   " ;;
 
-  '-a'|'apps') echo ""; echo "  Applications installed on the system:"; echo ""; ls /opt/bin; echo "" ;;
+  '-f'|'files') echo ""; echo "  Applications installed on the system:"; echo ""; ls /opt/bin; echo "" ;;
   '-l'|'list') echo ""; echo "  List of applications available in the AppMan repository:"; echo "";
   	ls /home/$USER/.cache/appman-list 2>/dev/null ; echo "" ;;
   '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;
   '-c'|'clean') cd /opt/bin; echo ""; echo "Removing all backup files available in /opt/bin..."; sleep 1;
 	echo ""; rm *zs-old; echo ""; echo "All *zs-old backup files are removed, exiting."; echo "" ;;
   '-s'|'sync') echo "Updating application's list, please wait...";
-  	cd /opt/bin; rm /opt/bin/appinstall /opt/bin/appremove /opt/bin/appman;
-	wget -q $URL1/appman && chmod a+x ./appman;
-	wget -q $URL1/appinstall && chmod a+x ./appinstall;
-	wget -q $URL1/appremove && chmod a+x ./appremove;
+  	cd /opt/bin; mv ./appman ./appman-zs-old; wget -q $URL1/appman && chmod a+x ./appman;
 	rm -R -f /home/$USER/.cache/appman-list; mkdir /home/$USER/.cache/appman-list; cd /home/$USER/.cache/appman-list;
 	wget -q --recursive --no-parent -nd https://github.com/ivan-hc/AppMan/tree/main/applications;
 	rm ./applications ./robots.txt; echo "...done!";;
-  '-i'|'install') ;;
-  '-r'|'remove') ;;
+
+# INSTALL
+  '-i'|'install')
+	while [ -n "$1" ]
+	do
+	case $2 in
+	'') echo "Syntax error: 'install' require an argoument."; echo "Run the command 'appman -s && appman -l' to get an updated list.";;
+	'adb'|'fastboot'|'platform-tools') for i in "platform-tools"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'anydesk') for i in "anydesk"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'audacity') for i in "audacity"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'avidemux') for i in "avidemux"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'bottles'|'wine-bottles') for i in "wine-bottles"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'celestia') for i in "celestia"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'celestia-dev') for i in "celestia-dev"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'chromium-dev') for i in "chromium-dev"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'firefox'|'firefox-stable') for i in "firefox-stable"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'firefox-esr') for i in "firefox-esr"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'firefox-nightly'|'firefox-beta') for i in "firefox-nightly"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'google-chrome'|'chrome') for i in "google-chrome"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'ice'|'ice-ssb') for i in "ice"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'ocenaudio') for i in "ocenaudio"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;; 'onlyoffice') for i in "onlyoffice"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'openshot'|'openshot-qt') for i in "openshot"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'qbittorrent') for i in "qbittorrent"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'thunderbird') for i in "thunderbird"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'wine-stable'|'wine') for i in "wine-stable"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'wine-devel'|'wine-development') for i in "wine-devel"; do wget $URL2/$i/$i-installer ;	chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'wine-staging') for i in "wine-staging"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	esac
+	shift
+	done;;
+# REMOVE
+  '-r'|'remove')
+	while [ -n "$1" ]
+	do
+	case $2 in
+	'') echo "Syntax error: 'remove' require an argoument."; echo "Which application do you want to remove?"; appman -f;;
+	'adb'|'fastboot'|'platform-tools') for i in "platform-tools"; do rm -R /opt/bin/adb /opt/bin/fastboot ~/.android/$i; done;;
+	'anydesk') for i in "anydesk"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'audacity') for i in "audacity"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'avidemux') for i in "avidemux"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'bottles'|'wine-bottles') for i in "wine-bottles"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'celestia') for i in "celestia"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'celestia-dev') for i in "celestia-dev"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'chromium-dev') for i in "chromium-dev"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'firefox'|'firefox-stable') for i in "firefox-stable"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'firefox-esr') for i in "firefox-esr"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'firefox-nightly'|'firefox-beta') for i in "firefox-nightly"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'google-chrome'|'chrome') for i in "google-chrome"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'ice'|'ice-ssb') for i in "ice"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'ocenaudio') for i in "ocenaudio"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'onlyoffice') for i in "onlyoffice"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'openshot'|'openshot-qt') for i in "openshot"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'qbittorrent') for i in "qbittorrent"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'thunderbird') for i in "thunderbird"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'wine-stable'|'wine') for i in "wine-stable"; do rm /opt/bin/$i; done;;
+	'wine-devel'|'wine-development') for i in "wine-devel"; do rm /opt/bin/$i; done;;
+	'wine-staging') for i in "wine-staging"; do rm /opt/bin/$i; done;;
+	esac
+	shift
+	done;;	
   *) exec /opt/bin/appman ;;
 esac
