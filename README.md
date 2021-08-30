@@ -67,7 +67,7 @@ Download the application's list (no "SUDO" privileges are needed):
 
 Practically AppImaged contrasts with my idea of order.
 
-I believe that a centralized repository from which installing software and manage updates is the best choice, and AppImage is a format that deserves more success than Snap and Flatpak. I hope AppMan can be its home.
+I believe that a centralized repository from which installing software and manage updates is the best choice, and AppImage is a format that deserves more success than Snap and Flatpak. I hope AppMan can be the home of AppImages and other standalone programs for GNU/Linux, and always provide all distributions with the latest software version in the same way.
 
 
 # How to add applications
