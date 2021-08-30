@@ -65,3 +65,10 @@ Download the application's list (no "SUDO" privileges are needed):
 Practically AppImaged contrasts with my idea of order.
 
 I believe that a centralized repository from which installing software and manage updates is the best choice, and AppImage is a format that deserves more success than Snap and Flatpak. I hope AppMan can be its home.
+
+# About me
+This is my first work as a developer and I hope this will not be the last.
+
+Having encouraged you to visit this pages is already an immense achievement for me.
+
+If you wish, you can help me [with a small donation](https://paypal.me/ivanalexhc). I will gladly appreciate it!
