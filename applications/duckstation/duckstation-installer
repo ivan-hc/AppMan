@@ -14,7 +14,6 @@ Name=DuckStation Qt
 GenericName=PlayStation 1 Emulator
 Comment=Fast-ish PlayStation 1 emulator
 Icon=duckstation
-TryExec=duckstation
 Exec=/opt/bin/duckstation %f
 Categories=Game;Emulator;Qt;" >> /home/$USER/.local/share/applications/duckstation.desktop;
 
