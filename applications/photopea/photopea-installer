@@ -11,7 +11,7 @@ chmod a+x /opt/bin/photopea;
 echo "[Desktop Entry]
 Name=Photopea
 Comment=Photopea in AppImage
-Exec=AppRun
+Exec=/opt/bin/photopea
 Terminal=false
 Type=Application
 Icon=photopea
