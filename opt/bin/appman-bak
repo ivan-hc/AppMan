@@ -1,5 +1,0 @@
-#!/bin/sh
-
-cd /opt/bin;
-rm ./appman;
-wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman && chmod a+x /opt/bin/appman
