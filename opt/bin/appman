@@ -9,22 +9,26 @@ cd /opt/bin
 case "$1" in
   ''|'-h'|'help') echo "
   AppMan - App Manager for GNU/Linux that uses and creates AppImages
+
+  Usage:	appman [option] [argument]
+  where option include:
+  
+  -a, about	Show the link to the application site and its repository.  
+  -i, install 	Install a program.
+  -r, remove	Removes a program. 
   
   Usage:	appman [option]
-  		appman [option] [argument]
   where option include:
- 
+
   -h, help	Print this message.
   -c, clean	Remove all unnecessary files and folders, i.e. backup
   		files, installation scripts, and temporary folders.
   -f, files	Programs installed on the system.
-  -i, install 	Install a program.
   -l, list	Shows the list of apps available in the repository.
-  -r, remove	Removes a program.
   -s, sync	Updates the list of available apps.
   -u, update	Update all the AppImages in /opt/bin using appimageupdate.
 
-  
+   
   SITE: https://github.com/ivan-hc/AppMan
   
   " ;;
@@ -41,6 +45,33 @@ case "$1" in
 	wget -q --recursive --no-parent -nd https://github.com/ivan-hc/AppMan/tree/main/applications;
 	rm ./applications ./robots.txt; echo "...done!";;
 
+# ABOUT
+  '-a'|'about')
+	while [ -n "$1" ]
+	do
+	case $2 in
+	'appman') echo "https://github.com/ivan-hc/AppMan";;
+	'adb'|'fastboot'|'platform-tools') echo "https://developer.android.com/studio/releases/platform-tools";;
+	'anydesk') echo "https://anydesk.com";;
+	'avidemux') echo "http://avidemux.sourceforge.net";;
+	'bottles'|'wine-bottles') echo "https://github.com/bottlesdevs/Bottles";;
+	'celestia'|'celestia-dev') echo "https://celestia.space"; echo "https://download.opensuse.org/repositories/home:/munix9/AppImage/";;
+	'chromium-dev'|'chromium') echo "https://www.chromium.org/"; echo "https://github.com/AppImage/pkg2appimage/blob/master/recipes/Chromium.yml";;
+	'duckstation'|'duckstation-qt') echo "https://www.duckstation.org";;
+	'firefox'|'firefox-stable'|'firefox-dev'|'firefox-development'|'firefox-esr'|'firefox-nightly'|'firefox-beta') echo "https://www.mozilla.org/firefox"; echo "https://github.com/srevinsaju/Firefox-Appimage";;
+	'google-chrome'|'chrome') echo "https://www.google.com/chrome";;
+	'ice'|'ice-ssb') echo "https://github.com/peppermintos/ice";;
+	'ocenaudio') echo "https://www.ocenaudio.com";;
+	'onlyoffice') echo "https://www.onlyoffice.com";;
+	'openshot'|'openshot-qt') echo "https://www.openshot.org/";;
+	'photogimp') echo "https://github.com/Diolinux/PhotoGIMP"; echo "https://github.com/sudo-give-me-coffee/PhotoMP";;
+	'photopea') echo "https://www.photopea.com/"; echo "https://github.com/spooknik/Photopea-Appimage";;
+	'qbittorrent') echo "https://www.qbittorrent.org"; echo "https://launchpad.net/~qbittorrent-team";;
+	'thunderbird') echo "https://www.thunderbird.net"; echo "https://github.com/srevinsaju/thunderbird-appimage";;
+	'wine-stable'|'wine'|'wine-devel'|'wine-development'|'wine-staging') echo "https://www.winehq.org/"; echo "https://github.com/mmtrt/WINE_AppImage";;
+	esac
+	shift
+	done;;
 # INSTALL
   '-i'|'install')
 	while [ -n "$1" ]
