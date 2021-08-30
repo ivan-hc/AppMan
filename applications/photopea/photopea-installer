@@ -5,7 +5,7 @@ mkdir tmp;
 cd ./tmp;
 wget https://github.com/spooknik/Photopea-Appimage/releases/download/1.2.1/Photopea_1.2.1_x86_64.AppImage;
 cd ..;
-mv ./tmp/photopea*AppImage ./photopea;
+mv ./tmp/*AppImage ./photopea;
 chmod a+x /opt/bin/photopea;
 
 echo "[Desktop Entry]
