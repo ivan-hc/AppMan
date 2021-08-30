@@ -35,7 +35,7 @@ NoDisplay=false
 Icon=libreoffice-fresh
 Type=Application
 Categories=Office;X-Red-Hat-Base;X-SuSE-Core-Office;X-MandrivaLinux-Office-Other;
-Exec=libreoffice-fresh %U
+Exec=/opt/bin/libreoffice-fresh %U
 MimeType=application/vnd.openofficeorg.extension;x-scheme-handler/vnd.libreoffice.cmis;
 Name=LibreOffice Fresh
 GenericName=LibreOffice
@@ -290,27 +290,27 @@ X-AppImage-Version=still.full
 
 [Desktop Action Writer]
 Name=LibreOffice Fresh
-Exec=libreoffice-fresh --writer
+Exec=/opt/bin/libreoffice-fresh --writer
 
 [Desktop Action Calc]
 Name=LibreOffice Fresh
-Exec=libreoffice-fresh --calc
+Exec=/opt/bin/libreoffice-fresh --calc
 
 [Desktop Action Impress]
 Name=LibreOffice Fresh
-Exec=libreoffice-fresh --impress
+Exec=/opt/bin/libreoffice-fresh --impress
 
 [Desktop Action Draw]
 Name=LibreOffice Fresh
-Exec=libreoffice-fresh --draw
+Exec=/opt/bin/libreoffice-fresh --draw
 
 [Desktop Action Base]
 Name=LibreOffice Fresh
-Exec=libreoffice-fresh --base
+Exec=/opt/bin/libreoffice-fresh --base
 
 [Desktop Action Math]
 Name=LibreOffice Fresh
-Exec=libreoffice-fresh --math
+Exec=/opt/bin/libreoffice-fresh --math
 
 ##End of actions menu" >> /home/$USER/.local/share/applications/$APP.desktop;
 
