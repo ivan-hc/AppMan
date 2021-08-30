@@ -53,12 +53,14 @@ case "$1" in
 	'appman') echo "https://github.com/ivan-hc/AppMan";;
 	'adb'|'fastboot'|'platform-tools') echo "https://developer.android.com/studio/releases/platform-tools";;
 	'anydesk') echo "https://anydesk.com";;
+	'audacity') echo "https://www.audacityteam.org";;
 	'avidemux') echo "http://avidemux.sourceforge.net";;
 	'bottles'|'wine-bottles') echo "https://github.com/bottlesdevs/Bottles";;
 	'celestia'|'celestia-dev') echo "https://celestia.space"; echo "https://download.opensuse.org/repositories/home:/munix9/AppImage/";;
 	'chromium-dev'|'chromium') echo "https://www.chromium.org/"; echo "https://github.com/AppImage/pkg2appimage/blob/master/recipes/Chromium.yml";;
 	'duckstation'|'duckstation-qt') echo "https://www.duckstation.org";;
 	'firefox'|'firefox-stable'|'firefox-dev'|'firefox-development'|'firefox-esr'|'firefox-nightly'|'firefox-beta') echo "https://www.mozilla.org/firefox"; echo "https://github.com/srevinsaju/Firefox-Appimage";;
+	'freeCAD-mamba'|'freeCAD'|'freecad') echo "https://www.freecadweb.org";;
 	'google-chrome'|'chrome') echo "https://www.google.com/chrome";;
 	'ice'|'ice-ssb') echo "https://github.com/peppermintos/ice";;
 	'ocenaudio') echo "https://www.ocenaudio.com";;
@@ -91,7 +93,7 @@ case "$1" in
 	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'firefox-esr') for i in "firefox-esr"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'firefox-nightly'|'firefox-beta') for i in "firefox-nightly"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
-	'freeCAD-mamba'|'freeCAD') for i in "freeCAD-mamba"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'freeCAD-mamba'|'freeCAD'|'freecad') for i in "freeCAD-mamba"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'google-chrome'|'chrome') for i in "google-chrome"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'ice'|'ice-ssb') for i in "ice"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'ocenaudio') for i in "ocenaudio"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
@@ -126,7 +128,7 @@ case "$1" in
 	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'firefox-esr') for i in "firefox-esr"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'firefox-nightly'|'firefox-beta') for i in "firefox-nightly"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'freeCAD-mamba'|'freeCAD') for i in "freeCAD-mamba"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'freeCAD-mamba'|'freeCAD'|'freecad') for i in "freeCAD-mamba"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'google-chrome'|'chrome') for i in "google-chrome"; do rm -R /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg ~/.local/share/$i; done;;
 	'ice'|'ice-ssb') for i in "ice"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'ocenaudio') for i in "ocenaudio"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
