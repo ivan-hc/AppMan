@@ -61,8 +61,10 @@ case "$1" in
 	'firefox-nightly'|'firefox-beta') for i in "firefox-nightly"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'google-chrome'|'chrome') for i in "google-chrome"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'ice'|'ice-ssb') for i in "ice"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
-	'ocenaudio') for i in "ocenaudio"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;; 'onlyoffice') for i in "onlyoffice"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'ocenaudio') for i in "ocenaudio"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'onlyoffice') for i in "onlyoffice"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'openshot'|'openshot-qt') for i in "openshot"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'photogimp') for i in "photogimp"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'qbittorrent') for i in "qbittorrent"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'thunderbird') for i in "thunderbird"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'wine-stable'|'wine') for i in "wine-stable"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
@@ -95,6 +97,7 @@ case "$1" in
 	'ocenaudio') for i in "ocenaudio"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'onlyoffice') for i in "onlyoffice"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'openshot'|'openshot-qt') for i in "openshot"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'photogimp') for i in "photogimp"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'qbittorrent') for i in "qbittorrent"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'thunderbird') for i in "thunderbird"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'wine-stable'|'wine') for i in "wine-stable"; do rm /opt/bin/$i; done;;
