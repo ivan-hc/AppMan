@@ -63,6 +63,7 @@ case "$1" in
 	'freeCAD-mamba'|'freeCAD'|'freecad') echo "https://www.freecadweb.org";;
 	'google-chrome'|'chrome') echo "https://www.google.com/chrome";;
 	'ice'|'ice-ssb') echo "https://github.com/peppermintos/ice";;
+	'kdenlive') echo "https://kdenlive.org";;
 	'ocenaudio') echo "https://www.ocenaudio.com";;
 	'onlyoffice') echo "https://www.onlyoffice.com";;
 	'openshot'|'openshot-qt') echo "https://www.openshot.org/";;
@@ -96,6 +97,7 @@ case "$1" in
 	'freeCAD-mamba'|'freeCAD'|'freecad') for i in "freeCAD-mamba"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'google-chrome'|'chrome') for i in "google-chrome"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'ice'|'ice-ssb') for i in "ice"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'kdenlive') for i in "kdenlive"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'ocenaudio') for i in "ocenaudio"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'onlyoffice') for i in "onlyoffice"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'openshot'|'openshot-qt') for i in "openshot"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
@@ -131,6 +133,7 @@ case "$1" in
 	'freeCAD-mamba'|'freeCAD'|'freecad') for i in "freeCAD-mamba"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'google-chrome'|'chrome') for i in "google-chrome"; do rm -R /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg ~/.local/share/$i; done;;
 	'ice'|'ice-ssb') for i in "ice"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'kdenlive') for i in "kdenlive"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'ocenaudio') for i in "ocenaudio"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'onlyoffice') for i in "onlyoffice"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'openshot'|'openshot-qt') for i in "openshot"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
