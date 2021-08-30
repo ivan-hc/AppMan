@@ -1,0 +1,31 @@
+#!/bin/sh
+
+APP=SAMPLE
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+
+
+pkg2appimage SAMPLE;
+
+
+ARCH=x86_64 appimagetool -n ./$APP/$APP.AppDir;
+
+cd ..;
+
+mv /opt/bin/tmp/*AppImage /opt/bin/$APP; 
+chmod a+x /opt/bin/$APP;
+
+echo "LAUNCHER" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+
+echo "";
+echo "      This AppImage is provided by";
+echo " https://github.com/AppImage/pkg2appimage ";
+echo "";
+
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+rm -R /opt/bin/$APP-installer /opt/bin/tmp
