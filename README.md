@@ -44,7 +44,7 @@ Download the application's list (no "SUDO" privileges are needed):
  
   `-h`, `help`	Print this message.
   
-  `-c`, `clean`	Cleans /opt/bin by removing all *zs-old backup files.
+  `-c`, `clean`	Remove all unnecessary files and folders, i.e. backup	files, installation scripts, and temporary folders.
   
   `-f`, `files`	Programs installed on the system.
   
