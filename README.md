@@ -43,7 +43,9 @@ Download the application's list (no "SUDO" privileges are needed):
  where option include:
  
   `-h`, `help`	Print this message.
-  
+
+  `-a [argument]`, `about [argument]` Show the link to the application site and its repository.
+
   `-c`, `clean`	Remove all unnecessary files and folders, i.e. backup	files, installation scripts, and temporary folders.
   
   `-f`, `files`	Programs installed on the system.
