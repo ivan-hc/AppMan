@@ -1,0 +1,33 @@
+#!/bin/sh
+
+APP=freeCAD-mamba
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget -r -A .AppImage -nd https://github.com/FreeCAD/FreeCAD-Bundle/releases/tag/mamba;
+cd ..;
+mv ./tmp/*AppImage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+echo "[Desktop Entry]
+Version=1.0
+Name=FreeCAD Mamba
+Exec=/opt/bin/freeCAD-mamba
+Icon=freeCAD-mamba
+Type=Application
+Categories=Engineering;
+Comment=Feature based Parametric Modeler
+Terminal=false
+StartupNotify=true
+NoDisplay=false
+MimeType=application/x-extension-fcstd;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " FreeCAD is provided by https://www.freecadweb.org ";
+echo "";
+
+rm -R /opt/bin/tmp /opt/bin/$APP-installer
