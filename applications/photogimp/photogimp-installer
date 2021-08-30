@@ -8,6 +8,9 @@ cd ..;
 mv ./tmp/*AppImage ./photogimp;
 chmod a+x /opt/bin/photogimp;
 
+mkdir /home/$USER/.local/share/appimagekit;
+touch //home/$USER/.local/share/appimagekit/PhotoGIMP_no_desktopintegration;
+
 echo "[Desktop Entry]
 Version=1.0
 Type=Application
