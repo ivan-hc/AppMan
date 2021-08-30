@@ -35,7 +35,7 @@ NoDisplay=false
 Icon=libreoffice-still
 Type=Application
 Categories=Office;X-Red-Hat-Base;X-SuSE-Core-Office;X-MandrivaLinux-Office-Other;
-Exec=libreoffice-still %U
+Exec=/opt/bin/libreoffice-still %U
 MimeType=application/vnd.openofficeorg.extension;x-scheme-handler/vnd.libreoffice.cmis;
 Name=LibreOffice Still
 GenericName=LibreOffice
@@ -290,27 +290,27 @@ X-AppImage-Version=still.full
 
 [Desktop Action Writer]
 Name=LibreOffice Still
-Exec=libreoffice-still --writer
+Exec=/opt/bin/libreoffice-still --writer
 
 [Desktop Action Calc]
 Name=LibreOffice Still
-Exec=libreoffice-still --calc
+Exec=/opt/bin/libreoffice-still --calc
 
 [Desktop Action Impress]
 Name=LibreOffice Still
-Exec=libreoffice-still --impress
+Exec=/opt/bin/libreoffice-still --impress
 
 [Desktop Action Draw]
 Name=LibreOffice Still
-Exec=libreoffice-still --draw
+Exec=/opt/bin/libreoffice-still --draw
 
 [Desktop Action Base]
 Name=LibreOffice Still
-Exec=libreoffice-still --base
+Exec=/opt/bin/libreoffice-still --base
 
 [Desktop Action Math]
 Name=LibreOffice Still
-Exec=libreoffice-still --math
+Exec=/opt/bin/libreoffice-still --math
 
 ##End of actions menu" >> /home/$USER/.local/share/applications/$APP.desktop;
 
