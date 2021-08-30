@@ -21,7 +21,8 @@ wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/duckstat
 mv ./duckstation.svg /home/$USER/.local/share/icons/;
 
 echo "";
-echo " DuckStation QT - PlayStation 1 Emulator is provided by https://github.com/stenzek/duckstation ";
+echo " DuckStation QT - PlayStation 1 Emulator is provided by";
+echo "        https://github.com/stenzek/duckstation ";
 echo "";
 
 rm -R /opt/bin/tmp /opt/bin/duckstation-installer
