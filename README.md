@@ -6,13 +6,6 @@ AppMan uses some [precompiled scripts](https://github.com/ivan-hc/AppMan/tree/ma
 
 AppMan uses [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages (if zsync support is available), there is also an option to clean all backup files created after each update.
 
-# How to add applications
-On AppMan I try to add programs that can be updated as much as possible to the latest version. However, whether the application is updatable or not, a link to the official website will appear at the end of the installation or by running the `appman -a [program]` command, so that you can always be updated on the latest news of your applications favorite.
-
-The [sheets I use to compile the programs on my computer are entirely in bash](https://github.com/ivan-hc/AppMan/tree/main/models), and are compiled specifically (for [pkg2appimage recipes](https://github.com/ivan-hc/AppMan/main/models/PKG2APPIMAGE-installer), [DEB packages](https://github.com/ivan-hc/AppMan/main/models/LOCALDEB-installer), [Arch Linux packages](https://github.com/ivan-hc/AppMan/main/models/LOCALARCH-installer) or [AppImages](https://github.com/ivan-hc/AppMan/main/models/WGETSIMPLE-installer)) to speed up uploading of the programs in the list. according to the method in which they can be ready for use.
-
-Any pull request is welcome, I will do my best to make it possible.
-
 # Requirement
 AppMan works with:
 - [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages
@@ -73,6 +66,14 @@ Download the application's list (no "SUDO" privileges are needed):
 Practically AppImaged contrasts with my idea of order.
 
 I believe that a centralized repository from which installing software and manage updates is the best choice, and AppImage is a format that deserves more success than Snap and Flatpak. I hope AppMan can be its home.
+
+
+# How to add applications
+On AppMan I try to add programs that can be updated as much as possible to the latest version. However, whether the application is updatable or not, a link to the official website will appear at the end of the installation or by running the `appman -a [program]` command, so that you can always be updated on the latest news of your applications favorite.
+
+The [sheets I use to compile the programs on my computer are entirely in bash](https://github.com/ivan-hc/AppMan/tree/main/models), and are compiled specifically to speed up uploading of the programs in the list, according to the method in which they can be ready for use (for [pkg2appimage recipes](https://github.com/ivan-hc/AppMan/main/models/PKG2APPIMAGE-installer), [DEB packages](https://github.com/ivan-hc/AppMan/main/models/LOCALDEB-installer), [Arch Linux packages](https://github.com/ivan-hc/AppMan/main/models/LOCALARCH-installer) or [AppImages](https://github.com/ivan-hc/AppMan/main/models/WGETSIMPLE-installer)).
+
+Given these patterns, you can easily test their actual functioning yourself. Any pull request is welcome, I will do my best to make it possible.
 
 # About me
 This is my first work as a developer and I hope this will not be the last.
