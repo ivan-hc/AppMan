@@ -64,6 +64,7 @@ case "$1" in
 	'chromium') echo ""; echo "Chromium - Open source version of Google Chrome, Brave and other Web Browsers."; echo ""; echo "Command 'appman -r chromium && appman -i chromium' to update this program."; echo ""; echo "SITE: https://www.chromium.org"; echo "SOURCE: http://packages.linuxmint.com"; echo "";;
 	'chromium-dev'|'chromium-beta') echo ""; echo "Chromium-dev - Nightly build of Chromium Web Browser."; echo ""; echo "Command 'appman -r chromium-dev && appman -i chromium-dev' to update this program."; echo ""; echo "SITE: https://www.chromium.org/"; echo "SOURCE: https://github.com/AppImage/pkg2appimage"; echo "";;
 	'duckstation'|'duckstation-qt') echo ""; echo "DuckStation - PlayStation 1, aka PSX Emulator."; echo ""; echo "SITE: https://www.duckstation.org"; echo "";;
+	'emacs') echo ""; echo "Emacs - Text editor."; echo ""; echo "SITE: https://www.gnu.org/software/emacs/"; echo "SOURCE: https://github.com/probonopd/Emacs.AppImage"; echo "";;
 	'firefox'|'firefox-stable'|'firefox-dev'|'firefox-development'|'firefox-esr'|'firefox-nightly'|'firefox-beta') echo ""; echo "Mozilla Firefox - Fast, powerful and extensible Web Browser."; echo "Firefox Stable (firefox), Firefox Development Edition (firefox-dev), Firefox Extended Support Release (firefox-esr) and Firefox Nightly builds (firefox-nightly)."; echo ""; echo "Command 'appman -u' to update this and other programs."; echo ""; echo "SITE: https://www.mozilla.org/firefox"; echo "SOURCE: https://github.com/srevinsaju/Firefox-Appimage"; echo "";;
 	'freeCAD-mamba'|'freeCAD'|'freecad') echo ""; echo "FreeCAD - Free and open source AutoCAD alternative."; echo ""; echo "SITE: https://www.freecadweb.org"; echo "";;
 	'google-chrome'|'chrome') echo ""; echo "Google Chrome - The most popular Web Browser, provided by Google LLC."; echo "This is the official version for Linux, unpacked (not an AppImage)."; echo ""; echo "Command 'appman -r chrome && appman -i chrome' to update."; echo ""; echo "SITE: https://www.google.com/chrome"; echo "";;
@@ -101,6 +102,7 @@ case "$1" in
 	'chromium') for i in "chromium"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'chromium-dev'|'chromium-beta') for i in "chromium-dev"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'duckstation'|'duckstation-qt') for i in "duckstation"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'emacs') for i in "emacs"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'firefox'|'firefox-stable') for i in "firefox-stable"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'firefox-esr') for i in "firefox-esr"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
@@ -143,6 +145,7 @@ case "$1" in
 	'chromium') for i in "chromium"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'chromium-dev'|'chromium-beta') for i in "chromium-dev"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'duckstation'|'duckstation-qt') for i in "duckstation"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'emacs') for i in "emacs"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'firefox'|'firefox-stable') for i in "firefox-stable"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'firefox-esr') for i in "firefox-esr"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
