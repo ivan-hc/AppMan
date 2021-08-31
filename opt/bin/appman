@@ -77,7 +77,7 @@ case "$1" in
 	'qbittorrent') echo "Bittorrent Client"; echo "https://www.qbittorrent.org"; echo "https://launchpad.net/~qbittorrent-team";;
 	'shotcut') echo "Video Editor"; echo "https://www.shotcut.org"; echo "https://github.com/mltframework/shotcut";;
 	'thunderbird') echo "Client Mail"; echo "https://www.thunderbird.net"; echo "https://github.com/srevinsaju/thunderbird-appimage";;
-	'wine-stable'|'wine'|'wine-devel'|'wine-development'|'wine-staging') echo "Free and open-source compatibility layer that aims to allow application software and computer games developed for Microsoft Windows to run on Unix-like operating systems"; echo "https://www.winehq.org/"; echo "https://github.com/mmtrt/WINE_AppImage";;
+	'wine-stable'|'wine'|'wine-devel'|'wine-development'|'wine-staging') echo "Free and open-source compatibility layer that aims to allow application software and computer games developed for Microsoft Windows to run on Unix-like operating systems."; echo "https://www.winehq.org/"; echo "https://github.com/mmtrt/WINE_AppImage";;
 	esac
 	shift
 	done;;
