@@ -50,34 +50,34 @@ case "$1" in
 	while [ -n "$1" ]
 	do
 	case $2 in
-	'appman') echo "AppManager for GNU/Linux"; echo "Command 'appman -s' to update"; echo "https://github.com/ivan-hc/AppMan";;
-	'adb'|'fastboot'|'platform-tools') echo "Command line utilities to manage Android devices"; echo "Command 'appman -r adb && appman -i adb' to update"; echo "https://developer.android.com/studio/releases/platform-tools";;
-	'anydesk') echo "Remote desktop application"; echo "Command 'appman -r anydesk && appman -i anydesk' to update"; echo "https://anydesk.com";;
-	'audacity') echo "Audio Editor"; echo "Command 'appman -u' to update this and other programs"; echo "https://www.audacityteam.org";;
-	'avidemux') echo "Video Editor"; echo "http://avidemux.sourceforge.net";;
-	'blender') echo "3D creation suite"; echo "https://www.blendernation.com"; echo "https://github.com/Songtech-0912/Prometheus-Project";;
-	'bottles'|'wine-bottles') echo "Profile manager for WINE to easily install Windows applications on GNU/Linux"; echo "https://github.com/bottlesdevs/Bottles";;
-	'brave'|'brave-browser') echo "Web Browser"; echo "Command 'appman -r brave && appman -i brave' to update"; echo "https://brave.com/"; echo "https://github.com/AppImage/pkg2appimage/blob/master/recipes/Brave.yml";;
-	'celestia'|'celestia-dev') echo "Real time 3D space simulator"; echo "Command 'appman -u' to update this and other programs"; echo "https://celestia.space"; echo "https://download.opensuse.org/repositories/home:/munix9/AppImage/";;
-	'chromium') echo "Web Browser"; echo "Command 'appman -r chromium && appman -i chromium' to update"; echo "https://www.chromium.org/"; echo "http://packages.linuxmint.com/search.php?release=Debbie&section=any&keyword=chromium";;
-	'chromium-dev'|'chromium-beta') echo "Web Browser"; echo "Command 'appman -r chromium-dev && appman -i chromium-dev' to update"; echo "https://www.chromium.org/"; echo "https://github.com/AppImage/pkg2appimage/blob/master/recipes/Chromium.yml";;
-	'duckstation'|'duckstation-qt') echo "PlayStation 1, aka PSX Emulator"; echo "https://www.duckstation.org";;
-	'firefox'|'firefox-stable'|'firefox-dev'|'firefox-development'|'firefox-esr'|'firefox-nightly'|'firefox-beta') echo "Web Browser"; echo "Command 'appman -u' to update this and other programs"; echo "https://www.mozilla.org/firefox"; echo "https://github.com/srevinsaju/Firefox-Appimage";;
-	'freeCAD-mamba'|'freeCAD'|'freecad') echo "Free and open source AutoCAD client"; echo "https://www.freecadweb.org";;
-	'google-chrome'|'chrome') echo "Web Browser"; echo "Command 'appman -r chrome && appman -i chrome' to update"; echo "https://www.google.com/chrome";;
-	'ice'|'ice-ssb') echo "Webapp manager"; echo "Command 'appman -r ice && appman -i ice' to update"; echo "https://github.com/peppermintos/ice";;
-	'kdenlive') echo "Video Editor"; echo "https://kdenlive.org";;
-	'libreoffice-still') echo "Office Suite - Stable version"; echo "Command 'appman -r libreoffice-still && appman -i libreoffice-still' to update"; echo "https://www.libreoffice.org"; echo "https://www.libreoffice.org/download/appimage" ;; 
-	'libreoffice-fresh') echo "Office Suite - Latest version"; echo "Command 'appman -r libreoffice-fresh && appman -i libreoffice-fresh' to update"; echo "https://www.libreoffice.org"; echo "https://www.libreoffice.org/download/appimage" ;; 
-	'ocenaudio') echo "Audio Editor"; echo "https://www.ocenaudio.com";;
-	'onlyoffice') echo "Office Suite"; echo "Command 'appman -r onlyoffice && appman -i onlyoffice' to update"; echo "https://www.onlyoffice.com";;
-	'openshot'|'openshot-qt') echo "Video Editor"; echo "https://www.openshot.org/";;
-	'photogimp') echo "A patched version of GIMP for Adobe Photoshop users"; echo "https://github.com/Diolinux/PhotoGIMP"; echo "https://github.com/sudo-give-me-coffee/PhotoMP";;
-	'photopea') echo "Advanced Photo Editor"; echo "https://www.photopea.com/"; echo "https://github.com/spooknik/Photopea-Appimage";;
-	'qbittorrent') echo "Bittorrent Client"; echo "Command 'appman -r qbittorrent && appman -i qbittorrent' to update"; echo "https://www.qbittorrent.org"; echo "https://launchpad.net/~qbittorrent-team";;
-	'shotcut') echo "Video Editor"; echo "https://www.shotcut.org"; echo "https://github.com/mltframework/shotcut";;
-	'thunderbird') echo "Client Mail"; echo "https://www.thunderbird.net"; echo "Command 'appman -u' to update this and other programs"; echo "https://github.com/srevinsaju/thunderbird-appimage";;
-	'wine-stable'|'wine'|'wine-devel'|'wine-development'|'wine-staging') echo "Compatibility layer to run MS Windows apps and games on GNU/Linux."; echo "This version is for both x86 and x64 MS Windows programs."; echo "Command 'appman -u' to update this and other programs"; echo "https://www.winehq.org/"; echo "https://github.com/mmtrt/WINE_AppImage";;
+	'appman') echo ""; echo "AppMan - App Manager for GNU/Linux."; echo ""; echo "Command 'appman -s' to update."; echo ""; echo "SITE: https://github.com/ivan-hc/AppMan"; echo "";;
+	'adb'|'fastboot'|'platform-tools') echo ""; echo "Platform Tools - Command line utilities to manage Android devices."; echo ""; echo "Command 'appman -r adb && appman -i adb' to update."; echo ""; echo "SITE: https://developer.android.com/studio/releases/platform-tools"; echo "";;
+	'anydesk') echo ""; echo "AnyDesk - Remote desktop application."; echo ""; echo "Command 'appman -r anydesk && appman -i anydesk' to update."; echo ""; echo "SITE: https://anydesk.com"; echo "";;
+	'audacity') echo ""; echo "Audacity - Multiplatform Audio Editor."; echo ""; echo "Command 'appman -u' to update this and other programs."; echo ""; echo "SITE: https://www.audacityteam.org"; echo "";;
+	'avidemux') echo ""; echo "Avidemux - Multiplatform Video Editor."; echo "This version come from Debian Multimedia."; echo ""; echo "SITE: http://avidemux.sourceforge.net"; echo "";;
+	'blender') echo ""; echo "Blender - 3D creation suite."; echo ""; echo "SITE: https://www.blendernation.com"; echo "SOURCE: https://github.com/Songtech-0912/Prometheus-Project"; echo "";;
+	'bottles'|'wine-bottles') echo ""; echo "Bottles - Profile manager for WINE to easily install Windows apps."; echo ""; echo "SOURCE: https://github.com/bottlesdevs/Bottles"; echo "";;
+	'brave'|'brave-browser') echo ""; echo "Brave - A privacy oriented Web Browser based on Chromium."; echo ""; echo "Command 'appman -r brave && appman -i brave' to update."; echo "SITE: https://brave.com/"; echo "SOURCE: https://github.com/AppImage/pkg2appimage"; echo "";;
+	'celestia'|'celestia-dev') echo ""; echo "Celestia - Real time 3D space simulator."; echo ""; echo "Command 'appman -u' to update this and other programs."; echo ""; echo "SITE: https://celestia.space"; echo "SOURCE: https://download.opensuse.org/repositories/home:/munix9/AppImage/"; echo "";;
+	'chromium') echo ""; echo "Chromium - Open source version of Google Chrome, Brave and other Web Browsers."; echo ""; echo "Command 'appman -r chromium && appman -i chromium' to update."; echo ""; echo "SITE: https://www.chromium.org"; echo "SOURCE: http://packages.linuxmint.com"; echo "";;
+	'chromium-dev'|'chromium-beta') echo ""; echo "Chromium-dev - Nightly build of Chromium Web Browser."; echo ""; echo "Command 'appman -r chromium-dev && appman -i chromium-dev' to update."; echo ""; echo "SITE: https://www.chromium.org/"; echo "SOURCE: https://github.com/AppImage/pkg2appimage"; echo "";;
+	'duckstation'|'duckstation-qt') echo ""; echo "DuckStation - PlayStation 1, aka PSX Emulator."; echo ""; echo "SITE: https://www.duckstation.org"; echo "";;
+	'firefox'|'firefox-stable'|'firefox-dev'|'firefox-development'|'firefox-esr'|'firefox-nightly'|'firefox-beta') echo ""; echo "Mozilla Firefox - Fast, powerful and extensible Web Browser."; echo "Firefox Stable (firefox), Firefox Development Edition (firefox-dev), Firefox Extended Support Release (firefox-esr) and Firefox Nightly builds (firefox-nightly)."; echo ""; echo "Command 'appman -u' to update this and other programs."; echo ""; echo "SITE: https://www.mozilla.org/firefox"; echo "SOURCE: https://github.com/srevinsaju/Firefox-Appimage"; echo "";;
+	'freeCAD-mamba'|'freeCAD'|'freecad') echo ""; echo "FreeCAD - Free and open source alternative to AutoCAD."; echo ""; echo "SITE: https://www.freecadweb.org"; echo "";;
+	'google-chrome'|'chrome') echo ""; echo "Google Chrome - The most popular Web Browser, provided by Google LLC."; echo "This is the official version for Linux, unpacked (not an AppImage)."; echo ""; echo "Command 'appman -r chrome && appman -i chrome' to update."; echo ""; echo "SITE: https://www.google.com/chrome"; echo "";;
+	'ice'|'ice-ssb') echo ""; echo "Ice SSB - Webapp manager, convert your favourite Web pages to standalone apps."; echo ""; echo "Command 'appman -r ice && appman -i ice' to update."; echo ""; echo "SITE: https://github.com/peppermintos/ice"; echo "";;
+	'kdenlive') echo ""; echo "Kdenlive - Video Editors provided for KDE."; echo "This is the 21.08 release."; echo "";echo "SITE: https://kdenlive.org"; echo "";;
+	'libreoffice-still') echo ""; echo "Libreoffice - free and open source Office suite (Stable version)."; echo ""; echo "Command 'appman -r libreoffice-still && appman -i libreoffice-still' to update."; echo "SITE: https://www.libreoffice.org"; echo "SOURCE: https://www.libreoffice.org/download/appimage" ; echo "";; 
+	'libreoffice-fresh') echo ""; echo "Libreoffice - free and open source Office suite (Latest version)."; echo ""; echo "Command 'appman -r libreoffice-fresh && appman -i libreoffice-fresh' to update."; echo "SITE: https://www.libreoffice.org"; echo "SOURCE: https://www.libreoffice.org/download/appimage" ; echo "";; 
+	'ocenaudio') echo ""; echo "OcenAudio - Complete and User friendly Audio Editor."; echo ""; echo "SITE: https://www.ocenaudio.com"; echo "";;
+	'onlyoffice') echo ""; echo "OnlyOffice - Office Suite with full support for MS Windows formats and online documents."; echo ""; echo "Command 'appman -r onlyoffice && appman -i onlyoffice' to update."; echo ""; echo "SITE: https://www.onlyoffice.com"; echo "";;
+	'openshot'|'openshot-qt') echo ""; echo "Openshot - A powerful Video Editor"; echo "This is the 2.6.0 release."; echo ""; echo "SITE: https://www.openshot.org/"; echo "";;
+	'photogimp') echo ""; echo "PhotoGIMP - A patched version of GIMP for Adobe Photoshop users."; echo ""; echo "SITE: https://github.com/Diolinux/PhotoGIMP."; echo ""; echo "SOURCE: https://github.com/sudo-give-me-coffee/PhotoMP"; echo "";;
+	'photopea') echo ""; echo "Photopea- Advanced Photo Editor for professional use."; echo ""; echo "SITE: https://www.photopea.com/"; echo "SOURCE: https://github.com/spooknik/Photopea-Appimage"; echo "";;
+	'qbittorrent') echo ""; echo "qBittorrent - A powerful QT-based Bittorrent Client."; echo ""; echo "Command 'appman -r qbittorrent && appman -i qbittorrent' to update."; echo ""; echo "SITE: https://www.qbittorrent.org"; echo "SOURCE: https://launchpad.net/~qbittorrent-team";;
+	'shotcut') echo ""; echo "Shotcut - A powerful Video Editor."; echo "This is the 21.08.29 release."; echo ""; echo "SITE: https://www.shotcut.org"; echo "SOURCE: https://github.com/mltframework/shotcut"; echo "";;
+	'thunderbird') echo ""; echo "Thunderbird - Free and open source eMail client."; echo ""; echo "Command 'appman -u' to update this and other programs."; echo ""; echo "SITE: https://www.thunderbird.net"; echo "SOURCE: https://github.com/srevinsaju/thunderbird-appimage"; echo "";;
+	'wine-stable'|'wine'|'wine-devel'|'wine-development'|'wine-staging') echo ""; echo "WINE - Compatibility layer to run MS Windows apps and games on GNU/Linux."; echo "This version is for both x86 and x64 MS Windows programs."; echo ""; echo "Command 'appman -u' to update this and other programs"; echo ""; echo "SITE: https://www.winehq.org"; echo "SOURCE: https://github.com/mmtrt/WINE_AppImage"; echo "";;
 	esac
 	shift
 	done;;
