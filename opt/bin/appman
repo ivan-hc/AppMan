@@ -55,6 +55,7 @@ case "$1" in
 	'anydesk') echo "https://anydesk.com";;
 	'audacity') echo "https://www.audacityteam.org";;
 	'avidemux') echo "http://avidemux.sourceforge.net";;
+	'blender') echo "https://www.blendernation.com"; echo "https://github.com/Songtech-0912/Prometheus-Project";;
 	'bottles'|'wine-bottles') echo "https://github.com/bottlesdevs/Bottles";;
 	'brave'|'brave-browser') echo "https://brave.com/"; echo "https://github.com/AppImage/pkg2appimage/blob/master/recipes/Brave.yml";;
 	'celestia'|'celestia-dev') echo "https://celestia.space"; echo "https://download.opensuse.org/repositories/home:/munix9/AppImage/";;
@@ -88,6 +89,7 @@ case "$1" in
 	'anydesk') for i in "anydesk"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'audacity') for i in "audacity"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'avidemux') for i in "avidemux"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'blender') for i in "blender"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'bottles'|'wine-bottles') for i in "wine-bottles"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'brave'|'brave-browser') for i in "brave-browser"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'celestia') for i in "celestia"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
@@ -128,6 +130,7 @@ case "$1" in
 	'anydesk') for i in "anydesk"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'audacity') for i in "audacity"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'avidemux') for i in "avidemux"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'blender') for i in "blender"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'bottles'|'wine-bottles') for i in "wine-bottles"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'brave'|'brave-browser') for i in "brave-browser"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'celestia') for i in "celestia"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
