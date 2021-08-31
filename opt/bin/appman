@@ -67,8 +67,8 @@ case "$1" in
 	'google-chrome'|'chrome') echo "Web Browser"; echo "Command 'appman -r chrome && appman -i chrome' to update"; echo "https://www.google.com/chrome";;
 	'ice'|'ice-ssb') echo "Webapp manager"; echo "Command 'appman -r ice && appman -i ice' to update"; echo "https://github.com/peppermintos/ice";;
 	'kdenlive') echo "Video Editor"; echo "https://kdenlive.org";;
-	'libreoffice-still') echo "Office Suite - Stable version"; echo "https://www.libreoffice.org"; echo "https://www.libreoffice.org/download/appimage" ;; 
-	'libreoffice-fresh') echo "Office Suite - Latest version"; echo "https://www.libreoffice.org"; echo "https://www.libreoffice.org/download/appimage" ;; 
+	'libreoffice-still') echo "Office Suite - Stable version"; echo "Command 'appman -r libreoffice-still && appman -i libreoffice-still' to update"; echo "https://www.libreoffice.org"; echo "https://www.libreoffice.org/download/appimage" ;; 
+	'libreoffice-fresh') echo "Office Suite - Latest version"; echo "Command 'appman -r libreoffice-fresh && appman -i libreoffice-fresh' to update"; echo "https://www.libreoffice.org"; echo "https://www.libreoffice.org/download/appimage" ;; 
 	'ocenaudio') echo "Audio Editor"; echo "https://www.ocenaudio.com";;
 	'onlyoffice') echo "Office Suite"; echo "Command 'appman -r onlyoffice && appman -i onlyoffice' to update"; echo "https://www.onlyoffice.com";;
 	'openshot'|'openshot-qt') echo "Video Editor"; echo "https://www.openshot.org/";;
