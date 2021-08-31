@@ -1,5 +1,5 @@
 # AppMan
-AppImage Manager that works like APT or Pacman.
+AppImage Manager that works like APT or Pacman ([video](https://www.youtube.com/watch?v=H4XTYBV__1s)).
 
 # How it works
 AppMan uses some [precompiled scripts](https://github.com/ivan-hc/AppMan/tree/main/applications) that can download applications from their main sites or compiling them using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in AUR, the final result is a ready to use AppImage with a launcher and its icon (where needed, command line tools like "wine" can be only used from the terminal) for your favourite application. The complete list is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
