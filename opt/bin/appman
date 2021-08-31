@@ -58,7 +58,8 @@ case "$1" in
 	'bottles'|'wine-bottles') echo "https://github.com/bottlesdevs/Bottles";;
 	'brave'|'brave-browser') echo "https://brave.com/"; echo "https://github.com/AppImage/pkg2appimage/blob/master/recipes/Brave.yml";;
 	'celestia'|'celestia-dev') echo "https://celestia.space"; echo "https://download.opensuse.org/repositories/home:/munix9/AppImage/";;
-	'chromium-dev'|'chromium') echo "https://www.chromium.org/"; echo "https://github.com/AppImage/pkg2appimage/blob/master/recipes/Chromium.yml";;
+	'chromium') echo "https://www.chromium.org/"; echo "http://packages.linuxmint.com/search.php?release=Debbie&section=any&keyword=chromium";;
+	'chromium-dev'|'chromium-beta') echo "https://www.chromium.org/"; echo "https://github.com/AppImage/pkg2appimage/blob/master/recipes/Chromium.yml";;
 	'duckstation'|'duckstation-qt') echo "https://www.duckstation.org";;
 	'firefox'|'firefox-stable'|'firefox-dev'|'firefox-development'|'firefox-esr'|'firefox-nightly'|'firefox-beta') echo "https://www.mozilla.org/firefox"; echo "https://github.com/srevinsaju/Firefox-Appimage";;
 	'freeCAD-mamba'|'freeCAD'|'freecad') echo "https://www.freecadweb.org";;
@@ -91,7 +92,8 @@ case "$1" in
 	'brave'|'brave-browser') for i in "brave-browser"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'celestia') for i in "celestia"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'celestia-dev') for i in "celestia-dev"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
-	'chromium-dev') for i in "chromium-dev"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'chromium') for i in "chromium"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'chromium-dev'|'chromium-beta') for i in "chromium-dev"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'duckstation'|'duckstation-qt') for i in "duckstation"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'firefox'|'firefox-stable') for i in "firefox-stable"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
@@ -130,7 +132,8 @@ case "$1" in
 	'brave'|'brave-browser') for i in "brave-browser"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'celestia') for i in "celestia"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'celestia-dev') for i in "celestia-dev"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'chromium-dev') for i in "chromium-dev"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'chromium') for i in "chromium"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+	'chromium-dev'|'chromium-beta') for i in "chromium-dev"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'duckstation'|'duckstation-qt') for i in "duckstation"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'firefox'|'firefox-stable') for i in "firefox-stable"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
 	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
