@@ -13,9 +13,10 @@ case "$1" in
   Usage:	appman [option] [argument]
   where option include:
   
-  -a, about	Show the link to the application site and its repository.  
+  -a, about	Show basic info on each application, link to the website
+  		and/or the source and how to update some applications.  
   -i, install 	Install a program.
-  -r, remove	Removes a program. 
+  -r, remove	Remove a program. 
   
   Usage:	appman [option]
   where option include:
@@ -26,7 +27,8 @@ case "$1" in
   -f, files	Programs installed on the system.
   -l, list	Shows the list of apps available in the repository.
   -s, sync	Updates the list of available apps.
-  -u, update	Update all the AppImages in /opt/bin using appimageupdate.
+  -u, update	Update AppImages using 'appimageupdate', if the update
+  		info is embedded into the AppImage itself by the developer.
 
    
   SITE: https://github.com/ivan-hc/AppMan
