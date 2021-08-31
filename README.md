@@ -43,7 +43,7 @@ Download the application's list (no "SUDO" privileges are needed):
  
   `-h`, `help`	Print this message.
 
-  `-a [argument]`, `about [argument]` Show the link to the application site and its repository.
+  `-a [argument]`, `about [argument]` Show basic info on each application, link to the website and/or the source and how to update some applications.
 
   `-c`, `clean`	Remove all unnecessary files and folders, i.e. backup	files, installation scripts, and temporary folders.
   
@@ -57,7 +57,7 @@ Download the application's list (no "SUDO" privileges are needed):
   
   `-s`, `sync`	Updates the list of available apps.
   
-  `-u`, `update`	Update all the AppImages in /opt/bin using appimageupdate.
+  `-u`, `update`	Update AppImages using 'appimageupdate', if the update info is embedded into the AppImage itself by the developer.
 
 
 # Why not AppImaged?
