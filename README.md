@@ -1,8 +1,6 @@
 # AppMan
 AppImage Manager that works like APT or Pacman.
 
-[![Video](doc/screenshot-youtube.png)](https://www.youtube.com/watch?v=H4XTYBV__1s)
-
 # How it works
 AppMan uses some [precompiled scripts](https://github.com/ivan-hc/AppMan/tree/main/applications) that can download applications from their main sites or compiling them using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in AUR, the final result is a ready to use AppImage with a launcher and its icon (where needed, command line tools like "wine" can be only used from the terminal) for your favourite application. The complete list is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
 
@@ -60,8 +58,8 @@ Download the application's list (no "SUDO" privileges are needed):
   `-s`, `sync`	Updates the list of available apps.
   
   `-u`, `update`	Update all the AppImages in /opt/bin using appimageupdate.
-  
-  
+
+
 # Why not AppImaged?
 [AppImaged](https://github.com/probonopd/go-appimage) is a great project, I love it as an idea... but its frustrating to have so much superfluous launchers (for example, command-line utilities), I can't rename the AppImage by removing the extension, launchers and wrong icons due to the way the developer have bundled the software are useless and sometime they can't be launched (for example Avidemux), the update daemon has never worked for me and requires an AppImage that doesn't work on my desktop environment... but the hatefull thing is an Applications folder that appears each time I want to remove it, in my home folder, also if all AppImages are stored into a different path.
 
@@ -76,6 +74,7 @@ On AppMan I try to add programs that can be updated as much as possible to the l
 The [sheets I use to compile the programs on my computer are entirely in bash](https://github.com/ivan-hc/AppMan/tree/main/models), and are compiled specifically to speed up uploading of the programs in the list, according to the method in which they can be ready for use (for [pkg2appimage recipes](https://github.com/ivan-hc/AppMan/main/models/PKG2APPIMAGE-installer), [DEB packages](https://github.com/ivan-hc/AppMan/main/models/LOCALDEB-installer), [Arch Linux packages](https://github.com/ivan-hc/AppMan/main/models/LOCALARCH-installer) or [AppImages](https://github.com/ivan-hc/AppMan/main/models/WGETSIMPLE-installer)).
 
 Given these patterns, you can easily test their actual functioning yourself. Any pull request is welcome, I will do my best to make it possible.
+
 
 # About me
 This is my first work as a developer and I hope this will not be the last.
