@@ -48,6 +48,8 @@ case "$1" in
 	rm ./applications ./robots.txt; echo "...done!";;
 
 # ABOUT
+# MODEL	'APP') echo ""; echo "DESCRIPTION."; echo ""; echo "UPDATE."; echo ""; echo "SITE:"; echo "";;
+#
   '-a'|'about')
 	while [ -n "$1" ]
 	do
@@ -85,6 +87,8 @@ case "$1" in
 	shift
 	done;;
 # INSTALL
+# MODEL	'APP') for i in "APP"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+#
   '-i'|'install')
 	while [ -n "$1" ]
 	do
@@ -128,6 +132,8 @@ case "$1" in
 	shift
 	done;;
 # REMOVE
+# MODEL	'APP') for i in "APP"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+#
   '-r'|'remove')
 	while [ -n "$1" ]
 	do
