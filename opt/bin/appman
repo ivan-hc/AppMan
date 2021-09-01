@@ -48,14 +48,14 @@ case "$1" in
 	rm ./applications ./robots.txt; echo "...done!";;
 
 # ABOUT
-# MODEL	'APP') echo ""; echo "DESCRIPTION."; echo ""; echo " UPDATE"; echo ""; echo "SITE: URL"; echo "";;
+# MODEL	'APP') echo ""; echo "DESCRIPTION."; echo ""; echo " UPDATE:"; echo ""; echo "SITE: URL"; echo "";;
 #
   '-a'|'about')
 	while [ -n "$1" ]
 	do
 	case $2 in
-	'appimagetool') echo ""; echo "Appimagetool is used to generate an AppImage from an existing AppDir."; echo ""; echo " appman -u"; echo ""; echo "SITE: https://github.com/AppImage/AppImageKit"; echo "";;
-	'appimageupdate') echo ""; echo "AppImageUpdate lets you update AppImages using information embedded in the AppImage itself, if provided by the developer of the AppImage."; echo ""; echo " appman -u"; echo ""; echo "SITE: https://github.com/AppImage/AppImageUpdate"; echo "";;
+	'appimagetool') echo ""; echo "Appimagetool is used to generate an AppImage from an existing AppDir."; echo ""; echo " UPDATE: appman -u"; echo ""; echo "SITE: https://github.com/AppImage/AppImageKit"; echo "";;
+	'appimageupdate') echo ""; echo "AppImageUpdate lets you update AppImages using information embedded in the AppImage itself, if provided by the developer of the AppImage."; echo ""; echo " UPDATE: appman -u"; echo ""; echo "SITE: https://github.com/AppImage/AppImageUpdate"; echo "";;
 	'appman') echo ""; echo "AppMan - App Manager for GNU/Linux."; echo ""; echo " UPDATE: appman -s"; echo ""; echo "SITE: https://github.com/ivan-hc/AppMan"; echo "";;
 	'adb'|'fastboot'|'platform-tools') echo ""; echo "Platform Tools - Command line utilities to manage Android devices."; echo ""; echo " UPDATE: appman -i adb"; echo ""; echo "SITE: https://developer.android.com/studio/releases/platform-tools"; echo "";;
 	'anydesk') echo ""; echo "AnyDesk - Remote desktop application."; echo ""; echo " UPDATE: appman -i anydesk"; echo ""; echo "SITE: https://anydesk.com"; echo "";;
@@ -81,7 +81,7 @@ case "$1" in
 	'openshot'|'openshot-qt') echo ""; echo "Openshot - A powerful Video Editor"; echo "This is the 2.6.0 release."; echo ""; echo "SITE: https://www.openshot.org/"; echo "";;
 	'photogimp') echo ""; echo "PhotoGIMP - A patched version of GIMP for Adobe Photoshop users."; echo ""; echo "SITE: https://github.com/Diolinux/PhotoGIMP."; echo ""; echo "SOURCE: https://github.com/sudo-give-me-coffee/PhotoMP"; echo "";;
 	'photopea') echo ""; echo "Photopea- Advanced Photo Editor for professional use."; echo ""; echo "SITE: https://www.photopea.com/"; echo "SOURCE: https://github.com/spooknik/Photopea-Appimage"; echo "";;
-	'pkg2appimage') echo ""; echo "pkg2appimage is a tool to compile an AppDir from a *.ylm recipe (see 'appimagetool')."; echo ""; echo " appman -u"; echo ""; echo "SITE: https://github.com/AppImage/pkg2appimage"; echo "";;
+	'pkg2appimage') echo ""; echo "pkg2appimage is a tool to compile an AppDir from a *.ylm recipe (see 'appimagetool')."; echo ""; echo " UPDATE: appman -u"; echo ""; echo "SITE: https://github.com/AppImage/pkg2appimage"; echo "";;
 	'qbittorrent') echo ""; echo "qBittorrent - A powerful QT-based Bittorrent Client."; echo ""; echo " UPDATE: appman -i qbittorrent"; echo ""; echo "SITE: https://www.qbittorrent.org"; echo "SOURCE: https://launchpad.net/~qbittorrent-team";;
 	'shotcut') echo ""; echo "Shotcut - A powerful Video Editor."; echo "This is the 21.08.29 release."; echo ""; echo "SITE: https://www.shotcut.org"; echo "SOURCE: https://github.com/mltframework/shotcut"; echo "";;
 	'thunderbird') echo ""; echo "Thunderbird - Free and open source eMail client."; echo ""; echo " UPDATE: appman -u"; echo ""; echo "SITE: https://www.thunderbird.net"; echo "SOURCE: https://github.com/srevinsaju/thunderbird-appimage"; echo "";;
