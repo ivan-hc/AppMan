@@ -61,6 +61,8 @@ Download the application's list (no "SUDO" privileges are needed):
   
 
 # Uninstall
+To remove AppMan and all its related dependencies and symlinks, copy/paste this command:
+
 `sudo rm /opt/bin/appman /opt/bin/appimagetool /opt/bin/appimageupdate /opt/bin/pkg2appimage /usr/bin/appimagetool /usr/bin/appimageupdate /usr/bin/pkg2appimage`
 
 
