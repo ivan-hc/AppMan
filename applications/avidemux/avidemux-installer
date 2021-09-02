@@ -104,6 +104,7 @@ cd ..;
 
 mv /opt/bin/tmp/*AppImage /opt/bin/avidemux; 
 chmod a+x /opt/bin/avidemux;
+rm /home/$USER/.local/share/applications/avidemux.desktop;
 echo "[Desktop Entry]
 Name=Avidemux
 GenericName=Video Editor
