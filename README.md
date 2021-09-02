@@ -75,7 +75,7 @@ Appimaged only detects programs with the .AppImage extension placed in a folders
 
 Finally the updates: for me they never worked except with AppimageUpdate. But I'm probably doing something wrong.
 
-Practically AppImaged contrasts with my idea of order. I believe that a centralized repository from which installing software and manage updates is the best choice for each system: installing/removing/updating programs, cleaning up obsolete files, creating launchers with icons using the original files and getting basic information from each installed application, one by one in order into a specific folder, without extension like a normal executable binary file. I'm not talking about APT or Pacman. AppImages and other standalone programs managed by AppMan are totally free and independent from the other programs, they just need a system on wich be used.
+Practically AppImaged contrasts with my idea of order. I believe that a centralized repository from which installing software and manage updates is the best choice for each system: installing/removing/updating programs, cleaning up obsolete files, creating launchers with icons using the original files and getting basic information from each installed application, one by one in order into a specific folder, without extension like a normal executable binary file. I'm not talking about APT or Pacman. AppImages and other standalone programs managed by AppMan are totally independent from the other programs, they just need a system on wich be used.
 
 But also, [AppImage](https://appimage.org/) is also a standalone package format, the best choice if you are looking for an alternative packaging format to use on multiple GNU/Linux distributions, and as such it deserves a home, like Snap and Flatpak.
 
