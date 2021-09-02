@@ -32,6 +32,7 @@ ARCH=x86_64 appimagetool -n ./qbittorrent/qbittorrent.AppDir;
 cd ..;
 mv ./tmp/*.AppImage ./;
 rm -R tmp
+rm /home/$USER/.local/share/applications/qbittorrent.desktop;
 echo "[Desktop Entry]
 Categories=Network;FileTransfer;P2P;Qt;
 Exec=/opt/bin/qbittorrent %U
