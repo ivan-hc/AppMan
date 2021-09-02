@@ -21,6 +21,7 @@ cd ..;
 cd ..;
 ARCH=x86_64 appimagetool -n ./tmp/*AppDir && mv *.AppImage ./;
 rm -R /opt/bin/tmp
+rm /home/$USER/.local/share/applications/ocenaudio.desktop;
 echo "[Desktop Entry]
 Name=ocenaudio
 Name[pt]=ocenaudio
