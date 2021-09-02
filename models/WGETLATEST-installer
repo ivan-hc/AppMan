@@ -10,6 +10,7 @@ cd ..;
 mv ./tmp/*mage ./$APP;
 chmod a+x /opt/bin/$APP;
 
+rm /home/$USER/.local/share/applications/$APP.desktop;
 echo "LAUNCHER" >> /home/$USER/.local/share/applications/$APP.desktop;
 
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
