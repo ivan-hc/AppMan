@@ -135,47 +135,82 @@ case "$1" in
 	shift
 	done;;
 # REMOVE
-# MODEL	'APP') for i in "APP"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
+# MODEL	'APP') for i in "APP"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+#		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
 #
   '-r'|'remove')
 	while [ -n "$1" ]
 	do
 	case $2 in
 	'') appman -f;;
-	'adb'|'fastboot'|'platform-tools') for i in "platform-tools"; do rm -R /opt/bin/adb /opt/bin/fastboot ~/.android/$i; done;;
-	'anydesk') for i in "anydesk"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'audacity') for i in "audacity"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'avidemux') for i in "avidemux"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'blender') for i in "blender"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'bottles'|'wine-bottles') for i in "wine-bottles"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'brave'|'brave-browser') for i in "brave-browser"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'celestia') for i in "celestia"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'celestia-dev') for i in "celestia-dev"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'chromium') for i in "chromium"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'chromium-dev'|'chromium-beta') for i in "chromium-dev"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'duckstation'|'duckstation-qt') for i in "duckstation"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'emacs') for i in "emacs"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'firefox'|'firefox-stable') for i in "firefox-stable"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'firefox-esr') for i in "firefox-esr"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'firefox-nightly'|'firefox-beta') for i in "firefox-nightly"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'freeCAD-mamba'|'freeCAD'|'freecad') for i in "freeCAD-mamba"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'google-chrome'|'chrome') for i in "google-chrome"; do rm -R /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg ~/.local/share/$i; done;;
-	'ice'|'ice-ssb') for i in "ice"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'kdenlive') for i in "kdenlive"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'libreoffice-fresh') for i in "libreoffice-fresh"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'libreoffice-still') for i in "libreoffice-still"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'ocenaudio') for i in "ocenaudio"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'onlyoffice') for i in "onlyoffice"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'openshot'|'openshot-qt') for i in "openshot"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'photogimp') for i in "photogimp"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'photopea') for i in "photopea"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'qbittorrent') for i in "qbittorrent"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'shotcut') for i in "shotcut"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'thunderbird') for i in "thunderbird"; do rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; done;;
-	'wine-stable'|'wine') for i in "wine-stable"; do rm /opt/bin/$i; done;;
-	'wine-devel'|'wine-development') for i in "wine-devel"; do rm /opt/bin/$i; done;;
-	'wine-staging') for i in "wine-staging"; do rm /opt/bin/$i; done;;
+	'adb'|'fastboot'|'platform-tools') for i in "platform-tools"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm -R /opt/bin/adb /opt/bin/fastboot ~/.android/$i; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'anydesk') for i in "anydesk"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'audacity') for i in "audacity"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'avidemux') for i in "avidemux"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'blender') for i in "blender"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'bottles'|'wine-bottles') for i in "wine-bottles"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'brave'|'brave-browser') for i in "brave-browser"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'celestia') for i in "celestia"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'celestia-dev') for i in "celestia-dev"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'chromium') for i in "chromium"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'chromium-dev'|'chromium-beta') for i in "chromium-dev"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'duckstation'|'duckstation-qt') for i in "duckstation"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'emacs') for i in "emacs"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'firefox'|'firefox-stable') for i in "firefox-stable"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'firefox-dev'|'firefox-development') for i in "firefox-dev"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'firefox-esr') for i in "firefox-esr"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'firefox-nightly'|'firefox-beta') for i in "firefox-nightly"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'freeCAD-mamba'|'freeCAD'|'freecad') for i in "freeCAD-mamba"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'google-chrome'|'chrome') for i in "google-chrome"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm -R /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg ~/.local/share/$i; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'ice'|'ice-ssb') for i in "ice" while true; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'kdenlive') for i in "kdenlive"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'libreoffice-fresh') for i in "libreoffice-fresh"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'libreoffice-still') for i in "libreoffice-still"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'ocenaudio') for i in "ocenaudio"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'onlyoffice') for i in "onlyoffice"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'openshot'|'openshot-qt') for i in "openshot"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'photogimp') for i in "photogimp"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'photopea') for i in "photopea"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'qbittorrent') for i in "qbittorrent"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'shotcut') for i in "shotcut"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'thunderbird') for i in "thunderbird"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'wine-stable'|'wine') for i in "wine-stable"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'wine-dev'|'wine-devel'|'wine-development'|'wine') for i in "wine-devel"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'wine-staging'|'wine') for i in "wine-staging"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
 	esac
 	shift
 	done;;	
