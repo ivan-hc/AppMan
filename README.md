@@ -43,7 +43,7 @@ AppMan's installer includes the following AppImages:
 
 
 # Installation
-The [installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) requires root privileges to create an /opt/bin directory, three symlinks [for each appimage tool needed](https://github.com/ivan-hc/AppMan/tree/main/appimage-tools) directly in /usr/bin and `chown` to change permissions on /opt/bin:
+The [installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) requires root privileges, it create an /opt/bin directory and symlinks [for each appimage tool needed](https://github.com/ivan-hc/AppMan/tree/main/appimage-tools) directly in /usr/bin:
 
 1) Download and run the [INSTALL](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) script, this will create an /opt/bin directory, three symlinks [for each appimage tool needed](https://github.com/ivan-hc/AppMan/tree/main/appimage-tools) directly in /usr/bin:
 
