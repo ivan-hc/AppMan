@@ -40,7 +40,7 @@ cd ..;
 
 mv /opt/bin/tmp/*AppImage /opt/bin/$APP; 
 chmod a+x /opt/bin/$APP;
-
+rm /home/$USER/.local/share/applications/$APP.desktop;
 echo "[Desktop Entry]
 Version=1.0
 Name=Chromium Web Browser
