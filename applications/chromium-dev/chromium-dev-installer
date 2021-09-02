@@ -11,6 +11,7 @@ cd ..;
 mv /opt/bin/tmp/*AppImage /opt/bin/chromium-dev; 
 chmod a+x /opt/bin/chromium-dev;
 
+rm /home/$USER/.local/share/applications/chromium-dev.desktop;
 echo "[Desktop Entry]
 Type=Application
 Name=Chromium Development Edition
