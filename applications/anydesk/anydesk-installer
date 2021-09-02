@@ -10,6 +10,7 @@ cd ..;
 mv ./tmp/*.AppImage ./;
 rm -R tmp;
 mv ./AnyDesk-x86_64.AppImage ./anydesk;
+rm /home/$USER/.local/share/applications/anydesk.desktop;
 echo "[Desktop Entry]
 Type=Application
 Name=AnyDesk
