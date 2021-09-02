@@ -58,6 +58,10 @@ Download the application's list (no "SUDO" privileges are needed):
   `-s`, `sync`	Updates the list of available apps.
   
   `-u`, `update`	Update AppImages using 'appimageupdate', if the update info is embedded into the AppImage itself by the developer.
+  
+
+Uninstall
+`sudo rm /opt/bin/appman /opt/bin/appimagetool /opt/bin/appimageupdate /opt/bin/pkg2appimage /usr/bin/appimagetool /usr/bin/appimageupdate /usr/bin/pkg2appimage`
 
 
 # Why not AppImaged?
