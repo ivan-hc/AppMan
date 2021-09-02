@@ -11,7 +11,7 @@ tar xf ./data.tar.xz;
 mv /opt/bin/tmp/opt/google/chrome /home/$USER/.local/share/google-chrome;
 ln -s /home/$USER/.local/share/google-chrome/chrome /opt/bin/google-chrome;
 
-
+rm /home/$USER/.local/share/applications/google-chrome.desktop;
 echo "[Desktop Entry]
 Version=1.0
 Name=Google Chrome
