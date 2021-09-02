@@ -53,7 +53,7 @@ Download the application's list (no "SUDO" privileges are needed):
   
   `-l`, `list`	Shows the list of apps available in the repository.
   
-  `-r [argument]`, `remove [argument]`	Removes a program.
+  `-r [argument]`, `remove [argument]`	Removes a program (requires confirmation).
   
   `-s`, `sync`	Updates the list of available apps.
   
