@@ -5,6 +5,7 @@ wget https://github.com/bottlesdevs/Bottles/releases/download/unstable/Bottles-d
 mv ./Bottles*AppImage ./wine-bottles;
 chmod a+x /opt/bin/wine-bottles;
 
+rm /home/$USER/.local/share/applications/wine-bottles.desktop
 echo "[Desktop Entry]
 X-AppImage-Arch=x86_64
 X-AppImage-Version=2021.8.28-treviso
