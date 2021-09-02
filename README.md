@@ -91,4 +91,6 @@ Given these patterns, you can easily test them on your PC (command `appman -c` t
 Any pull request is welcome, I will do my best to make it possible.
 
 # About me
-This is my first real work as a developer and I hope this will not be the last. Having encouraged you to visit this page is already an immense achievement for me. If you wish, you can help me [with a small donation](https://paypal.me/ivanalexhc). I will gladly appreciate it!
+This is my first real work as a developer and I hope this will not be the last. Having encouraged you to visit this page is already an immense achievement for me.
+
+If you wish, you can help me [with a small donation](https://paypal.me/ivanalexhc). I will gladly appreciate it!
