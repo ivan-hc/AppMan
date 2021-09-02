@@ -1,16 +1,46 @@
 # AppMan
 AppImage Manager that works like APT or Pacman.
 
+
 # How it works
 AppMan uses [precompiled scripts](https://github.com/ivan-hc/AppMan/tree/main/applications) that can download applications from their main sites or compiling them using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in AUR, the final result is a ready to use AppImage with a launcher and its icon (where needed, command line tools like "wine" can be only used from the terminal) for your favourite application. The complete list is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
 
 AppMan uses [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages (if zsync support is available), there is also an option to clean all backup files created after each update.
+
+A video on a first build is available [here](https://www.youtube.com/watch?v=H4XTYBV__1s) (in reality the features have increased since its release, keep reading).
+
+
+# AppMan usage - Commands
+
+`appman [option]`  or `appman [option] [argument]`
+ 
+ where option include:
+ 
+  `-h`, `help`	Print this message.
+
+  `-a [argument]`, `about [argument]` Show basic info on each application, link to the website and/or the source and how to update some applications.
+
+  `-c`, `clean`	Remove all unnecessary files and folders, i.e. backup	files, installation scripts, and temporary folders.
+  
+  `-f`, `files`	Programs installed on the system.
+  
+  `-i [argument]`, `install [argument]` 	Install a program.
+  
+  `-l`, `list`	Shows the list of apps available in the repository.
+  
+  `-r [argument]`, `remove [argument]`	Removes a program (requires confirmation, default is N).
+  
+  `-s`, `sync`	Updates the list of available apps.
+  
+  `-u`, `update`	Update AppImages using 'appimageupdate', if the update info is embedded into the AppImage itself by the developer.
+
 
 # Requirement
 AppMan's installer includes the following AppImages:
 - [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages;
 - [pkg2appimage](https://github.com/AppImage/pkg2appimage) to compile *.yml recipes;
 - [appimagetool](https://github.com/AppImage/AppImageKit) to convert a *.AppDir folder to AppImage.
+
 
 # Installation
 The [installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) requires root privileges to create an /opt/bin directory, three symlinks [for each appimage tool needed](https://github.com/ivan-hc/AppMan/tree/main/appimage-tools) directly in /usr/bin and `chown` to change permissions on /opt/bin:
@@ -35,33 +65,12 @@ The [installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) r
 
 `appman -s` or `appman sync`
 
-# AppMan usage - Commands
-`appman [option]`  or `appman [option] [argument]`
- 
- where option include:
- 
-  `-h`, `help`	Print this message.
 
-  `-a [argument]`, `about [argument]` Show basic info on each application, link to the website and/or the source and how to update some applications.
-
-  `-c`, `clean`	Remove all unnecessary files and folders, i.e. backup	files, installation scripts, and temporary folders.
-  
-  `-f`, `files`	Programs installed on the system.
-  
-  `-i [argument]`, `install [argument]` 	Install a program.
-  
-  `-l`, `list`	Shows the list of apps available in the repository.
-  
-  `-r [argument]`, `remove [argument]`	Removes a program (requires confirmation, default is N).
-  
-  `-s`, `sync`	Updates the list of available apps.
-  
-  `-u`, `update`	Update AppImages using 'appimageupdate', if the update info is embedded into the AppImage itself by the developer.
-  
 # Uninstall
 To remove AppMan and all its related dependencies and symlinks, copy/paste this command:
 
 `sudo rm /opt/bin/appman /opt/bin/appimagetool /opt/bin/appimageupdate /opt/bin/pkg2appimage /usr/bin/appimagetool /usr/bin/appimageupdate /usr/bin/pkg2appimage`
+
 
 # Difference between AppMan and AppImaged (AppImage Daemon)
 The main reason that prompted me to create AppMan is the order and precision that was lacking in other standalone application managers for AppImage packages, often poorly packaged by their developers, so creating launchers and icons is a disaster.
@@ -78,6 +87,7 @@ That's why I believe that a centralized repository from which installing softwar
 
 [AppImage](https://appimage.org/) is a standalone package format, the best choice if you are looking for an alternative packaging format to use on multiple GNU/Linux distributions, it uses fewer resources than Snap and Flatpak, and works completely autonomously, using its own libraries. AppMan aims to give it a home to stay.
 
+
 # How to add applications
 AppMan aims to give updated programs to every distribution with all the basic info on each application (command `appman -a [program]`).
 
@@ -89,6 +99,7 @@ By downloading [sheets I provided](https://github.com/ivan-hc/AppMan/tree/main/m
 
 Given these patterns, you can easily test them on your PC (command `appman -c` to remove any /tmp folder from /opt/bin).
 Any pull request is welcome, I will do my best to make it possible.
+
 
 # About me
 This is my really first creation on GitHub, I also hope this will not my last. I have a lot of passion for GNU / Linux and actually too much time to spend for something.
