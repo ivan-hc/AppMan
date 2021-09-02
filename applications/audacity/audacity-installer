@@ -6,7 +6,6 @@ mv ./audacity*AppImage ./audacity;
 appimageupdate -O ./audacity;
 rm ./audacit*zs-old;
 chmod a+x /opt/bin/audacity;
-rm /home/$USER/.local/share/applications/audacity.desktop;
 echo "[Desktop Entry]
 Name=Audacity
 GenericName=Sound Editor
