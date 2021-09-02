@@ -66,12 +66,18 @@ To remove AppMan and all its related dependencies and symlinks, copy/paste this 
 `sudo rm /opt/bin/appman /opt/bin/appimagetool /opt/bin/appimageupdate /opt/bin/pkg2appimage /usr/bin/appimagetool /usr/bin/appimageupdate /usr/bin/pkg2appimage`
 
 
-# Why not AppImaged?
-[AppImaged](https://github.com/probonopd/go-appimage) is a great project, I love it as an idea... but its frustrating to have so much superfluous launchers (for example, command-line utilities), I can't rename the AppImage by removing the extension, launchers and wrong icons due to the way the developer have bundled the software are useless and sometime they can't be launched (for example Avidemux), the update daemon has never worked for me and requires an AppImage that doesn't work on my desktop environment... but the hatefull thing is an Applications folder that appears each time I want to remove it, in my home folder, also if all AppImages are stored into a different path.
+# Difference between AppMan and AppImaged (AppImage Daemon)
+The main reason that prompted me to create AppMan is the order and precision that was lacking in other standalone application managers and in particular AppImage packages, which are often poorly packaged by their developers and for which there are update management tools and for the integration of the related launchers and icons that fail in their intent.
 
-Practically AppImaged contrasts with my idea of order.
+[Appimaged](https://github.com/probonopd/go-appimage) is a great project, I love it as an idea... but in creating launchers and icons for the menu he relies on what he finds in the root directory of AppDir: sometimes the developer creates his AppImage by inserting an empty *.desktop (launcher) file in AppDir, and also a generic icon and inconsistent with what we would expect. The result is a completely unusable icon in the menu (for example, the official AppImage version of Avidemux). Also, as a *.desktop file and an icon in the main directory of AppDir are required, Appimaged also inserts in the application's menu programs that can only be used from the command line (for example wine, or the same pkg2appimage and appimagetool).
 
-I believe that a centralized repository from which installing software and manage updates is the best choice, and AppImage is a format that deserves more success than Snap and Flatpak. I hope AppMan can be the home of AppImages and other standalone programs for GNU/Linux, and always provide all distributions with the latest software version in the same way.
+Appimaged only detects programs with the .AppImage extension placed in a folders of its choice. And even if you want to use the AppImage in [a different directory by choosing from the available alternatives made possible by the project](https://github.com/probonopd/go-appimage/blob/master/src/appimaged/README.md#notes), Appimaged will continue to automatically create an "Applications" folder in the user's home, even if you delete it and do not want to use it, it will always appear. As an user, I think this is frustrating.
+
+Finally the updates: for me they never worked except with AppimageUpdate. But I'm probably doing something wrong.
+
+Practically AppImaged contrasts with my idea of order. I believe that a centralized repository from which installing software and manage updates is the best choice for each system: installing/removing/updating programs, cleaning up obsolete files, creating launchers with icons using the original files and getting basic information from each installed application, one by one in order into a specific folder, without extension like a normal executable binary file. I'm not talking about APT or Pacman. AppImages and other standalone programs managed by AppMan are totally free and independent from the other programs, they just need a system on wich be used.
+
+But also, [AppImage](https://appimage.org/) is also a standalone package format, the best choice if you are looking for an alternative packaging format to use on multiple GNU/Linux distributions, and as such it deserves a home, like Snap and Flatpak.
 
 
 # How to add applications
