@@ -4,6 +4,7 @@ cd /opt/bin
 wget https://download.onlyoffice.com/install/desktop/editors/linux/DesktopEditors-x86_64.AppImage;
 mv ./DesktopEditors*AppImage ./onlyoffice;
 chmod a+x /opt/bin/onlyoffice;
+rm /home/$USER/.local/share/applications/onlyoffice.desktop;
 echo "[Desktop Entry]
 Name=ONLYOFFICE Desktop Editors
 Type=Application
