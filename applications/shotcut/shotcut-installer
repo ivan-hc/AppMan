@@ -9,7 +9,7 @@ wget https://github.com/mltframework/shotcut/releases/download/v21.08.29/shotcut
 cd ..;
 mv ./tmp/*mage ./$APP;
 chmod a+x /opt/bin/$APP;
-
+rm /home/$USER/.local/share/applications/$APP.desktop;
 echo "[Desktop Entry]
 Type=Application
 Name=Shotcut
