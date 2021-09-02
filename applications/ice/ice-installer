@@ -20,6 +20,7 @@ chmod a+x ./tmp/ice.AppDir/AppRun;
 ARCH=x86_64 appimagetool -n ./tmp/ice.AppDir;
 rm -R ice ice.zip tmp;
 mv ./Ice-x86_64.AppImage ./ice;
+rm /home/$USER/.local/share/applications/ice.desktop;
 echo "[Desktop Entry]
 Version=1.0
 Encoding=UTF-8
