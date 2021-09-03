@@ -10,10 +10,10 @@ echo "app: chromium
 binpatch: true
 
 ingredients:
-  dist: debbie
+  dist: uma
   sources:
-    - deb http://packages.linuxmint.com/ debbie main upstream import backport romeo
-    - deb http://ftp.us.debian.org/debian/ bullseye main contrib non-free
+    - deb http://packages.linuxmint.com/ uma main upstream
+    - deb http://cz.archive.ubuntu.com/ubuntu focal-updates main
     
 script:
  - cp usr/share/applications/*.desktop ." >> recipe.yml;
