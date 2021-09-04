@@ -10,7 +10,7 @@ cd ..;
 mv ./tmp/*mage ./$APP;
 chmod a+x /opt/bin/$APP;
 
-rm /home/$USER/.local/share/applications/$APP.desktop;
+rm /home/$USER/.local/share/applications/libreoffice-st*.desktop;
 echo "#
 # This file is part of the LibreOffice project.
 #
