@@ -190,7 +190,7 @@ case "$1" in
 	'libreoffice-fresh') for i in "libreoffice-fresh"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
 		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i*.desktop ~/$LOCAL2/$i*.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
 	'libreoffice-still') for i in "libreoffice-still"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
-		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i*.desktop ~/$LOCAL2/$i*.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
 	'ocenaudio') for i in "ocenaudio"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
 		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
 	'onlyoffice') for i in "onlyoffice"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
