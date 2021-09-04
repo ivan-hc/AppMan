@@ -13,7 +13,7 @@ ingredients:
     - qbittorrent-team/qbittorrent-stable
   packages:
     - qbittorrent
-    - libtorrent-rasterbar' >> recipe.yml;
+    - libtorrent-rasterbar10' >> recipe.yml;
 
 pkg2appimage ./recipe.yml;
 
@@ -28,11 +28,12 @@ EXEC="${HERE}/usr/bin/qbittorrent"
 exec "${EXEC}"' >> ./qbittorrent/qbittorrent.AppDir/AppRun;
 
 chmod a+x ./qbittorrent/qbittorrent.AppDir/AppRun;
+
 ARCH=x86_64 appimagetool -n ./qbittorrent/qbittorrent.AppDir;
 
 cd ..;
 mv ./tmp/*.AppImage ./;
-rm -R tmp
+
 rm /home/$USER/.local/share/applications/qbittorrent.desktop;
 echo "[Desktop Entry]
 Categories=Network;FileTransfer;P2P;Qt;
@@ -227,7 +228,9 @@ Name[th]=qBittorrent" >> /home/$USER/.local/share/applications/qbittorrent.deskt
 wget wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/qbittorrent/qbittorrent.svg;
 mv ./qbittorrent.svg /home/$USER/.local/share/icons/;
 mv ./qBittorrent-x86_64.AppImage ./qbittorrent;
+
 echo "";
 echo " qBittorrent Stable is provided by https://launchpad.net/~qbittorrent-team ";
 echo "";
-rm /opt/bin/qbittorrent-installer
+
+rm -R /opt/bin/tmp /opt/bin/qbittorrent-installer
