@@ -91,10 +91,10 @@ That's why I believe that a centralized repository from which installing softwar
 AppMan aims to give updated programs to every distribution with all the basic info on each application (command `appman -a [program]`).
 
 By downloading [sheets I provided](https://github.com/ivan-hc/AppMan/tree/main/models), all you need to do is to replace the UPPERCASE words (SAMPLE, LINK, LAUNCHER...). The sheets are needed to speed up uploading of the programs in the list. The main "flavours are for:
-- [pkg2appimage recipes](https://github.com/ivan-hc/AppMan/blob/main/models/PKG2APPIMAGE-installer);
-- [DEB packages](https://github.com/ivan-hc/AppMan/blob/main/models/LOCALDEB-installer);
-- [Arch Linux packages](https://github.com/ivan-hc/AppMan/blob/main/models/LOCALARCH-installer);
-- [AppImages](https://github.com/ivan-hc/AppMan/blob/main/models/WGETSIMPLE-installer)).
+- Repipe that uses [pkg2appimage recipes](https://github.com/ivan-hc/AppMan/blob/main/models/PKG2APPIMAGE-installer);
+- Recipe that uses [DEB packages](https://github.com/ivan-hc/AppMan/blob/main/models/LOCALDEB-installer) to download and unpack;
+- Recipe that uses [Arch Linux packages](https://github.com/ivan-hc/AppMan/blob/main/models/LOCALARCH-installer) to download and unpack;
+- [AppImages](https://github.com/ivan-hc/AppMan/blob/main/models/WGETSIMPLE-installer) to download.
 
 Given these patterns, you can easily test them on your PC (command `appman -c` to remove any /tmp folder from /opt/bin).
 Any pull request is welcome, I will do my best to make it possible.
