@@ -2227,7 +2227,7 @@ NoDisplay=false
 Icon=libreoffice-fresh-math
 Type=Application
 Categories=Office;Education;Science;Math;X-Red-Hat-Base;X-MandrivaLinux-Office-Other;
-Exec=libreoffice-fresh --math %U
+Exec=/opt/bin/libreoffice-fresh --math %U
 MimeType=application/vnd.oasis.opendocument.formula;application/vnd.sun.xml.math;application/vnd.oasis.opendocument.formula-template;text/mathml;application/mathml+xml;
 Name=LibreOffice Math
 GenericName=Formula Editor
@@ -2600,7 +2600,7 @@ Name[zh_CN]=新建公式
 Name[zh_TW]=新增公式
 Name[zu]=New Formula
 Icon=libreoffice-document-new
-Exec=libreoffice-fresh --math"  >> /home/$USER/.local/share/applications/libreoffice-fresh-math.desktop;
+Exec=/opt/bin/libreoffice-fresh --math"  >> /home/$USER/.local/share/applications/libreoffice-fresh-math.desktop;
 
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP-base.svg;
