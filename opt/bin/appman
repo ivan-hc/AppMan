@@ -97,7 +97,7 @@ case "$1" in
 	while [ -n "$1" ]
 	do
 	case $2 in
-	'') echo "Syntax error: 'install' require an argoument."; echo "Run the command 'appman -s && appman -l' to get an updated list.";;
+	'') echo "Syntax error: 'install' require a valid argoument."; echo "Run the command 'appman -s && appman -l' to get and read a more updated list.";;
 	'adb'|'fastboot'|'platform-tools') for i in "platform-tools"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'anydesk') for i in "anydesk"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'audacity') for i in "audacity"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
