@@ -13,7 +13,8 @@ ingredients:
   dist: uma
   sources:
     - deb http://packages.linuxmint.com/ uma main upstream
-    - deb http://cz.archive.ubuntu.com/ubuntu focal-updates main
+    - deb http://us.archive.ubuntu.com/ubuntu/ focal main universe
+    - deb http://us.archive.ubuntu.com/ubuntu/ focal-updates main universe
     
 script:
  - cp usr/share/applications/*.desktop ." >> recipe.yml;
