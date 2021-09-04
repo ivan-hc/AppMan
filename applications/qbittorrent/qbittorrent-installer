@@ -11,8 +11,6 @@ ingredients:
   dist: focal
   ppas:
     - qbittorrent-team/qbittorrent-stable
-  sources:
-    - deb http://cz.archive.ubuntu.com/ubuntu focal-updates main
   packages:
     - qbittorrent
     - libtorrent-rasterbar' >> recipe.yml;
