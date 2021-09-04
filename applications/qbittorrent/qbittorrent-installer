@@ -13,7 +13,7 @@ ingredients:
     - qbittorrent-team/qbittorrent-stable
   packages:
     - qbittorrent
-    - libtorrent-rasterbar10' >> recipe.yml;
+    - libtorrent-rasterbar' >> recipe.yml;
 
 pkg2appimage ./recipe.yml;
 
