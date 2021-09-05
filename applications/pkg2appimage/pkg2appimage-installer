@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd /opt/bin;
+wget https://github.com/ivan-hc/AppMan/raw/main/appimage-tools/pkg2appimage;
+chmod a+x /opt/bin/pkg2appimage;
+sudo ln -s /opt/bin/pkg2appimage /usr/bin/pkg2appimage;

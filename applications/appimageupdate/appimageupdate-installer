@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd /opt/bin;
+wget https://github.com/ivan-hc/AppMan/raw/main/appimage-tools/appimageupdate;
+chmod a+x /opt/bin/appimageupdate;
+sudo ln -s /opt/bin/appimageupdate /usr/bin/appimageupdate;

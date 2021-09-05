@@ -1,0 +1,6 @@
+
+ Appimagetool is used to generate an AppImage from an existing AppDir.
+ 
+ UPDATE: appman -u
+ 
+ SITE: https://github.com/AppImage/AppImageKit
