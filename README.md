@@ -67,6 +67,7 @@ The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/I
 There are two kind of updates in AppMan:
 - `appman -u` uses [appimageupdate](https://github.com/AppImage/AppImageUpdate) to update those programs with inbuild instructions (so not all);
 - `appman -i [argument]` ie the reinstallation of the program, also the launcher will be replaced.
+
 In the first case will be created a *zs-old backup file as big as the original in /opt/bin that you can remove with `appman -c`, in the second case the original file will be replaced directly.
 
 
