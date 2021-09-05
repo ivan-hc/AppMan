@@ -85,6 +85,7 @@ case "$1" in
 	'qbittorrent') echo ""; echo "qBittorrent - A powerful QT-based Bittorrent Client."; echo ""; echo " UPDATE: appman -i qbittorrent"; echo ""; echo "SITE: https://www.qbittorrent.org"; echo "SOURCE: https://launchpad.net/~qbittorrent-team";;
 	'shotcut') echo ""; echo "Shotcut - A powerful Video Editor."; echo "This is the 21.08.29 release."; echo ""; echo "SITE: https://www.shotcut.org"; echo "SOURCE: https://github.com/mltframework/shotcut"; echo "";;
 	'sqlitebrowser') echo ""; echo "DB Browser for SQLite is a light GUI editor for SQLite databases."; echo ""; echo " UPDATE: appman -i sqlitebrowser"; echo ""; echo "SITE: https://sqlitebrowser.org"; echo "";;
+	'tag-editor') echo ""; echo "Tag Editor with support for MP4 (iTunes), ID3, Vorbis, Opus, FLAC and Matroska."; echo ""; echo " UPDATE: appman -u"; echo ""; echo "SOURCE: https://download.opensuse.org/repositories/home:/mkittler"; echo "";;
 	'thunderbird') echo ""; echo "Thunderbird - Free and open source eMail client."; echo ""; echo " UPDATE: appman -u"; echo ""; echo "SITE: https://www.thunderbird.net"; echo "SOURCE: https://github.com/srevinsaju/thunderbird-appimage"; echo "";;
 	'wine-stable'|'wine'|'wine-devel'|'wine-development'|'wine-staging') echo ""; echo "WINE - Compatibility layer to run MS Windows apps and games on GNU/Linux."; echo "This version is for both x86 and x64 MS Windows programs."; echo ""; echo " UPDATE: appman -u"; echo ""; echo "SITE: https://www.winehq.org"; echo "SOURCE: https://github.com/mmtrt/WINE_AppImage"; echo "";;
 	esac
@@ -129,6 +130,7 @@ case "$1" in
 	'qbittorrent') for i in "qbittorrent"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'shotcut') for i in "shotcut"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'sqlitebrowser') for i in "sqlitebrowser"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
+	'tag-editor') for i in "tag-editor"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'thunderbird') for i in "thunderbird"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'wine-stable'|'wine') for i in "wine-stable"; do wget $URL2/$i/$i-installer ; chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
 	'wine-devel'|'wine-development') for i in "wine-devel"; do wget $URL2/$i/$i-installer ;	chmod a+x ./$i-installer ; exec /opt/bin/$i-installer ; done;;
@@ -206,6 +208,8 @@ case "$1" in
 	'shotcut') for i in "shotcut"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
 		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
 	'sqlitebrowser') for i in "sqlitebrowser"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	'tag-editor') for i in "tag-editor"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
 		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
 	'thunderbird') for i in "thunderbird"; do read -p "Do you wish to REMOVE this program (y,N)?" yn
 		case $yn in [Yy]* ) rm /opt/bin/$i ~/$LOCAL1/$i.desktop ~/$LOCAL2/$i.svg; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
