@@ -1,5 +1,5 @@
 
- utility to convert .yml recipes to AppDir (see appimagetool).
+ Utility to convert .yml recipes to AppDir (see appimagetool).
  
  UPDATE: appman -u
  
