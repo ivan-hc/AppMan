@@ -1,15 +1,17 @@
 # AppMan
 AppImage Manager that works like APT or Pacman.
 
+The main goal of this tool is to provide the same updated applications to multiple GNU/Linux distributions without having to change the package manager or the distro itself. This means that whatever distro you use, you will not miss your favorite programs or the need for a more updated version. AppMan also aims to be a merger for GNU / Linux distributions, using not just AppImage as the main package format, but also other standalone programs, so without having to risk breaking anything on your system: no daemons, no shared libraries. Just your program and your launcher.
+
 
 # How it works
-AppMan uses [precompiled scripts](https://github.com/ivan-hc/AppMan/tree/main/applications) that can download applications from their main sites or compiling them using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in AUR, the final result is a ready to use AppImage with a launcher and its icon (where needed, command line tools like "wine" can be only used from the terminal) for your favourite application. The complete list is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
+AppMan uses [precompiled scripts](https://github.com/ivan-hc/AppMan/tree/main/applications) that can download applications from their main sites or compiling them using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in AUR. The final result is a ready to use AppImage with a launcher and its icon (where needed, command line tools like "wine" can be only used from the terminal) for your favourite application. The complete list is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
 
 AppMan uses [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages (if zsync support is available), there is also an option to clean all backup files created after each update.
 
 A video on a first build is available [here](https://www.youtube.com/watch?v=H4XTYBV__1s) (in reality the features have increased since its release, keep reading).
 
-The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) includes [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) (needed to update AppImages), [pkg2appimage](https://github.com/AppImage/pkg2appimage) (to compile *.yml recipes) and [appimagetool](https://github.com/AppImage/AppImageKit) (to convert a *.AppDir folder to AppImage).
+The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) includes [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) (needed to update AppImages), [pkg2appimage](https://github.com/AppImage/pkg2appimage) (to compile *.yml recipes) and [appimagetool](https://github.com/AppImage/AppImageKit) (to convert a *.AppDir folder to AppImage). Nothing else. Other tools are already pre-installed on your system (wget, mv, mkdir...).
 
 
 # Installation
