@@ -8,6 +8,8 @@ cd ./tmp;
 wget -r -A .AppImage -nd https://github.com/VSCodium/vscodium/releases/tag/1.59.1;
 cd ..;
 mv ./tmp/*mage ./$APP;
+rm ./vscod*zs-old;
+appimageupdate -O ./$APP;
 chmod a+x /opt/bin/$APP;
 
 echo "[Desktop Entry]
