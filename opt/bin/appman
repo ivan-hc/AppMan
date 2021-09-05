@@ -52,7 +52,8 @@ case "$1" in
 	do
 	case $2 in
 	*) for var in $2;
-	do cd /home/$USER/.cache && wget -q $URL2/$2/about-$2 && cat ./about-$2; done
+	do rm -R /home/$USER/.cache/appman-about; mkdir /home/$USER/.cache/appman-about;
+		cd /home/$USER/.cache/appman-about && wget -q $URL2/$2/about-$2 && cat ./about-$2; echo ""; done
 	esac
 	shift
 	done;;
