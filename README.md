@@ -9,6 +9,31 @@ AppMan uses [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to 
 
 A video on a first build is available [here](https://www.youtube.com/watch?v=H4XTYBV__1s) (in reality the features have increased since its release, keep reading).
 
+The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) includes [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) (needed to update AppImages), [pkg2appimage](https://github.com/AppImage/pkg2appimage) (to compile *.yml recipes) and [appimagetool](https://github.com/AppImage/AppImageKit) (to convert a *.AppDir folder to AppImage).
+
+
+# Installation
+
+1) Download and run the [INSTALL](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) script, this will create an /opt/bin directory, three symlinks [for each appimage tool needed](https://github.com/ivan-hc/AppMan/tree/main/appimage-tools) directly in /usr/bin:
+
+`wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL`
+
+`chmod a+x ./INSTALL`
+
+`sudo ./INSTALL`
+
+2) Change privileges on /opt/bin to use AppMan as normal user:
+
+`sudo chown -R $USER /opt/bin/`
+
+3) Add this line at the end of your /home/$USER/.bashrc :
+
+`export PATH=$PATH:/opt/bin`
+
+4) Download the application's list:
+
+`appman -s` or `appman sync`
+
 
 # AppMan usage - Commands
 
@@ -35,40 +60,41 @@ A video on a first build is available [here](https://www.youtube.com/watch?v=H4X
   `-u`, `update`	Update AppImages using 'appimageupdate', if the update info is embedded into the AppImage itself by the developer.
 
 
-# Requirement
-AppMan's installer includes the following AppImages:
-- [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages;
-- [pkg2appimage](https://github.com/AppImage/pkg2appimage) to compile *.yml recipes;
-- [appimagetool](https://github.com/AppImage/AppImageKit) to convert a *.AppDir folder to AppImage.
+# How to update programs
 
-
-# Installation
-
-1) Download and run the [INSTALL](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) script, this will create an /opt/bin directory, three symlinks [for each appimage tool needed](https://github.com/ivan-hc/AppMan/tree/main/appimage-tools) directly in /usr/bin:
-
-`wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL`
-
-`chmod a+x ./INSTALL`
-
-`sudo ./INSTALL`
-
-2) Change privileges on /opt/bin to use AppMan as normal user:
-
-`sudo chown -R $USER /opt/bin/`
-
-3) Add this line at the end of your /home/$USER/.bashrc :
-
-`export PATH=$PATH:/opt/bin`
-
-4) Download the application's list:
-
-`appman -s` or `appman sync`
+There are two kind of updates in AppMan:
+- `appman -u` uses [appimageupdate](https://github.com/AppImage/AppImageUpdate) to update those programs with inbuild instructions (so not all);
+- `appman -i [argument]` ie the reinstallation of the program, also the launcher will be replaced.
+In the first case will be created a *zs-old backup file as big as the original in /opt/bin that you can remove with `appman -c`, in the second case the original file will be replaced directly.
 
 
 # Uninstall
 To remove AppMan and all its related dependencies and symlinks, copy/paste this command:
 
 `sudo rm /opt/bin/appman /opt/bin/appimagetool /opt/bin/appimageupdate /opt/bin/pkg2appimage /usr/bin/appimagetool /usr/bin/appimageupdate /usr/bin/pkg2appimage`
+
+
+# How to add applications
+AppMan aims to give updated programs to every distribution with all the basic info on each application (command `appman -a [program]`).
+
+By downloading [sheets I provided](https://github.com/ivan-hc/AppMan/tree/main/models), all you need to do is to replace the UPPERCASE words (SAMPLE, LINK, LAUNCHER...). The sheets are needed to speed up uploading of the programs in the list. The main "flavours are for:
+- Recipe that requires... [pkg2appimage recipes](https://github.com/ivan-hc/AppMan/blob/main/models/PKG2APPIMAGE-installer);
+- Recipe that requires downloading and unpacking of [DEB packages](https://github.com/ivan-hc/AppMan/blob/main/models/LOCALDEB-installer);
+- Recipe that requires downloading and unpacking of [Arch Linux packages](https://github.com/ivan-hc/AppMan/blob/main/models/LOCALARCH-installer);
+- [AppImages](https://github.com/ivan-hc/AppMan/blob/main/models/WGETSIMPLE-installer).
+
+Given these patterns, you can easily test them on your PC (command `appman -c` to remove any /tmp folder from /opt/bin).
+Any pull request is welcome, I will do my best to make it possible.
+
+
+# How to prepare an application - structure
+Considering your applications is called $APPNAME:
+- FOLDER - CONTENT: a script $APPNAME-installer (see above), a $APPNAME.svg icon, an about-$APPNAME info file;
+- FOLDER AND FILE'S NAME: $APPNAME must be the same for the folder ($APPNAME), the script ($APPNAME-installer), the icon ($APPNAME.svg) and the info (about-$APPNAME);
+- SCRIPT - COMMANDS: using my scripts, replace APP=SAMPLE with APP=$APPNAME, pay attention to each line you wrote;
+- SCRIPT - LAUNCHER: using my scripts, replace the word "LAUNCHER" with the content of the original .desktop file, the only thing you must replace is the path of the executable file, ie "Exec=$APPNAME", it must be "Exec=/opt/bin/$APPNAME" or the app cannot be launched from the main menu;
+- ICON: only in .SVG format (however icon is optional if the program is only usable from the command line);
+- ABOUT FILE: it must containt basic info of the app, ie a brief description, update kind (`appman -u` or `appman -i $APPNAME`) and one or two links to the official site and/or the source.
 
 
 # Difference between AppMan and AppImaged (AppImage Daemon)
@@ -85,19 +111,6 @@ Practically AppImaged contrasts with my idea of "order".
 That's why I believe that a centralized repository from which installing software and manage updates is the best choice for each system: installing/removing/updating programs, cleaning up obsolete files, creating launchers with icons using the original files and getting basic info from each application by typing a command, with all the programs in one place and without extension for a faster typing, like a normal executable binary file. This seems to be the description of the mainstream package managers APT or Pacman, but I'm don't talking about them. AppImages and other standalone programs managed by AppMan are totally independent from each other, what they need is just a system on which to run.
 
 [AppImage](https://appimage.org/) is a standalone package format, the best choice if you are looking for an alternative packaging format to use on multiple GNU/Linux distributions, it uses fewer resources than Snap and Flatpak, and works completely autonomously, using its own libraries. AppMan aims to give it a home to stay.
-
-
-# How to add applications
-AppMan aims to give updated programs to every distribution with all the basic info on each application (command `appman -a [program]`).
-
-By downloading [sheets I provided](https://github.com/ivan-hc/AppMan/tree/main/models), all you need to do is to replace the UPPERCASE words (SAMPLE, LINK, LAUNCHER...). The sheets are needed to speed up uploading of the programs in the list. The main "flavours are for:
-- Recipe that requires... [pkg2appimage recipes](https://github.com/ivan-hc/AppMan/blob/main/models/PKG2APPIMAGE-installer);
-- Recipe that requires downloading and unpacking of [DEB packages](https://github.com/ivan-hc/AppMan/blob/main/models/LOCALDEB-installer);
-- Recipe that requires downloading and unpacking of [Arch Linux packages](https://github.com/ivan-hc/AppMan/blob/main/models/LOCALARCH-installer);
-- [AppImages](https://github.com/ivan-hc/AppMan/blob/main/models/WGETSIMPLE-installer).
-
-Given these patterns, you can easily test them on your PC (command `appman -c` to remove any /tmp folder from /opt/bin).
-Any pull request is welcome, I will do my best to make it possible.
 
 
 # About me
