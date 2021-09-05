@@ -1,0 +1,9 @@
+
+ Platform Tools:
+ 
+ Command line utilities to manage Android devices, including adb and fastboot.
+ 
+ UPDATE: appman -i platform-tools
+ 
+ SITE: https://developer.android.com/studio/releases/platform-tools
+ 
