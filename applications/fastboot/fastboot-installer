@@ -1,9 +1,7 @@
 #!/bin/sh
 
-APP=fastboot
-
 cd /opt/bin;
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/platform-tools/platform-tools-installer;
 chmod a+x /opt/bin/platform-tools-installer;
 exec /opt/bin/platform-tools-installer;
-rm /opt/bin/$APP-installer
+rm /opt/bin/fastboot-installer
