@@ -97,9 +97,10 @@ Considering your applications is called $APPNAME:
 - FOLDER AND FILE'S NAME: $APPNAME must be the same for the folder ($APPNAME), the script ($APPNAME-installer), the icon ($APPNAME.svg) and the info (about-$APPNAME);
 - SCRIPT - COMMANDS: using my scripts, replace APP=SAMPLE with APP=$APPNAME, pay attention to each line you wrote;
 - SCRIPT - LAUNCHER: using my scripts, replace the word "LAUNCHER" with the content of the original .desktop file, the only thing you must replace is the path of the executable file, ie "Exec=$APPNAME", it must be "Exec=/opt/bin/$APPNAME" or the app cannot be launched from the main menu;
-- ICON: only in .SVG format (however icon is optional if the program is only usable from the command line);
+- ICON: only in .SVG or .PNG format, with the same name of $APPNAME;
 - ABOUT FILE: it must containt basic info of the app, ie a brief description, update kind (`appman -u` or `appman -i $APPNAME`) and one or two links to the official site and/or the source.
 
+NOTE: launcher and icons are optional if the program is only usable from the command line.
 
 # Difference between AppMan and AppImaged (AppImage Daemon)
 The main reason that prompted me to create AppMan is the order and precision that was lacking in other standalone application managers for AppImage packages, often poorly packaged by their developers, so creating launchers and icons is a disaster.
