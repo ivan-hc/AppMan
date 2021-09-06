@@ -1,6 +1,8 @@
 
  Brave - A privacy oriented Web Browser based on Chromium.
  
+ This is a transistional script needed to install "brave-browser".
+ 
  UPDATE: appman -i brave
  
  SITE: https://brave.com/
