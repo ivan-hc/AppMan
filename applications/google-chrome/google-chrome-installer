@@ -8,8 +8,8 @@ cd ./tmp;
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;
 ar x ./*.deb;
 tar xf ./data.tar.xz;
-mv /opt/bin/tmp/opt/google/chrome /home/$USER/.local/share/google-chrome;
-ln -s /home/$USER/.local/share/google-chrome/chrome /opt/bin/google-chrome;
+mv /opt/bin/tmp/opt/google/chrome /opt/bin/.google-chrome;
+ln -s /opt/bin/.google-chrome/chrome /opt/bin/google-chrome;
 
 rm /home/$USER/.local/share/applications/google-chrome.desktop;
 echo "[Desktop Entry]
