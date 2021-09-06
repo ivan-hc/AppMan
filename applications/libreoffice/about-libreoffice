@@ -1,6 +1,9 @@
 
  Libreoffice - free and open source Office suite.
- This is the Stable version (libreoffice-still).
+ 
+ This is the Stable version.
+ 
+ This is a transistional script needed to install "libreoffice-still".
  
  UPDATE: appman -i libreoffice
  
