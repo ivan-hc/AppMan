@@ -2617,4 +2617,4 @@ echo "  Libreoffice is provided by https://www.libreoffice.org ";
 echo " AppImages at https://www.libreoffice.org/download/appimage";
 echo "";
 
-rm -R /opt/bin/tmp /opt/bin/$APP-installer
+rm -R /opt/bin/tmp /opt/bin/*-installer
