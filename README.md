@@ -87,6 +87,7 @@ By downloading [sheets I provided](https://github.com/ivan-hc/AppMan/tree/main/m
 - [AppImages](https://github.com/ivan-hc/AppMan/blob/main/models/WGETSIMPLE-installer).
 
 Given these patterns, you can easily test them on your PC (command `appman -c` to remove any /tmp folder from /opt/bin).
+
 [Any pull request is welcome](https://github.com/ivan-hc/AppMan/pulls), I will do my best to make it possible.
 
 
