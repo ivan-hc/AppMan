@@ -25,4 +25,4 @@ mv ./firefox-stable.svg /home/$USER/.local/share/icons/;
 echo "";
 echo " Firefox AppImage is provided by https://github.com/srevinsaju ";
 echo "";
-rm -R /opt/bin/tmp /opt/bin/firefox-stable-installer
+rm -R /opt/bin/tmp /opt/bin/*-installer
