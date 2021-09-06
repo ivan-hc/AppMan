@@ -2,7 +2,6 @@
 
 URL1="https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin"
 URL2="https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications"
-LOCAL=".local/share"
 LOCAL1=".local/share/applications"
 LOCAL2=".local/share/icons"
 
@@ -72,7 +71,7 @@ case "$1" in
 	case $2 in
 	*) for var in $2;
 	do read -p "Do you wish to REMOVE this program (y,N)?" yn
-		case $yn in [Yy]* ) rm -R -f /opt/bin/$2 /opt/bin/.$2 ~/$LOCAL1/$2.desktop ~/$LOCAL2/$2.svg ~/$LOCAL2/$2.png ~/$LOCAL/$2;
+		case $yn in [Yy]* ) rm -R -f /opt/bin/$2 /opt/bin/.$2 ~/$LOCAL1/$2.desktop ~/$LOCAL2/$2.svg ~/$LOCAL2/$2.png;
 		cd /opt/bin && find . -xtype l -exec rm {} \;;
 		echo ""; echo "Application removed!"; echo ""; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
 	esac
