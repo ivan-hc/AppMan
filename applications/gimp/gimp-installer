@@ -13,6 +13,7 @@ chmod a+x /opt/bin/$APP;
 mkdir /home/$USER/.local/share/appimagekit;
 touch /home/$USER/.local/share/appimagekit/GNUImageManipulationProgram_no_desktopintegration;
 
+rm /home/$USER/.local/share/applications/$APP.desktop;
 echo "[Desktop Entry]
 Version=1.0
 Type=Application
