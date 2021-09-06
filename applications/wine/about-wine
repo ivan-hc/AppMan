@@ -1,0 +1,11 @@
+
+ WINE - Compatibility layer to run MS Windows apps and games on GNU/Linux.
+ 
+ This version is for both x86 and x64 MS Windows programs.
+ 
+ This is a transistional script needed to install "wine-stable".
+ 
+ UPDATE: appman -u
+ 
+ SITE: https://www.winehq.org
+ SOURCE: https://github.com/mmtrt/WINE_AppImage
