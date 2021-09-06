@@ -3,7 +3,7 @@
  
  Command line utilities to manage Android devices, including adb and fastboot.
  
- This is a transistional script needed to install "platform-tools".
+ This is a transitional script needed to install "platform-tools".
  
  UPDATE: appman -i platform-tools
  
