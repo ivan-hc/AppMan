@@ -40,7 +40,7 @@ case "$1" in
   	ls /home/$USER/.cache/appman-list 2>/dev/null ; echo "" ;;
   '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;
   '-c'|'clean') cd /opt/bin; echo ""; echo "Removing all unnecessary files and folders..."; sleep 1;
-	echo ""; rm -R *zs-old tmp *-installer; echo ""; echo "All unnecessary files and folders are removed, exiting."; echo "" ;;
+	rm -R -f *zs-old tmp *-installer *.zip *.deb; echo ""; echo "All unnecessary files and folders are removed, exiting."; echo "" ;;
   '-s'|'sync') echo "Updating application's list, please wait...";
   	cd /opt/bin; mv ./appman ./appman-zs-old; wget -q $URL1/appman && chmod a+x ./appman;
 	rm -R -f /home/$USER/.cache/appman-list; mkdir /home/$USER/.cache/appman-list; cd /home/$USER/.cache/appman-list;
