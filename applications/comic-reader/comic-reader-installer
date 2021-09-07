@@ -1,0 +1,34 @@
+#!/bin/sh
+
+APP=comic-reader
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+
+v=$(wget -q https://api.github.com/repos/Pong420/Comic-Reader/releases/latest -O - | grep -E tag_name | awk -F '[""]' '{print $4}')
+wget https://github.com/Pong420/Comic-Reader/releases/download/$v/Comic.Reader-$v.AppImage;
+
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=Comic Reader
+Comment=An Electron based comic reader.
+Exec=/opt/bin/comic-reader
+Terminal=false
+Type=Application
+Icon=comic-reader
+StartupWMClass=Comic Reader
+Categories=Utility;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " Comic Reader is provided by https://github.com/Pong420/Comic-Reader";
+echo "";
+
+rm -R /opt/bin/tmp /opt/bin/$APP-installer
