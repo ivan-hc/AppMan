@@ -1,0 +1,26 @@
+#!/bin/sh
+
+APP=SAMPLE
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+
+v=$(wget -q https://api.github.com/repos/SAMPLE/SAMPLE/releases/latest -O - | grep -E tag_name | awk -F '[""]' '{print $4}')
+wget https://github.com/SAMPLE/SAMPLE/releases/download/$v/SAMPLE-$v-x86_64.AppImage;
+
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "LAUNCHER" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " SAMPLE is provided by URL";
+echo "";
+
+rm -R /opt/bin/tmp /opt/bin/$APP-installer
