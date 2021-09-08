@@ -3,7 +3,7 @@
 cd /opt/bin;
 mkdir tmp;
 cd ./tmp;
-wget -r -A .AppImage -nd https://github.com/stenzek/duckstation/releases/download/latest/duckstation-qt-x64.AppImage;
+wget https://github.com/$(wget https://github.com/stenzek/duckstation/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
 cd ..;
 mv ./tmp/*AppImage ./duckstation;
 chmod a+x /opt/bin/duckstation;
