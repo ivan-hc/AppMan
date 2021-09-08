@@ -92,15 +92,18 @@ Given these patterns, you can easily test them on your PC (command `appman -c` t
 
 
 # How to prepare an application - structure
-Considering your applications is called $APPNAME:
-- FOLDER - CONTENT: a script $APPNAME-installer (see above), a $APPNAME.svg icon, an about-$APPNAME info file;
-- FOLDER AND FILE'S NAME: $APPNAME must be the same for the folder ($APPNAME), the script ($APPNAME-installer), the icon ($APPNAME.svg) and the info (about-$APPNAME);
-- SCRIPT - COMMANDS: using my scripts, replace APP=SAMPLE with APP=$APPNAME, pay attention to each line you wrote;
-- SCRIPT - LAUNCHER: using my scripts, replace the word "LAUNCHER" with the content of the original .desktop file, the only thing you must replace is the path of the executable file, ie "Exec=$APPNAME", it must be "Exec=/opt/bin/$APPNAME" or the app cannot be launched from the main menu;
-- ICON: only in .SVG or .PNG format, with the same name of $APPNAME;
-- ABOUT FILE: it must containt basic info of the app, ie a brief description, update kind (`appman -u` or `appman -i $APPNAME`) and one or two links to the official site and/or the source.
+Considering your applications is called $APPNAME, the structure looks like this:
 
-NOTE: launcher and icons are optional if the program is only usable from the command line.
+                           $APPNAME (folder)
+           ____________________|______________________
+          |                    |                      |
+    $APPNAME.svg       $APPNAME-installer        about-$APPNAME
+
+- "$APPNAME" is the folder, it contains a script $APPNAME-installer (see above), a $APPNAME.svg icon, an about-$APPNAME info file. $APPNAME must be the same for the folder ($APPNAME), the script ($APPNAME-installer), the icon ($APPNAME.svg) and the info (about-$APPNAME);
+- "$APPNAME-installer" is a script, using [my models](https://github.com/ivan-hc/AppMan/tree/main/models) replace APP=SAMPLE with APP=$APPNAME, pay attention to each line you wrote. Replace the word "LAUNCHER" with the content of the original .desktop file of the application, the only thing you must replace is the path of the is the line "Exec", ie "Exec=$APPNAME", it must be "Exec=/opt/bin/$APPNAME" or the app cannot be launched from the main menu (NOTE, launcher is optional if the program is only usable from the command line);
+- "$APPNAME.svg" is the icon, only in SVG format, with the same name of $APPNAME (NOTE, like the launcher, icon is optional if the program is only usable from the command line);
+- "$about-APPNAME" is a simple text file, it must containt basic info of the app, ie a brief description, update kind (`appman -u` or `appman -i $APPNAME`) and one or two links to the official site and/or the source (take [this one](https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/firefox/about-firefox) as a model).
+
 
 # Difference between AppMan and AppImaged (AppImage Daemon)
 The main reason that prompted me to create AppMan is the order and precision that was lacking in other standalone application managers for AppImage packages, often poorly packaged by their developers, so creating launchers and icons is a disaster.
