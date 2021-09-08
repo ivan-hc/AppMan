@@ -5,7 +5,7 @@ APP=shotcut
 cd /opt/bin;
 mkdir tmp;
 cd ./tmp;
-wget https://github.com/mltframework/shotcut/releases/download/v21.08.29/shotcut-linux-x86_64-210829.AppImage;
+wget https://github.com/$(wget https://github.com/mltframework/shotcut/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
 cd ..;
 mv ./tmp/*mage ./$APP;
 chmod a+x /opt/bin/$APP;
