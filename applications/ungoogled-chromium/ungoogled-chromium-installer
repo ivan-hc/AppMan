@@ -144,7 +144,7 @@ Comment[vi]=Truy cập Internet
 Comment[zh_CN]=访问互联网
 Comment[zh_HK]=連線到網際網路
 Comment[zh_TW]=連線到網際網路
-Exec=/opt/bin/chromium %U
+Exec=/opt/bin/ungoogled-chromium %U
 Terminal=false
 X-MultipleArgs=false
 Type=Application
@@ -211,7 +211,7 @@ Name[uk]=Нове вікно
 Name[vi]=Cửa sổ Mới
 Name[zh_CN]=新建窗口
 Name[zh_TW]=開新視窗
-Exec=/opt/bin/chromium
+Exec=/opt/bin/ungoogled-chromium
 
 [Desktop Action new-private-window]
 Name=New Incognito Window
@@ -263,7 +263,7 @@ Name[uk]=Нове вікно в режимі анонімного перегля
 Name[vi]=Cửa sổ ẩn danh mới
 Name[zh_CN]=新建隐身窗口
 Name[zh_TW]=新增無痕式視窗
-Exec=/opt/bin/chromium --incognito" >> /home/$USER/.local/share/applications/$APP.desktop;
+Exec=/opt/bin/ungoogled-chromium --incognito" >> /home/$USER/.local/share/applications/$APP.desktop;
 
 wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
 mv ./$APP.svg /home/$USER/.local/share/icons/;
