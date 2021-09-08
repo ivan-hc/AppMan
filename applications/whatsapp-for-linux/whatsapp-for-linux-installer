@@ -7,7 +7,7 @@ mkdir tmp;
 cd ./tmp;
 
 
-wget https://github.com/eneshecan/whatsapp-for-linux/releases/download/v1.2.1/whatsapp-for-linux_1.2.1_amd64.deb;
+wget https://github.com/$(wget https://github.com/eneshecan/whatsapp-for-linux/releases/latest -O - | egrep '/.*/.*/.*deb' -o);
 ar x ./*.deb;
 tar xf ./data.tar.xz;
 mkdir $APP.AppDir;
