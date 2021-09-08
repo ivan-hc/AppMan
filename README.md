@@ -3,6 +3,7 @@ AppImage Manager that works like APT or Pacman.
 
 The main goal of this tool is to provide the same updated applications to multiple GNU/Linux distributions without having to change the package manager or the distro itself. This means that whatever distro you use, you will not miss your favorite programs or the need for a more updated version. AppMan also aims to be a merger for GNU / Linux distributions, using not just AppImage as the main package format, but also other standalone programs, so without having to risk breaking anything on your system: no daemons, no shared libraries. Just your program and your launcher.
 
+[AppImage](https://appimage.org/) is a standalone package format, the best choice if you are looking for an alternative packaging format to use on multiple GNU/Linux distributions, it uses fewer resources than Snap and Flatpak, and works completely autonomously, using its own libraries. AppMan aims to give it a home to stay.
 
 # How it works
 AppMan uses [precompiled scripts](https://github.com/ivan-hc/AppMan/tree/main/applications) that can download applications from their main sites or compiling them using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in AUR. The final result is a ready to use AppImage with a launcher and its icon (where needed, command line tools like "wine" can be only used from the terminal) for your favourite application. The complete list is available [here](https://github.com/ivan-hc/AppMan/tree/main/applications).
@@ -103,22 +104,6 @@ Considering your applications is called $APPNAME, the structure looks like this:
 - "$APPNAME-installer" is a script, using [my models](https://github.com/ivan-hc/AppMan/tree/main/models) replace APP=SAMPLE with APP=$APPNAME, pay attention to each line you wrote. Replace the word "LAUNCHER" with the content of the original .desktop file of the application, the only thing you must replace is the path of the is the line "Exec", ie "Exec=$APPNAME", it must be "Exec=/opt/bin/$APPNAME" or the app cannot be launched from the main menu (NOTE, launcher is optional if the program is only usable from the command line);
 - "$APPNAME.svg" is the icon, only in SVG format, with the same name of $APPNAME (NOTE, like the launcher, icon is optional if the program is only usable from the command line);
 - "$about-APPNAME" is a simple text file, it must containt basic info of the app, ie a brief description, update kind (`appman -u` or `appman -i $APPNAME`) and one or two links to the official site and/or the source (take [this one](https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/firefox/about-firefox) as a model).
-
-
-# Difference between AppMan and AppImaged (AppImage Daemon)
-The main reason that prompted me to create AppMan is the order and precision that was lacking in other standalone application managers for some AppImages poorly packaged by their developers, so creating launchers and icons is a disaster.
-
-[Appimaged](https://github.com/probonopd/go-appimage), for example, is a great project born from a great idea... but in creating launchers and icons for the menu it relies on what it finds in the AppDir main directory. Infact sometimes the developer creates his AppImage by inserting an empty *.desktop  file (launcher) in AppDir along a generic icon, both required in the packaging process, but inconsistent with what we would expect. The result is a completely unusable icon in the menu. And this is not limited to the graphical programs, Appimaged also creates launchers for command line tools.
-
-Appimaged only detects programs with the .AppImage extension placed in folders of its choice. If you choose [a different path](https://github.com/probonopd/go-appimage/blob/master/src/appimaged/README.md#notes), Appimaged will continue to automatically create a non hidden "Applications" folder in the user's home, even if you delete it (and this is frustrating).
-
-Finally the updates: for me they never worked (except with AppimageUpdate), but maybe I'm doing something wrong.
-
-Practically AppImaged contrasts with my idea of "order".
-
-That's why I believe that a centralized repository from which installing software and manage updates is the best choice for each system: installing/removing/updating programs, cleaning up obsolete files, creating launchers with icons using the original files and getting basic info from each application by typing a command, with all the programs in one place and without extension for a faster typing, like a normal executable binary file. This seems to be the description of the mainstream package managers APT or Pacman, but I'm don't talking about them. AppImages and other standalone programs managed by AppMan are totally independent from each other, what they need is just a system on which to run.
-
-[AppImage](https://appimage.org/) is a standalone package format, the best choice if you are looking for an alternative packaging format to use on multiple GNU/Linux distributions, it uses fewer resources than Snap and Flatpak, and works completely autonomously, using its own libraries. AppMan aims to give it a home to stay.
 
 
 # About me
