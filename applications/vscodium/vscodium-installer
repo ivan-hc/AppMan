@@ -5,7 +5,7 @@ APP=vscodium
 cd /opt/bin;
 mkdir tmp;
 cd ./tmp;
-wget -r -A .AppImage -nd https://github.com/VSCodium/vscodium/releases/tag/1.59.1;
+wget https://github.com/$(wget https://github.com/VSCodium/vscodium/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
 cd ..;
 mv ./tmp/*mage ./$APP;
 rm ./vscod*zs-old;
