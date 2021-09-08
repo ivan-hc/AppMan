@@ -1,10 +1,8 @@
 #!/bin/sh
 
 cd /opt/bin
-wget https://github.com/audacity/audacity/releases/download/Audacity-3.0.4/audacity-linux-3.0.4-x86_64.AppImage;
+wget https://github.com/$(wget https://github.com/audacity/audacity/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
 mv ./audacity*AppImage ./audacity;
-appimageupdate -O ./audacity;
-rm ./audacit*zs-old;
 chmod a+x /opt/bin/audacity;
 echo "[Desktop Entry]
 Name=Audacity
