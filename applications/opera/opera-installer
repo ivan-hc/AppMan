@@ -1,0 +1,89 @@
+#!/bin/sh
+
+APP=opera
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+
+echo "Downloading Opera Browser from https://www.opera.com, please wait...";
+
+VERSION=$(wget -q "https://get.geo.opera.com/pub/opera/desktop/" -O - | grep href | tail -n 1 | cut -d '"' -f 2 | cut -d / -f 1)
+wget -nv -c "https://get.geo.opera.com/pub/opera/desktop/$VERSION/linux/opera-stable_${VERSION}_amd64.deb"
+ar x ./*.deb;
+tar xf ./data.tar.xz;
+mkdir $APP.AppDir;
+mv ./usr ./$APP.AppDir;
+echo "[Desktop Entry]
+Version=1.0
+Name=Opera
+GenericName=Web browser
+Comment=Fast and secure web browser
+Exec=opera %U
+Terminal=false
+Icon=opera
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;application/x-opera-download;
+Actions=new-window;new-private-window;
+
+[Desktop Action new-window]
+Name=New Window
+Exec=opera --new-window
+
+[Desktop Action new-private-window]
+Name=New Private Window
+Exec=opera --incognito" >> ./$APP.AppDir/opera.desktop;
+cp ./$APP.AppDir/usr/share/icons/hicolor/128x128/apps/*.png ./$APP.AppDir;
+
+echo '#!/bin/sh
+
+HERE="$(dirname "$(readlink -f "${0}")")"
+export PATH="${HERE}/usr/bin/:${HERE}/usr/lib/x86_64-linux-gnu/opera/:${HERE}/usr/lib/x86_64-linux-gnu/opera/swiftshader/:${HERE}/usr/lib/x86_64-linux-gnu/opera/localization/:${HERE}/usr/lib/x86_64-linux-gnu/opera/resources/:${HERE}/usr/share/mime/packages/:${HERE}/usr/share/menu/:${HERE}/usr/share/lintian/overrides/:${HERE}/usr/share/doc/opera-stable/${PATH:+:$PATH}"
+export LD_LIBRARY_PATH="${HERE}/usr/lib/x86_64-linux-gnu/opera/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+export XDG_DATA_DIRS="${HERE}/usr/share/${XDG_DATA_DIRS:+:$XDG_DATA_DIRS}"
+EXEC="${HERE}/usr/bin/opera"
+exec "${EXEC}"' >> /opt/bin/tmp/$APP.AppDir/AppRun;
+chmod a+x /opt/bin/tmp/$APP.AppDir/AppRun;
+
+ARCH=x86_64 appimagetool -n ./$APP.AppDir;
+
+cd ..;
+
+mv /opt/bin/tmp/*AppImage /opt/bin/$APP; 
+chmod a+x /opt/bin/$APP;
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Version=1.0
+Name=Opera
+GenericName=Web browser
+Comment=Fast and secure web browser
+Exec=/opt/bin/opera %U
+Terminal=false
+Icon=opera
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;application/x-opera-download;
+Actions=new-window;new-private-window;
+
+[Desktop Action new-window]
+Name=New Window
+Exec=/opt/bin/opera --new-window
+TargetEnvironment=Unity
+
+[Desktop Action new-private-window]
+Name=New Private Window
+Exec=/opt/bin/opera --incognito
+TargetEnvironment=Unity" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+echo "";
+
+echo "   This version of Opera comes from the official DEB";
+echo "                   'appman -i opera' ";
+echo " to install a new and more updated version, when available ";
+
+echo "";
+rm -R /opt/bin/$APP-installer /opt/bin/tmp
