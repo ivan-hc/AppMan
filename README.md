@@ -106,7 +106,7 @@ Considering your applications is called $APPNAME, the structure looks like this:
 
 
 # Difference between AppMan and AppImaged (AppImage Daemon)
-The main reason that prompted me to create AppMan is the order and precision that was lacking in other standalone application managers for AppImage packages, often poorly packaged by their developers, so creating launchers and icons is a disaster.
+The main reason that prompted me to create AppMan is the order and precision that was lacking in other standalone application managers for some AppImages poorly packaged by their developers, so creating launchers and icons is a disaster.
 
 [Appimaged](https://github.com/probonopd/go-appimage), for example, is a great project born from a great idea... but in creating launchers and icons for the menu it relies on what it finds in the AppDir main directory. Infact sometimes the developer creates his AppImage by inserting an empty *.desktop  file (launcher) in AppDir along a generic icon, both required in the packaging process, but inconsistent with what we would expect. The result is a completely unusable icon in the menu. And this is not limited to the graphical programs, Appimaged also creates launchers for command line tools.
 
