@@ -6,6 +6,7 @@
  This is a transitional script needed to install "libreoffice-still".
  
  UPDATE: appman -i libreoffice
+ REMOVE: appman -r libreoffice-still
  
  SITE: https://www.libreoffice.org
  SOURCE: https://www.libreoffice.org/download/appimage
