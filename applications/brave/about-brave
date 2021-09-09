@@ -4,6 +4,7 @@
  This is a transitional script needed to install "brave-browser".
  
  UPDATE: appman -i brave
+ REMOVE: appman -r brave-browser
  
  SITE: https://brave.com/
  SOURCE: https://github.com/AppImage/pkg2appimage
