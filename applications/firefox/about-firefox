@@ -4,6 +4,7 @@
  This is a transitional script needed to install "firefox-stable".
  
  UPDATE: appman -u
+ REMOVE: appman -r firefox-stable
  
  SITE: https://www.mozilla.org/firefox
  SOURCE: https://github.com/srevinsaju/Firefox-Appimage
