@@ -10,6 +10,7 @@ cd ..;
 mv ./tmp/*mage ./$APP;
 chmod a+x /opt/bin/$APP;
 
+rm /home/$USER/.local/share/applications/$APP.desktop;
 echo "[Desktop Entry]
 Name=balenaEtcher
 Exec=/opt/bin/etcher --no-sandbox %U
