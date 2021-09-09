@@ -275,4 +275,4 @@ echo "";
 echo "          this is the Unofficial AppImage";
 echo "";
 
-rm -R /opt/bin/$APP-installer /opt/bin/tmp
+rm -R /opt/bin/*-installer /opt/bin/tmp
