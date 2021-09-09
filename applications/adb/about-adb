@@ -5,6 +5,7 @@
  
  This is a transitional script needed to install "platform-tools".
  
- UPDATE: appman -i platform-tools
+ UPDATE: appman -i adb
+ REMOVE: appman -r platform-tools
  
  SITE: https://developer.android.com/studio/releases/platform-tools
