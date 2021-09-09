@@ -1,0 +1,6 @@
+
+ This Linux Deployment Tool, linuxdeployqt, takes an application as input and makes it self-contained by copying in the resources that the application uses (like libraries, graphics, and plugins) into a bundle.
+ 
+ UPDATE: appman -u
+ 
+ SITE: https://github.com/probonopd/linuxdeployqt
