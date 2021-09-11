@@ -67,7 +67,7 @@ case "$1" in
 	shift
 	done;;
   '-l'|'list') echo ""; echo "  List of applications available in the AppMan repository:"; echo ""; cat /home/$USER/.cache/appman-list;
-  	echo ""; echo '    Search for one or more term in this list using "appman -q [keywords]"'; echo "";;
+  	echo ""; echo '    Search for one or more terms in this list using "appman -q [keywords]"'; echo "";;
   '-q'|'query')
 	while [ -n "$1" ]
 	do
