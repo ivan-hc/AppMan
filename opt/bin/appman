@@ -10,23 +10,32 @@ case "$1" in
   ''|'-h'|'help') echo "
   AppMan - App Manager for GNU/Linux that uses and creates AppImages
 
-  Usage:	appman [option] [argument]
+
+ Usage:		appman [option] [argument]
   where option include:
   
   -a, about	Show basic info on each application, link to the website
   		and/or the source and how to update some applications.  
   -i, install 	Install a program.
   -r, remove	Remove a program. 
-  
-  Usage:	appman [option]
-  where option include:
 
+
+ Usage:		appman [option] [keywords]
+  where option include:  
+
+  -q, query	Use one or more keywords to search for in AppMan's list
+  		of available applications.
+  
+
+ Usage:		appman [option]
+  where option include:
+  
   -h, help	Print this message.
   -c, clean	Remove all unnecessary files and folders, i.e. backup
   		files, installation scripts, and temporary folders.
   -f, files	Programs installed on the system.
   -l, list	Shows the list of apps available in the repository.
-  -s, sync	Updates the list of available apps.
+  -s, sync	Updates AppMan and the list of available apps.
   -u, update	Update AppImages using 'appimageupdate', if the update
   		info is embedded into the AppImage itself by the developer.
 
@@ -35,17 +44,6 @@ case "$1" in
   
   " ;;
 
-  '-f'|'files') echo ""; echo "  Applications installed on the system:"; echo ""; ls /opt/bin; echo "" ;;
-  '-l'|'list') echo ""; echo "  List of applications available in the AppMan repository:"; echo "";
-  	ls /home/$USER/.cache/appman-list 2>/dev/null ; echo "" ;;
-  '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;
-  '-c'|'clean') cd /opt/bin; echo ""; echo "Removing all unnecessary files and folders..."; sleep 1;
-	rm -R -f *zs-old tmp *-installer *.zip *.deb; echo ""; echo "All unnecessary files and folders are removed, exiting."; echo "" ;;
-  '-s'|'sync') echo "Updating application's list, please wait...";
-  	cd /opt/bin; mv ./appman ./appman-zs-old; wget -q $URL1/appman && chmod a+x ./appman;
-	rm -R -f /home/$USER/.cache/appman-list; mkdir /home/$USER/.cache/appman-list; cd /home/$USER/.cache/appman-list;
-	wget -q --recursive --no-parent -nd https://github.com/ivan-hc/AppMan/tree/main/applications;
-	rm ./applications ./robots.txt; echo "...done!";;
   '-a'|'about')
 	while [ -n "$1" ]
 	do
@@ -56,12 +54,26 @@ case "$1" in
 	esac
 	shift
 	done;;
+  '-c'|'clean') cd /opt/bin; echo ""; echo "Removing all unnecessary files and folders..."; sleep 1;
+	rm -R -f *zs-old tmp *-installer *.zip *.deb; echo ""; echo "All unnecessary files and folders are removed, exiting."; echo "" ;;
+  '-f'|'files') echo ""; echo "  Applications installed on the system:"; echo ""; ls /opt/bin; echo "" ;;
   '-i'|'install')
 	while [ -n "$1" ]
 	do
 	case $2 in
 	*) for var in $2;
 	do wget $URL2/$2/$2-installer && chmod a+x /opt/bin/$2-installer && exec /opt/bin/$2-installer; done
+	esac
+	shift
+	done;;
+  '-l'|'list') echo ""; echo "  List of applications available in the AppMan repository:"; echo ""; cat /home/$USER/.cache/appman-list;
+  	echo '    Search for one or more term in this list using "appman -q [keywords]"'; echo "";;
+  '-q'|'query')
+	while [ -n "$1" ]
+	do
+	case $2 in
+	*) for var in $2;
+	do echo "" && grep -i -E $2 /home/$USER/.cache/appman-list; echo ""; done
 	esac
 	shift
 	done;;
@@ -76,6 +88,11 @@ case "$1" in
 		echo ""; echo "Application removed!"; echo ""; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
 	esac
 	shift
-	done;;	
+	done;;
+  '-s'|'sync') echo ""; echo " Updating application's list, please wait..."; echo "";
+  	cd /opt/bin; mv ./appman ./appman-zs-old; wget -q $URL1/appman && chmod a+x ./appman;
+	rm -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
+	echo ' ...done! Use "appman -l" to see the whole list of available apps.'; echo "";;
+  '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;	
   *) exec /opt/bin/appman ;;
 esac
