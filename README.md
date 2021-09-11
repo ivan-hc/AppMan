@@ -56,6 +56,8 @@ The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/I
   
   `-l`, `list`	Shows the list of apps available in the repository.
   
+  `-q [keywords]`, `query [keywords]` Use one or more keywords to search for in AppMan's list	of available applications.
+  
   `-r [argument]`, `remove [argument]`	Removes a program (requires confirmation, default is N).
   
   `-s`, `sync`	Updates the list of available apps.
