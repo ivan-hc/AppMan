@@ -1,143 +1,142 @@
 
-◆ adb: Android Debug Bridge (installer for "platform-tools").
+◆ adb : Android Debug Bridge (installer for "platform-tools").
 
-◆ anydesk: Remote desktop application distributed by AnyDesk Software GmbH.
+◆ anydesk : Remote desktop application distributed by AnyDesk Software GmbH.
 
-◆ appimagetool: Tool to generate an AppImage from an existing AppDir.
+◆ appimagetool : Tool to generate an AppImage from an existing AppDir.
 
-◆ appimageupdate: Tool to update an AppImage using embedded information.
+◆ appimageupdate : Tool to update an AppImage using embedded information.
 
-◆ audacity: Multiplatform Audio Editor.
+◆ audacity : Multiplatform Audio Editor.
 
-◆ avidemux: Multiplatform Video Editor.
+◆ avidemux : Multiplatform Video Editor.
 
-◆ blender: Very fast and versatile 3D modeller/renderer.
+◆ blender : Very fast and versatile 3D modeller/renderer.
 
-◆ brave: A privacy oriented Web Browser (installer for "brave-browser").
+◆ brave : A privacy oriented Web Browser (installer for "brave-browser").
 
-◆ brave-browser: A privacy oriented Web Browser based on Chromium.
+◆ brave-browser : A privacy oriented Web Browser based on Chromium.
 
-◆ celestia: Real time 3D space simulator.
+◆ celestia : Real time 3D space simulator.
 
-◆ celestia-dev: Real time 3D space simulator (developer edition).
+◆ celestia-dev : Real time 3D space simulator (developer edition).
 
-◆ chromium: Web Browsers. Open source version of Google Chrome and Brave.
+◆ chromium : Web Browsers. Open source version of Google Chrome and Brave.
 
-◆ chromium-dev: Beta version of Chromium Web Browsers.
+◆ chromium-dev : Beta version of Chromium Web Browsers.
 
-◆ comic-reader: Electron based comic reader.
+◆ comic-reader : Electron based comic reader.
 
-◆ cpu-x: Software that gathers information on CPU, motherboard and more.
+◆ cpu-x : Software that gathers information on CPU, motherboard and more.
 
-◆ discord: All-in-one voice and text chat for gamers.
+◆ discord : All-in-one voice and text chat for gamers.
 
-◆ dropbox: A free cloud service (Unofficial AppImage).
+◆ dropbox : A free cloud service (Unofficial AppImage).
 
-◆ duckstation: PlayStation 1, aka PSX games Emulator.
+◆ duckstation : PlayStation 1, aka PSX games Emulator.
 
-◆ elements: Desktop App which displays the periodic table.
+◆ elements : Desktop App which displays the periodic table.
 
-◆ emacs: Text editor for developers.
+◆ emacs : Text editor for developers.
 
-◆ ember: Client for the WorldForge virtual world system (game).
+◆ ember : Client for the WorldForge virtual world system (game).
 
-◆ endless-sky: Space exploration and combat game.
+◆ endless-sky : Space exploration and combat game.
 
-◆ etcher: Flash OS images to SD cards and USB drives, safely and easily.
+◆ etcher : Flash OS images to SD cards and USB drives, safely and easily.
 
-◆ fastboot: Tool to flash Android devices (installer for "platform-tools").
+◆ fastboot : Tool to flash Android devices (installer for "platform-tools").
 
-◆ firefox: Web Browser (installer for "firefox-stable").
+◆ firefox : Web Browser (installer for "firefox-stable").
 
-◆ firefox-dev: Fast, powerful and extensible Web Browser (Developer Edition).
+◆ firefox-dev : Fast, powerful and extensible Web Browser (Developer Edition).
 
-◆ firefox-esr: Fast, powerful and extensible Web Browser (ESR Edition).
+◆ firefox-esr : Fast, powerful and extensible Web Browser (ESR Edition).
 
-◆ firefox-nightly: Fast, powerful and extensible Web Browser (Beta Edition).
+◆ firefox-nightly : Fast, powerful and extensible Web Browser (Beta Edition).
 
-◆ firefox-stable: Fast, powerful and extensible Web Browser.
+◆ firefox-stable : Fast, powerful and extensible Web Browser.
 
-◆ freecad: Free and open source AutoCAD alternative.
+◆ freecad : Free and open source AutoCAD alternative.
 
-◆ gimp: GNU Image Manipulation Program is a cross-platform image editor.
+◆ gimp : GNU Image Manipulation Program is a cross-platform image editor.
 
-◆ goglauncher: A simple Linux launcher for GOG Games.
+◆ goglauncher : A simple Linux launcher for GOG Games.
 
-◆ google-chrome: Web Browser provided by Google.
+◆ google-chrome : Web Browser provided by Google.
 
-◆ ice: Webapp manager, convert your favourite Web pages to standalone apps.
+◆ ice : Webapp manager, convert your favourite Web pages to standalone apps.
 
-◆ kdenlive: Video Editors provided for KDE.
+◆ kdenlive : Video Editors provided for KDE.
 
-◆ libreoffice: Office suite (installer for "libreoffice-still").
+◆ libreoffice : Office suite (installer for "libreoffice-still").
 
-◆ libreoffice-fresh: Free and open source Office suite (Latest version).
+◆ libreoffice-fresh : Free and open source Office suite (Latest version).
 
-◆ libreoffice-still: Free and open source Office suite (Stable version).
+◆ libreoffice-still : Free and open source Office suite (Stable version).
 
-◆ linuxdeployqt: Convert a linux program to an AppDir or an AppImage.
+◆ linuxdeployqt : Convert a linux program to an AppDir or an AppImage.
 
-◆ mediathekview: Broadcast manager in German language.
+◆ mediathekview : Broadcast manager in German language.
 
-◆ microsoft-edge-dev: Web Browser provided by Microsoft (Developer Edition).
+◆ microsoft-edge-dev : Web Browser provided by Microsoft (Developer Edition).
  
-◆ minecraft-launcher: Game downloader and launcher for Minecraft.
+◆ minecraft-launcher : Game downloader and launcher for Minecraft.
 
-◆ ocenaudio: Multiplatform Audio Editor.
+◆ ocenaudio : Multiplatform Audio Editor.
 
-◆ onlyoffice: Office Suite with full support for MS Windows formats and cloud.
+◆ onlyoffice : Office Suite with full support for MS Windows formats and cloud.
 
-◆ openshot: A powerful Video Editor.
+◆ openshot : A powerful Video Editor.
 
-◆ opera: Fast and secure web browser.
+◆ opera : Fast and secure web browser.
 
-◆ photogimp: A patched version of GIMP for Adobe Photoshop users.
+◆ photogimp : A patched version of GIMP for Adobe Photoshop users.
 
-◆ photopea: Advanced Photo Editor for professional use.
+◆ photopea : Advanced Photo Editor for professional use.
 
-◆ pkg2appimage: Utility to convert .yml recipes to AppDir (see appimagetool).
+◆ pkg2appimage : Utility to convert .yml recipes to AppDir (see appimagetool).
 
-◆ platform-tools: Suite of command line utilities to manage Android devices.
+◆ platform-tools : Suite of command line utilities to manage Android devices.
 
-◆ qbittorrent: A powerful QT-based Bittorrent Client.
+◆ qbittorrent : A powerful QT-based Bittorrent Client.
 
-◆ shotcut: A powerful Video Editor.
+◆ shotcut : A powerful Video Editor.
 
-◆ spotify: A proprietary music streaming service (Unofficial AppImage).
+◆ spotify : A proprietary music streaming service (Unofficial AppImage).
 
-◆ sqlitebrowser: DB Browser is a light GUI editor for SQLite databases.
+◆ sqlitebrowser : DB Browser is a light GUI editor for SQLite databases.
 
-◆ tag-editor: Tag Editor (supports MP4, ID3, Vorbis, Opus, FLAC and Matroska).
+◆ tag-editor : Tag Editor (supports MP4, ID3, Vorbis, Opus, FLAC and Matroska).
 
-◆ telegram: Desktop version of Telegram messaging app.
+◆ telegram : Desktop version of Telegram messaging app.
 
-◆ thunderbird: Free and open source eMail client.
+◆ thunderbird : Free and open source eMail client.
 
-◆ ungoogled-chromium: Chromium Web Browser version without Google services.
+◆ ungoogled-chromium : Chromium Web Browser version without Google services.
 
-◆ vivaldi: Advanced Web Browser (installer for "vivaldi-stable").
+◆ vivaldi : Advanced Web Browser (installer for "vivaldi-stable").
 
-◆ vivaldi-snapshot: Advanced Web Browser (Latest Version).
+◆ vivaldi-snapshot : Advanced Web Browser (Latest Version).
 
-◆ vivaldi-stable: Advanced Web Browser (Stable Version).
+◆ vivaldi-stable : Advanced Web Browser (Stable Version).
 
-◆ vscodium: Community-driven, freely-licensed binary distribution of MS VSCode.
+◆ vscodium : Community-driven, freely-licensed binary distribution of MS VSCode.
 
-◆ walc: WhatsApp Linux Client (Unofficial).
+◆ walc : WhatsApp Linux Client (Unofficial).
 
-◆ whatsapp-for-linux: WhatsApp Linux Client (Unofficial).
+◆ whatsapp-for-linux : WhatsApp Linux Client (Unofficial).
 
-◆ whatsapp-nativefier: Electron-based WhatsApp Linux Client (Unofficial).
+◆ whatsapp-nativefier : Electron-based WhatsApp Linux Client (Unofficial).
 
-◆ wine: Compatibility layer to run Windows apps (installer for "wine-stable").
+◆ wine : Compatibility layer to run Windows apps (installer for "wine-stable").
 
-◆ wine-bottles: Profile manager for WINE to easily install Windows programs.
+◆ wine-bottles : Profile manager for WINE to easily install Windows programs.
 
-◆ wine-devel: Compatibility layer to run x86_64 Windows programs (Dev Edition).
+◆ wine-devel : Compatibility layer to run x86_64 Windows programs (Dev Edition).
 
-◆ wine-stable: Compatibility layer to run x86_64 Windows programs (Stable).
+◆ wine-stable : Compatibility layer to run x86_64 Windows programs (Stable).
 
-◆ wine-staging: Compatibility layer to run x86_64 Windows programs (Staging).
+◆ wine-staging : Compatibility layer to run x86_64 Windows programs (Staging).
 
-◆ zoom: Video Conferencing and Web Conferencing Service.
-
+◆ zoom : Video Conferencing and Web Conferencing Service.
