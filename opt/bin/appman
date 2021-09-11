@@ -91,7 +91,7 @@ case "$1" in
 	done;;
   '-s'|'sync') echo ""; echo " Updating application's list, please wait..."; echo "";
   	cd /opt/bin; mv ./appman ./appman-zs-old; wget -q $URL1/appman && chmod a+x ./appman;
-	rm -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
+	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
 	echo ' ...done! Use "appman -l" to see the whole list of available apps.'; echo "";;
   '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;	
   *) exec /opt/bin/appman ;;
