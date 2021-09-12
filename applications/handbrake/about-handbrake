@@ -1,0 +1,7 @@
+
+ HandBrake is an open-source multiplatform video transcoder.
+ 
+ UPDATE: appman -i handbrake
+ 
+ SITE: https://handbrake.fr
+ SOURCE: https://github.com/cmatomic/Handbrake-AppImage

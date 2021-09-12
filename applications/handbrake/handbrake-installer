@@ -1,0 +1,33 @@
+#!/bin/sh
+
+APP=handbrake
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget -r -A .AppImage -nd https://github.com/cmatomic/Handbrake-AppImage/releases/tag/continuous;
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=HandBrake
+GenericName=Media Transcoder
+Comment=Transcodes DVD, Bluray, and other media
+Exec=/opt/bin/handbrake %f
+Icon=HandBrake
+Terminal=false
+Type=Application
+Categories=GTK;AudioVideo;Video;
+MimeType=application/ogg;application/x-extension-mp4;application/x-flac;application/x-matroska;application/x-ogg;audio/ac3;audio/mp4;audio/mpeg;audio/ogg;audio/x-flac;audio/x-matroska;audio/x-mp3;audio/x-mpeg;audio/x-vorbis;video/mp4;video/mp4v-es;video/mpeg;video/msvideo;video/quicktime;video/vnd.divx;video/x-avi;video/x-m4v;video/x-matroska;video/x-mpeg;video/ogg;video/x-ogm+ogg;video/x-theora+ogg;x-content/video-dvd;x-content/video-vcd;x-content/video-svcd;
+X-AppImage-Version=1.1.2.glibc2.17" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " HandBrake AppImage is provided by https://github.com/cmatomic ";
+echo "";
+
+rm -R /opt/bin/tmp /opt/bin/$APP-installer
