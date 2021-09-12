@@ -17,7 +17,7 @@ The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/I
 
 # Installation
 
-1) Download and run the [INSTALL](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) script, this will create an /opt/bin directory, three symlinks [for each appimage tool needed](https://github.com/ivan-hc/AppMan/tree/main/appimage-tools) directly in /usr/bin:
+1) Download and run the [INSTALL](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) script, this will create a directory /opt/bin where "appman" will be downloaded together with "appimagetool", "appimageupdate" and "pkg2appimage", for the latter three symlinks will also be created in /usr/bin:
 
 `wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL`
 
@@ -49,6 +49,8 @@ The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/I
   `-a [argument]`, `about [argument]` Show basic info on each application, link to the website and/or the source and how to update some applications.
 
   `-c`, `clean`	Remove all unnecessary files and folders, i.e. backup	files, installation scripts, and temporary folders.
+  
+  `-d [argument]`, `debug [argument]`  Allows you to check for errors and malfunctions when	starting the program or during its entire execution.
   
   `-f`, `files`	Programs installed on the system.
   
