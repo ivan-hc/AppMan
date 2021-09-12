@@ -1,6 +1,6 @@
 #!/bin/sh
 
-APP=SAMPLE
+APP=vlc
 
 cd /opt/bin;
 mkdir tmp;
