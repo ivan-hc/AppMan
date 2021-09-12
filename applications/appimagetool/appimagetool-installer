@@ -1,6 +1,6 @@
 #!/bin/sh
 
 cd /opt/bin;
-wget https://github.com/ivan-hc/AppMan/raw/main/appimage-tools/appimagetool;
+wget https://github.com/ivan-hc/AppMan/raw/main/applications/appimagetool/appimagetool;
 chmod a+x /opt/bin/appimagetool;
 sudo ln -s /opt/bin/appimagetool /usr/bin/appimagetool;
