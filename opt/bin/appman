@@ -16,6 +16,8 @@ case "$1" in
   
   -a, about	Show basic info on each application, link to the website
   		and/or the source and how to update some applications.  
+  -d, debug	Allows you to check for errors and malfunctions when
+  		starting the program or during its entire execution.
   -i, install 	Install a program.
   -r, remove	Remove a program. 
 
@@ -56,6 +58,15 @@ case "$1" in
 	done;;
   '-c'|'clean') cd /opt/bin; echo ""; echo "Removing all unnecessary files and folders..."; sleep 1;
 	rm -R -f *zs-old tmp *-installer *.zip *.deb; echo ""; echo "All unnecessary files and folders are removed, exiting."; echo "" ;;
+  '-d'|'debug')
+	while [ -n "$1" ]
+	do
+	case $2 in
+	*) for var in $2;
+	do $2; done
+	esac
+	shift
+	done;;
   '-f'|'files') echo ""; echo "  Applications installed on the system:"; echo ""; ls /opt/bin; echo "" ;;
   '-i'|'install')
 	while [ -n "$1" ]
