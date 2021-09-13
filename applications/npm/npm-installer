@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd /opt/bin;
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/nodejs/nodejs-installer;
+chmod a+x /opt/bin/nodejs-installer;
+exec /opt/bin/nodejs-installer;
