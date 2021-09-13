@@ -1,0 +1,30 @@
+#!/bin/sh
+
+APP=gifcurry
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget -r -A .AppImage -nd https://github.com/lettier/gifcurry/releases;
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Type=Application
+Name=Gifcurry
+Comment=The open-source, Haskell-built video editor for GIF makers.
+Icon=com.lettier.gifcurry
+Categories=AudioVideo;Video;Graphics;Utility;
+Terminal=false
+Exec=/opt/bin/gifcurry" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " Gifcurry is provided by https://github.com/lettier/gifcurry ";
+echo "";
+
+rm -R /opt/bin/tmp /opt/bin/$APP-installer
