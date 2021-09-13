@@ -1,0 +1,31 @@
+#!/bin/sh
+
+APP=lanshare
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget -r -A .AppImage -nd https://github.com/abdularis/LAN-Share/releases/tag/continuous;
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Type=Application
+Name=LANShare
+Categories=Network;
+GenericName=LAN File Transfer
+Comment=Local Area Network (LAN) File Transfer
+Icon=lanshare
+Exec=/opt/bin/lanshare
+X-AppImage-Version=3ccbe2c" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " LAN Share is provided by https://github.com/abdularis/LAN-Share ";
+echo "";
+
+rm -R /opt/bin/tmp /opt/bin/$APP-installer
