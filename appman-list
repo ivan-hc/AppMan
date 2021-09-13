@@ -47,6 +47,8 @@
 ◆ microsoft-edge-dev : Web Browser provided by Microsoft (Developer Edition).
 ◆ minecraft-launcher : Game downloader and launcher for Minecraft.
 ◆ movie-monad : Free and simple to use video player made with Haskell.
+◆ nodejs : JavaScript runtime built on Chrome's V8 JavaScript engine.
+◆ npm : Package manager for Node.js (installer for "nodejs").
 ◆ ocenaudio : Multiplatform Audio Editor.
 ◆ onlyoffice : Office Suite with full support for MS Windows formats and cloud.
 ◆ openshot : A powerful Video Editor.
