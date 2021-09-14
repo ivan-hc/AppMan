@@ -20,8 +20,8 @@ echo "    ...done, now you can use all programs installed with node / npm normal
 echo "";
 sleep 1;
 echo "  NOTE: run this command after every program installed with node / npm"; 
-echo "";' >> /opt/bin/nodejs/bin/nodejs-programs;
-chmod a+x /opt/bin/nodejs/bin/nodejs-programs;
+echo "";' >> /opt/bin/nodejs/bin/npm-programs;
+chmod a+x /opt/bin/nodejs/bin/npm-programs;
 
 ln -s /opt/bin/nodejs/bin/* /opt/bin/;
 
