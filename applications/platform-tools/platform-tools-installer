@@ -1,16 +1,52 @@
 #!/bin/sh
 
+APP=platform-tools
+
 cd /opt/bin;
-wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip;
-rm -R ./platform-tools;
+mkdir tmp;
+cd tmp;
+wget https://dl.google.com/android/repository/$APP-latest-linux.zip;
 unzip ./platform-tools-latest-linux.zip;
-rm ./platform-tools-latest-linux.zip;
-ln -s /opt/bin/platform-tools/adb /opt/bin/adb;
-ln -s /opt/bin/platform-tools/fastboot /opt/bin/fastboot;
+cd ..;
+rm -R ./.$APP;
+mv ./tmp/$APP ./.$APP
+
+ln -s /opt/bin/.$APP/adb /opt/bin/adb;
+ln -s /opt/bin/.$APP/dmtracedump /opt/bin/dmtracedump;
+ln -s /opt/bin/.$APP/e2fsdroid /opt/bin/e2fsdroid;
+ln -s /opt/bin/.$APP/etc1tool /opt/bin/etc1tool;
+ln -s /opt/bin/.$APP/fastboot /opt/bin/fastboot;
+ln -s /opt/bin/.$APP/hprof-conv /opt/bin/hprof-conv;
+ln -s /opt/bin/.$APP/make_f2fs /opt/bin/make_f2fs;
+ln -s /opt/bin/.$APP/make_f2fs_casefold /opt/bin/make_f2fs_casefold;
+ln -s /opt/bin/.$APP/mke2fs /opt/bin/mke2fs;
+ln -s /opt/bin/.$APP/sload_f2fs /opt/bin/sload_f2fs;
+ln -s /opt/bin/.$APP/sqlite3 /opt/bin/sqlite3;
+
+echo '#!/bin/sh
+
+echo "";
+echo " Android SDK Platform Tools Suite includes:";
+echo "";
+echo " - adb";
+echo " - dmtracedump";
+echo " - e2fsdroid";
+echo " - etc1tool";
+echo " - fastboot";
+echo " - hprof-conv";
+echo " - make_f2fs";
+echo " - make_f2fs_casefold";
+echo " - mke2fs";
+echo " - sload_f2fs";
+echo " - sqlite3";
+echo "";' >> /opt/bin/$APP;
+chmod a+x /opt/bin/$APP;
+
 echo "";
 echo "  This is the complete Android-SDK Platform Tools suite";
-echo "            including 'adb' and 'fastboot'";
+echo "";
 echo "              'appman -i platform-tools' ";
+echo "";
 echo "to install a new and more updated version, when available ";
 echo "";
-rm -R -f /opt/bin/*-installer
+rm -R -f /opt/bin/tmp /opt/bin/*-installer
