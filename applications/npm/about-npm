@@ -1,13 +1,10 @@
 
  Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
  
- This is a transitional script needed to install "nodejs".
+ USAGE: ./npm <options> [arguments]
  
- Once installed using AppMan, symlinks from /opt/bin/nodejs will be
- shown in /opt/bin (node, npm, npx and corepack) along with a script
- named "npm-programs", needed to load new links each time a new
- program has been installed with NodeJS tools.
-  
+ This is a transitional script needed to install "nodejs".
+   
  REMOVE: appman -r nodejs (this removes NodeJS and all its related programs). 
  
  SITE: https://nodejs.org
