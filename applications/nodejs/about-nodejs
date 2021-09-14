@@ -4,7 +4,7 @@
  Once installed using AppMan, symlinks from /opt/bin/nodejs will be
  shown in /opt/bin (node, npm, npx and corepack) along with a script
  named "npm-programs", needed to load new links each time a new
- program installed with NodeJS tools.
+ program has been installed with NodeJS tools.
   
  This is NodeJS 16.9.1.
  
