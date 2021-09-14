@@ -1,0 +1,31 @@
+#!/bin/sh
+
+APP=youtube-music
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/th-ch/youtube-music/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=YouTube Music
+Exec=/opt/bin/youtube-music --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=youtube-music
+StartupWMClass=YouTube Music
+Comment=YouTube Music Desktop App - including custom plugins
+Categories=AudioVideo;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " YouTube Music AppImage is provided by https://github.com/th-ch ";
+echo "";
+
+rm -R /opt/bin/tmp /opt/bin/$APP-installer
