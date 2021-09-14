@@ -1,5 +1,7 @@
 #!/bin/sh
 
+APP=nodejs
+
 cd /opt/bin;
 mkdir tmp;
 cd ./tmp;
