@@ -5,7 +5,7 @@ APP=SAMPLE
 cd /opt/bin;
 mkdir tmp;
 cd ./tmp;
-wget LINK;
+wget https://github.com/SAMPLE/SAMPLE/releases/latest/*AppImage;
 cd ..;
 mv ./tmp/*mage ./$APP;
 chmod a+x /opt/bin/$APP;
