@@ -33,4 +33,4 @@ echo "";
 echo " NodeJS is provided by https://nodejs.org ";
 echo "";
 
-rm -R /opt/bin/tmp /opt/bin/$APP-installer
+rm -R /opt/bin/tmp /opt/bin/*-installer
