@@ -26,7 +26,7 @@ ln -s /opt/bin/.$APP/sqlite3 /opt/bin/sqlite3;
 echo '#!/bin/sh
 
 echo "";
-echo " Android SDK Platform Tools Suite includes:";
+echo " Android SDK Platform Tools Suite includes the following commands:";
 echo "";
 echo " - adb";
 echo " - dmtracedump";
@@ -39,6 +39,8 @@ echo " - make_f2fs_casefold";
 echo " - mke2fs";
 echo " - sload_f2fs";
 echo " - sqlite3";
+echo "";
+echo " USAGE:  <command> --help";
 echo "";' >> /opt/bin/$APP;
 chmod a+x /opt/bin/$APP;
 
