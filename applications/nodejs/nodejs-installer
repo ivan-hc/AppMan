@@ -13,16 +13,18 @@ mv ./node-v16.9.1-linux-x64 /opt/bin/.nodejs;
 rm /opt/bin/nodejs;
 echo '#!/bin/sh
 echo "";
-echo " NodeJS commands are in /opt/bin/.nodejs/bin/, use ./ before each command."
+echo " NodeJS programs are in /opt/bin/.nodejs/bin/, use ./ before each command."
 echo "";
 echo " For example:";
 echo "";
-echo " ./npm <options> [arguments]";
+echo " ./program <options> [arguments]";
 echo "";
 cd /opt/bin/.nodejs/bin;
 exec bash;' >> /opt/bin/nodejs;
 chmod a+x /opt/bin/nodejs;
 cd ..;
+
+ln -s /opt/bin/.nodejs/bin/* /opt/bin/;
 
 rm /home/$USER/.local/share/applications/$APP.desktop;
 echo "[Desktop Entry]
