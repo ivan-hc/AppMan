@@ -8,26 +8,33 @@ cd ./tmp;
 wget https://nodejs.org/dist/v16.9.1/node-v16.9.1-linux-x64.tar.gz;
 tar fx node-v16.9.1-linux-x64.tar.gz
 rm -R /opt/bin/.nodejs;
-mv ./node-v16.9.1-linux-x64 /opt/bin/nodejs;
+mv ./node-v16.9.1-linux-x64 /opt/bin/.nodejs;
 
+rm /opt/bin/nodejs;
 echo '#!/bin/sh
 echo "";
-echo " Script to create symbolic links for programs installed with NodeJS to /opt/bin";
+echo " NodeJS commands are in /opt/bin/.nodejs/bin/, use ./ before each command."
 echo "";
-echo "  Please wait...";
-sleep 2;
-ln -s /opt/bin/nodejs/bin/* /opt/bin/ 2> /dev/null;
+echo " For example:";
 echo "";
-echo "    ...done, now you can use all programs installed with node / npm normally";
+echo " ./npm <options> [arguments]";
 echo "";
-sleep 1;
-echo "  NOTE: run this command after every program installed with node / npm"; 
-echo "";' >> /opt/bin/nodejs/bin/npm-programs;
-chmod a+x /opt/bin/nodejs/bin/npm-programs;
-
-ln -s /opt/bin/nodejs/bin/* /opt/bin/;
-
+cd /opt/bin/.nodejs/bin;
+exec bash;' >> /opt/bin/nodejs;
+chmod a+x /opt/bin/nodejs;
 cd ..;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=NodeJS (Terminal)
+Comment=A JavaScript runtime built on Chrome's V8 JavaScript engine.
+Exec=exo-open --working-directory /opt/bin/.nodejs/bin --launch TerminalEmulator
+Icon=nodejs
+Type=Application
+Categories=Development;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
 
 echo "";
 echo " NodeJS is provided by https://nodejs.org ";
