@@ -1,6 +1,6 @@
 
  Android SDK Platform Tools is a complete suite of Command line utilities
- needed to manage Android devices. The tools included are:
+ needed to manage Android devices. The commands included are:
   - adb
   - dmtracedump
   - e2fsdroid
@@ -12,6 +12,8 @@
   - mke2fs
   - sload_f2fs
   - sqlite3
+  
+ USAGE:  <command> --help
  
  REMOVE: appman -r platform-tools (this removes the complete suite)
  UPDATE: appman -i platform-tools
