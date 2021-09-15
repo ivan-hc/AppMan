@@ -1,8 +1,11 @@
 #!/bin/sh
 
-cd /opt/bin
+cd /opt/bin;
+mkdir tmp;
+cd tmp;
 wget https://download.onlyoffice.com/install/desktop/editors/linux/DesktopEditors-x86_64.AppImage;
-mv ./DesktopEditors*AppImage ./onlyoffice;
+cd ..;
+mv ./tmp/DesktopEditors*AppImage ./onlyoffice;
 chmod a+x /opt/bin/onlyoffice;
 rm /home/$USER/.local/share/applications/onlyoffice.desktop;
 echo "[Desktop Entry]
@@ -24,4 +27,4 @@ mv ./onlyoffice.svg /home/$USER/.local/share/icons/;
 echo "";
 echo " OnlyOffice AppImage is provided by https://www.onlyoffice.com ";
 echo "";
-rm /opt/bin/onlyoffice-installer
+rm -R /opt/bin/tmp /opt/bin/onlyoffice-installer
