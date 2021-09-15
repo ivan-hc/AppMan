@@ -1,8 +1,11 @@
 #!/bin/sh
 
-cd /opt/bin
+cd /opt/bin;
+mkdir tmp;
+cd tmp;
 wget https://github.com/$(wget https://github.com/bottlesdevs/Bottles/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
-mv ./Bottles*AppImage ./wine-bottles;
+cd ..;
+mv ./tmp/Bottles*AppImage ./wine-bottles;
 chmod a+x /opt/bin/wine-bottles;
 
 rm /home/$USER/.local/share/applications/wine-bottles.desktop
@@ -86,4 +89,4 @@ mv ./wine-bottles.svg /home/$USER/.local/share/icons/;
 echo "";
 echo " WINE Bottles AppImage is provided by https://github.com/bottlesdevs ";
 echo "";
-rm /opt/bin/wine-bottles-installer
+rm -R /opt/bin/tmp /opt/bin/wine-bottles-installer
