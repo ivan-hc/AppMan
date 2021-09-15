@@ -68,4 +68,4 @@ mv ./audacity.svg /home/$USER/.local/share/icons/;
 echo "";
 echo " Audacity AppImage is provided by https://github.com/audacity ";
 echo "";
-rm -R /tmp /opt/bin/audacity-installer
+rm -R /opt/bin/tmp /opt/bin/audacity-installer
