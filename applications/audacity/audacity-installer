@@ -1,8 +1,11 @@
 #!/bin/sh
 
-cd /opt/bin
+cd /opt/bin;
+mkdir tmp;
+cd tmp;
 wget https://github.com/$(wget https://github.com/audacity/audacity/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
-mv ./audacity*AppImage ./audacity;
+cd ..;
+mv ./tmp/audacity*AppImage ./audacity;
 chmod a+x /opt/bin/audacity;
 echo "[Desktop Entry]
 Name=Audacity
@@ -65,4 +68,4 @@ mv ./audacity.svg /home/$USER/.local/share/icons/;
 echo "";
 echo " Audacity AppImage is provided by https://github.com/audacity ";
 echo "";
-rm /opt/bin/audacity-installer
+rm -R /tmp /opt/bin/audacity-installer
