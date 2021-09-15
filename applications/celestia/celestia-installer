@@ -1,8 +1,11 @@
 #!/bin/sh
 
 cd /opt/bin
+mkdir tmp;
+cd tmp;
 wget https://download.opensuse.org/repositories/home:/munix9/AppImage/celestia-latest-x86_64.AppImage;
-mv ./celestia*AppImage ./celestia;
+cd ..;
+mv ./tmp/celestia*AppImage ./celestia;
 chmod a+x ./celestia;
 
 echo "[Desktop Entry]
@@ -20,4 +23,4 @@ Terminal=false
 MimeType=application/x-celestia-script;" >> /home/$USER/.local/share/applications/celestia.desktop;
 wget wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/celestia/celestia.svg;
 mv ./celestia.svg /home/$USER/.local/share/icons/;
-rm /opt/bin/celestia-installer
+rm -R /opt/bin/tmp /opt/bin/celestia-installer
