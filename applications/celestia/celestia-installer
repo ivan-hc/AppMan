@@ -23,4 +23,11 @@ Terminal=false
 MimeType=application/x-celestia-script;" >> /home/$USER/.local/share/applications/celestia.desktop;
 wget wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/celestia/celestia.svg;
 mv ./celestia.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo "           Celestia is provided by https://celestia.space";
+echo "";
+echo " AppImage at https://download.opensuse.org/repositories/home:/munix9/AppImage";
+echo "";
+
 rm -R /opt/bin/tmp /opt/bin/celestia-installer
