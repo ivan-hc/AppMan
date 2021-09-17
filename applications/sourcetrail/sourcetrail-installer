@@ -1,0 +1,35 @@
+#!/bin/sh
+
+APP=sourcetrail
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/CoatiSoftware/Sourcetrail/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=Sourcetrail
+GenericName=Sourcetrail
+X-GNOME-FullName=Sourcetrail
+Comment=Source Code Explorer
+Exec=/opt/bin/sourcetrail
+Icon=sourcetrail
+Terminal=false
+Type=Application
+MimeType=application/x-sourcetrail;
+Categories=Development;
+StartupNotify=true
+StartupWMClass=Sourcetrail" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " Sourcetrail is provided by https://www.sourcetrail.com ";
+echo "";
+
+rm -R /opt/bin/tmp /opt/bin/$APP-installer
