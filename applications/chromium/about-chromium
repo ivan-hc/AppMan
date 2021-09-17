@@ -1,7 +1,9 @@
 
  Chromium - Open source version of Google Chrome, Brave and other Web Browsers.
  
+ This is the stock version for Slackware, from  https://slackware.uk
+ 
  UPDATE: appman -i chromium
  
  SITE: https://www.chromium.org
- SOURCE: http://packages.linuxmint.com
+ SOURCE: https://slackware.uk/people/alien/sbrepos/current/x86_64/chromium
