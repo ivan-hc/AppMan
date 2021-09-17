@@ -5,4 +5,5 @@
  UPDATE: appman -i ungoogled-chromium
  
  SITE: https://ungoogled-software.github.io
- SOURCE: https://github.com/Eloston/ungoogled-chromium
+ SOURCES: https://github.com/Eloston/ungoogled-chromium
+          https://github.com/mdedonno1337/ungoogled-chromium-binaries
