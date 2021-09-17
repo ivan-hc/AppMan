@@ -1,0 +1,7 @@
+
+ Microsoft Edge (Beta Edition) - A browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
+ 
+ UPDATE: appman -i microsoft-edge-beta
+ 
+ SITE: https://www.microsoftedgeinsider.com
+ SOURCE: https://github.com/AppImage/pkg2appimage
