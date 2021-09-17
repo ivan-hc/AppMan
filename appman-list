@@ -10,7 +10,7 @@
 ◆ brave-browser : A privacy oriented Web Browser based on Chromium.
 ◆ celestia : Real time 3D space simulator.
 ◆ celestia-dev : Real time 3D space simulator (developer edition).
-◆ chromium : Web Browser. Open source version of Google Chrome and Brave.
+◆ chromium : Web Browser. Open source base of Google Chrome, Edge and Brave.
 ◆ chromium-dev : Beta version of Chromium Web Browser.
 ◆ comic-reader : Electron based comic reader.
 ◆ cpu-x : Software that gathers information on CPU, motherboard and more.
