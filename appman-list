@@ -1,5 +1,6 @@
 ◆ adb : Android Debug Bridge (installer for "platform-tools").
 ◆ anydesk : Remote desktop application distributed by AnyDesk Software GmbH.
+◆ apk-editor-studio : Easy to use APK (Android) reverse-engineering tool.
 ◆ appimagetool : Tool to generate an AppImage from an existing AppDir.
 ◆ appimageupdate : Tool to update an AppImage using embedded information.
 ◆ arcade-manager : Manage your rom collection (Games/Retropie & Recalbox).
