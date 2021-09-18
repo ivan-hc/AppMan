@@ -1,0 +1,34 @@
+#!/bin/sh
+
+APP=advanced-rest-client
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/advanced-rest-client/arc-electron/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=AdvancedRestClient
+Exec=/opt/bin/advanced-rest-client --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=advanced-rest-client
+StartupWMClass=AdvancedRestClient
+Comment=The Advanced REST Client desktop application.
+MimeType=x-scheme-handler/arc-file;
+Categories=Development;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo "        Advanced REST Client is provided by";
+echo "";
+echo " https://github.com/advanced-rest-client/arc-electron ";
+echo "";
+
+rm -R /opt/bin/tmp /opt/bin/$APP-installer
