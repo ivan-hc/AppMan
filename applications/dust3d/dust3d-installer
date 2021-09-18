@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=dust3d
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/huxingyi/dust3d/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Type=Application
+Name=Dust3D
+Icon=dust3d
+Exec=/opt/bin/dust3d
+Categories=Graphics;
+Comment=A quick 3D modeling tool" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " Dust3D is provided by https://dust3d.org ";
+echo "";
+
+rm -R /opt/bin/tmp /opt/bin/$APP-installer
