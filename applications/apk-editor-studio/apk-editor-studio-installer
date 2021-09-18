@@ -1,0 +1,35 @@
+#!/bin/sh
+
+APP=apk-editor-studio
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/kefir500/apk-editor-studio/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Version=1.0
+Type=Application
+Name=APK Editor Studio
+Comment=Edit APK resources
+GenericName=APK editor
+Exec=/opt/bin/apk-editor-studio %F
+Icon=apk-editor-studio
+Categories=Utility;Qt;
+Terminal=false
+MimeType=application/vnd.android.package-archive;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo "      APK Editor Studio is provided by";
+echo "";
+echo " https://github.com/kefir500/apk-editor-studio ";
+echo "";
+
+rm -R /opt/bin/tmp /opt/bin/$APP-installer
