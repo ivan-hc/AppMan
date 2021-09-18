@@ -1,0 +1,69 @@
+#!/bin/sh
+
+APP=supertuxkart
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+
+
+wget https://github.com/$(wget https://github.com/supertuxkart/stk-code/releases/latest -O - | egrep '/.*/.*/.*-linux.tar.xz' -o);
+tar xf ./*.tar.xz;
+mv ./SuperTuxKart-*-linux ./$APP.AppDir;
+echo "[Desktop Entry]
+Name=SuperTuxKart
+Icon=supertuxkart
+GenericName=A kart racing game
+GenericName[da]=Et kart racerspil
+GenericName[de]=Ein Kart-Rennspiel
+GenericName[fr]=Un jeu de karting
+GenericName[gl]=Xogo de carreiras con karts
+GenericName[pl]=Wyścigi gokartów
+GenericName[ro]=Un joc de curse cu carturi
+Exec=supertuxkart
+Terminal=false
+StartupNotify=false
+Type=Application
+Categories=Game;ArcadeGame;
+Keywords=tux;game;race;" >> ./$APP.AppDir/$APP.desktop;
+cp ./$APP.AppDir/data/supertuxkart_512.png ./$APP.AppDir;
+mv ./$APP.AppDir/supertuxkart_512.png ./$APP.AppDir/$APP.png
+mv ./$APP.AppDir/run_game.sh ./$APP.AppDir/AppRun;
+
+ARCH=x86_64 appimagetool -n ./$APP.AppDir;
+
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=SuperTuxKart
+Icon=supertuxkart
+GenericName=A kart racing game
+GenericName[da]=Et kart racerspil
+GenericName[de]=Ein Kart-Rennspiel
+GenericName[fr]=Un jeu de karting
+GenericName[gl]=Xogo de carreiras con karts
+GenericName[pl]=Wyścigi gokartów
+GenericName[ro]=Un joc de curse cu carturi
+Exec=/opt/bin/supertuxkart
+Terminal=false
+StartupNotify=false
+Type=Application
+Categories=Game;ArcadeGame;
+Keywords=tux;game;race;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+echo "";
+
+echo "";
+echo "   SuperTuxKart is provided by https://supertuxkart.net";
+echo "";
+echo " This AppImage is created using the official build for Linux";
+echo "";
+
+echo "";
+rm -R /opt/bin/$APP-installer /opt/bin/tmp
