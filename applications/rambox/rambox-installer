@@ -1,0 +1,31 @@
+#!/bin/sh
+
+APP=rambox
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/ramboxapp/community-edition/releases/latest -O - | egrep '/.*/.*/.*64.AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=Rambox
+Exec=/opt/bin/rambox %U
+Terminal=false
+Type=Application
+Icon=rambox
+StartupWMClass=Rambox
+Categories=Network;
+Comment=Free and Open Source messaging and emailing app that combines common web applications into one." >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " Rambox is provided by https://rambox.app ";
+echo "";
+
+rm -R /opt/bin/tmp /opt/bin/$APP-installer
