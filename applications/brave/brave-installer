@@ -1,6 +1,3 @@
 #!/bin/sh
 
-cd /opt/bin;
-wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/brave-browser/brave-browser-installer;
-chmod a+x /opt/bin/brave-browser-installer;
-exec /opt/bin/brave-browser-installer;
+appman -i brave-browser
