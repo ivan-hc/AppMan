@@ -7,4 +7,4 @@
  REMOVE: appman -r brave-browser
  
  SITE: https://brave.com/
- SOURCE: https://github.com/AppImage/pkg2appimage
+ SOURCE: https://github.com/srevinsaju/Brave-AppImage
