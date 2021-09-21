@@ -1,6 +1,3 @@
 #!/bin/sh
 
-cd /opt/bin;
-wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/firefox-stable/firefox-stable-installer;
-chmod a+x /opt/bin/firefox-stable-installer;
-exec /opt/bin/firefox-stable-installer;
+appman -i firefox-stable
