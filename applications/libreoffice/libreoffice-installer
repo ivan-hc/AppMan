@@ -1,6 +1,13 @@
 #!/bin/sh
 
-cd /opt/bin;
-wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/libreoffice-still/libreoffice-still-installer;
-chmod a+x /opt/bin/libreoffice-still-installer;
-exec /opt/bin/libreoffice-still-installer;
+echo "";
+echo " 1) Libreoffice Still is the stable version (libreoffice-still)";
+echo "";
+echo " 2) Libreoffice Fresh has the latest features (libreoffice-fresh)";
+echo "";
+read -r -p " What do you choose between 1 and 2? " response
+case "$response" in
+    1) appman -i libreoffice-still;;
+    2) appman -i libreoffice-fresh;;
+    *) echo ""; echo " No valid argument was chosen: installation aborted! "; rm -f /opt/bin/*-installer; echo "";;
+esac
