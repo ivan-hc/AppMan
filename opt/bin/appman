@@ -7,7 +7,7 @@ LOCAL2=".local/share/icons"
 
 cd /opt/bin
 case "$1" in
-  ''|'-h'|'help') echo "
+  ''|'-h'|'help') echo '
   AppMan - App Manager for GNU/Linux that uses and creates AppImages
 
 
@@ -25,26 +25,34 @@ case "$1" in
  Usage:		appman [option] [keywords]
   where option include:  
 
-  -q, query	Use one or more keywords to search for in AppMan's list
-  		of available applications.
+  -q, query	Use one or more keywords to search for in the list of
+  		available applications.
   
 
  Usage:		appman [option]
   where option include:
   
   -h, help	Print this message.
-  -c, clean	Remove all unnecessary files and folders, i.e. backup
+  -c, clean	Remove all  and folders, i.e. backup
   		files, installation scripts, and temporary folders.
   -f, files	Programs installed on the system.
   -l, list	Shows the list of apps available in the repository.
   -s, sync	Updates AppMan and the list of available apps.
-  -u, update	Update AppImages using 'appimageupdate', if the update
+  -u, update	Update AppImages using "appimageupdate", if the update
   		info is embedded into the AppImage itself by the developer.
+  
+  -U, full-upgrade	Re-install all programs. This allows you to get the
+  			latest version of all programs without having to
+  		manually check them (see the "appman -a" command). This could
+  		take several minutes, depending on the number of programs, the
+  		sizes of the downloaded files, the way they are built, and the
+  		speed of your Internet connection. Use CTRL+C to abort, then
+  		clean up the residues (see the "appman -c" command).
 
    
   SITE: https://github.com/ivan-hc/AppMan
   
-  " ;;
+  ' ;;
 
   '-a'|'about')
 	while [ -n "$1" ]
@@ -104,6 +112,7 @@ case "$1" in
   	cd /opt/bin; mv ./appman ./appman-zs-old; wget -q $URL1/appman && chmod a+x ./appman;
 	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
 	echo ' ...done! Use "appman -l" to see the whole list of available apps.'; echo "";;
-  '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;	
+  '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;
+  '-U'|'full-upgrade') cd /opt/bin && for f in *; do appman -i "$f"; done ;;
   *) exec /opt/bin/appman ;;
 esac
