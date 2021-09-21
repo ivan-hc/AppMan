@@ -8,6 +8,7 @@ cd ..;
 mv ./tmp/celestia*AppImage ./celestia;
 chmod a+x ./celestia;
 
+rm /home/$USER/.local/share/applications/celestia.desktop;
 echo "[Desktop Entry]
 Version=1.0
 Name=Celestia (GTK)
