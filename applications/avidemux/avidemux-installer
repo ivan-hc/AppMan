@@ -16,7 +16,7 @@ cp /opt/bin/tmp/avidemux/avidemux.AppDir/usr/share/icons/hicolor/128x128/apps/or
 rm /opt/bin/tmp/avidemux/avidemux.AppDir/AppRun;
 
 
-
+# Taken the original AppRun from http://avidemux.sourceforge.net, I've removed the QT-theme related line to made Avidemux working with Adwaita-QT
 
 echo '#!/bin/bash
 
