@@ -275,4 +275,4 @@ echo "";
 echo "    This is the Unofficial AppImage for the Beta version.";
 echo "";
 
-rm -R /opt/bin/$APP-installer /opt/bin/tmp
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
