@@ -5,10 +5,10 @@ APP=nodejs
 cd /opt/bin;
 mkdir tmp;
 cd ./tmp;
-wget https://nodejs.org/dist/v16.9.1/node-v16.9.1-linux-x64.tar.gz;
-tar fx node-v16.9.1-linux-x64.tar.gz
+wget wget -r -erobots=off -l1 -np -A node-*-linux-x64.tar.gz  -nd https://nodejs.org/dist/latest/;
+tar fx *.tar.gz
 rm -R /opt/bin/.nodejs;
-mv ./node-v16.9.1-linux-x64 /opt/bin/.nodejs;
+mv ./node-*-linux-x64 /opt/bin/.nodejs;
 
 rm /opt/bin/nodejs;
 echo '#!/bin/sh
