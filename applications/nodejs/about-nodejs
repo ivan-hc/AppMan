@@ -4,7 +4,7 @@
  USAGE: npm <options> [arguments]
         ./program <options> [arguments]
   
- This is NodeJS 16.9.1.
+ UPDATE: appman -i nodejs
  
  REMOVE: appman -r nodejs (this removes NodeJS and all its related programs). 
  
