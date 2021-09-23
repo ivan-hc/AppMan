@@ -39,4 +39,4 @@ mv ./ice.svg /home/$USER/.local/share/icons/;
 echo "";
 echo " Ice-SSB is provided by https://github.com/peppermintos ";
 echo "";
-rm /opt/bin/ice-installer
+rm -R -f /opt/bin/tmp /opt/bin/ice-installer /opt/bin/ice-updater
