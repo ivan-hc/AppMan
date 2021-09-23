@@ -27,4 +27,4 @@ mv ./avidemux.svg /home/$USER/.local/share/icons/;
 echo "";
 echo "   Avidemux AppImage is provided by http://avidemux.sourceforge.net";
 echo "";
-rm -R /opt/bin/avidemux-installer /opt/bin/tmp
+rm -R -f /opt/bin/tmp /opt/bin/avidemux-installer /opt/bin/avidemux-updater
