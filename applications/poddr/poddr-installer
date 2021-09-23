@@ -31,4 +31,4 @@ echo "";
 echo " Poddr Podcast Client is provided by https://github.com/Sn8z/Poddr";
 echo "";
 
-rm -R /opt/bin/tmp /opt/bin/$APP-installer
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
