@@ -183,4 +183,4 @@ echo "";
 echo " Kdenlive is provided by https://kdenlive.org ";
 echo "";
 
-rm -R /opt/bin/tmp /opt/bin/$APP-installer
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
