@@ -77,6 +77,7 @@
 ◆ photopea : Advanced Photo Editor for professional use.
 ◆ pkg2appimage : Utility to convert .yml recipes to AppDir (see appimagetool).
 ◆ platform-tools : Suite of command line utilities to manage Android devices.
+◆ play-2048 : Another implementation of the 2048 game.
 ◆ poddr : Podcast client that uses iTunes RSS feeds and Search API.
 ◆ python2.7 : Interactive high-level object-oriented language (version 2.7).
 ◆ python3.5 : Interactive high-level object-oriented language (version 3.5).
