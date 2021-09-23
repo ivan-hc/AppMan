@@ -5,7 +5,7 @@ APP=kdenlive
 cd /opt/bin;
 mkdir tmp;
 cd ./tmp;
-wget https://download.kde.org/stable/kdenlive/21.08/linux/kdenlive-21.08.0-x86_64.appimage;
+wget https://download.kde.org/$(wget https://kdenlive.org/en/download/ -O - | grep '/stable/kdenlive/.*/linux/.*appimage' -o);
 cd ..;
 mv ./tmp/*mage ./$APP;
 chmod a+x /opt/bin/$APP;
