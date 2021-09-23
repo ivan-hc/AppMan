@@ -2,6 +2,7 @@
 
 URL1="https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin"
 URL2="https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications"
+URL3="https://raw.githubusercontent.com/ivan-hc/AppMan/main/updaters"
 LOCAL1=".local/share/applications"
 LOCAL2=".local/share/icons"
 
@@ -41,13 +42,12 @@ case "$1" in
   -u, update	Update AppImages using "appimageupdate", if the update
   		info is embedded into the AppImage itself by the developer.
   
-  -U, full-upgrade	Re-install all programs. This allows you to get the
-  			latest version of all programs without having to
-  		manually check them (see the "appman -a" command). This could
-  		take several minutes, depending on the number of programs, the
-  		sizes of the downloaded files, the way they are built, and the
-  		speed of your Internet connection. Use CTRL+C to abort, then
-  		clean up the residues (see the "appman -c" command).
+  -U, full-upgrade	Update everything, this will also re-install the
+  			non-updatable programs by replacing them with the
+  		latest version available. This may take several minutes,
+  		depending on the number of programs, the sizes, the way
+  		they are built, and the download speed. The updatable
+  		AppImages will perform the normal update (see "-u", "update").
 
    
   SITE: https://github.com/ivan-hc/AppMan
@@ -65,7 +65,8 @@ case "$1" in
 	shift
 	done;;
   '-c'|'clean') cd /opt/bin; echo ""; echo "Removing all unnecessary files and folders..."; sleep 1;
-	rm -R -f *zs-old tmp *-installer *.zip *.deb; echo ""; echo "All unnecessary files and folders are removed, exiting."; echo "" ;;
+	rm -R -f *zs-old tmp *-installer *.zip *.deb *-updater; echo "";
+	echo "All unnecessary files and folders are removed, exiting."; echo "" ;;
   '-d'|'debug')
 	while [ -n "$1" ]
 	do
@@ -110,9 +111,14 @@ case "$1" in
 	done;;
   '-s'|'sync') echo ""; echo " Updating application's list, please wait..."; echo "";
   	cd /opt/bin; mv ./appman ./appman-zs-old; wget -q $URL1/appman && chmod a+x ./appman;
-	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
+	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
+	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
 	echo ' ...done! Use "appman -l" to see the whole list of available apps.'; echo "";;
   '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;
-  '-U'|'full-upgrade') cd /opt/bin && for f in *; do appman -i "$f"; done ;;
+  '-U'|'full-upgrade') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done;
+  	for f in *; do ! wget -q $URL3/$f-updater; done;
+  	for f in *; do chmod a+x /opt/bin/*-updater; done;
+  	for f in *; do sh -x /opt/bin/*-updater ; done;
+  	echo ""; echo ""; echo " All your programs are updated!"; echo ""; echo "";;
   *) exec /opt/bin/appman ;;
 esac
