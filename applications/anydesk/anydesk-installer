@@ -29,4 +29,4 @@ echo "      This is the Unofficial AppImage for AnyDesk ";
 echo "                   'appman -i anydesk' ";
 echo "to install a new and more updated version, when available ";
 echo "";
-rm /opt/bin/anydesk-installer
+rm -R -f /opt/bin/tmp /opt/bin/anydesk-installer /opt/bin/anydesk-updater
