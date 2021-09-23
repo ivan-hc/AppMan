@@ -50,4 +50,4 @@ mv ./ocenaudio-x86_64.AppImage ./ocenaudio
 echo "";
 echo " OcenAudio Editor is provided by https://www.ocenaudio.com ";
 echo "";
-rm /opt/bin/ocenaudio-installer
+rm -R -f /opt/bin/tmp /opt/bin/ocenaudio-installer /opt/bin/ocenaudio-updater
