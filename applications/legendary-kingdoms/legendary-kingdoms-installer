@@ -1,0 +1,34 @@
+#!/bin/sh
+
+APP=legendary-kingdoms
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/daelsepara/legendary-kingdoms/releases/latest -O - | egrep '/.*/.*/.*amd64.AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=Legendary Kingdoms
+Exec=/opt/bin/legendary-kingdoms
+TryExec=/opt/bin/legendary-kingdoms
+Icon=legendary-kingdoms
+Terminal=false
+Categories=Game;
+Type=Application
+Name[en_DK]=Legendary Kingdoms
+Name[en_US]=Legendary Kingdoms" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo "            Legendary Kingdoms is provided by ";
+echo "";
+echo "     https://github.com/daelsepara/legendary-kingdoms";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
