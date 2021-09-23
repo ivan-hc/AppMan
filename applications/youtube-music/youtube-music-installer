@@ -28,4 +28,4 @@ echo "";
 echo " YouTube Music AppImage is provided by https://github.com/th-ch ";
 echo "";
 
-rm -R /opt/bin/tmp /opt/bin/$APP-installer
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
