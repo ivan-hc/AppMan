@@ -66,8 +66,7 @@ The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/I
   
   `-u`, `update`	Update AppImages using 'appimageupdate', if the update info is embedded into the AppImage itself by the developer.
   
-  `-U`, `full-upgrade` Re-install all programs. This allows you to get the latest version of all programs without having to	manually check them (see the "appman -a" command). This could	take several minutes, depending on the number of programs, the	sizes of the downloaded files, the way they are built, and the	speed of your Internet connection. Use CTRL+C to abort, then	clean up the residues (see the "appman -c" command).
-
+  `-U`, `full-upgrade` Update everything, this will also re-install the non-updatable programs by replacing them with the	latest version available. This may take several minutes, depending on the number of programs, the sizes, the way	they are built, and the download speed. The updatable AppImages will perform the normal update (see "-u", "update").
 
 # How to update programs
 
