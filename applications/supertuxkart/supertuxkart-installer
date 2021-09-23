@@ -69,4 +69,4 @@ echo " This AppImage is created using the official build for Linux";
 echo "";
 
 echo "";
-rm -R /opt/bin/$APP-installer /opt/bin/tmp
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
