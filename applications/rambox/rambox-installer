@@ -28,4 +28,4 @@ echo "";
 echo " Rambox is provided by https://rambox.app ";
 echo "";
 
-rm -R /opt/bin/tmp /opt/bin/$APP-installer
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
