@@ -27,5 +27,4 @@ echo " This is the Unofficial AppImage for Chromium Development Edition ";
 echo "                  'appman -i chromium-dev' ";
 echo "   to install a new and more updated version, when available ";
 echo "";
-rm -R /opt/bin/chromium-dev-installer /opt/bin/tmp
-
+rm -R -f /opt/bin/tmp /opt/bin/chromium-dev-installer /opt/bin/chromium-dev-updater
