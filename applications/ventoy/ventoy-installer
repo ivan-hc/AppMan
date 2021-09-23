@@ -34,4 +34,4 @@ echo "";
 echo "   Ventoy is provided by https://www.ventoy.net ";
 
 echo "";
-rm -R /opt/bin/$APP-installer /opt/bin/tmp
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
