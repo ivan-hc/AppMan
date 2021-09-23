@@ -34,4 +34,4 @@ echo "";
 echo " LMMS is provided by https://lmms.io ";
 echo "";
 
-rm -R /opt/bin/tmp /opt/bin/$APP-installer
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
