@@ -30,14 +30,12 @@ StartupWMClass=zoom
 MimeType=x-scheme-handler/zoommtg;x-scheme-handler/zoomus;x-scheme-handler/tel;x-scheme-handler/callto;x-scheme-handler/zoomphonecall;application/x-zoom
 X-KDE-Protocols=zoommtg;zoomus;tel;callto;zoomphonecall;
 Name[en_US]=Zoom" >> /home/$USER/.local/share/applications/$APP.desktop;
-
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
 
 echo "";
 echo "      This AppImage is provided by";
 echo " https://github.com/AppImage/pkg2appimage ";
 echo "";
 
-
-wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
-mv ./$APP.svg /home/$USER/.local/share/icons/;
-rm -R /opt/bin/$APP-installer /opt/bin/tmp
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
