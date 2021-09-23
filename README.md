@@ -76,6 +76,8 @@ There are two kind of updates in AppMan:
 
 In the first case will be created a *zs-old backup file as big as the original in /opt/bin that you can remove with `appman -c`, in the second case the original file will be replaced directly.
 
+Since the AppMan 1.5 release you can update everything using the command `appman -U` or `appman full-upgrade`
+
 
 # Uninstall
 To remove AppMan and all its related dependencies and symlinks, copy/paste this command:
