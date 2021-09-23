@@ -235,4 +235,4 @@ echo "";
 echo " qBittorrent Stable is provided by https://launchpad.net/~qbittorrent-team ";
 echo "";
 
-rm -R /opt/bin/tmp /opt/bin/qbittorrent-installer
+rm -R -f /opt/bin/tmp /opt/bin/qbittorrent-installer /opt/bin/qbittorrent-updater
