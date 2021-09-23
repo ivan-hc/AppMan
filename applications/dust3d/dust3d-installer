@@ -26,4 +26,4 @@ echo "";
 echo " Dust3D is provided by https://dust3d.org ";
 echo "";
 
-rm -R /opt/bin/tmp /opt/bin/$APP-installer
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
