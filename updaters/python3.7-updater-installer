@@ -1,3 +1,0 @@
-#!/bin/sh
-
-appman -i python3.7
