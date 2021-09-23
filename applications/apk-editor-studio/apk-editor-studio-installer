@@ -32,4 +32,4 @@ echo "";
 echo " https://github.com/kefir500/apk-editor-studio ";
 echo "";
 
-rm -R /opt/bin/tmp /opt/bin/$APP-installer
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
