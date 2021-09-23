@@ -27,4 +27,4 @@ mv ./onlyoffice.svg /home/$USER/.local/share/icons/;
 echo "";
 echo " OnlyOffice AppImage is provided by https://www.onlyoffice.com ";
 echo "";
-rm -R /opt/bin/tmp /opt/bin/onlyoffice-installer
+rm -R -f /opt/bin/tmp /opt/bin/onlyoffice-installer /opt/bin/onlyoffice-updater
