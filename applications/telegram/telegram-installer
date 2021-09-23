@@ -44,4 +44,4 @@ echo "      This AppImage is provided by";
 echo " https://github.com/AppImage/pkg2appimage ";
 echo "";
 
-rm -R /opt/bin/$APP-installer /opt/bin/tmp
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
