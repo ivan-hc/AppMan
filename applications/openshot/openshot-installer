@@ -28,4 +28,4 @@ mv ./openshot.svg /home/$USER/.local/share/icons/;
 echo "";
 echo " OpenShot QT AppImage is provided by https://github.com/OpenShot ";
 echo "";
-rm -R /opt/bin/openshot-installer /opt/bin/tmp
+rm -R -f /opt/bin/tmp /opt/bin/openshot-installer /opt/bin/openshot-updater
