@@ -54,4 +54,4 @@ echo "                'appman -i whatsapp-for-linux' ";
 echo " to install a new and more updated version, when available ";
 
 echo "";
-rm -R /opt/bin/$APP-installer /opt/bin/tmp
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
