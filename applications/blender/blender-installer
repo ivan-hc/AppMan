@@ -106,4 +106,4 @@ echo "     Blender is provided by https://www.blendernation.com ";
 echo " AppImages by https://github.com/Songtech-0912/Prometheus-Project";
 echo "";
 
-rm -R /opt/bin/tmp /opt/bin/$APP-installer
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
