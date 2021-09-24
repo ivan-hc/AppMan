@@ -1,0 +1,35 @@
+#!/bin/sh
+
+APP=redeclipse
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/redeclipse/deploy/releases/download/appimage_continuous_master/redeclipse-master-x86_64.AppImage;
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Red Eclipse
+GenericName=First-person shooter game
+Comment=First-person shooter with agile gameplay and built-in editor
+Exec=/opt/bin/redeclipse
+TryExec=/opt/bin/redeclipse
+Icon=redeclipse
+Terminal=false
+Categories=Game;ActionGame;
+StartupNotify=true
+Keywords=fps;action;multiplayer;play;arena;mapeditor;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " Red Eclipse is provided by https://www.redeclipse.net ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
