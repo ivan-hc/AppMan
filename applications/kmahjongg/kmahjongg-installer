@@ -1,0 +1,169 @@
+#!/bin/sh
+
+APP=kmahjongg
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+
+echo "app: kmahjongg
+binpatch: true
+
+ingredients:
+  dist: stable
+  sources:
+    - deb http://ftp.us.debian.org/debian/ stable main contrib non-free" >> recipe.yml
+
+pkg2appimage ./recipe.yml;
+
+
+ARCH=x86_64 appimagetool -n ./$APP/$APP.AppDir;
+
+cd ..;
+
+mv /opt/bin/tmp/*AppImage /opt/bin/$APP; 
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=KMahjongg
+Name[af]=Kmahjong
+Name[be]=Маджонг
+Name[bn]=কে-মাহজং
+Name[br]=KMahjongg
+Name[bs]=KMahjongg
+Name[ca]=KMahjongg
+Name[ca@valencia]=KMahjongg
+Name[cs]=KMahjongg
+Name[cy]=KMahjongg
+Name[da]=KMahjongg
+Name[de]=KMahjongg
+Name[el]=KMahjongg
+Name[en_GB]=KMahjongg
+Name[eo]=Mahjongo
+Name[es]=KMahjongg
+Name[et]=KMahjongg
+Name[eu]=KMahjongg
+Name[fi]=KMahjongg
+Name[fr]=KMahjongg
+Name[ga]=KMahjongg
+Name[gl]=KMahjongg
+Name[he]=KMahjongg
+Name[hne]=के-महजोंग
+Name[hr]=KMahjongg
+Name[hu]=KMahjongg
+Name[id]=KMahjong
+Name[is]=KMahjongg
+Name[it]=KMahjongg
+Name[ja]=KMahjongg
+Name[kk]=KMahjongg
+Name[km]=KMahjongg
+Name[ko]=KMahjongg
+Name[lt]=KMahjongg
+Name[lv]=KMahjongg
+Name[mk]=KMahjongg
+Name[mr]=के-माहजोन्ग
+Name[nb]=KMahjongg
+Name[nds]=KMahjongg
+Name[ne]=केडीई माहजोङ्ग
+Name[nl]=KMahjongg
+Name[nn]=KMahjongg
+Name[pa]=ਕੇ-ਮਹਿਜੋਂਗ
+Name[pl]=Mahjongg
+Name[pt]=KMahjongg
+Name[pt_BR]=KMahjongg
+Name[ro]=KMahjongg
+Name[ru]=KMahjongg
+Name[se]=KMahjongg
+Name[sk]=KMahjongg
+Name[sl]=KMahjongg
+Name[sq]=KMahjongg
+Name[sr]=К‑маџонг
+Name[sr@ijekavian]=К‑маџонг
+Name[sr@ijekavianlatin]=K‑madžong
+Name[sr@latin]=K‑madžong
+Name[sv]=Kmahjongg
+Name[ta]=KMahjongg
+Name[tg]=KМаҷонг
+Name[tr]=KMahjongg
+Name[ug]=KMahjongg
+Name[uk]=KMahjongg
+Name[vi]=KMahjongg
+Name[wa]=KMahjongg
+Name[xh]=KMahjongg
+Name[x-test]=xxKMahjonggxx
+Name[zh_CN]=KMahjongg
+Name[zh_TW]=KMahjongg 上海麻將
+Exec=/opt/bin/kmahjongg -qwindowtitle %c
+Type=Application
+GenericName=Mahjongg Solitaire
+GenericName[bs]=Mahjongg soliter
+GenericName[ca]=Solitari Mahjongg
+GenericName[ca@valencia]=Solitari Mahjongg
+GenericName[cs]=Mahjongg solitér
+GenericName[da]=Mahjongg Solitaire
+GenericName[de]=Mahjongg Solitär
+GenericName[el]=Mahjongg Solitaire
+GenericName[en_GB]=Mahjongg Solitaire
+GenericName[es]=Solitario Mahjongg
+GenericName[et]=Mahjongg
+GenericName[eu]=Mahjongg bakar-jokoa
+GenericName[fa]=فال Mahjongg
+GenericName[fi]=Mahjongg-pasianssi
+GenericName[fr]=Mahjongg Solitaire
+GenericName[ga]=Cluiche Aonair Mahjongg
+GenericName[gl]=O solitario Mahjongg
+GenericName[hne]=महजोंग सालिटेयर
+GenericName[hu]=Mah Jongg
+GenericName[id]=Mahjongg Solitaire
+GenericName[it]=Solitario Mahjongg
+GenericName[ja]=上海マージャン牌ゲーム
+GenericName[kk]=Маджонг пасьянсы
+GenericName[km]=Mahjongg Solitaire
+GenericName[ko]=마작 게임
+GenericName[lt]=Mahjongg pasjansas
+GenericName[lv]=Mahjongg Solitaire
+GenericName[mr]=माहजोन्ग सोलिटेयर
+GenericName[nb]=Mahjongg-kabal
+GenericName[nds]=Eenspeler-Mahjongg
+GenericName[ne]=माहाजोङ्ग सोलिटेयर
+GenericName[nl]=Mahjongg Solitaire
+GenericName[nn]=Mahjongg-kabal
+GenericName[pl]=Mahjongg
+GenericName[pt]=Mahjongg Solitário
+GenericName[pt_BR]=Paciência Mahjongg
+GenericName[ro]=Pasențe Mahjongg
+GenericName[ru]=Пасьянс Маджонг
+GenericName[sk]=Mahjongg
+GenericName[sl]=Pasjansa Mahjongg
+GenericName[sq]=Mahjongg Solitaire
+GenericName[sr]=Маџонг пасијанс
+GenericName[sr@ijekavian]=Маџонг пасијанс
+GenericName[sr@ijekavianlatin]=Madžong pasijans
+GenericName[sr@latin]=Madžong pasijans
+GenericName[sv]=Mahjongg-patiens
+GenericName[tr]=Mahjongg Solitaire
+GenericName[ug]=Mahjongg Solitaire
+GenericName[uk]=Карткова гра Маджонґ
+GenericName[wa]=Solitaire Magjongg
+GenericName[x-test]=xxMahjongg Solitairexx
+GenericName[zh_CN]=麻将纸牌
+GenericName[zh_TW]=上海麻將遊戲
+Terminal=false
+Icon=kmahjongg
+X-KDE-StartupNotify=true
+X-DBUS-StartupType=Multi
+X-DocPath=kmahjongg/index.html
+Categories=Qt;KDE;Game;BoardGame;
+X-DBUS-ServiceName=org.kde.kmahjongg" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo "   This AppImage was created from Debian Stable using";
+echo "";
+echo "       https://github.com/AppImage/pkg2appimage ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
