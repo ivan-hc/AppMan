@@ -8,7 +8,7 @@ The main goal of this tool is to provide the same updated applications to multip
 # How it works
 AppMan uses [precompiled scripts](https://github.com/ivan-hc/AppMan/tree/main/applications) that can download applications from their main sites or compiling them using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in AUR. The final result is a ready to use AppImage with a launcher and its icon (where needed, command line tools like "wine" can be only used from the terminal) for your favourite application. The complete list is available [here](https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list).
 
-NOTE: programs installed using pkg2appimage (for example, all the KDE games) can take several minutes to complete the process.
+NOTE: programs installed using `pkg2appimage` (for example, all the KDE games) may take several minutes to complete the process and to be ready for use.
 
 AppMan uses [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) to update AppImages (if zsync support is available), there is also an option to clean all backup files created after each update.
 
