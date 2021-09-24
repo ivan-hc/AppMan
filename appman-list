@@ -12,6 +12,7 @@
 ◆ avidemux : Multiplatform Video Editor.
 ◆ blender : Very fast and versatile 3D modeller/renderer.
 ◆ book-manager : Simple desktop app to manage personal library.
+◆ bovo : Five in a row game from KDE.
 ◆ brave : A privacy oriented Web Browser (installer for "brave-browser").
 ◆ brave-browser : A privacy oriented Web Browser based on Chromium.
 ◆ bugdom : Pangea Software's Bugdom game.
@@ -50,7 +51,28 @@
 ◆ hexoeditor : Markdown editor for Hexo built with Electron.
 ◆ ice : Webapp manager, convert your favourite Web pages to standalone apps.
 ◆ inkscape : Vector-based professional drawing program (SVG, PDF, AutoCAD...).
+◆ katomic : Educational game based around molecular geometry from KDE.
+◆ kblackbox : A game of hide and seek from KDE.
+◆ kbounce : Fill the field game from KDE.
 ◆ kdenlive : Video Editors provided for KDE.
+◆ kdiamond : Diamond game from KDE.
+◆ kfourinline : 4 in row game from KDE.
+◆ kgoldrunner : A game with a runner and gold, from KDE. 
+◆ kiriki : A dice game from KDE.
+◆ kjumpingcube : A game of dices on a board, from KDE.
+◆ kmahjongg : Mahjongg game from KDE.
+◆ kmines : Classic mine game from KDE.
+◆ knavalbattle : Battle Ship game for KDE.
+◆ knetwalk : Net constructing game from KDE.
+◆ kolf : Mini Golf game from KDE.
+◆ kollision : Use your mouse to dodge red balls in the field. KDE game.
+◆ konquest : Game of planets from KDE.
+◆ kpat : Klondike, Spider, Free Cell and other Solitaire games from KDE.
+◆ kreversi : Reversi game from KDE.
+◆ kshisen : A game similar to Mahjongg, from KDE.
+◆ kspaceduel : Battleship game with satellites in the space, from KDE.
+◆ ksquares : Win with the most number of completed squares. KDE game. 
+◆ ksudoku : Sudoku game from KDE.
 ◆ lanshare : LAN file transfer app for any kind and size of files and folders.
 ◆ legendary-kingdoms : Implementation of Legendary Kingdoms Gamebooks in C++.
 ◆ libreoffice : Free and open source Office suite (this is an helper).
