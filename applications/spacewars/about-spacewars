@@ -1,0 +1,6 @@
+
+ A re-imagining of the classic game Spacewar! in Rust using the Amethyst game engine. 
+ 
+ UPDATE: appman -i spacewars
+ 
+ SITE: https://github.com/spotzero/spacewars
