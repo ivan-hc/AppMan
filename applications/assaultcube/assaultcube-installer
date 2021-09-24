@@ -1,0 +1,38 @@
+#!/bin/sh
+
+APP=assaultcube
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+
+
+v=$(wget -q https://api.github.com/repos/assaultcube/AC/releases/latest -O - | grep -E tag_name | awk -F '[""]' '{print $4}')
+wget https://github.com/assaultcube/AC/releases/download/$v/AssaultCube_$v.tar.bz2;
+
+tar xf ./*.tar.bz2;
+rm ./*.tar.bz2;
+mv ./* /opt/bin/.$APP;
+
+cd ..;
+
+ln -s /opt/bin/.$APP/$APP.sh /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=AssaultCube
+Exec=/opt/bin/assaultcube
+Comment=AssaultCube is a FREE, multiplayer, first-person shooter game, based on the CUBE engine.
+Icon=assaultcube
+Type=Application
+Categories=Game;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo "   AssaultCube is provided by https://assault.cubers.net";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
