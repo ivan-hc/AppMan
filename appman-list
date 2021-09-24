@@ -106,6 +106,7 @@
 ◆ platform-tools : Suite of command line utilities to manage Android devices.
 ◆ play-2048 : Another implementation of the 2048 game.
 ◆ poddr : Podcast client that uses iTunes RSS feeds and Search API.
+◆ prime-world-editor : Edit world assets from games by Retro Studios.
 ◆ python2.7 : Interactive high-level object-oriented language (version 2.7).
 ◆ python3.5 : Interactive high-level object-oriented language (version 3.5).
 ◆ python3.6 : Interactive high-level object-oriented language (version 3.6).
