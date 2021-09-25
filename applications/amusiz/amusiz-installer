@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=amusiz
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/mirkobrombin/Amusiz/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=Amusiz
+Exec=/opt/bin/amusiz
+Comment=An unofficial and unpretentious Amazon Music client for Linux.
+Icon=amusiz
+Type=Application
+Categories=Audio;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " Amusiz is provided by https://github.com/mirkobrombin/Amusiz ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater

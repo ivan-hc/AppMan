@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=museeks
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/martpie/museeks/releases/latest -O - | egrep '/.*/.*/.*64.AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=Museeks
+Exec=/opt/bin/museeks
+Comment=A simple, clean and cross-platform music player.
+Icon=museeks
+Type=Application
+Categories=Audio;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " Museeks is provided by https://museeks.io ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
