@@ -1,0 +1,9 @@
+
+ An application that can generate perceptually uniforms
+ palettes using CIE LCH(uv) space. It is based on the
+ paper "Synthesis of color palettes" by By MWH Martijn
+ Wijffelaars.
+ 
+ UPDATE: appman -i color-generator
+ 
+ SITE: https://github.com/YaShock/color-generator

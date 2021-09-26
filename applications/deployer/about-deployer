@@ -1,0 +1,6 @@
+
+ Cross-platform application to deploy your applications through Jenkins.
+ 
+ UPDATE: appman -i deployer
+ 
+ SITE: https://github.com/ziishaned/deployer

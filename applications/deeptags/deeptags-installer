@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=deeptags
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/SZinedine/DeepTags/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=DeepTags
+Exec=/opt/bin/deeptags
+Comment=DeepTags is a markdown notes manager with support for nested tags.
+Icon=deeptags
+Type=Application
+Categories=Utility;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " DeepTags is provided by https://github.com/SZinedine/DeepTags ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater

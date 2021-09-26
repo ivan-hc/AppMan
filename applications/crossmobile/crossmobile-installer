@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=crossmobile
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/crossmob/CrossMobile/releases/latest -O - | egrep '/.*/.*/.*x86_64.appimage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=CrossMobile
+Exec=/opt/bin/crossmobile
+Comment=COMMENT
+Icon=crossmobile
+Type=Application
+Categories=Development;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " CrossMobile is provided by https://github.com/crossmob/CrossMobile ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
