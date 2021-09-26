@@ -47,12 +47,28 @@
 ◆ castersoundboard : Soundboard for hot-keying and playing back sounds.
 ◆ celestia : Real time 3D space simulator.
 ◆ celestia-dev : Real time 3D space simulator (developer edition).
+◆ chiaki : PlayStation 4 Remote Play Client.
 ◆ chromium : Web Browser. Open source base of Google Chrome, Edge and Brave.
 ◆ chromium-dev : Beta version of Chromium Web Browser.
+◆ cliniface : 3D Facial Image Visualisation and Analysis.
+◆ code-oss : Visual Studio Code OSS Edition.
+◆ color-generator : Generate perceptually uniforms palettes (graphics).
 ◆ comic-reader : Electron based comic reader.
+◆ cozydrive : File Synchronisation for Cozy (cloud).
+◆ cpeditor : Code editor specially designed for competitive programming.
+◆ cpod : A simple, beautiful podcast app.
 ◆ cpu-x : Software that gathers information on CPU, motherboard and more.
+◆ crossmobile : Create native iOS/Android/Windows apps in Java. 
+◆ cura : Convert 3D models into paths for a 3D printer (graphics).
+◆ cutter : Free and Open Source Reverse Engineering Platform.
+◆ dawnlightsearch : A Linux version of Everything Search Engine. 
+◆ deeptags : Markdown notes manager with support for nested tags.
+◆ deployer : Deploy your applications through Jenkins. 
+◆ dfilemanager : File manager written in Qt and C++.
+◆ die-engine : Detect It Easy, a program for determining types of files.
 ◆ discord : All-in-one voice and text chat for gamers.
 ◆ dockstation : Developing with Docker has never been so easy and convenient.
+◆ drill : Search files without indexing, but clever crawling.
 ◆ dropbox : A free cloud service (Unofficial AppImage).
 ◆ duckstation : PlayStation 1, aka PSX games Emulator.
 ◆ dust3d : 3D modeling software for games, 3D printing, and so on.
