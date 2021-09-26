@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=blockbench
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/JannisX11/blockbench/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=Blockbench
+Exec=/opt/bin/blockbench
+Comment=Model editor for boxy models and pixel art textures. Models can be exported for Minecraft Java and Bedrock Edition as well as most game engines and other 3D applications.
+Icon=blockbench
+Type=Application
+Categories=Utility;Graphics;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " Blockbench is provided by https://www.blockbench.net/ ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater

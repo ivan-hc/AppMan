@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=block-dx
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/blocknetdx/block-dx/releases/latest -O - | egrep '/.*/.*/.*x86_64.AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=BLOCK-DX
+Exec=/opt/bin/block-dx
+Comment=A decentralized exchange dApp built on top of the Blocknet Protocol.
+Icon=block-dx
+Type=Application
+Categories=Utility;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " BLOCK-DX is provided by https://blockdx.com/ ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater

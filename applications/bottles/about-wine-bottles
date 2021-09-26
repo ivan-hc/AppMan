@@ -1,0 +1,8 @@
+
+ Bottles - Profile manager for WINE to easily install Windows apps.
+ 
+ This is an helper to install "wine-bottles".
+ 
+ UPDATE: appman -u
+ 
+ SOURCE: https://github.com/bottlesdevs/Bottles
