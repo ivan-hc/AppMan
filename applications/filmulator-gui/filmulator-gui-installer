@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=filmulator-gui
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/CarVac/filmulator-gui/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=filmulator-gui
+Exec=/opt/bin/filmulator-gui
+Comment=Simplified raw editing with the power of film 
+Icon=filmulator-gui
+Type=Application
+Categories=Graphics;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " This AppImage is provided by https://github.com/CarVac/filmulator-gui ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
