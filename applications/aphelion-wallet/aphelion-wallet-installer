@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=aphelion-wallet
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/aphtoken/aph-wallet-gui/releases/download/4.1.0/Aphelion_Wallet-4.1.0-lin.AppImage;
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=Aphelion Desktop Wallet
+Exec=/opt/bin/aphelion-wallet
+Comment=The Aphelion desktop wallet application built with Electron
+Icon=aphelion-wallet
+Type=Application
+Categories=Utility;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " Aphelion Desktop Wallet is provided by https://github.com/aphtoken ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater

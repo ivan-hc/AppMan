@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=anchor
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/greymass/anchor/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=Anchor
+Exec=/opt/bin/anchor
+Comment=An EOSIO Light Wallet with simple tools for basic activities and advanced tools for power users.
+Icon=anchor
+Type=Application
+Categories=Network;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " Anchor is provided by https://greymass.com/anchor ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
