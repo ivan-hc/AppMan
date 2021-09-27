@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=plagpatrol
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/josemmo/plagpatrol/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=Plag Patrol
+Exec=/opt/bin/plagpatrol
+Comment=An app for detecting documents tampered to bypass plagiarism detectors
+Icon=plagpatrol
+Type=Application
+Categories=Utility;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " This AppImage is provided by https://github.com/josemmo/plagpatrol ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
