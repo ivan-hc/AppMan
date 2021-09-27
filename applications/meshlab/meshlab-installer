@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=meshlab
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/cnr-isti-vclab/meshlab/releases/latest -O - | egrep '/.*/.*/.*d-linux.AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=meshlab
+Exec=/opt/bin/meshlab
+Comment=Processor and editor of large 3D triangular meshes
+Icon=meshlab
+Type=Application
+Categories=Graphics;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " This AppImage is provided by https://github.com/cnr-isti-vclab/meshlab ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
