@@ -193,21 +193,37 @@
 ◆ my-budget : Offline cross-platform budgeting solution built with Electron. 
 ◆ mypaint : Simple drawing and painting program (graphics).
 ◆ nodejs : JavaScript runtime built on Chrome's V8 JavaScript engine.
+◆ nostlan : A multiplatform game launcher for video game emulators!
+◆ notable : The Markdown-based note-taking app that doesn't suck.
 ◆ npm : Package manager for Node.js (installer for "nodejs").
 ◆ ocenaudio : Multiplatform Audio Editor.
 ◆ olive-0.1 : Free non-linear video editor (first version).
 ◆ onlyoffice : Office Suite with full support for MS Windows formats and cloud.
 ◆ openhv : A mod for OpenRA based on the Hard Vacuum (game).
+◆ openaudible : Download and manage your Audible audiobooks.
+◆ openblok : A customizable falling block game like tetris. 
 ◆ openshot : A powerful Video Editor.
 ◆ opera : Fast and secure web browser.
+◆ ossia-score : Sequencer for audio-visual artists for interactive shows.
+◆ osu : A free-to-win rhythm game. Rhythm is just a click away!
+◆ outline-server : Creates and manages Outline servers. 
 ◆ palemoon : Web browser fork of Firefox with a classic UI and modern APIs.
+◆ pennywise : Open any website or media in a floating window.
+◆ phreshplayer : Electron based media player app.
 ◆ photogimp : A patched version of GIMP for Adobe Photoshop users.
 ◆ photopea : Advanced Photo Editor for professional use.
 ◆ pkg2appimage : Utility to convert .yml recipes to AppDir (see appimagetool).
+◆ plagpatrol : Detecting documents tampered to bypass plagiarism detectors.
+◆ planes : Variant of battleships game.
 ◆ platform-tools : Suite of command line utilities to manage Android devices.
 ◆ play-2048 : Another implementation of the 2048 game.
+◆ playbox : An audio playback system for the live production industry.
 ◆ poddr : Podcast client that uses iTunes RSS feeds and Search API.
+◆ popsicle : Multiple USB File Flasher.
 ◆ prime-world-editor : Edit world assets from games by Retro Studios.
+◆ procdepmonitor : Obtaining information about loaded process dependencies.
+◆ pullp : Pull request monitoring app for Github.
+◆ puppetry : Solution for non-developers on top of Puppeteer and Jest.
 ◆ python2.7 : Interactive high-level object-oriented language (version 2.7).
 ◆ python3.5 : Interactive high-level object-oriented language (version 3.5).
 ◆ python3.6 : Interactive high-level object-oriented language (version 3.6).
