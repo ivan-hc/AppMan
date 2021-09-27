@@ -106,12 +106,19 @@
 ◆ freecad : Free and open source AutoCAD alternative.
 ◆ friture : Real-time audio visualizations (spectrum, spectrogram, etc.).
 ◆ gamehub : Unified library for all your games from different platforms.
+◆ geometrize : Images to shapes converter (graphics).
 ◆ gifcurry : The open-source, Haskell-built video editor for GIF makers.
 ◆ gimp : GNU Image Manipulation Program is a cross-platform image editor.
+◆ github-desktop : Electron-based GitHub app.
+◆ gitjournal : Mobile first Note Taking integrated with Git.
+◆ gitqlient : Multi-platform Git client written with Qt.
 ◆ gmail-desktop : Nifty Gmail desktop app for macOS, Linux & Windows .
 ◆ goglauncher : A simple Linux launcher for GOG Games.
 ◆ google-chrome : Web Browser provided by Google.
+◆ google-tasks-desktop : Unofficial client.
+◆ gpg-frontend : A Powerful, Easy-to-Use Crypto Tool. 
 ◆ gqrx : Software defined radio receiver (SDR).
+◆ groot : Graphical Editor to create BehaviorTrees.
 ◆ gsequencer : Tree based audio processing engine.
 ◆ handbrake : An open-source multiplatform video transcoder.
 ◆ hexoeditor : Markdown editor for Hexo built with Electron.
