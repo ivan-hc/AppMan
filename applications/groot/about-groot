@@ -1,0 +1,7 @@
+
+ Groot is a Graphical Editor, written in C++ and Qt,
+ to create BehaviorTrees.
+ 
+ UPDATE: appman -i groot
+ 
+ SITE: https://github.com/BehaviorTree/Groot

@@ -1,0 +1,8 @@
+
+ GitHub Desktop is an open source Electron-based
+ GitHub app. It is written in TypeScript and uses
+ React.
+ 
+ UPDATE: appman -i github-desktop
+ 
+ SITE: https://github.com/shiftkey/desktop
