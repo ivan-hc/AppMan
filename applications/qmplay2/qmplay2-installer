@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=qmplay2
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/zaps166/QMPlay2/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=qmplay2
+Exec=/opt/bin/qmplay2
+Comment=QMPlay2 is a video and audio player which can play most formats and codecs. 
+Icon=qmplay2
+Type=Application
+Categories=AudioVideo;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " This AppImage is provided by https://github.com/zaps166/QMPlay2 ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater

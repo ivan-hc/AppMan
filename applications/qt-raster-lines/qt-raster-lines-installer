@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=qt-raster-lines
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/humble-barnacle001/qt-raster-lines/releases/latest -O - | egrep '/.*/.*/.*AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=QT Raster Lines
+Exec=/opt/bin/qt-raster-lines
+Comment=Creating lines between two points using rasterization with the help of two algorithms: DDA & Bresenham's
+Icon=qt-raster-lines
+Type=Application
+Categories=Education;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " This AppImage is provided by https://github.com/humble-barnacle001/qt-raster-lines ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
