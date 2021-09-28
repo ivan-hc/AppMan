@@ -32,7 +32,7 @@ chmod a+x /opt/bin/tmp/$APP.AppDir/AppRun;
 # Run appimagetool on the AppDir
 ARCH=x86_64 appimagetool -n ./$APP.AppDir;
 
-# Renaming the downloaded AppImage to $APP
+# Renaming the created AppImage to $APP
 cd ..;
 mv /opt/bin/tmp/*AppImage /opt/bin/$APP; 
 chmod a+x /opt/bin/$APP;
