@@ -91,9 +91,16 @@ To remove AppMan and all its related dependencies and symlinks, copy/paste this 
 AppMan aims to give updated programs to every distribution with all the basic info on each application (command `appman -a [program]`).
 
 By downloading [sheets I provided](https://github.com/ivan-hc/AppMan/tree/main/models), all you need to do is to replace the UPPERCASE words (SAMPLE, LINK, LAUNCHER...). Given these patterns, you can easily test them on your PC (command `appman -c` to remove any /tmp folder from /opt/bin).
+Now I have a question for you:
 
-[Any pull request is welcome](https://github.com/ivan-hc/AppMan/pulls), I will do my best to make it possible.
+ - Have you got an AppImage hosted somewhere? Click [here](https://github.com/ivan-hc/AppMan/tree/main/models/Have%20you%20got%20an%20AppImage%20hosted%20somewhere%3F).
+ - Have you got a pkg2appimage yml recipe? Click [here](https://github.com/ivan-hc/AppMan/tree/main/models/Have%20you%20got%20a%20pkg2appimage%20yml%20recipe%3F).
+ - Have you got a DEB package? Click [here](https://github.com/ivan-hc/AppMan/tree/main/models/Have%20you%20got%20a%20DEB%20package%3F).
+ - Have you got an Arch Linux package? Click [here](https://github.com/ivan-hc/AppMan/tree/main/models/Have%20you%20got%20an%20Arch%20Linux%20package%3F).
 
+Any pull request is welcome, click [here](https://github.com/ivan-hc/AppMan/pulls) to submit your app.
+
+# Structure of a submitted app
 The structure of an application looks like this:
 
                            $APPNAME (folder)
