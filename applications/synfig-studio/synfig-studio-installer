@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=synfig-studio
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/synfig/synfig/releases/download/v1.5.0/SynfigStudio-1.5.0-2021.08.13-linux64-32dd4.appimage;
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=Synfig Studio
+Exec=/opt/bin/synfig-studio
+Comment=Open-source 2D Animation Software
+Icon=synfig-studio
+Type=Application
+Categories=Graphics;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " This AppImage is provided by https://github.com/synfig/synfig ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater

@@ -1,0 +1,29 @@
+#!/bin/sh
+
+APP=subtitle-composer
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+wget https://github.com/$(wget https://github.com/maxrd2/subtitlecomposer/releases/latest -O - | egrep '/.*/.*/.*x86_64.AppImage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+rm /home/$USER/.local/share/applications/$APP.desktop;
+echo "[Desktop Entry]
+Name=Subtitle Composer
+Exec=/opt/bin/subtitle-composer
+Comment=KF5/Qt Video Subtitle Editor.
+Icon=subtitle-composer
+Type=Application
+Categories=Video;" >> /home/$USER/.local/share/applications/$APP.desktop;
+
+wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/$APP/$APP.svg;
+mv ./$APP.svg /home/$USER/.local/share/icons/;
+
+echo "";
+echo " This AppImage is provided by https://github.com/maxrd2/subtitlecomposer ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
