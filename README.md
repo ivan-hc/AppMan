@@ -90,19 +90,11 @@ To remove AppMan and all its related dependencies and symlinks, copy/paste this 
 # How to add applications
 AppMan aims to give updated programs to every distribution with all the basic info on each application (command `appman -a [program]`).
 
-By downloading [sheets I provided](https://github.com/ivan-hc/AppMan/tree/main/models), all you need to do is to replace the UPPERCASE words (SAMPLE, LINK, LAUNCHER...). The sheets are needed to speed up uploading of the programs in the list. The main "flavours are for:
-- Recipe that requires... [pkg2appimage recipes](https://github.com/ivan-hc/AppMan/blob/main/models/PKG2APPIMAGE-installer);
-- Recipe that requires downloading and unpacking of [DEB packages](https://github.com/ivan-hc/AppMan/blob/main/models/LOCALDEB-installer);
-- Recipe that requires downloading and unpacking of [Arch Linux packages](https://github.com/ivan-hc/AppMan/blob/main/models/LOCALARCH-installer);
-- [AppImages](https://github.com/ivan-hc/AppMan/blob/main/models/WGETSIMPLE-installer).
-
-Given these patterns, you can easily test them on your PC (command `appman -c` to remove any /tmp folder from /opt/bin).
+By downloading [sheets I provided](https://github.com/ivan-hc/AppMan/tree/main/models), all you need to do is to replace the UPPERCASE words (SAMPLE, LINK, LAUNCHER...). Given these patterns, you can easily test them on your PC (command `appman -c` to remove any /tmp folder from /opt/bin).
 
 [Any pull request is welcome](https://github.com/ivan-hc/AppMan/pulls), I will do my best to make it possible.
 
-
-# How to prepare an application - structure
-Considering your applications is called $APPNAME, the structure looks like this:
+The structure of an application looks like this:
 
                            $APPNAME (folder)
            ____________________|______________________
@@ -112,12 +104,7 @@ Considering your applications is called $APPNAME, the structure looks like this:
 - "$APPNAME" is the folder, it contains a script $APPNAME-installer (see above), a $APPNAME.svg icon, an about-$APPNAME info file. $APPNAME must be the same for the folder ($APPNAME), the script ($APPNAME-installer), the icon ($APPNAME.svg) and the info (about-$APPNAME);
 - "$APPNAME-installer" is a script, using [my models](https://github.com/ivan-hc/AppMan/tree/main/models) replace APP=SAMPLE with APP=$APPNAME, pay attention to each line you wrote. Replace the word "LAUNCHER" with the content of the original .desktop file of the application, the only thing you must replace is the path of the is the line "Exec", ie "Exec=$APPNAME", it must be "Exec=/opt/bin/$APPNAME" or the app cannot be launched from the main menu (NOTE, launcher is optional if the program is only usable from the command line);
 - "$APPNAME.svg" is the icon, only in SVG format, with the same name of $APPNAME (NOTE, like the launcher, icon is optional if the program is only usable from the command line);
-- "$about-APPNAME" is a simple text file, it must containt basic info of the app, ie a brief description, update kind (`appman -u` or `appman -i $APPNAME`) and one or two links to the official site and/or the source (take [this one](https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/firefox/about-firefox) as a model).
-
+- "$about-APPNAME" is a simple text file, it must containt basic info of the app, ie a brief description, update kind (`appman -u` or `appman -i $APPNAME`) and one or two links to the official site and/or the source (learn more [here](https://github.com/ivan-hc/models) as a model).
 
 # About me
-This is my really first creation on GitHub, I also hope this will not my last. I have a lot of passion for GNU / Linux and actually too much time to spend for something.
-
-Having encouraged you to visit this page is already a huge achievement for me.
-
-If you wish, you can help me [with a small donation](https://paypal.me/ivanalexhc). I will gladly appreciate it!
+Having encouraged you to visit this page is already a huge achievement for me, being this my really first creation on GitHub, and I also hope this will not my last. If you wish, you can support me, this work and my passion with a small [donation](https://paypal.me/ivanalexhc), I will gladly appreciate it.
