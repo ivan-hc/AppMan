@@ -81,10 +81,21 @@ In the first case will be created a *zs-old backup file as big as the original i
 NOTE: since the AppMan 1.5 release you can update everything using the command `appman -U` or `appman full-upgrade`
 
 
+# What programs can be installed with AppMan
+
+With AppMan you can install three types of programs:
+
+ 1. AppImages that can be downloaded directly from the developer's website or repository. They are a direct responsibility of the latter, so please contact it through the link you can view with the command `appman -a <program>` or at the end of the installation, for any problems and bug reports. Mony of these programs are listed on [appimage.github.io](https://appimage.github.io/). With regard to the latter, AppMan undertakes only to redistribute. A small part of them supports Delta updates with `appimageupdate` (Celestia, the WINE suite, other AppImage tools...);
+ 2. AppImages which must be compiled with `pkg2appimage` and/or packaged with `appimagetool` (process which can take several minutes to be complete). They have all been tested on Debian Testing/Unstable and may not work on older distributions. These are AppImages created and tested directly by me, the author of AppMan, for example the various web browsers and the KDE game suite;
+ 3. Some standalone programs NOT packaged as AppImages (for example Google Chrome, the full Android Platform-tools suite and NodeJS/NPM).
+ 
+All these programs can be updated by reinstalling them individually (`appman -i <program>`) or in bulk (`appman -U`).
+
+
 # Uninstall
 To remove AppMan and all its related dependencies and symlinks, copy/paste this command:
 
-`sudo rm /opt/bin/appman /opt/bin/appimagetool /opt/bin/appimageupdate /opt/bin/pkg2appimage /usr/bin/appimagetool /usr/bin/appimageupdate /usr/bin/pkg2appimage`
+ `sudo rm /opt/bin/appman /opt/bin/appimagetool /opt/bin/appimageupdate /opt/bin/pkg2appimage /usr/bin/appimagetool /usr/bin/appimageupdate /usr/bin/pkg2appimage`
 
 
 # How to add applications
