@@ -132,12 +132,15 @@
 ◆ katomic : Educational game based around molecular geometry from KDE.
 ◆ kblackbox : A game of hide and seek from KDE.
 ◆ kbounce : Fill the field game from KDE.
+◆ kbreakout : Destroy bricks without losing the ball (KDE game).
 ◆ kdenlive : Video Editors provided for KDE.
 ◆ kdiamond : Diamond game from KDE.
 ◆ kfourinline : 4 in row game from KDE.
 ◆ kgoldrunner : A game with a runner and gold, from KDE. 
 ◆ kiriki : A dice game from KDE.
 ◆ kjumpingcube : A game of dices on a board, from KDE.
+◆ klickety : Color matching like SameGame for KDE.
+◆ klines : Game for KDE inspired by well known game of Color Lines.
 ◆ kmahjongg : Mahjongg game from KDE.
 ◆ kmines : Classic mine game from KDE.
 ◆ knavalbattle : Battle Ship game for KDE.
@@ -148,9 +151,11 @@
 ◆ kpat : Klondike, Spider, Free Cell and other Solitaire games from KDE.
 ◆ kreversi : Reversi game from KDE.
 ◆ kshisen : A game similar to Mahjongg, from KDE.
+◆ ksirk : A strategy board game for KDE.
 ◆ kspaceduel : Battleship game with satellites in the space, from KDE.
 ◆ ksquares : Win with the most number of completed squares. KDE game. 
 ◆ ksudoku : Sudoku game from KDE.
+◆ ktuberling : Simple Mr. Potato game for children from KDE.
 ◆ lanshare : LAN file transfer app for any kind and size of files and folders.
 ◆ legendary-kingdoms : Implementation of Legendary Kingdoms Gamebooks in C++.
 ◆ libreoffice : Free and open source Office suite (this is an helper).
@@ -161,6 +166,7 @@
 ◆ liketaskmanager : Process/performances monitor (CPU, RAM, Disks and Network).
 ◆ linuxdeployqt : Convert a linux program to an AppDir or an AppImage.
 ◆ lmms : FL Studio® alternative that allows you to produce music with the PC.
+◆ lskat : Fun and engaging card game for two players, from KDE.
 ◆ magicfountain : A novel and screenwriting program. 
 ◆ mandelbulber2 : Explore trigonometric, hyper-complex and other 3D fractals.
 ◆ manta : Flexible invoicing app with beautiful & customizable templates. 
@@ -212,6 +218,7 @@
 ◆ phreshplayer : Electron based media player app.
 ◆ photogimp : A patched version of GIMP for Adobe Photoshop users.
 ◆ photopea : Advanced Photo Editor for professional use.
+◆ picmi : Single player logic-based puzzle game from KDE.
 ◆ pkg2appimage : Utility to convert .yml recipes to AppDir (see appimagetool).
 ◆ plagpatrol : Detecting documents tampered to bypass plagiarism detectors.
 ◆ planes : Variant of battleships game.
