@@ -85,9 +85,9 @@ NOTE: since the AppMan 1.5 release you can update everything using the command `
 
 With AppMan you can install three types of programs:
 
- 1. AppImages that can be downloaded directly from the developer's website or repository. They are a direct responsibility of the latter, so please contact it through the link you can view with the command `appman -a <program>` or at the end of the installation, for any problems and bug reports. Mony of these programs are listed on [appimage.github.io](https://appimage.github.io/). AppMan undertakes only to redistribute. Only a small part of these AppImages supports Delta updates with `appimageupdate` (Celestia, the WINE suite, other AppImage tools...);
+ 1. AppImages that can be downloaded directly from the developer's website or repository. They are a direct responsibility of the latter, so please contact it through the link you can view with the command `appman -a <program>` or at the end of the installation, for any problems and bug reports. Many of these programs are listed on [appimage.github.io](https://appimage.github.io/). A small part of these AppImages supports Delta updates with `appimageupdate` (Celestia, WINE, Firefox...);
  2. AppImages which must be compiled with `pkg2appimage` and/or packaged with `appimagetool` (process which can take several minutes to be complete). They have all been tested on Debian Testing/Unstable and may not work on older distributions. These are AppImages created and tested directly by me, the author of AppMan, for example the various web browsers and the KDE game suite;
- 3. Some standalone programs NOT packaged as AppImages (for example Google Chrome, the full Android Platform-tools suite and NodeJS/NPM).
+ 3. Some standalone programs NOT packaged as AppImages (Google Chrome, Android Platform-tools, NodeJS/NPM...).
  
 All these programs can be updated by reinstalling them individually (`appman -i <program>`) or in bulk (`appman -U`).
 
