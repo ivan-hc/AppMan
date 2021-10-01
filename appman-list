@@ -92,9 +92,10 @@
 ◆ figma-linux : First interface design tool based in the browser (graphics). 
 ◆ filmulator-gui : Simplified raw editing with the power of film (graphics).
 ◆ firefox : Web Browser (installer for "firefox-stable").
+◆ firefox-beta : Fast, powerful and extensible Web Browser (Beta Edition).
 ◆ firefox-dev : Fast, powerful and extensible Web Browser (Developer Edition).
 ◆ firefox-esr : Fast, powerful and extensible Web Browser (ESR Edition).
-◆ firefox-nightly : Fast, powerful and extensible Web Browser (Beta Edition).
+◆ firefox-nightly : Fast, powerful and extensible Web Browser (Nightly Edition).
 ◆ firefox-stable : Fast, powerful and extensible Web Browser.
 ◆ firetail : An open source music player.
 ◆ flippy-qualitative-testbench : Music sheet reader.
