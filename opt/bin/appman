@@ -3,52 +3,101 @@
 URL1="https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin"
 URL2="https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications"
 URL3="https://raw.githubusercontent.com/ivan-hc/AppMan/main/updaters"
+URL4="https://raw.githubusercontent.com/ivan-hc/AppMan/main/models"
 LOCAL1=".local/share/applications"
 LOCAL2=".local/share/icons"
 
 cd /opt/bin
 case "$1" in
   ''|'-h'|'help') echo '
-  AppMan - App Manager for GNU/Linux that uses and creates AppImages
+  -----------------------------------------------------------------------
+       ___      .______   .______   .___  ___.      ___      .__   __. 
+      /   \     |   _  \  |   _  \  |   \/   |     /   \     |  \ |  | 
+     /  ^  \    |  |_)  | |  |_)  | |  \  /  |    /  ^  \    |   \|  | 
+    /  /_\  \   |   ___/  |   ___/  |  |\/|  |   /  /_\  \   |  . `  | 
+   /  _____  \  |  |      |  |      |  |  |  |  /  _____  \  |  |\   | 
+  /__/     \__\ | _|      | _|      |__|  |__| /__/     \__\ |__| \__| 
 
+   >>  App Manager for GNU/Linux that uses and creates AppImages  <<
 
- Usage:		appman [option] [argument]
+  -----------------------------------------------------------------------
+
+  Usage:		appman [option] [argument]
+  
   where option include:
   
   -a, about	Show basic info on each application, link to the website
   		and/or the source and how to update some applications.  
+
   -d, debug	Allows you to check for errors and malfunctions when
   		starting the program or during its entire execution.
-  -i, install 	Install a program.
-  -r, remove	Remove a program. 
 
+  -i, install 	Install a program. This can be taken directly from the
+  		repository of the developer (always the latest version)
+  		or compiled using pkg2appimage (in this case the process
+  		can take several minutes). This option is also used in
+  		the "-U" option to reinstall a non-updatable program in
+  		search of a newer version. "Installing" a program with
+  		AppMan means that:
+  		- the program is stored in /opt/bin;
+  		- the SVG icon is pushed in ~/.local/share/icons;
+  		- the launcher is created in ~/.local/share/applications.
+  		The icon and launcher are not needed for no-ui programs.
+  		AppMan uses both AppImages and other standalone programs.
+  		
+  -r, remove	Removes the program (confirmation required). This option
+  		removes all files whose name corresponds to [argument] if
+  		available in the destinations where AppMan installs the
+  		programs (see "-i"). And with them also any broken
+  		symbolic links in /opt/bin are deleted.
 
- Usage:		appman [option] [keywords]
+  -t, template	Generate a template folder for your application in your
+  		/home/$USER directory, so you can manipulate it to your
+  		liking and test it on your computer. Please consider
+  		submitting your app to AppMan by opening a pull request
+		at https://github.com/ivan-hc/AppMan  		 
+
+  -----------------------------------------------------------------------
+
+  Usage:		appman [option] [keywords]
+  
   where option include:  
 
   -q, query	Use one or more keywords to search for in the list of
   		available applications.
-  
 
- Usage:		appman [option]
+  -----------------------------------------------------------------------
+
+  Usage:		appman [option]
+  
   where option include:
   
   -h, help	Print this message.
-  -c, clean	Remove all  and folders, i.e. backup
-  		files, installation scripts, and temporary folders.
-  -f, files	Programs installed on the system.
-  -l, list	Shows the list of apps available in the repository.
-  -s, sync	Updates AppMan and the list of available apps.
-  -u, update	Update AppImages using "appimageupdate", if the update
-  		info is embedded into the AppImage itself by the developer.
-  
-  -U, full-upgrade	Update everything, this will also re-install the
-  			non-updatable programs by replacing them with the
-  		latest version available. This may take several minutes,
-  		depending on the number of programs, the sizes, the way
-  		they are built, and the download speed. The updatable
-  		AppImages will perform the normal update (see "-u", "update").
 
+  -c, clean	Remove all the unnecessary files and folders from
+  		/opt/bin, i.e. zs-old backup files, scripts ending for
+  		*installer or *updater, any *.zip or *.deb archive and
+  		the /opt/bin/tmp folder.
+
+  -f, files	Programs available in /opt/bin
+
+  -l, list	Shows the list of apps available in the repository.
+
+  -s, sync	Updates AppMan and the list of available apps.
+
+  -u, update	Update AppImages using "appimageupdate", if the update
+  		info is embedded into the AppImage itself by the
+  		developer.
+  
+  -U, full-upgrade	Update everything, this will also re-install
+  			the non-updatable programs by replacing them
+  		with the latest version available (see "-i"). This may
+  		take several minutes, depending on the number of the
+  		installed programs, the sizes, the way they are built,
+  		and the download speed.	The updatable AppImages will
+  		perform the normal update (see "-u").
+
+  -----------------------------------------------------------------------
    
   SITE: https://github.com/ivan-hc/AppMan
   
@@ -114,6 +163,37 @@ case "$1" in
 	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
 	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
 	echo ' ...done! Use "appman -l" to see the whole list of available apps.'; echo "";;
+  '-t'|'template')
+	while [ -n "$1" ]
+	do
+	case $2 in
+	*) for var in $2;
+	do cd /home/$USER/;
+	echo "";
+	echo " 1) Have you got an AppImage hosted somewhere?";
+	echo "";
+	echo " 2) Have you got a pkg2appimage yml recipe? ";
+	echo "";
+	echo " 3) Have you got a DEB package?";
+	echo "";
+	echo " 4) Have you got a generic .tar/.tar.* package (for Slackware or Arch Linux)?";
+	echo "";
+	read -r -p " Please choose between 1, 2, 3 and 4 : " response
+	case "$response" in
+    	1) mkdir $2 && cd $2; wget $URL4/Have%20you%20got%20an%20AppImage%20hosted%20somewhere%3F/SAMPLE/SAMPLE-installer;;
+    	2) mkdir $2 && cd $2; wget $URL4/Have%20you%20got%20a%20pkg2appimage%20yml%20recipe%3F/SAMPLE/SAMPLE-installer;;
+    	3) mkdir $2 && cd $2; wget $URL4/Have%20you%20got%20a%20DEB%20package%3F/SAMPLE/SAMPLE-installer;;
+    	4) mkdir $2 && cd $2; wget $URL4/Have%20you%20got%20an%20Arch%20Linux%20package%3F/SAMPLE/SAMPLE-installer;;
+    	*) echo ""; echo " No valid argument was chosen: process aborted! "; echo ""; exit;;
+	esac
+	mv SAMPLE-installer $2-installer;
+	sed -i s/SAMPLE/$2/g $2-installer;
+	wget $URL4/Have%20you%20got%20an%20AppImage%20hosted%20somewhere%3F/SAMPLE/about-SAMPLE;
+	mv about-SAMPLE about-$2;
+	touch $2.svg; done
+	esac
+	shift
+	done;;
   '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;
   '-U'|'full-upgrade') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done;
   	for f in *; do ! wget -q $URL3/$f-updater; done;
