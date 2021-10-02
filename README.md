@@ -66,6 +66,8 @@ The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/I
   
   `-s`, `sync`	Updates the list of available apps.
   
+  `-t [argument]`, `template [argument]` Generate a template folder for your application in your /home/$USER directory, so you can manipulate it to your liking and test it on your computer.
+  
   `-u`, `update`	Update AppImages using 'appimageupdate', if the update info is embedded into the AppImage itself by the developer.
   
   `-U`, `full-upgrade` Update everything, this will also re-install the non-updatable programs by replacing them with the	latest version available. This may take several minutes, depending on the number of programs, the sizes, the way	they are built, and the download speed. The updatable AppImages will perform the normal update (see "-u", "update").
@@ -99,15 +101,15 @@ To remove AppMan and all its related dependencies and symlinks, copy/paste this 
 
 
 # How to add applications
-AppMan aims to give updated programs to every distribution with all the basic info on each application (command `appman -a [program]`).
+Download a template from [here](https://github.com/ivan-hc/AppMan/tree/main/models), or just create it with the command:
 
-By downloading [sheets I provided](https://github.com/ivan-hc/AppMan/tree/main/models), all you need to do is to replace the UPPERCASE words (SAMPLE, LINK, LAUNCHER...). Given these patterns, you can easily test them on your PC (command `appman -c` to remove any /tmp folder from /opt/bin).
-Now I have a question for you:
+ `appman -t <your-application>`
 
- - Have you got an AppImage hosted somewhere? Click [here](https://github.com/ivan-hc/AppMan/tree/main/models/Have%20you%20got%20an%20AppImage%20hosted%20somewhere%3F).
- - Have you got a pkg2appimage yml recipe? Click [here](https://github.com/ivan-hc/AppMan/tree/main/models/Have%20you%20got%20a%20pkg2appimage%20yml%20recipe%3F).
- - Have you got a DEB package? Click [here](https://github.com/ivan-hc/AppMan/tree/main/models/Have%20you%20got%20a%20DEB%20package%3F).
- - Have you got an Arch Linux package? Click [here](https://github.com/ivan-hc/AppMan/tree/main/models/Have%20you%20got%20an%20Arch%20Linux%20package%3F).
+all you need to do is to replace the UPPERCASE words (SAMPLE, LINK, LAUNCHER...). Given these patterns, you can easily test them on your PC (command `appman -c` to remove any /tmp folder from /opt/bin). Each template is dedicated to a different way to distribute or create an application, for example:
+ - If you have an AppImage hosted somewhere, click [here](https://github.com/ivan-hc/AppMan/tree/main/models/Have%20you%20got%20an%20AppImage%20hosted%20somewhere%3F).
+ - If you have a pkg2appimage yml recipe, click [here](https://github.com/ivan-hc/AppMan/tree/main/models/Have%20you%20got%20a%20pkg2appimage%20yml%20recipe%3F).
+ - If you have a DEB package, click [here](https://github.com/ivan-hc/AppMan/tree/main/models/Have%20you%20got%20a%20DEB%20package%3F).
+ - If you have a .tar.* archive (for Arch Linux or Slackware), click [here](https://github.com/ivan-hc/AppMan/tree/main/models/Have%20you%20got%20an%20Arch%20Linux%20package%3F).
 
 Any pull request is welcome, click [here](https://github.com/ivan-hc/AppMan/pulls) to submit your app.
 
