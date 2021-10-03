@@ -1,0 +1,18 @@
+#!/bin/sh
+
+APP=nvim
+
+cd /opt/bin;
+mkdir tmp;
+cd ./tmp;
+
+wget https://github.com/$(wget https://github.com/neovim/neovim/releases/latest -O - | egrep '/.*/.*/.*nvim.appimage' -o);
+cd ..;
+mv ./tmp/*mage ./$APP;
+chmod a+x /opt/bin/$APP;
+
+echo "";
+echo " This AppImage is provided by https://neovim.io/ ";
+echo "";
+
+rm -R -f /opt/bin/tmp /opt/bin/$APP-installer /opt/bin/$APP-updater
