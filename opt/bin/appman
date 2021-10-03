@@ -142,7 +142,9 @@ case "$1" in
 	do
 	case $2 in
 	*) for var in $2;
-	do echo "" && grep -i -E $2 /home/$USER/.cache/appman-list; echo ""; done
+	do rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
+	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
+	echo "" && grep -i -E $2 /home/$USER/.cache/appman-list; echo ""; done
 	esac
 	shift
 	done;;
@@ -194,11 +196,17 @@ case "$1" in
 	esac
 	shift
 	done;;
-  '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;;
+  '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;
+  	cd /opt/bin; mv ./appman ./appman-zs-old; wget -q $URL1/appman && chmod a+x ./appman;
+	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
+	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;;
   '-U'|'full-upgrade') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done;
   	for f in *; do ! wget -q $URL3/$f-updater; done;
   	for f in *; do chmod a+x /opt/bin/*-updater; done;
   	for f in *; do sh -x /opt/bin/*-updater ; done;
+  	cd /opt/bin; mv ./appman ./appman-zs-old; wget -q $URL1/appman && chmod a+x ./appman;
+	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
+	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
   	echo ""; echo ""; echo " All your programs are updated!"; echo ""; echo "";;
   *) exec /opt/bin/appman ;;
 esac
