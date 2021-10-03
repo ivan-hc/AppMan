@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Replace SAMPLE with the name of the app, using only lowercase letters, because it is a "command".
-#It will be the name of the icon SAMPLE.svg and the file about-SAMPLE in the main folder of the app.
+# $APP must use lowercase letters, because it is a "command".
+# The same name is used for the icon SAMPLE.svg and the file about-SAMPLE in the main folder of the app.
 APP=SAMPLE
 
 # Entering in /opt/bin will be created a /tmp folder in which all the operations will be performed
@@ -28,8 +28,8 @@ chmod a+x /opt/bin/$APP;
 # Creating a LAUNCHER (the old one will be removed if already exists)
 rm /home/$USER/.local/share/applications/$APP.desktop;
 # This is an example of launcher:
-# 1) Replace SAMPLE the same way you've done for $APP (see above at line 5)
-# 2) APPNAME can be different from $APP with Capital letters if needed
+# 1) APPNAME can be different from $APP with Capital letters if needed
+# 2) $APP in Exec must be always placed in /opt/bin
 # 3) COMMENT is the description of the app (optional)
 # 4) Choose a category at the end to show the app into a category of the menu
 echo "[Desktop Entry]
