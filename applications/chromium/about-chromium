@@ -6,4 +6,4 @@
  UPDATE: appman -i chromium
  
  SITE: https://www.chromium.org
- SOURCE: https://slackware.uk/people/alien/sbrepos/current/x86_64/chromium
+ SOURCE: http://www.slackware.com/~alien/slackbuilds/chromium/pkg64/current
