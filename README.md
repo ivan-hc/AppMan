@@ -37,10 +37,6 @@ Alternativelly (and only if the yours is a Debian-based system) it is also possi
 
 `export PATH=$PATH:/opt/bin`
 
-4) Download the application's list:
-
-`appman -s` or `appman sync`
-
 
 # AppMan usage - Commands
 
@@ -73,6 +69,7 @@ Alternativelly (and only if the yours is a Debian-based system) it is also possi
   `-u`, `update`	Update AppImages using 'appimageupdate', if the update info is embedded into the AppImage itself by the developer.
   
   `-U`, `full-upgrade` Update everything, this will also re-install the non-updatable programs by replacing them with the	latest version available. This may take several minutes, depending on the number of programs, the sizes, the way	they are built, and the download speed. The updatable AppImages will perform the normal update (see "-u", "update").
+
 
 # How to update programs
 
@@ -115,6 +112,7 @@ all you need to do is to replace the UPPERCASE words (SAMPLE, LINK, LAUNCHER...)
 
 Any pull request is welcome, click [here](https://github.com/ivan-hc/AppMan/pulls) to submit your app.
 
+
 # Structure of a submitted app
 The structure of an application looks like this:
 
@@ -127,6 +125,7 @@ The structure of an application looks like this:
 - "$APPNAME-installer" is a script, using [my models](https://github.com/ivan-hc/AppMan/tree/main/models) replace APP=SAMPLE with APP=$APPNAME, pay attention to each line you wrote. Replace the word "LAUNCHER" with the content of the original .desktop file of the application, the only thing you must replace is the path of the is the line "Exec", ie "Exec=$APPNAME", it must be "Exec=/opt/bin/$APPNAME" or the app cannot be launched from the main menu (NOTE, launcher is optional if the program is only usable from the command line);
 - "$APPNAME.svg" is the icon, only in SVG format, with the same name of $APPNAME (NOTE, like the launcher, icon is optional if the program is only usable from the command line);
 - "$about-APPNAME" is a simple text file, it must containt basic info of the app, ie a brief description, update kind (`appman -u` or `appman -i $APPNAME`) and one or two links to the official site and/or the source (take [this](https://raw.githubusercontent.com/ivan-hc/AppMan/main/models/Have%20you%20got%20an%20AppImage%20hosted%20somewhere%3F/SAMPLE/about-SAMPLE) as a model).
+
 
 # About me
 Having encouraged you to visit this page is already a huge achievement for me, being this my really first creation on GitHub, and I also hope this will not my last. If you wish, you can support me, this work and my passion with a small [donation](https://paypal.me/ivanalexhc), I will gladly appreciate it.
