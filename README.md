@@ -27,7 +27,7 @@ The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/I
 
 `sudo ./INSTALL`
 
-Alternativelly (and only if the yours is a Debian-based system) it is also possible to install the [deb package](https://github.com/ivan-hc/AppMan/releases/latest).
+Alternatively (and only if yours is a Debian based system) it is also possible to install the [deb package](https://github.com/ivan-hc/AppMan/releases/latest).
 
 2) Change privileges on /opt/bin to use AppMan as normal user:
 
