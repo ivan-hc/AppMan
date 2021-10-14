@@ -8,6 +8,8 @@ wget https://github.com/OpenShot/openshot-qt/releases/download/$v/OpenShot-$v-x8
 cd ..
 mv ./tmp/*mage ./openshot;
 chmod a+x ./openshot;
+mkdir /home/$USER/.local/share/appimagekit;
+touch /home/$USER/.local/share/appimagekit/no_desktopintegration;
 rm /home/$USER/.local/share/applications/openshot.desktop;
 echo '[Desktop Entry]
 Name=OpenShot Video Editor
