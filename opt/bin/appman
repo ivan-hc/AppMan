@@ -135,7 +135,10 @@ case "$1" in
 	esac
 	shift
 	done;;
-  '-l'|'list') echo ""; echo "  List of applications available in the AppMan repository:"; echo ""; cat /home/$USER/.cache/appman-list;
+  '-l'|'list') echo ""; echo "  List of applications available in the AppMan repository:"; echo "";
+  	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
+	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
+  	cat /home/$USER/.cache/appman-list;
   	echo ""; echo '    Search for one or more terms in this list using "appman -q [keywords]"'; echo "";;
   '-q'|'query')
 	while [ -n "$1" ]
