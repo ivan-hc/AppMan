@@ -164,7 +164,8 @@ case "$1" in
 	shift
 	done;;
   '-s'|'sync') echo ""; echo " Updating application's list, please wait..."; echo "";
-  	cd /opt/bin; mv ./appman ./appman-zs-old; wget -q $URL1/appman && chmod a+x ./appman;
+  	cd /opt/bin; mkdir tmp; cd ./tmp; wget -q $URL1/appman && chmod a+x ./appman; cd ..;
+  	mv /opt/bin/tmp/appman /opt/bin; rmdir /opt/bin/tmp;
 	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
 	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
 	echo ' ...done! Use "appman -l" to see the whole list of available apps.'; echo "";;
@@ -200,14 +201,16 @@ case "$1" in
 	shift
 	done;;
   '-u'|'update') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done ;
-  	cd /opt/bin; mv ./appman ./appman-zs-old; wget -q $URL1/appman && chmod a+x ./appman;
+  	cd /opt/bin; mkdir tmp; cd ./tmp; wget -q $URL1/appman && chmod a+x ./appman; cd ..;
+  	mv /opt/bin/tmp/appman /opt/bin; rmdir /opt/bin/tmp;
 	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
 	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;;
   '-U'|'full-upgrade') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done;
   	for f in *; do ! wget -q $URL3/$f-updater; done;
   	for f in *; do chmod a+x /opt/bin/*-updater; done;
   	for f in *; do sh -x /opt/bin/*-updater ; done;
-  	cd /opt/bin; mv ./appman ./appman-zs-old; wget -q $URL1/appman && chmod a+x ./appman;
+  	cd /opt/bin; mkdir tmp; cd ./tmp; wget -q $URL1/appman && chmod a+x ./appman; cd ..;
+  	mv /opt/bin/tmp/appman /opt/bin; rmdir /opt/bin/tmp;
 	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
 	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
   	echo ""; echo ""; echo " All your programs are updated!"; echo ""; echo "";;
