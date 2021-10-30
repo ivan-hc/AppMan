@@ -19,23 +19,19 @@ The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/I
 
 # Installation
 
-1) Download and run the [INSTALL](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) script, this will create a directory /opt/bin where "appman" will be downloaded together with "appimagetool", "appimageupdate" and "pkg2appimage", for the latter three symlinks will also be created in /usr/bin:
+1) Copy/paste this command:
 
-`wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL`
+ `wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL && chmod a+x ./INSTALL && sudo ./INSTALL`
+ 
+ this will download and run the [INSTALL](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) script that will create a directory /opt/bin where "appman" will be downloaded together with "appimagetool", "appimageupdate" and "pkg2appimage", for the latter three symlinks will also be created in /usr/bin. Alternatively (and only if yours is a Debian based system) it is also possible to install the [deb package](https://github.com/ivan-hc/AppMan/releases/latest).
 
-`chmod a+x ./INSTALL`
-
-`sudo ./INSTALL`
-
-Alternatively (and only if yours is a Debian based system) it is also possible to install the [deb package](https://github.com/ivan-hc/AppMan/releases/latest).
-
-2) Change privileges on /opt/bin to use AppMan as normal user:
-
-`sudo chown -R $USER /opt/bin/`
-
-3) Add this line at the end of your /home/$USER/.bashrc :
+2) Add this line at the end of your /home/$USER/.bashrc :
 
 `export PATH=$PATH:/opt/bin`
+
+3) Change privileges on /opt/bin to use AppMan as normal user:
+
+`sudo chown -R $USER /opt/bin/`
 
 
 # AppMan usage - Commands
