@@ -17,7 +17,7 @@ A video on a first build is available [here](https://www.youtube.com/watch?v=H4X
 The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) includes [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) (needed to update AppImages), [pkg2appimage](https://github.com/AppImage/pkg2appimage) (to compile *.yml recipes) and [appimagetool](https://github.com/AppImage/AppImageKit) (to convert a *.AppDir folder to AppImage). Nothing else. Other tools are already pre-installed on your system (wget, mv, mkdir...).
 
 
-# Installation
+# Installation (step by step)
 
 1) Copy/paste this command:
 
@@ -33,6 +33,10 @@ The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/I
 
 `sudo chown -R $USER /opt/bin/`
 
+# Quick installation
+Copy paste this command:
+ 
+`wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL && chmod a+x ./INSTALL && sudo ./INSTALL && echo "export PATH=$PATH:/opt/bin" >> /home/$USER/.bashrc && sudo chown -R $USER /opt/bin/`
 
 # AppMan usage - Commands
 
