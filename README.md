@@ -1,11 +1,26 @@
 # AppMan
-AppImage Manager that works like APT or Pacman.
+
+- [About AppMan](#about-appman)
+- [About AppImages](#about-appimages)
+- [How it works](#how-it-works)
+- [Installation (step by step)](#installation-step-by-step)
+- [Quick installation](#quick-installation)
+- [AppMan usage - Commands](#appman-usage---commands)
+- [How to update programs](#how-to-update-programs)
+- [What programs can be installed with AppMan](#what-programs-can-be-installed-with-appman)
+- [Uninstall](#uninstall)
+- [How to add applications](https://github.com/ivan-hc/AppMan#how-to-add-applications)
+- [Structure of a submitted app](#structure-of-a-submitted-app)
+
+## About AppMan
+AppMan is an application manager for AppImages and other standalone programs that works like APT or Pacman.
 
 The main goal of this tool is to provide the same updated applications to multiple GNU/Linux distributions without having to change the package manager or the distro itself. This means that whatever distro you use, you will not miss your favorite programs or the need for a more updated version. AppMan also aims to be a merger for GNU / Linux distributions, using not just AppImage as the main package format, but also other standalone programs, so without having to risk breaking anything on your system: no daemons, no shared libraries. Just your program and your launcher.
 
+## About AppImages
 [AppImage](https://appimage.org/) is a standalone package format, the best choice if you are looking for an alternative packaging format to use on multiple GNU/Linux distributions, it uses fewer resources than Snap and Flatpak, and works completely autonomously, using its own libraries. AppMan aims to give it a home to stay.
 
-# How it works
+## How it works
 AppMan uses [precompiled scripts](https://github.com/ivan-hc/AppMan/tree/main/applications) that can download applications from their main sites or compiling them using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit), just like you can do with PKGBUILDs in AUR. The final result is a ready to use AppImage with a launcher and its icon (where needed, command line tools like "wine" can be only used from the terminal) for your favourite application. The complete list is available [here](https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list).
 
 NOTE: programs installed using `pkg2appimage` (for example, all the KDE games) may take several minutes to complete the process and to be ready for use.
@@ -17,7 +32,7 @@ A video on a first build is available [here](https://www.youtube.com/watch?v=H4X
 The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) includes [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) (needed to update AppImages), [pkg2appimage](https://github.com/AppImage/pkg2appimage) (to compile *.yml recipes) and [appimagetool](https://github.com/AppImage/AppImageKit) (to convert a *.AppDir folder to AppImage). Nothing else. Other tools are already pre-installed on your system (wget, mv, mkdir...).
 
 
-# Installation (step by step)
+## Installation (step by step)
 
 1) Copy/paste this command:
 
@@ -33,12 +48,12 @@ The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/I
 
 `sudo chown -R $USER /opt/bin/`
 
-# Quick installation
+## Quick installation
 Copy paste this command:
  
 `wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL && chmod a+x ./INSTALL && sudo ./INSTALL && echo "export PATH=$PATH:/opt/bin" >> /home/$USER/.bashrc && sudo chown -R $USER /opt/bin/`
 
-# AppMan usage - Commands
+## AppMan usage - Commands
 
 `appman [option]`  or `appman [option] [argument]`
  
@@ -71,7 +86,7 @@ Copy paste this command:
   `-U`, `full-upgrade` Update everything, this will also re-install the non-updatable programs by replacing them with the	latest version available. This may take several minutes, depending on the number of programs, the sizes, the way	they are built, and the download speed. The updatable AppImages will perform the normal update (see "-u", "update").
 
 
-# How to update programs
+## How to update programs
 
 There are two kind of updates in AppMan:
 - `appman -u` uses [appimageupdate](https://github.com/AppImage/AppImageUpdate) to update those programs with inbuild instructions (so not all);
@@ -82,7 +97,7 @@ In the first case will be created a *zs-old backup file as big as the original i
 NOTE: since the AppMan 1.5 release you can update everything using the command `appman -U` or `appman full-upgrade`
 
 
-# What programs can be installed with AppMan
+## What programs can be installed with AppMan
 
 With AppMan you can install three types of programs:
 
@@ -93,13 +108,13 @@ With AppMan you can install three types of programs:
 All these programs can be updated by reinstalling them individually (`appman -i <program>`) or in bulk (`appman -U`).
 
 
-# Uninstall
+## Uninstall
 To remove AppMan and all its related dependencies and symlinks, copy/paste this command:
 
  `sudo rm /opt/bin/appman /opt/bin/appimagetool /opt/bin/appimageupdate /opt/bin/pkg2appimage /usr/bin/appimagetool /usr/bin/appimageupdate /usr/bin/pkg2appimage`
 
 
-# How to add applications
+## How to add applications
 Download a template from [here](https://github.com/ivan-hc/AppMan/tree/main/models), or just create it with the command:
 
  `appman -t <your-application>`
@@ -113,7 +128,7 @@ all you need to do is to replace the UPPERCASE words (SAMPLE, LINK, LAUNCHER...)
 Any pull request is welcome, click [here](https://github.com/ivan-hc/AppMan/pulls) to submit your app.
 
 
-# Structure of a submitted app
+## Structure of a submitted app
 The structure of an application looks like this:
 
                            $APPNAME (folder)
@@ -127,5 +142,5 @@ The structure of an application looks like this:
 - "$about-APPNAME" is a simple text file, it must containt basic info of the app, ie a brief description, update kind (`appman -u` or `appman -i $APPNAME`) and one or two links to the official site and/or the source (take [this](https://raw.githubusercontent.com/ivan-hc/AppMan/main/models/Have%20you%20got%20an%20AppImage%20hosted%20somewhere%3F/SAMPLE/about-SAMPLE) as a model).
 
 
-# About me
+## About me
 Having encouraged you to visit this page is already a huge achievement for me, being this my really first creation on GitHub, and I also hope this will not my last. If you wish, you can support me, this work and my passion with a small [donation](https://paypal.me/ivanalexhc), I will gladly appreciate it.
