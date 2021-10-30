@@ -1,4 +1,5 @@
 # AppMan
+Application Manager for AppImages and other standalone programs that works like APT or Pacman. 
 
 - [About AppMan](#about-appman)
 - [About AppImages](#about-appimages)
