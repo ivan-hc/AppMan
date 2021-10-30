@@ -125,7 +125,7 @@ case "$1" in
 	esac
 	shift
 	done;;
-  '-f'|'files') echo ""; echo "  Applications installed on the system:"; echo ""; ls /opt/bin; echo "" ;;
+  '-f'|'files') echo ""; echo $(echo "  Applications installed on the system:"; ls /opt/bin/ | wc -l); echo ""; ls /opt/bin; echo "" ;;
   '-i'|'install')
 	while [ -n "$1" ]
 	do
@@ -139,7 +139,10 @@ case "$1" in
   	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
 	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
   	cat /home/$USER/.cache/appman-list;
-  	echo ""; echo '    Search for one or more terms in this list using "appman -q [keywords]"'; echo "";;
+  	cd /opt/bin && rm -R -f *zs-old tmp *-installer *.zip *.deb *-updater;
+  	echo ""; echo $(echo "ALL:"; grep -e "$" -c /home/$USER/.cache/appman-list);
+  	echo $(echo "INSTALLED:"; ls /opt/bin/ | wc -l);
+  	echo ""; echo '  Search for one or more terms in this list using "appman -q [keywords]"'; echo "";;
   '-q'|'query')
 	while [ -n "$1" ]
 	do
@@ -163,12 +166,15 @@ case "$1" in
 	esac
 	shift
 	done;;
-  '-s'|'sync') echo ""; echo " Updating application's list, please wait..."; echo "";
+  '-s'|'sync') echo ""; echo " Updating application's list, please wait..."; sleep 1;
   	cd /opt/bin; mkdir tmp; cd ./tmp; wget -q $URL1/appman && chmod a+x ./appman; cd ..;
   	mv /opt/bin/tmp/appman /opt/bin; rmdir /opt/bin/tmp;
 	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
 	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
-	echo ' ...done! Use "appman -l" to see the whole list of available apps.'; echo "";;
+	echo ' done!'; echo ""; sleep 1;
+	echo $(echo ""; ls /opt/bin/ | wc -l && echo "installed of ";
+	grep -e "$" -c /home/$USER/.cache/appman-list; echo "available in the repository");
+	echo ""; echo ' Use "appman -l" to see the whole list of available apps.'; echo "";;
   '-t'|'template')
 	while [ -n "$1" ]
 	do
