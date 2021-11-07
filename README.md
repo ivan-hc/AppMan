@@ -4,8 +4,7 @@ Application Manager for AppImages and other standalone programs.
 - [About AppMan](#about-appman)
 - [About AppImages](#about-appimages)
 - [How it works](#how-it-works)
-- [Installation (step by step)](#installation-step-by-step)
-- [Quick installation](#quick-installation)
+- Installation: choose between a [slow method](#slow-method) or a [quick method](#quick-method)
 - [AppMan usage - Commands](#appman-usage---commands)
 - [How to update programs](#how-to-update-programs)
 - [What programs can be installed with AppMan](#what-programs-can-be-installed-with-appman)
@@ -32,8 +31,9 @@ A video on a first build is available [here](https://www.youtube.com/watch?v=H4X
 
 The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) includes [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) (needed to update AppImages), [pkg2appimage](https://github.com/AppImage/pkg2appimage) (to compile *.yml recipes) and [appimagetool](https://github.com/AppImage/AppImageKit) (to convert a *.AppDir folder to AppImage). Nothing else. Other tools are already pre-installed on your system (wget, mv, mkdir...).
 
+# Installation
 
-## Installation (step by step)
+### Slow method
 
 1) Copy/paste this command:
 
@@ -49,10 +49,12 @@ The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/I
 
 `sudo chown -R $USER /opt/bin/`
 
-## Quick installation
+### Quick method
 Copy paste this command:
  
 `wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL && chmod a+x ./INSTALL && sudo ./INSTALL && echo "export PATH=$PATH:/opt/bin" >> /home/$USER/.bashrc && sudo chown -R $USER /opt/bin/`
+
+this will add a long line to the ~/.bashrc. It is recommended that you log out to make it work.
 
 ## AppMan usage - Commands
 
