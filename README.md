@@ -56,7 +56,7 @@ Copy paste this command:
 
 this will add a long line to the ~/.bashrc. It is recommended that you log out to make it work.
 
-## AppMan usage - Commands
+# AppMan usage - Commands
 
 `appman [option]`  or `appman [option] [argument]`
  
