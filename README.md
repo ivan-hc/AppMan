@@ -4,7 +4,7 @@ Application Manager for AppImages and other standalone programs.
 - [About AppMan](#about-appman)
 - [About AppImages](#about-appimages)
 - [How it works](#how-it-works)
-- Installation methods: choose between [slow](#slow-method) or [quick](#quick-method)
+- Installation: [slow](#slow-method) vs [quick](#quick-method)
 - [AppMan usage - Commands](#appman-usage---commands)
 - [How to update programs](#how-to-update-programs)
 - [What programs can be installed with AppMan](#what-programs-can-be-installed-with-appman)
@@ -33,7 +33,7 @@ The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/I
 
 # Installation
 
-### Slow method
+### Slow installation (recommended)
 
 1) Copy/paste this command:
 
@@ -49,7 +49,7 @@ The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/I
 
 `sudo chown -R $USER /opt/bin/`
 
-### Quick method
+### Quick installation
 Copy paste this command:
  
 `wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL && chmod a+x ./INSTALL && sudo ./INSTALL && echo "export PATH=$PATH:/opt/bin" >> /home/$USER/.bashrc && sudo chown -R $USER /opt/bin/`
