@@ -4,7 +4,7 @@ Application Manager for AppImages and other standalone programs.
 - [About AppMan](#about-appman)
 - [About AppImages](#about-appimages)
 - [How it works](#how-it-works)
-- [Installation methods](#installation): [slow (recommended)](#slow-installation-recommended) or [quick](#quick-installation)
+- [Installation methods](#installation-methods): [slow (recommended)](#slow-installation-recommended) or [quick](#quick-installation)
 - [AppMan usage - Commands](#appman-usage---commands)
 - [How to update programs](#how-to-update-programs)
 - [What programs can be installed with AppMan](#what-programs-can-be-installed-with-appman)
@@ -31,7 +31,7 @@ A video on a first build is available [here](https://www.youtube.com/watch?v=H4X
 
 The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) includes [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) (needed to update AppImages), [pkg2appimage](https://github.com/AppImage/pkg2appimage) (to compile *.yml recipes) and [appimagetool](https://github.com/AppImage/AppImageKit) (to convert a *.AppDir folder to AppImage). Nothing else. Other tools are already pre-installed on your system (wget, mv, mkdir...).
 
-# Installation
+# Installation methods
 
 ### Slow installation (recommended)
 
