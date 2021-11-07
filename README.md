@@ -4,7 +4,7 @@ Application Manager for AppImages and other standalone programs.
 - [About AppMan](#about-appman)
 - [About AppImages](#about-appimages)
 - [How it works](#how-it-works)
-- Installation: [slow](#slow-installation-recommended) vs [quick](#quick-installation)
+- Installation methods: [slow (recommended)](#slow-installation-recommended) or [quick](#quick-installation)
 - [AppMan usage - Commands](#appman-usage---commands)
 - [How to update programs](#how-to-update-programs)
 - [What programs can be installed with AppMan](#what-programs-can-be-installed-with-appman)
