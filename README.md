@@ -4,7 +4,7 @@ Application Manager for AppImages and other standalone programs.
 - [About AppMan](#about-appman)
 - [About AppImages](#about-appimages)
 - [How it works](#how-it-works)
-- Installation: choose between a [slow method](#slow-method) or a [quick method](#quick-method)
+- Installation methods: choose between [slow](#slow-method) or [quick](#quick-method)
 - [AppMan usage - Commands](#appman-usage---commands)
 - [How to update programs](#how-to-update-programs)
 - [What programs can be installed with AppMan](#what-programs-can-be-installed-with-appman)
