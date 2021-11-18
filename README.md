@@ -4,8 +4,8 @@ Application Manager for AppImages and other standalone programs.
 - [About AppMan](#about-appman)
 - [About AppImages](#about-appimages)
 - [How it works](#how-it-works)
-- [Installation methods](#installation-methods): [slow (recommended)](#slow-installation-recommended) or [quick](#quick-installation)
-- [AppMan usage - Commands](#appman-usage---commands)
+- [Installation](#installation)
+- [Commands](#commands)
 - [How to update programs](#how-to-update-programs)
 - [What programs can be installed with AppMan](#what-programs-can-be-installed-with-appman)
 - [Uninstall](#uninstall)
@@ -31,32 +31,19 @@ A video on a first build is available [here](https://www.youtube.com/watch?v=H4X
 
 The [AppMan's installer](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) includes [appimageupdatetool](https://github.com/AppImage/AppImageUpdate) (needed to update AppImages), [pkg2appimage](https://github.com/AppImage/pkg2appimage) (to compile *.yml recipes) and [appimagetool](https://github.com/AppImage/AppImageKit) (to convert a *.AppDir folder to AppImage). Nothing else. Other tools are already pre-installed on your system (wget, mv, mkdir...).
 
-# Installation methods
+# Installation
 
-### Slow installation (recommended)
-
-1) Copy/paste this command:
+Copy/paste this command:
 
  `wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL && chmod a+x ./INSTALL && sudo ./INSTALL`
  
- this will download and run the [INSTALL](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) script that will create a directory /opt/bin where "appman" will be downloaded together with "appimagetool", "appimageupdate" and "pkg2appimage", for the latter three symlinks will also be created in /usr/bin. Alternatively (and only if yours is a Debian based system) it is also possible to install the [deb package](https://github.com/ivan-hc/AppMan/releases/latest).
+ this command will download and run the [INSTALL](https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL) script that:
+ - creates a directory /opt/bin where "appman" will be downloaded together with "appimagetool", "appimageupdate" and "pkg2appimage";
+ - creates symlinks in /usr/bin for "appimagetool", "appimageupdate" and "pkg2appimage";
+ - adds the line `export PATH=$PATH:/opt/bin` to your ~/.bashrc;
+ - changes privileges on /opt/bin to use AppMan as normal user.
 
-2) Add this line at the end of your /home/$USER/.bashrc :
-
-`export PATH=$PATH:/opt/bin`
-
-3) Change privileges on /opt/bin to use AppMan as normal user:
-
-`sudo chown -R $USER /opt/bin/`
-
-### Quick installation
-Copy paste this command:
- 
-`wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL && chmod a+x ./INSTALL && sudo ./INSTALL && echo "export PATH=$PATH:/opt/bin" >> /home/$USER/.bashrc && sudo chown -R $USER /opt/bin/`
-
-this will add a long line to the ~/.bashrc. It is recommended that you log out to make it work.
-
-# AppMan usage - Commands
+# Commands
 
 `appman [option]`  or `appman [option] [argument]`
  
