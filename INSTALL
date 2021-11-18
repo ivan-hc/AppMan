@@ -13,3 +13,4 @@ sudo ln -s /opt/bin/appimagetool /usr/bin/appimagetool;
 sudo ln -s /opt/bin/pkg2appimage /usr/bin/pkg2appimage;
 currentuser=$(who | awk '{print $1}')
 chown -R $currentuser /opt/bin
+echo 'export PATH=$PATH:/opt/bin' >> /home/$currentuser/.bashrc
