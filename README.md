@@ -11,6 +11,7 @@ Application Manager for AppImages and other standalone programs.
 - [Uninstall](#uninstall)
 - [How to add applications](https://github.com/ivan-hc/AppMan#how-to-add-applications)
 - [Structure of a submitted app](#structure-of-a-submitted-app)
+- [Related-projects](#related-projects)
 
 ## About AppMan
 AppMan is an application manager for AppImages and other standalone programs that works like APT or Pacman.
@@ -131,6 +132,8 @@ The structure of an application looks like this:
 - "$APPNAME.svg" is the icon, only in SVG format, with the same name of $APPNAME (NOTE, like the launcher, icon is optional if the program is only usable from the command line);
 - "$about-APPNAME" is a simple text file, it must containt basic info of the app, ie a brief description, update kind (`appman -u` or `appman -i $APPNAME`) and one or two links to the official site and/or the source (take [this](https://raw.githubusercontent.com/ivan-hc/AppMan/main/models/Have%20you%20got%20an%20AppImage%20hosted%20somewhere%3F/SAMPLE/about-SAMPLE) as a model).
 
+# Related projects
+[WANT](https://github.com/ivan-hc/want), it is a new App Manager I've done, inspired by AppMan. The commands are less compared to AppMan, because there are less things to do. WANT is built to allow system integration and automatic updates for each application.
 
-## About me
-Having encouraged you to visit this page is already a huge achievement for me, being this my really first creation on GitHub, and I also hope this will not my last. If you wish, you can support me, this work and my passion with a small [donation](https://paypal.me/ivanalexhc), I will gladly appreciate it.
+# About me
+Having encouraged you to visit this page is already a huge achievement for me, being AppMan my really first creation on GitHub, and I also hope this and [WANT](https://github.com/ivan-hc/want) will not be my last. I'm not a developer, but a simple enthusiast who in my spare time tries to learn new things and then convert them into something more useful for the community. If only I had enough time I would devote myself completely to research, but I can't, real life is far from here, but I love to stay here because I express myself this way. If you wish, you can support me, this work and my passion with a small [donation](https://paypal.me/ivanalexhc), I will gladly appreciate it. Thank you.
