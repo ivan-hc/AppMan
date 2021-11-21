@@ -101,6 +101,8 @@ case "$1" in
    
   SITE: https://github.com/ivan-hc/AppMan
   
+  NEW "AM" PROJECT: https://github.com/ivan-hc/APPLICATION-MANAGER
+    
   ' ;;
 
   '-a'|'about')
