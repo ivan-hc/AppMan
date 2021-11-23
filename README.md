@@ -11,7 +11,7 @@ Application Manager for AppImages and other standalone programs.
 - [Uninstall](#uninstall)
 - [How to add applications](https://github.com/ivan-hc/AppMan#how-to-add-applications)
 - [Structure of a submitted app](#structure-of-a-submitted-app)
-- [Related-projects](#related-projects)
+- ["AM", the successor of AppMan](#am-the-successor-of-appman)
 
 ## About AppMan
 AppMan is an application manager for AppImages and other standalone programs that works like APT or Pacman.
@@ -132,8 +132,10 @@ The structure of an application looks like this:
 - "$APPNAME.svg" is the icon, only in SVG format, with the same name of $APPNAME (NOTE, like the launcher, icon is optional if the program is only usable from the command line);
 - "$about-APPNAME" is a simple text file, it must containt basic info of the app, ie a brief description, update kind (`appman -u` or `appman -i $APPNAME`) and one or two links to the official site and/or the source (take [this](https://raw.githubusercontent.com/ivan-hc/AppMan/main/models/Have%20you%20got%20an%20AppImage%20hosted%20somewhere%3F/SAMPLE/about-SAMPLE) as a model).
 
-# Related projects
-[APP](https://github.com/ivan-hc/APP-Manager), it is a new App Manager I've done, inspired by AppMan. The commands are less compared to AppMan, because there are less things to do. APP is built to allow integration in the system and automatic updates for each application, so the final user must do nothing but just using the application.
+# "AM", the successor of AppMan
+["AM"](https://github.com/ivan-hc/APPLICATION-MANAGER) is a new Application Manager I've done, inspired by AppMan. The commands are less compared to AppMan, because there are less things to do. "AM" is built to allow integration in the system and automatic updates for each application, so the final user must do nothing but just using the application. "AM"'s goal is to provide a free and open source App Manager that works on many other architectures (including and not limited to i386 and ARM).
+
+Check the repository of the project at [ivan-hc/APPLICATION-MANAGER](https://github.com/ivan-hc/APPLICATION-MANAGER) and work at this project with me!
 
 # About me
 Having encouraged you to visit this page is already a huge achievement for me, being AppMan my really first creation on GitHub. I'm not a developer, but a simple enthusiast who in my spare time tries to learn new things and then convert them into something more useful for the community. If only I had enough time I would devote myself completely to research, but I can't, real life is far from here, but I love to stay here because I express myself this way. If you wish, you can support me, this work and my passion with a small [donation](https://paypal.me/ivanalexhc), I will gladly appreciate it. Thank you.
