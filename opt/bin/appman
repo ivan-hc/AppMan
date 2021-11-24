@@ -99,9 +99,11 @@ case "$1" in
 
   -----------------------------------------------------------------------
   
-  THE SITE OF APPMAN: https://github.com/ivan-hc/AppMan
+  APPMAN:
+  https://github.com/ivan-hc/AppMan
   
-  NEW "AM" PROJECT: https://github.com/ivan-hc/APPLICATION-MANAGER
+  "AM", THE SUCCESSOR OF APPMAN:
+  https://github.com/ivan-hc/APPLICATION-MANAGER
     
   ' ;;
 
