@@ -134,7 +134,7 @@ The structure of an application looks like this:
 - "$about-APPNAME" is a simple text file, it must containt basic info of the app, ie a brief description, update kind (`appman -u` or `appman -i $APPNAME`) and one or two links to the official site and/or the source (take [this](https://raw.githubusercontent.com/ivan-hc/AppMan/main/models/Have%20you%20got%20an%20AppImage%20hosted%20somewhere%3F/SAMPLE/about-SAMPLE) as a model).
 
 # "AM", the successor of AppMan
-["AM"](https://github.com/ivan-hc/APPLICATION-MANAGER) is a new Application Manager I've done, inspired by AppMan. The commands are less compared to AppMan, because there are less things to do. "AM" is built to allow integration in the system and automatic updates for each application, so the final user must do nothing but just using the application.
+["AM"](https://github.com/ivan-hc/AM-application-manager) is a new Application Manager I've done, inspired by AppMan. The commands are less compared to AppMan, because there are less things to do. "AM" is built to allow integration in the system and automatic updates for each application, so the final user must do nothing but just using the application.
 
 "AM"'s goal is to provide a free and open source App Manager that works on many other architectures (including and not limited to i386 and ARM), for now I'm working alone with the port of the existing applications for x86_64 managed by AppMan. "AM" allows the installation, deletion and search of standalone programs and AppImages. Each program (or $APP) is stored in a dedicated /opt/$APP directory, the binary is more ofthen called by a custom script in /usr/local/bin or /usr/bin and it can update the program to the last version (if available) by comparing the number of version of the installed binary and the version available in the repository of the developer.
 
@@ -142,7 +142,7 @@ To work on "AM" is hardest, because each script costs several hours of search an
 
 To upload a program it is necessary just one script that adds a launcher and icon (if needed), a script to use and update the program and a script to remove it with or without "AM".
 
-To learn more about this new Application Manager, check the repository of the project at [ivan-hc/APPLICATION-MANAGER](https://github.com/ivan-hc/APPLICATION-MANAGER) and work at this project with me, if you're interested. I will try to give you all the tools you need to compile your own script.
+To learn more about this new Application Manager, check the repository of the project at [ivan-hc/AM-application-manager](https://github.com/ivan-hc/AM-application-manager) and work at this project with me, if you're interested. I will try to give you all the tools you need to compile your own script.
 
 # Conclusions
 Having encouraged you to visit this page is already a huge achievement for me, being AppMan my really first creation on GitHub. I'm not a developer, but a simple enthusiast who in my spare time tries to learn new things and then convert them into something more useful for the community. If only I had enough time I would devote myself completely to research, but I can't, real life is far from here, but I love to stay here because I express myself this way, and this means to spend a lot of hours of my free time on the PC trying to write schipts. If you wish, you can support me, this work and my passion with a small [donation](https://paypal.me/ivanalexhc), I will gladly appreciate it. Thank you.
