@@ -37,3 +37,8 @@ mv ./tmp/*.AppImage ./qbittorrent;
 chmod a+x ./qbittorrent
 
 rm -R -f ./tmp
+
+case "$1" in
+   qbittorrent) exec /opt/qbittorrent/qbittorrent ;;
+   *) exec /opt/qbittorrent/qbittorrent "$@" ;;
+esac
