@@ -30,10 +30,10 @@ exec "${EXEC}" "$@"' >> ./qbittorrent/qbittorrent.AppDir/AppRun;
 
 chmod a+x ./qbittorrent/qbittorrent.AppDir/AppRun;
 
-ARCH=x86_64 appimagetool -n /opt/$APP/tmp/qbittorrent/qbittorrent.AppDir;
+ARCH=x86_64 appimagetool -n /opt/qbittorrent/tmp/qbittorrent/qbittorrent.AppDir;
 
 cd ..;
-mv ./tmp/*.AppImage ./$APP;
-chmod a+x ./$APP
+mv ./tmp/*.AppImage ./qbittorrent;
+chmod a+x ./qbittorrent
 
 rm -R -f ./tmp
