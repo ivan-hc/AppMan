@@ -134,7 +134,7 @@ The structure of an application looks like this:
 - "$about-APPNAME" is a simple text file, it must containt basic info of the app, ie a brief description, update kind (`appman -u` or `appman -i $APPNAME`) and one or two links to the official site and/or the source (take [this](https://raw.githubusercontent.com/ivan-hc/AppMan/main/models/Have%20you%20got%20an%20AppImage%20hosted%20somewhere%3F/SAMPLE/about-SAMPLE) as a model).
 
 # "AM", the successor of AppMan
-["AM"](https://github.com/ivan-hc/AM-application-manager) is a new Application Manager I've done, inspired by AppMan. The commands are less compared to AppMan, because there are less things to do. "AM" is built to allow integration in the system and automatic updates for each application, so the final user must do nothing but just using the application.
+["AM"](https://github.com/ivan-hc/AM-application-manager) is a new Application Manager I've done, inspired by AppMan. "AM" is built to allow integration in the system and automatic updates for each application.
 
 "AM"'s goal is to provide a free and open source App Manager that works on many other architectures (including and not limited to i386 and ARM), for now I'm working alone with the port of the existing applications for x86_64 managed by AppMan. "AM" allows the installation, deletion and search of standalone programs and AppImages. Each program (or $APP) is stored in a dedicated /opt/$APP directory, the binary is more ofthen called by a custom script in /usr/local/bin or /usr/bin and it can update the program to the last version (if available) by comparing the number of version of the installed binary and the version available in the repository of the developer.
 
