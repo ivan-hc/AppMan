@@ -1,5 +1,12 @@
-# AppMan
-Application Manager for AppImages and other standalone programs. 
+AppMan, the Application Manager for AppImages and other standalone programs. 
+
+-------------------------------------------------------------------------------
+
+#### NOTE,this project is interrupted, in favor of the n[ew base code](https://github.com/ivan-hc/AM-application-manager)
+#### Discover "AM", the multi-architecture Application Manager for all the GNU/Linux distributions
+## SITE: https://github.com/ivan-hc/AM-application-manager
+
+-------------------------------------------------------------------------------
 
 - [About AppMan](#about-appman)
 - [About AppImages](#about-appimages)
