@@ -5,7 +5,7 @@ Application Manager for AppImages and other standalone programs.
 #### Discover "[AM](https://github.com/ivan-hc/AM-application-manager)", the multi-architecture Application Manager for all the GNU/Linux distributions!
 ### SITE: https://github.com/ivan-hc/AM-application-manager
 
-#### Further changes to this repository will be aimed at facilitating the work of the installation scripts contained in the "AM" project.
+#### Further changes to this repository will be aimed at facilitating the work of the installation scripts contained in the "AM" project. Anyone who is still interested in improving AppMan and adding applications is free to make a pull request.
 
 - [About AppMan](#about-appman)
 - [About AppImages](#about-appimages)
