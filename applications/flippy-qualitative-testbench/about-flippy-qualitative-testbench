@@ -1,7 +1,0 @@
-
- Score-follower qualitative testbench. Displays the timestamp
- output by a score-follower as a cursor on the score. 
- 
- UPDATE: appman -i flippy-qualitative-testbench
- 
- SITE: https://github.com/flippy-fyp/flippy-qualitative-testbench

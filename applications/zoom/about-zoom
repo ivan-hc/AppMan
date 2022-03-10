@@ -1,9 +1,0 @@
-
- Zoom, Video Conferencing and Web Conferencing Service.
- 
- This is the Unofficial AppImage born from a pkg2appimage recipe.
- 
- UPDATE: appman -i zoom
- 
- SITE: https://zoom.us
- SOURCE: https://github.com/AppImage/pkg2appimage

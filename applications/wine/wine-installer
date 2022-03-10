@@ -1,6 +1,0 @@
-#!/bin/sh
-
-cd /opt/bin;
-wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications/wine-stable/wine-stable-installer;
-chmod a+x /opt/bin/wine-stable-installer;
-exec /opt/bin/wine-stable-installer;

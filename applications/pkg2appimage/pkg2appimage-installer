@@ -1,8 +1,0 @@
-#!/bin/sh
-
-cd /opt/bin;
-mv ./pkg2appimage ./pkg2appimage-zs-old
-wget https://github.com/ivan-hc/AppMan/raw/main/applications/pkg2appimage/pkg2appimage;
-chmod a+x /opt/bin/pkg2appimage;
-#sudo ln -s /opt/bin/pkg2appimage /usr/bin/pkg2appimage;
-rm /opt/bin/pkg2appimage-installer
