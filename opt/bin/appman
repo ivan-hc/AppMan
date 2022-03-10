@@ -1,9 +1,9 @@
 #!/bin/sh
 
-URL1="https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin"
-URL2="https://raw.githubusercontent.com/ivan-hc/AppMan/main/applications"
-URL3="https://raw.githubusercontent.com/ivan-hc/AppMan/main/updaters"
-URL4="https://raw.githubusercontent.com/ivan-hc/AppMan/main/models"
+URL1="https://raw.githubusercontent.com/ivan-hc/AppMan-Legacy/main/opt/bin"
+URL2="https://raw.githubusercontent.com/ivan-hc/AppMan-Legacy/main/applications"
+URL3="https://raw.githubusercontent.com/ivan-hc/AppMan-Legacy/main/updaters"
+URL4="https://raw.githubusercontent.com/ivan-hc/AppMan-Legacy/main/models"
 LOCAL1=".local/share/applications"
 LOCAL2=".local/share/icons"
 
@@ -141,7 +141,7 @@ case "$1" in
 	done;;
   '-l'|'list') echo ""; echo "  List of applications available in the AppMan repository:"; echo "";
   	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
-	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
+	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan-Legacy/main/appman-list;
   	cat /home/$USER/.cache/appman-list;
   	cd /opt/bin && rm -R -f *zs-old tmp *-installer *.zip *.deb *-updater;
   	echo ""; echo $(echo "ALL:"; grep -e "$" -c /home/$USER/.cache/appman-list);
@@ -153,7 +153,7 @@ case "$1" in
 	case $2 in
 	*) for var in $2;
 	do rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
-	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
+	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan-Legacy/main/appman-list;
 	echo "" && grep -i -E $2 /home/$USER/.cache/appman-list; echo ""; done
 	esac
 	shift
@@ -174,7 +174,7 @@ case "$1" in
   	cd /opt/bin; mkdir tmp; cd ./tmp; wget -q $URL1/appman && chmod a+x ./appman; cd ..;
   	mv /opt/bin/tmp/appman /opt/bin; rmdir /opt/bin/tmp;
 	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
-	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
+	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan-Legacy/main/appman-list;
 	echo ' done!'; echo ""; sleep 1;
 	echo $(echo ""; ls /opt/bin/ | wc -l && echo "installed of ";
 	grep -e "$" -c /home/$USER/.cache/appman-list; echo "available in the repository");
@@ -214,7 +214,7 @@ case "$1" in
   	cd /opt/bin; mkdir tmp; cd ./tmp; wget -q $URL1/appman && chmod a+x ./appman; cd ..;
   	mv /opt/bin/tmp/appman /opt/bin; rmdir /opt/bin/tmp;
 	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
-	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;;
+	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan-Legacy/main/appman-list;;
   '-U'|'full-upgrade') cd /opt/bin && for f in *; do appimageupdate -O "$f"; done;
   	for f in *; do ! wget -q $URL3/$f-updater; done;
   	for f in *; do chmod a+x /opt/bin/*-updater; done;
@@ -222,7 +222,7 @@ case "$1" in
   	cd /opt/bin; mkdir tmp; cd ./tmp; wget -q $URL1/appman && chmod a+x ./appman; cd ..;
   	mv /opt/bin/tmp/appman /opt/bin; rmdir /opt/bin/tmp;
 	rm -R -f /home/$USER/.cache/appman-list; cd /home/$USER/.cache;
-	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-list;
+	wget -q https://raw.githubusercontent.com/ivan-hc/AppMan-Legacy/main/appman-list;
   	echo ""; echo ""; echo " All your programs are updated!"; echo ""; echo "";;
   *) exec /opt/bin/appman ;;
 esac
