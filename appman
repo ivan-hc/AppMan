@@ -1,0 +1,505 @@
+#!/usr/bin/env bash
+
+URL="https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main"
+arch=$(uname -m)
+currentuser=$(who | awk '{print $1}')
+
+rm -R -f $(xdg-user-dir USER)/.opt/appman/options
+echo "about
+backup
+clean
+download
+files
+install
+list
+lock
+overwrite
+query
+remove
+sync
+template
+unlock
+update
+web
+--disable-completion
+--enable-completion" >> $(xdg-user-dir USER)/.opt/appman/options
+mkdir -p $(xdg-user-dir USER)/.local/bin $(xdg-user-dir USER)/.local/share/applications $(xdg-user-dir USER)/.local/share/icons $(xdg-user-dir USER)/.opt/appman/.cache
+case "$1" in
+  '') echo "" && echo ' USAGE: "appman [option]"' && echo "" && echo ' Run the "appman -h" command to find out more' && echo "";;
+  '-h'|'help') echo '
+  -----------------------------------------------------------------------
+       ___      .______   .______   .___  ___.      ___      .__   __. 
+      /   \     |   _  \  |   _  \  |   \/   |     /   \     |  \ |  | 
+     /  ^  \    |  |_)  | |  |_)  | |  \  /  |    /  ^  \    |   \|  | 
+    /  /_\  \   |   ___/  |   ___/  |  |\/|  |   /  /_\  \   |  . `  | 
+   /  _____  \  |  |      |  |      |  |  |  |  /  _____  \  |  |\   | 
+  /__/     \__\ | _|      | _|      |__|  |__| /__/     \__\ |__| \__| 
+
+   >>  App Manager for GNU/Linux that uses and creates AppImages  <<
+
+                             by Ivan Alex HC
+  
+ ------------------------------------------------------------------------
+  
+  ALL THE OPTIONS:
+    
+  -a, about
+  USAGE: "appman -a $PROGRAM"
+  DESCRIPTION: Shows the basic information, links and source of each app.
+
+  -b, backup
+  USAGE: "appman -b $PROGRAM"
+  DESCRIPTION: Save the current version of a program you are interested in,
+  the snapshot will be stored in /home/$USER/.am-snapshots/$PROGRAM
+  (see "-o"). 
+
+  -c, clean
+  USAGE: "appman -c"
+  DESCRIPTION: Removes all the unnecessary files and temporary folders.
+
+  -d, download
+  USAGE: "appman -d $PROGRAM"
+  DESCRIPTION: Download an installation script from the "AM" repository to 
+  your desktop without installing it. This option can download scripts from
+  both "programs" (stable scripts on the repository) and "testing" (where 
+  scripts are unstable and not complete at all), for your architecture.
+
+  -f, files
+  USAGE: "appman -f"
+  DESCRIPTION: Shows the installed programs managed by "AppMan".
+
+  -h, help
+  USAGE: "appman -h"
+  DESCRIPTION: Prints this message. 
+  
+  -i, install
+  USAGE: "appman -i $PROGRAM"
+  DESCRIPTION: Install a program. This will be downloader/created into a
+  dedicated ~/.opt/$PROGRAM directory (containing a script to remove it and
+  another one to update it), the command is linked to ~/.local/bin and a
+  launcher AM-$PROGRAM.desktop will be created in ~/.local/share/applications.
+
+  -l, list
+  USAGE: "appman -l"
+  DESCRIPTION: Shows the list of apps available in the repository.
+
+  -o, overwrite
+  USAGE: "appman -o $PROGRAM"
+  DESCRIPTION: Overwrite the existing version of the program with a saved
+  snapshot from /home/$USER/.am-snapshots/$PROGRAM (see "-b").
+  
+  -q, query
+  USAGE: "appman -q $KEYWORD"
+  DESCRIPTION: Use one or more keywords to search for in the list of 
+  available applications.
+		
+  -r, remove
+  USAGE: "appman -r $PROGRAM"
+  DESCRIPTION: Removes the program and all the other files listed above 
+  using the instructions in ~/.opt/$PROGRAM/remove. Confirmation is required
+  (Y or N, default is Y).
+
+  -s, sync
+  USAGE: "appman -s"
+  DESCRIPTION: Updates "AppMan" to a more recent version.
+  		
+  -t, template
+  USAGE: "appman -t $PROGRAM"
+  DESCRIPTION: This option allows you to generate a custom script for "AM"
+  Application Manager from a list of different templates that may be vary
+  according to the kind of $PROGRAM you want to create/install/update. Once
+  you choose a number, the script will download the template by renaming it
+  using the argument "$PROGRAM" you provided above. Please, consider 
+  submitting your custom script to "AM" Application Manager, at
+  https://github.com/ivan-hc/AM-application-manager/pulls.
+
+  -u, update
+  USAGE: "appman -u"
+  DESCRIPTION: Update all the installed programs.
+  -u, update
+  USAGE: "appman -u $PROGRAM"
+  DESCRIPTION: Update the selected program, this also allows you to see
+  all the logs during the installation process.
+
+  -v, --version, version
+  USAGE: "appman -v"
+  DESCRIPTION: Shows the version of "appman".
+
+  -w, web
+  USAGE: "appman -w $PROGRAM"
+  DESCRIPTION: Shows the URLs of the sites/sources of $PROGRAM.
+
+  --disable-completion
+  USAGE: "appman --disable-completion"
+  DESCRIPTION: Removes the /etc/bash_completion.d/appman-completion.sh script
+  previously created with the "appman --enable-completion" command.
+
+  --enable-completion
+  USAGE: "appman --enable-completion"
+  DESCRIPTION: Create a bash completion script in /etc/bash_completion.d
+  to complete a keyword with the TAB key using the names of all installable
+  applications in the "AM" repository.
+
+  lock
+  USAGE: "appman lock $PROGRAM"
+  DESCRIPTION: Lock the selected $PROGRAM to the current installed version,
+  this only works if a dedicated "AM-updater" script exists.
+
+  unlock
+  USAGE: "appman unlock $PROGRAM"
+  DESCRIPTION: Unlock updates for the selected $PROGRAM. This option nulls 
+  "lock", the update file is renamed as "AM-updater" again, so that it can
+  be intercepted when executing the "appman -u" command (see "-u").
+  		
+  -----------------------------------------------------------------------
+
+  AppMan is a fork of "AM" and takes all sources from the "AM" repository, 
+  all it does is to convert all the installation scripts for "AM" that 
+  normally must be executed with ROOT privileges in normal scripts that can
+  manage applications in the local folder of the current user.
+  To learn more about "AM" and all its scripts, visit the official repository
+  on GitHub.
+
+  SITE: https://github.com/IVAN-HC/AM-APPLICATION-MANAGER
+  
+  ' ;;
+  '-a'|'about')
+	while [ -n "$1" ]
+	do
+	if curl --output /dev/null --silent --head --fail $URL/programs/.about/$2  1>/dev/null; then
+	case $2 in
+	*) for var in $2;
+	do rm -R -f $(xdg-user-dir USER)/.opt/appman/.cache/about; mkdir $(xdg-user-dir USER)/.opt/appman/.cache/about;
+		cd $(xdg-user-dir USER)/.opt/appman/.cache/about && wget -q $URL/programs/.about/$2 && cat ./$2 && echo "" && exit; done
+	esac
+	else
+	echo ""; 
+	echo ' "'$2'" IS NOT A VALID ARGUMENT, PLEASE RUN THE "appman -l" COMMAND'; echo ""; 
+	echo ' TO SEE THE LIST OF ALL THE APPLICATIONS AVAILABLE FOR '$arch''; echo "";
+	echo ' OR START A SEARCH (WITH KEYWORDS) BY USING THE "appman -q" COMMAND'; echo "";
+	exit;
+	fi
+	done
+	shift;;
+  '-b'|'backup')
+	while [ -n "$1" ]
+	do
+	case $2 in
+	'') echo " Specify the name of a program to back up"; echo ""; exit;;
+	*) if test -f $(xdg-user-dir USER)/.opt/$2/remove; then
+		echo ""; read -p " Do you wish to backup the current version of $2 (y,N)?" yn
+		case $yn in
+		[Yy]* ) mkdir -p "$(xdg-user-dir USER)/.am-snapshots/$2"; cp -r $(xdg-user-dir USER)/.opt/$2 "$(xdg-user-dir USER)/.am-snapshots/$2/$(date +%F-%X)"; echo ""; echo " SAVED in $(xdg-user-dir USER)/.am-snapshots/$2"; echo "" ; exit;;
+		[Nn]*|* ) echo ""; echo " OPERATION ABORTED!"; echo ""; exit;;	
+		esac
+	else
+		echo ""; echo " '$2' is not a valid argument or is not installed."; echo ""; exit;
+	fi
+	esac
+	done
+	shift;;
+  '-c'|'clean') echo ""; echo " CLEANING OF TEMPORARY FILES AND FOLDERS IN PROGRESS" && sleep 1 && echo "" && echo " PRESS CTRL+C TO ABORT." && sleep 1 &&
+	echo "" && for i in {5..1}; do echo -ne " $i\r" && sleep 1; done &&
+	echo ""; rm -R -f $(xdg-user-dir USER)/.opt/appman/appdb; rm -R -f $(xdg-user-dir USER)/.opt/appman/.cache/*; rm -R -f $(xdg-user-dir USER)/.opt/*/tmp; echo "" && echo " DONE!"; echo "" ;;
+  '-d'|'download')
+	while [ -n "$1" ]
+	do case $2 in
+	am) for var in $2;
+		do read -p ' Do you wish to open the main script of "AM" (y,N)?' yn
+			case $yn in
+			[Yy]* ) xdg-open $(xdg-user-dir USER)/.opt/appman/appman; exit;;
+			[Nn]*|* ) exit;;
+		esac
+	done;; 
+	*) if curl --output /dev/null --silent --head --fail $URL/programs/$arch/$2  1>/dev/null; then
+		echo ""; echo ' "'$2'" installation script downloaded! ' | tr a-z A-Z
+		cd $(xdg-user-dir DESKTOP); wget -q $URL/programs/$arch/$2; echo ""; exit;
+	elif curl --output /dev/null --silent --head --fail $URL/testing/$arch/$2  1>/dev/null; then
+		echo ""; echo '  "'$2'" downloaded from "testing", the unstable branch ' | tr a-z A-Z; echo ""; echo ' WARNING! PROGRAMS COMING FROM "TESTING" ARE BROKEN, USE AT YOUR OWN RISK!'
+		cd $(xdg-user-dir DESKTOP); wget -q $URL/testing/$arch/$2; echo ""; exit;
+	else
+		echo ""; echo ' "'$2'" is NOT a valid argument, check the list (command "appman -l")'; echo ""; exit;
+	fi
+	esac
+	done
+	shift;;
+  '-f'|'files') echo ""; echo $(echo "YOU HAVE INSTALLED "; cd /opt && find -name 'remove' -printf "%h\n" | sort -u | wc -l;
+  	echo " STANDALONE PROGRAMS MANAGED BY THE 'AM' COMMAND:"); echo "";
+  	cd /opt && find -name 'remove' -printf "%h\n" | sort -u | xargs -n 1 basename; echo "" ;;
+  '-i'|'install')
+	while [ -n "$1" ]
+	do echo "";
+	case $2 in
+	*) if test -f $(xdg-user-dir USER)/.opt/*$2*/remove; then
+		echo '"APPMAN" HAS ALREADY INSTALLED "'$2'" PREVIOUSLY, THE DIRECTORY "$(xdg-user-dir USER)/.opt/'$2'" HAS ALREADY BEEN CREATED IN A PREVIOUS INSTALLATION! IF YOU HAVE ISSUES IN RUNNING THE PROGRAM, TRY TO REINSTALL IT USING THE FOLLOWING COMMAND:' &&
+		echo "" && echo ' appman -r '$2' && appman -i '$2'' && echo "" &&
+		echo 'OR REPORT THE BUG AT HTTPS://github.com/IVAN-HC/AM-APPLICATION-MANAGER/issues' && echo ""; exit;
+	else
+		if curl --output /dev/null --silent --head --fail $URL/programs/$arch/$2  1>/dev/null; then
+		case $2 in
+		*) for var in $2;
+			do cd $(xdg-user-dir USER)/.opt/appman/.cache; mkdir tmp; cd tmp; wget -q $URL/programs/$arch/$2; cd ..; mv ./tmp/$2 ./$2; rmdir ./tmp;
+			sed -i "s# /usr/local/bin# $(xdg-user-dir USER)/.local/bin#g" ./$2
+			sed -i "s# /usr/bin# $(xdg-user-dir USER)/.local/bin#g" ./$2
+			sed -i "s# /usr/share/applications# $(xdg-user-dir USER)/.local/share/applications#g" ./$2
+			sed -i "s# /usr/share/pixmaps# $(xdg-user-dir USER)/.local/share/icons#g" ./$2
+			sed -i "s# /opt# $(xdg-user-dir USER)/.opt#g" ./$2
+			chmod a+x $(xdg-user-dir USER)/.opt/appman/.cache/$2; $(xdg-user-dir USER)/.opt/appman/.cache/$2; chown -R $currentuser $(xdg-user-dir USER)/.opt/appman/.cache/*; echo "";
+			unset $LATESTSCRIPT
+			LATESTSCRIPT=$(cd $(xdg-user-dir USER)/.opt/appman/.cache && ls -tp | grep -v /$ | head -1)
+				if test -f $(xdg-user-dir USER)/.opt/*$2*/remove; then
+					clear;
+					echo ' "'$LATESTSCRIPT'" has been installed!' | tr a-z A-Z && appman -a $LATESTSCRIPT && chown -R $currentuser $(xdg-user-dir USER)/.opt/appman/.cache/about 2> /dev/null;
+				else
+					echo " INSTALLATION ABORTED!";
+				fi
+			exit; done
+			esac
+		else
+			echo ""; 
+			echo ' "'$2'" IS NOT A VALID ARGUMENT, PLEASE RUN THE "appman -l" COMMAND'; echo ""; 
+			echo ' TO SEE THE LIST OF ALL THE APPLICATIONS AVAILABLE FOR '$arch''; echo "";
+			echo ' OR START A SEARCH (WITH KEYWORDS) BY USING THE "appman -q" COMMAND'; echo "";
+			exit;
+		fi			
+	fi
+	esac
+	done
+	shift;;
+  '-l'|'list') rm -R -f $(xdg-user-dir USER)/.opt/appman/$arch-apps $(xdg-user-dir USER)/.opt/appman/list && wget -q $URL/programs/$arch-apps -P $(xdg-user-dir USER)/.opt/appman && echo -e "$(cat $(xdg-user-dir USER)/.opt/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> $(xdg-user-dir USER)/.opt/appman/list
+	cd $(xdg-user-dir USER)/.opt/appman && cat options >> list
+	echo ""; echo "  LIST OF APPLICATIONS AVAILABLE IN THE 'AM' REPOSITORY:"; echo "";
+  	cat $(xdg-user-dir USER)/.opt/appman/$arch-apps; echo "";
+  	echo $(echo "ALL:"; grep -e "$" -c $(xdg-user-dir USER)/.opt/appman/$arch-apps);
+  	echo $(echo "INSTALLED:"; cd /opt && find -name 'remove' -printf "%h\n" | sort -u | wc -l); echo "";;
+  '-o'|'overwrite')
+	while [ -n "$1" ]
+	do case $2 in
+	'') echo " Specify the name of a program to overwrite"; echo ""; exit;;
+	*) if test -f $(xdg-user-dir USER)/.opt/$2/remove; then
+		echo ""; read -p " Do you wish to overwrite this version of $2 with an old one (y,N)?" yn
+		case $yn in
+		[Yy]* ) echo ""; echo " Please, select a snapshot:"; sleep 1; echo ""; snaps=$(ls "$(xdg-user-dir USER)/.am-snapshots/$2/" | sort -u); echo "$snaps"; echo ""
+			read -p " ENTER THE NAME OF THE SNAPSHOT?" response;
+			case $response in
+			*) for var in $(echo $snaps); do
+				if [ -d $(xdg-user-dir USER)/.am-snapshots/$2/$response ]; then
+					cp --backup=t $(xdg-user-dir USER)/.am-snapshots/$2/$response/* $(xdg-user-dir USER)/.opt/$2/
+	  				rm -R -f $(xdg-user-dir USER)/.opt/$2/*~; echo ""; echo " RESTORE COMPLETED SUCCESSFULLY!"; echo ""; exit;
+				else
+					echo ""; echo " NO SNAPSHOT SELECTED, RETRY!" >&2;
+				fi
+				done;;
+			'') echo ""; echo " NO SNAPSHOT SELECTED, OPERATION ABORTED!"; echo ""; exit;;
+			esac;;
+		[Nn]*|* ) echo ""; echo " OPERATION ABORTED!"; echo ""; exit;;	
+		esac
+	else
+		echo ""; echo " '$2' is not a valid argument or is not installed."; echo ""; exit;
+	fi
+	esac
+	done
+	shift;;
+  '-q'|'query') rm -R -f $(xdg-user-dir USER)/.opt/appman/$arch-apps $(xdg-user-dir USER)/.opt/appman/list && wget -q $URL/programs/$arch-apps -P $(xdg-user-dir USER)/.opt/appman && echo -e "$(cat $(xdg-user-dir USER)/.opt/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> $(xdg-user-dir USER)/.opt/appman/list
+	cd $(xdg-user-dir USER)/.opt/appman && cat options >> list
+	ARGS=$(echo "$@" | sed 's/-q //')
+	echo ""
+	echo ' Search results for "'$ARGS'" in the list of available programs:' | tr a-z A-Z
+	echo ""
+	while [ -n "$1" ]
+	do
+	case $2 in
+	*) for var in $ARGS;
+	do grep -i -E "$ARGS" $(xdg-user-dir USER)/.opt/appman/$arch-apps && echo "" && exit;
+	done
+	esac
+	shift
+	done;;
+  '-r'|'remove')
+	while [ -n "$1" ]
+	do
+	if ls $(xdg-user-dir USER)/.opt/$2 1>/dev/null; then
+	case $2 in
+	*) for var in $2;
+	do echo ""; read -p " Do you wish to REMOVE $2 (Y,n)?" yn
+		case $yn in
+		[Nn]* ) echo ""; echo " $2 has not been removed, exiting!"; echo ""; exit;;
+		[Yy]*|* ) echo "";  $(xdg-user-dir USER)/.opt/$2/remove && echo " $2 HAS BEEN SUCCESSFULLY REMOVED!" && echo "" && exit; break;;
+	esac
+	done;;
+	esac
+	else
+	echo ""; echo " '$2' is not a valid argument or is not installed."; echo "";
+	echo ' LIST OF THE INSTALLED PROGRAMS / VALID ARGUMENTS:'; echo "";
+	cd /opt && find -name 'remove' -printf "%h\n" | sort -u | xargs -n 1 basename; echo "" ; exit;
+	fi
+	done
+	shift;;
+  '-s'|'sync') rm -R -f $(xdg-user-dir USER)/.opt/appman/$arch-apps $(xdg-user-dir USER)/.opt/appman/list && wget -q $URL/programs/$arch-apps -P $(xdg-user-dir USER)/.opt/appman && echo -e "$(cat $(xdg-user-dir USER)/.opt/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> $(xdg-user-dir USER)/.opt/appman/list
+	cd $(xdg-user-dir USER)/.opt/appman && cat options >> list
+	echo ""; echo ' SYNCHRONIZING "APPMAN" VERSION '$(appman -v)'...'; sleep 1; echo "";
+  	rm -R -f $(xdg-user-dir USER)/.opt/appman/.cache/* 1>/dev/null; cd $(xdg-user-dir USER)/.opt/appman/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman; cd ..;
+  	mv $(xdg-user-dir USER)/.opt/appman/.cache/appman $(xdg-user-dir USER)/.opt/appman; chown -R $currentuser $(xdg-user-dir USER)/.opt/appman; echo ' THE "APPMAN" SCRIPT IS NOW UPDATED TO THE '$(appman -v)' VERSION! '; echo "";;
+  '-t'|'template')
+	while [ -n "$1" ]
+	do
+	case $2 in
+	*) for var in $2
+	do cd $(xdg-user-dir DESKTOP)
+	echo "" 
+	echo " EACH MODEL IS BASED ON A DIFFERENT METHOD OF BUILDING/UPDATING THE PROGRAM:"
+	echo ""
+	echo "  1) My AppImage uses AppimageUpdate"
+	echo "  2) My AppImage uses a separated zsync file"
+	echo "  3) My package/AppImage come from a site or repository"
+	echo "  4) My AppImage is built with pkg2appimage & appimagetool"
+	echo "  5) My AppImage is built with pkg2appimage but with a custom AppRun"
+	echo "  6) My AppImage has a linear URL to the latest version"
+	echo "  7) My AppImage has a version number in the URL for the latest version"
+	echo " "
+	read -r -p " WHAT KIND OF PROGRAM DO YOU WANT TO WRITE A SCRIPT FOR? : " response
+	case "$response" in
+    	1) wget -c $URL/templates/AM-SAMPLE-for-appimageupdate -O $2.AM && sed -i s/SAMPLE/$2/g $2.AM;;
+    	2) wget -c $URL/templates/AM-SAMPLE-for-zsync -O $2.AM && sed -i s/SAMPLE/$2/g $2.AM;;
+    	3) wget -c $URL/templates/AM-SAMPLE-from-site -O $2.AM && sed -i s/SAMPLE/$2/g $2.AM;;
+    	4) wget -c $URL/templates/AM-SAMPLE-pkg2appimage -O $2.AM && sed -i s/SAMPLE/$2/g $2.AM;;
+    	5) wget -c $URL/templates/AM-SAMPLE-pkg2appimage-custom -O $2.AM && sed -i s/SAMPLE/$2/g $2.AM;;
+	6) wget -c $URL/templates/AM-SAMPLE-appimage-download-simple -O $2.AM && sed -i s/SAMPLE/$2/g $2.AM;;
+    	7) wget -c $URL/templates/AM-SAMPLE-appimage-download-by-version -O $2.AM && sed -i s/SAMPLE/$2/g $2.AM;;
+    	*) echo ""; echo " No valid argument was chosen: process aborted! "; echo ""; exit;;
+	esac
+	done
+	esac
+	shift
+	done;;
+  '-u'|'update') 
+	while [ -n "$1" ]
+	do
+	case $2 in
+	'') echo ""; echo ' "APPMAN" CAN MANAGE UPDATES FOR THE FOLLOWING PROGRAMS: '; echo "";
+  		cd /opt && find -name 'AM-updater' -printf " %h\n" | sort -u | xargs -n 1 basename; echo "" ;
+		echo ' ALL OTHERS ARE FIXED VERSIONS OR CAN MANAGE UPDATES BY THEMSELF'; echo ""; sleep 1;
+		read -p " This may take several minutes, do you wish to continue (Y,n)?" yn
+		case $yn in
+		[Nn]* ) echo ""; exit;;
+		[Yy]*|* ) echo ""; echo " THE UPDATE VERIFICATION PROCESS IS IN PROGRESS, PLEASE WAIT..."; sleep 2; echo ""; echo "-----------------------------------------------------------------------";
+		  	echo " >> START OF ALL PROCESSES << "; echo "-----------------------------------------------------------------------"; echo "";
+		  	for f in $(xdg-user-dir USER)/.opt/*/; do cd $f && if test -f ./AM-updater; then
+			echo ' Updating "'$(echo $f | cut -c 5- | tr -d '/')'"...' &&
+			SECONDS=0; $(sh -x ./AM-updater > /dev/null 2>&1); duration=$SECONDS;
+			echo " "$(echo $f | cut -c 5- | tr -d '/')" is updated!" | tr a-z A-Z && echo " $(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed!" && echo "";
+			else
+			echo ""  > /dev/null 2>&1; fi; done;
+			rm -R -f $(xdg-user-dir USER)/.opt/appman/.cache/* $(xdg-user-dir USER)/.opt/*/tmp; echo "-----------------------------------------------------------------------"; appman -s; 
+			echo "-----------------------------------------------------------------------";
+			echo " >> END OF ALL PROCESSES << "; 
+		  	echo "-----------------------------------------------------------------------";echo ""; sleep 2;
+		  	echo ' ALL THE PROGRAMS MANAGED BY "APPMAN" ARE UPDATED! '; echo "" && exit; break;;
+		esac;;
+	*) if test -f $(xdg-user-dir USER)/.opt/$2/AM-updater; then
+			echo "" && echo ' Updating '$2'...' | tr a-z A-Z && echo "" && $(xdg-user-dir USER)/.opt/$2/AM-updater && echo "" &&
+			SECONDS=0; $(sh -x ./AM-updater > /dev/null 2>&1); duration=$SECONDS;
+			echo " " $2" is updated!" | tr a-z A-Z && echo " $(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed!" && echo "" && break;
+		else
+			echo "" && echo ' "APPMAN" CANNOT MANAGE UPDATES FOR "'$2'"' | tr a-z A-Z &&
+			UPDATERS=$(cd $(xdg-user-dir USER)/.opt/$2 && find . -name "*update*" -print)
+			if [[ -n "$UPDATERS" ]]; then
+				echo ' This program probably includes its own update system!' | tr a-z A-Z &&
+				echo ' References to the word "update" were found in its directory!'
+			else
+				echo "" && break
+			fi
+			echo "" && exit;
+		fi
+	esac
+	shift
+	done;;
+  '-w'|'web')
+	while [ -n "$1" ]
+	do
+	if curl --output /dev/null --silent --head --fail $URL/programs/.about/$2  1>/dev/null; then
+	case $2 in
+	*) for var in $2;
+	do rm -R -f $(xdg-user-dir USER)/.opt/appman/.cache/about; mkdir $(xdg-user-dir USER)/.opt/appman/.cache/about;
+		cd $(xdg-user-dir USER)/.opt/appman/.cache/about && wget -q $URL/programs/.about/$2 && echo "" && echo " SITE/SOURCES:" && echo "" &&
+		grep -o " http[^ ]*" ./$2 && echo "" && exit; done
+	esac
+	else
+	echo ""; 
+	echo ' "'$2'" IS NOT A VALID ARGUMENT, PLEASE RUN THE "appman -l" COMMAND'; echo ""; 
+	echo ' TO SEE THE LIST OF ALL THE APPLICATIONS AVAILABLE FOR '$arch''; echo "";
+	echo ' OR START A SEARCH (WITH KEYWORDS) BY USING THE "appman -q" COMMAND'; echo "";
+	exit;
+	fi
+	done
+	shift;;
+  '--disable-completion')
+	if test -f /etc/bash_completion.d/appman-completion.sh; then
+	sudo rm -R -f /etc/bash_completion.d/appman-completion.sh;
+	else
+	echo " Completion script is NOT enabled! "
+	fi;;
+  '--enable-completion')
+	if test -f /etc/bash_completion.d/appman-completion.sh; then
+	echo " Completion script is already enabled!";
+	else
+	echo " Bash completion is a functionality through which bash helps users "
+	echo " type their commands faster and easier. It accomplishes that by " 
+	echo " presenting possible options when users press the TAB key while typing"
+	echo " a command."
+	echo " If you want to enable the completion for all users, you can just put"
+	echo " the script under /etc/bash_completion.d/ and it will automatically be"
+	echo " loaded by Bash, ROOT REQUIRED!"; echo ""
+	read -p ' Do you wish to create a bash completion script for "AppMan" (y,N)?' yn
+	case $yn in
+		'N'|'n') exit;;
+		'Y'|'y') echo '#!/usr/bin/env bash' >> $(xdg-user-dir USER)/.opt/appman/appman-completion.sh; echo 'complete -W "$(cat $(xdg-user-dir USER)/.opt/appman/list)" appman' >> $(xdg-user-dir USER)/.opt/appman/appman-completion.sh
+			 chmod a+x $(xdg-user-dir USER)/.opt/appman/appman-completion.sh
+			 rm -R -f $(xdg-user-dir USER)/.opt/appman/remove; echo '#!/bin/sh' >> $(xdg-user-dir USER)/.opt/appman/remove
+			 echo 'rm -R -f /usr/local/bin/appman $(xdg-user-dir USER)/.opt/appman /etc/bash_completion.d/appman-completion.sh' >> $(xdg-user-dir USER)/.opt/appman/remove
+			 chmod a+x $(xdg-user-dir USER)/.opt/appman/remove; chown -R $currentuser $(xdg-user-dir USER)/.opt/appman/remove 2>/dev/null 
+			 if test -f /etc/bash_completion.d; then
+				sudo mv $(xdg-user-dir USER)/.opt/appman/appman-completion.sh /etc/bash_completion.d/
+			 else
+				sudo mkdir -p /etc/bash_completion.d; mv $(xdg-user-dir USER)/.opt/appman/appman-completion.sh /etc/bash_completion.d/
+			 fi;;
+		*) exit;;
+	esac 
+	fi;;
+  'lock')
+	while [ -n "$1" ]
+	do
+	if test -f $(xdg-user-dir USER)/.opt/$2/AM-updater; then
+	case $2 in
+	*) for var in $2;
+	do echo ""; read -p " Do you wish to keep $2  at the current version (y,N)?" yn
+		case $yn in
+		[Yy]* ) echo "";  mv $(xdg-user-dir USER)/.opt/$2/AM-updater $(xdg-user-dir USER)/.opt/$2/AM-LOCK 1>/dev/null &&
+			echo " $2 has been locked at current version!" && echo "" && exit; break;;
+		[Nn]*|* ) echo ""; echo " $2 is still updatable, exiting!"; echo ""; exit;; esac done;;
+	esac
+	else
+	echo ""; echo ' AM cannot manage updates for '$2', "AM-updater" file not found!'; echo ""; exit;
+	fi
+	done
+	shift;;
+  'unlock')
+	while [ -n "$1" ]
+	do
+	if test -f $(xdg-user-dir USER)/.opt/$2/AM-LOCK; then
+	case $2 in
+	*) for var in $2;
+	do echo ""; read -p " Do you wish to unlock updates for $2 (Y,n)?" yn
+		case $yn in
+		[Nn]* ) echo ""; echo " $2 is still locked at current version!"; echo ""; exit;;
+		[Yy]*|* ) echo "";  mv $(xdg-user-dir USER)/.opt/$2/AM-LOCK $(xdg-user-dir USER)/.opt/$2/AM-updater 1>/dev/null &&
+			echo ' '$2' can now receive updates, use the "appman -u" command to update everything!' && echo "" && exit; break;; esac done;;
+	esac
+	else
+	echo ""; echo ' '$2' cannot be unlocked, "AM-LOCK" file not found!'; echo ""; exit;
+	fi
+	done
+	shift;;
+  'version'|'-v'|'--version') echo "2.6.1-2 (forked from AM Application Manager)";;
+  *) exec $(xdg-user-dir USER)/.opt/appman/appman ;;
+esac
