@@ -204,13 +204,6 @@ case "$1" in
   '-d'|'download')
 	while [ -n "$1" ]
 	do case $2 in
-	am) for var in $2;
-		do read -p ' Do you wish to open the main script of "AM" (y,N)?' yn
-			case $yn in
-			[Yy]* ) xdg-open $(xdg-user-dir USER)/.opt/appman/appman; exit;;
-			[Nn]*|* ) exit;;
-		esac
-	done;; 
 	*) if curl --output /dev/null --silent --head --fail $URL/programs/$arch/$2  1>/dev/null; then
 		echo ""; echo ' "'$2'" installation script downloaded! ' | tr a-z A-Z
 		cd $(xdg-user-dir DESKTOP); wget -q $URL/programs/$arch/$2; echo ""; exit;
@@ -230,6 +223,17 @@ case "$1" in
 	while [ -n "$1" ]
 	do echo "";
 	case $2 in
+	am) if test -f /opt/am/APP-MANAGER; then
+		echo ' "AM" IS ALREADY INSTALLED ON YOUR SYSTEM!'; echo ""; exit
+	else
+		read -r -p " This will install AM as root in your system, do you wish to continue (Y/n)?" response
+		case "$response" in
+			[Nn]*) echo ""; echo " INSTALLATION ABORTED"; echo ""; exit;;
+			[Yy]*|*) cd $(xdg-user-dir USER)/.opt/appman/.cache;
+			wget https://raw.githubusercontent.com/ivan-hc/APPLICATION-MANAGER/main/INSTALL && chmod a+x ./INSTALL && sudo ./INSTALL; break;
+		esac
+		fi;;
+	appman) echo ' "APPMAN" IS ALREADY INSTALLED!'; echo ""; exit;;
 	*) if test -f $(xdg-user-dir USER)/.opt/*$2*/remove; then
 		echo '"APPMAN" HAS ALREADY INSTALLED "'$2'" PREVIOUSLY, THE DIRECTORY "$(xdg-user-dir USER)/.opt/'$2'" HAS ALREADY BEEN CREATED IN A PREVIOUS INSTALLATION! IF YOU HAVE ISSUES IN RUNNING THE PROGRAM, TRY TO REINSTALL IT USING THE FOLLOWING COMMAND:' &&
 		echo "" && echo ' appman -r '$2' && appman -i '$2'' && echo "" &&
@@ -500,6 +504,6 @@ case "$1" in
 	fi
 	done
 	shift;;
-  'version'|'-v'|'--version') echo "2.6.1-2 (forked from AM Application Manager)";;
+  'version'|'-v'|'--version') echo 'AppMan Version 2.0 (based on "AM" Application Manager, Version 2.6.1-2)';;
   *) exec $(xdg-user-dir USER)/.opt/appman/appman ;;
 esac
