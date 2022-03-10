@@ -6,7 +6,7 @@ cd /opt/bin;
 wget https://github.com/ivan-hc/AppMan/raw/main/applications/appimagetool/appimagetool;
 wget https://github.com/ivan-hc/AppMan/raw/main/applications/appimageupdate/appimageupdate;
 wget https://github.com/ivan-hc/AppMan/raw/main/applications/pkg2appimage/pkg2appimage;
-wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/opt/bin/appman;
+wget https://raw.githubusercontent.com/ivan-hc/AppMan-Legacy/main/opt/bin/appman;
 chmod a+x /opt/bin/appimageupdate /opt/bin/appimagetool /opt/bin/pkg2appimage /opt/bin/appman;
 sudo ln -s /opt/bin/appimageupdate /usr/bin/appimageupdate;
 sudo ln -s /opt/bin/appimagetool /usr/bin/appimagetool;
