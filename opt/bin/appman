@@ -1,0 +1,79 @@
+#!/bin/sh
+
+LOCAL1=".local/share/applications"
+LOCAL2=".local/share/icons"
+
+cd /opt/bin
+case "$1" in
+  '') echo '
+
+  THIS IS A TRANSITIONAL SCRIPT NEEDED TO UPGRADE "APPMAN" TO THE NEW
+
+  CODE BASED ON "AM" APPLICATION MANGER SINCE THE APPMAN 2.0 RELEASE.
+
+  CHANGES:
+
+  - "APPMAN" CAN STILL MANAGE APPS AND APPIMAGE LOCALLY, 
+    BUT WITH THE ADVANTAGE OF HAVING THE SAME STRUCTURE 
+    AND COMMANDS AS "AM" APPLICATION MANAGER (V2.6.1-2);
+
+  - "APPMAN" WILL BE INSTALLED INTO A DEDICATED DIRECTORY
+    NAMED /opt/appman;
+  
+  - ALL THE APPLICATIONS WILL BE STORED IN YOUR HOME 
+    DIRECTORY, AT ~/.opt, EACH ONE WILL BE STORED INTO A
+    DEDICATED SUBDIRECTORY CONTAINING THE PROGRAM, A SCRIPT
+    TO UPDATE THE APPLICATION AND A SCRIPT TO REMOVE EVERY
+    FILE INSTALLED WITH THIS APPLICATION;
+
+  - LIKE BEFORE, LAUNCHERS OF THE APPLICATIONS WILL BE 
+    STORED IN ~/.local/share/applications, BUT WITH THE
+    SUFFIX "AM-" IN THE NAME TO MADETHE LAUNCHER DIFFERENT
+    FROM OTHERS;
+
+  - POSSIBILITY TO ENABLE A BASH COMPLETION SCRIPT TO 
+    EASILLY COMPLETE YOUR COMMAND IN "APPMAN";
+
+  - A NEW AND MORE EFFICIENT WAY TO UPDATE THE PROGRAMS
+    BY COMPARING THE INSTALLED VERSION WITH THE NEW ONE,
+    SO YOU HAVE NOT TO REWRITE THE SAME FILE EVERY TIME;
+
+  - ALL THE PROGRAMS AVAILABLE ON THE "AM" REPOSITORY;
+
+  - MANY NEW FEATURES FROM "AM" APPLICATION MANAGER.
+
+  YOU CAN READ MORE AT: HTTPS://GITHUB.COM/IVAN-HC/APPMAN
+
+  UPGRADE NOW IF YOU WANT TO CONTINUE USING APPMAN.
+
+  NOTE: THIS SCRIPT WILL REMOVE THE OLD VERSION OF "APPMAN",
+  INCLUDING THE APPIMAGE TOOLS INCLUDED WITH THE OLD RELEASES
+  OF "APPMAN" (OTHER PROGRAMS WILL STILL REMAIN IN /opt/bin).
+
+  BEFORE PROCEEDING, USE "appman -r $PROGRAM" TO REMOVE THE
+  ALREADY INSTALLED PROGRAMS AND "appman -f" IF YOU DO NOT
+  REMEMBER WHAT YOU HAVE INSTALLED WITH "APPMAN" UNTIL NOW.
+'
+	read -r -p " PRESS ANY KEY TO UPGRADE, OR CTRL+D TO ABORT" response
+	case "$response" in
+		*) currentuser=$(who | awk '{print $1}')
+		sudo echo ""
+		cd /opt/bin
+		wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL -O appman-2.1 && chmod a+x ./appman-2.1 && sudo ./appman-2.1
+		rm -R -f /opt/bin/appman /opt/bin/appimagetool /opt/bin/appimageupdate /opt/bin/pkg2appimage /usr/bin/appimagetool /usr/bin/appimageupdate /usr/bin/pkg2appimage;
+		break;;
+	esac;;
+  '-f'|'files') echo ""; echo $(echo "  Applications installed on the system:"; ls /opt/bin/ | wc -l); echo ""; ls /opt/bin; echo "" ;;
+  '-r'|'remove')
+	while [ -n "$1" ]
+	do
+	case $2 in
+	*) for var in $2;
+	do read -p "Do you wish to REMOVE this program (y,N)?" yn
+		case $yn in [Yy]* ) rm -R -f /opt/bin/$2 /opt/bin/.$2 ~/$LOCAL1/$2* ~/$LOCAL2/$2*;
+		cd /opt/bin && find . -xtype l -exec rm {} \;;
+		echo ""; echo "Application removed!"; echo ""; break;; [Nn]*|* ) echo "Aborted"; exit;; esac done;;
+	esac
+	shift
+	done;;
+esac
