@@ -247,6 +247,7 @@ case "$1" in
 			sed -i "s# /usr/bin# ~/.local/bin#g" ./$2
 			sed -i "s# /usr/share/applications# ~/.local/share/applications#g" ./$2
 			sed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/.opt#g" ./$2
+			sed -i "s#Exec=$2#Exec=$(xdg-user-dir USER)/.local/bin/$2 #g" ./$2
 			sed -i "s# /usr/share/pixmaps# ~/.local/share/icons#g" ./$2
 			sed -i "s# /opt# ~/.opt#g" ./$2
 			chmod a+x ~/.opt/appman/.cache/$2; ~/.opt/appman/.cache/$2; chown -R $currentuser ~/.opt/appman/.cache/*; echo "";
@@ -505,6 +506,6 @@ case "$1" in
 	fi
 	done
 	shift;;
-  'version'|'-v'|'--version') echo '2.0-1';;
+  'version'|'-v'|'--version') echo '2.0-2';;
   *) exec ~/.opt/appman/appman ;;
 esac
