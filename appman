@@ -23,7 +23,7 @@ update
 web
 --disable-completion
 --enable-completion" >> ~/.opt/appman/options
-mkdir -p ~/.local/bin ~/.local/share/applications ~/.local/share/icons ~/.opt/appman/.cache
+mkdir -p ~/.local/bin ~/.local/share/applications ~/.local/share/icons /opt/appman/.cache
 case "$1" in
   '') echo "" && echo ' USAGE: "appman [option]"' && echo "" && echo ' Run the "appman -h" command to find out more' && echo "";;
   '-h'|'help') echo '
@@ -169,8 +169,8 @@ case "$1" in
 	if curl --output /dev/null --silent --head --fail $URL/programs/.about/$2  1>/dev/null; then
 	case $2 in
 	*) for var in $2;
-	do rm -R -f ~/.opt/appman/.cache/about; mkdir ~/.opt/appman/.cache/about;
-		cd ~/.opt/appman/.cache/about && wget -q $URL/programs/.about/$2 && cat ./$2 && echo "" && exit; done
+	do rm -R -f /opt/appman/.cache/about; mkdir /opt/appman/.cache/about;
+		cd /opt/appman/.cache/about && wget -q $URL/programs/.about/$2 && cat ./$2 && echo "" && exit; done
 	esac
 	else
 	echo ""; 
@@ -200,7 +200,7 @@ case "$1" in
 	shift;;
   '-c'|'clean') echo ""; echo " CLEANING OF TEMPORARY FILES AND FOLDERS IN PROGRESS" && sleep 1 && echo "" && echo " PRESS CTRL+C TO ABORT." && sleep 1 &&
 	echo "" && for i in {5..1}; do echo -ne " $i\r" && sleep 1; done &&
-	echo ""; rm -R -f ~/.opt/appman/appdb; rm -R -f ~/.opt/appman/.cache/*; rm -R -f ~/.opt/*/tmp; echo "" && echo " DONE!"; echo "" ;;
+	echo ""; rm -R -f /opt/appman/.cache/*; rm -R -f ~/.opt/*/tmp; echo "" && echo " DONE!"; echo "" ;;
   '-d'|'download')
 	while [ -n "$1" ]
 	do case $2 in
@@ -272,11 +272,11 @@ case "$1" in
 	esac
 	done
 	shift;;
-  '-l'|'list') rm -R -f ~/.opt/appman/$arch-apps ~/.opt/appman/list && wget -q $URL/programs/$arch-apps -P ~/.opt/appman && echo -e "$(cat ~/.opt/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/.opt/appman/list
-	cd ~/.opt/appman && cat options >> list
+  '-l'|'list') rm -R -f /opt/appman/$arch-apps /opt/appman/list && wget -q $URL/programs/$arch-apps -P /opt/appman && echo -e "$(cat /opt/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> /opt/appman/list
+	cd /opt/appman && cat options >> list
 	echo ""; echo "  LIST OF APPLICATIONS AVAILABLE IN THE 'AM' REPOSITORY:"; echo "";
-  	cat ~/.opt/appman/$arch-apps; echo "";
-  	echo $(echo "ALL:"; grep -e "$" -c ~/.opt/appman/$arch-apps);
+  	cat /opt/appman/$arch-apps; echo "";
+  	echo $(echo "ALL:"; grep -e "$" -c /opt/appman/$arch-apps);
   	echo $(echo "INSTALLED:"; cd ~/.opt && find -name 'remove' -printf "%h\n" | sort -u | wc -l); echo "";;
   '-o'|'overwrite')
 	while [ -n "$1" ]
@@ -306,8 +306,8 @@ case "$1" in
 	esac
 	done
 	shift;;
-  '-q'|'query') rm -R -f ~/.opt/appman/$arch-apps ~/.opt/appman/list && wget -q $URL/programs/$arch-apps -P ~/.opt/appman && echo -e "$(cat ~/.opt/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/.opt/appman/list
-	cd ~/.opt/appman && cat options >> list
+  '-q'|'query') rm -R -f /opt/appman/$arch-apps /opt/appman/list && wget -q $URL/programs/$arch-apps -P /opt/appman && echo -e "$(cat /opt/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> /opt/appman/list
+	cd /opt/appman && cat options >> list
 	ARGS=$(echo "$@" | sed 's/-q //')
 	echo ""
 	echo ' Search results for "'$ARGS'" in the list of available programs:' | tr a-z A-Z
@@ -316,7 +316,7 @@ case "$1" in
 	do
 	case $2 in
 	*) for var in $ARGS;
-	do grep -i -E "$ARGS" ~/.opt/appman/$arch-apps && echo "" && exit;
+	do grep -i -E "$ARGS" /opt/appman/$arch-apps && echo "" && exit;
 	done
 	esac
 	shift
@@ -326,6 +326,13 @@ case "$1" in
 	do
 	if ls ~/.opt/$2 1>/dev/null; then
 	case $2 in
+	appman) for var in $2;
+	do echo ""; read -p " Do you wish to permanently REMOVE AppMan (Y,n)?" yn
+		case $yn in
+		[Nn]* ) echo ""; echo " AppMan has not been removed, exiting!"; echo ""; exit;;
+		[Yy]*|* ) sudo /opt/appman/remove;;
+	esac
+	done;;
 	*) for var in $2;
 	do echo ""; read -p " Do you wish to REMOVE $2 (Y,n)?" yn
 		case $yn in
@@ -341,11 +348,11 @@ case "$1" in
 	fi
 	done
 	shift;;
-  '-s'|'sync') rm -R -f ~/.opt/appman/$arch-apps ~/.opt/appman/list && wget -q $URL/programs/$arch-apps -P ~/.opt/appman && echo -e "$(cat ~/.opt/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/.opt/appman/list
+  '-s'|'sync') rm -R -f /opt/appman/$arch-apps /opt/appman/list && wget -q $URL/programs/$arch-apps -P /opt/appman && echo -e "$(cat /opt/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> /opt/appman/list
 	cd ~/.opt/appman && cat options >> list
 	echo ""; echo ' SYNCHRONIZING "APPMAN" '$(appman -v)'...'; sleep 1; echo "";
-  	rm -R -f ~/.opt/appman/.cache/* 1>/dev/null; cd ~/.opt/appman/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman; cd ..;
-  	mv ~/.opt/appman/.cache/appman /opt/appman/; echo ' THE "APPMAN" SCRIPT IS NOW UPDATED TO THE '$(appman -v)' VERSION! '; echo "";;
+  	rm -R -f /opt/appman/.cache/* 1>/dev/null; cd /opt/appman/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman; cd ..;
+  	mv /opt/appman/.cache/appman /opt/appman/; echo ' THE "APPMAN" SCRIPT IS NOW UPDATED TO THE '$(appman -v)' VERSION! '; echo "";;
   '-t'|'template')
 	while [ -n "$1" ]
 	do
@@ -382,6 +389,7 @@ case "$1" in
 	while [ -n "$1" ]
 	do
 	case $2 in
+	appman) appman -s;;
 	'') echo ""; echo ' "APPMAN" CAN MANAGE UPDATES FOR THE FOLLOWING PROGRAMS: '; echo "";
   		cd ~/.opt && find -name 'AM-updater' -printf " %h\n" | sort -u | xargs -n 1 basename; echo "" ;
 		echo ' ALL OTHERS ARE FIXED VERSIONS OR CAN MANAGE UPDATES BY THEMSELF'; echo ""; sleep 1;
@@ -426,8 +434,8 @@ case "$1" in
 	if curl --output /dev/null --silent --head --fail $URL/programs/.about/$2  1>/dev/null; then
 	case $2 in
 	*) for var in $2;
-	do rm -R -f ~/.opt/appman/.cache/about; mkdir ~/.opt/appman/.cache/about;
-		cd ~/.opt/appman/.cache/about && wget -q $URL/programs/.about/$2 && echo "" && echo " SITE/SOURCES:" && echo "" &&
+	do rm -R -f /opt/appman/.cache/about; mkdir /opt/appman/.cache/about;
+		cd /opt/appman/.cache/about && wget -q $URL/programs/.about/$2 && echo "" && echo " SITE/SOURCES:" && echo "" &&
 		grep -o " http[^ ]*" ./$2 && echo "" && exit; done
 	esac
 	else
@@ -459,15 +467,15 @@ case "$1" in
 	read -p ' Do you wish to create a bash completion script for "AppMan" (y,N)?' yn
 	case $yn in
 		'N'|'n') exit;;
-		'Y'|'y') echo '#!/usr/bin/env bash' >> ~/.opt/appman/appman-completion.sh; echo 'complete -W "$(cat ~/.opt/appman/list)" appman' >> ~/.opt/appman/appman-completion.sh
-			 chmod a+x ~/.opt/appman/appman-completion.sh
-			 rm -R -f ~/.opt/appman/remove; echo '#!/bin/sh' >> ~/.opt/appman/remove
-			 echo 'rm -R -f /usr/local/bin/appman ~/.opt/appman /etc/bash_completion.d/appman-completion.sh' >> ~/.opt/appman/remove
-			 chmod a+x ~/.opt/appman/remove; chown -R $currentuser ~/.opt/appman/remove 2>/dev/null 
+		'Y'|'y') echo '#!/usr/bin/env bash' >> /opt/appman/appman-completion.sh; echo 'complete -W "$(cat /opt/appman/list)" appman' >> /opt/appman/appman-completion.sh
+			 chmod a+x /opt/appman/appman-completion.sh
+			 rm -R -f /opt/appman/remove; echo '#!/bin/sh' >> /opt/appman/remove
+			 echo 'rm -R -f /usr/local/bin/appman /opt/appman /etc/bash_completion.d/appman-completion.sh' >> /opt/appman/remove
+			 chmod a+x /opt/appman/remove; chown -R $currentuser /opt/appman/remove 2>/dev/null 
 			 if test -f /etc/bash_completion.d; then
-				sudo mv ~/.opt/appman/appman-completion.sh /etc/bash_completion.d/
+				sudo mv /opt/appman/appman-completion.sh /etc/bash_completion.d/
 			 else
-				sudo mkdir -p /etc/bash_completion.d; mv ~/.opt/appman/appman-completion.sh /etc/bash_completion.d/
+				sudo mkdir -p /etc/bash_completion.d; mv /opt/appman/appman-completion.sh /etc/bash_completion.d/
 			 fi;;
 		*) exit;;
 	esac 
@@ -506,6 +514,6 @@ case "$1" in
 	fi
 	done
 	shift;;
-  'version'|'-v'|'--version') echo '2.0-2';;
-  *) exec ~/.opt/appman/appman ;;
+  'version'|'-v'|'--version') echo '2.0-3';;
+  *) exec /opt/appman/appman ;;
 esac
