@@ -389,23 +389,23 @@ case "$1" in
 		[Yy]*|* ) echo ""; echo " THE UPDATE VERIFICATION PROCESS IS IN PROGRESS, PLEASE WAIT..."; sleep 2; echo ""; echo "-----------------------------------------------------------------------";
 		  	echo " >> START OF ALL PROCESSES << "; echo "-----------------------------------------------------------------------"; echo "";
 		  	for f in ~/.opt/*/; do cd $f && if test -f ./AM-updater; then
-			echo ' Updating "'$(cd ~/.opt && find -name 'AM-updater' -printf " %h\n" | sort -u | xargs -n 1 basename)'"...' &&
+			echo ' Updating "'$(echo $f | cut -c 5- | tr -d '/')'"...' &&
 			SECONDS=0; $(sh -x ./AM-updater > /dev/null 2>&1); duration=$SECONDS;
-			echo " "$(cd ~/.opt && find -name 'AM-updater' -printf " %h\n" | sort -u | xargs -n 1 basename)" is updated!" | tr a-z A-Z && echo " $(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed!" && echo "";
+			echo " "$(echo $f | cut -c 5- | tr -d '/')" is updated!" | tr a-z A-Z && echo " $(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed!" && echo "";
 			else
 			echo ""  > /dev/null 2>&1; fi; done;
 			rm -R -f ~/.opt/appman/.cache/* ~/.opt/*/tmp; echo "-----------------------------------------------------------------------"; appman -s; 
 			echo "-----------------------------------------------------------------------";
 			echo " >> END OF ALL PROCESSES << "; 
 		  	echo "-----------------------------------------------------------------------";echo ""; sleep 2;
-		  	echo ' ALL THE PROGRAMS MANAGED BY "APPMAN" ARE UPDATED! '; echo "" && exit; break;;
+		  	echo ' ALL THE PROGRAMS MANAGED BY "AM" ARE UPDATED! '; echo "" && exit; break;;
 		esac;;
 	*) if test -f ~/.opt/$2/AM-updater; then
 			echo "" && echo ' Updating '$2'...' | tr a-z A-Z && echo "" && ~/.opt/$2/AM-updater && echo "" &&
 			SECONDS=0; $(sh -x ./AM-updater > /dev/null 2>&1); duration=$SECONDS;
 			echo " " $2" is updated!" | tr a-z A-Z && echo " $(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed!" && echo "" && break;
 		else
-			echo "" && echo ' "APPMAN" CANNOT MANAGE UPDATES FOR "'$2'"' | tr a-z A-Z &&
+			echo "" && echo ' "AM" CANNOT MANAGE UPDATES FOR "'$2'"' | tr a-z A-Z &&
 			UPDATERS=$(cd ~/.opt/$2 && find . -name "*update*" -print)
 			if [[ -n "$UPDATERS" ]]; then
 				echo ' This program probably includes its own update system!' | tr a-z A-Z &&
