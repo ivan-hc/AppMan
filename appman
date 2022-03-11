@@ -23,7 +23,7 @@ update
 web
 --disable-completion
 --enable-completion" >> /opt/appman/options
-mkdir -p ~/.local/bin ~/.local/share/applications ~/.local/share/icons ~/.opt /opt/appman/.cache
+mkdir -p ~/.local/bin ~/.local/share/applications ~/.local/share/icons ~/.opt/appman /opt/appman/.cache
 case "$1" in
   '') echo "" && echo ' USAGE: "appman [option]"' && echo "" && echo ' Run the "appman -h" command to find out more' && echo "";;
   '-h'|'help') echo '
