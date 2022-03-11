@@ -216,9 +216,9 @@ case "$1" in
 	esac
 	done
 	shift;;
-  '-f'|'files') echo ""; echo $(echo "YOU HAVE INSTALLED "; cd /opt && find -name 'remove' -printf "%h\n" | sort -u | wc -l;
+  '-f'|'files') echo ""; echo $(echo "YOU HAVE INSTALLED "; cd ~/.opt && find -name 'remove' -printf "%h\n" | sort -u | wc -l;
   	echo " STANDALONE PROGRAMS MANAGED BY THE 'AM' COMMAND:"); echo "";
-  	cd /opt && find -name 'remove' -printf "%h\n" | sort -u | xargs -n 1 basename; echo "" ;;
+  	cd ~/.opt && find -name 'remove' -printf "%h\n" | sort -u | xargs -n 1 basename; echo "" ;;
   '-i'|'install')
 	while [ -n "$1" ]
 	do echo "";
@@ -246,6 +246,7 @@ case "$1" in
 			sed -i "s# /usr/local/bin# ~/.local/bin#g" ./$2
 			sed -i "s# /usr/bin# ~/.local/bin#g" ./$2
 			sed -i "s# /usr/share/applications# ~/.local/share/applications#g" ./$2
+			sed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/.opt#g" ./$2
 			sed -i "s# /usr/share/pixmaps# ~/.local/share/icons#g" ./$2
 			sed -i "s# /opt# ~/.opt#g" ./$2
 			chmod a+x ~/.opt/appman/.cache/$2; ~/.opt/appman/.cache/$2; chown -R $currentuser ~/.opt/appman/.cache/*; echo "";
@@ -275,7 +276,7 @@ case "$1" in
 	echo ""; echo "  LIST OF APPLICATIONS AVAILABLE IN THE 'AM' REPOSITORY:"; echo "";
   	cat ~/.opt/appman/$arch-apps; echo "";
   	echo $(echo "ALL:"; grep -e "$" -c ~/.opt/appman/$arch-apps);
-  	echo $(echo "INSTALLED:"; cd /opt && find -name 'remove' -printf "%h\n" | sort -u | wc -l); echo "";;
+  	echo $(echo "INSTALLED:"; cd ~/.opt && find -name 'remove' -printf "%h\n" | sort -u | wc -l); echo "";;
   '-o'|'overwrite')
 	while [ -n "$1" ]
 	do case $2 in
@@ -335,7 +336,7 @@ case "$1" in
 	else
 	echo ""; echo " '$2' is not a valid argument or is not installed."; echo "";
 	echo ' LIST OF THE INSTALLED PROGRAMS / VALID ARGUMENTS:'; echo "";
-	cd /opt && find -name 'remove' -printf "%h\n" | sort -u | xargs -n 1 basename; echo "" ; exit;
+	cd ~/.opt && find -name 'remove' -printf "%h\n" | sort -u | xargs -n 1 basename; echo "" ; exit;
 	fi
 	done
 	shift;;
