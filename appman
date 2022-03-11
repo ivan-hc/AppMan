@@ -403,9 +403,9 @@ case "$1" in
 		[Yy]*|* ) echo ""; echo " THE UPDATE VERIFICATION PROCESS IS IN PROGRESS, PLEASE WAIT..."; sleep 2; echo ""; echo "-----------------------------------------------------------------------";
 		  	echo " >> START OF ALL PROCESSES << "; echo "-----------------------------------------------------------------------"; echo "";
 		  	for f in ~/.opt/*/; do cd $f && if test -f ./AM-updater; then
-			echo ' Updating "'$(echo $f | cut -c 5- | tr -d '/')'"...' &&
+			echo ' Updating "'$(printf '%s\n' "${PWD##*/}")'"...' &&
 			SECONDS=0; $(sh -x ./AM-updater > /dev/null 2>&1); duration=$SECONDS;
-			echo " "$(echo $f | cut -c 5- | tr -d '/')" is updated!" | tr a-z A-Z && echo " $(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed!" && echo "";
+			echo " "$(printf '%s\n' "${PWD##*/}")" is updated!" | tr a-z A-Z && echo " $(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed!" && echo "";
 			else
 			echo ""  > /dev/null 2>&1; fi; done;
 			rm -R -f ~/.opt/appman/.cache/* ~/.opt/*/tmp; echo "-----------------------------------------------------------------------"; appman -s; 
@@ -518,6 +518,6 @@ case "$1" in
 	fi
 	done
 	shift;;
-  'version'|'-v'|'--version') echo '2.0-7';;
+  'version'|'-v'|'--version') echo '2.1';;
   *) exec /opt/appman/appman ;;
 esac
