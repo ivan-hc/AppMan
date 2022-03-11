@@ -43,6 +43,14 @@ Copy/paste this command:
 
 NOTE: once the new line will be added the only way to remove it is to edit the ~/.bashrc file manually.
 
+You can install AppMan also from "AM" itself:
+
+    sudo am -i appman
+And vice versa, you can install "AM" from AppMan:
+
+    sudo appman -i am
+NOTE: "AM" is the only program managed by "AppMan" that requires root privileges to be installed.
+
 # Commands
 Being AppMan based on "AM" 2.6.1-2, it uses [the same commands of that amazing release](https://github.com/ivan-hc/AM-Application-Manager/blob/main/README.md#usage).
 
