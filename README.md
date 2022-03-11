@@ -7,6 +7,7 @@ Application Manager for AppImages and other standalone programs.
 - [Installation](#installation)
 - [Commands](#commands)
 - [What programs can be installed with AppMan](#what-programs-can-be-installed-with-appman)
+- [Known issues](#known-issues)
 - [Uninstall](#uninstall)
 - [How to add applications](https://github.com/ivan-hc/AppMan#how-to-add-applications)
 - ["AM", the successor of AppMan](#am-the-successor-of-appman)
@@ -212,6 +213,19 @@ These programs are taken:
 - from unofficial repositories of developers external to the project concerned (most of the time they are programs in AppImage format), but only if an official release is not available (see the various WINE, Zoom, VLC, GIMP...).
 
 You can consult basic information, links to sites and sources used through the related `appman -a $PROGRAM` command or by clicking on [this link](https://github.com/ivan-hc/AM-application-manager/tree/main/programs/.about) to the related section of the "AM" repository.
+
+## Known issues
+Sometime you may have difficults in starting from the applications menu and the only way to solve is to edit manually the "`Exec=`" entry in the related launcher located in `~/.local/share/applications/`, named `AM-$PROGRAM.desktop` (where `$PROGRAM` is the name of the program you are interested in), maybe this way:
+
+    Exec=$PROGRAM
+or
+ 
+    Exec=~/.local/bin/$PROGRAM
+or directly
+
+    Exec=~/.opt/$PROGRAM/$PROGRAM
+do the same for the "`Icon=`" entry in case the icon cannot be shown.    
+ 
 
 ## Uninstall
 To completelly remove AppMan use this command:
