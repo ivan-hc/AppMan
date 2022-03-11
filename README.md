@@ -9,7 +9,6 @@ Application Manager for AppImages and other standalone programs.
 - [What programs can be installed with AppMan](#what-programs-can-be-installed-with-appman)
 - [Uninstall](#uninstall)
 - [How to add applications](https://github.com/ivan-hc/AppMan#how-to-add-applications)
-- [Structure of a submitted app](#structure-of-a-submitted-app)
 - ["AM", the successor of AppMan](#am-the-successor-of-appman)
 - [Conclusions](#conclusions)
 
