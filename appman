@@ -229,7 +229,7 @@ case "$1" in
 		read -r -p " This will install AM as root in your system, do you wish to continue (Y/n)?" response
 		case "$response" in
 			[Nn]*) echo ""; echo " INSTALLATION ABORTED"; echo ""; exit;;
-			[Yy]*|*) cd ~/.opt/appman/.cache;
+			[Yy]*|*) cd /opt/appman/.cache;
 			wget https://raw.githubusercontent.com/ivan-hc/APPLICATION-MANAGER/main/INSTALL && chmod a+x ./INSTALL && sudo ./INSTALL; break;
 		esac
 		fi;;
@@ -242,7 +242,7 @@ case "$1" in
 		if curl --output /dev/null --silent --head --fail $URL/programs/$arch/$2  1>/dev/null; then
 		case $2 in
 		*) for var in $2;
-			do cd ~/.opt/appman/.cache; mkdir tmp; cd tmp; wget -q $URL/programs/$arch/$2; cd ..; mv ./tmp/$2 ./$2; rmdir ./tmp;
+			do cd /opt/appman/.cache; mkdir tmp; cd tmp; wget -q $URL/programs/$arch/$2; cd ..; mv ./tmp/$2 ./$2; rmdir ./tmp;
 			sed -i "s# /usr/local/bin# ~/.local/bin#g" ./$2
 			sed -i "s# /usr/bin# ~/.local/bin#g" ./$2
 			sed -i "s# /usr/share/applications# ~/.local/share/applications#g" ./$2
@@ -251,7 +251,7 @@ case "$1" in
 			sed -i "s#Exec=/usr/bin/#Exec=$(xdg-user-dir USER)/.local/bin/#g" ./$2
 			sed -i "s# /usr/share/pixmaps# ~/.local/share/icons#g" ./$2
 			sed -i "s# /opt# ~/.opt#g" ./$2
-			chmod a+x ~/.opt/appman/.cache/$2; ~/.opt/appman/.cache/$2; chown -R $currentuser ~/.opt/appman/.cache/*; echo "";
+			chmod a+x ~/.opt/appman/.cache/$2; /opt/appman/.cache/$2; chown -R $currentuser /opt/appman/.cache/*; echo "";
 			unset $LATESTSCRIPT
 			LATESTSCRIPT=$(cd /opt/appman/.cache && ls -tp | grep -v /$ | head -1)
 				if test -f ~/.opt/*$2*/remove; then
@@ -350,7 +350,7 @@ case "$1" in
 	done
 	shift;;
   '-s'|'sync') rm -R -f /opt/appman/$arch-apps /opt/appman/list && wget -q $URL/programs/$arch-apps -P /opt/appman && echo -e "$(cat /opt/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> /opt/appman/list
-	cd ~/.opt/appman && cat options >> list
+	cd /opt/appman && cat options >> list
 	echo ""; echo ' SYNCHRONIZING "APPMAN" '$(appman -v)'...'; sleep 1; echo "";
   	rm -R -f /opt/appman/.cache/* 1>/dev/null; cd /opt/appman/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman; cd ..;
   	mv /opt/appman/.cache/appman /opt/appman/; echo ' THE "APPMAN" SCRIPT IS NOW UPDATED TO THE '$(appman -v)' VERSION! '; echo "";;
@@ -515,6 +515,6 @@ case "$1" in
 	fi
 	done
 	shift;;
-  'version'|'-v'|'--version') echo '2.0-4';;
+  'version'|'-v'|'--version') echo '2.0-5';;
   *) exec /opt/appman/appman ;;
 esac
