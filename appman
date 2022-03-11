@@ -251,7 +251,7 @@ case "$1" in
 			sed -i "s#Exec=/usr/bin/#Exec=$(xdg-user-dir USER)/.local/bin/#g" ./$2
 			sed -i "s# /usr/share/pixmaps# ~/.local/share/icons#g" ./$2
 			sed -i "s# /opt# ~/.opt#g" ./$2
-			chmod a+x ~/.opt/appman/.cache/$2; /opt/appman/.cache/$2; chown -R $currentuser /opt/appman/.cache/*; echo "";
+			chmod a+x /opt/appman/.cache/$2; /opt/appman/.cache/$2; chown -R $currentuser /opt/appman/.cache/*; echo "";
 			unset $LATESTSCRIPT
 			LATESTSCRIPT=$(cd /opt/appman/.cache && ls -tp | grep -v /$ | head -1)
 				if test -f ~/.opt/*$2*/remove; then
