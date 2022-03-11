@@ -59,7 +59,7 @@ case "$1" in
 		*) currentuser=$(who | awk '{print $1}')
 		sudo echo ""
 		cd /opt/bin
-		wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL -O appman-2.1 && chmod a+x ./appman-2.1 && sudo ./appman-2.1
+		wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL -O appman-2.1 && chmod a+x ./appman-2.1 && sudo ./appman-2.1 &&
 		rm -R -f /opt/bin/appman /opt/bin/appimagetool /opt/bin/appimageupdate /opt/bin/pkg2appimage /usr/bin/appimagetool /usr/bin/appimageupdate /usr/bin/pkg2appimage;
 		break;;
 	esac;;
