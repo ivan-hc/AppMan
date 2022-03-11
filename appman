@@ -331,7 +331,7 @@ case "$1" in
 	do echo ""; read -p " Do you wish to permanently REMOVE AppMan (Y,n)?" yn
 		case $yn in
 		[Nn]* ) echo ""; echo " AppMan has not been removed, exiting!"; echo ""; exit;;
-		[Yy]*|* ) sudo /opt/appman/remove;;
+		[Yy]*|* ) sudo /opt/appman/remove && exit;;
 	esac
 	done;;
 	*) for var in $2;
