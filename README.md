@@ -1,17 +1,26 @@
 # AppMan: install applications locallyand without root privileges
 Application Manager for AppImages and other standalone programs.
 
-- [About AppMan](#about-appman)
+[About AppMan](#about-appman)
 - [About AppImages](#about-appimages)
 - [How it works](#how-it-works)
-- [Installation](#installation)
-- [Commands](#commands)
+
+[Installation](#installation)
+- [Usage](#usage)
 - [What programs can be installed with AppMan](#what-programs-can-be-installed-with-appman)
-- [Known issues](#known-issues)
-- [Uninstall](#uninstall)
+- [Updates](#updates)
+- [Repository and Multiarchitecture](#repository-and-multiarchitecture)- [What programs can be installed with AppMan](#what-programs-can-be-installed-with-appman)
 - [How to add applications](https://github.com/ivan-hc/AppMan#how-to-add-applications)
-- ["AM", the successor of AppMan](#am-the-successor-of-appman)
-- [Conclusions](#conclusions)
+- [Known issues](#known-issues)
+
+[Uninstall](#uninstall)
+
+[About "AM" Application Manager](#about-am-application-manager)
+
+[Conclusions](#conclusions)
+
+-----------------------------------------------------------------------------
+
 
 ## About AppMan
 AppMan is an application manager for AppImages and other standalone programs that works like APT or Pacman.
@@ -52,7 +61,7 @@ And vice versa, you can install "AM" from AppMan:
     sudo appman -i am
 NOTE: "AM" is the only program managed by "AppMan" that requires root privileges to be installed.
 
-# Commands
+## Usage
 Being AppMan based on "AM" 2.6.1-2, it uses [the same commands of that amazing release](https://github.com/ivan-hc/AM-Application-Manager/blob/main/README.md#usage).
 
   ALL THE OPTIONS:
@@ -214,6 +223,40 @@ These programs are taken:
 
 You can consult basic information, links to sites and sources used through the related `appman -a $PROGRAM` command or by clicking on [this link](https://github.com/ivan-hc/AM-application-manager/tree/main/programs/.about) to the related section of the "AM" repository.
 
+## Updates
+To update all the programs, just run the command:
+
+    appman -u
+To update just one program (and to read the output from the shell):
+
+    appman -u $PROGRAM
+Here are the ways in which the updates will be made:
+- Updateable AppImages can rely on an [appimageupdatetool](https://github.com/AppImage/AppImageUpdate)-based "updater" or on their external zsync file (if provided by the developer);
+- Non-updateable AppImages and other standalone programs will be replaced only with a more recent version if available, this will be taken by comparing the installed version with the one available on the source (using "curl", "grep" and "cat"), the same is for some AppImages created with [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit);
+- Fixed versions will be listed with their build number (e.g. $PROGRAM-1.1.1). Note that most of the programs are updateable, so fixed versions will only be added upon request (or if it is really difficult to find a right wget/curl command to download the latest version).
+
+During the first installation, the main user ($currentuser) will take the necessary permissions on each /opt/$PROGRAM directory, in this way all updates will be automatic and without root permissions.
+			
+## Repository and Multiarchitecture
+Each program is installed through a dedicated script for "AM" and from the ["AM" repository](https://github.com/ivan-hc/AM-application-manager/tree/main/programs)" and divided by architecture.
+	
+###### NOTE that currently my work focuses on applications for x86_64 architecture, but it is possible to extend "AM" (and then AppMan too) to all other available architectures.
+
+Click on the link of your architecture to see the list of all the apps available on the repository of "AM" Application Manager:
+
+- [x86_64](https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/programs/x86_64-apps)
+- [i686](https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/programs/i686-apps)
+- [aarch64](https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/programs/aarch64-apps)
+
+## How to add applications
+AppMan uses the same installation scripts of "AM" and changes some internal parts to made them compatible with an installation into the local folder of the user, so to add applications on AppMan you must upload them on the main repository of "AM", at https://github.com/ivan-hc/AM-Application-Manager
+
+Here is a guide on how to create your own script for "AM": 
+
+[Guide: your first script to install or download Applications using "AM"](https://github.com/ivan-hc/AM-application-manager/wiki/Guide:-your-first-script-to-install-or-download-Applications-using-%22AM%22)
+
+If you are interested, you can deliberately join this project.
+
 ## Known issues
 Sometime you may have difficults in starting from the applications menu and the only way to solve is to edit manually the "`Exec=`" entry in the related launcher located in `~/.local/share/applications/`, named `AM-$PROGRAM.desktop` (where `$PROGRAM` is the name of the program you are interested in), maybe this way:
 
@@ -232,11 +275,7 @@ To completelly remove AppMan use this command:
 
  `sudo /opt/appman/remove`
 
-
-## How to add applications
-AppMan uses the same installation scripts of "AM", so add applications on AppMan you must upload them on the main repository of "AM", at https://github.com/ivan-hc/AM-Application-Manager
-
-# "AM", the successor of AppMan
+# About "AM" Application Manager
 ["AM"](https://github.com/ivan-hc/AM-application-manager) is a new Application Manager I've done, initially inspired by AppMan. "AM" is built to allow integration in the system and automatic updates for each application.
 
 "AM"'s goal is to provide a free and open source App Manager that works on many other architectures (including and not limited to i386 and ARM). "AM" allows the installation, deletion and search of standalone programs and AppImages. Each program (or $APP) is stored in a dedicated /opt/$APP directory, the binary is more ofthen called by a custom script named "AM-updater" and it can update the program to the last version (if available) by comparing the number of version of the installed binary and the version available in the repository of the developer.
