@@ -9,7 +9,7 @@ Application Manager for AppImages and other standalone programs.
 - [Usage](#usage)
 - [What programs can be installed with AppMan](#what-programs-can-be-installed-with-appman)
 - [Updates](#updates)
-- [Repository and Multiarchitecture](#repository-and-multiarchitecture)- [What programs can be installed with AppMan](#what-programs-can-be-installed-with-appman)
+- [Repository and Multiarchitecture](#repository-and-multiarchitecture)
 - [How to add applications](https://github.com/ivan-hc/AppMan#how-to-add-applications)
 - [Known issues](#known-issues)
 
@@ -221,7 +221,7 @@ These programs are taken:
 - from AppImage recipes to be compiled with [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit) (see Anydesk, qBittorrent, Dropbox, all the games from the "KDE Games" suite...);
 - from unofficial repositories of developers external to the project concerned (most of the time they are programs in AppImage format), but only if an official release is not available (see the various WINE, Zoom, VLC, GIMP...).
 
-You can consult basic information, links to sites and sources used through the related `appman -a $PROGRAM` command or by clicking on [this link](https://github.com/ivan-hc/AM-application-manager/tree/main/programs/.about) to the related section of the "AM" repository.
+You can consult basic information, links to sites and sources used through the related `appman -a $PROGRAM` command or by clicking on [this link on the "AM" repository](https://github.com/ivan-hc/AM-application-manager/tree/main/programs/.about) to see the "readme" of each script.
 
 ## Updates
 To update all the programs, just run the command:
@@ -235,7 +235,7 @@ Here are the ways in which the updates will be made:
 - Non-updateable AppImages and other standalone programs will be replaced only with a more recent version if available, this will be taken by comparing the installed version with the one available on the source (using "curl", "grep" and "cat"), the same is for some AppImages created with [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit);
 - Fixed versions will be listed with their build number (e.g. $PROGRAM-1.1.1). Note that most of the programs are updateable, so fixed versions will only be added upon request (or if it is really difficult to find a right wget/curl command to download the latest version).
 
-During the first installation, the main user ($currentuser) will take the necessary permissions on each /opt/$PROGRAM directory, in this way all updates will be automatic and without root permissions.
+In "AM" during the first installation, the main user ($currentuser) will take the necessary permissions on each /opt/$PROGRAM directory, in this way all updates will be automatic and without root permissions. The applications installed using "AM" are available for all the users of the system, while with AppMan they are available only locally. In both cases you're able to manage the content of the application's directory without root privileges.
 			
 ## Repository and Multiarchitecture
 Each program is installed through a dedicated script for "AM" and from the ["AM" repository](https://github.com/ivan-hc/AM-application-manager/tree/main/programs)" and divided by architecture.
