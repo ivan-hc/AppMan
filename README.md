@@ -1,4 +1,4 @@
-# AppMan: install applications locallyand without root privileges
+# AppMan: install applications locally and without root privileges
 Application Manager for AppImages and other standalone programs.
 
 [About AppMan](#about-appman)
