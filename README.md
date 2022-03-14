@@ -276,13 +276,15 @@ To completelly remove AppMan use this command:
  `sudo /opt/appman/remove`
 
 # About "AM" Application Manager
-["AM"](https://github.com/ivan-hc/AM-application-manager) is a new Application Manager I've done, initially inspired by AppMan. "AM" is built to allow integration in the system and automatic updates for each application.
+["AM"](https://github.com/ivan-hc/AM-application-manager) is a new Application Manager I've done, initially inspired by the first releases of AppMan. "AM" is built to allow integration in the system and automatic updates for each application.
 
 "AM"'s goal is to provide a free and open source App Manager that works on many other architectures (including and not limited to i386 and ARM). "AM" allows the installation, deletion and search of standalone programs and AppImages. Each program (or $APP) is stored in a dedicated /opt/$APP directory, the binary is more ofthen called by a custom script named "AM-updater" and it can update the program to the last version (if available) by comparing the number of version of the installed binary and the version available in the repository of the developer.
 
 To upload a program it is necessary just one script that adds a launcher and icon (if needed), a script to use and update the program and a script to remove it with or without "AM".
 
 To learn more about this new Application Manager, check the repository of the project at [ivan-hc/AM-application-manager](https://github.com/ivan-hc/AM-application-manager) and work at this project with me, if you're interested. I will try to give you all the tools you need to compile your own script.
+
+Newer versions of AppMan are based on "AM" and can convert its installation scripts for a local configurations into your home directory.
 
 # Conclusions
 AppMan has a somewhat bizarre history, as it was predecessor of "AM" before, which had to correct its mistakes, and a more efficient tool improved several months later, then, using the same scripts as "AM".
