@@ -5,7 +5,7 @@ LOCAL2=".local/share/icons"
 
 cd /opt/bin
 case "$1" in
-  '') echo '
+  ''|* ) echo '
 
   THIS IS A TRANSITIONAL SCRIPT NEEDED TO UPGRADE "APPMAN" TO THE NEW
 
@@ -54,14 +54,14 @@ case "$1" in
   ALREADY INSTALLED PROGRAMS AND "appman -f" IF YOU DO NOT
   REMEMBER WHAT YOU HAVE INSTALLED WITH "APPMAN" UNTIL NOW.
 '
-	read -r -p " PRESS ANY KEY TO UPGRADE, OR CTRL+D TO ABORT" response
-	case "$response" in
-		*) currentuser=$(who | awk '{print $1}')
-		sudo echo ""
-		cd /opt/bin
-		wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL -O appman-2.1 && chmod a+x ./appman-2.1 && sudo ./appman-2.1 &&
-		rm -R -f /opt/bin/appman /opt/bin/appimagetool /opt/bin/appimageupdate /opt/bin/pkg2appimage /usr/bin/appimagetool /usr/bin/appimageupdate /usr/bin/pkg2appimage;
-		break;;
+	read -p ' PRESS "N" TO ABORT OR ANY OTHER KEY TO UPGRADE ' yn
+	case "$yn" in
+		[Nn]* ) echo ""; echo " UPGRADE ABORTED!";
+			echo ""; echo " PLEASE, UPGRADE TO APPMAN 2.0 OR NEWER AS SOON AS POSSIBLE!";
+			echo ""; echo " LEARN MORE ABOUT THE NEW APPMAN AT HTTPS://GITHUB.COM/IVAN-HC/APPMAN"; echo ""; exit;;
+		[Yy]*|* ) sudo echo ""; rm -R -f /opt/bin/appimagetool /opt/bin/appimageupdate /opt/bin/pkg2appimage /usr/bin/appimagetool /usr/bin/appimageupdate /usr/bin/pkg2appimage
+		cd /opt/bin && rm -R -f /opt/bin/appman &&
+		wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL -O appman-2.1 && chmod a+x ./appman-2.1 && sudo ./appman-2.1;;
 	esac;;
   '-f'|'files') echo ""; echo $(echo "  Applications installed on the system:"; ls /opt/bin/ | wc -l); echo ""; ls /opt/bin; echo "" ;;
   '-r'|'remove')
