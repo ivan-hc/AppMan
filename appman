@@ -483,7 +483,7 @@ case "$1" in
 	read -p ' Do you wish to create a bash completion script for "AppMan" (y,N)?' yn
 	case $yn in
 		'N'|'n') exit;;
-		'Y'|'y') echo '#!/usr/bin/env bash' >> /opt/appman/appman-completion.sh; echo 'complete -W "$(cat /opt/appman/list)" appman' >> /opt/appman/appman-completion.sh
+		'Y'|'y') echo '#!/usr/bin/env bash' >> /opt/appman/appman-completion.sh; echo 'complete -W "$(cat /opt/appman/list 2>/dev/null)" appman' >> /opt/appman/appman-completion.sh
 			 chmod a+x /opt/appman/appman-completion.sh
 			 rm -R -f /opt/appman/remove; echo '#!/bin/sh' >> /opt/appman/remove
 			 echo 'rm -R -f /usr/local/bin/appman /opt/appman /etc/bash_completion.d/appman-completion.sh' >> /opt/appman/remove
@@ -530,6 +530,6 @@ case "$1" in
 	fi
 	done
 	shift;;
-  'version'|'-v'|'--version') echo '2.2-2';;
+  'version'|'-v'|'--version') echo '2.2-3';;
   *) exec /opt/appman/appman ;;
 esac
