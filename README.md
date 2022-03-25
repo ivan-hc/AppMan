@@ -292,6 +292,7 @@ To uninstall "AppMan" just run the command:
 
 ------------------------------------------------------------------------
 # Related project
+### My main project behind "AppMan"
 - "AM" Application Manager from https://github.com/ivan-hc/AM-APPLICATION-MANAGER
 
 ##### My other projects
