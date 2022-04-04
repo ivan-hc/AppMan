@@ -399,8 +399,7 @@ case "$1" in
 	do
 	case $2 in
 	*) for var in $ARGS;
-	do grep -i -E "$ARGS" /opt/appman/$arch-apps && echo "" && exit;
-	done
+	do grep -i -E "$2" /opt/appman/$arch-apps | grep -i -E "$3" | grep -i -E "$4" | grep -i -E "$5" | grep -i -E "$6" | grep -i -E "$7" | grep -i -E "$8" | grep -i -E "$9" &&	done
 	esac
 	shift
 	done;;
@@ -607,6 +606,6 @@ case "$1" in
 	fi
 	done
 	shift;;
-  'version'|'-v'|'--version') echo '3.0.0-2';;
+  'version'|'-v'|'--version') echo '3.0.1';;
   *) exec /opt/appman/appman ;;
 esac
