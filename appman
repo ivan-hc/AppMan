@@ -399,7 +399,9 @@ case "$1" in
 	do
 	case $2 in
 	*) for var in $ARGS;
-	do grep -i -E "$2" /opt/appman/$arch-apps | grep -i -E "$3" | grep -i -E "$4" | grep -i -E "$5" | grep -i -E "$6" | grep -i -E "$7" | grep -i -E "$8" | grep -i -E "$9" &&	done
+	do grep -i -E "$2" /opt/appman/$arch-apps | grep -i -E "$3" | grep -i -E "$4" | grep -i -E "$5" | grep -i -E "$6" | grep -i -E "$7" | grep -i -E "$8" | grep -i -E "$9" &&
+	echo "" && exit;
+	done
 	esac
 	shift
 	done;;
