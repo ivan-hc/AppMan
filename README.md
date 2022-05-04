@@ -1,6 +1,15 @@
 ## AppMan: install applications locally and without root privileges
-#### Why a new package manager?
-Many programs for GNU/Linux can work without necessarily having to mix their libraries with other programs in a completely standalone way (AppImage, but also other autonomous applications, such as Firefox, Blender and Thunderbird). The only thing they needed was a tool that could download, install, and manage them... so I thought about writing not one but two: "AM" and "AppMan".
+"AppMan" is a bash script able to install, update and remove thousands of standalone programs (official/unofficial AppImage packages, but also the official versions of Firefox, Thunderbird, Brave, Blender and hundreds of other programs from official sources).
+
+"AppMan" is based on the previous stable version of ["AM" Application Manager](https://github.com/ivan-hc/AM-Application-Manager) and converts all the installation scripts from the main database of "AM" to scripts that can install and integrate all the programs for the current user only and without root privileges. As opposed to "AM", AppMan install all the programs into a new `~/.opt` directory (all updates are managed in a completely different way from that of other AppImage managers, and for many more AppImage, that's why I didn't choose to use the `~/Applications` folder, while the new `~/.opt` directory is the result of the conversion from "AM" to "AppMan" for a local use of this tool), the launchers instead are installed in `~/.local/share/applications` with the "AM-" suffix and all the links are placed in `~/.local/bin` (this new `$PATH` will be enabled during the first installation of AppMan).
+
+Being "AppMan" a bash-based script, it can be used on all the architectures supported by the Linux kernel and works with all the GNU/Linux distributions.
+
+NOTE: as I've already sayd, AppMan downloads and converts all the scripts from the main database of "AM", so there are not ready-to-use installation scripts for AppMan itself. To made an application available for AppMan, it must be uploaded on the "AM" repository first. 
+
+This repository only contains "AppMan".
+
+Join the "AM" project if you want to add new programs to the database, visit ["AM" Application Manager](https://github.com/ivan-hc/AM-Application-Manager).
 
 ------------------------------------------------------------------------
 [Introducing "AppMan"](#introducing-appman)
