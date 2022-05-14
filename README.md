@@ -5,7 +5,7 @@
 
 Being "AppMan" a bash-based script, it can be used on all the architectures supported by the Linux kernel and works with all the GNU/Linux distributions.
 
-NOTE: as I've already said, AppMan downloads and converts all the scripts from the main database of "AM", so there are not ready-to-use installation scripts for AppMan itself. To made an application available for AppMan, it must be uploaded on the "AM" repository first. However, since AppMan version 3.0.6 a `convert` option is included which can convert all scripts downloaded or created for" AM "to local installation oriented scripts, as if they were installed with AppMan.
+NOTE: as I've already said, AppMan downloads and converts all the scripts from the main database of "AM", so there are not ready-to-use installation scripts for AppMan itself. To made an application available for AppMan, it must be uploaded on the "AM" repository first. However, since the AppMan 3.0.6 release, a new `convert` option is included which can convert all scripts downloaded or created for" AM "to local installation oriented scripts, as if they were installed with AppMan.
 
 This repository only contains "AppMan".
 
