@@ -14,6 +14,7 @@ rm -R -f /opt/appman/options
 echo "about
 backup
 clean
+convert
 download
 files
 install
@@ -62,6 +63,13 @@ case "$1" in
   -c, clean
   USAGE: "appman -c"
   DESCRIPTION: Removes all the unnecessary files and temporary folders.
+  
+  -conv, convert
+  USAGE: "appman -conv $PROGRAM"
+  Convert one or more scripts downloaded (see the "-d" option) or created 
+  (see the "-t" option) for "AM" to installation scripts that can install all 
+  the applications locally. This allows you to create all the installation 
+  scripts you want without having to wait them to be created for "AM" first.
 
   -d, download
   USAGE: "appman -d $PROGRAM"
@@ -226,6 +234,59 @@ case "$1" in
   '-c'|'clean') echo ""; echo " CLEANING OF TEMPORARY FILES AND FOLDERS IN PROGRESS" && sleep 1 && echo "" && echo " PRESS CTRL+C TO ABORT." && sleep 1 &&
 	echo "" && for i in {5..1}; do echo -ne " $i\r" && sleep 1; done &&
 	echo ""; rm -R -f /opt/appman/.cache/*; rm -R -f ~/.opt/*/tmp; echo "" && echo " DONE!"; echo "" ;;
+  '-conv'|'convert')
+  	while [ -n "$1" ]
+	do
+	rm -f /opt/appman/.cache/convert-args
+	echo $@ | tr ' ' '\n' >> /opt/appman/.cache/convert-args && echo STOP >> /opt/appman/.cache/convert-args
+	ARGS=$(sed '1d' /opt/appman/.cache/convert-args)
+	for arg in $ARGS; do
+	for var in $arg; do
+	if [ $arg == STOP ]; then
+	exit
+	else
+	case $arg in
+	'') echo " Specify the name of one or more programs to convert"; echo ""; break;;
+	*) if curl --output /dev/null --silent --head --fail $URL/programs/$arch/$arg  1>/dev/null; then
+  		cd $(xdg-user-dir DESKTOP); wget -q $URL/programs/$arch/$arg; echo " Converting $arg to an AppMan-compatible script";
+  		sed -i "s# /usr/local/bin# $(xdg-user-dir USER)/.local/bin#g" ./$arg
+		sed -i "s# /usr/bin# $(xdg-user-dir USER)/.local/bin#g" ./$arg
+		sed -i "s# /usr/games# $(xdg-user-dir USER)/.local/bin#g" ./$arg
+		sed -i "s# /usr/share/applications# $(xdg-user-dir USER)/.local/share/applications#g" ./$arg
+		sed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/.opt#g" ./$arg
+		sed -i "s#Exec=$arg#Exec=$(xdg-user-dir USER)/.local/bin/$arg#g" ./$arg
+		sed -i 's#Exec=$APP#Exec='$(xdg-user-dir USER)'/.local/bin/$APP#g' ./$arg
+		sed -i "s#Exec=/usr/bin/#Exec=$(xdg-user-dir USER)/.local/bin/#g" ./$arg
+		sed -i "s#Exec=/opt/firefox#Exec=$(xdg-user-dir USER)/.opt/firefox#g" ./$arg
+		sed -i "s#Exec=/opt/kdegames#Exec=$(xdg-user-dir USER)/.opt/kdegames#g" ./$arg
+		sed -i "s#Exec=/opt/kdeutils#Exec=$(xdg-user-dir USER)/.opt/kdeutils#g" ./$arg
+		sed -i "s# /usr/share/pixmaps# $(xdg-user-dir USER)/.local/share/icons#g" ./$arg
+		sed -i "s# /opt# ~/.opt#g" ./$arg; echo ""; break;
+  	elif test -f $(xdg-user-dir DESKTOP)/am-scripts/$arch/$arg; then
+  		cd $(xdg-user-dir DESKTOP); cp ./am-scripts/$arch/$arg ./$arg
+  		echo " Converting $arg to an AppMan-compatible script";
+  		sed -i "s# /usr/local/bin# $(xdg-user-dir USER)/.local/bin#g" ./$arg
+		sed -i "s# /usr/bin# $(xdg-user-dir USER)/.local/bin#g" ./$arg
+		sed -i "s# /usr/games# $(xdg-user-dir USER)/.local/bin#g" ./$arg
+		sed -i "s# /usr/share/applications# $(xdg-user-dir USER)/.local/share/applications#g" ./$arg
+		sed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/.opt#g" ./$arg
+		sed -i "s#Exec=$arg#Exec=$(xdg-user-dir USER)/.local/bin/$arg#g" ./$arg
+		sed -i 's#Exec=$APP#Exec='$(xdg-user-dir USER)'/.local/bin/$APP#g' ./$arg
+		sed -i "s#Exec=/usr/bin/#Exec=$(xdg-user-dir USER)/.local/bin/#g" ./$arg
+		sed -i "s#Exec=/opt/firefox#Exec=$(xdg-user-dir USER)/.opt/firefox#g" ./$arg
+		sed -i "s#Exec=/opt/kdegames#Exec=$(xdg-user-dir USER)/.opt/kdegames#g" ./$arg
+		sed -i "s#Exec=/opt/kdeutils#Exec=$(xdg-user-dir USER)/.opt/kdeutils#g" ./$arg
+		sed -i "s# /usr/share/pixmaps# $(xdg-user-dir USER)/.local/share/icons#g" ./$arg
+		sed -i "s# /opt# ~/.opt#g" ./$arg; echo ""; break;
+	else
+		echo ""; echo ' "'$arg'" is NOT a valid argument'; echo ""; break;
+	fi
+	esac
+	fi
+	done
+	done
+	done
+	shift;;
   '-d'|'download')
 	while [ -n "$1" ]
 	do
@@ -463,6 +524,7 @@ case "$1" in
 	echo "  3) APPIMAGE/deb/tar/zip ARCHIVE from AUR (always updatable)" | tr a-z A-Z
 	echo "  4) APPIMAGE, build your own with pkg2appimage and appimagetool" | tr a-z A-Z
 	echo "  5) APPIMAGE, build your own with pkg2appimage using a custom AppRun" | tr a-z A-Z
+	echo '  6) WEBAPP based on a Firefox profile (requires "firefox" in $PATH)' | tr a-z A-Z
 	echo " "
 	read -r -p " WHAT KIND OF PROGRAM DO YOU WANT TO WRITE A SCRIPT FOR? : " response
 	case "$response" in
@@ -576,6 +638,37 @@ case "$1" in
     	5) mkdir -p ./am-scripts ./am-scripts/$arch ./am-scripts/ABOUT && wget -c -q $URL/templates/AM-SAMPLE-pkg2appimage-custom -O ./am-scripts/$arch/$arg && sed -i s/SAMPLE/$arg/g ./am-scripts/$arch/$arg &&
 		echo " " >> ./am-scripts/ABOUT/$arg; echo " $COMMENT" >> ./am-scripts/ABOUT/$arg; echo " " >> ./am-scripts/ABOUT/$arg; echo " SITE: " >> ./am-scripts/ABOUT/$arg && 
 		echo '◆ '$arg' : '$COMMENT'' >> ./am-scripts/list; echo ""; echo " All files are saved in $(xdg-user-dir DESKTOP)/am-scripts
+		" ;;
+    	6) mkdir -p ./am-scripts ./am-scripts/$arch ./am-scripts/ABOUT && wget -c -q $URL/templates/AM-SAMPLE-Firefox-webapp -O ./am-scripts/$arch/ffwa-$arg && sed -i s/SAMPLE/$arg/g ./am-scripts/$arch/ffwa-$arg &&
+		echo "-----------------------------------------------------------------------";
+		read -r -p " ◆ NAME OF THE APP: " RESPONSE
+		case "$RESPONSE" in
+		*) sed -i s#GIVEMEANAME#$RESPONSE#g ./am-scripts/$arch/ffwa-$arg
+		echo " " >> ./am-scripts/ABOUT/ffwa-$arg; echo " WebApp & Firefox Profile for $RESPONSE." >> ./am-scripts/ABOUT/ffwa-$arg; echo " " >> ./am-scripts/ABOUT/ffwa-$arg; echo " SITE: MYWEBSITE" >> ./am-scripts/ABOUT/ffwa-$arg && 
+		echo "◆ ffwa-$arg : WebApp & Firefox Profile for $RESPONSE." >> ./am-scripts/list
+		esac
+		echo " LIST OF CATEGORIES:"; echo ""; echo " 0) AudioVideo"; echo " 1) Audio"; echo " 2) Video"; echo " 3) Development"; echo " 4) Education"; echo " 5) Game";
+		echo " 6) Graphics"; echo " 7) Network"; echo " 8) Office"; echo " 9) Science"; echo " 10) Settings"; echo " 11) System"; echo " 12) Utility (default)"; echo "";
+		read -r -p " CHOOSE A CATEGORY : " response
+		case "$response" in
+		0) sed -i s/YOURCATEGORY/AudioVideo/g ./am-scripts/$arch/ffwa-$arg;;	1) sed -i s/YOURCATEGORY/Audio/g ./am-scripts/$arch/ffwa-$arg;; 2) sed -i s/YOURCATEGORY/Video/g ./am-scripts/$arch/ffwa-$arg;; 3) sed -i s/YOURCATEGORY/Development/g ./am-scripts/$arch/ffwa-$arg;;
+		4) sed -i s/YOURCATEGORY/Education/g ./am-scripts/$arch/ffwa-$arg;; 5) sed -i s/YOURCATEGORY/Game/g ./am-scripts/$arch/ffwa-$arg;; 6) sed -i s/YOURCATEGORY/Graphics/g ./am-scripts/$arch/ffwa-$arg;; 7) sed -i s/YOURCATEGORY/Network/g ./am-scripts/$arch/ffwa-$arg;;
+		8) sed -i s/YOURCATEGORY/Office/g ./am-scripts/$arch/ffwa-$arg;; 9) sed -i s/YOURCATEGORY/Science/g ./am-scripts/$arch/ffwa-$arg;; 10) sed -i s/YOURCATEGORY/Settings/g ./am-scripts/$arch/ffwa-$arg;; 11) sed -i s/YOURCATEGORY/System/g ./am-scripts/$arch/ffwa-$arg;;
+		12|*) sed -i s/YOURCATEGORY/Utility/g ./am-scripts/$arch/ffwa-$arg;;
+		esac
+		echo "-----------------------------------------------------------------------";
+		read -r -p " ◆ URL OF THE WEBAPP: " RESPONSE
+		case "$RESPONSE" in
+		*) sed -i s#MYWEBSITE#$RESPONSE#g ./am-scripts/$arch/ffwa-$arg; sed -i s#MYWEBSITE#$RESPONSE#g ./am-scripts/ABOUT/ffwa-$arg;;
+		esac 
+		echo "-----------------------------------------------------------------------";
+		read -r -p " ◆ COPY/PASTE THE URL OF THE ICON HERE 
+ URL: " RESPONSE
+		case "$RESPONSE" in
+		*) sed -i s#YOURICONURL#$RESPONSE#g ./am-scripts/$arch/ffwa-$arg
+		esac
+		echo "-----------------------------------------------------------------------";
+		echo ""; echo " All files are saved in $(xdg-user-dir DESKTOP)/am-scripts
 		" ;;
     	*) echo ""; echo " No valid argument was chosen: process aborted! " | tr a-z A-Z; echo ""; break;;
 	esac
@@ -715,6 +808,6 @@ case "$1" in
 	fi
 	done
 	shift;;
-  'version'|'-v'|'--version') echo '3.0.5';;
+  'version'|'-v'|'--version') echo '3.0.6';;
   *) exec /opt/appman/appman ;;
 esac
