@@ -28,9 +28,11 @@ template
 unlock
 update
 web
+--apps-path
 --disable-completion
 --enable-completion" >> /opt/appman/options
 mkdir -p ~/.local/bin ~/.local/share/applications ~/.local/share/icons ~/.opt/appman /opt/appman/.cache
+
 case "$1" in
   '') echo "" && echo ' USAGE: "appman [option]"' && echo "" && echo ' Run the "appman -h" command to find out more' && echo "";;
   '-h'|'help') echo '
@@ -142,7 +144,14 @@ case "$1" in
   -w, web
   USAGE: "appman -w $PROGRAM"
   DESCRIPTION: Shows the URLs of the sites/sources of $PROGRAM.
-
+  
+  --apps-path
+  USAGE: "appman --apps-path $DIRECTORY"
+  DESCRIPTION: Change the main directory of your installed applications, for
+  now all your applications are saved in "'$(xdg-user-dir USER)'/.opt".
+  NOTE that you have to re-install again all the apps previously installed to
+  made all the links and lauchers working with the new location.
+    
   --disable-completion
   USAGE: "appman --disable-completion"
   DESCRIPTION: Removes the /etc/bash_completion.d/appman-completion.sh script
@@ -494,7 +503,7 @@ case "$1" in
 	cd /opt/appman && cat options >> list
 	echo ""; echo ' SYNCHRONIZING "APPMAN" '$(appman -v)'...'; sleep 1; echo "";
   	rm -R -f /opt/appman/.cache/* 1>/dev/null; cd /opt/appman/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman; cd ..;
-  	mv /opt/appman/.cache/appman /opt/appman/; echo ' THE "APPMAN" SCRIPT IS NOW UPDATED TO THE '$(appman -v)' VERSION! '; echo "";;
+  	mv /opt/appman/.cache/appman /opt/appman/; exec /opt/appman/newappspath; echo ' THE "APPMAN" SCRIPT IS NOW UPDATED TO THE '$(appman -v)' VERSION! '; echo "";;
   '-t'|'template'|'convert')
 	while [ -n "$1" ]
 	do
@@ -741,6 +750,25 @@ case "$1" in
 	fi
 	done
 	shift;;
+  '--apps-path')
+  	while [ -n "$1" ]
+	do
+	case $2 in
+	*) mkdir -p ~/$2
+	sed -i "s#/.opt#/$2#g" /opt/appman/appman
+	echo "
+	From now all the apps will be installed in ~/$2
+	
+	Make sure you haven't installed any apps in the old location,
+	
+	the launchers and shortcuts won't work.
+	"
+	rm -R -f /opt/appman/newappspath; echo '#!/bin/sh
+	sed -i "s#/.opt#/'$2'#g" ./appman' >> /opt/appman/newappspath && chmod a+x /opt/appman/newappspath
+	exit
+	esac
+	done
+	shift;;
   '--disable-completion')
 	if test -f /etc/bash_completion.d/appman-completion.sh; then
 	sudo rm -R -f /etc/bash_completion.d/appman-completion.sh;
@@ -808,6 +836,6 @@ case "$1" in
 	fi
 	done
 	shift;;
-  'version'|'-v'|'--version') echo '3.0.6';;
+  'version'|'-v'|'--version') echo '3.0.6.1';;
   *) exec /opt/appman/appman ;;
 esac
