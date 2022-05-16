@@ -1,7 +1,7 @@
 ## AppMan: install applications locally and without root privileges
 "AppMan" is a bash script able to install, update and remove thousands of standalone programs (any AppImage package, but also the official versions of Firefox, Thunderbird, Brave, Blender and hundreds of other programs provided on their official sites).
 
-"AppMan" is based on the previous stable version of ["AM" Application Manager](https://github.com/ivan-hc/AM-Application-Manager) and converts all the installation scripts from the main database of "AM" to scripts that can install and integrate all the programs for the current user only and without root privileges. As opposed to "AM", AppMan installs all the programs into a new `~/.opt` directory in the user's $HOME (because all updates are managed in a completely different way from that of other AppImage package managers, and for many more AppImages from any known source, that's why I didn't choose to use the `~/Applications` folder, while the new `~/.opt` directory is the result of the conversion from "AM" to "AppMan" for a local use of this tool), the launchers instead are installed in `~/.local/share/applications` with the "AM-" suffix and all the links are placed in `~/.local/bin` (this new `$PATH` will be enabled during the first installation of AppMan).
+"AppMan" is based on the previous stable version of ["AM" Application Manager](https://github.com/ivan-hc/AM-Application-Manager) and converts all the installation scripts from the main database of "AM" to scripts that can install and integrate all the programs for the current user only and without root privileges. As opposed to "AM", AppMan installs all the programs into a new `~/.opt` directory in the user's $HOME (since "appman v3.0.6.1" you can set a different directory in your $HOME using the `--apps-path` option), the launchers instead are installed in `~/.local/share/applications` with the "AM-" suffix and all the links are placed in `~/.local/bin` (this new `$PATH` will be enabled during the first installation of AppMan).
 
 Being "AppMan" a bash-based script, it can be used on all the architectures supported by the Linux kernel and works with all the GNU/Linux distributions.
 
@@ -222,6 +222,12 @@ In both cases, the "INSTALL" script will create a dedicated /opt/am directory co
   `-w`, `web` Shows the URLs of the sites/sources of $PROGRAM:
   
     appman -w $PROGRAM
+-----------------------------------------------------------------------------
+  `--apps-path` Change the main directory of your installed applications:
+  
+     
+    appman --apps-path $DIRECTORY
+  NOTE that you have to re-install again all the apps previously installed to made all the links and lauchers working with the new location.
 -----------------------------------------------------------------------------
   `--disable-completion` Removes the /etc/bash_completion.d/am-completion.sh script previously created with the "[sudo] appman --enable-completion" command:
   
