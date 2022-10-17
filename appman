@@ -2,7 +2,7 @@
 
 notify-send "The new AppMan 4.0.0 PORTABLE is out!"
 sleep 2
-notify-send "Please visit github.com/ivan-hc/AppMan"
+notify-send "Please visit https://github.com/ivan-hc/AppMan"
 
 for name in "ar" "cat" "chmod" "chown" "curl" "echo" "egrep" "grep" "sed" "tar" "test" "unzip" "wget" "zsync"
 do
