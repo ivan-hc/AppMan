@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+notify-send "The new AppMan 4.0.0 PORTABLE is out!"
+sleep 2
+notify-send "Please visit github.com/ivan-hc/AppMan"
+
 for name in "ar" "cat" "chmod" "chown" "curl" "echo" "egrep" "grep" "sed" "tar" "test" "unzip" "wget" "zsync"
 do
   [[ $(which $name 2>/dev/null) ]] || { echo "" && echo -e 'ERROR: "'$name'" not found, required by some installation scripts.';deps=1; }
