@@ -1,25 +1,16 @@
 "AppMan" is a bash script able to install, update and remove thousands of standalone programs (any AppImage package, but also the official versions of Firefox, Thunderbird, Brave, Blender and hundreds of other programs provided on their official sites).
 
-"AppMan" is based on the previous stable version of ["AM" Application Manager](https://github.com/ivan-hc/AM-Application-Manager) and converts all the installation scripts from the main database of "AM" to scripts that can install and integrate all the programs for the current user only and without root privileges. As opposed to "AM", AppMan installs all the programs locally, in the user's $HOME:
-- until the v3.0.6 it was only possible to install the apps into a ~/.opt directory;
-- since the v3.0.6.1 you can set a different directory in your $HOME using the `--apps-path` option;
-- with the v4.0.0.0 (portable) you can install the apps everywhere, into a directory you choose (the configuration file is in ~/.config/appman).
-- for all the versions listed above, the launchers are installed in `~/.local/share/applications` with the "AM-" suffix and all the links are placed in `~/.local/bin`.
+Since the new 4.0.0 version, AppMan is also portable, ie it does not need a speciphic path to work, you can use it anywhere on your system.
+
+"AppMan" is based on the previous stable version of ["AM" Application Manager](https://github.com/ivan-hc/AM-Application-Manager) and converts all the installation scripts from the main database of "AM" to scripts that can install and integrate all the programs for the current user only and without root privileges. As opposed to "AM", AppMan installs all the programs locally, in the user's $HOME.
 
 Being "AppMan" a bash-based script, it can be used on all the architectures supported by the Linux kernel and works with all the GNU/Linux distributions.
-
-NOTE: as I've already said, AppMan downloads and converts all the scripts from the main database of "AM", so there are not ready-to-use installation scripts for AppMan itself. To made an application available for AppMan, it must be uploaded on the "AM" repository first. However, since the AppMan 3.0.6 release, a new `convert` option is included which can convert all scripts downloaded or created for" AM "to local installation oriented scripts, as if they were installed with AppMan.
-
-This repository only contains "AppMan".
 
 ------------------------------------------------------------------------
 [Introducing "AppMan"](#introducing-appman)
 - [How it works](#how-it-works)
-- [Differences between "AppMan" and "AM"](#differences-between-appman-and-am)
 - [What programs can be installed](#what-programs-can-be-installed)
-- [How to update all programs, for real](#how-to-update-all-programs-for-real)
 - [Repository and Multiarchitecture](#repository-and-multiarchitecture)
-- [Comparison with other package managers](#comparison-with-other-package-managers)
 
 [Installation](#installation)
 
@@ -29,13 +20,9 @@ This repository only contains "AppMan".
 - [How to enable bash completion](#how-to-enable-bash-completion)
 - [Snapshots: backup your app and restore to a previous version](#snapshots-backup-your-app-and-restore-to-a-previous-version)
 
-[Create your own script](#create-your-own-script)
-
 [Uninstall](#uninstall)
 
 [Known issues](#known-issues)
-
-[Related projects](#related-projects)
 
 [Conclusions](#conclusions)
 
@@ -48,28 +35,8 @@ The main goal of this tool is to provide the same updated applications to multip
 [AppImage](https://appimage.org/) is a standalone package format, the best choice if you are looking for an alternative packaging format to use on multiple GNU/Linux distributions, it uses fewer resources than Snap and Flatpak, and works completely autonomously, using its own libraries. AppMan aims to give it a home to stay.
 
 ## How it works
-Since the 2.0 release, AppMan took over the base code from its own successor, ["AM" Application Manager](https://github.com/ivan-hc/AM-Application-Manager) and takes all sources from the "AM" repository itself.
-
-If before AppMan had its own archive of scripts and icons to install programs (click [here](https://github.com/ivan-hc/AppMan/archive/refs/tags/1.8.zip) to download the old 1.8 version's source code), the project was interrupted for several months in favour of a new code base named "AM".
-That code base also served to improve AppMan, which has a new life since March 2022.
-
-All AppMan does is to convert [all the installation scripts for "AM"](https://github.com/ivan-hc/AM-Application-Manager/tree/main/programs) (that normally must be executed with ROOT privileges) in normal scripts that can manage applications in the local folder of the current user. This allows more users to be able to better configure their account.
-
-To learn more about "AM" and all its scripts, visit the official repository at https://github.com/ivan-hc/AM-APPLICATION-MANAGER
+All AppMan does is to convert [all the installation scripts for "AM"](https://github.com/ivan-hc/AM-Application-Manager/tree/main/programs) (that normally must be executed with ROOT privileges) in normal scripts that can manage applications in the local folder of the current user. This allows more users to be able to better configure their profile.
  
------------------------------------------------------------------------------
-## Differences between "AppMan" and "AM"
-"AppMan" and "AM" are two command line tools that can download, install, update, remove and save AppImage and other standalone applications trying to always get the original versions from the main sources, and where necessary, try to create AppImage using [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit). Since March 2022 "AM" provides its source code as the base for the newer releases of AppMan, making this a version of "AM" that allows you to install programs locally instead. 
-
-Where `$PROGRAM` is the application we're going to install:
-- "AppMan" (ie the `appman` command, provided by this main repository) programs and all related files are stored into a local directory named `~/.opt/$PROGRAM`, the launcher is placed into the `~/.local/share/applications` directory and the main application link is placed into a new `~/.local/bin` directory ( the latter requires to be enabled into the `~/.bashrc` file, by adding the line `export PATH=$PATH:$(xdg-user-dir USER)/.local/bin` at the end of the file), this allows a single user to costumize its local configuration without having to share applications with others in the system;
-- "AM" (ie the `am` command, available at [github.com/ivan-hc/AM-APPLICATION-MANAGER](https://github.com/ivan-hc/AM-APPLICATION-MANAGER)) instead installs programs and all related files into a `/opt/$PROGRAM` directory, the launcher in `/usr/share/applications` and the main application link in a`$PATH` (i.e. `/usr/local/bin` or `/usr/games`), this allows multiple users of the same system to be able to use the same installed applications. Root privileges (`sudo`) are required only to install and remove applications.
-
-For everything else, the controls and operation are always the same for both command line tools. The only thing that changes is that the installation scripts are written only for "AM", while "AppMan" uses the same scripts and includes commands that can modify them to make them work locally during the installation process.
-
-More details about AM on the official repository, at https://github.com/ivan-hc/AM-APPLICATION-MANAGER
-
------------------------------------------------------------------------------
 ## What programs can be installed
 AppMan installs/removes/updates/manages only standalone programs, ie those programs that can be run from a single directory in which they are contained (where `$PROGRAM` is the name of the application, AppMan installs them always into a dedicated folder named `~/.opt/$PROGRAM`, or into a different one if you set it with the `--apps-path` option).
 
@@ -86,22 +53,6 @@ These programs are taken:
 
 You can consult basic information, links to sites and sources used through the related `appman -a $PROGRAM` command or by clicking on the related section of the "AM" repository, [here](https://github.com/ivan-hc/AM-application-manager/tree/main/programs/.about).
 
------------------------------------------------------------------------------
-## How to update all programs, for real
-To update all the programs, just run the command:
-
-	appman -u
-To update just one program (and to read the output from the shell):
-
-    appman -u $PROGRAM
-Here are the ways in which the updates will be made:
-- Updateable AppImages can rely on an [appimageupdatetool](https://github.com/AppImage/AppImageUpdate)-based "updater" or on their external zsync file (if provided by the developer);
-- Non-updateable AppImages and other standalone programs will be replaced only with a more recent version if available, this will be taken by comparing the installed version with the one available on the source (using "curl", "grep" and "cat"), the same is for some AppImages created with [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit);
-- Fixed versions will be listed with their build number (e.g. $PROGRAM-1.1.1). Note that most of the programs are updateable, so fixed versions will only be added upon request (or if it is really difficult to find a right wget/curl command to download the latest version), at https://github.com/ivan-hc/AM-APPLICATION-MANAGER
-
-Being applications installed locally, all updates will be automatic and without root permissions.
-
------------------------------------------------------------------------------
 ## Repository and Multiarchitecture
 Each program is installed through a dedicated script, and all these scripts are listed in the "[AM repository](https://github.com/ivan-hc/AM-application-manager/tree/main/programs)" and divided by architecture.
 
@@ -114,42 +65,27 @@ Click on the link of your architecture to see the list of all the apps available
 If you are interested, you can deliberately join the "AM" project.
 
 -----------------------------------------------------------------------------
-# Comparison with other package managers
-"AppMan" is not a project that wants to compete with the basic package managers of GNU/Linux distributions, being many managed programs come from different distributions (including Debian, Arch Linux and Slackware), but wants to favor the promotion of standalone programs and lighten the load of the developers of the distributions, separating the programs of the base system from those of the individual developers, in order to increase the general stability of the system and fill the shortcomings of one or of the other distribution:
-
-### 1) "AppMan" versus APT/DNF/PacMan/any AUR helper
-- Any traditional package manager follows precise patterns in integrating software and sharing libraries among the various applications in the system, and this last point can create conflicts that lead to the malfunction of one program compared to another. Furthermore, the programs differ in version according to the kind of software update model between the various distributions, the rolling-releases distributions (for example Arch Linux and Slackware) tend to always have the latest version while the fixed-release distributions (for example Debian Stable) often get older program versions.
-- "AppMan" tends to get always the last version of each program from the main developer's source, and being them only standalone programs, they will be stored in just one dedicated folder, each script just need to download the standalone program into a dedicated `~/.opt/$PROGRAM` directory, creates the launcher in `~/.local/share/applications` and a link in `~/.local/bin`. In case no alternative sources are available, "AppMan" can compile and create AppImages using pkg2appimage and appimagetool, and these can be distributed on all other GNU/Linux distributions.
-
-### 2) "AppMan" versus Flatpak
-- Flatpak is one of the most popular projects for redistributing standalone programs, and many developers prefer it. However the disadvantage concerns the use of several hundreds of megabytes of libraries where required which will be re-shared with any other installed applications. What if you just want to install one application? For example, installing GIMP (300MB) requires adding a huge set of GTK libraries (800MB), while installing any QT-based application requires a set of QT libraries (700MB) which will be then shared again. In practice it is a bit like installing a virtual machine in VirtualBox in order to take advantage of a specific version of a program, and if on the one hand the application is free to work (almost) perfectly, on the other the physical memory consumption is useless and shameful;
-- "AppMan" only manages standalone programs (which rarely require the installation of additional libraries on the host), ie bundle programs or AppImages, and the latter, being a compressed format, saves disk space, making the installation really complete and... flat (sorry for the irony, but I could not resist).
-
-### 3) "AppMan" versus Snap
-- Snappy is a package manager from Canonical Ltd and the software package format is SNAP. Snappy uses a system daemon called "snapd" to work, and this slows down the system, ie the more are the installed programs, the lower is the boot speed (and the less is the RAM free), and too many times the programs are slow if compared with the same version but from the system's repositories, from Flatpak or in AppImage format;
-- "AppMan" has no daemons and no hidden services are needed, each program is completely standalone and will run locally and only when you want to use it.
-
-### 4) "AppMan" versus any other AppImage Manager
-- There are many other AppImage managers around, and almost all of them support their database on appimagehub or other official AppImage resources, but the big problem is at the base of the compilation of these packages, being very often without an integrated update system. Furthermore, AppImage is a format that many developers are abandoning in favor of Flatpak, also because there were no centralized repositories or software that managed its updates in a universal way... at least until the invention of the first draft of AppMan 1.0, and therefore of its successor, "AM";
-- With "AppMan" each installed program has its own script (AM-updater) that compares the installed version with the one available in the sources or uses official tools to update the AppImages ([see above](#how-to-update-all-programs-for-real)), there is support for multiple architectures (including i686 and aarch64) and anyone can create a script to install that particular program (if available for its architecture).
- 
-#### NOTE: the "AM" project consider AppImage not to be a priority format, but only a fallback, because if a program is already made available in a bundle by the main developer, "AppMan" will prefer it. Some examples are given by Firefox, Thunderbird, NodeJS, Blender, Chromium Latest, SuperTuxKart... they are all programs provided in bundle, no other kind of package manager is really needed for them.
-
------------------------------------------------------------------------------
 
 # Installation
-To install "AppMan" quickly, just copy/paste the following command:
+#### Step-by-step
+1. Enable `~/.local/bin` in your `$PATH`:
 	
-    wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/INSTALL && chmod a+x ./INSTALL && sudo ./INSTALL
+       mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ./.bashrc
+2. Download the script from this repository and made it executable:
 
-Or use "GIT":
+       wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-portable -O appman && chmod a+x ./appman
+3. Optionally you can place the script in your new local $PATH:
 
-    git clone https://github.com/ivan-hc/AppMan.git
-    cd AppMan
-    chmod a+x INSTALL
-    sudo ./INSTALL
+       mv ./appman ~/.local/bin/appman 
+       
+#### Quick
+Just copy/paste the following line:
+
+    mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ./.bashrc && wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-portable -O appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman 
     
-In both cases, the "INSTALL" script will create a dedicated /opt/am directory containing the ["appman"](https://github.com/ivan-hc/AM-application-manager/blob/main/appman) script (ie "AppMan" itself), a symlink for it in /usr/local/bin named `appman` and the /opt/appman/remove script needed to [uninstall](#uninstall) "AppMan" itself, if needed. A temporary folder named /opt/am/.cache will be created too, in wich each installation script or list of available applications (for your architecture) is downloaded.
+# Choose the directory for your applications
+Run `appman` (if in `$PATH`) or `./appman`, you'll read a prompt that asks for a destination directory or path for your installed Applications.
+You can always modify the destination folder by editing the "appman-config" file under ~/.config/appman
 
 -----------------------------------------------------------------------------
 # Usage
@@ -224,19 +160,13 @@ In both cases, the "INSTALL" script will create a dedicated /opt/am directory co
   
     appman -w $PROGRAM
 -----------------------------------------------------------------------------
-  `--apps-path` Change the main directory of your installed applications:
+  `--disable-completion` Disable bash completion (see the next option):
   
-     
-    appman --apps-path $DIRECTORY
-  NOTE that you have to re-install again all the apps previously installed to made all the links and lauchers working with the new location.
+    appman --disable-completion
 -----------------------------------------------------------------------------
-  `--disable-completion` Removes the /etc/bash_completion.d/am-completion.sh script previously created with the "[sudo] appman --enable-completion" command:
+  `--enable-completion` Enable bash completion (this will add two lines in your ~/.bash_completion file) to complete a keyword with the TAB key using the names of all installable applications:
   
-    [sudo] appman --disable-completion
------------------------------------------------------------------------------
-  `--enable-completion` Create a bash completion script in /etc/bash_completion.d to complete a keyword with the TAB key using the names of all installable applications in the "AppMan" repository:
-  
-    [sudo] appman --enable-completion
+    appman --enable-completion
 -----------------------------------------------------------------------------
   `lock` Lock the selected $PROGRAM to the current installed version, this only works if a dedicated "AM-updater" script exists:
   
@@ -250,14 +180,13 @@ In both cases, the "INSTALL" script will create a dedicated /opt/am directory co
 # Features
 ------------------------------------------------------------------------
 ### How to enable bash completion
-"AppMan" has its inbuilt bash completion script that can be enabled using the following command (as root):
+"AppMan" has its inbuilt bash completion script that can be enabled using the following command:
 
-    sudo appman --enable-completion
-This will ceate a bash completion script in /etc/bash_completion.d named `am-completion.sh` needed to complete a keyword with the TAB key using the names of all the main options and the name of the scripts of all the applications available in the "AM" repository.
-To disable bash completion (and to remove the /etc/bash_completion.d/am-completion.sh script):
+    appman --enable-completion
+This will create (if it not exists) a ~/.bash_completion script in your $HOME, needed to complete a keyword with the TAB key using the names of all the main options and the name of the scripts of all the applications available in the "AM" repository.
+To disable bash completion:
 
-    sudo appman --disable-completion
-A more detailed guide on how to create your own bash completion script for your project is available [here](https://iridakos.com/programming/2018/03/01/bash-programmable-completion-tutorial).
+    appman --disable-completion
 
 ------------------------------------------------------------------------
 ### Snapshots: backup your app and restore to a previous version
@@ -272,33 +201,6 @@ A more detailed guide on how to create your own bash completion script for your 
 All the snapshots are stored into an hidden `/home/$USER/.am-snapshots` folder containing other subfolders, each one has the name of the programs you've done a backup before. Each snapshot is named with the date and time you have done the backup. To restore the application to a previous version, copy/paste the name of the snapshot when the `-o` option will prompt it.
 
 ------------------------------------------------------------------------
-# Create your own script
-"AppMan" has a `-t` option (or `template`) with which you can get a script for "AM" only to customize according to your needs. With this option, you can quickly create scripts to download existing programs or even create AppImage or AppDir through tools such as appimagetool and pkg2appimage.
-
-The following video shows how to create (with "AM") and test an AppImage of "Abiword" from Debian Unstable repository with a custom AppRun (option 5):
-
-https://user-images.githubusercontent.com/88724353/150619523-a45455f6-a656-4753-93fe-aa99babc1083.mp4
-
-The currently available templates are stored in the "AM" repository ([here](https://github.com/ivan-hc/AM-application-manager/tree/main/templates)), more will be added with the next versions of "AM".
-
-A wiki is also available, here I will try to explain the installation script's workflow for a program to be better managed by "AM" first (and "AppMan" then), trying to use a language that is as simple and elementary as possible.
-
-Each script is written exclusively for "AM" and is structured in such a way that even "AppMan" can modify it to manage programs locally).
-
-We can divide the stages of an "AM" installation's process as follows:
-
-* [Step 1: create the main directory](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-1:-create-the-main-directory) in /opt, as already suggested by the [Linux Standard Base](https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/opt.html) (LSB);
-* [Step 2: create the "remove" script](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-2:-create-the-%22remove%22-script), needed to uninstall averything (this must be the first one to be created, in order to quickly resolve any aborted/brocken installations using the `-r` option);
-* [Step 3: download the program](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-3:-download-the-program) and/or compile the program (this operation varies depending on how the program is distributed);
-* [Step 4: link to a $PATH](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-4:-link-to-a-$PATH) (usually `/usr/local/bin`, but also `/usr/bin`, `/usr/games` or `/usr/local/games`);
-* [Step 5: the "AM updater" script](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-5:-the-%22AM-updater%22-script), which is a kind of "copy" of step "3" (see above) that may include options to recognize newer versions of the program. NOTE that if you intend to create a script for the fixed version of a program, you can also skip this step;
-* [Step 6: launchers and icons](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-6:-launchers-and-icons). Note that if you intend to create a script for a command line utility, you can also skip this step;
-* [Step 7: change the permissions](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-7:-permissions) in the program folder, so you can use the update function (step 5) without using "sudo" privileges
-* [Step 8 (optional): your signature](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-8-(optional):-your-signature)
-
-The most difficult step to overcome is certainly the number "3", given the great variety of methods in which authors distribute their software, while all the other steps are much easier to overcome.
-
-------------------------------------------------------------------------
 # Uninstall
 To uninstall "AppMan" just run the command:
 
@@ -311,18 +213,6 @@ To uninstall "AppMan" just run the command:
 - The task of "AppMan" is solely to install / remove / update the applications managed by it. Problems related to the failure of an installed program or any related bugs are attributable solely to its developers. You can view the link to each project's repository or official site via the "`appman -a $PROGRAM`" command;
 - The developer of AM has compiled the application installation scripts based on any links made publicly available by the owners of the affected software (or from official repositories of other progressive release distributions, for example Debian Unstable, Arch Linux, Slackware ...) . These urls (with particular reference to the official ones of the developers) may not work in the future if the developers decide to modify the site, the tags, the repository or any detail that the script refers to to install / update the application. In this case, [please report the problem to the "AppMan" team](https://github.com/ivan-hc/AM-application-manager/issues) who will modify or (in the worst case) remove the installation script until the problem is resolved;
 - "AppMan" is an open source project, you can read and compile the scripts to your liking, as long as they don't damage your system. All scripts have been tested on Debian Testing / Unstable (64 bit) and Debian 11 (32 bit) and should work on any GNU / Linux distribution, regardless of the initialization process (with or without systemd).
-
-------------------------------------------------------------------------
-# Related project
-### My main project behind "AppMan"
-- "AM" Application Manager from https://github.com/ivan-hc/AM-APPLICATION-MANAGER
-
-##### My other projects
-- arch-deployer from https://github.com/ivan-hc/Arch-Deployer
-- firefox for linux scripts, at https://github.com/ivan-hc/Firefox-for-Linux-scripts
-
-##### My forks
-- pkg2appimage for 32 bit systems, at https://github.com/ivan-hc/pkg2appimage-32bit
 
 ------------------------------------------------------------------------
 # Conclusions
