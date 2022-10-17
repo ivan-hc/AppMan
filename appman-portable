@@ -522,7 +522,7 @@ case "$1" in
   	OLDVERSION=$VERSION
   	NEWVERSION=$(~/$APPSPATH/appman/.cache/appman-portable -v)
 	if [ $OLDVERSION == $NEWVERSION ]; then
-		mv ~/$APPSPATH/appman/.cache/appman-portable $(xdg-user-dir DESKTOP)appman; echo ' THE "APPMAN" SCRIPT IS NOW UPDATED TO THE '$($(xdg-user-dir DESKTOP)/appman -v)' VERSION! '; echo ""
+		mv ~/$APPSPATH/appman/.cache/appman-portable $(xdg-user-dir DESKTOP)/appman; echo ' THE "APPMAN" SCRIPT IS NOW UPDATED TO THE '$($(xdg-user-dir DESKTOP)/appman -v)' VERSION! '; echo ""
 	else
 		rm -R -f ~/$APPSPATH/appman/.cache/appman-portable; echo "AppMan is already updated to the more recent $VERSION version"	
 	fi;;
@@ -739,7 +739,7 @@ case "$1" in
   			OLDVERSION=$VERSION
   			NEWVERSION=$(~/$APPSPATH/appman/.cache/appman-portable -v)
 			if [ $OLDVERSION == $NEWVERSION ]; then
-				mv ~/$APPSPATH/appman/.cache/appman-portable $(xdg-user-dir DESKTOP)appman; echo ' THE "APPMAN" SCRIPT IS NOW UPDATED TO THE '$($(xdg-user-dir DESKTOP)/appman -v)' VERSION! '; echo ""
+				mv ~/$APPSPATH/appman/.cache/appman-portable $(xdg-user-dir DESKTOP)/appman; echo ' THE "APPMAN" SCRIPT IS NOW UPDATED TO THE '$($(xdg-user-dir DESKTOP)/appman -v)' VERSION! '; echo ""
 			else
 				rm -R -f ~/$APPSPATH/appman/.cache/appman-portable; echo "AppMan is already updated to the more recent $VERSION version"	
 			fi
