@@ -13,6 +13,10 @@ Being "AppMan" a bash-based script, it can be used on all the architectures supp
 - [Repository and Multiarchitecture](#repository-and-multiarchitecture)
 
 [Installation](#installation)
+- [Step-by-step](#step-by-step)
+- [Quick](#quick)
+- 
+[Choose the directory for your applications](#choose-the-directory-for-your-applications)
 
 [Usage](#usage)
 
