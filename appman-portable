@@ -789,7 +789,9 @@ case "$1" in
   '--disable-completion')
 	if [ $(cat ~/.bash_completion | grep -o appman | head -1) == appman  ]; then
 		
-		grep -v 'complete -W "$(cat ~/$APPSPATH/appman/list 2>/dev/null)" appman' ~/.bash_completion > ~/.bash_completion.backup &&
+		grep -v 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman' ~/.bash_completion > ~/.bash_completion.backup &&
+		mv ~/.bash_completion.backup ~/.bash_completion
+		grep -v 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman-portable' ~/.bash_completion > ~/.bash_completion.backup &&
 		mv ~/.bash_completion.backup ~/.bash_completion && chmod a+x ~/.bash_completion
 		echo " Completion disabled! "
 	else
@@ -797,11 +799,13 @@ case "$1" in
 	fi;;
   '--enable-completion')
 	if test -f ~/.bash_completion; then
-		echo 'complete -W "$(cat ~/$APPSPATH/appman/list 2>/dev/null)" appman' >> ~/.bash_completion
+		echo 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman' >> ~/.bash_completion
+		echo 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman-portable' >> ~/.bash_completion
 		echo " Completion enabled! "
 	else
 	 	echo '#!/usr/bin/env bash' >> ~/.bash_completion
-	 	echo 'complete -W "$(cat ~/$APPSPATH/appman/list 2>/dev/null)" appman' >> ~/.bash_completion
+	 	echo 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman' >> ~/.bash_completion
+	 	echo 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman-portable' >> ~/.bash_completion
 	 	chmod a+x ~/.bash_completion
 		echo " Completion enabled! "
 	fi;;
