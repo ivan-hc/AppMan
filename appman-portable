@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION=4.0.0~portable
+VERSION=4.0.0~portable-RC1
 
 mkdir -p ~/.config/appman
 
@@ -521,10 +521,10 @@ case "$1" in
 	cd ..
   	OLDVERSION=$VERSION
   	NEWVERSION=$(~/$APPSPATH/appman/.cache/appman-portable -v)
-	if [ $OLDVERSION == $NEWVERSION ]; then
-		mv ~/$APPSPATH/appman/.cache/appman-portable $(xdg-user-dir DESKTOP)/appman; echo ' THE "APPMAN" SCRIPT IS NOW UPDATED TO THE '$($(xdg-user-dir DESKTOP)/appman -v)' VERSION! '; echo ""
+	if [ $OLDVERSION = $NEWVERSION ]; then
+		mv ~/$APPSPATH/appman/.cache/appman-portable $(xdg-user-dir DESKTOP)/appman; echo ' THE "APPMAN" SCRIPT IS ALREADY UPDATED TO THE '$($(xdg-user-dir DESKTOP)/appman -v)' VERSION! '; echo ""
 	else
-		rm -R -f ~/$APPSPATH/appman/.cache/appman-portable; echo "AppMan is already updated to the more recent $VERSION version"	
+		rm -R -f ~/$APPSPATH/appman/.cache/appman-portable; echo " APPMAN IS UPDATED TO THE $VERSION VERSION!"; echo ""	
 	fi;;
   '-t'|'template'|'convert')
 	while [ -n "$1" ]
