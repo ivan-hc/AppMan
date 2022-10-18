@@ -76,7 +76,7 @@ If you are interested, you can deliberately join the "AM" project.
 #### Step-by-step
 1. Enable `~/.local/bin` in your `$PATH`:
 	
-       mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ./.bashrc
+       mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc
 2. Download the script from this repository and made it executable:
 
        wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-portable -O appman && chmod a+x ./appman
@@ -87,7 +87,7 @@ If you are interested, you can deliberately join the "AM" project.
 #### Quick
 Just copy/paste the following line:
 
-    mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ./.bashrc && wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-portable -O appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman 
+    mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc && wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-portable -O appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman 
     
 # Choose the directory for your applications
 Run `appman` (if in `$PATH`) or `./appman`, you'll read a prompt that asks for a destination directory or path for your installed Applications.
