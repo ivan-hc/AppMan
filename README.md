@@ -17,7 +17,7 @@ Since v4.0.0 AppMan is also available as an AppImage, at https://github.com/ivan
 [Installation](#installation)
 - [Step-by-step](#step-by-step)
 - [Quick](#quick)
-- 
+
 [Choose the directory for your applications](#choose-the-directory-for-your-applications)
 
 [Usage](#usage)
