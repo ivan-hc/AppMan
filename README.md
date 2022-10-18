@@ -208,9 +208,8 @@ All the snapshots are stored into an hidden `/home/$USER/.am-snapshots` folder c
 
 ------------------------------------------------------------------------
 # Uninstall
-To uninstall "AppMan" just run the command:
-
-	sudo appman -r appman
+To uninstall "AppMan" just remove it. To uninstall all the apps installed instead it is necessary to execute the `remove` script available into the main directory of each application you've installed (with "AppMan" it is easier with the `appman -r $PROGRAM1 $PROGRAM2 $PROGRAM3 ...` command.
+The configuration's file of "AppMan" (the one containing the name of the directory you've choosen for your apps) is available in ~/.config/appman.
 
 ------------------------------------------------------------------------	
 # Known issues
