@@ -506,7 +506,7 @@ case "$1" in
   '-s'|'sync') rm -R -f /opt/appman/$arch-apps /opt/appman/list && wget -q $URL/programs/$arch-apps -P /opt/appman && echo -e "$(cat /opt/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> /opt/appman/list
 	cd /opt/appman && cat options >> list
 	echo ""; echo ' SYNCHRONIZING "APPMAN" '$(appman -v)'...'; sleep 1; echo "";
-  	rm -R -f /opt/appman/.cache/* 1>/dev/null; cd /opt/appman/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/3.0.6.1/appman && chmod a+x ./appman; cd ..;
+  	rm -R -f /opt/appman/.cache/* 1>/dev/null; cd /opt/appman/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman; cd ..;
   	mv /opt/appman/.cache/appman /opt/appman/; exec /opt/appman/newappspath; echo ' THE "APPMAN" SCRIPT IS NOW UPDATED TO THE '$(appman -v)' VERSION! '; echo "";;
   '-t'|'template'|'convert')
 	while [ -n "$1" ]
