@@ -52,7 +52,7 @@ These programs are taken:
 - from the repositories and official sites of individual developers (if an archive is not available, an official AppImage is used, see Libreoffice, OnlyOffice);
 - from tar archives of other GNU/Linux distributions (see Chromium, Chromium Ungoogled...);
 - from AUR or other Arch Linux-related sources (see Palemoon, Spotify, WhatsApp...);
-- from AppImage recipes to be compiled with [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit) (see Anydesk, qBittorrent, Dropbox, all the games from the "KDE Games" suite...);
+- from AppDirs converted to AppImage packages using with [appimagetool](https://github.com/AppImage/AppImageKit) (see Dropbox), while AppMan cannot use [pkg2appimage](https://github.com/AppImage/pkg2appimage) to create AppImages packages, this is a feature allowed only for "AM" (the goal is to publish all these unofficial AppImages directly on a github repository to prevent a massive usage of data and resources, see MS Edge, GIMP and VLC, however via AppMan is possible to install and manage the KDE Games & Utils suites only with the command line, "AM" instead is able to create its own set of launchers and icons for the latters);
 - from unofficial repositories of developers external to the project concerned (most of the time they are programs in AppImage format), but only if an official release is not available (see the various WINE, Zoom, VLC, GIMP...).
 
 "AppMan" can even create Firefox profiles to run as webapps (as an alternative to the countless Electron-based apps/AppImages)!
