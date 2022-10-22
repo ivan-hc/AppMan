@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION=4.0.0
+VERSION=4.0.1
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
@@ -404,11 +404,12 @@ case "$1" in
 			sed -i "s# /usr/share/pixmaps# $(xdg-user-dir USER)/.local/share/icons#g" ./$arg
 			sed -i "s#wget #wget -q --show-progress #g" ./$arg
 			sed -i "s#rm #rm -f #g" ./$arg
+			sed -i "s#unzip #unzip -qq #g" ./$arg
 			sed -i "s# /opt# ~/$APPSPATH#g" ./$arg
 			chmod a+x ~/$APPSPATH/appman/.cache/$arg
 			echo ""
 			echo "◆ DOWNLOADING $(echo $arg | tr a-z A-Z)'S FILES, PLEASE WAIT..."
-			~/$APPSPATH/appman/.cache/$arg | head -1
+			~/$APPSPATH/appman/.cache/$arg
 			echo "$(echo $arg | tr a-z A-Z) HAS BEEN INSTALLED!"
 			echo "-----------------------------------------------------------------------"
 			unset $LATESTDIR
