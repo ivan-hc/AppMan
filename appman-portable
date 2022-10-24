@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION=4.0.1
+VERSION=4.0.2
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
@@ -212,7 +212,14 @@ case "$1" in
 	case $arg in
 	*) rm -R -f ~/$APPSPATH/appman/.cache/about; mkdir ~/$APPSPATH/appman/.cache/about;
 		cd ~/$APPSPATH/appman/.cache/about && wget -q $URL/programs/.about/$arg &&
-		cat ./$arg && echo "" && echo "-----------------------------------------------------------------------" && break
+		echo " PACKAGE: $(echo $arg | tr a-z A-Z)"
+		if test -f ~/$APPSPATH/$arg/remove; then
+			echo " STATUS: INSTALLED, ABOUT $(du -sk ~/$APPSPATH/$arg | awk '{print $1}' ) KB OF DISK SPACE IN USE"
+		else
+			echo " STATUS: NOT INSTALLED"
+		fi
+		cat ./$arg && echo "" && 
+		echo "-----------------------------------------------------------------------" && break
 	esac
 	else
 	echo ' "'$arg'" is not a valid argument' | tr a-z A-Z && break
@@ -357,10 +364,8 @@ case "$1" in
 	if [ $arg == STOP ]; then
 		if test -f ~/$APPSPATH/appman/.cache/installed; then
 			echo "-----------------------------------------------------------------------"
-			echo ""
 			echo " INSTALLATION PROCESS COMPLETED!"; echo "";
 			echo " The following NEW programs have been installed: " | tr a-z A-Z; echo ""
-			echo "" >> ~/$APPSPATH/appman/.cache/installed
 			echo "" >> ~/$APPSPATH/appman/.cache/installed
 			echo "-----------------------------------------------------------------------" >> ~/$APPSPATH/appman/.cache/installed
 			cat ~/$APPSPATH/appman/.cache/installed
@@ -369,6 +374,7 @@ case "$1" in
 			exit
 		fi
 	else
+	echo ""
 	case $arg in
 	am) if test -f /opt/am/APP-MANAGER; then
 		echo ' "AM" IS ALREADY INSTALLED ON YOUR SYSTEM!'; break
@@ -407,11 +413,17 @@ case "$1" in
 			sed -i "s#unzip #unzip -qq #g" ./$arg
 			sed -i "s# /opt# ~/$APPSPATH#g" ./$arg
 			chmod a+x ~/$APPSPATH/appman/.cache/$arg
-			echo ""
-			echo "◆ DOWNLOADING $(echo $arg | tr a-z A-Z)'S FILES, PLEASE WAIT..."
-			~/$APPSPATH/appman/.cache/$arg
-			echo "$(echo $arg | tr a-z A-Z) HAS BEEN INSTALLED!"
+			echo "◆ INSTALLING $(echo $arg | tr a-z A-Z), THIS MAY TAKE SEVERAL MINUTES"
+			~/$APPSPATH/appman/.cache/$arg > /dev/null 2>1 | echo "PLEASE WAIT..."
+			if cat ~/$APPSPATH/appman/.cache/$arg | grep -q kdegames; then
+				echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sk ~/$APPSPATH/kdegames | awk '{print $1}' ) KB OF FILES!"
+			elif cat ~/$APPSPATH/appman/.cache/$arg | grep -q kdeutils; then
+				echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sk ~/$APPSPATH/kdeutils | awk '{print $1}' ) KB OF FILES!"
+			else
+				echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sk ~/$APPSPATH/$arg | awk '{print $1}' ) KB OF FILES!"
+			fi
 			echo "-----------------------------------------------------------------------"
+			rm ~/$APPSPATH/appman/.cache/$arg
 			unset $LATESTDIR
 			LATESTDIR=$(cd ~/$APPSPATH && ls -td * | head -1)
 				if test -f ~/$APPSPATH/$LATESTDIR/remove; then
