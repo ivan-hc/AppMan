@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-VERSION=4.0.2
-
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 mkdir -p ~/.config/appman
@@ -214,7 +212,7 @@ case "$1" in
 		cd ~/$APPSPATH/appman/.cache/about && wget -q $URL/programs/.about/$arg &&
 		echo " PACKAGE: $(echo $arg | tr a-z A-Z)"
 		if test -f ~/$APPSPATH/$arg/remove; then
-			echo " STATUS: INSTALLED, ABOUT $(du -sk ~/$APPSPATH/$arg | awk '{print $1}' ) KB OF DISK SPACE IN USE"
+			echo " STATUS: INSTALLED, ABOUT $(du -sm ~/$APPSPATH/$arg | awk '{print $1}' ) MB OF DISK SPACE IN USE"
 		else
 			echo " STATUS: NOT INSTALLED"
 		fi
@@ -363,11 +361,11 @@ case "$1" in
 	for var in $arg; do
 	if [ $arg == STOP ]; then
 		if test -f ~/$APPSPATH/appman/.cache/installed; then
-			echo "-----------------------------------------------------------------------"
+			echo "--------------------------------------------------------------------------------"
 			echo " INSTALLATION PROCESS COMPLETED!"; echo "";
 			echo " The following NEW programs have been installed: " | tr a-z A-Z; echo ""
 			echo "" >> ~/$APPSPATH/appman/.cache/installed
-			echo "-----------------------------------------------------------------------" >> ~/$APPSPATH/appman/.cache/installed
+			echo "--------------------------------------------------------------------------------" >> ~/$APPSPATH/appman/.cache/installed
 			cat ~/$APPSPATH/appman/.cache/installed
 			exit
 		else
@@ -412,17 +410,21 @@ case "$1" in
 			sed -i "s#rm #rm -f #g" ./$arg
 			sed -i "s#unzip #unzip -qq #g" ./$arg
 			sed -i "s# /opt# ~/$APPSPATH#g" ./$arg
+			sed -i 's/currentuser=/#currentuser=/g' ./$arg
+			sed -i 's/chown -R $currentuser/#chown -R $currentuser/g' ./$arg
+			sed -i '/# MESSAGE/,$d' ./$arg
 			chmod a+x ~/$APPSPATH/appman/.cache/$arg
-			echo "◆ INSTALLING $(echo $arg | tr a-z A-Z), THIS MAY TAKE SEVERAL MINUTES"
-			~/$APPSPATH/appman/.cache/$arg > /dev/null 2>1 | echo "PLEASE WAIT..."
+			echo "◆ INSTALLING $(echo $arg | tr a-z A-Z), THIS MAY TAKE SEVERAL MINUTES, PLEASE WAIT..."
+			~/$APPSPATH/appman/.cache/$arg
+			echo ""
 			if cat ~/$APPSPATH/appman/.cache/$arg | grep -q kdegames; then
-				echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sk ~/$APPSPATH/kdegames | awk '{print $1}' ) KB OF FILES!"
+				echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sm ~/$APPSPATH/kdegames | awk '{print $1}' ) MB OF FILES!"
 			elif cat ~/$APPSPATH/appman/.cache/$arg | grep -q kdeutils; then
-				echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sk ~/$APPSPATH/kdeutils | awk '{print $1}' ) KB OF FILES!"
+				echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sm ~/$APPSPATH/kdeutils | awk '{print $1}' ) MB OF FILES!"
 			else
-				echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sk ~/$APPSPATH/$arg | awk '{print $1}' ) KB OF FILES!"
+				echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sm ~/$APPSPATH/$arg | awk '{print $1}' ) MB OF FILES!"
 			fi
-			echo "-----------------------------------------------------------------------"
+			echo "--------------------------------------------------------------------------------"
 			rm ~/$APPSPATH/appman/.cache/$arg
 			unset $LATESTDIR
 			LATESTDIR=$(cd ~/$APPSPATH && ls -td * | head -1)
@@ -864,5 +866,5 @@ case "$1" in
 	fi
 	done
 	shift;;
-  'version'|'-v'|'--version') echo $VERSION;;
+  'version'|'-v'|'--version') echo 4.0.3;;
 esac
