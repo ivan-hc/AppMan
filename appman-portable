@@ -407,23 +407,20 @@ case "$1" in
 			sed -i "s#Exec=/opt/kdeutils#Exec=$(xdg-user-dir USER)/$APPSPATH/kdeutils#g" ./$arg
 			sed -i "s# /usr/share/pixmaps# $(xdg-user-dir USER)/.local/share/icons#g" ./$arg
 			sed -i "s#wget #wget -q --show-progress #g" ./$arg
-			sed -i "s#rm #rm -f #g" ./$arg
+			sed -i "s#rm #rm -f #g" ./$arg; sed -i "s#form -f #form #g" ./$arg
 			sed -i "s#unzip #unzip -qq #g" ./$arg
 			sed -i "s# /opt# ~/$APPSPATH#g" ./$arg
 			sed -i 's/currentuser=/#currentuser=/g' ./$arg
 			sed -i 's/chown -R $currentuser/#chown -R $currentuser/g' ./$arg
 			sed -i '/# MESSAGE/,$d' ./$arg
+			sed -i 's#.svg;#.svg 2> /dev/null;#g' ./$arg
+			sed -i 's#programs/.icons/$APP.svg#programs/.icons/$APP.svg 2> /dev/null;#g' ./$arg
 			chmod a+x ~/$APPSPATH/appman/.cache/$arg
-			echo "◆ INSTALLING $(echo $arg | tr a-z A-Z), THIS MAY TAKE SEVERAL MINUTES, PLEASE WAIT..."
+			echo "◆ INSTALLING $(echo $arg | tr a-z A-Z)..."
 			~/$APPSPATH/appman/.cache/$arg
 			echo ""
-			if cat ~/$APPSPATH/appman/.cache/$arg | grep -q kdegames; then
-				echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sm ~/$APPSPATH/kdegames | awk '{print $1}' ) MB OF FILES!"
-			elif cat ~/$APPSPATH/appman/.cache/$arg | grep -q kdeutils; then
-				echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sm ~/$APPSPATH/kdeutils | awk '{print $1}' ) MB OF FILES!"
-			else
-				echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sm ~/$APPSPATH/$arg | awk '{print $1}' ) MB OF FILES!"
-			fi
+			echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sm ~/$APPSPATH/$(cd ~/$APPSPATH && ls -td * | head -1) | awk '{print $1}' ) MB OF FILES!"
+			echo ""
 			echo "--------------------------------------------------------------------------------"
 			rm ~/$APPSPATH/appman/.cache/$arg
 			unset $LATESTDIR
@@ -866,5 +863,5 @@ case "$1" in
 	fi
 	done
 	shift;;
-  'version'|'-v'|'--version') echo 4.0.3;;
+  'version'|'-v'|'--version') echo 4.0.4;;
 esac
