@@ -349,7 +349,7 @@ case "$1" in
 	shift;;
   '-f'|'files') echo ""; echo $(echo "YOU HAVE INSTALLED "; cd ~/$APPSPATH && find -name 'remove' -printf "%h\n" | sort -u | wc -l;
   	echo " STANDALONE PROGRAMS MANAGED BY THE 'AM' COMMAND:"); echo "";
-  	cd ~/$APPSPATH && find -name 'remove' -printf "%h\n" | sort -u | xargs -n 1 basename; echo "" ;;
+  	cd ~/$APPSPATH && find -name 'remove' -printf "%h\n" | sort -u | $(xargs -n 1 basename) | du -sh * | awk '{ print " ◆ "$2 " - " $1"B of disk space used"}'; echo "" ;;
   '-i'|'install')
 	while [ -n "$1" ]
 	do
@@ -863,5 +863,5 @@ case "$1" in
 	fi
 	done
 	shift;;
-  'version'|'-v'|'--version') echo 4.0.4;;
+  'version'|'-v'|'--version') echo 4.0.0-9;;
 esac
