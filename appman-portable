@@ -423,7 +423,7 @@ case "$1" in
 			sed -i 's#programs/.icons/$APP.svg#programs/.icons/$APP.svg 2> /dev/null;#g' ./$arg
 			chmod a+x ~/$APPSPATH/appman/.cache/$arg
 			echo "◆ INSTALLING $(echo $arg | tr a-z A-Z)..."
-			~/$APPSPATH/appman/.cache/$arg 2> /dev/null
+			~/$APPSPATH/appman/.cache/$arg
 			echo ""
 			echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sm ~/$APPSPATH/$(cd ~/$APPSPATH && ls -td * | head -1) | awk '{print $1}' ) MB OF FILES!"
 			echo ""
@@ -883,5 +883,5 @@ case "$1" in
 	fi
 	done
 	shift;;
-  'version'|'-v'|'--version') echo 4.0.1-2;;
+  'version'|'-v'|'--version') echo 4.0.1-3;;
 esac
