@@ -18,7 +18,7 @@ APPSPATH=$(cat ~/.config/appman/appman-config)
 mkdir -p ~/.local/bin ~/.local/share/applications ~/.local/share/icons ~/$APPSPATH/appman ~/$APPSPATH/appman/.cache
 cd ~/$APPSPATH/appman
 
-for name in "ar" "cat" "chmod" "chown" "curl" "echo" "egrep" "grep" "sed" "tar" "test" "unzip" "wget" "zsync"
+for name in "ar" "cat" "chmod" "chown" "curl" "echo" "egrep" "grep" "sed" "tar" "test" "unzip" "wget" "xterm" "zsync"
 do
   [[ $(which $name 2>/dev/null) ]] || { echo "" && echo -e 'ERROR: "'$name'" not found, required by some installation scripts.';deps=1; }
 done
@@ -128,8 +128,13 @@ case "$1" in
   -r, remove
   USAGE: "appman -r $PROGRAM"
   DESCRIPTION: Removes the program and all the other files listed above 
-  using the instructions in ~/'$APPSPATH'/$PROGRAM/remove. Confirmation is required
-  (Y or N, default is Y).
+  using the instructions in ~/'$APPSPATH'/$PROGRAM/remove.
+  Confirmation is required (Y or N, default is Y).
+
+  -R
+  USAGE: "[sudo] am -R $PROGRAM"
+  DESCRIPTION: Removes the program and all the other files listed above 
+  using the instructions in ~/'$APPSPATH'/$PROGRAM/remove, without asking.
 
   -s, sync
   USAGE: "appman -s"
@@ -255,9 +260,9 @@ case "$1" in
 	done
 	done
 	shift;;
-  '-c'|'clean') echo ""; echo " CLEANING OF TEMPORARY FILES AND FOLDERS IN PROGRESS" && sleep 1 && echo "" && echo " PRESS CTRL+C TO ABORT." && sleep 1 &&
-	echo "" && for i in {5..1}; do echo -ne " $i\r" && sleep 1; done &&
-	echo ""; rm -R -f ~/$APPSPATH/appman/.cache/*; rm -R -f ~/$APPSPATH/*/tmp; echo "" && echo " DONE!"; echo "" ;;
+  '-c'|'clean') echo -e "\n Cleaning of temporary files and folders in progress...\n" && sleep 1 &&
+  	for i in {1000..0000}; do echo -ne " $i\r" && sleep 0.0001; done
+	rm -R -f ~/$APPSPATH/appman/.cache/*; rm -R -f ~/$APPSPATH/*/tmp; echo -e "\n DONE!\n";;
   '-conv'|'convert')
   	while [ -n "$1" ]
 	do
@@ -352,24 +357,23 @@ case "$1" in
 	done
 	shift;;
   '-f'|'files') echo ""; echo $(echo "YOU HAVE INSTALLED "; cd ~/$APPSPATH && find -name 'remove' -printf "%h\n" | sort -u | wc -l;
-  	echo " STANDALONE PROGRAMS MANAGED BY THE 'AM' COMMAND:"); echo "";
+  	echo " STANDALONE PROGRAMS MANAGED BY APPMAN:"); echo "";
   	cd ~/$APPSPATH && find -name 'remove' -printf "%h\n" | sort -u | $(xargs -n 1 basename) | du -sh * | awk '{ print " ◆ "$2 " - " $1"iB of disk space used"}'; echo "" ;;
   '-i'|'install')
 	while [ -n "$1" ]
 	do
+	echo -e "-----------------------------------------------------------------------\n >> START OF ALL INSTALLATION PROCESSES <<\n-----------------------------------------------------------------------"
 	rm -f ~/$APPSPATH/appman/.cache/install-args
 	rm -R -f ~/$APPSPATH/appman/.cache/installed
-	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/install-args && echo STOP >> ~/$APPSPATH/appman/.cache/install-args
+	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/install-args
+	echo STOP >> ~/$APPSPATH/appman/.cache/install-args
 	ARGS=$(sed '1d' ~/$APPSPATH/appman/.cache/install-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
 		if test -f ~/$APPSPATH/appman/.cache/installed; then
-			echo "--------------------------------------------------------------------------------"
-			echo " INSTALLATION PROCESS COMPLETED!"; echo "";
-			echo " The following NEW programs have been installed: " | tr a-z A-Z; echo ""
-			echo "" >> ~/$APPSPATH/appman/.cache/installed
-			echo "--------------------------------------------------------------------------------" >> ~/$APPSPATH/appman/.cache/installed
+			echo -e "\n-----------------------------------------------------------------------\n >> END OF ALL INSTALLATION PROCESSES <<\n-----------------------------------------------------------------------\n\n THE FOLLOWING NEW PROGRAMS HAVE BEEN INSTALLED:\n"
+			echo -e "\n-----------------------------------------------------------------------" >> ~/$APPSPATH/appman/.cache/installed
 			cat ~/$APPSPATH/appman/.cache/installed
 			exit
 		else
@@ -422,12 +426,9 @@ case "$1" in
 			sed -i 's#.svg;#.svg 2> /dev/null;#g' ./$arg
 			sed -i 's#programs/.icons/$APP.svg#programs/.icons/$APP.svg 2> /dev/null;#g' ./$arg
 			chmod a+x ~/$APPSPATH/appman/.cache/$arg
-			echo "◆ INSTALLING $(echo $arg | tr a-z A-Z)..."
-			~/$APPSPATH/appman/.cache/$arg
-			echo ""
-			echo "INSTALLATION COMPLETE, DOWNLOADED ABOUT $(du -sm ~/$APPSPATH/$(cd ~/$APPSPATH && ls -td * | head -1) | awk '{print $1}' ) MB OF FILES!"
-			echo ""
-			echo "--------------------------------------------------------------------------------"
+			echo " ◆ INSTALLING $(echo $arg | tr a-z A-Z)..."
+			xterm ~/$APPSPATH/appman/.cache/$arg
+			echo " ◆ $(echo $arg | tr a-z A-Z) INSTALLED ($(du -sm ~/$APPSPATH/$(cd ~/$APPSPATH && ls -td * | head -1) | awk '{print $1}' ) MB OF DISK SPACE)"
 			rm ~/$APPSPATH/appman/.cache/$arg
 			unset $LATESTDIR
 			LATESTDIR=$(cd ~/$APPSPATH && ls -td * | head -1)
@@ -449,11 +450,10 @@ case "$1" in
 	done
 	shift;;
   '-l'|'list') rm -R -f ~/$APPSPATH/appman/$arch-apps ~/$APPSPATH/appman/list && wget -q $URL/programs/$arch-apps -P ~/$APPSPATH/appman && echo -e "$(cat ~/$APPSPATH/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/$APPSPATH/appman/list
-	cd ~/$APPSPATH/appman && cat options >> list
-	echo ""; echo "  LIST OF APPLICATIONS AVAILABLE IN THE 'AM' REPOSITORY:"; echo "";
-  	cat ~/$APPSPATH/appman/$arch-apps; echo "";
-  	echo $(echo "ALL:"; grep -e "$" -c ~/$APPSPATH/appman/$arch-apps);
-  	echo $(echo "INSTALLED:"; cd ~/$APPSPATH && find -name 'remove' -printf "%h\n" | sort -u | wc -l); echo "";;
+	cd ~/$APPSPATH/appman && cat options >> list 2>/dev/null
+	MESSAGE=$(echo " YOU HAVE INSTALLED $(cd ~/$APPSPATH && find -name 'remove' -printf "%h\n" | sort -u | wc -l) APPLICATIONS OUT OF $(grep -e "$" -c ~/$APPSPATH/appman/$arch-apps) AVAILABLE")
+	echo -e "\n$MESSAGE\n\n LIST OF THE $(grep -e "$" -c ~/$APPSPATH/appman/$arch-apps) APPLICATIONS AVAILABLE IN THE 'AM' REPOSITORY:\n\n$(cat ~/$APPSPATH/appman/$arch-apps)" | less
+	echo -e "\n $MESSAGE\n";;
   '-o'|'overwrite')
 	while [ -n "$1" ]
 	do
@@ -522,6 +522,34 @@ case "$1" in
 		[Nn]* ) echo ""; echo " $arg has not been removed, exiting!"; echo ""; break;;
 		[Yy]*|* ) echo "";  $(xdg-user-dir USER)/$APPSPATH/$arg/remove && echo " $(echo $arg | tr a-z A-Z) HAS BEEN SUCCESSFULLY REMOVED!" && echo "" && break; break;;
 	esac
+	done;;
+	esac
+	else
+	echo ""; echo " '$2' is not a valid argument or is not installed."; echo "";
+	echo ' LIST OF THE INSTALLED PROGRAMS / VALID ARGUMENTS:'; echo "";
+	cd ~/$APPSPATH && find -name 'remove' -printf "%h\n" | sort -u | xargs -n 1 basename; echo "" ; break;
+	fi
+	fi
+	done
+	done
+	done
+	shift;;
+  '-R')
+	while [ -n "$1" ]
+	do
+	echo ""
+	rm -f ~/$APPSPATH/appman/.cache/remove-args
+	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/remove-args && echo STOP >> ~/$APPSPATH/appman/.cache/remove-args
+	ARGS=$(sed '1d' ~/$APPSPATH/appman/.cache/remove-args)
+	for arg in $ARGS; do
+	for var in $arg; do
+	if [ $arg == STOP ]; then
+	exit
+	else
+	if ls $(xdg-user-dir USER)/$APPSPATH/$arg 1>/dev/null; then
+	case $arg in
+	*) for var in $arg; do
+	$(xdg-user-dir USER)/$APPSPATH/$arg/remove && echo " $(echo $arg | tr a-z A-Z) HAS BEEN SUCCESSFULLY REMOVED!" && echo "" && break; break
 	done;;
 	esac
 	else
@@ -824,13 +852,10 @@ case "$1" in
 	shift;;
   '--disable-completion')
 	if [ $(cat ~/.bash_completion | grep -o appman | head -1) == appman  ]; then
-		
 		grep -v 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman' ~/.bash_completion > ~/.bash_completion.backup &&
 		mv ~/.bash_completion.backup ~/.bash_completion
 		grep -v 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman-portable' ~/.bash_completion > ~/.bash_completion.backup &&
 		mv ~/.bash_completion.backup ~/.bash_completion
-		grep -v 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" AppMan-'$(uname -m)'.AppImage' ~/.bash_completion > ~/.bash_completion.backup &&
-		mv ~/.bash_completion.backup ~/.bash_completion && chmod a+x ~/.bash_completion
 		echo " Completion disabled! "
 	else
 		echo " Completion script is NOT enabled! "
@@ -839,13 +864,11 @@ case "$1" in
 	if test -f ~/.bash_completion; then
 		echo 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman' >> ~/.bash_completion
 		echo 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman-portable' >> ~/.bash_completion
-		echo 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" AppMan-'$(uname -m)'.AppImage' >> ~/.bash_completion
 		echo " Completion enabled! "
 	else
 	 	echo '#!/usr/bin/env bash' >> ~/.bash_completion
 	 	echo 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman' >> ~/.bash_completion
 	 	echo 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman-portable' >> ~/.bash_completion
-	 	echo 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" AppMan-'$(uname -m)'.AppImage' >> ~/.bash_completion
 	 	chmod a+x ~/.bash_completion
 		echo " Completion enabled! "
 	fi;;
@@ -883,5 +906,6 @@ case "$1" in
 	fi
 	done
 	shift;;
-  'version'|'-v'|'--version') echo 4.0.1-3;;
+  'version'|'-v'|'--version')
+  	echo "4.0.2";;
 esac
