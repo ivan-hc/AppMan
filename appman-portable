@@ -564,10 +564,10 @@ case "$1" in
 	shift;;
   '-s'|'sync') rm -R -f ~/$APPSPATH/appman/$arch-apps ~/$APPSPATH/appman/list && wget -q $URL/programs/$arch-apps -P ~/$APPSPATH/appman && echo -e "$(cat ~/$APPSPATH/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/$APPSPATH/appman/list
 	cd ~/$APPSPATH/appman && cat options >> list
+	OLDVERSION=$(~/$APPSPATH/appman/.cache/appman-portable -v)
 	echo ""; echo ' SYNCHRONIZING "APPMAN" '$VERSION'...'; sleep 1; echo "";
   	rm -R -f ~/$APPSPATH/appman/.cache/* 1>/dev/null; cd ~/$APPSPATH/appman/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-portable && chmod a+x ./appman-portable; 
 	cd ..
-  	OLDVERSION=$VERSION
   	NEWVERSION=$(~/$APPSPATH/appman/.cache/appman-portable -v)
 	if [ $OLDVERSION = $NEWVERSION ]; then
 		rm -R -f ~/$APPSPATH/appman/.cache/appman-portable;
@@ -796,10 +796,10 @@ case "$1" in
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 			rm -R -f ~/$APPSPATH/appman/$arch-apps ~/$APPSPATH/appman/list && wget -q $URL/programs/$arch-apps -P ~/$APPSPATH/appman && echo -e "$(cat ~/$APPSPATH/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/$APPSPATH/appman/list
 			cd ~/$APPSPATH/appman && cat options >> list
+			OLDVERSION=$(~/$APPSPATH/appman/.cache/appman-portable -v)
 			echo ""; echo ' SYNCHRONIZING "APPMAN" '$VERSION'...'; sleep 1; echo "";
   			rm -R -f ~/$APPSPATH/appman/.cache/* 1>/dev/null; cd ~/$APPSPATH/appman/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-portable && chmod a+x ./appman-portable; 
 			cd ..
-  			OLDVERSION=$VERSION
   			NEWVERSION=$(~/$APPSPATH/appman/.cache/appman-portable -v)
 			if [ $OLDVERSION = $NEWVERSION ]; then
 				rm -R -f ~/$APPSPATH/appman/.cache/appman-portable;
