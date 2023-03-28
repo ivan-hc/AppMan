@@ -152,11 +152,15 @@ case "$1" in
 
   -u, update
   USAGE: "appman -u"
-  DESCRIPTION: Update all the installed programs.
+  DESCRIPTION: Update all the installed programs (requires confirmation).
   -u, update
   USAGE: "appman -u $PROGRAM"
   DESCRIPTION: Update the selected program, this also allows you to see
   all the logs during the installation process.
+
+  -U, --force-update
+  USAGE: "appman -U"
+  DESCRIPTION: Update all the installed programs without asking.
 
   -v, --version, version
   USAGE: "appman -v"
@@ -260,7 +264,7 @@ case "$1" in
 	done
 	done
 	shift;;
-  '-c'|'clean') echo -e "\n Cleaning of temporary files and folders in progress...\n" && sleep 1 &&
+  '-c'|'clean') echo -e "\n Cleaning of temporary files and folders in progress...\n" && sleep 0.1 &&
   	for i in {1000..0000}; do echo -ne " $i\r" && sleep 0.0001; done
 	rm -R -f ~/$APPSPATH/appman/.cache/*; rm -R -f ~/$APPSPATH/*/tmp; echo -e "\n DONE!\n";;
   '-conv'|'convert')
@@ -565,7 +569,7 @@ case "$1" in
   '-s'|'sync') rm -R -f ~/$APPSPATH/appman/$arch-apps ~/$APPSPATH/appman/list && wget -q $URL/programs/$arch-apps -P ~/$APPSPATH/appman && echo -e "$(cat ~/$APPSPATH/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/$APPSPATH/appman/list
 	cd ~/$APPSPATH/appman && cat options >> list
 	OLDVERSION=$($DIR/appman -v)
-	echo ""; echo ' SYNCHRONIZING "APPMAN" '$OLDVERSION'...'; sleep 1; echo "";
+	echo ""; echo ' SYNCHRONIZING "APPMAN" '$OLDVERSION'...'; sleep 0.5; echo "";
   	rm -R -f ~/$APPSPATH/appman/.cache/* 1>/dev/null; cd ~/$APPSPATH/appman/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-portable && chmod a+x ./appman-portable; 
 	cd ..
   	NEWVERSION=$(~/$APPSPATH/appman/.cache/appman-portable -v)
@@ -780,11 +784,11 @@ case "$1" in
 	appman) appman -s;;
 	'') echo ""; echo ' "APPMAN" CAN MANAGE UPDATES FOR THE FOLLOWING PROGRAMS: '; echo "";
   		cd ~/$APPSPATH && find -name 'AM-updater' -printf " %h\n" | sort -u | xargs -n 1 basename; echo "" ;
-		echo ' ALL OTHERS ARE FIXED VERSIONS OR CAN MANAGE UPDATES BY THEMSELF'; echo ""; sleep 1;
+		echo ' ALL OTHERS ARE FIXED VERSIONS OR CAN MANAGE UPDATES BY THEMSELF'; echo ""; sleep 0.1;
 		read -p " This may take several minutes, do you wish to continue (Y,n)?" yn
 		case $yn in
 		[Nn]* ) echo ""; exit;;
-		[Yy]*|* ) echo ""; echo " THE UPDATE VERIFICATION PROCESS IS IN PROGRESS, PLEASE WAIT..."; sleep 2; echo ""; echo "-----------------------------------------------------------------------";
+		[Yy]*|* ) echo ""; echo " THE UPDATE VERIFICATION PROCESS IS IN PROGRESS, PLEASE WAIT..."; sleep 0.2; echo ""; echo "-----------------------------------------------------------------------";
 		  	echo " >> START OF ALL PROCESSES << "; echo "-----------------------------------------------------------------------"; echo "";
 		  	for f in ~/$APPSPATH/*/; do cd $f && if test -f ./AM-updater; then
 			echo ' Updating "'$(printf '%s\n' "${PWD##*/}")'"...' &&
@@ -797,7 +801,7 @@ case "$1" in
 			rm -R -f ~/$APPSPATH/appman/$arch-apps ~/$APPSPATH/appman/list && wget -q $URL/programs/$arch-apps -P ~/$APPSPATH/appman && echo -e "$(cat ~/$APPSPATH/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/$APPSPATH/appman/list
 			cd ~/$APPSPATH/appman && cat options >> list
 			OLDVERSION=$($DIR/appman -v)
-			echo ""; echo ' SYNCHRONIZING "APPMAN" '$OLDVERSION'...'; sleep 1; echo "";
+			echo ""; echo ' SYNCHRONIZING "APPMAN" '$OLDVERSION'...'; sleep 0.1; echo "";
   			rm -R -f ~/$APPSPATH/appman/.cache/* 1>/dev/null; cd ~/$APPSPATH/appman/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-portable && chmod a+x ./appman-portable; 
 			cd ..
   			NEWVERSION=$(~/$APPSPATH/appman/.cache/appman-portable -v)
@@ -810,7 +814,7 @@ case "$1" in
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 			echo "-----------------------------------------------------------------------";
 			echo " >> END OF ALL PROCESSES << "; 
-		  	echo "-----------------------------------------------------------------------";echo ""; sleep 2;
+		  	echo "-----------------------------------------------------------------------";echo ""; sleep 0.2;
 		  	echo ' ALL THE PROGRAMS MANAGED BY "APPMAN" ARE UPDATED! '; echo "" && exit; break;;
 		esac;;
 	*) if test -f ~/$APPSPATH/$2/AM-updater; then
@@ -831,6 +835,7 @@ case "$1" in
 	esac
 	shift
 	done;;
+  '-U'|'--force-update') echo y | $DIR/appman -u;;
   '-w'|'web')
 	while [ -n "$1" ]
 	do
@@ -907,5 +912,5 @@ case "$1" in
 	done
 	shift;;
   'version'|'-v'|'--version')
-  	echo "4.0.2";;
+  	echo "4.0.2-1";;
 esac
