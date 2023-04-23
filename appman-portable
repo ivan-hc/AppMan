@@ -105,8 +105,8 @@ case "$1" in
 
   -H, --home
   USAGE: "am --home $PROGRAM"
-  DESCRIPTION: Setting $HOME to /opt/$PROGRAM/$PROGRAM.home, this command 
-  only works if $PROGRAM is an AppImage package.
+  DESCRIPTION: Setting $HOME to a dedicated $PROGRAM.home directory, this 
+  command only works if $PROGRAM is an AppImage package.
   
   -i, install
   USAGE: "appman -i $PROGRAM"
