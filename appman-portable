@@ -29,25 +29,7 @@ arch=$(uname -m)
 currentuser=$(who | awk '{print $1}' | head -1)
 
 rm -R -f ~/$APPSPATH/appman/options
-echo "about
-backup
-clean
-convert
-download
-files
-install
-list
-lock
-overwrite
-query
-remove
-sync
-template
-unlock
-update
-web
---disable-completion
---enable-completion" >> ~/$APPSPATH/appman/options
+echo -e "about\nbackup\nclean\ndownload\nfiles\ninstall\nlist\nlock\noverwrite\nquery\nremove\nsync\ntemplate\nunlock\nupdate\nweb\n--disable-completion\n--enable-completion\n--force-update\n--home" >> ~/$APPSPATH/appman/options
 
 case "$1" in
   '') echo "" && echo ' USAGE: "appman [option]"' && echo "" && echo ' Run the "appman -h" command to find out more' && echo "";;
@@ -219,18 +201,19 @@ case "$1" in
 	if [ $arg == STOP ]; then
 	exit
 	else
-	if curl --output /dev/null --silent --head --fail $URL/programs/.about/$arg  1>/dev/null; then
+	if curl --output /dev/null --silent --head --fail https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/apps/$arg.md  1>/dev/null; then
 	echo "-----------------------------------------------------------------------"
 	case $arg in
 	*) rm -R -f ~/$APPSPATH/appman/.cache/about; mkdir ~/$APPSPATH/appman/.cache/about;
-		cd ~/$APPSPATH/appman/.cache/about && wget -q $URL/programs/.about/$arg &&
+		cd ~/$APPSPATH/appman/.cache/about && wget -q https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/apps/$arg.md &&
+		sed -i '/^\s*#/ d' $arg.md; sed -i '/^\s*!/ d' $arg.md; sed -i '/\[Go back]/d' $arg.md
 		echo " PACKAGE: $(echo $arg | tr a-z A-Z)"
 		if test -f ~/$APPSPATH/$arg/remove; then
 			echo " STATUS: INSTALLED, ABOUT $(du -sm ~/$APPSPATH/$arg | awk '{print $1}' ) MB OF DISK SPACE IN USE"
 		else
 			echo " STATUS: NOT INSTALLED"
 		fi
-		cat ./$arg && echo "" && 
+		cat ./$arg.md && 
 		echo "-----------------------------------------------------------------------" && break
 	esac
 	else
@@ -859,12 +842,13 @@ case "$1" in
   '-w'|'web')
 	while [ -n "$1" ]
 	do
-	if curl --output /dev/null --silent --head --fail $URL/programs/.about/$2  1>/dev/null; then
+	if curl --output /dev/null --silent --head --fail https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/apps/$2.md  1>/dev/null; then
 	case $2 in
 	*) for var in $2;
 	do rm -R -f ~/$APPSPATH/appman/.cache/about; mkdir ~/$APPSPATH/appman/.cache/about;
-		cd ~/$APPSPATH/appman/.cache/about && wget -q $URL/programs/.about/$2 && echo "" && echo " SITE/SOURCES:" && echo "" &&
-		grep -o " http[^ ]*" ./$2 && echo "" && exit; done
+		cd ~/$APPSPATH/appman/.cache/about && wget -q https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/apps/$2.md && echo "" && echo " SITE/SOURCES:" && echo "" &&
+		sed -i '/^\s*#/ d' $2.md; sed -i '/^\s*!/ d' $2.md; sed -i '/\[Go back]/d' $2.md
+		grep -o " http[^ ]*" ./$2.md && echo "" && exit; done
 	esac
 	else
 	echo ""; 
@@ -932,5 +916,5 @@ case "$1" in
 	done
 	shift;;
   'version'|'-v'|'--version')
-  	echo "4.0.3";;
+  	echo "4.0.3-1";;
 esac
