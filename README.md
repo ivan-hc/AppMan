@@ -79,7 +79,7 @@ If you are interested, you can deliberately join the "AM" project.
        mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc
 2. Download the script from this repository and made it executable:
 
-       wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-portable -O appman && chmod a+x ./appman
+       wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman
 3. Optionally you can place the script in your new local $PATH:
 
        mv ./appman ~/.local/bin/appman 
@@ -87,7 +87,7 @@ If you are interested, you can deliberately join the "AM" project.
 #### Quick
 Just copy/paste the following line:
 
-    mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc && wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman-portable -O appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman 
+    mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc && wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman 
     
 # Choose the directory for your applications
 Run `appman` (if in `$PATH`) or `./appman`, you'll read a prompt that asks for a destination directory or path for your installed Applications.
@@ -123,9 +123,13 @@ You can always modify the destination folder by editing the "appman-config" file
   
     appman -h
 -----------------------------------------------------------------------------
-  `-i`, `install` Install a program. This will be downloader/created into a dedicated ~/.opt/$PROGRAM directory (containing a script to remove it and  another one to update it), the command is linked to ~/.local/bin and a launcher AM-$PROGRAM.desktop will be created in ~/.local/share/applications:
+  `-H`, `--home` Setting $HOME to $YOUCUSTOMPATH/$PROGRAM/$PROGRAM.home, this command only works if $PROGRAM is an AppImage package:
   
-    [sudo] appman -i $PROGRAM
+    appman --home $PROGRAM
+-----------------------------------------------------------------------------
+  `-i`, `install` Install a program. This will be downloader/created into a dedicated $YOUCUSTOMPATH/$PROGRAM directory (containing a script to remove it and  another one to update it), the command is linked to ~/.local/bin and a launcher AM-$PROGRAM.desktop will be created in ~/.local/share/applications:
+  
+    appman -i $PROGRAM
 -----------------------------------------------------------------------------
   `-l`, `list` Shows the list of apps available in the "AM" repository:
   
@@ -139,9 +143,13 @@ You can always modify the destination folder by editing the "appman-config" file
   
     appman -q $KEYWORD
 -----------------------------------------------------------------------------
-  `-r`, `remove` Removes the program and all the other files listed above using the instructions in ~/.opt/$PROGRAM/remove. Confirmation is required (Y or N, default is Y):
+  `-r`, `remove` Removes the program and all the other files listed above using the instructions in $YOUCUSTOMPATH/$PROGRAM/remove. Confirmation is required (Y or N, default is Y):
   
-    [sudo] appman -r $PROGRAM
+    appman -r $PROGRAM
+-----------------------------------------------------------------------------
+  `-R` Removes the program and all the other files listed above using the instructions in $YOUCUSTOMPATH/$PROGRAM/remove, without asking:
+  
+    appman -R
 -----------------------------------------------------------------------------
   `-s`, `sync` Updates "AppMan" to a more recent version:
   
@@ -157,6 +165,10 @@ You can always modify the destination folder by editing the "appman-config" file
    To update just one program and read the shell's output:
 
     appman -u $PROGRAM
+-----------------------------------------------------------------------------
+  `-U`, `--force-update` Update all the installed programs without asking:
+  
+    appman -U
 -----------------------------------------------------------------------------
   `-v`, `--version`, `version` Shows the version of "AppMan":
   
