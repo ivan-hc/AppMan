@@ -41,8 +41,30 @@ The main goal of this tool is to provide the same updated applications to multip
 [AppImage](https://appimage.org/) is a standalone package format, the best choice if you are looking for an alternative packaging format to use on multiple GNU/Linux distributions, it uses fewer resources than Snap and Flatpak, and works completely autonomously, using its own libraries. AppMan aims to give it a home to stay.
 
 ## How it works
-All AppMan does is to convert [all the installation scripts for "AM"](https://github.com/ivan-hc/AM-Application-Manager/tree/main/programs) (that normally must be executed with ROOT privileges) in normal scripts that can manage applications in the local folder of the current user. This allows more users to be able to better configure their profile.
- 
+All AppMan does is to convert [all the installation scripts for "AM"](https://github.com/ivan-hc/AM-Application-Manager/tree/main/programs) (that normally must be executed with ROOT privileges) in normal scripts that can manage applications in the local folder of the current user. This allows more users to be able to better configure their profile. AppMan allows you to choose where to install your applications into your `$HOME` directory. AppMan is also usable as a portable app (i.e. you can download and place it wherever you want) and it is able to ubdate itself, anywhere! At first start it will ask you where to install the apps and it will create the directory for you (the configuration file is in `~/.config/appman`). For example, suppose you want install everything in "Applicazioni" (the italian of "applications"), this is the structure of what an installation scripts installs with "AppMan" instead:
+
+    ~/Applicazioni/$PROGRAM/
+    ~/Applicazioni/$PROGRAM/$PROGRAM
+    ~/Applicazioni/$PROGRAM/AM-updater
+    ~/Applicazioni/$PROGRAM/remove
+    ~/Applicazioni/$PROGRAM/icons/$ICON-NAME
+    ~/.local/bin/$PROGRAM
+    ~/.local/share/applications/AM-$PROGRAM.desktop
+
+To install a program, launch the command:
+
+    appman -i $PROGRAM
+
+To update all the apps at once just run the following command:
+
+    appman -U
+
+To uninstall everything just run:
+
+    appman -R $PROGRAM
+
+For more options, jump to "[Usage](#usage)" or keep read.
+
 ## What programs can be installed
 AppMan installs/removes/updates/manages only standalone programs, ie those programs that can be run from a single directory in which they are contained (where `$PROGRAM` is the name of the application, AppMan installs them always into a directory you choose the first time you run it thanks to a prompt that will ask you where to install your apps (for example you can create an "Applications" or "Programs" or "Whatever-name-you-want" folder named "Applicazioni" or "Programmi" or "Qual-si-voglia" instead if your system language is italian, to prevent the discrepanchy of your folder's name compared to the other available in your `$HOME` directory).
 
