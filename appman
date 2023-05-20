@@ -418,13 +418,6 @@ case "$1" in
 			sed -i "s# /usr/games# $(xdg-user-dir USER)/.local/bin#g" ./$arg
 			sed -i "s# /usr/share/applications# $(xdg-user-dir USER)/.local/share/applications#g" ./$arg
 			sed -i "s# /usr/local/share/applications# $(xdg-user-dir USER)/.local/share/applications#g" ./$arg
-			sed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/$APPSPATH#g" ./$arg
-			sed -i "s#Exec=$arg#Exec=$(xdg-user-dir USER)/.local/bin/$arg#g" ./$arg
-			sed -i 's#Exec=$APP#Exec='$(xdg-user-dir USER)'/.local/bin/$APP#g' ./$arg
-			sed -i "s#Exec=/usr/bin/#Exec=$(xdg-user-dir USER)/.local/bin/#g" ./$arg
-			sed -i "s#Exec=/opt/firefox#Exec=$(xdg-user-dir USER)/$APPSPATH/firefox#g" ./$arg
-			sed -i "s#Exec=/opt/kdegames#Exec=$(xdg-user-dir USER)/$APPSPATH/kdegames#g" ./$arg
-			sed -i "s#Exec=/opt/kdeutils#Exec=$(xdg-user-dir USER)/$APPSPATH/kdeutils#g" ./$arg
 			sed -i "s# /usr/share/pixmaps# $(xdg-user-dir USER)/.local/share/icons#g" ./$arg
 			sed -i "s# /usr/local/share/pixmaps# $(xdg-user-dir USER)/.local/share/icons#g" ./$arg
 			sed -i "s#wget #wget -q --show-progress #g" ./$arg
@@ -439,6 +432,13 @@ case "$1" in
 			chmod a+x ~/$APPSPATH/appman/.cache/$arg
 			echo " ◆ INSTALLING $(echo $arg | tr a-z A-Z)..."
 			xterm ~/$APPSPATH/appman/.cache/$arg
+			sed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/$APPSPATH#g" ~/.local/share/applications/AM*.desktop
+			sed -i "s#Exec=$arg#Exec=$(xdg-user-dir USER)/.local/bin/$arg#g" ~/.local/share/applications/AM*.desktop
+			sed -i 's#Exec=$APP#Exec='$(xdg-user-dir USER)'/.local/bin/$APP#g' ~/.local/share/applications/AM*.desktop
+			sed -i "s#Exec=/usr/bin/#Exec=$(xdg-user-dir USER)/.local/bin/#g" ~/.local/share/applications/AM*.desktop
+			sed -i "s#Exec=/opt/firefox#Exec=$(xdg-user-dir USER)/$APPSPATH/firefox#g" ~/.local/share/applications/AM*.desktop
+			sed -i "s#Exec=/opt/kdegames#Exec=$(xdg-user-dir USER)/$APPSPATH/kdegames#g" ~/.local/share/applications/AM*.desktop
+			sed -i "s#Exec=/opt/kdeutils#Exec=$(xdg-user-dir USER)/$APPSPATH/kdeutils#g" ~/.local/share/applications/AM*.desktop
 			echo " ◆ $(echo $arg | tr a-z A-Z) INSTALLED ($(du -sm ~/$APPSPATH/$(cd ~/$APPSPATH && ls -td * | head -1) | awk '{print $1}' ) MB OF DISK SPACE)"
 			rm ~/$APPSPATH/appman/.cache/$arg
 			unset $LATESTDIR
@@ -916,5 +916,5 @@ case "$1" in
 	done
 	shift;;
   'version'|'-v'|'--version')
-  	echo "4.0.3-2";;
+  	echo "4.0.3-2-1";;
 esac
