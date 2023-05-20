@@ -361,6 +361,10 @@ case "$1" in
     			mkdir -p ~/$APPSPATH/$2/$2.home
     			echo ' Setting $HOME to ~/'$APPSPATH'/'$2'/'$2'.home for this AppImage'
     			rm -R -f ~/$APPSPATH/$2/squashfs-root
+		elif test -h ~/$APPSPATH/$2/squashfs-root/AppRun; then
+    			mkdir -p ~/$APPSPATH/$2/$2.home
+    			echo ' Setting $HOME to ~/'$APPSPATH'/'$2'/'$2'.home for this AppImage'
+    			rm -R -f ~/$APPSPATH/$2/squashfs-root
     		else
     			echo ' ERROR: "'$2'" is NOT an AppImage'
     		fi
@@ -912,5 +916,5 @@ case "$1" in
 	done
 	shift;;
   'version'|'-v'|'--version')
-  	echo "4.0.3-1";;
+  	echo "4.0.3-2";;
 esac
