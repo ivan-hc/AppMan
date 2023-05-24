@@ -897,5 +897,5 @@ case "$1" in
 	done
 	shift;;
   'version'|'-v'|'--version')
-  	echo "4.0.3-2-1";;
+  	echo "4.0.3-3";;
 esac
