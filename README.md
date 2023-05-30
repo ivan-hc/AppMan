@@ -6,8 +6,6 @@ Since the new 4.0.0 version, AppMan is also portable, ie it does not need a spec
 
 Being "AppMan" a bash-based script, it can be used on all the architectures supported by the Linux kernel and works with all the GNU/Linux distributions.
 
-Since v4.0.0 AppMan is also available as an AppImage, at https://github.com/ivan-hc/AppMan/releases
-
 ------------------------------------------------------------------------
 [Introducing "AppMan"](#introducing-appman)
 - [How it works](#how-it-works)
