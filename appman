@@ -206,7 +206,7 @@ case "$1" in
 	case $arg in
 	*) rm -R -f ~/$APPSPATH/appman/.cache/about; mkdir ~/$APPSPATH/appman/.cache/about;
 		cd ~/$APPSPATH/appman/.cache/about && wget -q https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/apps/$arg.md &&
-		sed -i '/^\s*#/ d' $arg.md; sed -i '/^\s*!/ d' $arg.md; sed -i '/\[Go back]/d' $arg.md
+		sed -i '/^\s*#/ d' $arg.md; sed -i '/^\s*!/ d' $arg.md; sed -i '/\[Applications]/d' $arg.md; sed -i '/\ --- /d' $arg.md
 		echo " PACKAGE: $(echo $arg | tr a-z A-Z)"
 		if test -f ~/$APPSPATH/$arg/remove; then
 			echo " STATUS: INSTALLED, ABOUT $(du -sm ~/$APPSPATH/$arg | awk '{print $1}' ) MB OF DISK SPACE IN USE"
@@ -1150,5 +1150,5 @@ case "$1" in
 	done
 	shift;;
   'version'|'-v'|'--version')
-  	echo "4.2.2-3";;
+  	echo "4.2.2-4";;
 esac
