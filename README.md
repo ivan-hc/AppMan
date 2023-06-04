@@ -179,16 +179,12 @@ You can always modify the destination folder by editing the "appman-config" file
   
     appman -t $PROGRAM
 -----------------------------------------------------------------------------
-  `-u`, `update` Update all the installed programs:
+  `-u`, `-U`, `update` Update all the installed programs:
   
     appman -u
-   To update just one program and read the shell's output:
+   To update just one program:
 
     appman -u $PROGRAM
------------------------------------------------------------------------------
-  `-U`, `--force-update` Update all the installed programs without asking:
-  
-    appman -U
 -----------------------------------------------------------------------------
   `-v`, `--version`, `version` Shows the version of "AppMan":
   
