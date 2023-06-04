@@ -1041,7 +1041,6 @@ case "$1" in
 	esac
 	shift
 	done;;
-  '-U'|'--force-update') echo y | $DIR/appman -u;;
   '-w'|'web')
 	while [ -n "$1" ]
 	do
