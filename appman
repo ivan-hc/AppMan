@@ -991,7 +991,7 @@ case "$1" in
 	case $2 in
 	appman) appman -s;;
 	'') echo ""; echo -e ' "AM" CAN MANAGE UPDATES FOR THE FOLLOWING PROGRAMS: \n'
-  		cd ~/$APPSPATH && find -name 'AM-updater' -printf " %h\n" | sort -u | xargs -n 1 basename
+  		cd ~/$APPSPATH && find -name 'AM-updater' -printf " %h\n" | sort -u | xargs -n 1 basename 2>/dev/null
 		echo -e '\n ALL OTHERS ARE FIXED VERSIONS OR CAN MANAGE UPDATES BY THEMSELF'; sleep 0.1
 		echo -e "\n THE UPDATE VERIFICATION PROCESS IS IN PROGRESS, PLEASE WAIT..."; sleep 0.2; echo -e "\n-----------------------------------------------------------------------"
 		echo -e " >> START OF ALL PROCESSES <<\n-----------------------------------------------------------------------"
@@ -1112,5 +1112,5 @@ case "$1" in
 	done
 	shift;;
   'version'|'-v'|'--version')
-  	echo "4.3.0-1~2";;
+  	echo "4.3.0-1~3";;
 esac
