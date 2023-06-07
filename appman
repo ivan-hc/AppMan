@@ -64,7 +64,8 @@ case "$1" in
     
     -c, clean		Removes all the unnecessary files and folders.
     
-    -d, download	Download an installation script from the repory.
+    -d, download	Download one or more installation scripts from the 
+    			repository.
     
     -f, files		Shows the installed programs.
     
@@ -96,16 +97,16 @@ case "$1" in
     			
     -u, -U, update	Update all apps (included this script) or just one.
     
-    -v, version		Shows the version of "AM".
+    -v, version		Shows the version of "AppMan".
     
     -w, web		Shows the URLs of the sites/sources of then app.
     
-    --disable-completion Removes the /etc/bash_completion.d/am-completion.sh 
-    			script needed to use bash-completion in AM.
+    --disable-completion Removes AppMan from the ~/.bash_completion.sh 
+    			script needed to use bash-completion in AppMan.
     			
-    --enable-completion	Create a bash completion script in /etc to complete 
-    			a keyword with the TAB key using the names of all 
-    			installable applications in the "AM" repository.
+    --enable-completion	Create avoice for AppMan into a ~/.bash_completion.sh
+    			script to complete a keyword with the TAB key using 
+			the names of all installable apps in the "AM" repo.
     			
     conv, convert	Convert the scripts from "AM" to installation scripts
     			that can work locally and without root privileges.
@@ -1163,5 +1164,5 @@ case "$1" in
 	done
 	shift;;
   'version'|'-v'|'--version')
-  	echo "4.3.1";;
+  	echo "4.3.1~1";;
 esac
