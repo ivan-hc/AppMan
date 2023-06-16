@@ -25,8 +25,8 @@ done
 [[ $deps -ne 1 ]] || { echo -e "\nInstall the above and try again\n";exit 1; }
 
 AMREPO="https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main"
-arch=$(uname -m)
-currentuser=$(who | awk '{print $1}' | head -1)
+arch=$(printf '%s\n' "$HOSTTYPE")
+currentuser=$(printf '%s\n' "$USER")
 
 rm -R -f ~/$APPSPATH/appman/options
 echo -e "about\nbackup\nclean\nconvert\ndownload\nfiles\ninstall\nlist\nlock\noverwrite\nquery\nremove\nsync\ntemplate\nunlock\nupdate\nweb\n-conv\n--disable-completion\n--enable-completion\n--home" >> ~/$APPSPATH/appman/options
@@ -136,7 +136,7 @@ case "$1" in
 	do
 	rm -f ~/$APPSPATH/appman/.cache/about-args
 	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/about-args && echo STOP >> ~/$APPSPATH/appman/.cache/about-args
-	ARGS=$(sed '1d' ~/$APPSPATH/appman/.cache/about-args)
+	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/about-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -170,7 +170,7 @@ case "$1" in
 	do
 	rm -f ~/$APPSPATH/appman/.cache/backup-args
 	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/backup-args && echo STOP >> ~/$APPSPATH/appman/.cache/backup-args
-	ARGS=$(sed '1d' ~/$APPSPATH/appman/.cache/backup-args)
+	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/backup-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -201,7 +201,7 @@ case "$1" in
 	do
 	rm -f ~/$APPSPATH/appman/.cache/convert-args
 	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/convert-args && echo STOP >> ~/$APPSPATH/appman/.cache/convert-args
-	ARGS=$(sed '1d' ~/$APPSPATH/appman/.cache/convert-args)
+	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/convert-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -250,7 +250,7 @@ case "$1" in
 	do
 	rm -f ~/$APPSPATH/appman/.cache/download-args
 	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/download-args && echo STOP >> ~/$APPSPATH/appman/.cache/download-args
-	ARGS=$(sed '1d' ~/$APPSPATH/appman/.cache/download-args)
+	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/download-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -288,7 +288,7 @@ case "$1" in
 	do
 	rm -f ~/$APPSPATH/appman/.cache/home-args
 	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/home-args && echo STOP >> ~/$APPSPATH/appman/.cache/home-args
-	ARGS=$(sed '1d' ~/$APPSPATH/appman/.cache/home-args)
+	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/home-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -330,7 +330,7 @@ case "$1" in
 	rm -R -f ~/$APPSPATH/appman/.cache/installed
 	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/install-args
 	echo STOP >> ~/$APPSPATH/appman/.cache/install-args
-	ARGS=$(sed '1d' ~/$APPSPATH/appman/.cache/install-args)
+	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/install-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -428,7 +428,7 @@ case "$1" in
 	do
 	rm -f ~/$APPSPATH/appman/.cache/overwrite-args
 	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/overwrite-args && echo STOP >> ~/$APPSPATH/appman/.cache/overwrite-args
-	ARGS=$(sed '1d' ~/$APPSPATH/appman/.cache/overwrite-args)
+	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/overwrite-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -477,7 +477,7 @@ case "$1" in
 	do
 	rm -f ~/$APPSPATH/appman/.cache/remove-args
 	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/remove-args && echo STOP >> ~/$APPSPATH/appman/.cache/remove-args
-	ARGS=$(sed '1d' ~/$APPSPATH/appman/.cache/remove-args)
+	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/remove-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -508,7 +508,7 @@ case "$1" in
 	do
 	rm -f ~/$APPSPATH/appman/.cache/remove-args
 	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/remove-args && echo STOP >> ~/$APPSPATH/appman/.cache/remove-args
-	ARGS=$(sed '1d' ~/$APPSPATH/appman/.cache/remove-args)
+	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/remove-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -548,7 +548,7 @@ case "$1" in
 	do
 	rm -f ~/$APPSPATH/appman/.cache/template-args
 	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/template-args && echo STOP >> ~/$APPSPATH/appman/.cache/template-args
-	ARGS=$(sed '1d' ~/$APPSPATH/appman/.cache/template-args)
+	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/template-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
