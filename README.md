@@ -77,7 +77,7 @@ These programs are taken:
 
 "AppMan" can even create Firefox profiles to run as webapps (as an alternative to the countless Electron-based apps/AppImages)!
 
-You can consult basic information, links to sites and sources used through the related `appman -a $PROGRAM` command or by clicking on the related section of the "AM" repository, [here](https://github.com/ivan-hc/AM-application-manager/tree/main/programs/.about).
+You can consult basic information, links to sites and sources used through the related `appman -a $PROGRAM` command or by connecting to https://portable-linux-apps.github.io
 
 ## Repository and Multiarchitecture
 Each program is installed through a dedicated script, and all these scripts are listed in the "[AM repository](https://github.com/ivan-hc/AM-application-manager/tree/main/programs)" and divided by architecture.
