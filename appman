@@ -18,7 +18,7 @@ APPSPATH=$(cat ~/.config/appman/appman-config)
 mkdir -p ~/.local/bin ~/.local/share/applications ~/.local/share/icons ~/$APPSPATH/appman ~/$APPSPATH/appman/.cache
 cd ~/$APPSPATH/appman
 
-for name in "ar" "cat" "chmod" "chown" "curl" "echo" "egrep" "grep" "sed" "tar" "test" "unzip" "wget" "xterm" "zsync"
+for name in "ar" "cat" "chmod" "chown" "curl" "echo" "egrep" "grep" "sed" "tar" "test" "unzip" "wget" "zsync"
 do
   [[ $(which $name 2>/dev/null) ]] || { echo "" && echo -e 'ERROR: "'$name'" not found, required by some installation scripts.';deps=1; }
 done
@@ -387,7 +387,7 @@ case "$1" in
 			sed -i "s# /usr/share/pixmaps# $(xdg-user-dir USER)/.local/share/icons#g" ./$arg
 			sed -i "s# /usr/local/share/pixmaps# $(xdg-user-dir USER)/.local/share/icons#g" ./$arg
 			echo -ne " ◆ RUNNING THE INSTALLATION SCRIPT FOR $(echo '"'$arg'"' | tr a-z A-Z)... \r" && sleep 3 &&
-			xterm -fa fixed -fs 12 -fg green -bc ./$arg && echo -ne "                                                                          \r" &&
+			./$arg | less -E && echo -ne "                                                                          \r" &&
 			echo -ne " ◆ CONFIGURING $(echo '"'$arg'"' | tr a-z A-Z)...\r" && sleep 2 && echo -ne "                                                                          \r" &&
 			sed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/$APPSPATH#g" ~/.local/share/applications/AM*.desktop
 			sed -i "s#Exec=$arg#Exec=$(xdg-user-dir USER)/.local/bin/$arg#g" ~/.local/share/applications/AM*.desktop
@@ -1163,5 +1163,5 @@ case "$1" in
 	done
 	shift;;
   'version'|'-v'|'--version')
-  	echo "4.3.1~2";;
+  	echo "4.3.2";;
 esac
