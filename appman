@@ -420,7 +420,7 @@ case "$1" in
   '-l'|'list') rm -R -f ~/$APPSPATH/appman/$arch-apps ~/$APPSPATH/appman/list && wget -q $AMREPO/programs/$arch-apps -P ~/$APPSPATH/appman && echo -e "$(cat ~/$APPSPATH/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/$APPSPATH/appman/list
 	cd ~/$APPSPATH/appman && cat options >> list 2>/dev/null
 	MESSAGE=$(echo " YOU HAVE INSTALLED $(cd ~/$APPSPATH && find -name 'remove' -printf "%h\n" | sort -u | wc -l) APPLICATIONS OUT OF $(grep -e "$" -c ~/$APPSPATH/appman/$arch-apps) AVAILABLE")
-	echo -e "\n$MESSAGE\n\n LIST OF THE $(grep -e "$" -c ~/$APPSPATH/appman/$arch-apps) APPLICATIONS AVAILABLE IN THE 'AM' REPOSITORY:\n\n$(cat ~/$APPSPATH/appman/$arch-apps)" | less
+	echo -e "\n$MESSAGE\n\n LIST OF THE $(grep -e "$" -c ~/$APPSPATH/appman/$arch-apps) APPLICATIONS AVAILABLE IN THE 'AM' REPOSITORY:\n\n$(cat ~/$APPSPATH/appman/$arch-apps)" | less -I
 	echo -e "\n $MESSAGE\n";;
   '-o'|'overwrite')
 	while [ -n "$1" ]
