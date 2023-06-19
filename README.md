@@ -55,7 +55,7 @@ To install a program, launch the command:
 
 To update all the apps at once just run the following command:
 
-    appman -U
+    appman -u
 
 To uninstall everything just run:
 
