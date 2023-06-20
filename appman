@@ -351,7 +351,7 @@ case "$1" in
 		case "$response" in
 			[Nn]*) echo " INSTALLATION ABORTED"; break;;
 			[Yy]*|*) cd ~/$APPSPATH/appman/.cache;
-			wget https://raw.githubusercontent.com/ivan-hc/APPLICATION-MANAGER/main/INSTALL && chmod a+x ./INSTALL && sudo ./INSTALL; break;
+			wget https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/INSTALL && chmod a+x ./INSTALL && sudo ./INSTALL; break;
 		esac
 		fi;;
 	appman) echo ' "APPMAN" IS ALREADY INSTALLED!'; break;;
