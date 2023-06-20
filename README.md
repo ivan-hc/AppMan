@@ -13,6 +13,7 @@ Being "AppMan" a bash-based script, it can be used on all the architectures supp
 - [Repository and Multiarchitecture](#repository-and-multiarchitecture)
 
 [Installation](#installation)
+- [Requirements](#requirements)
 - [Step-by-step](#step-by-step)
 - [Quick](#quick)
 
@@ -93,6 +94,17 @@ If you are interested, you can deliberately join the "AM" project.
 -----------------------------------------------------------------------------
 
 # Installation
+#### Requirements
+Normally the following packages are already installed on your system:
+- `binutils`
+- `coreutils`
+- `curl`
+- `grep`
+- `sed`
+- `tar`
+- `unzip`
+- `wget`
+- `zsync` (this is needed for about 10% of AppImages, those that include update information within them).
 #### Step-by-step
 1. Enable `~/.local/bin` in your `$PATH`:
 	
