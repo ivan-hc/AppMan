@@ -99,7 +99,7 @@ Normally the following packages are already installed on your system:
 - `binutils`
 - `coreutils`
 - `curl`
-- `fuse` (required by AppImages to run, learn more at [[here](https://docs.appimage.org)](https://docs.appimage.org/user-guide/troubleshooting/fuse.html))
+- `fuse` (required by AppImages to run, learn more at [https://docs.appimage.org](https://docs.appimage.org/user-guide/troubleshooting/fuse.html))
 - `grep`
 - `sed`
 - `tar`
