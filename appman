@@ -7,7 +7,7 @@ mkdir -p ~/.config/appman
 if test -f ~/.config/appman/appman-config; then
 	break 2>/dev/null
 else
-	read -r -p "Please, write the name or the path of your custom application's folder: " location
+	read -r -ep "Please, write the name or the path of your custom application's folder$(echo -e '\n : ')" location
 	case $location in
 	*) echo $location >> ~/.config/appman/appman-config;;
 	esac
