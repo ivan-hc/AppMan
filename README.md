@@ -127,7 +127,7 @@ Just copy/paste the following line:
     mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc && wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman 
 
 #### Portable Mode
-As we have just seen, it is more convenient to put the scipt of "AppMan" into a local $PATH to use it from the reminal and use `bash-completion` like on any other program in your system. But we have not to forget that "AppMan" is a portable version of "AM", this means that you can use it wherever you want, this mean that you can also setup an USR stick with a custom $HOME to use your apps wherever you want.
+As we have just seen, it is more convenient to put the scipt of "AppMan" into a local $PATH to use it from the command line and use `bash-completion` like on any other program in your system. But we have not to forget that "AppMan" is a portable version of "AM", this means that you can use it wherever you want, this mean that you can also setup an USB stick with a custom $HOME to use your apps wherever you want.
 
 In this video I'll show you how it is easy to use AppMan quickly in any directory you download it:
 
