@@ -16,6 +16,7 @@ Being "AppMan" a bash-based script, it can be used on all the architectures supp
 - [Requirements](#requirements)
 - [Step-by-step](#step-by-step)
 - [Quick](#quick)
+- [Portable Mode](#portable-mode)
 
 [Choose the directory for your applications](#choose-the-directory-for-your-applications)
 
@@ -94,6 +95,7 @@ If you are interested, you can deliberately join the "AM" project.
 -----------------------------------------------------------------------------
 
 # Installation
+AppMan can either be used in Portable Mode (ideal if you want to put it on a USB stick to use on any system) or placed into a $PATH enabled in your $HOME directory (and without root privileges). In the following lines you can choose an installation guide or you can start it immediately in Portable Mode (with a video)... but not before having read the list of dependencies needed to run "AppMan".
 #### Requirements
 Normally the following packages are already installed on your system:
 - `binutils`
@@ -106,6 +108,8 @@ Normally the following packages are already installed on your system:
 - `unzip`
 - `wget`
 - `zsync` (this is needed for about 10% of AppImages, those that include update information within them).
+
+NOTE: as you can see, unlike "AM" (that require `sudo`), it is not absolutely necessary to run "AppMan" with root privileges, however if out of habit you intend to use `sudo`, `doas` or similar commands you are free to do so at your own risk (I don't recommend it, all the options may require root access each time you run `appman`, and this is less convenient than by using `am`, at this point).
 #### Step-by-step
 1. Enable `~/.local/bin` in your `$PATH`:
 	
@@ -121,6 +125,18 @@ Normally the following packages are already installed on your system:
 Just copy/paste the following line:
 
     mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc && wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman 
+
+#### Portable Mode
+As we have just seen, it is more convenient to put the scipt of "AppMan" into a local $PATH to use it from the reminal and use `bash-completion` like on any other program in your system. But we have not to forget that "AppMan" is a portable version of "AM", this means that you can use it wherever you want, this mean that you can also setup an USR stick with a custom $HOME to use your apps wherever you want.
+
+In this video I'll show you how it is easy to use AppMan quickly in any directory you download it:
+
+https://github.com/ivan-hc/AppMan/assets/88724353/f70c46fd-6509-4889-b119-ecb386a623ad
+
+In this case all you have to do is to copy/paste the following command:
+
+       wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman
+
     
 # Choose the directory for your applications
 Run `appman` (if in `$PATH`) or `./appman`, you'll read a prompt that asks for a destination directory or path for your installed Applications.
