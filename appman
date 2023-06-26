@@ -27,13 +27,13 @@ AMREPO="https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main"
 arch=$(printf '%s\n' "$HOSTTYPE")
 currentuser=$(printf '%s\n' "$USER")
 
-rm -rf "$APPSPATH/options"
+rm -rf ~/$APPSPATH/appman/options
 printf \
   "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n" \
   "about" "backup" "clean" "convert" "download" "files" "install" "list" \
   "lock" "overwrite" "query" "remove" "sync" "template" "unlock" \
   "update" "web" "--disable-completion" "--enable-completion" "--home" \
-  >> $APPSPATH/options
+  >> ~/$APPSPATH/appman/options
 
 case "$1" in
   '') printf "\n USAGE: 'appman [option]'\n        'appman [option] [argument]'\n\n Run the 'appman -h' command to find out more\n\n";;
