@@ -14,9 +14,10 @@ else
 fi
 
 APPSPATH=$(cat ~/.config/appman/appman-config)
+AMPATH="~/$APPSPATH/appman"
 
-mkdir -p ~/.local/bin ~/.local/share/applications ~/.local/share/icons ~/$APPSPATH/appman ~/$APPSPATH/appman/.cache
-cd ~/$APPSPATH/appman
+mkdir -p ~/.local/bin ~/.local/share/applications ~/.local/share/icons ~/$AMPATH ~/$AMPATH/.cache
+cd ~/$AMPATH
 
 for name in "ar" "cat" "chmod" "chown" "curl" "grep" "sed" "tar" "unzip" "wget" "zsync"; do
   test -x "$(command -v $name 2>/dev/null)" \
@@ -27,13 +28,13 @@ AMREPO="https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main"
 arch=$(printf '%s\n' "$HOSTTYPE")
 currentuser=$(printf '%s\n' "$USER")
 
-rm -rf ~/$APPSPATH/appman/options
+rm -rf ~/$AMPATH/options
 printf \
   "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n" \
   "about" "backup" "clean" "convert" "download" "files" "install" "list" \
   "lock" "overwrite" "query" "remove" "sync" "template" "unlock" \
   "update" "web" "--disable-completion" "--enable-completion" "--home" \
-  >> ~/$APPSPATH/appman/options
+  >> ~/$AMPATH/options
 
 case "$1" in
   '') printf "\n USAGE: 'appman [option]'\n        'appman [option] [argument]'\n\n Run the 'appman -h' command to find out more\n\n";;
@@ -138,9 +139,9 @@ case "$1" in
   '-a'|'about')
 	while [ -n "$1" ]
 	do
-	rm -f ~/$APPSPATH/appman/.cache/about-args
-	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/about-args && echo STOP >> ~/$APPSPATH/appman/.cache/about-args
-	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/about-args)
+	rm -f ~/$AMPATH/.cache/about-args
+	echo $@ | tr ' ' '\n' >> ~/$AMPATH/.cache/about-args && echo STOP >> ~/$AMPATH/.cache/about-args
+	ARGS=$(tail +2 ~/$AMPATH/.cache/about-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -149,8 +150,8 @@ case "$1" in
 	if curl --output /dev/null --silent --head --fail https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/apps/$arg.md  1>/dev/null; then
 	echo "-----------------------------------------------------------------------"
 	case $arg in
-	*) rm -R -f ~/$APPSPATH/appman/.cache/about; mkdir ~/$APPSPATH/appman/.cache/about;
-		cd ~/$APPSPATH/appman/.cache/about && wget -q https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/apps/$arg.md &&
+	*) rm -R -f ~/$AMPATH/.cache/about; mkdir ~/$AMPATH/.cache/about;
+		cd ~/$AMPATH/.cache/about && wget -q https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/apps/$arg.md &&
 		sed -i '/^\s*#/ d' $arg.md; sed -i '/^\s*!/ d' $arg.md; sed -i '/\[Applications]/d' $arg.md; sed -i '/\ --- /d' $arg.md
 		echo " PACKAGE: $(echo $arg | tr a-z A-Z)"
 		if test -f ~/$APPSPATH/$arg/remove; then
@@ -172,9 +173,9 @@ case "$1" in
   '-b'|'backup')
 	while [ -n "$1" ]
 	do
-	rm -f ~/$APPSPATH/appman/.cache/backup-args
-	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/backup-args && echo STOP >> ~/$APPSPATH/appman/.cache/backup-args
-	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/backup-args)
+	rm -f ~/$AMPATH/.cache/backup-args
+	echo $@ | tr ' ' '\n' >> ~/$AMPATH/.cache/backup-args && echo STOP >> ~/$AMPATH/.cache/backup-args
+	ARGS=$(tail +2 ~/$AMPATH/.cache/backup-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -199,13 +200,13 @@ case "$1" in
 	shift;;
   '-c'|'clean') echo -e "\n Cleaning of temporary files and folders in progress...\n" && sleep 0.1 &&
   	for i in {1000..0000}; do echo -ne " $i\r" && sleep 0.0001; done
-	rm -R -f ~/$APPSPATH/appman/.cache/*; rm -R -f ~/$APPSPATH/*/tmp; echo -e "\n DONE!\n";;
+	rm -R -f ~/$AMPATH/.cache/*; rm -R -f ~/$APPSPATH/*/tmp; echo -e "\n DONE!\n";;
   '-conv'|'convert')
   	while [ -n "$1" ]
 	do
-	rm -f ~/$APPSPATH/appman/.cache/convert-args
-	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/convert-args && echo STOP >> ~/$APPSPATH/appman/.cache/convert-args
-	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/convert-args)
+	rm -f ~/$AMPATH/.cache/convert-args
+	echo $@ | tr ' ' '\n' >> ~/$AMPATH/.cache/convert-args && echo STOP >> ~/$AMPATH/.cache/convert-args
+	ARGS=$(tail +2 ~/$AMPATH/.cache/convert-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -252,9 +253,9 @@ case "$1" in
   '-d'|'download')
 	while [ -n "$1" ]
 	do
-	rm -f ~/$APPSPATH/appman/.cache/download-args
-	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/download-args && echo STOP >> ~/$APPSPATH/appman/.cache/download-args
-	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/download-args)
+	rm -f ~/$AMPATH/.cache/download-args
+	echo $@ | tr ' ' '\n' >> ~/$AMPATH/.cache/download-args && echo STOP >> ~/$AMPATH/.cache/download-args
+	ARGS=$(tail +2 ~/$AMPATH/.cache/download-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -264,7 +265,7 @@ case "$1" in
 	am) for var in $arg;
 		do read -p ' Do you wish to open the main script of "AM" (y,N)?' yn
 			case $yn in
-			[Yy]* ) xdg-open ~/$APPSPATH/appman/APP-MANAGER; break;;
+			[Yy]* ) xdg-open ~/$AMPATH/APP-MANAGER; break;;
 			[Nn]*|* ) break;;
 		esac
 	done;; 
@@ -289,9 +290,9 @@ case "$1" in
   '-H'|'--home')
     	while [ -n "$1" ]
 	do
-	rm -f ~/$APPSPATH/appman/.cache/home-args
-	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/home-args && echo STOP >> ~/$APPSPATH/appman/.cache/home-args
-	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/home-args)
+	rm -f ~/$AMPATH/.cache/home-args
+	echo $@ | tr ' ' '\n' >> ~/$AMPATH/.cache/home-args && echo STOP >> ~/$AMPATH/.cache/home-args
+	ARGS=$(tail +2 ~/$AMPATH/.cache/home-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -329,18 +330,18 @@ case "$1" in
 	while [ -n "$1" ]
 	do
 	echo -e "-----------------------------------------------------------------------\n >> START OF ALL INSTALLATION PROCESSES <<\n-----------------------------------------------------------------------"
-	rm -f ~/$APPSPATH/appman/.cache/install-args
-	rm -R -f ~/$APPSPATH/appman/.cache/installed
-	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/install-args
-	echo STOP >> ~/$APPSPATH/appman/.cache/install-args
-	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/install-args)
+	rm -f ~/$AMPATH/.cache/install-args
+	rm -R -f ~/$AMPATH/.cache/installed
+	echo $@ | tr ' ' '\n' >> ~/$AMPATH/.cache/install-args
+	echo STOP >> ~/$AMPATH/.cache/install-args
+	ARGS=$(tail +2 ~/$AMPATH/.cache/install-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
-		if test -f ~/$APPSPATH/appman/.cache/installed; then
+		if test -f ~/$AMPATH/.cache/installed; then
 			echo -e "\n-----------------------------------------------------------------------\n >> END OF ALL INSTALLATION PROCESSES <<\n-----------------------------------------------------------------------\n\n THE FOLLOWING NEW PROGRAMS HAVE BEEN INSTALLED:\n"
-			echo -e "\n-----------------------------------------------------------------------" >> ~/$APPSPATH/appman/.cache/installed
-			cat ~/$APPSPATH/appman/.cache/installed
+			echo -e "\n-----------------------------------------------------------------------" >> ~/$AMPATH/.cache/installed
+			cat ~/$AMPATH/.cache/installed
 			exit
 		else
 			exit
@@ -354,7 +355,7 @@ case "$1" in
 		read -r -p " This will install AM as root in your system, do you wish to continue (Y/n)?" response
 		case "$response" in
 			[Nn]*) echo " INSTALLATION ABORTED"; break;;
-			[Yy]*|*) cd ~/$APPSPATH/appman/.cache;
+			[Yy]*|*) cd ~/$AMPATH/.cache;
 			wget https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/INSTALL && chmod a+x ./INSTALL && sudo ./INSTALL; break;
 		esac
 		fi;;
@@ -365,7 +366,7 @@ case "$1" in
 		if curl --output /dev/null --silent --head --fail $AMREPO/programs/$arch/$arg  1>/dev/null; then
 		case $arg in
 		*) for var in $arg;
-			do cd ~/$APPSPATH/appman/.cache; mkdir -p tmp; cd tmp; wget -q $AMREPO/programs/$arch/$arg 2>/dev/null
+			do cd ~/$AMPATH/.cache; mkdir -p tmp; cd tmp; wget -q $AMREPO/programs/$arch/$arg 2>/dev/null
 			cd ..; mv ./tmp/$arg ./$arg; rmdir ./tmp;
 			chmod a+x ./$arg
 			sed -i "s# /opt# ~/$APPSPATH#g" ./$arg
@@ -401,11 +402,11 @@ case "$1" in
 			sed -i "s#Exec=/opt/kdegames#Exec=$(xdg-user-dir USER)/$APPSPATH/kdegames#g" ~/.local/share/applications/AM*.desktop
 			sed -i "s#Exec=/opt/kdeutils#Exec=$(xdg-user-dir USER)/$APPSPATH/kdeutils#g" ~/.local/share/applications/AM*.desktop
 			echo -ne " ◆ $(echo '"'$arg'"' | tr a-z A-Z) INSTALLED ($(du -sm ~/$APPSPATH/$(cd ~/$APPSPATH && ls -td * | head -1) | awk '{print $1}' ) MB OF DISK SPACE)\n"
-			rm ~/$APPSPATH/appman/.cache/$arg
+			rm ~/$AMPATH/.cache/$arg
 			unset $LATESTDIR
 			LATESTDIR=$(cd ~/$APPSPATH && ls -td * | head -1)
 				if test -f ~/$APPSPATH/$LATESTDIR/remove; then
-					echo " - $LATESTDIR" >> ~/$APPSPATH/appman/.cache/installed
+					echo " - $LATESTDIR" >> ~/$AMPATH/.cache/installed
 				else
 					echo " INSTALLATION ABORTED!";
 				fi
@@ -421,17 +422,17 @@ case "$1" in
 	done
 	done
 	shift;;
-  '-l'|'list') rm -R -f ~/$APPSPATH/appman/$arch-apps ~/$APPSPATH/appman/list && wget -q $AMREPO/programs/$arch-apps -P ~/$APPSPATH/appman && echo -e "$(cat ~/$APPSPATH/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/$APPSPATH/appman/list
-	cd ~/$APPSPATH/appman && cat options >> list 2>/dev/null
-	MESSAGE=$(echo " YOU HAVE INSTALLED $(cd ~/$APPSPATH && find -name 'remove' -printf "%h\n" 2>/dev/null | sort -u | wc -l) APPLICATIONS OUT OF $(grep -e "$" -c ~/$APPSPATH/appman/$arch-apps) AVAILABLE")
-	echo -e "\n$MESSAGE\n\n LIST OF THE $(grep -e "$" -c ~/$APPSPATH/appman/$arch-apps) APPLICATIONS AVAILABLE IN THE 'AM' REPOSITORY:\n\n$(cat ~/$APPSPATH/appman/$arch-apps)" | less -I
+  '-l'|'list') rm -R -f ~/$AMPATH/$arch-apps ~/$AMPATH/list && wget -q $AMREPO/programs/$arch-apps -P ~/$AMPATH && echo -e "$(cat ~/$AMPATH/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/$AMPATH/list
+	cd ~/$AMPATH && cat options >> list 2>/dev/null
+	MESSAGE=$(echo " YOU HAVE INSTALLED $(cd ~/$APPSPATH && find -name 'remove' -printf "%h\n" 2>/dev/null | sort -u | wc -l) APPLICATIONS OUT OF $(grep -e "$" -c ~/$AMPATH/$arch-apps) AVAILABLE")
+	echo -e "\n$MESSAGE\n\n LIST OF THE $(grep -e "$" -c ~/$AMPATH/$arch-apps) APPLICATIONS AVAILABLE IN THE 'AM' REPOSITORY:\n\n$(cat ~/$AMPATH/$arch-apps)" | less -I
 	echo -e "\n $MESSAGE\n";;
   '-o'|'overwrite')
 	while [ -n "$1" ]
 	do
-	rm -f ~/$APPSPATH/appman/.cache/overwrite-args
-	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/overwrite-args && echo STOP >> ~/$APPSPATH/appman/.cache/overwrite-args
-	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/overwrite-args)
+	rm -f ~/$AMPATH/.cache/overwrite-args
+	echo $@ | tr ' ' '\n' >> ~/$AMPATH/.cache/overwrite-args && echo STOP >> ~/$AMPATH/.cache/overwrite-args
+	ARGS=$(tail +2 ~/$AMPATH/.cache/overwrite-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -466,21 +467,21 @@ case "$1" in
 	done
 	done
 	shift;;
-  '-q'|'query') rm -R -f ~/$APPSPATH/appman/$arch-apps ~/$APPSPATH/appman/list && wget -q $AMREPO/programs/$arch-apps -P ~/$APPSPATH/appman && echo -e "$(cat ~/$APPSPATH/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/$APPSPATH/appman/list
-	cd ~/$APPSPATH/appman && cat options >> list
+  '-q'|'query') rm -R -f ~/$AMPATH/$arch-apps ~/$AMPATH/list && wget -q $AMREPO/programs/$arch-apps -P ~/$AMPATH && echo -e "$(cat ~/$AMPATH/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/$AMPATH/list
+	cd ~/$AMPATH && cat options >> list
 	ARGS=$(echo "$@" | sed 's/-q //')
 	echo ""
 	echo ' Search results for "'$ARGS'" in the list of available programs:' | tr a-z A-Z
 	echo ""
-	grep -i -E "$2" ~/$APPSPATH/appman/$arch-apps | grep -i -E "$3" | grep -i -E "$4" | grep -i -E "$5" | grep -i -E "$6" | grep -i -E "$7" | grep -i -E "$8" | grep -i -E "$9"
+	grep -i -E "$2" ~/$AMPATH/$arch-apps | grep -i -E "$3" | grep -i -E "$4" | grep -i -E "$5" | grep -i -E "$6" | grep -i -E "$7" | grep -i -E "$8" | grep -i -E "$9"
 	echo ""
 	exit;;
   '-r'|'remove')
 	while [ -n "$1" ]
 	do
-	rm -f ~/$APPSPATH/appman/.cache/remove-args
-	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/remove-args && echo STOP >> ~/$APPSPATH/appman/.cache/remove-args
-	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/remove-args)
+	rm -f ~/$AMPATH/.cache/remove-args
+	echo $@ | tr ' ' '\n' >> ~/$AMPATH/.cache/remove-args && echo STOP >> ~/$AMPATH/.cache/remove-args
+	ARGS=$(tail +2 ~/$AMPATH/.cache/remove-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -509,9 +510,9 @@ case "$1" in
   '-R')
 	while [ -n "$1" ]
 	do
-	rm -f ~/$APPSPATH/appman/.cache/remove-args
-	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/remove-args && echo STOP >> ~/$APPSPATH/appman/.cache/remove-args
-	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/remove-args)
+	rm -f ~/$AMPATH/.cache/remove-args
+	echo $@ | tr ' ' '\n' >> ~/$AMPATH/.cache/remove-args && echo STOP >> ~/$AMPATH/.cache/remove-args
+	ARGS=$(tail +2 ~/$AMPATH/.cache/remove-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -533,25 +534,25 @@ case "$1" in
 	done
 	done
 	shift;;
-  '-s'|'sync') rm -R -f ~/$APPSPATH/appman/$arch-apps ~/$APPSPATH/appman/list && wget -q $AMREPO/programs/$arch-apps -P ~/$APPSPATH/appman && echo -e "$(cat ~/$APPSPATH/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/$APPSPATH/appman/list
-	cd ~/$APPSPATH/appman && cat options >> list
+  '-s'|'sync') rm -R -f ~/$AMPATH/$arch-apps ~/$AMPATH/list && wget -q $AMREPO/programs/$arch-apps -P ~/$AMPATH && echo -e "$(cat ~/$AMPATH/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/$AMPATH/list
+	cd ~/$AMPATH && cat options >> list
 	OLDVERSION=$($DIR/appman -v)
 	echo ""; echo ' SYNCHRONIZING "APPMAN" '$OLDVERSION'...'; sleep 0.5; echo "";
-  	rm -R -f ~/$APPSPATH/appman/.cache/* 1>/dev/null; cd ~/$APPSPATH/appman/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman 
+  	rm -R -f ~/$AMPATH/.cache/* 1>/dev/null; cd ~/$AMPATH/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman 
 	cd ..
-  	NEWVERSION=$(~/$APPSPATH/appman/.cache/appman -v)
+  	NEWVERSION=$(~/$AMPATH/.cache/appman -v)
 	if [ $OLDVERSION = $NEWVERSION ]; then
-		rm -R -f ~/$APPSPATH/appman/.cache/appman
+		rm -R -f ~/$AMPATH/.cache/appman
 		echo ' THE "APPMAN" SCRIPT IS ALREADY UPDATED TO THE '$NEWVERSION' VERSION! '; echo ""
 	else
-		mv ~/$APPSPATH/appman/.cache/appman $DIR/appman; echo " APPMAN IS UPDATED TO THE $NEWVERSION VERSION!"; echo ""	
+		mv ~/$AMPATH/.cache/appman $DIR/appman; echo " APPMAN IS UPDATED TO THE $NEWVERSION VERSION!"; echo ""	
 	fi;;
   '-t'|'template'|'convert')
 	while [ -n "$1" ]
 	do
-	rm -f ~/$APPSPATH/appman/.cache/template-args
-	echo $@ | tr ' ' '\n' >> ~/$APPSPATH/appman/.cache/template-args && echo STOP >> ~/$APPSPATH/appman/.cache/template-args
-	ARGS=$(tail +2 ~/$APPSPATH/appman/.cache/template-args)
+	rm -f ~/$AMPATH/.cache/template-args
+	echo $@ | tr ' ' '\n' >> ~/$AMPATH/.cache/template-args && echo STOP >> ~/$AMPATH/.cache/template-args
+	ARGS=$(tail +2 ~/$AMPATH/.cache/template-args)
 	for arg in $ARGS; do
 	for var in $arg; do
 	if [ $arg == STOP ]; then
@@ -1059,20 +1060,20 @@ case "$1" in
 				echo ""  > /dev/null 2>&1
 			fi
 			done
-			rm -R -f ~/$APPSPATH/appman/.cache/* ~/$APPSPATH/*/tmp; echo "-----------------------------------------------------------------------";
+			rm -R -f ~/$AMPATH/.cache/* ~/$APPSPATH/*/tmp; echo "-----------------------------------------------------------------------";
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
-			rm -R -f ~/$APPSPATH/appman/$arch-apps ~/$APPSPATH/appman/list && wget -q $AMREPO/programs/$arch-apps -P ~/$APPSPATH/appman && echo -e "$(cat ~/$APPSPATH/appman/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/$APPSPATH/appman/list
-			cd ~/$APPSPATH/appman && cat options >> list
+			rm -R -f ~/$AMPATH/$arch-apps ~/$AMPATH/list && wget -q $AMREPO/programs/$arch-apps -P ~/$AMPATH && echo -e "$(cat ~/$AMPATH/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> ~/$AMPATH/list
+			cd ~/$AMPATH && cat options >> list
 			OLDVERSION=$($DIR/appman -v)
 			echo ""; echo ' SYNCHRONIZING "APPMAN" '$OLDVERSION'...'; sleep 0.1; echo "";
-  			rm -R -f ~/$APPSPATH/appman/.cache/* 1>/dev/null; cd ~/$APPSPATH/appman/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman 
+  			rm -R -f ~/$AMPATH/.cache/* 1>/dev/null; cd ~/$AMPATH/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman 
 			cd ..
-  			NEWVERSION=$(~/$APPSPATH/appman/.cache/appman -v)
+  			NEWVERSION=$(~/$AMPATH/.cache/appman -v)
 			if [ $OLDVERSION = $NEWVERSION ]; then
-				rm -R -f ~/$APPSPATH/appman/.cache/appman;
+				rm -R -f ~/$AMPATH/.cache/appman;
 				echo ' THE "APPMAN" SCRIPT IS ALREADY UPDATED TO THE '$NEWVERSION' VERSION! '; echo ""
 			else
-				mv ~/$APPSPATH/appman/.cache/appman $DIR/appman; echo " APPMAN IS UPDATED TO THE $NEWVERSION VERSION!"; echo ""	
+				mv ~/$AMPATH/.cache/appman $DIR/appman; echo " APPMAN IS UPDATED TO THE $NEWVERSION VERSION!"; echo ""	
 			fi
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 			echo -e "-----------------------------------------------------------------------\n >> END OF ALL PROCESSES << \n-----------------------------------------------------------------------\n"; sleep 0.2
@@ -1100,8 +1101,8 @@ case "$1" in
 	if curl --output /dev/null --silent --head --fail https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/apps/$2.md  1>/dev/null; then
 	case $2 in
 	*) for var in $2;
-	do rm -R -f ~/$APPSPATH/appman/.cache/about; mkdir ~/$APPSPATH/appman/.cache/about;
-		cd ~/$APPSPATH/appman/.cache/about && wget -q https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/apps/$2.md && echo "" && echo " SITE/SOURCES:" && echo "" &&
+	do rm -R -f ~/$AMPATH/.cache/about; mkdir ~/$AMPATH/.cache/about;
+		cd ~/$AMPATH/.cache/about && wget -q https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/apps/$2.md && echo "" && echo " SITE/SOURCES:" && echo "" &&
 		sed -i '/^\s*#/ d' $2.md; sed -i '/^\s*!/ d' $2.md; sed -i '/\[Go back]/d' $2.md
 		grep -o " http[^ ]*" ./$2.md && echo "" && exit; done
 	esac
