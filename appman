@@ -14,7 +14,7 @@ else
 fi
 
 APPSPATH=$(cat ~/.config/appman/appman-config)
-AMPATH="~/$APPSPATH/appman"
+AMPATH="$APPSPATH/appman"
 
 mkdir -p ~/.local/bin ~/.local/share/applications ~/.local/share/icons ~/$AMPATH ~/$AMPATH/.cache
 cd ~/$AMPATH
