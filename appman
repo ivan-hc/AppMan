@@ -53,7 +53,9 @@ cat <<-HEREDOC >> "$AMPATH/options"
 HEREDOC
 
 case "$1" in
+
   '') printf "\n USAGE: 'appman [option]'\n        'appman [option] [argument]'\n\n Run the 'appman -h' command to find out more\n\n";;
+
   '-h'|'help') echo '
   ---------------------------------------------------------------------------
         ___      .______   .______   .___  ___.      ___      .__   __. 
@@ -151,7 +153,8 @@ case "$1" in
   
   MAIN DATABASE: https://github.com/IVAN-HC/AM-APPLICATION-MANAGER
   
-  ' ;;
+  ' | less;;
+
   '-a'|'about')
 	while [ -n "$1" ]
 	do
@@ -185,7 +188,9 @@ case "$1" in
 	done
 	done
 	done
-	shift;;
+	shift
+	;;
+
   '-b'|'backup')
 	while [ -n "$1" ]
 	do
@@ -213,10 +218,14 @@ case "$1" in
 	done
 	done
 	done
-	shift;;
+	shift
+	;;
+
   '-c'|'clean') echo -e "\n Cleaning of temporary files and folders in progress...\n" && sleep 0.1 &&
   	for i in {1000..0000}; do echo -ne " $i\r" && sleep 0.0001; done
-	rm -R -f $AMPATH/.cache/*; rm -R -f ~/$APPSPATH/*/tmp; echo -e "\n DONE!\n";;
+	rm -R -f $AMPATH/.cache/*; rm -R -f ~/$APPSPATH/*/tmp; echo -e "\n DONE!\n"
+	;;
+
   '-conv'|'convert')
   	while [ -n "$1" ]
 	do
@@ -265,7 +274,9 @@ case "$1" in
 	done
 	done
 	done
-	shift;;
+	shift
+	;;
+
   '-d'|'download')
 	while [ -n "$1" ]
 	do
@@ -299,10 +310,13 @@ case "$1" in
 	done
 	done
 	done
-	shift;;
+	shift
+	;;
+
   '-f'|'files') echo ""; echo $(echo "YOU HAVE INSTALLED "; cd ~/$APPSPATH && find . -type f -name 'remove' 2>/dev/null | sed -r 's|/[^/]+$||' | sort | uniq | wc -l
   	echo " STANDALONE PROGRAMS MANAGED BY APPMAN:"); echo "";
   	cd ~/$APPSPATH && find -name 'remove' -printf "%h\n" 2>/dev/null | sort -u | echo $(xargs -n 1 basename 2> /dev/null) | du -sh $(find . -type f -name 'remove' 2>/dev/null | sed -r 's|/[^/]+$||' | sort | uniq | cut -c 3-) | awk '{ print " ◆ "$2 " - " $1"iB of disk space used"}' | grep -w -v "◆ ."; echo "" ;;
+
   '-H'|'--home')
     	while [ -n "$1" ]
 	do
@@ -341,7 +355,9 @@ case "$1" in
     	fi
     	done
     	done
-    	done;;
+    	done
+	;;
+
   '-i'|'install')
 	while [ -n "$1" ]
 	do
@@ -437,12 +453,16 @@ case "$1" in
 	done
 	done
 	done
-	shift;;
+	shift
+	;;
+
   '-l'|'list') rm -R -f $AMPATH/$arch-apps $AMPATH/list && wget -q $AMREPO/programs/$arch-apps -P $AMPATH && echo -e "$(cat $AMPATH/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> $AMPATH/list
 	cd $AMPATH && cat options >> list 2>/dev/null
 	MESSAGE=$(echo " YOU HAVE INSTALLED $(cd ~/$APPSPATH && find -name 'remove' -printf "%h\n" 2>/dev/null | sort -u | wc -l) APPLICATIONS OUT OF $(grep -e "$" -c $AMPATH/$arch-apps) AVAILABLE")
 	echo -e "\n$MESSAGE\n\n LIST OF THE $(grep -e "$" -c $AMPATH/$arch-apps) APPLICATIONS AVAILABLE IN THE 'AM' REPOSITORY:\n\n$(cat $AMPATH/$arch-apps)" | less -I
-	echo -e "\n $MESSAGE\n";;
+	echo -e "\n $MESSAGE\n"
+	;;
+
   '-o'|'overwrite')
 	while [ -n "$1" ]
 	do
@@ -482,7 +502,9 @@ case "$1" in
 	done
 	done
 	done
-	shift;;
+	shift
+	;;
+
   '-q'|'query') rm -R -f $AMPATH/$arch-apps $AMPATH/list && wget -q $AMREPO/programs/$arch-apps -P $AMPATH && echo -e "$(cat $AMPATH/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> $AMPATH/list
 	cd $AMPATH && cat options >> list
 	ARGS=$(echo "$@" | sed 's/-q //')
@@ -491,7 +513,9 @@ case "$1" in
 	echo ""
 	grep -i -E "$2" $AMPATH/$arch-apps | grep -i -E "$3" | grep -i -E "$4" | grep -i -E "$5" | grep -i -E "$6" | grep -i -E "$7" | grep -i -E "$8" | grep -i -E "$9"
 	echo ""
-	exit;;
+	exit
+	;;
+
   '-r'|'remove')
 	while [ -n "$1" ]
 	do
@@ -522,7 +546,9 @@ case "$1" in
 	done
 	done
 	done
-	shift;;
+	shift
+	;;
+
   '-R')
 	while [ -n "$1" ]
 	do
@@ -549,7 +575,9 @@ case "$1" in
 	done
 	done
 	done
-	shift;;
+	shift
+	;;
+
   '-s'|'sync') rm -R -f $AMPATH/$arch-apps $AMPATH/list && wget -q $AMREPO/programs/$arch-apps -P $AMPATH && echo -e "$(cat $AMPATH/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> $AMPATH/list
 	cd $AMPATH && cat options >> list
 	OLDVERSION=$($DIR/appman -v)
@@ -562,7 +590,9 @@ case "$1" in
 		echo ' THE "APPMAN" SCRIPT IS ALREADY UPDATED TO THE '$NEWVERSION' VERSION! '; echo ""
 	else
 		mv $AMPATH/.cache/appman $DIR/appman; echo " APPMAN IS UPDATED TO THE $NEWVERSION VERSION!"; echo ""	
-	fi;;
+	fi
+	;;
+
   '-t'|'template'|'convert')
 	while [ -n "$1" ]
 	do
@@ -1056,7 +1086,9 @@ case "$1" in
 	done
 	done
 	done
-	shift;;
+	shift
+	;;
+
   '-u'|'-U'|'update') 
 	while [ -n "$1" ]
 	do
@@ -1110,7 +1142,9 @@ case "$1" in
 	fi
 	esac
 	shift
-	done;;
+	done
+	;;
+
   '-w'|'web')
 	while [ -n "$1" ]
 	do
@@ -1130,7 +1164,9 @@ case "$1" in
 	exit;
 	fi
 	done
-	shift;;
+	shift
+	;;
+
   '--disable-completion')
 	if [ $(cat ~/.bash_completion | grep -o appman | head -1) == appman  ]; then
 		grep -v 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman' ~/.bash_completion > ~/.bash_completion.backup &&
@@ -1138,7 +1174,9 @@ case "$1" in
 		echo " Completion disabled! "
 	else
 		echo " Completion script is NOT enabled! "
-	fi;;
+	fi
+	;;
+
   '--enable-completion')
 	if test -f ~/.bash_completion; then
 		echo 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman' >> ~/.bash_completion
@@ -1148,7 +1186,9 @@ case "$1" in
 	 	echo 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman' >> ~/.bash_completion
 	 	chmod a+x ~/.bash_completion
 		echo " Completion enabled! "
-	fi;;
+	fi
+	;;
+
   'lock')
 	while [ -n "$1" ]
 	do
@@ -1165,7 +1205,9 @@ case "$1" in
 	echo ""; echo ' AM cannot manage updates for '$2', "AM-updater" file not found!'; echo ""; exit;
 	fi
 	done
-	shift;;
+	shift
+	;;
+
   'unlock')
 	while [ -n "$1" ]
 	do
@@ -1182,7 +1224,10 @@ case "$1" in
 	echo ""; echo ' '$2' cannot be unlocked, "AM-LOCK" file not found!'; echo ""; exit;
 	fi
 	done
-	shift;;
+	shift
+	;;
+
   'version'|'-v'|'--version')
   	echo "4.3.2~2";;
+
 esac
