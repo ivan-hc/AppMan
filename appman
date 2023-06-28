@@ -13,9 +13,9 @@ else
 	esac
 fi
 
-APPSPATH=$(cat ~/.config/appman/appman-config)
-APPMANAPPS="$HOME/$APPSPATH"
-AMPATH="$APPMANAPPS/appman"
+APPSDIR=$(cat ~/.config/appman/appman-config)
+APPSPATH="$HOME/$APPSDIR"
+AMPATH="$APPSPATH/appman"
 
 mkdir -p ~/.local/bin ~/.local/share/applications ~/.local/share/icons $AMPATH $AMPATH/.cache
 cd $AMPATH
@@ -183,8 +183,8 @@ case "$1" in
 							sed -i '1,${ /^\s*#/ d; /^\s*!/ d; /\[Applications]/d; /\ --- /d; }' "$arg.md";
 							printf "%s\n" " PACKAGE: $(echo $arg | tr a-z A-Z)";
 
-							if test -f "$APPMANAPPS/$arg/remove"; then 
-								printf "%s\n" " STATUS: INSTALLED, ABOUT $(du -sm $APPMANAPPS/$arg | cut -f1) MB OF DISK SPACE IN USE";
+							if test -f "$APPSPATH/$arg/remove"; then 
+								printf "%s\n" " STATUS: INSTALLED, ABOUT $(du -sm $APPSPATH/$arg | cut -f1) MB OF DISK SPACE IN USE";
 							else 
 								printf "%s\n" " STATUS: NOT INSTALLED";
 							fi
@@ -216,10 +216,10 @@ case "$1" in
 	else
 	case $arg in
 	'') echo " Specify the name of a program to back up"; echo ""; exit;;
-	*) if test -f $APPMANAPPS/$arg/remove; then
+	*) if test -f $APPSPATH/$arg/remove; then
 		echo ""; read -p " Do you wish to backup the current version of $arg (y,N)?" yn
 		case $yn in
-		[Yy]* ) mkdir -p "$(xdg-user-dir USER)/.am-snapshots/$arg"; cp -r $APPMANAPPS/$arg "$(xdg-user-dir USER)/.am-snapshots/$arg/$(date +%F-%X)"; echo ""; echo " SAVED in $(xdg-user-dir USER)/.am-snapshots/$arg"; echo "" ; break;;
+		[Yy]* ) mkdir -p "$(xdg-user-dir USER)/.am-snapshots/$arg"; cp -r $APPSPATH/$arg "$(xdg-user-dir USER)/.am-snapshots/$arg/$(date +%F-%X)"; echo ""; echo " SAVED in $(xdg-user-dir USER)/.am-snapshots/$arg"; echo "" ; break;;
 		[Nn]*|* ) echo ""; echo " OPERATION ABORTED!"; echo ""; break;;	
 		esac
 	else
@@ -235,7 +235,7 @@ case "$1" in
 
   '-c'|'clean') echo -e "\n Cleaning of temporary files and folders in progress...\n" && sleep 0.1 &&
   	for i in {1000..0000}; do echo -ne " $i\r" && sleep 0.0001; done
-	rm -R -f $AMPATH/.cache/*; rm -R -f $APPMANAPPS/*/tmp; echo -e "\n DONE!\n"
+	rm -R -f $AMPATH/.cache/*; rm -R -f $APPSPATH/*/tmp; echo -e "\n DONE!\n"
 	;;
 
   '-conv'|'convert')
@@ -261,8 +261,8 @@ case "$1" in
 		sed -i "s# /usr/local/share/applications# $(xdg-user-dir USER)/.local/share/applications#g" ./$arg
 		sed -i "s# /usr/share/pixmaps# $(xdg-user-dir USER)/.local/share/icons#g" ./$arg
 		sed -i "s# /usr/local/share/pixmaps# $(xdg-user-dir USER)/.local/share/icons#g" ./$arg
-		sed -i "s# /opt# $APPMANAPPS#g" ./$arg
-		echo -e '\n# CHANGE THE PATH OF ICONS AND EXECUTABLES IN LOCALLY INSTALLED AM*.DESKTOP FILES\nAPPSPATH=$(cat ~/.config/appman/appman-config)\nsed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/$APPSPATH#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=$APP#Exec=$(xdg-user-dir USER)/.local/bin/$APP#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/usr/bin/#Exec=$(xdg-user-dir USER)/.local/bin/#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/firefox#Exec=$(xdg-user-dir USER)/$APPSPATH/firefox#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/kdegames#Exec=$(xdg-user-dir USER)/$APPSPATH/kdegames#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/kdeutils#Exec=$(xdg-user-dir USER)/$APPSPATH/kdeutils#g" ~/.local/share/applications/AM*.desktop' >> ./$arg
+		sed -i "s# /opt# $APPSPATH#g" ./$arg
+		echo -e '\n# CHANGE THE PATH OF ICONS AND EXECUTABLES IN LOCALLY INSTALLED AM*.DESKTOP FILES\nAPPSDIR=$(cat ~/.config/appman/appman-config)\nsed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/$APPSDIR#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=$APP#Exec=$(xdg-user-dir USER)/.local/bin/$APP#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/usr/bin/#Exec=$(xdg-user-dir USER)/.local/bin/#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/firefox#Exec=$(xdg-user-dir USER)/$APPSDIR/firefox#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/kdegames#Exec=$(xdg-user-dir USER)/$APPSDIR/kdegames#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/kdeutils#Exec=$(xdg-user-dir USER)/$APPSDIR/kdeutils#g" ~/.local/share/applications/AM*.desktop' >> ./$arg
 		echo ""; break;
   	elif test -f $(xdg-user-dir DESKTOP)/am-scripts/$arch/$arg; then
   		cd $(xdg-user-dir DESKTOP); cp ./am-scripts/$arch/$arg ./$arg
@@ -275,8 +275,8 @@ case "$1" in
 		sed -i "s# /usr/local/share/applications# $(xdg-user-dir USER)/.local/share/applications#g" ./$arg
 		sed -i "s# /usr/share/pixmaps# $(xdg-user-dir USER)/.local/share/icons#g" ./$arg
 		sed -i "s# /usr/local/share/pixmaps# $(xdg-user-dir USER)/.local/share/icons#g" ./$arg
-		sed -i "s# /opt# $APPMANAPPS#g" ./$arg
-		echo -e '\n# CHANGE THE PATH OF ICONS AND EXECUTABLES IN LOCALLY INSTALLED AM*.DESKTOP FILES\nAPPSPATH=$(cat ~/.config/appman/appman-config)\nsed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/$APPSPATH#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=$APP#Exec=$(xdg-user-dir USER)/.local/bin/$APP#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/usr/bin/#Exec=$(xdg-user-dir USER)/.local/bin/#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/firefox#Exec=$(xdg-user-dir USER)/$APPSPATH/firefox#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/kdegames#Exec=$(xdg-user-dir USER)/$APPSPATH/kdegames#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/kdeutils#Exec=$(xdg-user-dir USER)/$APPSPATH/kdeutils#g" ~/.local/share/applications/AM*.desktop' >> ./$arg
+		sed -i "s# /opt# $APPSPATH#g" ./$arg
+		echo -e '\n# CHANGE THE PATH OF ICONS AND EXECUTABLES IN LOCALLY INSTALLED AM*.DESKTOP FILES\nAPPSDIR=$(cat ~/.config/appman/appman-config)\nsed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/$APPSDIR#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=$APP#Exec=$(xdg-user-dir USER)/.local/bin/$APP#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/usr/bin/#Exec=$(xdg-user-dir USER)/.local/bin/#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/firefox#Exec=$(xdg-user-dir USER)/$APPSDIR/firefox#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/kdegames#Exec=$(xdg-user-dir USER)/$APPSDIR/kdegames#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/kdeutils#Exec=$(xdg-user-dir USER)/$APPSDIR/kdeutils#g" ~/.local/share/applications/AM*.desktop' >> ./$arg
 		echo ""; break;
 	else
 		echo ""; echo ' "'$arg'" is NOT a valid argument'; echo ""; break;
@@ -325,9 +325,9 @@ case "$1" in
 	shift
 	;;
 
-  '-f'|'files') echo ""; echo $(echo "YOU HAVE INSTALLED "; cd $APPMANAPPS && find . -type f -name 'remove' 2>/dev/null | sed -r 's|/[^/]+$||' | sort | uniq | wc -l
+  '-f'|'files') echo ""; echo $(echo "YOU HAVE INSTALLED "; cd $APPSPATH && find . -type f -name 'remove' 2>/dev/null | sed -r 's|/[^/]+$||' | sort | uniq | wc -l
   	echo " STANDALONE PROGRAMS MANAGED BY APPMAN:"); echo "";
-  	cd $APPMANAPPS && find -name 'remove' -printf "%h\n" 2>/dev/null | sort -u | echo $(xargs -n 1 basename 2> /dev/null) | du -sh $(find . -type f -name 'remove' 2>/dev/null | sed -r 's|/[^/]+$||' | sort | uniq | cut -c 3-) | awk '{ print " ◆ "$2 " - " $1"iB of disk space used"}' | grep -w -v "◆ ."; echo "" ;;
+  	cd $APPSPATH && find -name 'remove' -printf "%h\n" 2>/dev/null | sort -u | echo $(xargs -n 1 basename 2> /dev/null) | du -sh $(find . -type f -name 'remove' 2>/dev/null | sed -r 's|/[^/]+$||' | sort | uniq | cut -c 3-) | awk '{ print " ◆ "$2 " - " $1"iB of disk space used"}' | grep -w -v "◆ ."; echo "" ;;
 
   '-H'|'--home')
     	while [ -n "$1" ]
@@ -340,7 +340,7 @@ case "$1" in
 	if [ $arg == STOP ]; then
 		exit
 	else
-	cd $APPMANAPPS
+	cd $APPSPATH
 	if ! test -d ./$arg; then
 		echo ' ERROR: "'$arg'" is not installed'
 	else
@@ -351,11 +351,11 @@ case "$1" in
     		./$arg --appimage-extract AppRun > /dev/null 2>&1
     		if test -f ./squashfs-root/AppRun; then
     			mkdir -p ./$arg.home
-    			echo ' Setting $HOME to ~/'$APPSPATH'/'$arg'/'$arg'.home for this AppImage'
+    			echo ' Setting $HOME to ~/'$APPSDIR'/'$arg'/'$arg'.home for this AppImage'
     			rm -R -f ./squashfs-root; break
     		elif test -h ./squashfs-root/AppRun; then
     			mkdir -p ./$arg.home
-    			echo ' Setting $HOME to ~/'$APPSPATH'/'$arg'/'$arg'.home for this AppImage'
+    			echo ' Setting $HOME to ~/'$APPSDIR'/'$arg'/'$arg'.home for this AppImage'
     			rm -R -f ./squashfs-root; break
     		else
     			echo ' ERROR: "'$arg'" is NOT an AppImage'; break
@@ -404,7 +404,7 @@ case "$1" in
 		esac
 		fi;;
 	appman) echo ' "APPMAN" IS ALREADY INSTALLED!'; break;;
-	*) if test -f $APPMANAPPS/$arg/remove; then
+	*) if test -f $APPSPATH/$arg/remove; then
 		echo ' ERROR: "'$arg'" is already installed, please try to remove it first'; break;
 	else
 		if curl --output /dev/null --silent --head --fail $AMREPO/programs/$arch/$arg  1>/dev/null; then
@@ -413,7 +413,7 @@ case "$1" in
 			do cd $AMPATH/.cache; mkdir -p tmp; cd tmp; wget -q $AMREPO/programs/$arch/$arg 2>/dev/null
 			cd ..; mv ./tmp/$arg ./$arg; rmdir ./tmp;
 			chmod a+x ./$arg
-			sed -i "s# /opt# $APPMANAPPS#g" ./$arg
+			sed -i "s# /opt# $APPSPATH#g" ./$arg
 			sed -i "s#wget #wget -q --show-progress #g" ./$arg
 			sed -i 's#$(wget -q --show-progress #$(wget -q #g' ./$arg
 			sed -i 's#wget http#wget -q http#g' ./$arg
@@ -438,18 +438,18 @@ case "$1" in
 			echo -ne " ◆ RUNNING THE INSTALLATION SCRIPT FOR $(echo '"'$arg'"' | tr a-z A-Z)... \r" && sleep 3 &&
 			./$arg | less -E && echo -ne "                                                                          \r" &&
 			echo -ne " ◆ CONFIGURING $(echo '"'$arg'"' | tr a-z A-Z)...\r" && sleep 2 && echo -ne "                                                                          \r" &&
-			sed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/$APPSPATH#g" ~/.local/share/applications/AM*.desktop
+			sed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/$APPSDIR#g" ~/.local/share/applications/AM*.desktop
 			sed -i "s#Exec=$arg#Exec=$(xdg-user-dir USER)/.local/bin/$arg#g" ~/.local/share/applications/AM*.desktop
 			sed -i 's#Exec=$APP#Exec='$(xdg-user-dir USER)'/.local/bin/$APP#g' ~/.local/share/applications/AM*.desktop
 			sed -i "s#Exec=/usr/bin/#Exec=$(xdg-user-dir USER)/.local/bin/#g" ~/.local/share/applications/AM*.desktop
-			sed -i "s#Exec=/opt/firefox#Exec=$(xdg-user-dir USER)/$APPSPATH/firefox#g" ~/.local/share/applications/AM*.desktop
-			sed -i "s#Exec=/opt/kdegames#Exec=$(xdg-user-dir USER)/$APPSPATH/kdegames#g" ~/.local/share/applications/AM*.desktop
-			sed -i "s#Exec=/opt/kdeutils#Exec=$(xdg-user-dir USER)/$APPSPATH/kdeutils#g" ~/.local/share/applications/AM*.desktop
-			echo -ne " ◆ $(echo '"'$arg'"' | tr a-z A-Z) INSTALLED ($(du -sm $APPMANAPPS/$(cd $APPMANAPPS && ls -td * | head -1) | awk '{print $1}' ) MB OF DISK SPACE)\n"
+			sed -i "s#Exec=/opt/firefox#Exec=$(xdg-user-dir USER)/$APPSDIR/firefox#g" ~/.local/share/applications/AM*.desktop
+			sed -i "s#Exec=/opt/kdegames#Exec=$(xdg-user-dir USER)/$APPSDIR/kdegames#g" ~/.local/share/applications/AM*.desktop
+			sed -i "s#Exec=/opt/kdeutils#Exec=$(xdg-user-dir USER)/$APPSDIR/kdeutils#g" ~/.local/share/applications/AM*.desktop
+			echo -ne " ◆ $(echo '"'$arg'"' | tr a-z A-Z) INSTALLED ($(du -sm $APPSPATH/$(cd $APPSPATH && ls -td * | head -1) | awk '{print $1}' ) MB OF DISK SPACE)\n"
 			rm $AMPATH/.cache/$arg
 			unset $LATESTDIR
-			LATESTDIR=$(cd $APPMANAPPS && ls -td * | head -1)
-				if test -f $APPMANAPPS/$LATESTDIR/remove; then
+			LATESTDIR=$(cd $APPSPATH && ls -td * | head -1)
+				if test -f $APPSPATH/$LATESTDIR/remove; then
 					echo " - $LATESTDIR" >> $AMPATH/.cache/installed
 				else
 					echo " INSTALLATION ABORTED!";
@@ -470,7 +470,7 @@ case "$1" in
 
   '-l'|'list') rm -R -f $AMPATH/$arch-apps $AMPATH/list && wget -q $AMREPO/programs/$arch-apps -P $AMPATH && echo -e "$(cat $AMPATH/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> $AMPATH/list
 	cd $AMPATH && cat options >> list 2>/dev/null
-	MESSAGE=$(echo " YOU HAVE INSTALLED $(cd $APPMANAPPS && find -name 'remove' -printf "%h\n" 2>/dev/null | sort -u | wc -l) APPLICATIONS OUT OF $(grep -e "$" -c $AMPATH/$arch-apps) AVAILABLE")
+	MESSAGE=$(echo " YOU HAVE INSTALLED $(cd $APPSPATH && find -name 'remove' -printf "%h\n" 2>/dev/null | sort -u | wc -l) APPLICATIONS OUT OF $(grep -e "$" -c $AMPATH/$arch-apps) AVAILABLE")
 	echo -e "\n$MESSAGE\n\n LIST OF THE $(grep -e "$" -c $AMPATH/$arch-apps) APPLICATIONS AVAILABLE IN THE 'AM' REPOSITORY:\n\n$(cat $AMPATH/$arch-apps)" | less -I
 	echo -e "\n $MESSAGE\n"
 	;;
@@ -488,7 +488,7 @@ case "$1" in
 	else
 	case $arg in
 	'') echo " Specify the name of a program to overwrite"; echo ""; break;;
-	*) if test -f $APPMANAPPS/$arg/remove; then
+	*) if test -f $APPSPATH/$arg/remove; then
 		echo ""; read -p " Do you wish to overwrite this version of $arg with an old one (y,N)?" yn
 		case $yn in
 		[Yy]* ) echo ""; echo " Please, select a snapshot:"; sleep 1; echo ""; snaps=$(ls "$(xdg-user-dir USER)/.am-snapshots/$arg/" | sort -u); echo "$snaps"; echo ""
@@ -497,8 +497,8 @@ case "$1" in
 			'') echo ""; echo " NO SNAPSHOT SELECTED, OPERATION ABORTED!"; echo ""; exit;;
 			*) for var in $(echo $snaps); do
 				if [ -d $(xdg-user-dir USER)/.am-snapshots/$arg/$response ]; then
-					cp -r --backup=t $(xdg-user-dir USER)/.am-snapshots/$arg/$response/* $(xdg-user-dir USER)/$APPSPATH/$arg/
-	  				rm -R -f $APPMANAPPS/$arg/*~; echo ""; echo " RESTORE COMPLETED SUCCESSFULLY!"; echo ""; break;
+					cp -r --backup=t $(xdg-user-dir USER)/.am-snapshots/$arg/$response/* $(xdg-user-dir USER)/$APPSDIR/$arg/
+	  				rm -R -f $APPSPATH/$arg/*~; echo ""; echo " RESTORE COMPLETED SUCCESSFULLY!"; echo ""; break;
 				else
 					echo ""; echo " NO SNAPSHOT SELECTED, RETRY!" >&2;
 				fi
@@ -539,20 +539,20 @@ case "$1" in
 	if [ $arg == STOP ]; then
 	exit
 	else
-	if ls $(xdg-user-dir USER)/$APPSPATH/$arg 1>/dev/null; then
+	if ls $(xdg-user-dir USER)/$APPSDIR/$arg 1>/dev/null; then
 	case $arg in
 	*) for var in $arg;
 	do echo ""; read -p " Do you wish to REMOVE $2 (Y,n)?" yn
 		case $yn in
 		[Nn]* ) echo ""; echo " $arg has not been removed, exiting!"; echo ""; break;;
-		[Yy]*|* ) echo "";  $(xdg-user-dir USER)/$APPSPATH/$arg/remove && echo " $(echo $arg | tr a-z A-Z) HAS BEEN SUCCESSFULLY REMOVED!" && break; break;;
+		[Yy]*|* ) echo "";  $(xdg-user-dir USER)/$APPSDIR/$arg/remove && echo " $(echo $arg | tr a-z A-Z) HAS BEEN SUCCESSFULLY REMOVED!" && break; break;;
 	esac
 	done;;
 	esac
 	else
 	echo ""; echo " '$2' is not a valid argument or is not installed."; echo "";
 	echo ' LIST OF THE INSTALLED PROGRAMS / VALID ARGUMENTS:'; echo "";
-	cd $APPMANAPPS && find -name 'remove' -printf "%h\n" 2>/dev/null | sort -u | xargs -n 1 basename; echo "" ; break;
+	cd $APPSPATH && find -name 'remove' -printf "%h\n" 2>/dev/null | sort -u | xargs -n 1 basename; echo "" ; break;
 	fi
 	fi
 	done
@@ -572,16 +572,16 @@ case "$1" in
 	if [ $arg == STOP ]; then
 	exit
 	else
-	if ls $(xdg-user-dir USER)/$APPSPATH/$arg 1>/dev/null; then
+	if ls $(xdg-user-dir USER)/$APPSDIR/$arg 1>/dev/null; then
 	case $arg in
 	*) for var in $arg; do
-	$(xdg-user-dir USER)/$APPSPATH/$arg/remove && echo "" && echo " $(echo $arg | tr a-z A-Z) HAS BEEN SUCCESSFULLY REMOVED!" && break; break
+	$(xdg-user-dir USER)/$APPSDIR/$arg/remove && echo "" && echo " $(echo $arg | tr a-z A-Z) HAS BEEN SUCCESSFULLY REMOVED!" && break; break
 	done;;
 	esac
 	else
 	echo ""; echo " '$2' is not a valid argument or is not installed."; echo "";
 	echo ' LIST OF THE INSTALLED PROGRAMS / VALID ARGUMENTS:'; echo "";
-	cd $APPMANAPPS && find -name 'remove' -printf "%h\n" 2>/dev/null | sort -u | xargs -n 1 basename; echo "" ; break;
+	cd $APPSPATH && find -name 'remove' -printf "%h\n" 2>/dev/null | sort -u | xargs -n 1 basename; echo "" ; break;
 	fi
 	fi
 	done
@@ -1107,11 +1107,11 @@ case "$1" in
 	case $2 in
 	appman) appman -s;;
 	'') echo ""; echo -e ' "AM" CAN MANAGE UPDATES FOR THE FOLLOWING PROGRAMS: \n'
-  		cd $APPMANAPPS && find -name 'AM-updater' -printf " %h\n" 2>/dev/null | sort -u | xargs -n 1 basename 2>/dev/null
+  		cd $APPSPATH && find -name 'AM-updater' -printf " %h\n" 2>/dev/null | sort -u | xargs -n 1 basename 2>/dev/null
 		echo -e '\n ALL OTHERS ARE FIXED VERSIONS OR CAN MANAGE UPDATES BY THEMSELF'; sleep 0.1
 		echo -e "\n THE UPDATE VERIFICATION PROCESS IS IN PROGRESS, PLEASE WAIT..."; sleep 0.2; echo -e "\n-----------------------------------------------------------------------"
 		echo -e " >> START OF ALL PROCESSES <<\n-----------------------------------------------------------------------"
-		for f in $APPMANAPPS/*/; do 
+		for f in $APPSPATH/*/; do 
 			cd $f 2>/dev/null && 
 			if test -f ./AM-updater; then
 				start=$(date +%s); $(sh -x ./AM-updater > /dev/null 2>&1) | echo -ne ' Updating "'$(printf '%s\n' "${PWD##*/}")'"...\r'; end=$(date +%s)
@@ -1120,7 +1120,7 @@ case "$1" in
 				echo ""  > /dev/null 2>&1
 			fi
 			done
-			rm -R -f $AMPATH/.cache/* $APPMANAPPS/*/tmp; echo "-----------------------------------------------------------------------";
+			rm -R -f $AMPATH/.cache/* $APPSPATH/*/tmp; echo "-----------------------------------------------------------------------";
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
 			rm -R -f $AMPATH/$arch-apps $AMPATH/list && wget -q $AMREPO/programs/$arch-apps -P $AMPATH && echo -e "$(cat $AMPATH/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> $AMPATH/list
 			cd $AMPATH && cat options >> list
@@ -1139,12 +1139,12 @@ case "$1" in
 			echo -e "-----------------------------------------------------------------------\n >> END OF ALL PROCESSES << \n-----------------------------------------------------------------------\n"; sleep 0.2
 		echo -e ' ALL THE PROGRAMS MANAGED BY "AM" ARE UPDATED! \n'
 		exit;;
-	*) if test -f $APPMANAPPS/$2/AM-updater; then
-			start=$(date +%s); $APPMANAPPS/$2/AM-updater > /dev/null 2>&1 | echo -ne "\n UPDATING $(echo $2 | tr a-z A-Z)\r"; end=$(date +%s)
+	*) if test -f $APPSPATH/$2/AM-updater; then
+			start=$(date +%s); $APPSPATH/$2/AM-updater > /dev/null 2>&1 | echo -ne "\n UPDATING $(echo $2 | tr a-z A-Z)\r"; end=$(date +%s)
 		echo -e " ◆ $(echo $2 | tr a-z A-Z) is updated, $(($end-$start)) seconds elapsed! \n" && break
 	else
 		echo -e '\n "AM" CANNOT MANAGE UPDATES FOR "'$(echo $2 | tr a-z A-Z)'"'
-		UPDATERS=$(cd $APPMANAPPS/$2 2>/dev/null && find . -name "*update*" -print 2>/dev/null)
+		UPDATERS=$(cd $APPSPATH/$2 2>/dev/null && find . -name "*update*" -print 2>/dev/null)
 		if [ -n "$UPDATERS" ]; then
 			echo ' This program probably includes its own update system!'
 		else
@@ -1181,7 +1181,7 @@ case "$1" in
 
   '--disable-completion')
 	if [ $(cat ~/.bash_completion | grep -o appman | head -1) == appman  ]; then
-		grep -v 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman' ~/.bash_completion > ~/.bash_completion.backup &&
+		grep -v 'complete -W "$(cat ~/'$APPSDIR'/appman/list 2>/dev/null)" appman' ~/.bash_completion > ~/.bash_completion.backup &&
 		mv ~/.bash_completion.backup ~/.bash_completion
 		echo " Completion disabled! "
 	else
@@ -1191,11 +1191,11 @@ case "$1" in
 
   '--enable-completion')
 	if test -f ~/.bash_completion; then
-		echo 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman' >> ~/.bash_completion
+		echo 'complete -W "$(cat ~/'$APPSDIR'/appman/list 2>/dev/null)" appman' >> ~/.bash_completion
 		echo " Completion enabled! "
 	else
 	 	echo '#!/usr/bin/env bash' >> ~/.bash_completion
-	 	echo 'complete -W "$(cat ~/'$APPSPATH'/appman/list 2>/dev/null)" appman' >> ~/.bash_completion
+	 	echo 'complete -W "$(cat ~/'$APPSDIR'/appman/list 2>/dev/null)" appman' >> ~/.bash_completion
 	 	chmod a+x ~/.bash_completion
 		echo " Completion enabled! "
 	fi
@@ -1204,12 +1204,12 @@ case "$1" in
   'lock')
 	while [ -n "$1" ]
 	do
-	if test -f $APPMANAPPS/$2/AM-updater; then
+	if test -f $APPSPATH/$2/AM-updater; then
 	case $2 in
 	*) for var in $2;
 	do echo ""; read -p " Do you wish to keep $2  at the current version (y,N)?" yn
 		case $yn in
-		[Yy]* ) echo "";  mv $APPMANAPPS/$2/AM-updater $APPMANAPPS/$2/AM-LOCK 1>/dev/null &&
+		[Yy]* ) echo "";  mv $APPSPATH/$2/AM-updater $APPSPATH/$2/AM-LOCK 1>/dev/null &&
 			echo " $2 has been locked at current version!" && echo "" && exit; break;;
 		[Nn]*|* ) echo ""; echo " $2 is still updatable, exiting!"; echo ""; exit;; esac done;;
 	esac
@@ -1223,13 +1223,13 @@ case "$1" in
   'unlock')
 	while [ -n "$1" ]
 	do
-	if test -f $APPMANAPPS/$2/AM-LOCK; then
+	if test -f $APPSPATH/$2/AM-LOCK; then
 	case $2 in
 	*) for var in $2;
 	do echo ""; read -p " Do you wish to unlock updates for $2 (Y,n)?" yn
 		case $yn in
 		[Nn]* ) echo ""; echo " $2 is still locked at current version!"; echo ""; exit;;
-		[Yy]*|* ) echo "";  mv $APPMANAPPS/$2/AM-LOCK $APPMANAPPS/$2/AM-updater 1>/dev/null &&
+		[Yy]*|* ) echo "";  mv $APPSPATH/$2/AM-LOCK $APPSPATH/$2/AM-updater 1>/dev/null &&
 			echo ' '$2' can now receive updates, use the "appman -u" command to update everything!' && echo "" && exit; break;; esac done;;
 	esac
 	else
