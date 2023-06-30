@@ -1522,7 +1522,7 @@ case "$1" in
 	;;
 
   'version'|'-v'|'--version')
-  	echo "4.3.2~2";;
+  	echo "4.3.2~3";;
 
   *) exec $DIR/appman ;;
 
