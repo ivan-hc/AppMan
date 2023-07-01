@@ -845,17 +845,9 @@ case "$1" in
 	
   	rm -R -f $AMPATH/$arch-apps $AMPATH/list && wget -q $AMREPO/programs/$arch-apps -P $AMPATH && echo -e "$(cat $AMPATH/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> $AMPATH/list
 	cd $AMPATH && cat options >> list
-	OLDVERSION=$($AMCLIPATH -v)
-	echo ""; echo ' SYNCHRONIZING "'$(echo $AMCLI | tr a-z A-Z)'" '$OLDVERSION'...'; sleep 0.5; echo ""
-  	rm -R -f $AMPATH/.cache/* 1>/dev/null; cd $AMPATH/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./$AMCLI 
-	cd ..
-  	NEWVERSION=$($AMPATH/.cache/$AMCLI -v)
-	if [ $OLDVERSION = $NEWVERSION ]; then
-		rm -R -f $AMPATH/.cache/appman
-		echo ' THE "'$(echo $AMCLI | tr a-z A-Z)'" SCRIPT IS ALREADY UPDATED TO THE '$NEWVERSION' VERSION! '; echo ""
-	else
-		mv $AMPATH/.cache/$AMCLI $AMCLIPATH; echo " $(echo $AMCLI | tr a-z A-Z) IS UPDATED TO THE $NEWVERSION VERSION!"; echo ""	
-	fi
+	echo ""; echo ' SYNCHRONIZING "'$(echo $AMCLI | tr a-z A-Z)'" VERSION '$($AMCLIPATH -v)'...'; sleep 0.5; echo "";
+  	rm -R -f $AMPATH/.cache/* 1>/dev/null; cd $AMPATH/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./$AMCLI; cd ..;
+  	mv $AMPATH/.cache/$AMCLI $AMCLIPATH; echo ' THE "'$(echo $AMCLI | tr a-z A-Z)'" SCRIPT IS NOW UPDATED TO THE '$($AMCLIPATH -v)' VERSION! '; echo ""
 	;;
 
   '-t'|'template'|'convert')
@@ -1681,7 +1673,7 @@ case "$1" in
 	;;
 
   'version'|'-v'|'--version')
-  	echo "4.3.2~5";;
+  	echo "4.3.2~5.1";;
 
   *) exec $AMCLIPATH ;;
 
