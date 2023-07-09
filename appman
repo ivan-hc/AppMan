@@ -330,6 +330,10 @@ case "$1" in
 		exit 1; 
 	fi
 
+	case $2 in
+	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+	esac
+
 	while [ -n "$1" ]; do
 		rm -f "$AMPATH/.cache/about-args";
 		printf "%s\n" "$@" | tr ' ' '\n' >> "$AMPATH/.cache/about-args" && printf "STOP\n" >> "$AMPATH/.cache/about-args";
@@ -377,6 +381,10 @@ case "$1" in
 		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n"; 
 		exit; 
 	fi
+
+	case $2 in
+	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+	esac
 
 	while [ -n "$1" ]; do
 		rm -f $AMPATH/.cache/backup-args;
@@ -432,6 +440,11 @@ case "$1" in
 		rm -f $AMPATH/.cache/convert-args
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/convert-args && echo STOP >> $AMPATH/.cache/convert-args
 		ARGS=$(tail +2 $AMPATH/.cache/convert-args)
+
+	case $2 in
+	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+	esac
+
 		for arg in $ARGS; do
 			for var in $arg; do
 				if [ $arg == STOP ]; then
@@ -485,6 +498,10 @@ case "$1" in
 		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n"; 
 		exit; 
 	fi
+
+	case $2 in
+	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+	esac
 	
 	while [ -n "$1" ]; do
 		rm -f $AMPATH/.cache/download-args
@@ -534,6 +551,10 @@ case "$1" in
 		exit; 
 	fi
 
+	case $2 in
+	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+	esac
+
     	while [ -n "$1" ]; do
 		rm -f $AMPATH/.cache/home-args
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/home-args && echo STOP >> $AMPATH/.cache/home-args
@@ -579,6 +600,11 @@ case "$1" in
 
   '-i'|'install')
 	while [ -n "$1" ]; do
+
+	case $2 in
+	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+	esac
+
 		$SUDOCOMMAND echo ""
 		echo -e "-----------------------------------------------------------------------\n >> START OF ALL INSTALLATION PROCESSES <<\n-----------------------------------------------------------------------"
 		rm -f $AMPATH/.cache/install-args
@@ -701,6 +727,10 @@ case "$1" in
 		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n"; 
 		exit; 
 	fi
+
+	case $2 in
+	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+	esac
 	
 	while [ -n "$1" ]; do
 		rm -f $AMPATH/.cache/overwrite-args
@@ -759,6 +789,10 @@ case "$1" in
 		exit; 
 	fi
 
+	case $2 in
+	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+	esac
+
   	rm -R -f $AMPATH/$arch-apps $AMPATH/list && wget -q $AMREPO/programs/$arch-apps -P $AMPATH && echo -e "$(cat $AMPATH/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> $AMPATH/list
 	cd $AMPATH && cat options >> list
 	ARGS=$(echo "$@" | sed 's/-q //')
@@ -775,6 +809,10 @@ case "$1" in
 		rm -f $AMPATH/.cache/remove-args
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/remove-args && echo STOP >> $AMPATH/.cache/remove-args
 		ARGS=$(tail +2 $AMPATH/.cache/remove-args)
+
+	case $2 in
+	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+	esac
 	
 		for arg in $ARGS; do
 			for var in $arg; do
@@ -812,6 +850,10 @@ case "$1" in
 		rm -f $AMPATH/.cache/remove-args
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/remove-args && echo STOP >> $AMPATH/.cache/remove-args
 		ARGS=$(tail +2 $AMPATH/.cache/remove-args)
+
+	case $2 in
+	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+	esac
 	
 		for arg in $ARGS; do
 			for var in $arg; do
@@ -855,6 +897,10 @@ case "$1" in
 		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n"; 
 		exit; 
 	fi
+
+	case $2 in
+	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+	esac
 	
 	while [ -n "$1" ]; do
 		rm -f $AMPATH/.cache/template-args
@@ -1571,6 +1617,10 @@ case "$1" in
 		exit; 
 	fi
 
+	case $2 in
+	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+	esac
+
 	while [ -n "$1" ]; do
 		if curl --output /dev/null --silent --head --fail https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/apps/$2.md  1>/dev/null; then
 			case $2 in
@@ -1622,6 +1672,10 @@ case "$1" in
 		exit; 
 	fi
 
+	case $2 in
+	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+	esac
+
 	while [ -n "$1" ]; do
 		if test -f $APPSPATH/$2/AM-updater; then
 			case $2 in
@@ -1650,6 +1704,10 @@ case "$1" in
 		exit; 
 	fi
 
+	case $2 in
+	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+	esac
+
 	while [ -n "$1" ]; do
 		if test -f $APPSPATH/$2/AM-LOCK; then
 			case $2 in
@@ -1673,7 +1731,7 @@ case "$1" in
 	;;
 
   'version'|'-v'|'--version')
-  	echo "4.3.2~5.1";;
+  	echo "4.3.2~6";;
 
   *) exec $AMCLIPATH ;;
 
