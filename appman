@@ -441,9 +441,9 @@ case "$1" in
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/convert-args && echo STOP >> $AMPATH/.cache/convert-args
 		ARGS=$(tail +2 $AMPATH/.cache/convert-args)
 
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
+		case $2 in
+		'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+		esac
 
 		for arg in $ARGS; do
 			for var in $arg; do
@@ -601,9 +601,9 @@ case "$1" in
   '-i'|'install')
 	while [ -n "$1" ]; do
 
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
+		case $2 in
+		'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+		esac
 
 		$SUDOCOMMAND echo ""
 		echo -e "-----------------------------------------------------------------------\n >> START OF ALL INSTALLATION PROCESSES <<\n-----------------------------------------------------------------------"
@@ -810,9 +810,9 @@ case "$1" in
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/remove-args && echo STOP >> $AMPATH/.cache/remove-args
 		ARGS=$(tail +2 $AMPATH/.cache/remove-args)
 
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
+		case $2 in
+		'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+		esac
 	
 		for arg in $ARGS; do
 			for var in $arg; do
@@ -851,9 +851,9 @@ case "$1" in
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/remove-args && echo STOP >> $AMPATH/.cache/remove-args
 		ARGS=$(tail +2 $AMPATH/.cache/remove-args)
 
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
+		case $2 in
+		'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+		esac
 	
 		for arg in $ARGS; do
 			for var in $arg; do
