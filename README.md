@@ -4,6 +4,8 @@ Since the new 4.0.0 version, AppMan is also portable, ie it does not need a spec
 
 "AppMan" is based on the previous stable version of ["AM" Application Manager](https://github.com/ivan-hc/AM-Application-Manager) and converts all the installation scripts from the main database of "AM" to scripts that can install and integrate all the programs for the current user only and without root privileges. As opposed to "AM", AppMan installs all the programs locally, in the user's $HOME.
 
+"AppMan" can also be used by "AM" itself, since version 4.3.3-1 of the main project exists the option `--user` that allows you to create an alias to install and manage apps in your $HOME folder. When executing the `am --user` command you will be suggested an alias to use temporarily or if you want you can add it in your ~/.bashrc to make it permanent. "AppMan" will be used while still using the usual `am` command (learn more [here](https://github.com/ivan-hc/AM-Application-Manager#use-am-locally-like-appman-does)).
+
 Being "AppMan" a bash-based script, it can be used on all the architectures supported by the Linux kernel and works with all the GNU/Linux distributions.
 
 ------------------------------------------------------------------------
