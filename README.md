@@ -27,6 +27,7 @@ Being "AppMan" a bash-based script, it can be used on all the architectures supp
 [Features](#features)
 - [How to enable bash completion](#how-to-enable-bash-completion)
 - [Snapshots: backup your app and restore to a previous version](#snapshots-backup-your-app-and-restore-to-a-previous-version)
+- [Rollback](#rollback)
 
 [Uninstall](#uninstall)
 
@@ -343,6 +344,15 @@ You can always modify the destination folder by editing the "appman-config" file
  
  DESCRIPTION:	Enable bash-completion to complete a keyword with the "TAB" key, using the names of all installable applications available.
  ___________________________________________________________________________
+
+  `--rollback`
+
+ SYNOPSIS:
+
+ `--rollback {PROGRAM}`
+
+ DESCRIPTION:	Download an older or specific version of the software you are interested in (only works with Github).
+ ___________________________________________________________________________ 
  
  `lock`
  
@@ -398,6 +408,14 @@ To disable bash completion:
 
       appman -o $PROGRAM
 All the snapshots are stored into an hidden `/home/$USER/.am-snapshots` folder containing other subfolders, each one has the name of the programs you've done a backup before. Each snapshot is named with the date and time you have done the backup. To restore the application to a previous version, copy/paste the name of the snapshot when the `-o` option will prompt it.
+
+------------------------------------------------------------------------
+# Rollback
+From version 4.4 it is possible to directly select from a list of URLs the version of the app that interests you most from the main source. Use the `--rollback` option in this mode:
+```
+appman --rollback ${PROGRAM}
+```
+This only works with the apps hosted on Github.
 
 ------------------------------------------------------------------------
 # Uninstall
