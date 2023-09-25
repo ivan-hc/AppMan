@@ -9,6 +9,7 @@ if test -f ~/.config/appman/appman-config; then
 else
 	read -r -ep "Please, write the name or the path of your custom application's folder$(echo -e '\n : ')" location
 	case $location in
+	'.local/bin') echo "Choose different path!" && read -r -ep "Please, write the name or the path of your custom application's folder$(echo -e '\n : ')" location;;
 	*) echo $location >> ~/.config/appman/appman-config;;
 	esac
 fi
