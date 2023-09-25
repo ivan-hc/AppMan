@@ -7,10 +7,13 @@ mkdir -p ~/.config/appman
 if test -f ~/.config/appman/appman-config; then
 	break 2>/dev/null
 else
-	read -r -ep "Please, write the name or the path of your custom application's folder$(echo -e '\n : ')" location
+	echo -e "-----------------------------------------------------------------------\n>>> Thank you for choosing AppMan!\n-----------------------------------------------------------------------\nBefore proceeding with any task, write the name of the directory in which\nyou will install the programs, for example 'Programs', 'My-apps'... you\ncan also choose a subfolder, for example '.local/AppMan-apps', or whatever\nname you want, as long as it doesn't contain spaces.\n\nThe destination folder will be created in $HOME\n-----------------------------------------------------------------------\n"
+	read -r -ep "Please, write the name or the path of your custom application's folder$(echo -e '\n> ')" location
 	case $location in
 	'.local/bin') echo "Choose different path!" && read -r -ep "Please, write the name or the path of your custom application's folder$(echo -e '\n : ')" location;;
-	*) echo $location >> ~/.config/appman/appman-config;;
+	*) echo $location >> ~/.config/appman/appman-config
+	echo -e '-----------------------------------------------------------------------\nOK, you have chosen to install apps in '$HOME'/'$location'\nTo change this edit the configuration file ~/.config/appman/appman-config\n\nIn case of problems, use the option "-h".\n-----------------------------------------------------------------------\nYou are ready! Start installing your favorite apps locally!!\n-----------------------------------------------------------------------'
+	exit;;
 	esac
 fi
 
@@ -1782,7 +1785,7 @@ case "$1" in
 	;;
 
   'version'|'-v'|'--version')
-  	echo "4.4~5";;
+  	echo "4.4~5-1";;
 
   *) exec $AMCLIPATH ;;
 
