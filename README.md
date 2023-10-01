@@ -101,7 +101,7 @@ If you are interested, you can deliberately join the "AM" project.
 AppMan can either be used in Portable Mode (ideal if you want to put it on a USB stick to use on any system) or placed into a $PATH enabled in your $HOME directory (and without root privileges). In the following lines you can choose an installation guide or you can start it immediately in Portable Mode (with a video)... but not before having read the list of dependencies needed to run "AppMan".
 
 #### Requirements
-A warning message will prevent you from using "AM" if the following packages are not installed on your system:
+A warning message will prevent you from using "AppMan" if the following packages are not installed on your system:
 - `binutils` and `coreutils`, contain core programs for GNU/Linux
 - `curl` and `wget`, needed to check URLs and download files
 - `grep` and `sed`, to check lists and edit/adapt files
