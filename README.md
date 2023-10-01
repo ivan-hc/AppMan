@@ -428,7 +428,7 @@ The configuration's file of "AppMan" (the one containing the name of the directo
 ------------------------------------------------------------------------	
 # Troubleshooting
 ### An application does not work, is old and unsupported
-Use the `-a` option and go to the developer's site to report the problem. The task of "AM" is solely to install / remove / update the applications managed by it. Problems related to the failure of an installed program or any related bugs are attributable solely to its developers.
+Use the `-a` option and go to the developer's site to report the problem. The task of "AppMan" is solely to install / remove / update the applications managed by it. Problems related to the failure of an installed program or any related bugs are attributable solely to its developers.
 
 ### Cannot download or update an application
 There can be many reasons:
