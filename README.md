@@ -31,7 +31,12 @@ Being "AppMan" a bash-based script, it can be used on all the architectures supp
 
 [Uninstall](#uninstall)
 
-[Known issues](#known-issues)
+[Troubleshooting](#troubleshooting)
+- [An application does not work, is old and unsupported](#an-application-does-not-work-is-old-and-unsupported)
+- [Cannot download or update an application](#cannot-download-or-update-an-application)
+- [Cannot mount and run AppImages](#cannot-mount-and-run-appimages)
+- [Missing dependences](#missing-dependences)
+- [Wrong download link](#wrong-download-link)
 
 [Conclusions](#conclusions)
 
@@ -421,12 +426,27 @@ To uninstall "AppMan" just remove it. To uninstall all the apps installed instea
 The configuration's file of "AppMan" (the one containing the name of the directory you've choosen for your apps) is available in ~/.config/appman.
 
 ------------------------------------------------------------------------	
-# Known issues
-"AppMan" itself works well, but there are a few things to consider before, after and during use:
-- The "AppMan" scripts use the basic commands usually found in any GNU / Linux distribution (wget, curl, grep, egrep, find, rm, mkdir, mv, ls, echo...), make sure you have them before performing any operation;
-- The task of "AppMan" is solely to install / remove / update the applications managed by it. Problems related to the failure of an installed program or any related bugs are attributable solely to its developers. You can view the link to each project's repository or official site via the "`appman -a $PROGRAM`" command;
-- The developer of AM has compiled the application installation scripts based on any links made publicly available by the owners of the affected software (or from official repositories of other progressive release distributions, for example Debian Unstable, Arch Linux, Slackware ...) . These urls (with particular reference to the official ones of the developers) may not work in the future if the developers decide to modify the site, the tags, the repository or any detail that the script refers to to install / update the application. In this case, [please report the problem to the "AppMan" team](https://github.com/ivan-hc/AM-application-manager/issues) who will modify or (in the worst case) remove the installation script until the problem is resolved;
-- "AppMan" is an open source project, you can read and compile the scripts to your liking, as long as they don't damage your system. All scripts have been tested on Debian Testing / Unstable (64 bit) and Debian 11 (32 bit) and should work on any GNU / Linux distribution, regardless of the initialization process (with or without systemd).
+# Troubleshooting
+### An application does not work, is old and unsupported
+Use the `-a` option and go to the developer's site to report the problem. The task of "AM" is solely to install / remove / update the applications managed by it. Problems related to the failure of an installed program or any related bugs are attributable solely to its developers.
+
+### Cannot download or update an application
+There can be many reasons:
+- check your internet connection;
+- if the app is hosted on github.com, you have probably exceeded the hourly limit of API calls;
+- the referring link may have been changed, try the `--rollback` option;
+- the reference site has changed, report any changes at https://github.com/ivan-hc/AM-Application-Manager/issues
+
+### Cannot mount and run AppImages
+See https://docs.appimage.org/user-guide/troubleshooting/fuse.html
+
+### Missing dependences
+See "[Requirements](#requirements)"
+
+### Wrong download link
+The reasons may be two:
+- the referring link may have been changed, try the `--rollback` option;
+- the reference site has changed, report any changes at https://github.com/ivan-hc/AM-Application-Manager/issues
 
 ------------------------------------------------------------------------
 # Conclusions
