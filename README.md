@@ -99,19 +99,17 @@ If you are interested, you can deliberately join the "AM" project.
 
 # Installation
 AppMan can either be used in Portable Mode (ideal if you want to put it on a USB stick to use on any system) or placed into a $PATH enabled in your $HOME directory (and without root privileges). In the following lines you can choose an installation guide or you can start it immediately in Portable Mode (with a video)... but not before having read the list of dependencies needed to run "AppMan".
+
 #### Requirements
-Normally the following packages are already installed on your system:
-- `binutils`
-- `coreutils`
-- `curl`
-- `grep`
-- `sed`
-- `tar`
-- `unzip`
-- `wget`
-- `zsync` (this is needed for about 10% of AppImages, those that include update information within them).
+A warning message will prevent you from using "AM" if the following packages are not installed on your system:
+- `binutils` and `coreutils`, contain core programs for GNU/Linux
+- `curl` and `wget`, needed to check URLs and download files
+- `grep` and `sed`, to check lists and edit/adapt files
+- `tar` and `unzip`, to extract various storage formats
+- `zsync`, about 10% of AppImages depend on this to be updated
 
 NOTE: as you can see, unlike "AM" (that require `sudo`), it is not absolutely necessary to run "AppMan" with root privileges, however if out of habit you intend to use `sudo`, `doas` or similar commands you are free to do so at your own risk (I don't recommend it, all the options may require root access each time you run `appman`, and this is less convenient than by using `am`, at this point).
+
 #### Step-by-step
 1. Enable `~/.local/bin` in your `$PATH`:
 	
