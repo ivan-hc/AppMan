@@ -116,6 +116,8 @@ A warning message will prevent you from using "AppMan" if the following packages
 - `tar` and `unzip`, to extract various storage formats
 - `zsync`, about 10% of AppImages depend on this to be updated
 
+For more details, jump to the paragraph "[Missing dependences](#missing-dependences)", under the section "[Troubleshooting](#troubleshooting)".
+
 NOTE: as you can see, unlike "AM" (that require `sudo`), it is not absolutely necessary to run "AppMan" with root privileges, however if out of habit you intend to use `sudo`, `doas` or similar commands you are free to do so at your own risk (I don't recommend it, all the options may require root access each time you run `appman`, and this is less convenient than by using `am`, at this point).
 
 #### Step-by-step
@@ -443,8 +445,24 @@ There can be many reasons:
 ### Cannot mount and run AppImages
 See https://docs.appimage.org/user-guide/troubleshooting/fuse.html
 
+
 ### Missing dependences
-See "[Requirements](#requirements)"
+To prevent any issue is strongly recommended to install all dependences listed at the paragraph "[Requirements](#requirements)", alternativelly you can use this workaround.
+
+Open the file `appman` with a text editor and change the following line (do this for each update):
+```
+for name in "ar" "cat" "chmod" "chown" "curl" "grep" "sed" "tar" "unzip" "wget" "zsync"; do
+```
+
+Example, "`ar`" is included in `binutils` and it is used by few installation scripts to extract .deb packages. If you don't plan to install "`vivaldi`" in aarch64, "`windows95`" in x86_64 or "`ocenaudio`" in i686, change the line above like this:
+```
+for name in "cat" "chmod" "chown" "curl" "grep" "sed" "tar" "unzip" "wget" "zsync"; do
+```
+In addition, the command "`zsync`" is used to update some AppImage packages. Until now the installation scripts for x86_64 that include this as a dependence are more than 220, so without it you can't update these Appimages. If this is not a problem for you, can chamge the line above like this:
+```
+for name in "cat" "chmod" "chown" "curl" "grep" "sed" "tar" "unzip" "wget"; do
+```
+I don't recommend to remove all other commands, being them mainly used in "AppMan" itself. 
 
 ### Spyware, malware and dangerous software
 Before installing any application, try to know where it comes from first. This program provides you with two basic options for this purpose:
