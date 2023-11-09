@@ -28,6 +28,7 @@ Being "AppMan" a bash-based script, it can be used on all the architectures supp
 - [How to enable bash completion](#how-to-enable-bash-completion)
 - [Snapshots: backup your app and restore to a previous version](#snapshots-backup-your-app-and-restore-to-a-previous-version)
 - [Rollback](#rollback)
+- [Manage local AppImages](#manage-local-appimages)
 
 [Uninstall](#uninstall)
 
@@ -435,6 +436,12 @@ appman --rollback ${PROGRAM}
 This only works with the apps hosted on Github.
 
 ------------------------------------------------------------------------
+# Manage local AppImages
+Since version 4.4.2 you can use the `--launcher` option to integrate your local AppImage packages by simply dragging and dropping them into the terminal (see video).
+
+https://github.com/ivan-hc/AM-Application-Manager/assets/88724353/c4b889f4-8504-4853-8918-44d52084fe6c
+
+------------------------------------------------------------------------	
 # Uninstall
 To uninstall "AppMan" just remove it. To uninstall all the apps installed instead it is necessary to execute the `remove` script available into the main directory of each application you've installed (with "AppMan" it is easier with the `appman -r $PROGRAM1 $PROGRAM2 $PROGRAM3 ...` command.
 The configuration's file of "AppMan" (the one containing the name of the directory you've choosen for your apps) is available in ~/.config/appman.
