@@ -1456,7 +1456,7 @@ run_unlock() {
 	done
 }
 
-show_header() {
+show_help() {
 	printf '
     ________     ______    ______    ___ __ __    ________    ___   __
   /_______/\   /_____/\  /_____/\  /__//_//_/\  /_______/\  /__/\ /__/\
@@ -1602,7 +1602,8 @@ show_header() {
 case "$1" in
 	'') printf "\n USAGE: '$AMCLI [option]'\n        '$AMCLI [option] [argument]'\n\n Run the '$AMCLI -h' command to find out more\n\n";;
 
-	'-h'|'help') show_header | less;;
+	'-h'|'help') show_help #| less
+	;;
 
 	'-a'|'about')
 		if_sudo_not_needed
