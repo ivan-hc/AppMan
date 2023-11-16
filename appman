@@ -1484,99 +1484,99 @@ show_help() {
  ___________________________________________________________________________
  ___________________________________________________________________________
  -a, about		SYNOPSIS:	-a {PROGRAM}
- DESCRIPTION: 	Shows more info about one or more apps, all the pages are
- downloaded from https://portable-linux-apps.github.io
+ Shows more info about one or more apps, all the pages are downloaded from
+ https://portable-linux-apps.github.io
  ___________________________________________________________________________
  -b, backup		SYNOPSIS:	-b {PROGRAM}
- DESCRIPTION:	Save the current version of one or more apps, each snapshot
- is stored into a dedicated directory, under $HOME/.am-snapshots/$PROGRAM
- To restore the snapshots see the "-o" option.
+ Save the current version of one or more apps, each snapshot is stored into
+ a dedicated directory, under $HOME/.am-snapshots/$PROGRAM To restore the
+ snapshots see the "-o" option.
  ___________________________________________________________________________
  -c, clean		SYNOPSIS:	-c
- DESCRIPTION:	Removes all the unnecessary files and folders.
+ Removes all the unnecessary files and folders.
  ___________________________________________________________________________
  -d, download		SYNOPSIS:	-d {PROGRAM}
- DESCRIPTION:	Download one or more installation scripts to your desktop.
+ Download one or more installation scripts to your desktop.
  ___________________________________________________________________________
  -f, files		SYNOPSIS:	-f
- DESCRIPTION:	Shows the list of all installed programs, with sizes.
+ Shows the list of all installed programs, with sizes.
  ___________________________________________________________________________
  -h, help		SYNOPSIS:	-h
- DESCRIPTION:	Prints this message.
+ Prints this message.
  ___________________________________________________________________________
  -H, --home		SYNOPSIS:	-H {PROGRAM}
- DESCRIPTION:	Set a dedicated $HOME directory for one or more AppImages.
+ Set a dedicated $HOME directory for one or more AppImages.
  ___________________________________________________________________________
  -i, install		SYNOPSIS:	-i {PROGRAM}
- DESCRIPTION:	Install one or more programs.
+ Install one or more programs.
  ___________________________________________________________________________
  -l, list		SYNOPSIS:	-l
- DESCRIPTION:	Shows the list of all the apps available in the repository.
+ Shows the list of all the apps available in the repository.
  ___________________________________________________________________________
  -o, overwrite		SYNOPSIS:	-o {PROGRAM}
- DESCRIPTION:	Overwrite the existing version of the app with a snapshot
+ Overwrite the existing version of the app with a snapshot
  saved previously (see the option "-b", above).
  ___________________________________________________________________________
  -q, query		SYNOPSIS:	-q {KEYWORD}
- DESCRIPTION:	Can be used to search for keywords and terms in the list of
- available applications packages to display matches. This can be useful if
- you are looking for applications having a specific feature.
+ Can be used to search for keywords and terms in the list of available
+ applications packages to display matches. This can be useful if you are
+ looking for applications having a specific feature.
  ___________________________________________________________________________
  -r, remove		SYNOPSIS:	-r {PROGRAM}
- DESCRIPTION:	Removes one or more apps, requires confirmation.
+ Removes one or more apps, requires confirmation.
  ___________________________________________________________________________
  -R			SYNOPSIS:	-R {PROGRAM}
- DESCRIPTION:	Removes one or more apps without asking.
+ Removes one or more apps without asking.
  ___________________________________________________________________________
  -s, sync		SYNOPSIS:	-s
- DESCRIPTION:	Updates this script to the latest version hosted.
+ Updates this script to the latest version hosted.
  ___________________________________________________________________________
  -t, template		SYNOPSIS:	-t {PROGRAM}
- DESCRIPTION:	This option allows you to generate a custom script from a
- list of different templates that may be vary according to the kind of app
- you want to upload to the "AM" repo, and the source where it is available.
+ This option allows you to generate a custom script from a list of different
+ templates that may be vary according to the kind of app you want to upload
+ to the "AM" repo, and the source where it is available.
  ___________________________________________________________________________
  -u, -U, update		SYNOPSIS:	-u
-				-u {PROGRAM}
- DESCRIPTION: Update all the apps or just one.
+					-u {PROGRAM}
+ Update all the apps or just one.
  ___________________________________________________________________________
  -v, version		SYNOPSIS:	-v
- DESCRIPTION:	Shows the version.
+ Shows the version.
  ___________________________________________________________________________
  -w, web		SYNOPSIS:	-w
- DESCRIPTION:	Shows the URLs of the sites/sources of then app.
+ Shows the URLs of the sites/sources of then app.
  ___________________________________________________________________________
  --disable-completion	SYNOPSIS:	--disable-completion
- DESCRIPTION:	Disable bash-completion.
+ Disable bash-completion.
  ___________________________________________________________________________
  --enable-completion	SYNOPSIS:	--enable-completion
- DESCRIPTION:	Enable bash-completion to complete a keyword with the "TAB"
- key, using the names of all installable applications available.
+ Enable bash-completion to complete a keyword with the "TAB" key, using the
+ names of all installable applications available.
  ___________________________________________________________________________
  --launcher		SYNOPSIS:	--launcher /path/to/${APPIMAGE}
- DESCRIPTION:	Embed one or more local AppImages in the applications menu.
- I suggest dragging the files into the terminal to get the desired effect.
- Launchers are located in ~/.local/share/applications/AppImages by default.
+ Embed one or more local AppImages in the applications menu. I suggest
+ dragging the files into the terminal to get the desired effect. Launchers
+ are located in ~/.local/share/applications/AppImages by default.
  ___________________________________________________________________________
  --rollback		SYNOPSIS:	--rollback {PROGRAM}
- DESCRIPTION:	Download an older or specific version of the software you
- are interested in (only works with Github).
+ Download an older or specific version of the software you are interested in
+ (only works with Github).
  ___________________________________________________________________________
  lock			SYNOPSIS:	lock {PROGRAM}
- DESCRIPTION:	Lock the selected app to the current version installed, this
- only works if exists a dedicated "AM-updater" installed with the app.
+ Lock the selected app to the current version installed, this only works if
+ exists a dedicated "AM-updater" installed with the app.
  ___________________________________________________________________________
  unlock			SYNOPSIS:	unlock {PROGRAM}
- DESCRIPTION:	Unlock updates for the selected program. This option nulls
- the option "lock" (see above).
+ Unlock updates for the selected program. This option nulls the option
+ "lock" (see above).
  ___________________________________________________________________________
  ___________________________________________________________________________
  			       EXTRA OPTIONS
  		       (only available for "APPMAN")
  ___________________________________________________________________________
  conv, convert		SYNOPSIS:	conv {PROGRAM}
- DESCRIPTION:	Download the installation scripts for "AM" and converts them
- to rootless installation scripts that can be installed locally.
+ Download the installation scripts for "AM" and converts them to rootless
+ installation scripts that can be installed locally.
  ___________________________________________________________________________
  ###########################################################################
  ___________________________________________________________________________
@@ -1586,6 +1586,7 @@ show_help() {
  apps and AppImages out there. It is distributed in two versions:
  ◆ "AM", the main version that integrates applications at the system level,
  installing them in /opt, for all the users;
+
  ◆ "AppMan", the portable and "rootless" version that installs all the apps
  in the $HOME directory, integrating additional options to convert all the
  installation scripts from "AM".
