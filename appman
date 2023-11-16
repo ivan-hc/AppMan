@@ -63,186 +63,32 @@ cat <<-HEREDOC >> "$AMPATH/options"
 	--user
 HEREDOC
 
-case "$1" in
-
-  '') printf "\n USAGE: '$AMCLI [option]'\n        '$AMCLI [option] [argument]'\n\n Run the '$AMCLI -h' command to find out more\n\n";;
-
-  '-h'|'help') printf '
-    ________     ______    ______    ___ __ __    ________    ___   __
-  /_______/\   /_____/\  /_____/\  /__//_//_/\  /_______/\  /__/\ /__/\
-  \::: _  \ \  \:::_ \ \ \:::_ \ \ \::\| \| \ \ \::: _  \ \ \::\_\\  \ \
-   \::(_)  \ \  \:(_) \ \ \:(_) \ \ \:.      \ \ \::(_)  \ \ \:. `-\  \ \
-    \:: __  \ \  \: ___\/  \: ___\/  \:.\-/\  \ \ \:: __  \ \ \:. _    \ \
-     \:.\ \  \ \  \ \ \     \ \ \     \. \  \  \ \ \:.\ \  \ \ \. \`-\  \ \
-      \__\/\__\/   \_\/      \_\/      \__\/ \__\/  \__\/\__\/  \__\/ \__\/
-
-  ▄▀█ █▀█ █▀█ █░░ █ █▀▀ ▄▀█ ▀█▀ █ █▀█ █▄░█   █▀▄▀█ ▄▀█ █▄░█ ▄▀█ █▀▀ █▀▀ █▀█
-  █▀█ █▀▀ █▀▀ █▄▄ █ █▄▄ █▀█ ░█░ █ █▄█ █░▀█   █░▀░█ █▀█ █░▀█ █▀█ █▄█ ██▄ █▀▄
-                             by Ivan Alex HC
- ###########################################################################
-   >> A portable CLI to install/update/manage apps an AppImages locally <<
- ###########################################################################
- ___________________________________________________________________________
- 				USAGE:
- 	'$AMCLI' {OPTION}
- 	'$AMCLI' {OPTION} {PROGRAM}
- ___________________________________________________________________________
- ###########################################################################
- ___________________________________________________________________________
- 				OPTIONS
- 		(standard, for both "AM" AND "APPMAN")
- ___________________________________________________________________________
- ___________________________________________________________________________
- -a, about
- SYNOPSIS:	-a {PROGRAM}
- DESCRIPTION: 	Shows more info about one or more apps, all the pages are
- downloaded from https://portable-linux-apps.github.io
- ___________________________________________________________________________
- -b, backup
- SYNOPSIS:	-b {PROGRAM}
- DESCRIPTION:	Save the current version of one or more apps, each snapshot
- is stored into a dedicated directory, under $HOME/.am-snapshots/$PROGRAM
- To restore the snapshots see the "-o" option.
- ___________________________________________________________________________
- -c, clean
- SYNOPSIS:	-c
- DESCRIPTION:	Removes all the unnecessary files and folders.
- ___________________________________________________________________________
- -d, download
- SYNOPSIS:	-d {PROGRAM}
- DESCRIPTION:	Download one or more installation scripts to your desktop.
- ___________________________________________________________________________
- -f, files
- SYNOPSIS:	-f
- DESCRIPTION:	Shows the list of all installed programs, with sizes.
- ___________________________________________________________________________
- -h, help
- SYNOPSIS:	-h
- DESCRIPTION:	Prints this message.
- ___________________________________________________________________________
- -H, --home
- SYNOPSIS:	-H {PROGRAM}
- DESCRIPTION:	Set a dedicated $HOME directory for one or more AppImages.
- ___________________________________________________________________________
- -i, install
- SYNOPSIS:	-i {PROGRAM}
- DESCRIPTION:	Install one or more programs.
- ___________________________________________________________________________
- -l, list
- SYNOPSIS:	-l
- DESCRIPTION:	Shows the list of all the apps available in the repository.
- ___________________________________________________________________________
- -o, overwrite
- SYNOPSIS:	-o {PROGRAM}
- DESCRIPTION:	Overwrite the existing version of the app with a snapshot
- saved previously (see the option "-b", above).
- ___________________________________________________________________________
- -q, query
- SYNOPSIS:	-q {KEYWORD}
- DESCRIPTION:	Can be used to search for keywords and terms in the list of
- available applications packages to display matches. This can be useful if
- you are looking for applications having a specific feature.
- ___________________________________________________________________________
- -r, remove
- SYNOPSIS:	-r {PROGRAM}
- DESCRIPTION:	Removes one or more apps, requires confirmation.
- ___________________________________________________________________________
- -R
- SYNOPSIS:	-R {PROGRAM}
- DESCRIPTION:	Removes one or more apps without asking.
- ___________________________________________________________________________
- -s, sync
- SYNOPSIS:	-s
- DESCRIPTION:	Updates this script to the latest version hosted.
- ___________________________________________________________________________
- -t, template
- SYNOPSIS:	-t {PROGRAM}
- DESCRIPTION:	This option allows you to generate a custom script from a
- list of different templates that may be vary according to the kind of app
- you want to upload to the "AM" repo, and the source where it is available.
- ___________________________________________________________________________
- -u, -U, update
- SYNOPSIS:	-u
- 		-u {PROGRAM}
- DESCRIPTION: Update all the apps or just one.
- ___________________________________________________________________________
- -v, version
- SYNOPSIS:	-v
- DESCRIPTION:	Shows the version.
- ___________________________________________________________________________
- -w, web
- SYNOPSIS:	-w
- DESCRIPTION:	Shows the URLs of the sites/sources of then app.
- ___________________________________________________________________________
- --disable-completion
- SYNOPSIS:	--disable-completion
- DESCRIPTION:	Disable bash-completion.
- ___________________________________________________________________________
- --enable-completion
- SYNOPSIS:	--enable-completion
- DESCRIPTION:	Enable bash-completion to complete a keyword with the "TAB"
- key, using the names of all installable applications available.
- ___________________________________________________________________________
- --launcher
- SYNOPSIS:	--launcher /path/to/${APPIMAGE}
- DESCRIPTION:	Embed one or more local AppImages in the applications menu.
- I suggest dragging the files into the terminal to get the desired effect.
- Launchers are located in ~/.local/share/applications/AppImages by default.
- ___________________________________________________________________________
- --rollback
- SYNOPSIS:	--rollback {PROGRAM}
- DESCRIPTION:	Download an older or specific version of the software you
- are interested in (only works with Github).
- ___________________________________________________________________________
- lock
- SYNOPSIS:	lock {PROGRAM}
- DESCRIPTION:	Lock the selected app to the current version installed, this
- only works if exists a dedicated "AM-updater" installed with the app.
- ___________________________________________________________________________
- unlock
- SYNOPSIS:	unlock {PROGRAM}
- DESCRIPTION:	Unlock updates for the selected program. This option nulls
- the option "lock" (see above).
- ___________________________________________________________________________
- ___________________________________________________________________________
- 			       EXTRA OPTIONS
- 		       (only available for "APPMAN")
- ___________________________________________________________________________
- conv, convert
- SYNOPSIS:	conv {PROGRAM}
- DESCRIPTION:	Download the installation scripts for "AM" and converts them
- to rootless installation scripts that can be installed locally.
- ___________________________________________________________________________
- ###########################################################################
- ___________________________________________________________________________
- 		     ABOUT "AM" APPLICATION MANAGER
- ___________________________________________________________________________
- "AM" is a software manager that deals with the management of all portable
- apps and AppImages out there. It is distributed in two versions:
- ◆ "AM", the main version that integrates applications at the system level,
- installing them in /opt, for all the users;
- ◆ "AppMan", the portable and "rootless" version that installs all the apps
- in the $HOME directory, integrating additional options to convert all the
- installation scripts from "AM".
- ___________________________________________________________________________
- 				  SITES
- ___________________________________________________________________________
- HTTPS://PORTABLE-LINUX-APPS.GITHUB.IO 	(main website)
- HTTPS://GITHUB.COM/IVAN-HC/APPMAN
- HTTPS://GITHUB.COM/IVAN-HC/AM-APPLICATION-MANAGER
- ___________________________________________________________________________
- ###########################################################################' | less;;
-
-  '-a'|'about')
+if_sudo_not_needed() {
 	if [ -n "$SUDO_COMMAND" ]; then
-		printf "\n WARNING: You don't need to run the option '$1' with SUDO.\n\n";
-		exit 1;
+		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
+		exit;
 	fi
+}
 
+use_argument() {
 	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
+		'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
 	esac
+}
 
+appimage_extract() {
+	"$arg" --appimage-extract share/icons/*/*/* 1>/dev/null
+	"$arg" --appimage-extract usr/share/icons/*/*/* 1>/dev/null
+	"$arg" --appimage-extract share/icons/*/*/*/* 1>/dev/null
+	"$arg" --appimage-extract usr/share/icons/*/*/*/* 1>/dev/null
+	"$arg" --appimage-extract *.svg 1>/dev/null
+	"$arg" --appimage-extract *.png 1>/dev/null
+	"$arg" --appimage-extract *.desktop 1>/dev/null
+	"$arg" --appimage-extract share/applications/*.desktop 1>/dev/null
+	"$arg" --appimage-extract usr/share/applications/*.desktop 1>/dev/null
+}
+
+run_about() {
 	while [ -n "$1" ]; do
 		rm -f "$AMPATH/.cache/about-args";
 		printf "%s\n" "$@" | tr ' ' '\n' >> "$AMPATH/.cache/about-args" && printf "STOP\n" >> "$AMPATH/.cache/about-args";
@@ -281,20 +127,9 @@ case "$1" in
 			done
 		done
 	done
+}
 
-	shift
-	;;
-
-  '-b'|'backup')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
-
+run_backup() {
 	while [ -n "$1" ]; do
 		rm -f $AMPATH/.cache/backup-args;
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/backup-args && echo STOP >> $AMPATH/.cache/backup-args;
@@ -326,25 +161,18 @@ case "$1" in
 			done
 		done
 	done
+}
 
-	shift
-	;;
-
-  '-c'|'clean')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
+run_clean() {
 	echo -e "\n Cleaning of temporary files and folders in progress...\n" && sleep 0.1 &&
 	for i in {1000..0000}; do
 		echo -ne " $i\r" && sleep 0.0001;
 	done
 
 	rm -R -f $AMPATH/appdb; rm -R -f $AMPATH/.cache/*; rm -R -f $APPSPATH/*/tmp; echo -e "\n DONE!\n"
-	;;
+}
 
-  '-conv'|'convert')
+run_convert() {
 	while [ -n "$1" ]; do
 		rm -f $AMPATH/.cache/convert-args
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/convert-args && echo STOP >> $AMPATH/.cache/convert-args
@@ -398,20 +226,9 @@ case "$1" in
 			done
 		done
 	done
+}
 
-	shift
-	;;
-
-  '-d'|'download')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
-
+run_download() {
 	while [ -n "$1" ]; do
 		rm -f $AMPATH/.cache/download-args
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/download-args && echo STOP >> $AMPATH/.cache/download-args
@@ -439,64 +256,48 @@ case "$1" in
 			done
 		done
 	done
+}
 
-	shift
-	;;
-
-  '-f'|'files')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
+run_files() {
 	echo ""; echo $(echo "YOU HAVE INSTALLED "; cd $APPSPATH && find . -type f -name 'remove' 2>/dev/null | sed -r 's|/[^/]+$||' | sort | uniq | wc -l;
 	echo " STANDALONE PROGRAMS MANAGED BY '$(echo $AMCLI | tr a-z A-Z)':"); echo "";
 	cd $APPSPATH && find -name 'remove' -printf "%h\n" 2>/dev/null | sort -u | echo $(xargs -n 1 basename 2> /dev/null) | du -sh $(find . -type f -name 'remove' 2>/dev/null | sed -r 's|/[^/]+$||' | sort | uniq | cut -c 3-) | awk '{ print " ◆ "$2 " - " $1"iB of disk space used"}' | grep -w -v "◆ ."; echo ""
-	;;
+}
 
-  '-H'|'--home')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
+run_home() {
+	while [ -n "$1" ]; do
+	rm -f $AMPATH/.cache/home-args
+	echo $@ | tr ' ' '\n' >> $AMPATH/.cache/home-args && echo STOP >> $AMPATH/.cache/home-args
+	ARGS=$(tail -n +2 $AMPATH/.cache/home-args)
 
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
-
-		while [ -n "$1" ]; do
-		rm -f $AMPATH/.cache/home-args
-		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/home-args && echo STOP >> $AMPATH/.cache/home-args
-		ARGS=$(tail -n +2 $AMPATH/.cache/home-args)
-
-		for arg in $ARGS; do
-			for var in $arg; do
-				if [ $arg == STOP ]; then
-					exit
+	for arg in $ARGS; do
+		for var in $arg; do
+			if [ $arg == STOP ]; then
+				exit
+			else
+				cd $APPSPATH
+				if ! test -d ./$arg; then
+					echo ' ERROR: "'$arg'" is not installed'
 				else
-					cd $APPSPATH
-					if ! test -d ./$arg; then
-						echo ' ERROR: "'$arg'" is not installed'
-					else
-						case $arg in
-    						*) 
-    							if [ -z $(strings -d "./$arg/$arg" 2>/dev/null | grep -m 1 "AppImage") ]; then
-    								echo ' ERROR: "'$arg'" is NOT an AppImage'; break
-    							else
-  								cd ./$arg
-    								mkdir -p ./$arg.home
-    								echo ' Setting $HOME to '$APPSPATH'/'$arg'/'$arg'.home for this AppImage'
-    								break
-    							fi
-    						esac
-    					fi
-    				fi
-    			done
-    		done
-    	done
-	;;
+					case $arg in
+						*) 
+							if [ -z $(strings -d "./$arg/$arg" 2>/dev/null | grep -m 1 "AppImage") ]; then
+								echo ' ERROR: "'$arg'" is NOT an AppImage'; break
+							else
+							cd ./$arg
+								mkdir -p ./$arg.home
+								echo ' Setting $HOME to '$APPSPATH'/'$arg'/'$arg'.home for this AppImage'
+								break
+							fi
+						esac
+					fi
+				fi
+			done
+		done
+	done
+}
 
-  '-i'|'install')
+run_install() {
 	while [ -n "$1" ]; do
 
 		case $2 in
@@ -607,33 +408,17 @@ case "$1" in
 			done
 		done
 	done
+}
 
-	shift
-	;;
-
-  '-l'|'list')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
+run_list() {
 	rm -R -f $AMPATH/$arch-apps $AMPATH/list && wget -q $AMREPO/programs/$arch-apps -P $AMPATH && echo -e "$(cat $AMPATH/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> $AMPATH/list
 	cd $AMPATH && cat options >> list 2>/dev/null
 	MESSAGE=$(echo " YOU HAVE INSTALLED $(cd $APPSPATH && find -name 'remove' -printf "%h\n" 2>/dev/null | sort -u | wc -l) APPLICATIONS OUT OF $(grep -e "$" -c $AMPATH/$arch-apps) AVAILABLE")
 	echo -e "\n$MESSAGE\n\n LIST OF THE $(grep -e "$" -c $AMPATH/$arch-apps) APPLICATIONS AVAILABLE IN THE 'AM' REPOSITORY:\n\n$(cat $AMPATH/$arch-apps)" | less -I
 	echo -e "\n $MESSAGE\n"
-	;;
+}
 
-  '-o'|'overwrite')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
-
+run_overwrite() {
 	while [ -n "$1" ]; do
 		rm -f $AMPATH/.cache/overwrite-args
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/overwrite-args && echo STOP >> $AMPATH/.cache/overwrite-args
@@ -669,20 +454,9 @@ case "$1" in
 			done
 		done
 	done
+}
 
-	shift
-	;;
-
-  '-q'|'query')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
-
+run_query() {
 	rm -R -f $AMPATH/$arch-apps $AMPATH/list && wget -q $AMREPO/programs/$arch-apps -P $AMPATH && echo -e "$(cat $AMPATH/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> $AMPATH/list
 	cd $AMPATH && cat options >> list
 	ARGS=$(echo "$@" | sed 's/-q //')
@@ -692,9 +466,9 @@ case "$1" in
 	grep -i -E "$2" $AMPATH/$arch-apps | grep -i -E "$3" | grep -i -E "$4" | grep -i -E "$5" | grep -i -E "$6" | grep -i -E "$7" | grep -i -E "$8" | grep -i -E "$9"
 	echo ""
 	exit
-	;;
+}
 
-  '-r'|'remove')
+run_remove() {
 	while [ -n "$1" ]; do
 		rm -f $AMPATH/.cache/remove-args
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/remove-args && echo STOP >> $AMPATH/.cache/remove-args
@@ -738,11 +512,9 @@ case "$1" in
 			done
 		done
 	done
+}
 
-	shift
-	;;
-
-  '-R')
+run_rremove() {
 	while [ -n "$1" ]; do
 		rm -f $AMPATH/.cache/remove-args
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/remove-args && echo STOP >> $AMPATH/.cache/remove-args
@@ -779,33 +551,17 @@ case "$1" in
 			done
 		done
 	done
+}
 
-	shift
-	;;
-
-  '-s'|'sync')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
+run_sync() {
 	rm -R -f $AMPATH/$arch-apps $AMPATH/list && wget -q $AMREPO/programs/$arch-apps -P $AMPATH && echo -e "$(cat $AMPATH/$arch-apps | awk -v FS="(◆ | : )" '{print $2}')" >> $AMPATH/list
 	cd $AMPATH && cat options >> list
 	echo ""; echo ' SYNCHRONIZING "'$(echo $AMCLI | tr a-z A-Z)'" VERSION '$($AMCLIPATH -v)'...'; sleep 0.5; echo "";
 	rm -R -f $AMPATH/.cache/* 1>/dev/null; cd $AMPATH/.cache; wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./$AMCLI; cd ..;
 	mv $AMPATH/.cache/$AMCLI $AMCLIPATH; echo ' THE "'$(echo $AMCLI | tr a-z A-Z)'" SCRIPT IS NOW UPDATED TO THE '$($AMCLIPATH -v)' VERSION! '; echo ""
-	;;
+}
 
-  '-t'|'template'|'convert')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
-
+run_template() {
 	while [ -n "$1" ]; do
 		rm -f $AMPATH/.cache/template-args
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/template-args && echo STOP >> $AMPATH/.cache/template-args
@@ -1460,16 +1216,9 @@ case "$1" in
 			done
 		done
 	done
+}
 
-	shift
-	;;
-
-  '-u'|'-U'|'update')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
+run_update() {
 	while [ -n "$1" ]; do
 		case $2 in
 		'')
@@ -1513,18 +1262,9 @@ case "$1" in
 		esac
 	shift
 	done
-	;;
+}
 
-  '-w'|'web')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
-
+run_web() {
 	while [ -n "$1" ]; do
 		if curl --output /dev/null --silent --head --fail https://raw.githubusercontent.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io/main/apps/$2.md  1>/dev/null; then
 			case $2 in
@@ -1544,11 +1284,9 @@ case "$1" in
 			exit;
 		fi
 	done
+}
 
-	shift
-	;;
-
-  '--disable-completion')
+run_disable_completion() {
 	if [ $(cat ~/.bash_completion | grep -o $AMCLI | head -1) == $AMCLI  ]; then
 		grep -v 'complete -W "$(cat ~/'$APPSDIR'/appman/list 2>/dev/null)" appman' ~/.bash_completion > ~/.bash_completion.backup &&
 		mv ~/.bash_completion.backup ~/.bash_completion
@@ -1556,9 +1294,9 @@ case "$1" in
 	else
 		echo " Completion script is NOT enabled! "
 	fi
-	;;
+}
 
-  '--enable-completion')
+run_enable_completion() {
 	if test -f ~/.bash_completion; then
 		echo 'complete -W "$(cat ~/'$APPSDIR'/appman/list 2>/dev/null)" appman' >> ~/.bash_completion
 		echo " Completion enabled! "
@@ -1568,18 +1306,9 @@ case "$1" in
 	 	chmod a+x ~/.bash_completion
 		echo " Completion enabled! "
 	fi
-	;;
+}
 
-  '--launcher')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
-
+run_launcher() {
 	while [ -n "$1" ]; do
 		rm -f $AMPATH/.cache/tolaunch-args;
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/tolaunch-args && echo STOP >> $AMPATH/.cache/tolaunch-args;
@@ -1598,17 +1327,6 @@ case "$1" in
 						mkdir -p $HOME/.local/share/icons
 						chmod a+x "$arg"
 						cd "$(dirname "$arg")"
-						function appimage_extract(){
-						"$arg" --appimage-extract share/icons/*/*/* 1>/dev/null
-						"$arg" --appimage-extract usr/share/icons/*/*/* 1>/dev/null
-						"$arg" --appimage-extract share/icons/*/*/*/* 1>/dev/null
-						"$arg" --appimage-extract usr/share/icons/*/*/*/* 1>/dev/null
-						"$arg" --appimage-extract *.svg 1>/dev/null
-						"$arg" --appimage-extract *.png 1>/dev/null
-							"$arg" --appimage-extract *.desktop 1>/dev/null
-							"$arg" --appimage-extract share/applications/*.desktop 1>/dev/null
-							"$arg" --appimage-extract usr/share/applications/*.desktop 1>/dev/null
-							}
 							appimage_extract 2>/dev/null
 							echo "[Desktop Entry]" >> ./"$appimage".desktop
 							echo "Version=1.0" >> ./"$appimage".desktop
@@ -1656,20 +1374,9 @@ case "$1" in
 			done
 		done
 	done
+}
 
-	shift
-	;;
-
-  '--rollback')
-	if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
-
+run_rollback() {
 	while [ -n "$1" ]; do
 		if test -f $APPSPATH/$2/AM-updater; then
 			if grep -q ".zsync" $APPSPATH/$2/AM-updater; then
@@ -1705,20 +1412,9 @@ case "$1" in
 			echo ' No AM-updater available for '$2', cannot detect any URL!'; exit
 		fi
 	done
+}
 
-	shift
-	;;
-
-  'lock')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
-
+run_lock() {
 	while [ -n "$1" ]; do
 		if test -f $APPSPATH/$2/AM-updater; then
 			case $2 in
@@ -1737,20 +1433,9 @@ case "$1" in
 			echo ""; echo ' '$(echo $AMCLI | tr a-z A-Z)' cannot manage updates for '$2', "AM-updater" file not found!'; echo ""; exit;
 		fi
 	done
+}
 
-	shift
-	;;
-
-  'unlock')
-		if [ -n "$SUDO_COMMAND" ]; then
-		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n";
-		exit;
-	fi
-
-	case $2 in
-	'') echo " USAGE: $AMCLI $1 [ARGUMENT]"; exit;;
-	esac
-
+run_unlock() {
 	while [ -n "$1" ]; do
 		if test -f $APPSPATH/$2/AM-LOCK; then
 			case $2 in
@@ -1769,13 +1454,293 @@ case "$1" in
 			echo ""; echo ' '$2' cannot be unlocked, "AM-LOCK" file not found!'; echo ""; exit;
 		fi
 	done
+}
 
-	shift
-	;;
+show_header() {
+	printf '
+    ________     ______    ______    ___ __ __    ________    ___   __
+  /_______/\   /_____/\  /_____/\  /__//_//_/\  /_______/\  /__/\ /__/\
+  \::: _  \ \  \:::_ \ \ \:::_ \ \ \::\| \| \ \ \::: _  \ \ \::\_\\  \ \
+   \::(_)  \ \  \:(_) \ \ \:(_) \ \ \:.      \ \ \::(_)  \ \ \:. `-\  \ \
+    \:: __  \ \  \: ___\/  \: ___\/  \:.\-/\  \ \ \:: __  \ \ \:. _    \ \
+     \:.\ \  \ \  \ \ \     \ \ \     \. \  \  \ \ \:.\ \  \ \ \. \`-\  \ \
+      \__\/\__\/   \_\/      \_\/      \__\/ \__\/  \__\/\__\/  \__\/ \__\/
 
-  'version'|'-v'|'--version')
-  	echo "4.4.2-4";;
+  ▄▀█ █▀█ █▀█ █░░ █ █▀▀ ▄▀█ ▀█▀ █ █▀█ █▄░█   █▀▄▀█ ▄▀█ █▄░█ ▄▀█ █▀▀ █▀▀ █▀█
+  █▀█ █▀▀ █▀▀ █▄▄ █ █▄▄ █▀█ ░█░ █ █▄█ █░▀█   █░▀░█ █▀█ █░▀█ █▀█ █▄█ ██▄ █▀▄
+                             by Ivan Alex HC
+ ###########################################################################
+   >> A portable CLI to install/update/manage apps an AppImages locally <<
+ ###########################################################################
+ ___________________________________________________________________________
+ 				USAGE:
+ 	'$AMCLI' {OPTION}
+ 	'$AMCLI' {OPTION} {PROGRAM}
+ ___________________________________________________________________________
+ ###########################################################################
+ ___________________________________________________________________________
+ 				OPTIONS
+ 		(standard, for both "AM" AND "APPMAN")
+ ___________________________________________________________________________
+ ___________________________________________________________________________
+ -a, about		SYNOPSIS:	-a {PROGRAM}
+ DESCRIPTION: 	Shows more info about one or more apps, all the pages are
+ downloaded from https://portable-linux-apps.github.io
+ ___________________________________________________________________________
+ -b, backup		SYNOPSIS:	-b {PROGRAM}
+ DESCRIPTION:	Save the current version of one or more apps, each snapshot
+ is stored into a dedicated directory, under $HOME/.am-snapshots/$PROGRAM
+ To restore the snapshots see the "-o" option.
+ ___________________________________________________________________________
+ -c, clean		SYNOPSIS:	-c
+ DESCRIPTION:	Removes all the unnecessary files and folders.
+ ___________________________________________________________________________
+ -d, download		SYNOPSIS:	-d {PROGRAM}
+ DESCRIPTION:	Download one or more installation scripts to your desktop.
+ ___________________________________________________________________________
+ -f, files		SYNOPSIS:	-f
+ DESCRIPTION:	Shows the list of all installed programs, with sizes.
+ ___________________________________________________________________________
+ -h, help		SYNOPSIS:	-h
+ DESCRIPTION:	Prints this message.
+ ___________________________________________________________________________
+ -H, --home		SYNOPSIS:	-H {PROGRAM}
+ DESCRIPTION:	Set a dedicated $HOME directory for one or more AppImages.
+ ___________________________________________________________________________
+ -i, install		SYNOPSIS:	-i {PROGRAM}
+ DESCRIPTION:	Install one or more programs.
+ ___________________________________________________________________________
+ -l, list		SYNOPSIS:	-l
+ DESCRIPTION:	Shows the list of all the apps available in the repository.
+ ___________________________________________________________________________
+ -o, overwrite		SYNOPSIS:	-o {PROGRAM}
+ DESCRIPTION:	Overwrite the existing version of the app with a snapshot
+ saved previously (see the option "-b", above).
+ ___________________________________________________________________________
+ -q, query		SYNOPSIS:	-q {KEYWORD}
+ DESCRIPTION:	Can be used to search for keywords and terms in the list of
+ available applications packages to display matches. This can be useful if
+ you are looking for applications having a specific feature.
+ ___________________________________________________________________________
+ -r, remove		SYNOPSIS:	-r {PROGRAM}
+ DESCRIPTION:	Removes one or more apps, requires confirmation.
+ ___________________________________________________________________________
+ -R			SYNOPSIS:	-R {PROGRAM}
+ DESCRIPTION:	Removes one or more apps without asking.
+ ___________________________________________________________________________
+ -s, sync		SYNOPSIS:	-s
+ DESCRIPTION:	Updates this script to the latest version hosted.
+ ___________________________________________________________________________
+ -t, template		SYNOPSIS:	-t {PROGRAM}
+ DESCRIPTION:	This option allows you to generate a custom script from a
+ list of different templates that may be vary according to the kind of app
+ you want to upload to the "AM" repo, and the source where it is available.
+ ___________________________________________________________________________
+ -u, -U, update		SYNOPSIS:	-u
+				-u {PROGRAM}
+ DESCRIPTION: Update all the apps or just one.
+ ___________________________________________________________________________
+ -v, version		SYNOPSIS:	-v
+ DESCRIPTION:	Shows the version.
+ ___________________________________________________________________________
+ -w, web		SYNOPSIS:	-w
+ DESCRIPTION:	Shows the URLs of the sites/sources of then app.
+ ___________________________________________________________________________
+ --disable-completion	SYNOPSIS:	--disable-completion
+ DESCRIPTION:	Disable bash-completion.
+ ___________________________________________________________________________
+ --enable-completion	SYNOPSIS:	--enable-completion
+ DESCRIPTION:	Enable bash-completion to complete a keyword with the "TAB"
+ key, using the names of all installable applications available.
+ ___________________________________________________________________________
+ --launcher		SYNOPSIS:	--launcher /path/to/${APPIMAGE}
+ DESCRIPTION:	Embed one or more local AppImages in the applications menu.
+ I suggest dragging the files into the terminal to get the desired effect.
+ Launchers are located in ~/.local/share/applications/AppImages by default.
+ ___________________________________________________________________________
+ --rollback		SYNOPSIS:	--rollback {PROGRAM}
+ DESCRIPTION:	Download an older or specific version of the software you
+ are interested in (only works with Github).
+ ___________________________________________________________________________
+ lock			SYNOPSIS:	lock {PROGRAM}
+ DESCRIPTION:	Lock the selected app to the current version installed, this
+ only works if exists a dedicated "AM-updater" installed with the app.
+ ___________________________________________________________________________
+ unlock			SYNOPSIS:	unlock {PROGRAM}
+ DESCRIPTION:	Unlock updates for the selected program. This option nulls
+ the option "lock" (see above).
+ ___________________________________________________________________________
+ ___________________________________________________________________________
+ 			       EXTRA OPTIONS
+ 		       (only available for "APPMAN")
+ ___________________________________________________________________________
+ conv, convert		SYNOPSIS:	conv {PROGRAM}
+ DESCRIPTION:	Download the installation scripts for "AM" and converts them
+ to rootless installation scripts that can be installed locally.
+ ___________________________________________________________________________
+ ###########################################################################
+ ___________________________________________________________________________
+ 		     ABOUT "AM" APPLICATION MANAGER
+ ___________________________________________________________________________
+ "AM" is a software manager that deals with the management of all portable
+ apps and AppImages out there. It is distributed in two versions:
+ ◆ "AM", the main version that integrates applications at the system level,
+ installing them in /opt, for all the users;
+ ◆ "AppMan", the portable and "rootless" version that installs all the apps
+ in the $HOME directory, integrating additional options to convert all the
+ installation scripts from "AM".
+ ___________________________________________________________________________
+ 				  SITES
+ ___________________________________________________________________________
+ HTTPS://PORTABLE-LINUX-APPS.GITHUB.IO 	(main website)
+ HTTPS://GITHUB.COM/IVAN-HC/APPMAN
+ HTTPS://GITHUB.COM/IVAN-HC/AM-APPLICATION-MANAGER
+ ___________________________________________________________________________
+ ###########################################################################'
+}
 
-  *) exec $AMCLIPATH ;;
+case "$1" in
+	'') printf "\n USAGE: '$AMCLI [option]'\n        '$AMCLI [option] [argument]'\n\n Run the '$AMCLI -h' command to find out more\n\n";;
+	'-h'|'help') show_header | less;;
+
+	'-a'|'about')
+		if_sudo_not_needed
+		use_argument
+		run_about
+		shift
+		;;
+
+	'-b'|'backup')
+		if_sudo_not_needed
+		use_argument
+		run_backup
+		shift
+		;;
+
+	'-c'|'clean')
+		if_sudo_not_needed
+		run_clean
+		;;
+
+	'-conv'|'convert')
+		run_convert
+		shift
+		;;
+
+	'-d'|'download')
+		if_sudo_not_needed
+		use_argument
+		run_download
+		shift
+		;;
+
+	'-f'|'files')
+		if_sudo_not_needed
+		run_files
+		;;
+
+	'-H'|'--home')
+		if_sudo_not_needed
+		use_argument
+		run_home
+		;;
+
+	'-i'|'install')
+		run_install
+		shift
+		;;
+
+	'-l'|'list')
+		if_sudo_not_needed
+		run_list
+		;;
+
+	'-o'|'overwrite')
+		if_sudo_not_needed
+		use_argument
+		run_overwrite
+		shift
+		;;
+
+	'-q'|'query')
+		if_sudo_not_needed
+		use_argument
+		run_query
+		;;
+
+	'-r'|'remove')
+		run_remove
+		shift
+		;;
+
+	'-R')
+		run_rremove
+		shift
+		;;
+
+	'-s'|'sync')
+		if_sudo_not_needed
+		run_sync
+		;;
+
+	'-t'|'template'|'convert')
+		if_sudo_not_needed
+		use_argument
+		run_template
+		shift
+		;;
+
+	'-u'|'-U'|'update')
+		if_sudo_not_needed
+		run_update
+		;;
+
+	'-w'|'web')
+		if_sudo_not_needed
+		use_argument
+		run_web
+		shift
+		;;
+
+	'--disable-completion')
+		run_disable_completion
+		;;
+
+	'--enable-completion')
+		run_enable_completion
+		;;
+
+	'--launcher')
+		if_sudo_not_needed
+		use_argument
+		run_launcher
+		shift
+		;;
+
+	'--rollback')
+		if_sudo_not_needed
+		use_argument
+		run_rollback
+		shift
+		;;
+
+	'lock')
+		if_sudo_not_needed
+		use_argument
+		run_lock
+		shift
+		;;
+
+	'unlock')
+		if_sudo_not_needed
+		use_argument
+		run_unlock
+		shift
+		;;
+
+	'version'|'-v'|'--version')
+		echo "4.4.2-4";;
+
+	*) exec $AMCLIPATH ;;
 
 esac
