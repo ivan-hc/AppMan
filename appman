@@ -1601,146 +1601,124 @@ show_header() {
 
 case "$1" in
 	'') printf "\n USAGE: '$AMCLI [option]'\n        '$AMCLI [option] [argument]'\n\n Run the '$AMCLI -h' command to find out more\n\n";;
+
 	'-h'|'help') show_header | less;;
 
 	'-a'|'about')
 		if_sudo_not_needed
 		use_argument
 		run_about
-		shift
-		;;
+		shift;;
 
 	'-b'|'backup')
 		if_sudo_not_needed
 		use_argument
 		run_backup
-		shift
-		;;
+		shift;;
 
 	'-c'|'clean')
 		if_sudo_not_needed
-		run_clean
-		;;
+		run_clean;;
 
 	'-conv'|'convert')
 		run_convert
-		shift
-		;;
+		shift;;
 
 	'-d'|'download')
 		if_sudo_not_needed
 		use_argument
 		run_download
-		shift
-		;;
+		shift;;
 
 	'-f'|'files')
 		if_sudo_not_needed
-		run_files
-		;;
+		run_files;;
 
 	'-H'|'--home')
 		if_sudo_not_needed
 		use_argument
-		run_home
-		;;
+		run_home;;
 
 	'-i'|'install')
 		run_install
-		shift
-		;;
+		shift;;
 
 	'-l'|'list')
 		if_sudo_not_needed
-		run_list
-		;;
+		run_list;;
 
 	'-o'|'overwrite')
 		if_sudo_not_needed
 		use_argument
 		run_overwrite
-		shift
-		;;
+		shift;;
 
 	'-q'|'query')
 		if_sudo_not_needed
 		use_argument
-		run_query
-		;;
+		run_query;;
 
 	'-r'|'remove')
 		run_remove
-		shift
-		;;
+		shift;;
 
 	'-R')
 		run_rremove
-		shift
-		;;
+		shift;;
 
 	'-s'|'sync')
 		if_sudo_not_needed
-		run_sync
-		;;
+		run_sync;;
 
 	'-t'|'template'|'convert')
 		if_sudo_not_needed
 		use_argument
 		run_template
-		shift
-		;;
+		shift;;
 
 	'-u'|'-U'|'update')
 		if_sudo_not_needed
-		run_update
-		;;
+		run_update;;
 
 	'-w'|'web')
 		if_sudo_not_needed
 		use_argument
 		run_web
-		shift
-		;;
+		shift;;
 
 	'--disable-completion')
-		run_disable_completion
-		;;
+		run_disable_completion;;
 
 	'--enable-completion')
-		run_enable_completion
-		;;
+		run_enable_completion;;
 
 	'--launcher')
 		if_sudo_not_needed
 		use_argument
 		run_launcher
-		shift
-		;;
+		shift;;
 
 	'--rollback')
 		if_sudo_not_needed
 		use_argument
 		run_rollback
-		shift
-		;;
+		shift;;
 
 	'lock')
 		if_sudo_not_needed
 		use_argument
 		run_lock
-		shift
-		;;
+		shift;;
 
 	'unlock')
 		if_sudo_not_needed
 		use_argument
 		run_unlock
-		shift
-		;;
+		shift;;
 
 	'version'|'-v'|'--version')
 		echo "4.4.2-4";;
 
-	*) exec $AMCLIPATH ;;
+	*) exec $AMCLIPATH;;
 
 esac
