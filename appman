@@ -691,8 +691,10 @@ case "$1" in
 										echo -ne " ◆ RUNNING THE INSTALLATION SCRIPT FOR $(echo '"'$arg'"' | tr a-z A-Z)... \r" && sleep 3 &&
 										$SUDOCOMMAND ./$arg | less -E && echo -ne "                                                                          \r" &&
 										echo -ne " ◆ CONFIGURING $(echo '"'$arg'"' | tr a-z A-Z)...\r" && sleep 2 && echo -ne "                                                                          \r" &&
-										mkdir $APPSPATH/$(cd $APPSPATH && ls -td * | head -1)/.am-installer &&
-										wget -q $AMREPO/programs/$arch/$arg -O $APPSPATH/$(cd $APPSPATH && ls -td * | head -1)/.am-installer/$arg &&
+										if test -f $APPSPATH/$(cd $APPSPATH && ls -td * | head -1)/AM-updater; then
+											mkdir $APPSPATH/$(cd $APPSPATH && ls -td * | head -1)/.am-installer &&
+											wget -q $AMREPO/programs/$arch/$arg -O $APPSPATH/$(cd $APPSPATH && ls -td * | head -1)/.am-installer/$arg
+										fi &&
 										sed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/$APPSDIR#g" ~/.local/share/applications/AM*.desktop
 										sed -i "s#Exec=$arg#Exec=$(xdg-user-dir USER)/.local/bin/$arg#g" ~/.local/share/applications/AM*.desktop
 										sed -i 's#Exec=$APP#Exec='$(xdg-user-dir USER)'/.local/bin/$APP#g' ~/.local/share/applications/AM*.desktop
@@ -1925,7 +1927,7 @@ case "$1" in
 	;;
 
   'version'|'-v'|'--version')
-  	echo "4.4.3";;
+  	echo "4.4.3-1";;
 
   *) exec $AMCLIPATH ;;
 
