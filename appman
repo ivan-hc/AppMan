@@ -691,8 +691,8 @@ case "$1" in
 										echo -ne " ◆ RUNNING THE INSTALLATION SCRIPT FOR $(echo '"'$arg'"' | tr a-z A-Z)... \r" && sleep 3 &&
 										$SUDOCOMMAND ./$arg | less -E && echo -ne "                                                                          \r" &&
 										echo -ne " ◆ CONFIGURING $(echo '"'$arg'"' | tr a-z A-Z)...\r" && sleep 2 && echo -ne "                                                                          \r" &&
-										$SUDOCOMMAND mkdir $APPSPATH/$(cd $APPSPATH && ls -td * | head -1)/.AM-installer &&
-										echo "$SHA" >> $APPSPATH/$(cd $APPSPATH && ls -td * | head -1)/.AM-installer/$arg &&
+										mkdir $APPSPATH/$(cd $APPSPATH && ls -td * | head -1)/.am-installer &&
+										echo "$SHA" >> $APPSPATH/$(cd $APPSPATH && ls -td * | head -1)/.am-installer/$arg &&
 										sed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/$APPSDIR#g" ~/.local/share/applications/AM*.desktop
 										sed -i "s#Exec=$arg#Exec=$(xdg-user-dir USER)/.local/bin/$arg#g" ~/.local/share/applications/AM*.desktop
 										sed -i 's#Exec=$APP#Exec='$(xdg-user-dir USER)'/.local/bin/$APP#g' ~/.local/share/applications/AM*.desktop
