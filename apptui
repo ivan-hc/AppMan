@@ -8,6 +8,49 @@ border=double
 #color=3
 color=$(( RANDOM % 255 + 1 ))
 
+install_gum() {
+	nix-env -iA nixpkgs.gum || nix run "github:charmbracelet/gum" -- --help
+
+  sudo mkdir -p /etc/apt/keyrings
+	curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+	echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+	sudo apt update && sudo apt install gum
+
+	echo '[charm]
+name=Charm
+baseurl=https://repo.charm.sh/yum/
+enabled=1
+! command -v gum >/dev/null 2>&1gpgcheck=1
+gpgkey=https://repo.charm.sh/yum/gpg.key' | sudo tee /etc/yum.repos.d/charm.repo
+  sudo yum install gum
+}
+
+gum_install () {
+	if ! command -v gum >/dev/null 2>&1; then
+		local distro;local cmd;local usesudo
+		declare -A pkgmgr
+		pkgmgr=( \
+[arch]="pacman -S" \
+[alpine]="apk add" \
+[debian]="sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg && echo \"deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *\" | sudo tee /etc/apt/sources.list.d/charm.list && sudo apt update && sudo apt install gum" \
+[ubuntu]="sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg && echo \"deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *\" | sudo tee /etc/apt/sources.list.d/charm.list && sudo apt update && sudo apt install gum" \
+[voidlinux]="xbps-install" \
+[go]="go install" \
+)
+		distro=$(cat /etc/os-release | tr [:upper:] [:lower:] | grep -Poi '(debian|ubuntu|red hat|centos|arch|alpine|voidlinux)' | uniq)
+		cmd="${pkgmgr[$distro]}"
+		if [[ $1 ]]; then
+			[[ ! $EUID -eq 0 ]] && usesudo=sudo
+			echo "
+Installing gum using command: $usesudo $cmd $@
+"
+			$usesudo $cmd $@
+		else
+			echo $cmd
+		fi
+	fi
+}
+
 appimage_extract() {
 	"$arg" --appimage-extract share/icons/*/*/* 1>/dev/null
 	"$arg" --appimage-extract usr/share/icons/*/*/* 1>/dev/null
@@ -335,18 +378,16 @@ H Help
 		'--user' ) run_;;
 		'clean' ) run_clean;;
 		'convert script(s) to appman' ) run_convert;;
-#		'' ) run_;;
+		#		'' ) run_;;
 		'h appman/AM help' ) run_help;;
 		'H Help' ) show_help;;
 		"0 EXIT $progname" ) exit 0;;
 	esac
 }
 
+gum_install gum
 while true
 do
-	if ! command -v gum >/dev/null 2>&1; then
-		echo 'You are missing gum...!' && exit 1
-	fi
 	show_headers
 	menu_main
 done
