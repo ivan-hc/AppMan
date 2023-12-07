@@ -444,39 +444,25 @@ $(run_files | grep -v "^$" | sed 1d | cut -d' ' -f3-5)")
 }
 
 menu_main() {
-	start=$(echo "available programs
-info about program(s)
-Install program(s)
-update program(s)
-backup program(s)
-overwrite program
-download program(s)
-lock program(s)
-unlock program(s)
-query keyword
-remove program(s)
-remove program(s) without ask
-update appman
-template
-program(s) web
-disable completion
-enable completion
-home program(s)
-launcher
-rollback
---user
-clean
-convert script(s) to appman
-h appman/AM help
-H Help
-0 EXIT $progname" | gum filter --height 26)
+	start=$(echo "1 available programs
+2 info about program(s)
+3 home program(s)
+4 Install program(s)
+5 update program(s)
+6 remove program(s)
+7 remove program(s) without ask
+MENU Avanced
+apptui Help
+appman/AM Help
+q EXIT $progname" | gum filter --height 11)
 	case $start in
-		'info about program(s)' ) run_about;;
-		'Install program(s)' ) run_install;;
-		'remove program(s)' ) run_remove;;
-		'remove program(s) without ask' ) run_remove_no_asking;;
-		'available programs' ) run_list;;
-		'update program(s)' ) run_update;;
+#		'' ) run_;;
+		'2 info about program(s)' ) run_about;;
+		'4 Install program(s)' ) run_install;;
+		'6 remove program(s)' ) run_remove;;
+		'7 remove program(s) without ask' ) run_remove_no_asking;;
+		'1 available programs' ) run_list;;
+		'5 update program(s)' ) run_update;;
 		'backup program(s)' ) run_backup;;
 		'download program(s)' ) run_download;;
 		'lock program(s)' ) run_lock;;
@@ -488,17 +474,74 @@ H Help
 		'program(s) web' ) run_web;;
 		'disable completion' ) run_disable_completion;;
 		'enable completion' ) run_enable_completion;;
-		'home program(s)' ) run_home;;
+		'3 home program(s)' ) run_home;;
 		'launcher' ) run_launcher;;
 		'rollback' ) run_rollback;;
 		'--user' ) run_;;
 		'clean' ) run_clean;;
 		'convert script(s) to appman' ) run_convert;;
-		#		'' ) run_;;
-		'h appman/AM help' ) run_help;;
-		'H Help' ) show_help;;
-		"0 EXIT $progname" ) exit 0;;
+		'appman/AM Help' ) run_help;;
+		'MENU Avanced' ) menu_advanced;;
+		'apptui help' ) show_help;;
+		"q EXIT $progname" ) exit 0;;
 	esac
+}
+
+menu_advanced() {
+	while true
+	do
+		start=$(echo "1 backup program(s)
+2 restore backed program
+3 download program(s)
+4 lock program(s)
+5 unlock program(s)
+6 query keyword
+7 template
+8 launcher
+9 rollback
+clean
+update appman/AM
+enable completion
+disable completion
+--user
+convert script(s) to appman
+change used script
+Help
+back to MAIN MENU
+q EXIT $progname" | gum filter --height 19)
+		case $start in
+#			'' ) run_;;
+			'info about program(s)' ) run_about;;
+			'Install program(s)' ) run_install;;
+			'remove program(s)' ) run_remove;;
+			'remove program(s) without ask' ) run_remove_no_asking;;
+			'available programs' ) run_list;;
+			'update program(s)' ) run_update;;
+			'1 backup program(s)' ) run_backup;;
+			'3 download program(s)' ) run_download;;
+			'4 lock program(s)' ) run_lock;;
+			'5 unlock program(s)' ) run_unlock;;
+			'2 restore backed program' ) run_overwrite;;
+			'6 query keyword' ) run_query;;
+			'update appman/AM' ) run_sync;;
+			'7 template' ) run_template;;
+			'program(s) web' ) run_web;;
+			'disable completion' ) run_disable_completion;;
+			'enable completion' ) run_enable_completion;;
+			'home program(s)' ) run_home;;
+			'8 launcher' ) run_launcher;;
+			'9 rollback' ) run_rollback;;
+			'--user' ) run_;;
+			'clean' ) run_clean;;
+			'convert script(s) to appman' ) run_convert;;
+			'change used script' ) what_to_use;;
+			'a appman/AM help' ) run_help;;
+			'm Avanced menu' ) menu_advanced;;
+			'Help' ) show_help;;
+			'back to MAIN MENU') break;;
+			"q EXIT $progname" ) exit 0;;
+		esac
+	done
 }
 
 gum_install
