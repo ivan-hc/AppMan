@@ -157,7 +157,8 @@ run_clean() {
 	$appman clean
 }
 run_convert() {
-	header=""
+	header="Download the installation scripts for "AM" and converts them
+ to rootless installation scripts that can be installed locally."
 	gum_choose_installed_one
 	$appman convert ${program}
 }
@@ -206,7 +207,7 @@ run_remove_no_asking() {
 	$appman -R ${programs}
 }
 run_sync() {
-	header="Updates this script to the latest version hosted."
+	header="Updates AppMan/AM to the latest version hosted."
 	$appman sync
 }
 run_template() {
