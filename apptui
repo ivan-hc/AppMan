@@ -5,10 +5,13 @@ version="0.01"
 appman="./appman"
 appman_version=$($appman version)
 am_version=$(am version)
-border=double
-#color=3
-color=$(( RANDOM % 255 + 1 ))
 
+# gum settings
+border=double
+color=$(( RANDOM % 255 + 1 ))
+#color=3
+
+# Install gum
 #install_gum() {
   #nix-env -iA nixpkgs.gum || nix run "github:charmbracelet/gum" -- --help
   #sudo mkdir -p /etc/apt/keyrings
@@ -105,15 +108,17 @@ install_gum_go() {
 	go install github.com/charmbracelet/gum@latest
 }
 
+# template for functions
 template() {
+	# working with new programs
 	header=""
 	gum_choose_new_programs
 	$appman  ${new_programs}
-
 	gum_choose_installed
+	# working with already installed programs
 	$appman  ${programs}
 }
-
+#TODO
 appimage_extract() {
 	"$arg" --appimage-extract share/icons/*/*/* 1>/dev/null
 	"$arg" --appimage-extract usr/share/icons/*/*/* 1>/dev/null
@@ -133,6 +138,7 @@ run_launcher() {
 	$appman --launcher ${path_to_appimage}
 }
 
+# Hopefully Done
 run_about() {
 	header="Shows more info about one or more apps, all the pages are
  downloaded from https://portable-linux-apps.github.io"
@@ -259,6 +265,7 @@ is_completion_enabled() {
 		echo "  disabled"
 	fi
 }
+# apptui
 show_help() {
 	gum style --border $border --border-foreground $color '                  ▄▀█ █▀█ █▀█ ▀█▀ █ █ █
                   █▀█ █▀▀ █▀▀  █  █▄█ █
