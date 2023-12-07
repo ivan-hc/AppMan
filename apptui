@@ -8,47 +8,100 @@ border=double
 #color=3
 color=$(( RANDOM % 255 + 1 ))
 
-install_gum() {
-	nix-env -iA nixpkgs.gum || nix run "github:charmbracelet/gum" -- --help
-
-  sudo mkdir -p /etc/apt/keyrings
+#install_gum() {
+  #nix-env -iA nixpkgs.gum || nix run "github:charmbracelet/gum" -- --help
+  #sudo mkdir -p /etc/apt/keyrings
+	#curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+	#echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+	#sudo apt update && sudo apt install gum
+  #echo '[charm]
+#name=Charm
+#baseurl=https://repo.charm.sh/yum/
+#enabled=1
+#! command -v gum >/dev/null 2>&1gpgcheck=1
+#gpgkey=https://repo.charm.sh/yum/gpg.key' | sudo tee /etc/yum.repos.d/charm.repo
+	#sudo yum install gum
+#}
+#gum_install () {
+	#if ! command -v gum >/dev/null 2>&1; then
+		#local distro;local cmd;local usesudo
+		#declare -A pkgmgr
+		#pkgmgr=( \
+#[arch]="pacman -S" \
+#[alpine]="apk add" \
+#[debian]="sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg && echo \"deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *\" | sudo tee /etc/apt/sources.list.d/charm.list && sudo apt update && sudo apt install gum" \
+#[ubuntu]="sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg && echo \"deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *\" | sudo tee /etc/apt/sources.list.d/charm.list && sudo apt update && sudo apt install gum" \
+#[voidlinux]="xbps-install" \
+#[go]="go install" \
+#)
+		#distro=$(cat /etc/os-release | tr [:upper:] [:lower:] | grep -Poi '(debian|ubuntu|red hat|centos|arch|alpine|voidlinux)' | uniq)
+		#cmd="${pkgmgr[$distro]}"
+		#if [[ $1 ]]; then
+			#[[ ! $EUID -eq 0 ]] && usesudo=sudo
+			#printf '\nInstalling gum using command: %s %s %s\n' "$usesudo" "$cmd" "$@"
+			#$usesudo $cmd $@
+		#else
+			#echo $cmd
+		#fi
+	#fi
+	#if ! command -v gum >/dev/null 2>&1; then
+		#echo "Can't chew it without gum! Exiting!"
+		#exit 1
+	#fi
+#}
+gum_install() {
+	if ! command -v gum >/dev/null 2>&1; then
+		if [ -f /etc/os-release ]; then
+			if [ -f /usr/bin/pacman ]; then
+				install_gum_pacman
+			elif [ -f /usr/bin/apt ]; then
+				install_gum_apt
+			elif [ -f /usr/bin/apk ]; then
+				install_gum_apk
+			elif [ -f /usr/bin/xbps-install ]; then
+				install_gum_xbps
+			elif [ -f /usr/bin/yum ]; then
+				install_gum_yum
+			elif [ -f /usr/bin/nix ]; then
+				install_gum_nix
+			elif [ -f /usr/bin/go ]; then
+				install_gum_go
+			else
+				echo "Don't know how to install gum here!" && exit 1
+			fi
+		fi
+	fi
+}
+install_gum_pacman() {
+	sudo pacman -S gum
+}
+install_gum_apt() {
+	sudo mkdir -p /etc/apt/keyrings
 	curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
 	echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
-	sudo apt update && sudo apt install gum
-
+	sudo apt update
+	sudo apt install gum
+}
+install_gum_apk() {
+	sudo apk add gum
+}
+install_gum_xbps() {
+	sudo xbps-install gum
+}
+install_gum_yum() {
 	echo '[charm]
 name=Charm
 baseurl=https://repo.charm.sh/yum/
 enabled=1
-! command -v gum >/dev/null 2>&1gpgcheck=1
+gpgcheck=1
 gpgkey=https://repo.charm.sh/yum/gpg.key' | sudo tee /etc/yum.repos.d/charm.repo
-  sudo yum install gum
+	sudo yum install gum
 }
-
-gum_install () {
-	if ! command -v gum >/dev/null 2>&1; then
-		local distro;local cmd;local usesudo
-		declare -A pkgmgr
-		pkgmgr=( \
-[arch]="pacman -S" \
-[alpine]="apk add" \
-[debian]="sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg && echo \"deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *\" | sudo tee /etc/apt/sources.list.d/charm.list && sudo apt update && sudo apt install gum" \
-[ubuntu]="sudo mkdir -p /etc/apt/keyrings && curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg && echo \"deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *\" | sudo tee /etc/apt/sources.list.d/charm.list && sudo apt update && sudo apt install gum" \
-[voidlinux]="xbps-install" \
-[go]="go install" \
-)
-		distro=$(cat /etc/os-release | tr [:upper:] [:lower:] | grep -Poi '(debian|ubuntu|red hat|centos|arch|alpine|voidlinux)' | uniq)
-		cmd="${pkgmgr[$distro]}"
-		if [[ $1 ]]; then
-			[[ ! $EUID -eq 0 ]] && usesudo=sudo
-			echo "
-Installing gum using command: $usesudo $cmd $@
-"
-			$usesudo $cmd $@
-		else
-			echo $cmd
-		fi
-	fi
+install_gum_nix() {
+	nix-env -iA nixpkgs.gum || nix run "github:charmbracelet/gum" -- --help
+}
+install_gum_go() {
+	go install github.com/charmbracelet/gum@latest
 }
 
 appimage_extract() {
