@@ -2,9 +2,6 @@
 
 progname="${progname:="${0##*/}"}"
 version="0.01"
-appman="./appman"
-appman_version=$($appman version)
-am_version=$(am version)
 
 # gum settings
 border=double
@@ -107,7 +104,60 @@ install_gum_nix() {
 install_gum_go() {
 	go install github.com/charmbracelet/gum@latest
 }
-
+# AppMan or AM?
+what_to_use() {
+	if command -v am >/dev/null 2>&1 && command -v appman >/dev/null 2>&1; then
+		header="Choose using installed AppMan or AM script!"
+		appman="appman"
+		appman_version=$($appman version)
+		am_version=$(am version)
+		gum_filter_what_to_use1
+	elif command -v am >/dev/null 2>&1 && command -v ./appman >/dev/null 2>&1; then
+		header="Choose using AppMan or AM script!"
+		appman="./appman"
+		appman_version=$($appman version)
+		am_version=$(am version)
+		gum_filter_what_to_use2
+	elif command -v am >/dev/null 2>&1 && command -v ./appman >/dev/null 2>&1 && command -v appman >/dev/null 2>&1; then
+		header="Choose using AppMan or AM script!"
+		appman="./appman"
+		appman_version=$($appman version)
+		am_version=$(am version)
+		gum_filter_what_to_use3
+	elif command -v appman >/dev/null 2>&1; then
+		appman="appman"
+		appman_version=$($appman version)
+	elif command -v ./appman >/dev/null 2>&1; then
+		appman="./appman"
+		appman_version=$($appman version)
+	elif command -v am >/dev/null 2>&1; then
+		am_version=$(am version)
+		appman="am"
+	fi
+}
+# gum filter
+gum_filter_what_to_use1() {
+	choice=$(gum filter --header="${header}" --header.border-foreground $color --header.border $border --no-fuzzy "AppMan (as user)" "AM (as root)")
+	case $choice in
+		'AppMan (as user)' ) appman="appman";;
+		'AM (as root)' ) appman="am";;
+	esac
+}
+gum_filter_what_to_use2() {
+	choice=$(gum filter --header="${header}" --header.border-foreground $color --header.border $border --no-fuzzy "AppMan (Same dir)" "AM (as root)")
+	case $choice in
+		'AppMan (Same dir)' ) appman="./appman";;
+		'AM (as root)' ) appman="am";;
+	esac
+}
+gum_filter_what_to_use3() {
+	choice=$(gum filter --header="${header}" --header.border-foreground $color --header.border $border --no-fuzzy "AppMan (as user)" "AppMan (Same dir)" "AM (as root)")
+	case $choice in
+		'AppMan (as user)' ) appman="appman";;
+		'AppMan (Same dir)' ) appman="./appman";;
+		'AM (as root)' ) appman="am";;
+	esac
+}
 gum_filter_installed() {
 	programs=$(run_files | grep -v "^$" | sed 1d | cut -d' ' -f3-5 | gum filter --header="${header}" --header.border-foreground $color --header.border $border --no-limit --no-fuzzy | cut -d' ' -f1)
 	echo $programs
@@ -375,7 +425,8 @@ show_headers() {
 $version    by zenobit ")
 	header1=$(gum style --padding "0 1" --border $border --border-foreground $(( RANDOM % 255 + 1 )) "  Simple appman/AM TUI using gum
  appman $appman_version AM $am_version")
-	header2=$(gum style --padding "0 1" --border $border --border-foreground $(( RANDOM % 255 + 1 )) " completion:
+	header2=$(gum style --padding "0 1" --border $border --border-foreground $(( RANDOM % 255 + 1 )) "  Using: $appman
+ completion:
 $(is_completion_enabled)")
 	header3=$(gum style --padding "0 1" --border $border --border-foreground $(( RANDOM % 255 + 1 )) "workdir:
  $(pwd)")
@@ -446,7 +497,8 @@ H Help
 	esac
 }
 
-gum_install gum
+gum_install
+what_to_use
 while true
 do
 	show_headers
