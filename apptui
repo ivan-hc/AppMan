@@ -105,6 +105,15 @@ install_gum_go() {
 	go install github.com/charmbracelet/gum@latest
 }
 
+template() {
+	header=""
+	gum_choose_new_programs
+	$appman  ${new_programs}
+
+	gum_choose_installed
+	$appman  ${programs}
+}
+
 appimage_extract() {
 	"$arg" --appimage-extract share/icons/*/*/* 1>/dev/null
 	"$arg" --appimage-extract usr/share/icons/*/*/* 1>/dev/null
@@ -116,14 +125,12 @@ appimage_extract() {
 	"$arg" --appimage-extract share/applications/*.desktop 1>/dev/null
 	"$arg" --appimage-extract usr/share/applications/*.desktop 1>/dev/null
 }
-
-template() {
-	header=""
-	gum_choose_new_programs
-	./appman  ${new_programs}
-
-	gum_choose_installed
-	./appman  ${programs}
+run_launcher() {
+	header="Embed one or more local AppImages in the applications menu.
+ I suggest dragging the files into the terminal to get the desired effect.
+ Launchers are located in ~/.local/share/applications/AppImages by default."
+	echo "#TODO"
+	$appman --launcher ${path_to_appimage}
 }
 
 run_about() {
@@ -138,6 +145,12 @@ run_backup() {
  To restore the snapshots use overwrite option."
 	gum_choose_installed
 	$appman backup ${programs}
+}
+run_rollback() {
+	header="Download an older or specific version of the software you
+ are interested in (only works with Github)."
+	gum_choose_installed
+	$appman --rollback ${programs}
 }
 run_clean() {
 	header="Removes all the unnecessary files and folders."
@@ -210,10 +223,6 @@ run_update() {
 run_web() {
 	header="Shows the URLs of the sites/sources of then app."
 	gum_choose_new_programs
-}
-run_disable_completion() {
-	header="Disable bash-completion."
-	./appman --disable-completion
 	$appman web ${new_programs}
 }
 run_enable_completion() {
@@ -221,18 +230,9 @@ run_enable_completion() {
  key, using the names of all installable applications available."
 	$appman --enable-completion
 }
-run_launcher() {
-	header="Embed one or more local AppImages in the applications menu.
- I suggest dragging the files into the terminal to get the desired effect.
- Launchers are located in ~/.local/share/applications/AppImages by default."
-	echo "#TODO"
-	./appman --launcher ${path_to_appimage}
-}
-run_rollback() {
-	header="Download an older or specific version of the software you
- are interested in (only works with Github)."
-	gum_choose_installed
-	./appman --rollback ${programs}
+run_disable_completion() {
+	header="Disable bash-completion."
+	$appman --disable-completion
 }
 run_lock() {
 	header="Lock the selected app to the current version installed, this
