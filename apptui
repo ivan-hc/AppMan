@@ -2,7 +2,8 @@
 
 progname="${progname:="${0##*/}"}"
 version="0.01"
-appman_version=$(./appman version)
+appman="./appman"
+appman_version=$($appman version)
 am_version=$(am version)
 border=double
 #color=3
@@ -129,78 +130,78 @@ run_about() {
 	header="Shows more info about one or more apps, all the pages are
  downloaded from https://portable-linux-apps.github.io"
 	gum_choose_new_programs
-	./appman about ${new_programs}
+	$appman about ${new_programs}
 }
 run_backup() {
 	header="Save the current version of one or more apps, each snapshot is
  stored into a dedicated directory, under $HOME/.am-snapshots/$PROGRAM
  To restore the snapshots use overwrite option."
 	gum_choose_installed
-	./appman backup ${programs}
+	$appman backup ${programs}
 }
 run_clean() {
 	header="Removes all the unnecessary files and folders."
-	./appman clean
+	$appman clean
 }
 run_convert() {
 	header=""
 	gum_choose_installed_one
-	./appman convert $program
+	$appman convert ${program}
 }
 run_download() {
 	header="Download one or more installation scripts to your desktop."
 	gum_choose_new_programs
-	./appman download ${new_programs}
+	$appman download ${new_programs}
 }
 run_files() {
-	./appman files
+	$appman files
 }
 run_home() {
 	header="Set a dedicated $HOME directory for one or more AppImages."
 	gum_choose_installed
-	./appman --home ${programs}
+	$appman --home ${programs}
 }
 run_install() {
 	header="Install one or more programs."
 	gum_choose_new_programs
-	./appman install ${new_programs}
+	$appman install ${new_programs}
 }
 run_list() {
 	header="Shows the list of all the apps available in the repository."
-	./appman list
+	$appman list
 }
 run_overwrite() {
 	header="Overwrite the existing version of the app with a snapshot saved previously."
 	gum_choose_installed
-	./appman overwrite ${programs}
+	$appman overwrite ${programs}
 }
 run_query() {
 	header="Can be used to search for keywords and terms in the list of
  available applications packages to display matches. This can be useful
  if you are looking for applications having a specific feature."
 	gum_choose_new_programs
-	./appman query ${new_programs}
+	$appman query ${new_programs}
 }
 run_remove() {
 	header="Removes one or more apps, requires confirmation."
 	gum_choose_installed
-	./appman remove ${programs}
+	$appman remove ${programs}
 }
 run_remove_no_asking() {
 	header="Removes one or more apps without asking."
 	gum_choose_installed
-	./appman -R ${programs}
+	$appman -R ${programs}
 }
 run_sync() {
 	header="Updates this script to the latest version hosted."
-	./appman sync
+	$appman sync
 }
 run_template() {
 	header="This option allows you to generate a custom script from a list of
  different templates that may be vary according to the kind of app you
  want to upload to the "AM" repo, and the source where it is available."
 	echo "#TODO"
-	./appman template $program
+	$appman template $program
 }
 run_update() {
 	header="Update all the apps or just one."
@@ -209,16 +210,16 @@ run_update() {
 run_web() {
 	header="Shows the URLs of the sites/sources of then app."
 	gum_choose_new_programs
-	./appman web ${new_programs}
 }
 run_disable_completion() {
 	header="Disable bash-completion."
 	./appman --disable-completion
+	$appman web ${new_programs}
 }
 run_enable_completion() {
 	header="Enable bash-completion to complete a keyword with the "TAB"
  key, using the names of all installable applications available."
-	./appman --enable-completion
+	$appman --enable-completion
 }
 run_launcher() {
 	header="Embed one or more local AppImages in the applications menu.
@@ -237,17 +238,17 @@ run_lock() {
 	header="Lock the selected app to the current version installed, this
  only works if exists a dedicated "AM-updater" installed with the app."
 	gum_choose_installed
-	./appman lock ${programs}
+	$appman lock ${programs}
 }
 run_unlock() {
 	header="Unlock updates for the selected program. This option nulls
  the option lock."
 	gum_choose_installed
-	./appman unlock ${programs}
+	$appman unlock ${programs}
 }
 run_help() {
 	header="Prints appman help message."
-	./appman help
+	$appman help
 }
 
 is_completion_enabled() {
@@ -376,7 +377,7 @@ gum_choose_installed_one() {
 	echo $program
 }
 gum_choose_new_programs() {
-	new_programs=$(./appman -l | grep -v "^\$" | sed 1,2d | sed '$ d' | cut -d' ' -f2-23 | gum filter --header="${header}" --header.border-foreground $color --header.border $border --no-limit --no-fuzzy | cut -d' ' -f1)
+	new_programs=$($appman -l | grep -v "^\$" | sed 1,2d | sed '$ d' | cut -d' ' -f2-23 | gum filter --header="${header}" --header.border-foreground $color --header.border $border --no-limit --no-fuzzy | cut -d' ' -f1)
 	echo $new_programs
 }
 
