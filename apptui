@@ -352,9 +352,9 @@ show_help() {
 '
 }
 show_headers() {
-	gum style --border $border --border-foreground $color "   ▄▀█ █▀█ █▀█ ▀█▀ █ █ █   
-   █▀█ █▀▀ █▀▀  █  █▄█ █   
-     $version      by zenobit"
+	logo=$(gum style --border $border --border-foreground $color --align right " ▄▀█ █▀█ █▀█ ▀█▀ █ █ █ 
+ █▀█ █▀▀ █▀▀  █  █▄█ █ 
+$version    by zenobit ")
 	header1=$(gum style --padding "0 1" --border $border --border-foreground $(( RANDOM % 255 + 1 )) "  Simple appman/AM TUI using gum
  appman $appman_version AM $am_version")
 	header2=$(gum style --padding "0 1" --border $border --border-foreground $(( RANDOM % 255 + 1 )) " completion:
@@ -366,7 +366,8 @@ $(run_files | grep -v "^$" | sed 1d | cut -d' ' -f3-5)")
 
 	header1_2=$(gum join "$header1" "$header2")
 	header3_4=$(gum join "$header3" "$header4")
-	gum join --align center --vertical "$header1_2" "$header3_4"
+	headers_logo=$(gum join --align center --vertical "$logo" "$header1_2")
+	gum join --align center --vertical "$headers_logo" "$header3_4"
 }
 
 gum_choose_installed() {
