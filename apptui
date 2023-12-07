@@ -150,7 +150,17 @@ run_launcher() {
 	echo "#TODO"
 	$appman --launcher ${path_to_appimage}
 }
-
+run_template() {
+	header="This option allows you to generate a custom script from a list of
+ different templates that may be vary according to the kind of app you
+ want to upload to the "AM" repo, and the source where it is available."
+	echo "#TODO"
+	$appman template $program
+}
+run_update() {
+	header="Update all the apps or just one."
+	echo "#TODO"
+}
 # Hopefully Done
 run_about() {
 	header="Shows more info about one or more apps, all the pages are
@@ -229,17 +239,6 @@ run_sync() {
 	header="Updates AppMan/AM to the latest version hosted."
 	$appman sync
 }
-run_template() {
-	header="This option allows you to generate a custom script from a list of
- different templates that may be vary according to the kind of app you
- want to upload to the "AM" repo, and the source where it is available."
-	echo "#TODO"
-	$appman template $program
-}
-run_update() {
-	header="Update all the apps or just one."
-	echo "#TODO"
-}
 run_web() {
 	header="Shows the URLs of the sites/sources of then app."
 	gum_filter_new_programs
@@ -269,14 +268,6 @@ run_unlock() {
 run_help() {
 	header="Prints appman help message."
 	$appman help
-}
-
-is_completion_enabled() {
-	if test -f ~/.bash_completion; then
-		echo "   enabled"
-	else
-		echo "  disabled"
-	fi
 }
 # apptui
 show_help() {
@@ -371,6 +362,13 @@ show_help() {
  HTTPS://GITHUB.COM/IVAN-HC/AM-APPLICATION-MANAGER
 '
 }
+is_completion_enabled() {
+	if test -f ~/.bash_completion; then
+		echo "   enabled"
+	else
+		echo "  disabled"
+	fi
+}
 show_headers() {
 	logo=$(gum style --border $border --border-foreground $color --align right " ▄▀█ █▀█ █▀█ ▀█▀ █ █ █ 
  █▀█ █▀▀ █▀▀  █  █▄█ █ 
@@ -388,19 +386,6 @@ $(run_files | grep -v "^$" | sed 1d | cut -d' ' -f3-5)")
 	header3_4=$(gum join "$header3" "$header4")
 	headers_logo=$(gum join --align center --vertical "$logo" "$header1_2")
 	gum join --align center --vertical "$headers_logo" "$header3_4"
-}
-
-gum_choose_installed() {
-	programs=$(run_files | grep -v "^$" | sed 1d | cut -d' ' -f3-5 | gum filter --header="${header}" --header.border-foreground $color --header.border $border --no-limit --no-fuzzy | cut -d' ' -f1)
-	echo $programs
-}
-gum_choose_installed_one() {
-	program=$(run_files | grep -v "^$" | sed 1d | cut -d' ' -f3-5 | gum filter --header="${header}" --header.border-foreground $color --header.border $border --no-fuzzy | cut -d' ' -f1)
-	echo $program
-}
-gum_choose_new_programs() {
-	new_programs=$($appman -l | grep -v "^\$" | sed 1,2d | sed '$ d' | cut -d' ' -f2-23 | gum filter --header="${header}" --header.border-foreground $color --header.border $border --no-limit --no-fuzzy | cut -d' ' -f1)
-	echo $new_programs
 }
 
 menu_main() {
