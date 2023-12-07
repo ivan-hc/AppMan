@@ -108,14 +108,27 @@ install_gum_go() {
 	go install github.com/charmbracelet/gum@latest
 }
 
+gum_filter_installed() {
+	programs=$(run_files | grep -v "^$" | sed 1d | cut -d' ' -f3-5 | gum filter --header="${header}" --header.border-foreground $color --header.border $border --no-limit --no-fuzzy | cut -d' ' -f1)
+	echo $programs
+}
+gum_filter_installed_one() {
+	program=$(run_files | grep -v "^$" | sed 1d | cut -d' ' -f3-5 | gum filter --header="${header}" --header.border-foreground $color --header.border $border --no-fuzzy | cut -d' ' -f1)
+	echo $program
+}
+gum_filter_new_programs() {
+	new_programs=$($appman -l | grep -v "^\$" | sed 1,2d | sed '$ d' | cut -d' ' -f2-23 | gum filter --header="${header}" --header.border-foreground $color --header.border $border --no-limit --no-fuzzy | cut -d' ' -f1)
+	echo $new_programs
+}
 # template for functions
 template() {
 	# working with new programs
 	header=""
-	gum_choose_new_programs
+	gum_filter_new_programs
 	$appman  ${new_programs}
-	gum_choose_installed
 	# working with already installed programs
+	header=""
+	gum_filter_installed
 	$appman  ${programs}
 }
 #TODO
@@ -142,20 +155,20 @@ run_launcher() {
 run_about() {
 	header="Shows more info about one or more apps, all the pages are
  downloaded from https://portable-linux-apps.github.io"
-	gum_choose_new_programs
+	gum_filter_new_programs
 	$appman about ${new_programs}
 }
 run_backup() {
 	header="Save the current version of one or more apps, each snapshot is
  stored into a dedicated directory, under $HOME/.am-snapshots/$PROGRAM
  To restore the snapshots use overwrite option."
-	gum_choose_installed
+	gum_filter_installed
 	$appman backup ${programs}
 }
 run_rollback() {
 	header="Download an older or specific version of the software you
  are interested in (only works with Github)."
-	gum_choose_installed
+	gum_filter_installed
 	$appman --rollback ${programs}
 }
 run_clean() {
@@ -165,12 +178,12 @@ run_clean() {
 run_convert() {
 	header="Download the installation scripts for "AM" and converts them
  to rootless installation scripts that can be installed locally."
-	gum_choose_installed_one
+	gum_filter_installed_one
 	$appman convert ${program}
 }
 run_download() {
 	header="Download one or more installation scripts to your desktop."
-	gum_choose_new_programs
+	gum_filter_new_programs
 	$appman download ${new_programs}
 }
 run_files() {
@@ -178,12 +191,12 @@ run_files() {
 }
 run_home() {
 	header="Set a dedicated $HOME directory for one or more AppImages."
-	gum_choose_installed
+	gum_filter_installed
 	$appman --home ${programs}
 }
 run_install() {
 	header="Install one or more programs."
-	gum_choose_new_programs
+	gum_filter_new_programs
 	$appman install ${new_programs}
 }
 run_list() {
@@ -192,24 +205,24 @@ run_list() {
 }
 run_overwrite() {
 	header="Overwrite the existing version of the app with a snapshot saved previously."
-	gum_choose_installed
+	gum_filter_installed
 	$appman overwrite ${programs}
 }
 run_query() {
 	header="Can be used to search for keywords and terms in the list of
  available applications packages to display matches. This can be useful
  if you are looking for applications having a specific feature."
-	gum_choose_new_programs
+	gum_filter_new_programs
 	$appman query ${new_programs}
 }
 run_remove() {
 	header="Removes one or more apps, requires confirmation."
-	gum_choose_installed
+	gum_filter_installed
 	$appman remove ${programs}
 }
 run_remove_no_asking() {
 	header="Removes one or more apps without asking."
-	gum_choose_installed
+	gum_filter_installed
 	$appman -R ${programs}
 }
 run_sync() {
@@ -229,7 +242,7 @@ run_update() {
 }
 run_web() {
 	header="Shows the URLs of the sites/sources of then app."
-	gum_choose_new_programs
+	gum_filter_new_programs
 	$appman web ${new_programs}
 }
 run_enable_completion() {
@@ -244,13 +257,13 @@ run_disable_completion() {
 run_lock() {
 	header="Lock the selected app to the current version installed, this
  only works if exists a dedicated "AM-updater" installed with the app."
-	gum_choose_installed
+	gum_filter_installed
 	$appman lock ${programs}
 }
 run_unlock() {
 	header="Unlock updates for the selected program. This option nulls
  the option lock."
-	gum_choose_installed
+	gum_filter_installed
 	$appman unlock ${programs}
 }
 run_help() {
