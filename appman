@@ -305,11 +305,9 @@ case "$1" in
  ___________________________________________________________________________
 
  			       EXTRA OPTIONS 
- 				
- 		       (only available for "APPMAN")
  ___________________________________________________________________________
 
- conv, convert
+ conv, convert					( only works with "AppMan" )
  
  SYNOPSIS:	conv {PROGRAM}
  
@@ -317,6 +315,13 @@ case "$1" in
  
  to rootless installation scripts that can be installed locally. 
  ___________________________________________________________________________
+ 
+ --user, appman					( only works with "AM" )
+ 
+ SYNOPSIS:	--user
+
+ DESCRIPTION:	Run "AM" as an unprivileged user making it act as "AppMan".
+ ___________________________________________________________________________ 
 
  ###########################################################################
  ___________________________________________________________________________
@@ -465,6 +470,12 @@ case "$1" in
 
   '-conv'|'convert')
   	while [ -n "$1" ]; do
+  		
+  		if [ $AMCLI == am ] 2>/dev/null; then
+  			echo " This function only works for AppMan"
+  			exit
+  		fi
+  		
 		rm -f $AMPATH/.cache/convert-args
 		echo $@ | tr ' ' '\n' >> $AMPATH/.cache/convert-args && echo STOP >> $AMPATH/.cache/convert-args
 		ARGS=$(tail -n +2 $AMPATH/.cache/convert-args)
@@ -493,7 +504,7 @@ case "$1" in
 							sed -i "s# /opt# $APPSPATH#g" ./$arg
 							sed -i "s#/opt/#$APPSPATH/#g" ./$arg
 							echo -e '\n# CHANGE THE PATH OF ICONS AND EXECUTABLES IN LOCALLY INSTALLED AM*.DESKTOP FILES\nAPPSDIR=$(cat ~/.config/appman/appman-config)\nsed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/$APPSDIR#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=$APP#Exec=$(xdg-user-dir USER)/.local/bin/$APP#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/usr/bin/#Exec=$(xdg-user-dir USER)/.local/bin/#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/firefox#Exec=$(xdg-user-dir USER)/$APPSDIR/firefox#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/kdegames#Exec=$(xdg-user-dir USER)/$APPSDIR/kdegames#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/kdeutils#Exec=$(xdg-user-dir USER)/$APPSDIR/kdeutils#g" ~/.local/share/applications/AM*.desktop' >> ./$arg
-							echo ""; break;
+							break;
   						elif test -f $(xdg-user-dir DESKTOP)/am-scripts/$arch/$arg; then
   							cd $(xdg-user-dir DESKTOP); cp ./am-scripts/$arch/$arg ./$arg
   							echo " Converting $arg to an AppMan-compatible script";
@@ -508,7 +519,7 @@ case "$1" in
 							sed -i "s# /opt# $APPSPATH#g" ./$arg
 							sed -i "s#/opt/#$APPSPATH/#g" ./$arg
 							echo -e '\n# CHANGE THE PATH OF ICONS AND EXECUTABLES IN LOCALLY INSTALLED AM*.DESKTOP FILES\nAPPSDIR=$(cat ~/.config/appman/appman-config)\nsed -i "s#Icon=/opt#Icon=$(xdg-user-dir USER)/$APPSDIR#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=$APP#Exec=$(xdg-user-dir USER)/.local/bin/$APP#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/usr/bin/#Exec=$(xdg-user-dir USER)/.local/bin/#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/firefox#Exec=$(xdg-user-dir USER)/$APPSDIR/firefox#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/kdegames#Exec=$(xdg-user-dir USER)/$APPSDIR/kdegames#g" ~/.local/share/applications/AM*.desktop\nsed -i "s#Exec=/opt/kdeutils#Exec=$(xdg-user-dir USER)/$APPSDIR/kdeutils#g" ~/.local/share/applications/AM*.desktop' >> ./$arg
-							echo ""; break;
+							break;
 						else
 							echo ""; echo ' "'$arg'" is NOT a valid argument'; echo ""; break;
 						fi
@@ -1870,6 +1881,33 @@ case "$1" in
 	shift
 	;;
 
+  '--user'|'appman')
+  
+  	if [ $AMCLI == appman ] 2>/dev/null; then
+  		echo " This function only works for AM"
+  		exit
+  	fi
+  	
+  	RED='\033[0;31m'; LightBlue='\033[1;34m'
+  	if test -f /opt/am/appman; then
+		echo -e "Please run '${RED}alias am=/opt/am/appman\033[0m' to made 'AM' act exactly like 'AppMan' for\nthe current session or save this command to your '"'~/.bashrc'"' file to make the\nchanges permanent. Visit ${LightBlue}https://github.com/ivan-hc/appman\033[0m for more!"
+  	else
+  		echo -e 'USE "AM" AS A NON-PRIVILIGED USER, JUST AS YOU WOULD WITH "APPMAN"\n'
+  		echo 'Hi '$USER'! You have decided to run "AM" as a non-privileged user.'
+  		echo 'We will use "AppMan" for this purpose, it will be downloaded as /opt/am/appman'
+  		echo 'After the download, an alias will be suggested, you will choose how to use it.'
+  		echo 'This procedure will help you not to ruin the original “AM” installation.'
+  		echo -e '\nAlternatively just install "AppMan" as a separate program.\nLearn more about "AppMan" at '${LightBlue}'https://github.com/ivan-hc/appman\033[0m\n'
+  		read -p "Do you wish to proceed with the download? (y,N)" yn
+  		
+  		case $yn in
+  			'N'|'n') exit;;
+  			'Y'|'y') 
+  				wget -q https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman -O /opt/am/appman && chmod a+x /opt/am/appman
+  				echo -e "\nPlease run '${RED}alias am=/opt/am/appman\033[0m' to made 'AM' act exactly like 'AppMan' for\nthe current session or save this command to your '"'~/.bashrc'"' file to make the\nchanges permanent."
+  		esac
+  	fi;;
+
   'lock')
     	if [ -n "$SUDO_COMMAND" ]; then 
 		echo -e "\n WARNING: You don't need to run the option '$1' with SUDO.\n"; 
@@ -1935,7 +1973,7 @@ case "$1" in
 	;;
 
   'version'|'-v'|'--version')
-  	echo "4.4.3-3";;
+  	echo "4.4.3-4";;
 
   *) exec $AMCLIPATH ;;
 
