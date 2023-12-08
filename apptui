@@ -1,12 +1,21 @@
 #!/usr/bin/env bash
 
-progname="${progname:="${0##*/}"}"
-version="0.01"
+clear
+# 1 Define variables
+progname=${progname:="${0##*/}"}
+version=0.02
+configdir=$HOME/.config/$progname
+config=$configdir/config
+# shellcheck source=/dev/null
+source "$config" >/dev/null 2>&1
+# Turn on traces, useful while debugging but commented out by default
+# set -o xtrace
 
-# gum settings
-border=double
-color=$(( RANDOM % 255 + 1 ))
-#color=3
+# get color
+get_color() {
+	# shellcheck disable=SC2084
+	$(( RANDOM % 255 + 1 ))
+}
 
 # Install gum
 #install_gum() {
@@ -79,7 +88,8 @@ install_gum_pacman() {
 install_gum_apt() {
 	sudo mkdir -p /etc/apt/keyrings
 	curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
-	echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+	echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" \
+| sudo tee /etc/apt/sources.list.d/charm.list
 	sudo apt update
 	sudo apt install gum
 }
@@ -104,70 +114,95 @@ install_gum_nix() {
 install_gum_go() {
 	go install github.com/charmbracelet/gum@latest
 }
-# AppMan or AM?
-what_to_use() {
-	if command -v am >/dev/null 2>&1 && command -v appman >/dev/null 2>&1; then
-		header="Choose using installed AppMan or AM script!"
-		appman="appman"
-		appman_version=$($appman version)
-		am_version=$(am version)
-		gum_filter_what_to_use1
-	elif command -v am >/dev/null 2>&1 && command -v ./appman >/dev/null 2>&1; then
-		header="Choose using AppMan or AM script!"
-		appman="./appman"
-		appman_version=$($appman version)
-		am_version=$(am version)
-		gum_filter_what_to_use2
-	elif command -v am >/dev/null 2>&1 && command -v appman >/dev/null 2>&1 && command -v ./appman >/dev/null 2>&1; then
-		header="Choose using AppMan or AM script!"
-		appman="./appman"
-		appman_version=$($appman version)
-		am_version=$(am version)
-		gum_filter_what_to_use3
-	elif command -v appman >/dev/null 2>&1; then
-		appman="appman"
-		appman_version=$($appman version)
-	elif command -v ./appman >/dev/null 2>&1; then
-		appman="./appman"
-		appman_version=$($appman version)
-	elif command -v am >/dev/null 2>&1; then
-		am_version=$(am version)
-		appman="am"
+# 2 Install gum if needed
+gum_install
+
+# config
+create_config() {
+	if [ ! -f "$config" ]; then
+		echo "Creating default config"
+		mkdir -p "$configdir"
+		# shellcheck disable=SC2016
+		echo 'color=$(( RANDOM % 255 + 1 ))
+border=double
+AMCLI=./appman' > "$config"
 	fi
 }
-# gum filter
-gum_filter_what_to_use1() {
-	choice=$(gum filter --header="$header" --header.border-foreground $color --header.border $border --no-fuzzy "AppMan (as user)" "AM (as root)")
-	case $choice in
-		'AppMan (as user)' ) appman="appman";;
-		'AM (as root)' ) appman="am";;
-	esac
+change_config_item() {
+	if [ -f "$config" ]; then
+		sed -i "s|^$item_name=.*$|$item_name=\"$new_value\"|" "$config"
+	else
+		 echo "$item_name=$new_value" > "$config"
+	fi
 }
-gum_filter_what_to_use2() {
-	choice=$(gum filter --header="$header" --header.border-foreground $color --header.border $border --no-fuzzy "AppMan (Same dir)" "AM (as root)")
-	case $choice in
-		'AppMan (Same dir)' ) appman="./appman";;
-		'AM (as root)' ) appman="am";;
-	esac
+# shellcheck source=/dev/null
+change_config() {
+	old_value=$(grep '=' < "$config" | grep "$item_name" | cut -d'=' -f2)
+	gum confirm "Change $item_name from $old_value to $new_value?" && change_config_item; source "$config"
 }
-gum_filter_what_to_use3() {
-	choice=$(gum filter --header="$header" --header.border-foreground $color --header.border $border --no-fuzzy "AppMan (as user)" "AppMan (Same dir)" "AM (as root)")
-	case $choice in
-		'AppMan (as user)' ) appman="appman";;
-		'AppMan (Same dir)' ) appman="./appman";;
-		'AM (as root)' ) appman="am";;
-	esac
+# AppMan or AM?
+what_to_use() {
+	while true
+	do
+		item_name="AMCLI"
+		header="Choose what to use.."
+		choice=$(echo "AppMan (current dir)
+AppMan (as user)
+AM (as root)" | gum filter --header="$header" --header.border-foreground "$color" \
+--header.border "$border" --no-fuzzy)
+		case $choice in
+			'AppMan (current dir)' ) new_value="./appman" && workdir=$(pwd);;
+			'AppMan (as user)' ) new_value="appman" && workdir="$HOME/$APPSDIR/$AMCLI";;
+			'AM (as root)' ) new_value="am" && workdir="$HOME/$APPSDIR/$AMCLI";;
+		esac
+		if command -v "$new_value" >/dev/null 2>&1; then
+			change_config && break
+		else
+			echo "Wrong choice!" && break
+		fi
+	done
 }
+
+# 3 Create config if needed
+if [ ! -f "$config" ]; then
+	create_config
+	what_to_use
+fi
+if command -v appman >/dev/null 2>&1; then
+	appman_version=$(appman version)
+elif command -v ./appman >/dev/null 2>&1; then
+	appman_version=$(./appman version)
+fi
+if command -v am >/dev/null 2>&1; then
+	am_version=$(am version)
+fi
+# shellcheck source=/dev/null
+source "$config"
+# gum settings
+# shellcheck disable=SC2154
+export BORDERS_FOREGROUND=$color
+export GUM_FILTER_INDICATOR_FOREGROUND=$color
+export GUM_SPIN_SPINNER_FOREGROUND=$color
+export GUM_CONFIRM_PROMPT_FOREGROUND=$color
+export GUM_CONFIRM_SELECTED_FOREGROUND=$color
+# 4 Choose Installed and new programs
 gum_filter_installed() {
-	programs=$(run_files | grep -v "^$" | sed 1d | cut -d' ' -f3-5 | gum filter --header="$header" --header.border-foreground $color --header.border $border --no-limit --no-fuzzy | cut -d' ' -f1)
+	header=""
+	programs=$(run_files | grep -v "^$" | sed 1d | cut -d' ' -f3-5 | gum filter --header="$header" \
+--header.border-foreground "$color" --header.border "$border" --no-limit --no-fuzzy | cut -d' ' -f1)
 	echo "$programs"
 }
 gum_filter_installed_one() {
-	program=$(run_files | grep -v "^$" | sed 1d | cut -d' ' -f3-5 | gum filter --header="$header" --header.border-foreground $color --header.border $border --no-fuzzy | cut -d' ' -f1)
+	header=""
+	program=$(run_files | grep -v "^$" | sed 1d | cut -d' ' -f3-5 | gum filter --header="$header" \
+--header.border-foreground "$color" --header.border "$border" --no-fuzzy | cut -d' ' -f1)
 	echo "$program"
 }
 gum_filter_new_programs() {
-	new_programs=$($appman -l | grep -v "^\$" | sed 1,2d | sed '$ d' | cut -d' ' -f2-23 | gum filter --header="$header" --header.border-foreground $color --header.border $border --no-limit --no-fuzzy | cut -d' ' -f1)
+	header=""
+	new_programs=$($AMCLI -l | grep -v "^\$" | sed 1,2d | sed '$ d' | cut -d' ' -f2-23 \
+| gum filter --header="$header" --header.border-foreground "$color" \
+--header.border "$border" --no-limit --no-fuzzy | cut -d' ' -f1)
 	echo "$new_programs"
 }
 # template for functions
@@ -175,14 +210,16 @@ template() {
 	# working with new programs
 	header=""
 	gum_filter_new_programs
-	$appman  "$new_programs"
+	$AMCLI  "$new_programs"
 	# working with already installed programs
 	header=""
 	gum_filter_installed
-	$appman  "$programs"
+	$AMCLI  "$programs"
 }
-#TODO
-#shellcheck disable=SC2035,SC2154
+# 5 AppMan/AM options
+
+# TODO Not done yet!
+# shellcheck disable=SC2035,SC2154
 appimage_extract() {
 	"$arg" --appimage-extract share/icons/*/*/* 1>/dev/null
 	"$arg" --appimage-extract usr/share/icons/*/*/* 1>/dev/null
@@ -199,15 +236,15 @@ run_launcher() {
  I suggest dragging the files into the terminal to get the desired effect.
  Launchers are located in ~/.local/share/applications/AppImages by default."
 	echo "#TODO"
-	#shellcheck disable=SC2154
-	$appman --launcher "${path_to_appimage}"
+	# shellcheck disable=SC2154
+	$AMCLI --launcher "${path_to_appimage}"
 }
 run_template() {
 	header='This option allows you to generate a custom script from a list of
  different templates that may be vary according to the kind of app you
  want to upload to the "AM" repo, and the source where it is available.'
 	echo "#TODO"
-	$appman template "$program"
+	$AMCLI template "$program"
 }
 run_update() {
 	header="Update all the apps or just one."
@@ -218,116 +255,117 @@ run_about() {
 	header="Shows more info about one or more apps, all the pages are
  downloaded from https://portable-linux-apps.github.io"
 	gum_filter_new_programs
-	$appman about "$new_programs"
+	$AMCLI about "$new_programs"
 }
 run_backup() {
-	#shellcheck disable=SC2016
+	# shellcheck disable=SC2016
 	header='Save the current version of one or more apps, each snapshot is
  stored into a dedicated directory, under $HOME/.am-snapshots/$PROGRAM
  To restore the snapshots use overwrite option.'
 	gum_filter_installed
-	$appman backup "$programs"
+	$AMCLI backup "$programs"
 }
 run_rollback() {
 	header="Download an older or specific version of the software you
  are interested in (only works with Github)."
 	gum_filter_installed
-	$appman --rollback "$programs"
+	$AMCLI --rollback "$programs"
 }
 run_clean() {
 	header="Removes all the unnecessary files and folders."
-	$appman clean
+	$AMCLI clean
 }
 run_convert() {
 	header='Download the installation scripts for "AM" and converts them
  to rootless installation scripts that can be installed locally.'
 	gum_filter_installed_one
-	$appman convert "$program"
+	$AMCLI convert "$program"
 }
 run_download() {
 	header="Download one or more installation scripts to your desktop."
 	gum_filter_new_programs
-	$appman download "$new_programs"
+	$AMCLI download "$new_programs"
 }
 run_files() {
-	$appman files
+	$AMCLI files
 }
 run_home() {
 	header="Set a dedicated $HOME directory for one or more AppImages."
 	gum_filter_installed
-	$appman --home "$programs"
+	$AMCLI --home "$programs"
 }
 run_install() {
 	header="Install one or more programs."
 	gum_filter_new_programs
-	$appman install "$new_programs"
+	$AMCLI install "$new_programs"
 }
 run_list() {
 	header="Shows the list of all the apps available in the repository."
-	$appman list
+	$AMCLI list
 }
 run_overwrite() {
 	header="Overwrite the existing version of the app with a snapshot saved previously."
 	gum_filter_installed
-	$appman overwrite "$programs"
+	$AMCLI overwrite "$programs"
 }
 run_query() {
 	header="Can be used to search for keywords and terms in the list of
  available applications packages to display matches. This can be useful
  if you are looking for applications having a specific feature."
 	gum_filter_new_programs
-	$appman query "$new_programs"
+	$AMCLI query "$new_programs"
 }
 run_remove() {
 	header="Removes one or more apps, requires confirmation."
 	gum_filter_installed
-	$appman remove "$programs"
+	$AMCLI remove "$programs"
 }
 run_remove_no_asking() {
 	header="Removes one or more apps without asking."
 	gum_filter_installed
-	$appman -R "$programs"
+	$AMCLI -R "$programs"
 }
 run_sync() {
 	header="Updates AppMan/AM to the latest version hosted."
-	$appman sync
+	$AMCLI sync
 }
 run_web() {
 	header="Shows the URLs of the sites/sources of then app."
 	gum_filter_new_programs
-	$appman web "$new_programs"
+	$AMCLI web "$new_programs"
 }
 run_enable_completion() {
 	header='Enable bash-completion to complete a keyword with the "TAB"
  key, using the names of all installable applications available.'
-	$appman --enable-completion
+	$AMCLI --enable-completion
 }
 run_disable_completion() {
 	header="Disable bash-completion."
-	$appman --disable-completion
+	$AMCLI --disable-completion
 }
 run_lock() {
 	header='Lock the selected app to the current version installed, this
  only works if exists a dedicated "AM-updater" installed with the app.'
 	gum_filter_installed
-	$appman lock "$programs"
+	$AMCLI lock "$programs"
 }
 run_unlock() {
 	header="Unlock updates for the selected program. This option nulls
  the option lock."
 	gum_filter_installed
-	$appman unlock "$programs"
+	$AMCLI unlock "$programs"
 }
 run_help() {
 	header="Prints appman help message."
-	$appman help
+	$AMCLI help
 }
-# apptui
+# 6 AppTui
 show_help() {
-	gum style --border $border --border-foreground $color '                  ▄▀█ █▀█ █▀█ ▀█▀ █ █ █
+	gum style --border "$border" --border-foreground "$color" \
+'                  ▄▀█ █▀█ █▀█ ▀█▀ █ █ █
                   █▀█ █▀▀ █▀▀  █  █▄█ █
                                 by zenobit'
-	#shellcheck disable=SC2016
+	# shellcheck disable=SC2016
 	printf '
    >> A portable CLI to install/update/manage apps an AppImages locally <<
 
@@ -416,33 +454,103 @@ show_help() {
  HTTPS://GITHUB.COM/IVAN-HC/AM-APPLICATION-MANAGER
 '
 }
-is_completion_enabled() {
-	if test -f ~/.bash_completion; then
-		echo "   enabled"
+show_header() {
+	gum style --padding "0 1"  --border="$border" --border-foreground="$color" "$header"
+}
+change_color() {
+	if command -v yad >/dev/null 2>&1; then
+		header="Define color, use color picker or choose random"
+		show_header
+		height=4
+		item_name=color
+		start=$(echo "random
+color picker
+custom
+EXIT $progname" | gum filter --height $height)
+		# shellcheck disable=SC2016
+		case $start in
+			'random' ) new_value='$(( RANDOM % 255 + 1 ))';;
+			'color picker' ) new_value="$(xcolor)" || new_value="$(yad --color)";;
+			'custom' ) new_value=$(gum input  --header="Enter color value");;
+			'show help' ) help_main; show_help;;
+			"EXIT $progname" ) exit 0;;
+		esac
 	else
-		echo "  disabled"
+		header="Define color number or choose random"
+		show_header
+		new_value=$(echo 'random' | gum filter --no-strict GUM_FILTER_PLACEHOLDER="custom" --height 1)
+	fi
+	change_config
+}
+change_borders() {
+	header="Changing borders style"
+	show_header
+	height=6
+	item_name=border
+	new_value=$(echo "none
+hidden
+normal
+rounded
+thick
+double" | gum filter --height $height)
+	change_config
+}
+is_completion_enabled() {
+	if [ "$(grep -o "appman" < ~/.bash_completion | head -1)" == "appman" ]; then
+		echo "AppMan"
+	fi
+	if test -f /etc/bash_completion.d/am-completion.sh; then
+		echo "AM"
 	fi
 }
 show_headers() {
-	logo=$(gum style --border $border --border-foreground $color --align right " ▄▀█ █▀█ █▀█ ▀█▀ █ █ █ 
- █▀█ █▀▀ █▀▀  █  █▄█ █ 
+	# shellcheck disable=SC2034
+	style="gum style --padding 0 1 --border $border --border-foreground '$(( RANDOM % 255 + 1 ))'"
+	header_logo=$(gum style --padding "0 1" --border "$border" \
+--border-foreground $(( RANDOM % 255 + 1 )) --align right \
+"▄▀█ █▀█ █▀█ ▀█▀ █ █ █
+█▀█ █▀▀ █▀▀  █  █▄█ █
 $version    by zenobit ")
-	header1=$(gum style --padding "0 1" --border $border --border-foreground $(( RANDOM % 255 + 1 )) "  Simple appman/AM TUI using gum
- appman $appman_version AM $am_version")
-	header2=$(gum style --padding "0 1" --border $border --border-foreground $(( RANDOM % 255 + 1 )) "  Using: $appman
- completion:
+
+	header_using=$(gum style --padding "0 1" --border "$border" \
+--border-foreground $(( RANDOM % 255 + 1 )) --align center \
+"Using: $AMCLI
+completion:
 $(is_completion_enabled)")
-	header3=$(gum style --padding "0 1" --border $border --border-foreground $(( RANDOM % 255 + 1 )) "workdir:
- $(pwd)")
-	header4=$(gum style --padding "0 1" --border $border --border-foreground $(( RANDOM % 255 + 1 )) "installed AppImages: $(run_files | grep -v "^$" | sed 1d | wc -l)
+
+	header_versions=$(gum style --padding "0 1" --border "$border" \
+--border-foreground $(( RANDOM % 255 + 1 )) --align center \
+"Simple appman/AM TUI using gum
+AppMan $appman_version   AM $am_version")
+
+	header_workdir=$(gum style --padding "0 1" --border "$border" \
+--border-foreground $(( RANDOM % 255 + 1 )) --align center \
+"workdir:
+$(pwd)")
+
+	header_installed=$(gum style --padding "0 1" --border "$border" \
+--border-foreground $(( RANDOM % 255 + 1 )) --align center \
+"installed AppImages: $(run_files | grep -v "^$" | sed 1d | wc -l)
 $(run_files | grep -v "^$" | sed 1d | cut -d' ' -f3-5)")
 
-	header1_2=$(gum join "$header1" "$header2")
-	header3_4=$(gum join "$header3" "$header4")
-	headers_logo=$(gum join --align center --vertical "$logo" "$header1_2")
-	gum join --align center --vertical "$headers_logo" "$header3_4"
+	header_first=$(gum join  --align bottom "$header_logo" "$header_using")
+	header_second=$(gum join --align center --vertical "$header_first" "$header_versions")
+	header_third=$(gum join --align top "$header_workdir" "$header_installed")
+	gum join --align center --vertical "$header_second" "$header_third"
 }
-
+# 7 Install AppMan/AM
+install_am() {
+	wget https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/INSTALL \
+&& chmod a+x ./INSTALL && sudo ./INSTALL
+}
+install_appman() {
+	wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman \
+ && chmod a+x ./appman \
+ && gum confirm "Create ~/.local/bin and move Appman There?" && mkdir -p ~/.local/bin \
+ && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc \
+ && mv ./appman ~/.local/bin/appman
+}
+# MENU
 menu_main() {
 	start=$(echo "1 available programs
 2 info about program(s)
@@ -450,17 +558,18 @@ menu_main() {
 4 Install program(s)
 5 update program(s)
 6 remove program(s)
-7 remove program(s) without ask
+remove program(s) no ask
 MENU Avanced
 apptui Help
 appman/AM Help
-q EXIT $progname" | gum filter --height 11)
+use AppMan or AM?
+q EXIT $progname" | gum filter --height 12)
 	case $start in
 #		'' ) run_;;
 		'2 info about program(s)' ) run_about;;
 		'4 Install program(s)' ) run_install;;
 		'6 remove program(s)' ) run_remove;;
-		'7 remove program(s) without ask' ) run_remove_no_asking;;
+		'remove program(s) no ask' ) run_remove_no_asking;;
 		'1 available programs' ) run_list;;
 		'5 update program(s)' ) run_update;;
 		'backup program(s)' ) run_backup;;
@@ -480,13 +589,13 @@ q EXIT $progname" | gum filter --height 11)
 		'--user' ) run_;;
 		'clean' ) run_clean;;
 		'convert script(s) to appman' ) run_convert;;
+		'use AppMan or AM?' ) what_to_use;;
 		'appman/AM Help' ) run_help;;
 		'MENU Avanced' ) menu_advanced;;
 		'apptui help' ) show_help;;
 		"q EXIT $progname" ) exit 0;;
 	esac
 }
-
 menu_advanced() {
 	while true
 	do
@@ -500,17 +609,22 @@ menu_advanced() {
 8 launcher
 9 rollback
 clean
+Install AppMan
+Install AM
 update appman/AM
 enable completion
 disable completion
 --user
 convert script(s) to appman
-change used script
+change color
+change borders
 Help
 back to MAIN MENU
-q EXIT $progname" | gum filter --height 19)
+q EXIT $progname" | gum filter --height 22)
 		case $start in
 #			'' ) run_;;
+			'Install AppMan' ) install_appman; break;;
+			'Install AM' ) install_am; break;;
 			'info about program(s)' ) run_about;;
 			'Install program(s)' ) run_install;;
 			'remove program(s)' ) run_remove;;
@@ -526,15 +640,16 @@ q EXIT $progname" | gum filter --height 19)
 			'update appman/AM' ) run_sync;;
 			'7 template' ) run_template;;
 			'program(s) web' ) run_web;;
-			'disable completion' ) run_disable_completion;;
-			'enable completion' ) run_enable_completion;;
+			'disable completion' ) run_disable_completion; break;;
+			'enable completion' ) run_enable_completion; break;;
 			'home program(s)' ) run_home;;
 			'8 launcher' ) run_launcher;;
 			'9 rollback' ) run_rollback;;
 			'--user' ) run_;;
 			'clean' ) run_clean;;
 			'convert script(s) to appman' ) run_convert;;
-			'change used script' ) what_to_use;;
+			'change color' ) change_color; break;;
+			'change borders' ) change_borders; break;;
 			'a appman/AM help' ) run_help;;
 			'm Avanced menu' ) menu_advanced;;
 			'Help' ) show_help;;
@@ -543,11 +658,10 @@ q EXIT $progname" | gum filter --height 19)
 		esac
 	done
 }
-
-gum_install
-what_to_use
+# Run loop
 while true
 do
+	#clear
 	show_headers
 	menu_main
 done
