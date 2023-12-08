@@ -357,7 +357,7 @@ run_unlock() {
 }
 run_help() {
 	header="Prints appman help message."
-	$AMCLI help
+	$AMCLI help | gum pager
 }
 # 6 AppTui
 show_help() {
