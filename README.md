@@ -113,7 +113,7 @@ NOTE that by installing AppMan in ~/.local/bin, the script can also be managed b
 
 ### Requirements
 #### Dependences
-A warning message will prevent you from using "AM" if the following packages are not installed on your system:
+A warning message will prevent you from using "AM"/AppMan if the following packages are not installed on your system:
 - "`cat`", "`chmod`" and "`chown`" (available in "`coreutils`");
 - "`curl`", to check URLs;
 - "`grep`", to check files;
