@@ -146,14 +146,25 @@ what_to_use() {
 	do
 		item_name="AMCLI"
 		header="Choose what to use.."
-		choice=$(echo "AppMan (current dir)
-AppMan (as user)
-AM (as root)" | gum filter --header="$header" --header.border-foreground "$color" \
---header.border "$border" --no-fuzzy)
+		if [ "$appman_local" == 1 ] && [ "$appman_installed" == 1 ] && [ "$am_installed" == 1 ]; then
+			choice=$(gum filter --header="$header" --header.border-foreground "$color" --header.border "$border" --no-fuzzy "AppMan (current dir)" "AppMan (as user)" "AM (as root)")
+		elif [ "$appman_local" == 1 ] && [ "$am_installed" == 1 ]; then
+			choice=$(gum filter --header="$header" --header.border-foreground "$color" --header.border "$border" --no-fuzzy "AppMan (current dir)" "AM (as root)")
+		elif [ "$appman_local" == 1 ] && [ "$appman_installed" == 1 ]; then
+			choice=$(gum filter --header="$header" --header.border-foreground "$color" --header.border "$border" --no-fuzzy "AppMan (current dir)" "AppMan (as user)")
+		elif [ "$appman_installed" == 1 ] && [ "$am_installed" == 1 ]; then
+			choice=$(gum filter --header="$header" --header.border-foreground "$color" --header.border "$border" --no-fuzzy "AppMan (as user)" "AM (as root)")
+		elif [ "$appman_local" == 1 ]; then
+			choice=$(echo "AppMan (current dir)")
+		elif [ "$appman_installed" == 1 ]; then
+			choice=$(echo "AppMan (as user)")
+		elif [ "$am_installed" == 1 ]; then
+			choice=$(echo "AM (as root)")
+		fi
 		case $choice in
-			'AppMan (current dir)' ) new_value="./appman" && workdir=$(pwd);;
-			'AppMan (as user)' ) new_value="appman" && workdir="$HOME/$APPSDIR/$AMCLI";;
-			'AM (as root)' ) new_value="am" && workdir="$HOME/$APPSDIR/$AMCLI";;
+			'AppMan (current dir)' ) new_value='./appman' && workdir=$(pwd);;
+			'AppMan (as user)' ) new_value="appman";; # && workdir="$HOME/$APPSDIR/$AMCLI";;
+			'AM (as root)' ) new_value="am";; # && workdir="$HOME/$APPSDIR/$AMCLI";;
 		esac
 		if command -v "$new_value" >/dev/null 2>&1; then
 			change_config && break
@@ -168,13 +179,14 @@ if [ ! -f "$config" ]; then
 	create_config
 	what_to_use
 fi
+if command -v ./appman >/dev/null 2>&1; then
+	appman_version=$(./appman version) && appman_local=1
+fi
 if command -v appman >/dev/null 2>&1; then
-	appman_version=$(appman version)
-elif command -v ./appman >/dev/null 2>&1; then
-	appman_version=$(./appman version)
+	appman_version=$(appman version) && appman_installed=1
 fi
 if command -v am >/dev/null 2>&1; then
-	am_version=$(am version)
+	am_version=$(am version) && am_installed=1
 fi
 # shellcheck source=/dev/null
 source "$config"
@@ -301,7 +313,7 @@ run_install() {
 }
 run_list() {
 	header="Shows the list of all the apps available in the repository."
-	$AMCLI list
+	$AMCLI list | gum pager
 }
 run_overwrite() {
 	header="Overwrite the existing version of the app with a snapshot saved previously."
@@ -359,6 +371,109 @@ run_help() {
 	header="Prints appman help message."
 	$AMCLI help | gum pager
 }
+help_appman() {
+	printf '
+
+  ▄▀█ █▀█ █▀█ █░░ █ █▀▀ ▄▀█ ▀█▀ █ █▀█ █▄░█   █▀▄▀█ ▄▀█ █▄░█ ▄▀█ █▀▀ █▀▀ █▀█
+  █▀█ █▀▀ █▀▀ █▄▄ █ █▄▄ █▀█ ░█░ █ █▄█ █░▀█   █░▀░█ █▀█ █░▀█ █▀█ █▄█ ██▄ █▀▄
+                             by Ivan Alex HC
+
+   >> A portable CLI to install/update/manage apps an AppImages locally <<
+
+            {OPTION} or {OPTION} {PROGRAM}
+
+-a, about {PROGRAM}         Shows more info about apps, all the pages are
+                            downloaded from
+                            https://portable-linux-apps.github.io
+
+-b, backup {PROGRAM}        Save the current version of apps, each snapshot
+                            is stored into a dedicated directory, under
+                            $HOME/.am-snapshots/$PROGRAM
+                            To restore the snapshots see the "-o" option.
+
+-c, clean                   Removes all the unnecessary files and folders.
+
+-d, download {PROGRAM}      Download installation scripts to your desktop.
+
+-f, files                   Shows the installed programs, with sizes.
+
+-h, help                    Prints this message.
+
+-H, --home {PROGRAM}        Set a dedicated $HOME directory for AppImages.
+
+-i, install {PROGRAM}       Install programs.
+
+-l, list                    Shows list apps available in the repository.
+
+-o, overwrite {PROGRAM}     Overwrite the existing version of the app with
+                            snapshot saved previously (see the option "-b").
+
+-q, query {KEYWORD}         Can be used to search for keywords and terms in
+                            the list of available applications packages to
+                            display matches. This can be useful if you are
+                            looking for applications having specific feature.
+
+-r, remove {PROGRAM}        Removes apps, requires confirmation.
+
+-R {PROGRAM}                Removes apps without asking.
+
+-s, sync                    Updates this script to the latest version hosted.
+
+-t, template {PROGRAM}      Generate a custom script from a list of different
+                            templates that may be vary according to the kind
+                            of app you want to upload to the "AM" repo,
+                            and the source where it is available.
+
+-u, -U, update ({PROGRAM})  Update all the apps or just one.
+
+-v, version                 Shows the version.
+
+-w, web                     Shows the URLs of the sites/sources of then app.
+
+--disable-completion        Disable bash-completion.
+
+--enable-completion         Enable bash-completion to complete a keyword with
+                            the "TAB" key, using the names of all installable
+                             applications available.
+
+--launcher                  Embed one or more AppImages in the applications
+ /path/to/${APPIMAGE}       menu. I suggest dragging the files into the
+                            terminal to get the desired effect. Launchers are
+                            located in ~/.local/share/applications/AppImages
+
+--rollback {PROGRAM}        Download an older or specific version of the
+                            software (only works with Github).
+
+lock {PROGRAM}              Lock the selected app to the current version,
+                            this only works if exists a dedicated "AM-updater"
+                             installed with the app.
+
+unlock{PROGRAM}             Unlock updates for the selected program. This
+                            option nulls the option "lock" (see above).
+
+                    EXTRA OPTIONS
+                (only available for "APPMAN")
+ conv, convert {PROGRAM}    Download the installation scripts for "AM" and converts them
+ to rootless installation scripts that can be installed locally.
+
+ ###########################################################################
+              ABOUT "AM" APPLICATION MANAGER
+ "AM" is a software manager that deals with the management of all portable
+ apps and AppImages out there. It is distributed in two versions:
+
+ ◆ "AM", the main version that integrates applications at the system level,
+ installing them in /opt, for all the users;
+ ◆ "AppMan", the portable and "rootless" version that installs all the apps
+ in the $HOME directory, integrating additional options to convert all the
+ installation scripts from "AM".
+
+                   SITES
+ HTTPS://PORTABLE-LINUX-APPS.GITHUB.IO     (main website)
+ HTTPS://GITHUB.COM/IVAN-HC/APPMAN
+ HTTPS://GITHUB.COM/IVAN-HC/AM-APPLICATION-MANAGER
+ ' | gum pager
+ }
+
 # 6 AppTui
 show_help() {
 	gum style --border "$border" --border-foreground "$color" \
@@ -562,6 +677,7 @@ remove program(s) no ask
 MENU Avanced
 apptui Help
 appman/AM Help
+help
 use AppMan or AM?
 q EXIT $progname" | gum filter --height 12)
 	case $start in
@@ -591,6 +707,7 @@ q EXIT $progname" | gum filter --height 12)
 		'convert script(s) to appman' ) run_convert;;
 		'use AppMan or AM?' ) what_to_use;;
 		'appman/AM Help' ) run_help;;
+		'help' ) help_appman;;
 		'MENU Avanced' ) menu_advanced;;
 		'apptui help' ) show_help;;
 		"q EXIT $progname" ) exit 0;;
