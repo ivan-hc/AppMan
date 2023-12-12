@@ -31,6 +31,7 @@ Being "AppMan" a bash-based script, it can be used on all the architectures supp
 - [Snapshots: backup your app and restore to a previous version](#snapshots-backup-your-app-and-restore-to-a-previous-version)
 - [Rollback](#rollback)
 - [Manage local AppImages](#manage-local-appimages)
+- [Sandbox using Firejail](#sandbox-using-firejail)
 
 [Uninstall](#uninstall)
 
@@ -366,6 +367,15 @@ You can always modify the destination folder by editing the "appman-config" file
  
  DESCRIPTION:	Enable bash-completion to complete a keyword with the "TAB" key, using the names of all installable applications available.
  ___________________________________________________________________________
+ 
+ `--firejail`, `--sandbox`
+ 
+ SYNOPSIS:
+
+ `--firejail {PROGRAM}`
+ 
+ DESCRIPTION:	Run an AppImage in a sandbox using Firejail.
+ ___________________________________________________________________________
 
  `--launcher`
  
@@ -458,6 +468,16 @@ https://github.com/ivan-hc/AM-Application-Manager/assets/88724353/c4b889f4-8504-
 # Uninstall
 To uninstall "AppMan" just remove it. To uninstall all the apps installed instead it is necessary to execute the `remove` script available into the main directory of each application you've installed (with "AppMan" it is easier with the `appman -r $PROGRAM1 $PROGRAM2 $PROGRAM3 ...` command.
 The configuration's file of "AppMan" (the one containing the name of the directory you've choosen for your apps) is available in ~/.config/appman.
+
+------------------------------------------------------------------------
+# Sandbox using Firejail
+Since version 5.3 you can use the `--firejail` option to run AppImages using a sandbox (requires Firejail installed on the host).
+
+At first start a copy of /etc/firejail/default.profile will be saved in your application's directory, so you're free to launch the AppImage once using the default Firejail profile (option 1) or the custom one (2), you can also patch the .desktop files (if available) to in sandbox-mode always (options 3 and 4). You can handle the custom firejail.profile file of the app using `vim` or `nano` using the option 5 (the first selection is `vim`).
+
+Options 1, 2 and 5 are continuous to let you edit the file and test your changes immediately. Press any key to exit.
+
+NOTE: once patched the .desktop files (options 3 and 4), they will be placed in ~/.local/share/applications, this means that if you have installed apps using AppMan, the original launchers will be overwrited.
 
 ------------------------------------------------------------------------	
 # Troubleshooting
