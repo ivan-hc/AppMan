@@ -40,6 +40,7 @@ Being "AppMan" a bash-based script, it can be used on all the architectures supp
 - [Cannot mount and run AppImages](#cannot-mount-and-run-appimages)
 - [Missing dependences](#missing-dependences)
 - [Spyware, malware and dangerous software](#spyware-malware-and-dangerous-software)
+- [Stop AppImage prompt to create its own launcher, desktop integration and doubled launchers](#stop-appimage-prompt-to-create-its-own-launcher-desktop-integration-and-doubled-launchers)
 - [Wrong download link](#wrong-download-link)
 
 [Conclusions](#conclusions)
@@ -497,6 +498,14 @@ Before installing any application, try to know where it comes from first. This p
 - Option `-d` or `download` (absolute safety), this allows you to get the installation script directly on your desktop, so you can read the mechanisms and how it performs the downloads from the sources (in most cases there is a header for each step that explains what the listed commands do).
 
 “AM” and AppMan are just tools to easily install all listed programs, but what you choose to install is your complete responsibility. **Use at your own risk**!
+
+### Stop AppImage prompt to create its own launcher, desktop integration and doubled launchers
+Some developers insist on creating Appimages that create their own launcher on first launch (like WALC and OpenShot). If the official solution proposed [here](https://discourse.appimage.org/t/stop-appimage-from-asking-to-integrate/488) doesn't work, create a .home directory with the `-H` option, launch the app and accept the request. For example:
+```
+am -H walc
+walc
+```
+Accept the integration request, the launcher will be saved in the walc.home directory located next to the AppImage file.
 
 ### Wrong download link
 The reasons may be two:
