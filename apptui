@@ -660,10 +660,10 @@ install_am() {
 }
 install_appman() {
 	wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman \
- && chmod a+x ./appman \
+ && chmod a+x appman \
  && gum confirm "Create ~/.local/bin and move Appman There?" && mkdir -p ~/.local/bin \
  && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc \
- && mv ./appman ~/.local/bin/appman
+ && mv appman ~/.local/bin/appman
 }
 # MENU
 menu_main() {
