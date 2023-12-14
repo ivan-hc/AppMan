@@ -114,6 +114,7 @@ install_gum_nix() {
 install_gum_go() {
 	go install github.com/charmbracelet/gum@latest
 }
+
 # 2 Install gum if needed
 gum_install
 
@@ -135,11 +136,38 @@ change_config_item() {
 		 echo "$item_name=$new_value" > "$config"
 	fi
 }
+
+if command -v ./appman >/dev/null 2>&1; then
+	appman_version=$(./appman version) && appman_local=1 && chmod +x appman
+fi
+if command -v appman >/dev/null 2>&1; then
+	appman_version=$(appman version) && appman_installed=1
+fi
+if command -v am >/dev/null 2>&1; then
+	am_version=$(am version) && am_installed=1
+fi
+# 3 Create config if needed
+if [ ! -f "$config" ]; then
+	create_config
+	what_to_use
+fi
 # shellcheck source=/dev/null
 change_config() {
 	old_value=$(grep '=' < "$config" | grep "$item_name" | cut -d'=' -f2)
 	gum confirm "Change $item_name from $old_value to $new_value?" && change_config_item; source "$config"
 }
+
+
+# shellcheck source=/dev/null
+source "$config"
+
+# gum settings
+# shellcheck disable=SC2154
+export BORDERS_FOREGROUND=$color
+export GUM_FILTER_INDICATOR_FOREGROUND=$color
+export GUM_SPIN_SPINNER_FOREGROUND=$color
+export GUM_CONFIRM_PROMPT_FOREGROUND=$color
+export GUM_CONFIRM_SELECTED_FOREGROUND=$color
 # AppMan or AM?
 what_to_use() {
 	while true
@@ -174,29 +202,20 @@ what_to_use() {
 	done
 }
 
-# 3 Create config if needed
-if [ ! -f "$config" ]; then
-	create_config
-	what_to_use
-fi
-if command -v ./appman >/dev/null 2>&1; then
-	appman_version=$(./appman version) && appman_local=1
-fi
-if command -v appman >/dev/null 2>&1; then
-	appman_version=$(appman version) && appman_installed=1
-fi
-if command -v am >/dev/null 2>&1; then
-	am_version=$(am version) && am_installed=1
-fi
-# shellcheck source=/dev/null
-source "$config"
-# gum settings
-# shellcheck disable=SC2154
-export BORDERS_FOREGROUND=$color
-export GUM_FILTER_INDICATOR_FOREGROUND=$color
-export GUM_SPIN_SPINNER_FOREGROUND=$color
-export GUM_CONFIRM_PROMPT_FOREGROUND=$color
-export GUM_CONFIRM_SELECTED_FOREGROUND=$color
+# 7 Install AppMan/AM
+install_am() {
+	wget https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/INSTALL \
+&& chmod a+x ./INSTALL && sudo ./INSTALL
+}
+
+install_appman() {
+	wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman \
+ && chmod a+x appman \
+ && gum confirm "Create ~/.local/bin and move Appman There?" && mkdir -p ~/.local/bin \
+ && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc \
+ && mv appman ~/.local/bin/appman
+}
+
 # 4 Choose Installed and new programs
 gum_filter_installed() {
 	header=""
@@ -217,6 +236,8 @@ gum_filter_new_programs() {
 --header.border "$border" --no-limit --no-fuzzy | cut -d' ' -f1)
 	echo "$new_programs"
 }
+
+
 # template for functions
 template() {
 	# working with new programs
@@ -618,6 +639,7 @@ is_completion_enabled() {
 		echo "AM"
 	fi
 }
+
 show_headers() {
 	# shellcheck disable=SC2034
 	style="gum style --padding 0 1 --border $border --border-foreground '$(( RANDOM % 255 + 1 ))'"
@@ -652,18 +674,6 @@ $(run_files | grep -v "^$" | sed 1d | cut -d' ' -f3-5)")
 	header_second=$(gum join --align center --vertical "$header_first" "$header_versions")
 	header_third=$(gum join --align top "$header_workdir" "$header_installed")
 	gum join --align center --vertical "$header_second" "$header_third"
-}
-# 7 Install AppMan/AM
-install_am() {
-	wget https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/INSTALL \
-&& chmod a+x ./INSTALL && sudo ./INSTALL
-}
-install_appman() {
-	wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman \
- && chmod a+x appman \
- && gum confirm "Create ~/.local/bin and move Appman There?" && mkdir -p ~/.local/bin \
- && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc \
- && mv appman ~/.local/bin/appman
 }
 # MENU
 menu_main() {
