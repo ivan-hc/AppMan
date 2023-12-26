@@ -590,9 +590,11 @@ show_help() {
  HTTPS://GITHUB.COM/IVAN-HC/AM-APPLICATION-MANAGER
 '
 }
+
 show_header() {
 	gum style --padding "0 1"  --border="$border" --border-foreground="$color" "$header"
 }
+
 change_color() {
 	if command -v yad >/dev/null 2>&1; then
 		header="Define color, use color picker or choose random"
@@ -618,6 +620,7 @@ EXIT $progname" | gum filter --height $height)
 	fi
 	change_config
 }
+
 change_borders() {
 	header="Changing borders style"
 	show_header
@@ -631,6 +634,7 @@ thick
 double" | gum filter --height $height)
 	change_config
 }
+
 is_completion_enabled() {
 	if [ "$(grep -o "appman" < ~/.bash_completion | head -1)" == "appman" ]; then
 		echo "AppMan"
@@ -689,7 +693,7 @@ apptui Help
 appman/AM Help
 help
 use AppMan or AM?
-q EXIT $progname" | gum filter --height 12)
+q EXIT $progname" | gum filter --height 13)
 	case $start in
 #		'' ) run_;;
 		'2 info about program(s)' ) run_about;;
