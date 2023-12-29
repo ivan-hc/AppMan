@@ -54,6 +54,7 @@ The main goal of this tool is to provide the same updated applications to multip
 
 [AppImage](https://appimage.org/) is a standalone package format, the best choice if you are looking for an alternative packaging format to use on multiple GNU/Linux distributions, it uses fewer resources than Snap and Flatpak, and works completely autonomously, using its own libraries. AppMan aims to give it a home to stay.
 
+-----------------------------------------------------------------------------
 ## How it works
 All AppMan does is to convert [all the installation scripts for "AM"](https://github.com/ivan-hc/AM-Application-Manager/tree/main/programs) (that normally must be executed with ROOT privileges) in normal scripts that can manage applications in the local folder of the current user. This allows more users to be able to better configure their profile. AppMan allows you to choose where to install your applications into your `$HOME` directory. AppMan is also usable as a portable app (i.e. you can download and place it wherever you want) and it is able to update itself, anywhere! At first start it will ask you where to install the apps and it will create the directory for you (the configuration file is in `~/.config/appman`). For example, suppose you want install everything in "Applicazioni" (the italian of "applications"), this is the structure of what an installation scripts installs with "AppMan" instead:
 
@@ -79,22 +80,24 @@ To uninstall everything just run:
 
 For more options, jump to "[Usage](#usage)" or keep read.
 
+-----------------------------------------------------------------------------
 ## What programs can be installed
 AppMan installs/removes/updates/manages only standalone programs, ie those programs that can be run from a single directory in which they are contained (where `$PROGRAM` is the name of the application, AppMan installs them always into a directory you choose the first time you run it thanks to a prompt that will ask you where to install your apps (for example you can create an "Applications" or "Programs" or "Whatever-name-you-want" folder named "Applicazioni" or "Programmi" or "Qual-si-voglia" instead if your system language is italian, to prevent the discrepanchy of your folder's name compared to the other available in your `$HOME` directory).
 
 These programs are taken:
-- from official sources (see Firefox, Thunderbird, Blender, NodeJS, Chromium Latest...);
-- from official .deb packages (see Brave, Vivaldi, Google Chrome...);
-- from the repositories and official sites of individual developers (if an archive is not available, an official AppImage is used, see Libreoffice, OnlyOffice);
-- from tar archives of other GNU/Linux distributions (see Chromium, Chromium Ungoogled...);
-- from AUR or other Arch Linux-related sources (see Palemoon, Spotify, WhatsApp...);
-- from AppImage recipes to be compiled with [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit) (see Anydesk, qBittorrent, Dropbox, all the games from the "KDE Games" suite...);
-- from unofficial repositories of developers external to the project concerned (most of the time they are programs in AppImage format), but only if an official release is not available (see the various WINE, Zoom, VLC, GIMP...).
+- from official sources (see Firefox, Thunderbird, Blender, NodeJS, Chromium Latest, Platform Tools...);
+- from official .deb packages;
+- from the repositories and official sites of individual developers;
+- from tar archives of other GNU/Linux distributions;
+- from AUR or other Arch Linux-related sources;
+- from AppImage recipes to be compiled with [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit);
+- from unofficial repositories of developers external to the project concerned (most of the time they are programs in AppImage format), but only if an official release is not available (see the various WINE, Zoom, VLC, GIMP, OBS Studio...).
 
 "AppMan" can even create Firefox profiles to run as webapps (as an alternative to the countless Electron-based apps/AppImages)!
 
 You can consult basic information, links to sites and sources used through the related `appman -a $PROGRAM` command or by connecting to https://portable-linux-apps.github.io
 
+-----------------------------------------------------------------------------
 ## Repository and Multiarchitecture
 Each program is installed through a dedicated script, and all these scripts are listed in the "[AM repository](https://github.com/ivan-hc/AM-application-manager/tree/main/programs)" and divided by architecture.
 
@@ -107,7 +110,6 @@ Click on the link of your architecture to see the list of all the apps available
 If you are interested, you can deliberately join the "AM" project.
 
 -----------------------------------------------------------------------------
-
 # Installation
 AppMan can either be used in Portable Mode (ideal if you want to put it on a USB stick to use on any system) or placed into a $PATH enabled in your $HOME directory (and without root privileges). In the following lines you can choose an installation guide or you can start it immediately in Portable Mode (with a video)... but not before having read the list of dependencies needed to run "AppMan".
 
@@ -135,6 +137,7 @@ For more details, jump to the paragraph "[Missing dependences](#missing-dependen
 
 NOTE: as you can see, unlike "AM" (that require `sudo`), it is not absolutely necessary to run "AppMan" with root privileges, however if out of habit you intend to use `sudo`, `doas` or similar commands you are free to do so at your own risk (I don't recommend it, all the options may require root access each time you run `appman`, and this is less convenient than by using `am`, at this point).
 
+-----------------------------------------------------------------------------
 #### Step-by-step
 1. Enable `~/.local/bin` in your `$PATH`:
 	
@@ -145,12 +148,14 @@ NOTE: as you can see, unlike "AM" (that require `sudo`), it is not absolutely ne
 3. Optionally you can place the script in your new local $PATH:
 
        mv ./appman ~/.local/bin/appman 
-       
+
+-----------------------------------------------------------------------------
 #### Quick
 Just copy/paste the following line:
 
     mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc && wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman 
 
+-----------------------------------------------------------------------------
 #### Portable Mode
 As we have just seen, it is more convenient to put the scipt of "AppMan" into a local $PATH to use it from the command line and use `bash-completion` like on any other program in your system. But we have not to forget that "AppMan" is a portable version of "AM", this means that you can use it wherever you want, this mean that you can also setup an USB stick with a custom $HOME to use your apps wherever you want.
 
@@ -162,12 +167,12 @@ In this case all you have to do is to copy/paste the following command:
 
        wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman
 
-    
+-----------------------------------------------------------------------------
 # Choose the directory for your applications
 Run `appman` (if in `$PATH`) or `./appman`, you'll read a prompt that asks for a destination directory or path for your installed Applications.
 You can always modify the destination folder by editing the "appman-config" file under ~/.config/appman
 
-
+-----------------------------------------------------------------------------
 # USAGE
  
  `appman {OPTION}`
@@ -426,7 +431,7 @@ You can always modify the destination folder by editing the "appman-config" file
  DESCRIPTION:	Download the installation scripts for "AM" and converts them to rootless installation scripts that can be installed locally. 
  ___________________________________________________________________________
     
-
+-----------------------------------------------------------------------------
 # Features
 ------------------------------------------------------------------------
 ### How to enable bash completion
@@ -464,11 +469,6 @@ Since version 4.4.2 you can use the `--launcher` option to integrate your local 
 
 https://github.com/ivan-hc/AM-Application-Manager/assets/88724353/c4b889f4-8504-4853-8918-44d52084fe6c
 
-------------------------------------------------------------------------	
-# Uninstall
-To uninstall "AppMan" just remove it. To uninstall all the apps installed instead it is necessary to execute the `remove` script available into the main directory of each application you've installed (with "AppMan" it is easier with the `appman -r $PROGRAM1 $PROGRAM2 $PROGRAM3 ...` command.
-The configuration's file of "AppMan" (the one containing the name of the directory you've choosen for your apps) is available in ~/.config/appman.
-
 ------------------------------------------------------------------------
 # Sandbox using Firejail
 Since version 5.3 you can use the `--firejail` option to run AppImages using a sandbox (requires Firejail installed on the host).
@@ -480,10 +480,18 @@ Options 1, 2 and 5 are continuous to let you edit the file and test your changes
 NOTE: once patched the .desktop files (options 3 and 4), they will be placed in ~/.local/share/applications, this means that if you have installed apps using AppMan, the original launchers will be overwrited.
 
 ------------------------------------------------------------------------	
+# Uninstall
+To uninstall "AppMan" just remove it. To uninstall all the apps installed instead it is necessary to execute the `remove` script available into the main directory of each application you've installed (with "AppMan" it is easier with the `appman -r $PROGRAM1 $PROGRAM2 $PROGRAM3 ...` command.
+The configuration's file of "AppMan" (the one containing the name of the directory you've choosen for your apps) is available in ~/.config/appman.
+
+------------------------------------------------------------------------	
 # Troubleshooting
+
+------------------------------------------------------------------------
 ### An application does not work, is old and unsupported
 Use the `-a` option and go to the developer's site to report the problem. The task of "AppMan" is solely to install / remove / update the applications managed by it. Problems related to the failure of an installed program or any related bugs are attributable solely to its developers.
 
+------------------------------------------------------------------------
 ### Cannot download or update an application
 There can be many reasons:
 - check your internet connection;
@@ -491,9 +499,11 @@ There can be many reasons:
 - the referring link may have been changed, try the `--rollback` option;
 - the reference site has changed, report any changes at https://github.com/ivan-hc/AM-Application-Manager/issues
 
+------------------------------------------------------------------------
 ### Cannot mount and run AppImages
 See https://docs.appimage.org/user-guide/troubleshooting/fuse.html
 
+------------------------------------------------------------------------
 ### Missing dependences
 To prevent any issue is strongly recommended to install all dependences listed at the paragraph "[Requirements](#requirements)", alternativelly you can use this workaround.
 
@@ -512,14 +522,7 @@ for name in "unzip" "tar"; do
 ```
 I don't recommend to remove all other commands, being them mainly used. 
 
-### Stop AppImage prompt to create its own launcher, desktop integration and doubled launchers
-Some developers insist on creating Appimages that create their own launcher on first launch (like WALC and OpenShot). If the official solution proposed [here](https://discourse.appimage.org/t/stop-appimage-from-asking-to-integrate/488) doesn't work, create a .home directory with the `-H` option, launch the app and accept the request. For example:
-```
-am -H walc
-walc
-```
-Accept the integration request, the launcher will be saved in the walc.home directory located next to the AppImage file.
-
+------------------------------------------------------------------------
 ### Spyware, malware and dangerous software
 Before installing any application, try to know where it comes from first. This program provides you with two basic options for this purpose:
 - Option `-a` or `about` (medium safety), allows you to read a short description and know the links from the pages of the site [https://portable-linux-apps.github.io](https://portable-linux-apps.github.io) locally, however these links may be inaccurate due to continuous updates of the initial scripts (you can provide additional info yourself by modifying the pages of the site, [here](https://github.com/Portable-Linux-Apps/Portable-Linux-Apps.github.io), it is also open source);
@@ -527,6 +530,7 @@ Before installing any application, try to know where it comes from first. This p
 
 “AM” and AppMan are just tools to easily install all listed programs, but what you choose to install is your complete responsibility. **Use at your own risk**!
 
+------------------------------------------------------------------------
 ### Stop AppImage prompt to create its own launcher, desktop integration and doubled launchers
 Some developers insist on creating Appimages that create their own launcher on first launch (like WALC and OpenShot). If the official solution proposed [here](https://discourse.appimage.org/t/stop-appimage-from-asking-to-integrate/488) doesn't work, create a .home directory with the `-H` option, launch the app and accept the request. For example:
 ```
@@ -535,10 +539,20 @@ walc
 ```
 Accept the integration request, the launcher will be saved in the walc.home directory located next to the AppImage file.
 
+------------------------------------------------------------------------
 ### Wrong download link
 The reasons may be two:
 - the referring link may have been changed, try the `--rollback` option;
 - the reference site has changed, report any changes at https://github.com/ivan-hc/AM-Application-Manager/issues
+
+------------------------------------------------------------------------
+### Stop AppImage prompt to create its own launcher, desktop integration and doubled launchers
+Some developers insist on creating Appimages that create their own launcher on first launch (like WALC and OpenShot). If the official solution proposed [here](https://discourse.appimage.org/t/stop-appimage-from-asking-to-integrate/488) doesn't work, create a .home directory with the `-H` option, launch the app and accept the request. For example:
+```
+am -H walc
+walc
+```
+Accept the integration request, the launcher will be saved in the walc.home directory located next to the AppImage file.
 
 ------------------------------------------------------------------------
 # Conclusions
