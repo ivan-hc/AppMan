@@ -142,9 +142,9 @@ NOTE: as you can see, unlike "AM" (that require `sudo`), it is not absolutely ne
 1. Enable `~/.local/bin` in your `$PATH`:
 	
        mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc
-2. Download the script from this repository and made it executable:
+2. Download the script [APP-MANAGER](https://github.com/ivan-hc/AM-Application-Manager/blob/main/APP-MANAGER) from the repository of "[AM](https://github.com/ivan-hc/AM-Application-Manager)" and rename it to "appman", then made it executable:
 
-       wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman
+       wget https://raw.githubusercontent.com/ivan-hc/AM-Application-Manager/main/APP-MANAGER -O appman && chmod a+x ./appman
 3. Optionally you can place the script in your new local $PATH:
 
        mv ./appman ~/.local/bin/appman 
@@ -153,7 +153,7 @@ NOTE: as you can see, unlike "AM" (that require `sudo`), it is not absolutely ne
 #### Quick
 Just copy/paste the following line:
 
-    mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc && wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman 
+    mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc && wget https://raw.githubusercontent.com/ivan-hc/AM-Application-Manager/main/APP-MANAGER -O appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman 
 
 -----------------------------------------------------------------------------
 #### Portable Mode
@@ -165,7 +165,7 @@ https://github.com/ivan-hc/AppMan/assets/88724353/f70c46fd-6509-4889-b119-ecb386
 
 In this case all you have to do is to copy/paste the following command:
 
-       wget https://raw.githubusercontent.com/ivan-hc/AppMan/main/appman && chmod a+x ./appman
+       wget https://raw.githubusercontent.com/ivan-hc/AM-Application-Manager/main/APP-MANAGER -O appman && chmod a+x ./appman
 
 -----------------------------------------------------------------------------
 # Choose the directory for your applications
