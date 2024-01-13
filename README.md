@@ -1,12 +1,18 @@
-"AppMan" is a bash script able to install, update and remove thousands of standalone programs (any AppImage package, but also the official versions of Firefox, Thunderbird, Brave, Blender and hundreds of other programs provided on their official sites).
+## "AppMan", the rootless side of "AM" to manage all your applications locally
 
-Since the new 4.0.0 version, AppMan is also portable, ie it does not need a speciphic path to work, you can use it anywhere on your system.
+"AppMan" is a portable bash script able to install, update and remove thousands of standalone programs (any AppImage package, but also the official versions of Firefox, Thunderbird, Brave, Blender and hundreds of other programs provided on their official sites). Since version 5, "AppMan" is the name you must give to the main CLI "APP-MANAGER" from ["AM" Application Manager](https://github.com/ivan-hc/AM-Application-Manager) to manage all the apps locally.
 
-"AppMan" is based on the previous stable version of ["AM" Application Manager](https://github.com/ivan-hc/AM-Application-Manager) and converts all the installation scripts from the main database of "AM" to scripts that can install and integrate all the programs for the current user only and without root privileges. As opposed to "AM", AppMan installs all the programs locally, in the user's $HOME.
+"AppMan" converts all the installation scripts from the main database of "AM" to scripts that can install and integrate all the programs for the current user only and without root privileges. As opposed to "AM", AppMan installs all the programs locally, in the user's $HOME.
 
-"AppMan" can also be used by "AM" itself, since version 4.3.3-1 of the main project exists the option `--user` that allows you to create an alias to install and manage apps in your $HOME folder. When executing the `am --user` command you will be suggested an alias to use temporarily or if you want you can add it in your ~/.bashrc to make it permanent. "AppMan" will be used while still using the usual `am` command (learn more [here](https://github.com/ivan-hc/AM-Application-Manager#use-am-locally-like-appman-does)).
+"AppMan" can also be used by "AM" itself with the option `--user` that allows you to create an alias to install and manage apps in your $HOME folder. When executing the `am --user` command you will be suggested an alias to use temporarily or if you want you can add it in your ~/.bashrc to make it permanent. "AppMan" will be used while still using the usual `am` command (learn more [here](https://github.com/ivan-hc/AM-Application-Manager#use-am-locally-like-appman-does)).
 
-Being "AppMan" a bash-based script, it can be used on all the architectures supported by the Linux kernel and works with all the GNU/Linux distributions.
+Being "AM"/"AppMan" a bash-based script, it can be used on all the architectures supported by the Linux kernel and works with all the GNU/Linux distributions.
+
+**NOTE: this repository is a guide on how to use "AM" in "AppMan" mode:**
+- **Any user-side issues or improvements to the local app management script should be reported here.**
+- **Since January 2024 take [ivan-hc/AM-Application-Manager/releases](https://github.com/ivan-hc/AM-Application-Manager/releases) as a reference for new and future versions of "AppMan".**
+- **For the source code see the "[APP-MANAGER](https://github.com/ivan-hc/AM-Application-Manager/blob/main/APP-MANAGER)" script from the main "AM" repository.**
+- **You can consult all the new commits at [github.com/ivan-hc/AM-Application-Manager/commits/main/APP-MANAGER](https://github.com/ivan-hc/AM-Application-Manager/commits/main/APP-MANAGER).**
 
 ------------------------------------------------------------------------
 [Introducing "AppMan"](#introducing-appman)
@@ -111,9 +117,9 @@ If you are interested, you can deliberately join the "AM" project.
 
 -----------------------------------------------------------------------------
 # Installation
-AppMan can either be used in Portable Mode (ideal if you want to put it on a USB stick to use on any system) or placed into a $PATH enabled in your $HOME directory (and without root privileges). In the following lines you can choose an installation guide or you can start it immediately in Portable Mode (with a video)... but not before having read the list of dependencies needed to run "AppMan".
+AppMan can either be used in Portable Mode (ideal if you want to put it on a USB stick to use on any system) or placed into a $PATH enabled in your $HOME directory (and without root privileges). In the following lines you can choose an installation guide or you can start it immediately in Portable Mode (with a video).
 
-NOTE that by installing AppMan in ~/.local/bin, the script can also be managed by Topgrade (see https://github.com/topgrade-rs/topgrade). Follow the "[Step-by-step](#step-by-step)" guide (the paragraph after "[Requirements](#requirements)", in this page).
+**NOTE that by installing AppMan in ~/.local/bin, the script can also be managed by Topgrade** (see https://github.com/topgrade-rs/topgrade). Follow the "[Step-by-step](#step-by-step)" guide (the paragraph after "[Requirements](#requirements)", in this page).
 
 ### Requirements
 #### Dependences
