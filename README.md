@@ -1,4 +1,4 @@
-## "AppMan", the rootless side of "AM" to manage all your applications locally
+## "AppMan", the rootless side of "AM" to manage all your apps locally
 
 "AppMan" is a portable bash script able to install, update and remove thousands of standalone programs (any AppImage package, but also the official versions of Firefox, Thunderbird, Brave, Blender and hundreds of other programs provided on their official sites). Since version 5, "AppMan" is the name you must give to the main CLI "APP-MANAGER" from ["AM" Application Manager](https://github.com/ivan-hc/AM-Application-Manager) to manage all the apps locally.
 
