@@ -167,7 +167,7 @@ As we have just seen, it is more convenient to put the scipt of "AppMan" into a 
 
 In this video I'll show you how it is easy to use AppMan quickly in any directory you download it:
 
-https://github.com/ivan-hc/AppMan/assets/88724353/f70c46fd-6509-4889-b119-ecb386a623ad
+https://github.com/ivan-hc/AppMan/assets/88724353/83b552a2-97bc-4567-bbc4-026e05d6f392
 
 In this case all you have to do is to copy/paste the following command:
 
