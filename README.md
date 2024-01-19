@@ -404,7 +404,23 @@ You can always modify the destination folder by editing the "appman-config" file
  `--rollback {PROGRAM}`
 
  DESCRIPTION:	Download an older or specific version of the software you are interested in (only works with Github).
- ___________________________________________________________________________ 
+ __________________________________________________________________________
+ 
+ `apikey`
+ 
+ SYNOPSIS:	`apikey {Github Token}`
+ 		`apikey delete`
+ 
+ DESCRIPTION:	Get unlimited access to https://api.github.com using your personal access tokens. The configuration file named "ghapikey.txt" will be saved in '$AMPATH' . Use the command "'$AMCLI' apikey delete/del/remove" to remove the file.
+ __________________________________________________________________________
+ 
+ `dev`, `devmode`
+ 
+ SYNOPSIS:	`dev off`
+ 		`dev on`
+ 
+ DESCRIPTION:	View the installer output during installation, use "on". It can be disabled with "off" or with the "`-s`" and "`-u`" options.
+ __________________________________________________________________________
  
  `lock`
  
