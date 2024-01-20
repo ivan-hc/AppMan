@@ -243,18 +243,20 @@ You can always modify the destination folder by editing the "`appman-config`" fi
 
 -----------------------------------------------------------------------------
 # USAGE
+```
+ appman {OPTION}
  
- `appman {OPTION}`
- 
- `appman {OPTION} {PROGRAM}`
+ appman {OPTION} {ARGUMENT}
+```
+
+<details>
+  <summary>Click here to see the full list of options</summary>
+
  ___________________________________________________________________________
  
- ###########################################################################
- ___________________________________________________________________________
- 
- OPTIONS 
+ ## OPTIONS 
  				
- (standard, for both "AM" AND "APPMAN")
+ (standard, for both "AM" and "APPMAN")
  ___________________________________________________________________________
  ___________________________________________________________________________
  
@@ -392,7 +394,7 @@ You can always modify the destination folder by editing the "`appman-config`" fi
 
  `-t {PROGRAM}`
  
- DESCRIPTION:	This option allows you to generate a custom script from a list of different templates that may be vary according to the kind of app you want to upload to the "AM" repo, and the source where it is available. You can install it using the `appman test /path/to/your-script` command.
+ DESCRIPTION:	This option allows you to generate a custom script from a list of different templates that may be vary according to the kind of app you want to upload to the "AM" repo, and the source where it is available. You can install it using the `am test /path/to/your-script` command.
  ___________________________________________________________________________
  
  `-u`, `-U`, `update`
@@ -459,14 +461,23 @@ You can always modify the destination folder by editing the "`appman-config`" fi
 
  DESCRIPTION:	Embed one or more local AppImages in the applications menu. I suggest dragging the files into the terminal to get the desired effect. Launchers are located in ~/.local/share/applications/AppImages by default.
  ___________________________________________________________________________
-
-  `--rollback`
-
+ 
+ `--rollback`
+ 
  SYNOPSIS:
 
  `--rollback {PROGRAM}`
-
+ 
  DESCRIPTION:	Download an older or specific version of the software you are interested in (only works with Github).
+ ___________________________________________________________________________ 
+ 
+ `--user`, `appman`
+ 
+ SYNOPSIS:
+
+ `--user`
+ 
+ DESCRIPTION:	Run "AM" as an unprivileged user making it act as "AppMan".
  __________________________________________________________________________
  
  `apikey`
@@ -483,7 +494,7 @@ You can always modify the destination folder by editing the "`appman-config`" fi
  		`dev on`
  
  DESCRIPTION:	View the installer output during installation, use "on". It can be disabled with "off" or with the "`-s`" and "`-u`" options.
- __________________________________________________________________________
+ __________________________________________________________________________ 
  
  `lock`
  
@@ -520,10 +531,12 @@ You can always modify the destination folder by editing the "`appman-config`" fi
 
  `conv {PROGRAM}`
  
- DESCRIPTION:	Download the installation scripts for "AM" and converts them to rootless installation scripts that can be installed locally. 
+ DESCRIPTION:	Downloads the installation scripts for "AM" and converts them to rootless installation scripts that can be installed locally. 
  ___________________________________________________________________________
-    
------------------------------------------------------------------------------
+
+</details>
+
+------------------------------------------------------------------------
 # Features
 ------------------------------------------------------------------------
 ### How to enable bash completion
