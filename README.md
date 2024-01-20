@@ -62,10 +62,6 @@ https://github.com/ivan-hc/AM-Application-Manager/commits/main/APP-MANAGER
 https://github.com/ivan-hc/AM-Application-Manager/releases
 
 ------------------------------------------------------------------------
-
-<details>
-  <summary>Learn more</summary>
-
 ## Differences between "AM" and "AppMan"
 Initially the two projects traveled in parallel to each other, until version 5, in which the codes merged. However, depending on whether it is installed permanently using a specific method ("AM") or downloaded portablely ("AppMan", if renamed "`appman`") the two CLIs work slightly differently.
 
@@ -178,10 +174,6 @@ If you are interested, you can deliberately join this project to improve the lis
 
 - There are many other AppImage managers around, and almost all of them support their database on appimagehub or other official AppImage resources, but the big problem is at the base of the compilation of these packages, being very often without an integrated update system. Furthermore, AppImage is a format that many developers are abandoning in favor of Flatpak, also because there were no centralized repositories or software that managed its updates in a universal way... at least until the invention of the first draft of [AppMan](https://github.com/ivan-hc/AppMan);
 - With "AM"/"AppMan" each installed program has its own script (AM-updater) that compares the installed version with the one available in the sources or uses official tools to update the AppImages ([see above](#how-to-update-all-programs-for-real)), there is support for multiple architectures (including i686 and aarch64) and anyone can create a script to install that particular program (if available for its architecture).
-
-------------------------------------------------------------------------
-
-</details>
 
 ------------------------------------------------------------------------
 # Installation
@@ -541,10 +533,6 @@ to have a list of the installed programs use the option `-f` or `files` (syntax 
 
 ------------------------------------------------------------------------
 # Features
-
-<details>
-  <summary>Click here</summary>
-
 ------------------------------------------------------------------------
 ### How to enable bash completion
 "AppMan" has its inbuilt bash completion script that can be enabled using the following command:
@@ -592,15 +580,7 @@ Options 1, 2 and 5 are continuous to let you edit the file and test your changes
 NOTE: once patched the .desktop files (options 3 and 4), they will be placed in ~/.local/share/applications, this means that if you have installed apps using AppMan, the original launchers will be overwrited.
 
 ------------------------------------------------------------------------
-
-</details>
-
-------------------------------------------------------------------------
 # Troubleshooting
-
-<details>
-  <summary>Click here</summary>
-
 -----------------------------------------------------------------------------
 ### An application does not work, is old and unsupported
 Use the `-a` option and go to the developer's site to report the problem. The task of "AM" is solely to install / remove / update the applications managed by it. Problems related to the failure of an installed program or any related bugs are attributable solely to its developers.
@@ -637,10 +617,6 @@ am -H walc
 walc
 ```
 Accept the integration request, the launcher will be saved in the walc.home directory located next to the AppImage file.
-
-------------------------------------------------------------------------
-
-</details>
 
 ------------------------------------------------------------------------
 # Related projects
