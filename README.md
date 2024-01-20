@@ -243,7 +243,7 @@ https://github.com/ivan-hc/AppMan/assets/88724353/83b552a2-97bc-4567-bbc4-026e05
 
 #### Choose the directory for your applications
 Run `appman` (if in `$PATH`) or `./appman`, you'll read a prompt that asks for a destination directory or path for your installed Applications.
-You can always modify the destination folder by editing the "appman-config" file under ~/.config/appman
+You can always modify the destination folder by editing the "`appman-config`" file under `~/.config/appman`.
 
 -----------------------------------------------------------------------------
 # USAGE
