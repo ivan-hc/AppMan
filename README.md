@@ -15,6 +15,8 @@
   - [Portable Mode](#portable-mode)
   - [Choose the directory for your applications](#choose-the-directory-for-your-applications)
 
+[Uninstall](#uninstall)
+
 [Usage](#usage)
 
 [Features](#features)
@@ -23,8 +25,6 @@
 - [Rollback](#rollback)
 - [Manage local AppImages](#manage-local-appimages)
 - [Sandbox using Firejail](#sandbox-using-firejail)
-
-[Uninstall](#uninstall)
 
 [Troubleshooting](#troubleshooting)
 - [An application does not work, is old and unsupported](#an-application-does-not-work-is-old-and-unsupported)
@@ -243,6 +243,17 @@ Run `appman` (if in `$PATH`) or `./appman`, you'll read a prompt that asks for a
 You can always modify the destination folder by editing the "`appman-config`" file under `~/.config/appman`.
 
 -----------------------------------------------------------------------------
+# Uninstall
+Before you remove "AM"/AppMan, use the option `-R` to remove the apps installed using the following syntax (for example using "AM"):
+```
+am -R {PROGRAM1} {PROGRAM2} {PROGRAM3}...
+```
+to have a list of the installed programs use the option `-f` or `files` (syntax `am -f` or `appman -f`).
+
+- To uninstall "AM" just run the command `am -r am` (with a prompt) or `am -R am` (quick)
+- To uninstall "AppMan" just remove it and the directory $HOME/.config/appman
+
+------------------------------------------------------------------------	
 # USAGE
 ```
  am {OPTION}
@@ -584,11 +595,6 @@ At first start a copy of /etc/firejail/default.profile will be saved in your app
 Options 1, 2 and 5 are continuous to let you edit the file and test your changes immediately. Press any key to exit.
 
 NOTE: once patched the .desktop files (options 3 and 4), they will be placed in ~/.local/share/applications, this means that if you have installed apps using AppMan, the original launchers will be overwrited.
-
-------------------------------------------------------------------------	
-# Uninstall
-To uninstall "AppMan" just remove it. To uninstall all the apps installed instead it is necessary to execute the `remove` script available into the main directory of each application you've installed (with "AppMan" it is easier with the `appman -r $PROGRAM1 $PROGRAM2 $PROGRAM3 ...` command.
-The configuration's file of "AppMan" (the one containing the name of the directory you've choosen for your apps) is available in ~/.config/appman.
 
 ------------------------------------------------------------------------	
 # Troubleshooting
