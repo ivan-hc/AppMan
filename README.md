@@ -513,7 +513,7 @@ You can always modify the destination folder by editing the "`appman-config`" fi
  ___________________________________________________________________________
  ___________________________________________________________________________
 
- EXTRA OPTIONS
+## EXTRA OPTIONS
  ___________________________________________________________________________
 
  `conv`, `convert`			 (only available for "APPMAN")
