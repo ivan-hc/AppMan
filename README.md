@@ -329,7 +329,7 @@ You can always modify the destination folder by editing the "appman-config" file
 
  `-t {PROGRAM}`
  
- DESCRIPTION:	This option allows you to generate a custom script from a list of different templates that may be vary according to the kind of app you want to upload to the "AM" repo, and the source where it is available.
+ DESCRIPTION:	This option allows you to generate a custom script from a list of different templates that may be vary according to the kind of app you want to upload to the "AM" repo, and the source where it is available. You can install it using the `appman test /path/to/your-script` command.
  ___________________________________________________________________________
  
  `-u`, `-U`, `update`
@@ -429,7 +429,14 @@ You can always modify the destination folder by editing the "appman-config" file
  `lock {PROGRAM}`
  
  DESCRIPTION:	Lock the selected app to the current version installed, this only works if exists a dedicated "AM-updater" installed with the app.
- ___________________________________________________________________________
+ __________________________________________________________________________
+ 
+ `test`
+ 
+ SYNOPSIS:	`test {FILE}`
+ 
+ DESCRIPTION:	Install a local installation script, or test your own.
+ __________________________________________________________________________
  
  `unlock`
  
