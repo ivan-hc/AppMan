@@ -48,6 +48,10 @@ This project is the set of two Command Line Interfaces that coexist in the same 
 
 *For specific guide on using "AM", see [https://github.com/ivan-hc/AppMan](https://github.com/ivan-hc/AM-Application-Manager)*
 
+*See it in action ("AM" version 4.3.2):*
+
+https://github.com/ivan-hc/AM-Application-Manager/assets/88724353/b2dd8ca6-5ee7-4bb2-8480-9a53f5cfcf56
+
 Being "[APP-MANAGER](https://github.com/ivan-hc/AM-Application-Manager/blob/main/APP-MANAGER)" a bash-based script, it can be used on all the architectures supported by the Linux kernel and works with all the GNU/Linux distributions.
 
 "AM"/"AppMan" aims to be a merger for GNU/Linux distributions, using not just AppImage as the main package format, but also other standalone programs, so without having to risk breaking anything on your system: no daemons, no shared libraries. Just your program!
