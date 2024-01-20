@@ -94,9 +94,10 @@ Where `$PROGRAM` is the application we're going to install:
       /opt/$PROGRAM/icons/$ICON-NAME
       /usr/local/bin/$PROGRAM
       /usr/share/applications/AM-$PROGRAM.desktop
-If the distro is immutable instead, the path of the launcher (the last line above) will change like this (see "[Note for users of immutable distributions](#note-for-users-of-immutable-distributions)"):
+If the distro is immutable instead, the path of the launcher (the last line above) will change like this:
 
       /usr/local/share/applications/AM-$PROGRAM.desktop
+Since version 5.1 the installation process have introduced a check to find read-only filesystems (`grep "[[:space:]]ro[[:space:],]" /proc/mounts`), if there are mountpoints like this, your distro may be an immutable one, so an `/usr/local/share/applications` directory will be created and the installation script will be patched to redirect the installation of launchers in that path to solve the issue.
 
 - "AppMan" (ie the `appman` command) instead does not need root privileges to work, it allows you to choose where to install your applications into your `$HOME` directory. AppMan is also usable as a portable app (i.e. you can download and place it wherever you want) and it is able to update itself, anywhere! At first start it will ask you where to install the apps and it will create the directory for you (the configuration file is in `~/.config/appman`). For example, suppose you want install everything in "Applicazioni" (the italian of "applications"), this is the structure of what an installation scripts installs with "AppMan" instead:
 
