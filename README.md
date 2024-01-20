@@ -46,7 +46,7 @@ This project is the set of two Command Line Interfaces that coexist in the same 
 
 **This repository is focused on using "AppMan" and contains the transition script!**
 
-*For specific guide on using "AM", see [https://github.com/ivan-hc/AppMan](https://github.com/ivan-hc/AM-Application-Manager)*
+*For specific guide on using "AM", see [https://github.com/ivan-hc/AM-Application-Manager](https://github.com/ivan-hc/AM-Application-Manager)*
 
 *See it in action ("AM" version 4.3.2):*
 
