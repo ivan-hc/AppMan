@@ -44,7 +44,7 @@
 # Introducing "AppMan"
 This project is the set of two Command Line Interfaces that coexist in the same body, "[APP-MANAGER](https://github.com/ivan-hc/AM-Application-Manager/blob/main/APP-MANAGER)". This script, depending on how it is installed and renamed, allows you to install and manage any AppImage package, but also the official versions of Firefox, Thunderbird, Brave, Blender and hundreds of other programs provided on their official sites... in the same way but with different installation methods, at system level as super user or locally. These two CLIs, or entities, are "AM" (`am` command) and "AppMan" (`appman` command), respectively.
 
-**This repository is focused on using "AppMan"!**
+**This repository is focused on using "AppMan" and contains the transition script!**
 
 *For specific guide on using "AM", see [https://github.com/ivan-hc/AppMan](https://github.com/ivan-hc/AM-Application-Manager)*
 
