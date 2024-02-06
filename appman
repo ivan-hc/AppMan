@@ -6,7 +6,7 @@
 #
 # Since version 5, "AppMan" and "AM" have been meged to share the same code.
 #
-# See https://github.com/ivan-hc/AM-Application-Manager/blob/main/APP-MANAGER
+# See https://github.com/ivan-hc/AM/blob/main/APP-MANAGER
 #
 # This is a transition script that will download and rename the script above.
 #
@@ -22,7 +22,7 @@
 #
 # New commits for the "AppMan"/"AM" code will be listed at the following URL:
 #
-# https://github.com/ivan-hc/AM-Application-Manager/commits/main/APP-MANAGER
+# https://github.com/ivan-hc/AM/commits/main/APP-MANAGER
 #
 ################################################################################
 
@@ -30,7 +30,7 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 case $2 in
 	*)
-		wget -q https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/APP-MANAGER -O $DIR/appman && chmod a+x $DIR/appman
+		wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O $DIR/appman && chmod a+x $DIR/appman
 		cd $DIR
 		exec ./appman "$@";;
 esac
