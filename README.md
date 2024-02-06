@@ -38,13 +38,13 @@
 
 -----------------------------------------------------------------------------
 # Introducing "AppMan"
-This project is the set of two Command Line Interfaces that coexist in the same body, "[APP-MANAGER](https://github.com/ivan-hc/AM-Application-Manager/blob/main/APP-MANAGER)". This script, depending on how it is installed and renamed, allows you to install and manage any AppImage package, but also the official versions of Firefox, Thunderbird, Brave, Blender and hundreds of other programs provided on their official sites... in the same way but with different installation methods, at system level as super user or locally. These two CLIs, or entities, are "AM" (`am` command) and "AppMan" (`appman` command), respectively.
+This project is the set of two Command Line Interfaces that coexist in the same body, "[APP-MANAGER](https://github.com/ivan-hc/AM/blob/main/APP-MANAGER)". This script, depending on how it is installed and renamed, allows you to install and manage any AppImage package, but also the official versions of Firefox, Thunderbird, Brave, Blender and hundreds of other programs provided on their official sites... in the same way but with different installation methods, at system level as super user or locally. These two CLIs, or entities, are "AM" (`am` command) and "AppMan" (`appman` command), respectively.
 
 **This repository is focused on using "AppMan" and contains the transition script!**
 
-*For specific guide on using "AM", see [https://github.com/ivan-hc/AM-Application-Manager](https://github.com/ivan-hc/AM-Application-Manager)*
+*For specific guide on using "AM", see [https://github.com/ivan-hc/AM](https://github.com/ivan-hc/AM)*
 
-Being "[APP-MANAGER](https://github.com/ivan-hc/AM-Application-Manager/blob/main/APP-MANAGER)" a bash-based script, it can be used on all the architectures supported by the Linux kernel and works with all the GNU/Linux distributions.
+Being "[APP-MANAGER](https://github.com/ivan-hc/AM/blob/main/APP-MANAGER)" a bash-based script, it can be used on all the architectures supported by the Linux kernel and works with all the GNU/Linux distributions.
 
 "AM"/"AppMan" aims to be a merger for GNU/Linux distributions, using not just AppImage as the main package format, but also other standalone programs, so without having to risk breaking anything on your system: no daemons, no shared libraries. Just your program!
 
@@ -52,15 +52,15 @@ The main goal of this tool is to provide the same updated applications to multip
 
 - ***You can read the common code used by both "AM" and "AppMan" at the following link***:
 
-https://github.com/ivan-hc/AM-Application-Manager/blob/main/APP-MANAGER
+https://github.com/ivan-hc/AM/blob/main/APP-MANAGER
 
 - ***You can check out updates to the common code used by both "AM" and "AppMan" at the following link***:
 
-https://github.com/ivan-hc/AM-Application-Manager/commits/main/APP-MANAGER
+https://github.com/ivan-hc/AM/commits/main/APP-MANAGER
 
 - ***For a summary of the new versions, consult the "releases" section of the "AM" repository at the following link***:
 
-https://github.com/ivan-hc/AM-Application-Manager/releases
+https://github.com/ivan-hc/AM/releases
 
 ------------------------------------------------------------------------
 ## Differences between "AM" and "AppMan"
@@ -71,7 +71,7 @@ Initially the two projects traveled in parallel to each other, until version 5, 
 
 #### In short:
 
-- "**AM**" applies system-wide programs integration (for all users), i.e. installs programs in the `/opt` directory (see [Linux Standard Base](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s13.html)), the launchers instead are installed in `/usr/share/applications` (or `/usr/local/share/applications` if the distribution is "immutable") with the "AM-" suffix and the links are placed in `/usr/local/bin` or `/usr/local/games`. To manage programs system wide, AM needs to be installed in `/opt/am` as "`APP-MANAGER`" with a `/usr/local/bin/am` as a symlink (see https://github.com/ivan-hc/AM-Application-Manager#installation);
+- "**AM**" applies system-wide programs integration (for all users), i.e. installs programs in the `/opt` directory (see [Linux Standard Base](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s13.html)), the launchers instead are installed in `/usr/share/applications` (or `/usr/local/share/applications` if the distribution is "immutable") with the "AM-" suffix and the links are placed in `/usr/local/bin` or `/usr/local/games`. To manage programs system wide, AM needs to be installed in `/opt/am` as "`APP-MANAGER`" with a `/usr/local/bin/am` as a symlink (see https://github.com/ivan-hc/AM#installation);
 - "**AppMan**", on the other hand, works in a portable way and allows you to install and manage the same applications locally, in your "$HOME" directory, and without root privileges. However, it is important that it is renamed to `appman` to work (see https://github.com/ivan-hc/AppMan#installation)
 
 ***NOTE, "AM" can be set to work like "AppMan" by enabling an alias provided with the command "`am --user`".***
@@ -172,7 +172,7 @@ Here are the ways in which the updates will be made:
 
 ###### *In this video I'll show you how to test an update on "Avidemux" using "AM" (I use my custom AppImage I have built from "deb-multimedia", for my use case, but don't worry, the official Avidemux AppImage is also available on this repository). Firefox, on the other hand, is not affected by this management, as it can be updated automatically*:
 
-https://github.com/ivan-hc/AM-Application-Manager/assets/88724353/7e1845e7-bd02-495a-a1b5-735867a765d1
+https://github.com/ivan-hc/AM/assets/88724353/7e1845e7-bd02-495a-a1b5-735867a765d1
 
 </details>
 
@@ -181,15 +181,15 @@ https://github.com/ivan-hc/AM-Application-Manager/assets/88724353/7e1845e7-bd02-
 <details>
   <summary></summary>
 
-Each program is installed through a dedicated script, and all these scripts are listed in the "[repository](https://github.com/ivan-hc/AM-application-manager/tree/main/programs)" and divided by architecture.
+Each program is installed through a dedicated script, and all these scripts are listed in the "[repository](https://github.com/ivan-hc/AM/tree/main/programs)" and divided by architecture.
 
 ***NOTE that currently my work focuses on applications for x86_64 architecture, but it is possible to extend "AM" to all other available architectures.***
 
 Click on the link of your architecture to see the list of all the apps available on this repository:
 
-- [x86_64](https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/programs/x86_64-apps)
-- [i686](https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/programs/i686-apps)
-- [aarch64](https://raw.githubusercontent.com/ivan-hc/AM-application-manager/main/programs/aarch64-apps)
+- [x86_64](https://raw.githubusercontent.com/ivan-hc/AM/main/programs/x86_64-apps)
+- [i686](https://raw.githubusercontent.com/ivan-hc/AM/main/programs/i686-apps)
+- [aarch64](https://raw.githubusercontent.com/ivan-hc/AM/main/programs/aarch64-apps)
 
 If you are interested, you can deliberately join this project to improve the lists above.
 
@@ -238,12 +238,12 @@ To install "AppMan" in `~/.local/bin` you must first enable that path in `$PATH`
 
 To do all this simply copy/paste the following command:
 ```
-mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc && wget https://raw.githubusercontent.com/ivan-hc/AM-Application-Manager/main/APP-MANAGER -O appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman
+mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc && wget https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman
 ```
 #### Portable Mode
 "AppMan" can run in any directory you download it, copy/paste the following command to download "APP-MANAGER", rename it to `appman` and make it executable:
 ```
-wget https://raw.githubusercontent.com/ivan-hc/AM-Application-Manager/main/APP-MANAGER -O appman && chmod a+x ./appman
+wget https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O appman && chmod a+x ./appman
 ```
 ###### *In this video I'll show you how it is easy to use AppMan quickly and without installation:*
 
@@ -615,7 +615,7 @@ This only works with the apps hosted on Github.
 
 Since version 4.4.2 you can use the `--launcher` option to integrate your local AppImage packages by simply dragging and dropping them into the terminal (see video).
 
-https://github.com/ivan-hc/AM-Application-Manager/assets/88724353/c4b889f4-8504-4853-8918-44d52084fe6c
+https://github.com/ivan-hc/AM/assets/88724353/c4b889f4-8504-4853-8918-44d52084fe6c
 
 </details>
 
@@ -645,7 +645,7 @@ The following video shows how to create and test an AppImage of "Abiword" from D
 
 https://user-images.githubusercontent.com/88724353/150619523-a45455f6-a656-4753-93fe-aa99babc1083.mp4
 
-The currently available templates are stored [here](https://github.com/ivan-hc/AM-application-manager/tree/main/templates).
+The currently available templates are stored [here](https://github.com/ivan-hc/AM/tree/main/templates).
 
 A wiki is also available, here I will try to explain the installation script's workflow for a program to be better managed by "AM", trying to use a language that is as simple and elementary as possible.
 
@@ -653,20 +653,20 @@ Each script is written exclusively for "AM" and is structured in such a way that
 
 We can divide the stages of an installation's process as follows:
 
-* [Step 1: create the main directory](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-1:-create-the-main-directory) in /opt, as already suggested by the [Linux Standard Base](https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/opt.html) (LSB);
-* [Step 2: create the "remove" script](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-2:-create-the-%22remove%22-script), needed to uninstall averything (this must be the first one to be created, in order to quickly resolve any aborted/brocken installations using the `-r` option);
-* [Step 3: download the program](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-3:-download-the-program) and/or compile the program (this operation varies depending on how the program is distributed);
-* [Step 4: link to a $PATH](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-4:-link-to-a-$PATH) (usually `/usr/local/bin`, but also `/usr/bin`, `/usr/games` or `/usr/local/games`);
-* [Step 5: the "AM updater" script](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-5:-the-%22AM-updater%22-script), which is a kind of "copy" of step "3" (see above) that may include options to recognize newer versions of the program. NOTE that if you intend to create a script for the fixed version of a program, you can also skip this step;
-* [Step 6: launchers and icons](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-6:-launchers-and-icons). Note that if you intend to create a script for a command line utility, you can also skip this step;
-* [Step 7: change the permissions](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-7:-permissions) in the program folder, so you can use the update function (step 5) without using "sudo" privileges
-* [Step 8 (optional): your signature](https://github.com/ivan-hc/AM-Application-Manager/wiki/Step-8-(optional):-your-signature)
+* [Step 1: create the main directory](https://github.com/ivan-hc/AM/wiki/Step-1:-create-the-main-directory) in /opt, as already suggested by the [Linux Standard Base](https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/opt.html) (LSB);
+* [Step 2: create the "remove" script](https://github.com/ivan-hc/AM/wiki/Step-2:-create-the-%22remove%22-script), needed to uninstall averything (this must be the first one to be created, in order to quickly resolve any aborted/brocken installations using the `-r` option);
+* [Step 3: download the program](https://github.com/ivan-hc/AM/wiki/Step-3:-download-the-program) and/or compile the program (this operation varies depending on how the program is distributed);
+* [Step 4: link to a $PATH](https://github.com/ivan-hc/AM/wiki/Step-4:-link-to-a-$PATH) (usually `/usr/local/bin`, but also `/usr/bin`, `/usr/games` or `/usr/local/games`);
+* [Step 5: the "AM updater" script](https://github.com/ivan-hc/AM/wiki/Step-5:-the-%22AM-updater%22-script), which is a kind of "copy" of step "3" (see above) that may include options to recognize newer versions of the program. NOTE that if you intend to create a script for the fixed version of a program, you can also skip this step;
+* [Step 6: launchers and icons](https://github.com/ivan-hc/AM/wiki/Step-6:-launchers-and-icons). Note that if you intend to create a script for a command line utility, you can also skip this step;
+* [Step 7: change the permissions](https://github.com/ivan-hc/AM/wiki/Step-7:-permissions) in the program folder, so you can use the update function (step 5) without using "sudo" privileges
+* [Step 8 (optional): your signature](https://github.com/ivan-hc/AM/wiki/Step-8-(optional):-your-signature)
 
 The most difficult step to overcome is certainly the number "3", given the great variety of methods in which authors distribute their software, while all the other steps are much easier to overcome.
 
 To install and test your own script, use the command `am test /path/to/your-script` or `appman test /path/to/your-script` depending on your CLI, this way:
 
-https://github.com/ivan-hc/AM-Application-Manager/assets/88724353/fa0e8627-6beb-47fc-a52f-0d32e392c7ce
+https://github.com/ivan-hc/AM/assets/88724353/fa0e8627-6beb-47fc-a52f-0d32e392c7ce
 
 </details>
 
@@ -691,7 +691,7 @@ There can be many reasons:
 - check your internet connection;
 - if the app is hosted on github.com, you have probably exceeded the hourly limit of API calls;
 - the referring link may have been changed, try the `--rollback` option;
-- the reference site has changed, report any changes at https://github.com/ivan-hc/AM-Application-Manager/issues
+- the reference site has changed, report any changes at https://github.com/ivan-hc/AM/issues
 
 </details>
 
@@ -738,7 +738,7 @@ Accept the integration request, the launcher will be saved in the walc.home dire
 
 The reasons may be two:
 - the referring link may have been changed, try the `--rollback` option;
-- the reference site has changed, report any changes at https://github.com/ivan-hc/AM-Application-Manager/issues
+- the reference site has changed, report any changes at https://github.com/ivan-hc/AM/issues
 ### Stop AppImage prompt to create its own launcher, desktop integration and doubled launchers
 Some developers insist on creating Appimages that create their own launcher on first launch (like WALC and OpenShot). If the official solution proposed [here](https://discourse.appimage.org/t/stop-appimage-from-asking-to-integrate/488) doesn't work, create a .home directory with the `-H` option, launch the app and accept the request. For example (with "AM"):
 ```
