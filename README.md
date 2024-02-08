@@ -751,14 +751,14 @@ This is a choice I made as many developers have abandoned support for AppImage o
 In case you are sure that the upstream developer will maintain the package for each stable release, you can fix this in several ways:
 #### Method 1: Direct installation by combining `-d` and `test` options 
 ```
-am -d $PROGRAM
+appman -d $PROGRAM
 sed -i 's#releases -O -#releases/latest -O -#g' $(xdg-user-dir DESKTOP)/$PROGRAM
-am test appman test $(xdg-user-dir DESKTOP)/$PROGRAM
+appman test $(xdg-user-dir DESKTOP)/$PROGRAM
 ```
 #### Method 2: "Downgrade" the installed app to "latest"
 Use the option `--force-latest` to patch the AM-updater and perform the "update"/"downgrade":
 ```
-am --force-latest $PROGRAM
+appman --force-latest $PROGRAM
 ```
 or do it manually:
 ```
