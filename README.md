@@ -437,7 +437,7 @@ to have a list of the installed programs use the option `-f` or `files` (syntax 
 
  `-t {PROGRAM}`
  
- DESCRIPTION:	This option allows you to generate a custom script from a list of different templates that may be vary according to the kind of app you want to upload to the "AM" repo, and the source where it is available. You can install it using the `am test /path/to/your-script` command.
+ DESCRIPTION:	This option allows you to generate a custom script from a list of different templates that may be vary according to the kind of app you want to upload to the "AM" repo, and the source where it is available. You can install it using the `am -i /path/to/your-script` command.
  ___________________________________________________________________________
  
  `-u`, `-U`, `update`
@@ -567,13 +567,6 @@ to have a list of the installed programs use the option `-f` or `files` (syntax 
  `newrepo on`
  
  DESCRIPTION:   Set the variable "$AMREPO" to a new custom repository. Use "off" to restore the default one or overwrite it with a new one.
- __________________________________________________________________________
- 
- `test`
- 
- SYNOPSIS:	`test {FILE}`
- 
- DESCRIPTION:	Install a local installation script, or test your own.
  __________________________________________________________________________
  
  `unlock`
@@ -712,9 +705,7 @@ We can divide the stages of an installation's process as follows:
 
 The most difficult step to overcome is certainly the number "3", given the great variety of methods in which authors distribute their software, while all the other steps are much easier to overcome.
 
-To install and test your own script, use the command `am test /path/to/your-script` or `appman test /path/to/your-script` depending on your CLI, this way:
-
-https://github.com/ivan-hc/AM/assets/88724353/fa0e8627-6beb-47fc-a52f-0d32e392c7ce
+To install and test your own script, use the command `am -i /path/to/your-script` or `appman -i /path/to/your-script` depending on your CLI
 
 </details>
 
