@@ -331,8 +331,10 @@ to have a list of the installed programs use the option `-f` or `files` (syntax 
  SYNOPSIS:
 
  `-d {PROGRAM}`
+
+  `-d --convert {PROGRAM}`
  
- DESCRIPTION:	Download one or more installation scripts to your desktop.
+ DESCRIPTION:	Download one or more installation scripts to your desktop. With the option "--convert" its converted to a standalone local installer, but AM requires AppMan to be installed to add custom directory settings.
  ___________________________________________________________________________
  
  `-f`, `files`
@@ -437,7 +439,7 @@ to have a list of the installed programs use the option `-f` or `files` (syntax 
 
  `-t {PROGRAM}`
  
- DESCRIPTION:	This option allows you to generate a custom script from a list of different templates that may be vary according to the kind of app you want to upload to the "AM" repo, and the source where it is available. You can install it using the `am -i /path/to/your-script` command.
+ DESCRIPTION:	This option allows you to generate a custom script from a list of different templates that may be vary according to the kind of app you want to upload to the "AM" repo, and the source where it is available. You can install it using the `am test /path/to/your-script` command.
  ___________________________________________________________________________
  
  `-u`, `-U`, `update`
@@ -581,15 +583,6 @@ to have a list of the installed programs use the option `-f` or `files` (syntax 
 
 ## EXTRA OPTIONS
  ___________________________________________________________________________
-
- `conv`, `convert`			 (only available for "APPMAN")
- 
- SYNOPSIS:
-
- `conv {PROGRAM}`
- 
- DESCRIPTION:	Downloads the installation scripts for "AM" and converts them to rootless installation scripts that can be installed locally. 
- ___________________________________________________________________________ 
  
  `--user`, `appman`			(only available for "AM")
  
