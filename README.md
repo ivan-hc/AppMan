@@ -22,6 +22,7 @@
 - [How to enable bash completion](#how-to-enable-bash-completion)
 - [Snapshots: backup your app and restore to a previous version](#snapshots-backup-your-app-and-restore-to-a-previous-version)
 - [Rollback](#rollback)
+- [Convert old Type2 AppImages to Type3](#convert-old-type2-appimages-to-type3)
 - [Manage local AppImages](#manage-local-appimages)
 - [Sandbox using Firejail](#sandbox-using-firejail)
 - [Create and test your own installation script](#create-and-test-your-own-installation-script)
@@ -643,6 +644,30 @@ This only works with the apps hosted on Github.
 </details>
 
 ------------------------------------------------------------------------
+### Convert old Type2 AppImages to Type3
+<details>
+  <summary></summary>
+
+Since version 6.1 it is possible to convert old Type2 AppImages (dependent on `libfuse2`) to Type3 using the option `nolibfuse`.
+```
+appman nolibfuse ${PROGRAM}
+```
+First the selected program type is checked, if it is a Type2 AppImage, it will be extracted and repackaged using the new version of `appimagetool` from https://github.com/probonopd/go-appimage :
+- If the installed AppImage can be updated via `zsync`, the update will take place while maintaining the status of Type3 AppImage;
+- On the contrary, if the update occurs through "comparison" of versions, the converted AppImage will be replaced by the upstream version, which could still be Type2. I suggest anyone to contact the developers to update the packaging method of their AppImage.
+
+NOTE, the conversion is not always successful, a lot depends on how the program is packaged. The conversion occurs in two steps:
+- if in the first case it succeeds without problems, the package will be repackaged as it was, but of Type 3;
+- if the script encounters problems (due to Appstream validation), it will attempt to delete the contents of the /usr/share/metainfo directory inside the AppImage, as a workaround (which will probably make updates via `zsync` unusable);
+- if this step does not succeed either, the process will end with an error and the AppImage will remain Type2.
+
+See the video:
+
+https://github.com/ivan-hc/AM/assets/88724353/8b45d2c2-d2da-4a07-8b43-0cd77ffcb7cc
+
+</details>
+
+------------------------------------------------------------------------
 ### Manage local AppImages
 <details>
   <summary></summary>
@@ -745,6 +770,10 @@ or
 appman -i libfuse2
 ```
 NOTE, in AppMan you still need to use your password (`sudo`) to install the library at system level, in /usr/local/lib
+
+Alternatively you can use the "`nolibfuse`" option to "try" to convert old Type2 AppImages to Type3, so as not to depend on `libfuse2`. In most cases it works, but sometimes it can give errors, depending on how the package was manufactured.
+
+However, I suggest contacting the upstream developers to convince them to upgrade their packages to Type3.
 
 </details>
 
