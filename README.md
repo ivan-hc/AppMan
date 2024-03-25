@@ -168,10 +168,14 @@ The full list is [here](https://github.com/ivan-hc/AM/blob/main/libraries/libs-l
 <details>
   <summary></summary>
 
-To update all the programs, just run the command (without `sudo`):
+To update all the programs and "AM" itself, just run the command (without `sudo`):
 
     appman -u
     
+To update only the programs:
+
+    appman -u --apps
+
 To update just one program:
 
     appman -u $PROGRAM
@@ -440,7 +444,7 @@ to have a list of the installed programs use the option `-f` or `files` (syntax 
 
  `-t {PROGRAM}`
  
- DESCRIPTION:	This option allows you to generate a custom script from a list of different templates that may be vary according to the kind of app you want to upload to the "AM" repo, and the source where it is available. You can install it using the `am test /path/to/your-script` command.
+ DESCRIPTION:	This option allows you to generate a custom script from a list of different templates that may be vary according to the kind of app you want to upload to the "AM" repo, and the source where it is available. You can install it using the `appman test /path/to/your-script` command.
  ___________________________________________________________________________
  
  `-u`, `-U`, `update`
@@ -448,10 +452,12 @@ to have a list of the installed programs use the option `-f` or `files` (syntax 
  SYNOPSIS:
 
  `-u`
+
+ `-u apps`
  
  `-u {PROGRAM}`
  		
- DESCRIPTION: Update all the apps or just one.
+ DESCRIPTION: Update all the apps (and "appman" itself) or just one. If you add the "`--apps`" suboption you only update apps.
  ___________________________________________________________________________
  
  `-v`, `version`
