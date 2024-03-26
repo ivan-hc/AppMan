@@ -663,9 +663,8 @@ First the selected program type is checked, if it is a Type2 AppImage, it will b
 - On the contrary, if the update occurs through "comparison" of versions, the converted AppImage will be replaced by the upstream version, which could still be Type2. I suggest anyone to contact the developers to update the packaging method of their AppImage.
 
 NOTE, the conversion is not always successful, a lot depends on how the program is packaged. The conversion occurs in two steps:
-- if in the first case it succeeds without problems, the package will be repackaged as it was, but of Type 3;
-- if the script encounters problems (due to Appstream validation), it will attempt to delete the contents of the /usr/share/metainfo directory inside the AppImage, as a workaround (which will probably make updates via `zsync` unusable);
-- if this step does not succeed either, the process will end with an error and the AppImage will remain Type2.
+- if in the first case it succeeds without problems, the package will be repackaged as it was, but of Type 3 (and the AM-updater script will be patched if a .zsync file doesn't exist);
+- if the script encounters problems (due to Appstream validation), the process will end with an error and the AppImage will remain Type2.
 
 See the video:
 
