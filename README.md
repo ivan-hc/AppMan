@@ -232,6 +232,7 @@ A warning message will prevent you from using "AM"/"AppMan" if the following pac
 - "`grep`", to check files;
 - "`sed`", to edit/adapt installed files;
 - "`wget`" to download all programs and update "AM"/AppMan itself;
+- "`xdg-user-dirs`" to download or manage files in well known local folders;
 
 - "`sudo`" (only required by "AM")
 
@@ -467,15 +468,6 @@ to have a list of the installed programs use the option `-f` or `files` (syntax 
  `-v`
  
  DESCRIPTION:	Shows the version.
- ___________________________________________________________________________
- 
- `-w`, `web`
- 
- SYNOPSIS:
-
- `-w`
- 
- DESCRIPTION:	Shows the URLs of the sites/sources of then app.
  ___________________________________________________________________________
  
  `--disable-completion`
