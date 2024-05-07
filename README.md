@@ -906,4 +906,4 @@ The reasons may be two:
 
 --------
 
-*© 2020-present Ivan Alesandro Sala aka 'Ivan-HC'* - I'm here just for fun! 
+*© 2020-present Ivan Alessandro Sala aka 'Ivan-HC'* - I'm here just for fun! 
