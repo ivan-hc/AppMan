@@ -126,8 +126,6 @@ am --system
 ```
 To perform a test and see if you are in "AppMan Mode" or not, run for example the command `am -f` to see the list of the installed apps.
 
-***NOTE: using AM with the `--user` option enabled and the alias for AppMan, "sudo" allows normal use of AM, absence allows use of AppMan.***
-
 </details>
 
 -----------------------------------------------------------------------------
