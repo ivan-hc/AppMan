@@ -16,7 +16,7 @@
 
 ------------------------------------------------------------------------
 ### AppMan Index
-*This is a partial index, dedicated only to "AppMan". To learn more about your options and get many more how-to guides and video demonstrations, use the [***external links index***](#external-links-index).*
+*This is a partial index, dedicated only to "AppMan". To learn more about options and how-to guides (with videos), use the [***external links index***](#external-links-index) or visit [github.com/ivan-hc/AM](https://github.com/ivan-hc/AM).*
 
 ------------------------------------------------------------------------
 
