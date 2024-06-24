@@ -34,7 +34,7 @@
 
 ------------------------------------------------------------------------
 ### External links index
-*All the guides listed here are on [***github.com/ivan-hc/AM***](https://github.com/ivan-hc/AM))*
+*All the guides listed here are available at [***github.com/ivan-hc/AM***](https://github.com/ivan-hc/AM)*
 
 ------------------------------------------------------------------------
 [How to update all programs, for real](https://github.com/ivan-hc/AM#how-to-update-all-programs-for-real)
