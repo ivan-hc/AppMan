@@ -163,9 +163,6 @@ This section explains how to install "AppMan". Below are the essential dependenc
 
 </details>
 
-- [How to install "AM"](#how-to-install-am)
-- [How to install "AppMan"](#how-to-install-appman)
-
 ## How to install "AppMan"
 "**AppMan**" can be used in different places, being it portable.
 
