@@ -16,6 +16,8 @@
 
 ------------------------------------------------------------------------
 ### AppMan Index
+*This is a partial index, dedicated only to "AppMan". To learn more about your options and get many more how-to guides and video demonstrations, use the [***external links index***](#external-links-index).*
+
 ------------------------------------------------------------------------
 
 [Differences between "AM" and "AppMan"](#differences-between-am-and-appman)
@@ -29,6 +31,54 @@
 [Go to "github.com/ivan-hc/AM" for more](https://github.com/ivan-hc/AM)
 
 [Related projects](#related-projects)
+
+------------------------------------------------------------------------
+### External links index
+*All the guides listed here are on [***github.com/ivan-hc/AM***](https://github.com/ivan-hc/AM))*
+
+------------------------------------------------------------------------
+[How to update all programs, for real](https://github.com/ivan-hc/AM#how-to-update-all-programs-for-real)
+
+[Usage (all the available options)](https://github.com/ivan-hc/AM#usage)
+
+[Guides and tutorials](https://github.com/ivan-hc/AM#guides-and-tutorials)
+- [Install applications](https://github.com/ivan-hc/AM#install-applications)
+- [List the installed applications](https://github.com/ivan-hc/AM#list-the-installed-applications)
+- [List and query all the applications available on the database](https://github.com/ivan-hc/AM#list-and-query-all-the-applications-available-on-the-database)
+- [Update all](https://github.com/ivan-hc/AM#update-all)
+- [Backup and restore installed apps using snapshots](https://github.com/ivan-hc/AM#backup-and-restore-installed-apps-using-snapshots)
+- [Remove one or more applications](https://github.com/ivan-hc/AM#remove-one-or-more-applications)
+- [Convert Type2 AppImages requiring libfuse2 to Type3 AppImages](https://github.com/ivan-hc/AM#convert-type2-appimages-requiring-libfuse2-to-type3-appimages)
+- [Integrate local AppImages into the menu by dragging and dropping them](https://github.com/ivan-hc/AM#integrate-local-appimages-into-the-menu-by-dragging-and-dropping-them)
+  - [How to create a launcher for a local AppImage](https://github.com/ivan-hc/AM#how-to-create-a-launcher-for-a-local-appimage)
+  - [How to remove the orphan launchers](https://github.com/ivan-hc/AM#how-to-remove-the-orphan-launchers)
+  - [AppImages from external media](https://github.com/ivan-hc/AM#appimages-from-external-media)
+- [How to use "AM" in non-privileged mode, like "AppMan"](https://github.com/ivan-hc/AM#how-to-use-am-in-non-privileged-mode-like-appman)
+- [Sandbox an AppImage](https://github.com/ivan-hc/AM#sandbox-an-appimage)
+  - [How to enable a sandbox](https://github.com/ivan-hc/AM#how-to-enable-a-sandbox)
+  - [How to disable a sandbox](https://github.com/ivan-hc/AM#how-to-disable-a-sandbox)
+  - [Sandboxing example](https://github.com/ivan-hc/AM#sandboxing-example)
+  - [About Aisap sandboxing](https://github.com/ivan-hc/AM#about-aisap-sandboxing)
+- [How to enable bash completion](https://github.com/ivan-hc/AM#how-to-enable-bash-completion)
+- [How to update or remove apps manually](https://github.com/ivan-hc/AM#how-to-update-or-remove-apps-manually)
+- [Downgrade an installed app to a previous version](https://github.com/ivan-hc/AM#downgrade-an-installed-app-to-a-previous-version)
+- [Create and test your own installation script](https://github.com/ivan-hc/AM#create-and-test-your-own-installation-script)
+  - [Option Zero: "AppImages"](https://github.com/ivan-hc/AM#option-zero-appimages)
+  - [Option One: "build AppImages on-the-fly"](https://github.com/ivan-hc/AM#option-one-build-appimages-on-the-fly)
+  - [Option Two: "Archives and other programs"](https://github.com/ivan-hc/AM#option-two-archives-and-other-programs)
+  - [Option Three: "Firefox profiles"](https://github.com/ivan-hc/AM#option-three-firefox-profiles)
+  - [How an installation script works](https://github.com/ivan-hc/AM#how-an-installation-script-works)
+  - [How to test an installation script](https://github.com/ivan-hc/AM#how-to-test-an-installation-script)
+- [Third-party databases for applications (NeoDB)](https://github.com/ivan-hc/AM#third-party-databases-for-applications-neodb)
+
+[Troubleshooting](https://github.com/ivan-hc/AM#troubleshooting)
+- [An application does not work, is old and unsupported](https://github.com/ivan-hc/AM#an-application-does-not-work-is-old-and-unsupported)
+- [Cannot download or update an application](https://github.com/ivan-hc/AM#cannot-download-or-update-an-application)
+- [Cannot mount and run AppImages](https://github.com/ivan-hc/AM#cannot-mount-and-run-appimages)
+- [Spyware, malware and dangerous software](https://github.com/ivan-hc/AM#spyware-malware-and-dangerous-software)
+- [Stop AppImage prompt to create its own launcher, desktop integration and doubled launchers](https://github.com/ivan-hc/AM#stop-appimage-prompt-to-create-its-own-launcher-desktop-integration-and-doubled-launchers)
+- [The script points to "releases" instead of downloading the latest stable](https://github.com/ivan-hc/AM#the-script-points-to-releases-instead-of-downloading-the-latest-stable)
+- [Wrong download link](https://github.com/ivan-hc/AM#wrong-download-link)
 
 ------------------------------------------------------------------------
 # Differences between "AM" and "AppMan"
