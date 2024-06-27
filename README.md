@@ -145,23 +145,17 @@ You can consult basic information, links to sites and sources used through the r
 ------------------------------------------------------------------------
 # Installation
 This section explains how to install "AppMan". Below are the essential dependencies:
-- "`coreutils`", is usually installed by default in all distributions as it contains basic commands ("`cat`", "`chmod`", "`chown`"...);
+- "`coreutils`" (contains "`cat`", "`chmod`", "`chown`"...);
 - "`curl`", to check URLs;
 - "`grep`", to check files;
-- "`jq`", to handle JSON files (some scripts need to check a download URL from api.github.com);
 - "`sed`", to edit/adapt installed files;
-- "`wget`" to download all programs and update "AM"/"AppMan" itself;
+- "`wget`" to download all programs and update "AM"/"AppMan" itself.
 
-<details>
-  <summary>See also optional dependencies, click here!</summary>
-
-#### Listed below are optional dependencies that are needed only by some programs:
+The following are optional dependencies that some programs may require:
 - "`binutils`", contains a series of basic commands, including "`ar`" which extracts .deb packages;
 - "`unzip`", to extract .zip packages;
 - "`tar`", to extract .tar* packages;
 - "`zsync`", about 10% of AppImages depend on this to be updated.
-
-</details>
 
 ## How to install "AppMan"
 "**AppMan**" can be used in different places, being it portable.
