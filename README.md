@@ -94,8 +94,17 @@ Even though the two CLI utilities share the same body, there are some substantia
 /opt/$PROGRAM/remove
 /opt/$PROGRAM/icons/$ICON-NAME
 /usr/local/bin/$PROGRAM
-/usr/share/applications/AM-$PROGRAM.desktop or /usr/local/share/applications/AM-$PROGRAM.desktop or /usr/local/share/applications/$PROGRAM-AM.desktop
+/usr/share/applications/AM-$PROGRAM.desktop
 ```
+If the distro is immutable or have read-only mount points instead, the path of the launcher (the last line above) will change like this:
+```
+/usr/local/share/applications/AM-$PROGRAM.desktop
+```
+NOTE, all installation scripts created or updated after June 28, 2024 will install launchers in /usr/local/share/applications with the "-AM.desktop" extension instead of the "AM-" suffix, like this:
+```
+/usr/local/share/applications/$PROGRAM-AM.desktop
+```
+
 "**AppMan**" is more flexible, since it asks you where to install the apps in your $HOME directory. For example, suppose you want install everything in "Applicazioni" (the italian of "applications"), this is the structure of what an installation scripts installs with "AppMan" instead:
 ```
 ~/Applicazioni/$PROGRAM/
@@ -106,7 +115,7 @@ Even though the two CLI utilities share the same body, there are some substantia
 ~/.local/bin/$PROGRAM
 ~/.local/share/applications/AM-$PROGRAM.desktop
 ```
-NOTE, all installation scripts created or updated after June 28, 2024 will have the "-AM.desktop" extension instead of the "AM-" suffix, like this:
+NOTE, all installation scripts created or updated after June 28, 2024 will install launchers with the "-AM.desktop" extension instead of the "AM-" suffix, like this:
 ```
 ~/.local/share/applications/$PROGRAM-AM.desktop
 ```
