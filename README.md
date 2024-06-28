@@ -94,7 +94,7 @@ Even though the two CLI utilities share the same body, there are some substantia
 /opt/$PROGRAM/remove
 /opt/$PROGRAM/icons/$ICON-NAME
 /usr/local/bin/$PROGRAM
-/usr/share/applications/AM-$PROGRAM.desktop or /usr/local/share/applications/AM-$PROGRAM.desktop
+/usr/share/applications/AM-$PROGRAM.desktop or /usr/local/share/applications/AM-$PROGRAM.desktop or /usr/local/share/applications/$PROGRAM-AM.desktop
 ```
 "**AppMan**" is more flexible, since it asks you where to install the apps in your $HOME directory. For example, suppose you want install everything in "Applicazioni" (the italian of "applications"), this is the structure of what an installation scripts installs with "AppMan" instead:
 ```
@@ -105,6 +105,10 @@ Even though the two CLI utilities share the same body, there are some substantia
 ~/Applicazioni/$PROGRAM/icons/$ICON-NAME
 ~/.local/bin/$PROGRAM
 ~/.local/share/applications/AM-$PROGRAM.desktop
+```
+NOTE, all installation scripts created or updated after June 28, 2024 will have the "-AM.desktop" extension instead of the "AM-" suffix, like this:
+```
+~/.local/share/applications/$PROGRAM-AM.desktop
 ```
 The configuration file for AppMan is in `~/.config/appman` and contains the path you indicated at first startup. Changing its contents will result in changing the paths for each subsequent operation carried out with "AppMan", the apps and modules stored in the old path will not be manageable.
 
