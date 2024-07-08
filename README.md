@@ -94,16 +94,14 @@ Even though the two CLI utilities share the same body, there are some substantia
 /opt/$PROGRAM/remove
 /opt/$PROGRAM/icons/$ICON-NAME
 /usr/local/bin/$PROGRAM
-/usr/share/applications/AM-$PROGRAM.desktop
-```
-If the distro is immutable or have read-only mount points instead, the path of the launcher (the last line above) will change like this:
-```
-/usr/local/share/applications/AM-$PROGRAM.desktop
-```
-NOTE, all installation scripts created or updated after June 28, 2024 will install launchers in /usr/local/share/applications with the "-AM.desktop" extension instead of the "AM-" suffix, like this:
-```
 /usr/local/share/applications/$PROGRAM-AM.desktop
 ```
+NOTE, all installation scripts used before June 28, 2024 show launchers in /usr/share/applications with suffix "AM-" instead of the "AM.desktop" extension, like this:
+
+```
+/usr/share/applications/AM-$PROGRAM.desktop
+```
+From 8 July 2024 this configuration is no longer available. Reinstall the application to get the new configuration.
 
 "**AppMan**" is more flexible, since it asks you where to install the apps in your $HOME directory. For example, suppose you want install everything in "Applicazioni" (the italian of "applications"), this is the structure of what an installation scripts installs with "AppMan" instead:
 ```
@@ -113,12 +111,14 @@ NOTE, all installation scripts created or updated after June 28, 2024 will insta
 ~/Applicazioni/$PROGRAM/remove
 ~/Applicazioni/$PROGRAM/icons/$ICON-NAME
 ~/.local/bin/$PROGRAM
-~/.local/share/applications/AM-$PROGRAM.desktop
-```
-NOTE, all installation scripts created or updated after June 28, 2024 will install launchers with the "-AM.desktop" extension instead of the "AM-" suffix, like this:
-```
 ~/.local/share/applications/$PROGRAM-AM.desktop
 ```
+NOTE, all installation scripts used before June 28, 2024 show the launchers with suffix "AM-" instead of the "AM.desktop" extension, like this:
+```
+~/.local/share/applications/AM-$PROGRAM.desktop
+```
+From 8 July 2024 this configuration is no longer available. Reinstall the application to get the new configuration.
+
 The configuration file for AppMan is in `~/.config/appman` and contains the path you indicated at first startup. Changing its contents will result in changing the paths for each subsequent operation carried out with "AppMan", the apps and modules stored in the old path will not be manageable.
 
 At first startup you can indicate any directory or subdirectory you want, as long as it is in your $HOME.
@@ -224,15 +224,17 @@ to have a list of the installed programs use the option `-f` or `files` (syntax 
 ------------------------------------------------------------------------
 # Related projects
 #### External tools and forks used in this project
-- [aisap](https://github.com/mgord9518/aisap)
-- [appimagetool/go-appimage](https://github.com/probonopd/go-appimage)
-- [pkg2appimage](https://github.com/AppImage/pkg2appimage)
+- [aisap](https://github.com/mgord9518/aisap), sandboxing solutions for AppImages
+- [appimagetool/go-appimage](https://github.com/probonopd/go-appimage), get rid of libfuse2 from your AppImages
+- [pkg2appimage](https://github.com/AppImage/pkg2appimage), create AppImages on the fly from existing .deb packages
+- [repology](https://github.com/repology), the encyclopedia of all software versions
 
 #### My other projects
-- [AppImaGen](https://github.com/ivan-hc/AppImaGen), a script that generates AppImages from Debian or from a PPA for the previous Ubuntu LTS;
-- [ArchImage](https://github.com/ivan-hc/ArchImage), build AppImage packages for all distributions but including Arch Linux packages. Powered by JuNest;
-- [Firefox for Linux scripts](https://github.com/ivan-hc/Firefox-for-Linux-scripts), easily install the official releases of Firefox for Linux.
-- [My AppImage packages](https://github.com/ivan-hc#my-appimage-packages)
+- [AppImaGen](https://github.com/ivan-hc/AppImaGen), easily create AppImages from Ubuntu PPAs or Debian using pkg2appimage and appimagetool;
+- [ArchImage](https://github.com/ivan-hc/ArchImage), create AppImages for all distributions using Arch Linux packages. Powered by JuNest;
+- [Firefox for Linux scripts](https://github.com/ivan-hc/Firefox-for-Linux-scripts), easily install the official releases of Firefox for Linux;
+- [My AppImage packages](https://github.com/ivan-hc#my-appimage-packages) the complete list of packages managed by me and available in this database;
+- [Snap2AppImage](https://github.com/ivan-hc/Snap2AppImage), try to convert Snap packages to AppImages.
 
 ------------------------------------------------------------------------
 
