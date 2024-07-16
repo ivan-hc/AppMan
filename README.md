@@ -10,9 +10,11 @@
 
 *But starting with version 5, released in December 2023, the "AppMan" code merged with "AM", becoming a single script, named "[APP-MANAGER](https://github.com/ivan-hc/AM/blob/main/APP-MANAGER)", with two different behaviors depending on how it is installed and/or renamed.*
 
-*This repository is what remains of the transition*:
+***This repository is what remains of the transition***:
 
 # *New code at *[github.com/ivan-hc/AM](https://github.com/ivan-hc/AM)**
+- ***For any Issue, go to https://github.com/ivan-hc/AM/issues***
+- ***For any Pull Request, go to https://github.com/ivan-hc/AM/pulls***
 
 ------------------------------------------------------------------------
 ### AppMan Index
