@@ -6,15 +6,15 @@
 
 *All "AppMan" does is download the installation scripts from the "[AM](https://github.com/ivan-hc/AM)" database and then convert them for a local installation, in your $HOME directory, following the paths you indicated when you first launch this CLI.*
 
+### *New code is available at *[github.com/ivan-hc/AM](https://github.com/ivan-hc/AM)**
+- ***For any Issue, go to https://github.com/ivan-hc/AM/issues***
+- ***For any Pull Request, go to https://github.com/ivan-hc/AM/pulls***
+
 *"AppMan" has been an active project since the second half of 2021, and was a completely standalone script, with an at times troubled history before allowing the birth of "AM".*
 
 *But starting with version 5, released in December 2023, the "AppMan" code merged with "AM", becoming a single script, named "[APP-MANAGER](https://github.com/ivan-hc/AM/blob/main/APP-MANAGER)", with two different behaviors depending on how it is installed and/or renamed.*
 
-***This repository is what remains of the transition***:
-
-# *New code at *[github.com/ivan-hc/AM](https://github.com/ivan-hc/AM)**
-- ***For any Issue, go to https://github.com/ivan-hc/AM/issues***
-- ***For any Pull Request, go to https://github.com/ivan-hc/AM/pulls***
+***This repository is what remains of the transition***.
 
 ------------------------------------------------------------------------
 ### AppMan Index
