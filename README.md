@@ -188,7 +188,7 @@ To do so, you must first enable that "$PATH":
 
 To do all this quickly, simply copy/paste the following command:
 ```
-mkdir -p ~/.local/bin && echo 'export PATH=$PATH:$(xdg-user-dir USER)/.local/bin' >> ~/.bashrc && wget https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O appman && chmod a+x ./appman && mv ./appman ~/.local/bin/appman
+mkdir -p ~/.local/bin && echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc && wget https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O ~/.local/bin/appman && chmod a+x ~/.local/bin/appman
 ```
 #### Use "AppMan" in "Portable Mode"
 "AppMan" can run in any directory you download it, copy/paste the following command to download "APP-MANAGER", rename it to `appman` and make it executable:
