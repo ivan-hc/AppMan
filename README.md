@@ -168,7 +168,7 @@ wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER
 chmod a+x ./AM-INSTALLER
 ./AM-INSTALLER
 ```
-Type "1" to install "AM" (requires "sudo" password), "2" to install "AppMan". Any other key will abort the installation.
+Type "1" to install "AM" (requires "sudo"/"doas" password), "2" to install "AppMan". Any other key will abort the installation.
 
 | ![AM-INSTALLER](https://github.com/user-attachments/assets/82b21979-e99d-4bee-b466-716bac1e7e45) |
 | - |
