@@ -51,7 +51,7 @@
 - [Update all](https://github.com/ivan-hc/AM#update-all)
 - [Backup and restore installed apps using snapshots](https://github.com/ivan-hc/AM#backup-and-restore-installed-apps-using-snapshots)
 - [Remove one or more applications](https://github.com/ivan-hc/AM#remove-one-or-more-applications)
-- [Convert Type2 AppImages requiring libfuse2 to Type3 AppImages](https://github.com/ivan-hc/AM#convert-type2-appimages-requiring-libfuse2-to-type3-appimages)
+- [Convert Type2 AppImages requiring libfuse2 to New Generation AppImages](#convert-type2-appimages-requiring-libfuse2-to-new-generation-appimages)
 - [Integrate local AppImages into the menu by dragging and dropping them](https://github.com/ivan-hc/AM#integrate-local-appimages-into-the-menu-by-dragging-and-dropping-them)
   - [How to create a launcher for a local AppImage](https://github.com/ivan-hc/AM#how-to-create-a-launcher-for-a-local-appimage)
   - [How to remove the orphan launchers](https://github.com/ivan-hc/AM#how-to-remove-the-orphan-launchers)
