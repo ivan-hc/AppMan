@@ -215,9 +215,10 @@ wget https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O appman && 
 ### Structure of the "AppMan" installation
 Unlike "AM" which needs to be placed in specific locations, "AppMan" is portable. The modules and directories will be placed in the directory you chose:
 - the script "appman" is wherever you want
-- the directory "$HOME/path/to/your/custom/directory/.cache" (where all processes will been executed)
 - the directory "$HOME/path/to/your/custom/directory/modules" (containing the .am modules for the non-core options)
 - the configuration file "$HOME/.config/appman/appman-config" (the only fixed directory)
+
+all processes will been executed in $HOME/.cache/appman, while application lists, keywords to use in bash/zsh completion and other files (for third party repos, betatesting, etcetera...) will be saved and updated in $HOME/.local/share/AM to be shared with "AM", if installed.
 
 ------------------------------------------------------------------------
 
