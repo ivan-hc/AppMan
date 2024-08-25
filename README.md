@@ -88,7 +88,7 @@
 Even though the two CLI utilities share the same body, there are some substantial differences:
 1. "AM" is installed system-wide (in `/opt/am`), "**AppMan**" is portable and rootless;
 2. "AM" is owned by the user that have installed it, "**AppMan**" is for all users, since it works locally, everyone can have its own apps and configurations;
-3. "**AppMan**" can request the root password only if you need to installa library, "AM" requires the root password only to install, remove apps, enable a sandbox for an AppImage, or enable/disable bash completion;
+3. "**AppMan**" can request the root password only if you need to installa library, "AM" requires the root password only to install, remove apps, enable a sandbox for an AppImage;
 4. "AM" installs apps system wide, in `/opt` (see [Linux Standard Base](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s13.html)), using the following structure:
 ```
 /opt/$PROGRAM/
