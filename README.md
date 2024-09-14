@@ -60,6 +60,7 @@ Refer to the option "`-a`" to know the sources of each program listed here, so y
 
 [Guides and tutorials](https://github.com/ivan-hc/AM#guides-and-tutorials)
 - [Install applications](https://github.com/ivan-hc/AM#install-applications)
+- [Install only AppImages](https://github.com/ivan-hc/AM#install-only-appimages)
 - [Install AppImages not listed in this database but available in other github repos](https://github.com/ivan-hc/AM#install-appimages-not-listed-in-this-database-but-available-in-other-github-repos)
 - [List the installed applications](https://github.com/ivan-hc/AM#list-the-installed-applications)
 - [List and query all the applications available on the database](https://github.com/ivan-hc/AM#list-and-query-all-the-applications-available-on-the-database)
