@@ -185,6 +185,7 @@ Below are the essential dependencies:
 - "`coreutils`" (contains "`cat`", "`chmod`", "`chown`"...);
 - "`curl`", to check URLs;
 - "`grep`", to check files;
+- "`less`", to read the ever-longer lists;
 - "`sed`", to edit/adapt installed files;
 - "`wget`" to download all programs and update "AM"/"AppMan" itself.
 
