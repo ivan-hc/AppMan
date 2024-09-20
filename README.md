@@ -94,6 +94,7 @@ Refer to the option "`-a`" to know the sources of each program listed here, so y
 - [An application does not work, is old and unsupported](https://github.com/ivan-hc/AM#an-application-does-not-work-is-old-and-unsupported)
 - [Cannot download or update an application](https://github.com/ivan-hc/AM#cannot-download-or-update-an-application)
 - [Cannot mount and run AppImages](https://github.com/ivan-hc/AM#cannot-mount-and-run-appimages)
+- [Failed to open squashfs image](https://github.com/ivan-hc/AM#failed-to-open-squashfs-image)
 - [Spyware, malware and dangerous software](https://github.com/ivan-hc/AM#spyware-malware-and-dangerous-software)
 - [Stop AppImage prompt to create its own launcher, desktop integration and doubled launchers](https://github.com/ivan-hc/AM#stop-appimage-prompt-to-create-its-own-launcher-desktop-integration-and-doubled-launchers)
 - [The script points to "releases" instead of downloading the latest stable](https://github.com/ivan-hc/AM#the-script-points-to-releases-instead-of-downloading-the-latest-stable)
