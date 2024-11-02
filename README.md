@@ -1,57 +1,116 @@
 ## "AppMan", the rootless side of "AM" to manage all your apps locally
 ------------------------------------------------------------------------
-*"AppMan" is a package manager for AppImages and other portable GNU/Linux applications.*
+*"AM"/"AppMan" is a set of scripts and modules for installing, updating, and managing AppImage packages and other portable formats, in the same way that APT manages DEBs packages, DNF the RPMs, and so on... using a large database of Shell scripts inspired by the Arch User Repository, each dedicated to an app or set of applications.*
 
-*Its behavior is reminiscent of APT, PacMan and DNF, also thanks to the options very similar to those of the most famous package managers of the most used GNU/Linux distributions.*
+## What is AppMan?
+*AppMan is a portable version of "AM", limited to installing and managing apps only locally and without root privileges.*
 
+*The command name changes, from am to appman, but the script is the same.*
+
+*"AM" on the contrary, provides a "fixed" installation, but can install and manage apps both locally and at the system level.*
+
+*I recommend "AM" to privileged users who want to install and manage apps at multiple levels, and "AppMan" to non-privileged users who do not have large needs.*
+
+## What does it do?
 *All "AppMan" does is download the installation scripts from the "[AM](https://github.com/ivan-hc/AM)" database and then convert them for a local installation, in your $HOME directory, following the paths you indicated when you first launch this CLI.*
 
-### *New code is available at *[github.com/ivan-hc/AM](https://github.com/ivan-hc/AM)**
-- ***For any Issue, go to https://github.com/ivan-hc/AM/issues***
-- ***For any Pull Request, go to https://github.com/ivan-hc/AM/pulls***
+## What is this repository?
+*This repository is just a guide to using "AppMan", and is specific to "AppMan".*
 
+## Where is the source code?
+*The source code can be found at* ***[github.com/ivan-hc/AM](https://github.com/ivan-hc/AM)***
+
+## Where to report a problem?
+*For any Issue, go to https://github.com/ivan-hc/AM/issues*
+
+## How to add code?
+*For any Pull Request, go to https://github.com/ivan-hc/AM/pulls*
+
+## If "AM" and "AppMan" have the same code, why a separate repository?
 *"AppMan" has been an active project since the second half of 2021, and was a completely standalone script, with an at times troubled history before allowing the birth of "AM".*
 
 *But starting with version 5, released in December 2023, the "AppMan" code merged with "AM", becoming a single script, named "[APP-MANAGER](https://github.com/ivan-hc/AM/blob/main/APP-MANAGER)", with two different behaviors depending on how it is installed and/or renamed.*
 
-***This repository is what remains of the transition***.
+**This repository is what remains of the transition**.
 
 ------------------------------------------------------------------------
-# IMPORTANT!
+# How to install "AppMan"?
+*To install "AppMan" you must first install the "core" dependencies from your package manager:*
+- *"`coreutils`" (contains "`cat`", "`chmod`", "`chown`"...);*
+- *"`curl`", to check URLs;*
+- *"`grep`", to check files;*
+- *"`less`", to read the ever-longer lists;*
+- *"`sed`", to edit/adapt installed files;*
+- *"`wget`" to download all programs and update "AM" itself.*
+- *"`sudo`" or "`doas`", for installing and removing programs at the system level.*
 
-"AM"/"AppMan" is just a tool to provide applications easily and quickly and is only responsible for integrating the AppImages into the system and installing the various programs available, respecting the following order (refer to the option "`-d`" to download the installation script without installing it):
-1. creation of the base directories and the removal script
-2. download of the package
-3. creation of the version file and the update script
-4. possibly, extraction of the icons and .desktop files*
+<details>
+  <summary>Additionally, you may need these optional dependencies, click here.</summary>
 
-*NOTE, aside from the references to downloading and updating apps (the "$version" variable), the **installation scripts are mostly the same**, especially for AppImages, and there may be slight variations in the final processes depending if the .desktop file has problems when it is extracted from the package and/or it fail in being added to the menu. If there are problems with updates or missing launchers, open an "[issue](https://github.com/ivan-hc/AM/issues)" and I'll fix it ASAP.
+- *"`binutils`", contains a series of basic commands, including "`ar`" which extracts .deb packages;*
+- *"`unzip`", to extract .zip packages;*
+- *"`tar`", to extract .tar* packages;*
+- *"`torsocks`", to connect to the TOR network;*
+- *"`zsync`", required by very few programs and AppImages (although it is mentioned in all installation scripts, it is often disabled because the managed .zsync files are often broken, especially for apps hosted on github.com).*
 
-That said, **any malfunction related to individual applications is the responsibility of the related developer or packager**.
+</details>
 
-Refer to the option "`-a`" to know the sources of each program listed here, so you can contact them to report the bug.
+
+### Quick installation
+*Copy/paste the following one line command to download and run the "[AM-INSTALLER](https://github.com/ivan-hc/AM/blob/main/AM-INSTALLER)" script*
+```
+wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER && chmod a+x ./AM-INSTALLER && ./AM-INSTALLER
+```
+*...below, the screenshot of what will appear.*
+
+![Istantanea_2024-11-02_00-03-39 png](https://github.com/user-attachments/assets/7bb170da-5b17-4d36-8d86-679d477debf5)
+
+*Type "2" to install "AppMan", or "1" to install "[AM](https://github.com/ivan-hc/AM)". Any other key will abort the installation.*
+
+*The above script will place the command `appman` in your local "$PATH", at `~/.local/bin` (this path is the recommended one, since it allows AppMan to be updated in bulk with all other programs, using [Topgrade](https://github.com/topgrade-rs/topgrade).*
+
+**Installation is complete!**
+
+*Run `appman -h` or jump to "**[Usage](#usage)**" to see all the available options.*
 
 ------------------------------------------------------------------------
-### AppMan Index
-*This is a partial index, dedicated only to "AppMan". To learn more about options and how-to guides (with videos), use the [***external links index***](#external-links-index) or visit [github.com/ivan-hc/AM](https://github.com/ivan-hc/AM).*
+## Advantages of AppMan over "AM"
+*"AppMan" is a portable script, you can use it anywhere you want and it will update itself on the spot. "AM" on the other hand has a fixed installation, and requires root privileges to be installed.*
+
+*Another advantage is the fact that it can be downloaded by anyone, even non-privileged users. On the contrary "AM" belongs only to the person who installed it, having permissions to access directories in `/opt`.*
+
+## Disadvantages of AppMan over "AM"
+*"AppMan" can only install and manage local apps, while "AM" can manage both AppMan apps and install them locally or system-wide.*
+
+*If you are a user who doesn't like using root privileges, just use "AppMan".*
+
+### How apps are installed
+*Locally installed apps can have a directory of your choice, depending on what you decided when you first started the `appman` command.*
+
+*For example, let's say you want to create and use the `/home/USER/Applicazioni` directory, here is the structure of a locally embedded AppImage:*
+```
+~/Applicazioni/$PROGRAM/
+~/Applicazioni/$PROGRAM/$PROGRAM
+~/Applicazioni/$PROGRAM/AM-updater
+~/Applicazioni/$PROGRAM/remove
+~/Applicazioni/$PROGRAM/icons/$ICON-NAME
+~/.local/bin/$PROGRAM
+~/.local/share/applications/$PROGRAM-AM.desktop
+```
+
+### Structure of the "AppMan" installation
+*Unlike "AM" which needs to be placed in specific locations, "AppMan" is portable. The modules and directories will be placed in the directory you chose:*
+- *the script "appman" is wherever you want (but it is recommended to install it in `~/.local/bin`)*
+- *the directory "/path/to/your/custom/directory/modules" (containing the .am modules for the non-core options)*
+- *the configuration file "$HOME/.config/appman/appman-config" (the only fixed directory)*
+
+*all processes will been executed in $HOME/.cache/appman, while application lists, keywords to use in bash/zsh completion and other files (for third party repos, betatesting, etcetera...) will be saved and updated in $HOME/.local/share/AM to be shared with "AM", if installed.*
 
 ------------------------------------------------------------------------
+## Guides and tutorials (external links)
+*The guides for "AM" are also applicable to AppMan, just replace the command `am` with the command `appman`.*
 
-[Differences between "AM" and "AppMan"](#differences-between-am-and-appman)
-
-[What programs can be installed](#what-programs-can-be-installed)
-
-[Installation](#installation)
-
-[Uninstall](#uninstall)
-
-[Go to "github.com/ivan-hc/AM" for more](https://github.com/ivan-hc/AM)
-
-[Related projects](#related-projects)
-
-------------------------------------------------------------------------
-### External links index
-*All the guides listed here are available at [***github.com/ivan-hc/AM***](https://github.com/ivan-hc/AM)*
+*By clicking the links below, you will be redirected to the pages of the "AM" repository, at [***github.com/ivan-hc/AM***](https://github.com/ivan-hc/AM)*
 
 ------------------------------------------------------------------------
 - [Install applications](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/install.md)
@@ -97,156 +156,7 @@ Refer to the option "`-a`" to know the sources of each program listed here, so y
 - [Ubuntu mess](https://github.com/ivan-hc/AM/blob/main/docs/troubleshooting.md#ubuntu-mess)
 - [Wrong download link](https://github.com/ivan-hc/AM/blob/main/docs/troubleshooting.md#wrong-download-link)
 
-------------------------------------------------------------------------
-# Differences between "AM" and "AppMan"
-Even though the two CLI utilities share the same body, there are some substantial differences:
-1. "AM" is installed system-wide (in `/opt/am`), "**AppMan**" is portable and rootless;
-2. "AM" is owned by the user that have installed it, "**AppMan**" is for all users, since it works locally, everyone can have its own apps and configurations;
-3. "**AppMan**" can request the root password only if you need to installa library, "AM" requires the root password only to install, remove apps, enable a sandbox for an AppImage;
-4. "AM" installs apps system wide, in `/opt` (see [Linux Standard Base](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/ch03s13.html)), using the following structure:
-```
-/opt/$PROGRAM/
-/opt/$PROGRAM/$PROGRAM
-/opt/$PROGRAM/AM-updater
-/opt/$PROGRAM/remove
-/opt/$PROGRAM/icons/$ICON-NAME
-/usr/local/bin/$PROGRAM
-/usr/local/share/applications/$PROGRAM-AM.desktop
-```
-
-"**AppMan**" is more flexible, since it asks you where to install the apps. For example, suppose you want install everything in "Applicazioni" (the italian of "applications") and in your $HOME directory, this is the structure of what an installation scripts installs with "AppMan" instead:
-```
-~/Applicazioni/$PROGRAM/
-~/Applicazioni/$PROGRAM/$PROGRAM
-~/Applicazioni/$PROGRAM/AM-updater
-~/Applicazioni/$PROGRAM/remove
-~/Applicazioni/$PROGRAM/icons/$ICON-NAME
-~/.local/bin/$PROGRAM
-~/.local/share/applications/$PROGRAM-AM.desktop
-```
-
-The configuration file for AppMan is in `~/.config/appman` and contains the path you indicated at first startup. Changing its contents will result in changing the paths for each subsequent operation carried out with "AppMan", the apps and modules stored in the old path will not be manageable.
-
-At first startup you can indicate any directory or subdirectory you want.
-
-------------------------------------------------------------------------
-
-| [Install "AppMan"](#installation) | [Back to "AppMan Index"](#appman-index) |
-| - | - |
-
-------------------------------------------------------------------------
-# What programs can be installed
-"AM"/"AppMan" installs, removes, updates and manages only standalone programs, ie those programs that can be run from a single directory in which they are contained. The database aims to be a reference point where you can download all the AppImage packages scattered around the web, otherwise unobtainable, as you would expect from any package manager, through specific installation scripts for each application, as happens with the AUR PKGBUILDs, on Arch Linux. You can see all of them [here](https://github.com/ivan-hc/AM/tree/main/programs), divided by architecture.
-
-NOTE that currently my work focuses on applications for [x86_64](https://github.com/ivan-hc/AM/tree/main/programs/x86_64) architecture, but it is possible to extend "AM" to all other available architectures. If you are interested, you can deliberately join this project to improve the available lists.
-
-1. **PROGRAMS**, they are taken:
-- from official sources (see Firefox, Thunderbird, Blender, NodeJS, Chromium Latest, Platform Tools...);
-- extracted from official .deb/tar/zip packages;
-- from the repositories and official sites of individual developers.
-
-2. **APPIMAGES**, they are taken:
-- from official sources (if the upstream developers provide them);
-- from AppImage recipes to be compiled on-the-fly with [pkg2appimage](https://github.com/AppImage/pkg2appimage) and [appimagetool](https://github.com/AppImage/AppImageKit);
-- from unofficial third-party developers, but only if an official release is not available.
-
-3. **FIREFOX PROFILES** to run as webapps, the ones with suffix "ffwa-" in the apps list.
-
-4. **THIRD-PARTY LIBRARIES** (see [here](https://github.com/ivan-hc/AM/blob/main/libraries/libs-list)) if they are not provided in your distribution's repositories. These are to be installed in truly exceptional cases.
-
-You can consult basic information, links to sites and sources used through the related command `am -a $PROGRAM` or `appman -a $PROGRAM`, or visit [**portable-linux-apps.github.io/apps**](https://portable-linux-apps.github.io/apps).
-
-------------------------------------------------------------------------
-
-| [Back to "AppMan Index"](#appman-index) |
-| - |
-
-------------------------------------------------------------------------
-# Installation
-This section explains how to install "AppMan".
-
-You can choose to continue reading and see the installation methods in detail (jump to "[Core dependences](#core-dependences)"), or you can choose to use the common installer for "AM" and "AppMan", named "[AM-INSTALLER](https://github.com/ivan-hc/AM/blob/main/AM-INSTALLER)", by downloading the script and making it executable, like this:
-```
-wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER
-chmod a+x ./AM-INSTALLER
-./AM-INSTALLER
-```
-Type "1" to install "AM" (requires "sudo"/"doas" password), "2" to install "AppMan". Any other key will abort the installation.
-
-| ![AM-INSTALLER](https://github.com/user-attachments/assets/82b21979-e99d-4bee-b466-716bac1e7e45) |
-| - |
-
-This "[AM-INSTALLER](https://github.com/ivan-hc/AM/blob/main/AM-INSTALLER)" script acts as a "launcher" to speed up the processes available in the guides "[How to install "AM"](https://github.com/ivan-hc/AM#how-to-install-am)" and "[How to install "AppMan"](#how-to-install-appman)". "AppMan" will be installed in ~/.local/bin and the script will take care of enabling it in "$PATH".
-
-### Core dependences
-Below are the essential dependencies:
-- "`coreutils`" (contains "`cat`", "`chmod`", "`chown`"...);
-- "`curl`", to check URLs;
-- "`grep`", to check files;
-- "`less`", to read the ever-longer lists;
-- "`sed`", to edit/adapt installed files;
-- "`wget`" to download all programs and update "AM"/"AppMan" itself.
-
-The following are optional dependencies that some programs may require:
-- "`binutils`", contains a series of basic commands, including "`ar`" which extracts .deb packages;
-- "`unzip`", to extract .zip packages;
-- "`tar`", to extract .tar* packages;
-- "`torsocks`", to connect to the TOR network;
-- "`zsync`", required by very few programs and AppImages (although it is mentioned in all installation scripts, it is often disabled because the managed .zsync files are often broken, especially for apps hosted on github.com).
-
-## How to install "AppMan"
-"**AppMan**" can be used in different places, being it portable.
-
-However, to be easily used its recommended to place it in your local "$PATH", in `~/.local/bin`.
-
-For example, "AppMan" users must install `appman` in ~/.local/bin to allow updates via [Topgrade](https://github.com/topgrade-rs/topgrade).
-
-
-#### Use "AppMan" in "$PATH"
-To do so, you must first enable that "$PATH":
-- add `export PATH=$PATH:$(xdg-user-dir USER)/.local/bin` in the ` ~/.bashrc`
-- create the directory `~/.local/bin` if it is not available
-
-To do all this quickly, simply copy/paste the following command:
-```
-mkdir -p ~/.local/bin && echo 'export PATH="$PATH:$HOME/.local/bin"' >> ~/.bashrc && wget https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O ~/.local/bin/appman && chmod a+x ~/.local/bin/appman
-```
-#### Use "AppMan" in "Portable Mode"
-"AppMan" can run in any directory you download it, copy/paste the following command to download "APP-MANAGER", rename it to `appman` and make it executable:
-```
-wget https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O appman && chmod a+x ./appman
-```
-
-### Structure of the "AppMan" installation
-Unlike "AM" which needs to be placed in specific locations, "AppMan" is portable. The modules and directories will be placed in the directory you chose:
-- the script "appman" is wherever you want
-- the directory "/path/to/your/custom/directory/modules" (containing the .am modules for the non-core options)
-- the configuration file "$HOME/.config/appman/appman-config" (the only fixed directory)
-
-all processes will been executed in $HOME/.cache/appman, while application lists, keywords to use in bash/zsh completion and other files (for third party repos, betatesting, etcetera...) will be saved and updated in $HOME/.local/share/AM to be shared with "AM", if installed.
-
-------------------------------------------------------------------------
-
-| [Back to "AppMan Index"](#appman-index) |
-| - |
-
-------------------------------------------------------------------------
-# Uninstall
-To uninstall "AppMan" just remove it and the directory `$HOME/.config/appman`
-
-Note, before you remove your CLI, use the option `-R` to remove the apps installed using the following syntax:
-```
-appman -R {PROGRAM1} {PROGRAM2} {PROGRAM3}...
-```
-
-to have a list of the installed programs use the option `-f` or `files` (syntax `appman -f`).
-
-------------------------------------------------------------------------
-
-| [Back to "AppMan Index"](#appman-index) |
-| - |
-
-------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
 # Related projects
 #### External tools and forks used in this project
 - [aisap](https://github.com/mgord9518/aisap), sandboxing solutions for AppImages
