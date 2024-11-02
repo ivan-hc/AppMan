@@ -42,7 +42,6 @@
 - *"`less`", to read the ever-longer lists;*
 - *"`sed`", to edit/adapt installed files;*
 - *"`wget`" to download all programs and update "AM" itself.*
-- *"`sudo`" or "`doas`", for installing and removing programs at the system level.*
 
 <details>
   <summary>Additionally, you may need these optional dependencies, click here.</summary>
