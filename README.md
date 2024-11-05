@@ -70,7 +70,7 @@ wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER && chmod 
 
 **Installation is complete!**
 
-*Run `appman -h` or jump to "**[Usage](#usage)**" to see all the available options.*
+*Run `appman -h` or go to "**https://github.com/ivan-hc/AM/blob/main/README.md#options**" to see all the available options.*
 
 ------------------------------------------------------------------------
 ## Advantages of AppMan over "AM"
