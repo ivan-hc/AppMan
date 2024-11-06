@@ -3,7 +3,7 @@
 *"AM"/"AppMan" is a set of scripts and modules for installing, updating, and managing AppImage packages and other portable formats, in the same way that APT manages DEBs packages, DNF the RPMs, and so on... using a large database of Shell scripts inspired by the Arch User Repository, each dedicated to an app or set of applications.*
 
 ## What is AppMan?
-*AppMan is a portable version of "AM", limited to installing and managing apps only locally and without root privileges.*
+*AppMan is a portable version of "[AM](https://github.com/ivan-hc/AM)", limited to installing and managing apps only locally and without root privileges.*
 
 *The command name changes, from am to appman, but the script is the same.*
 
