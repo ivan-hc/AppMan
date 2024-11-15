@@ -73,6 +73,12 @@ wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER && chmod 
 *Run `appman -h` or go to "**https://github.com/ivan-hc/AM/blob/main/README.md#options**" to see all the available options.*
 
 ------------------------------------------------------------------------
+# How to uninstall "AppMan"?
+*Since it is a portable script, you can simply remove it manually. If you used AM-INSTALLER, you simply need to remove the `$HOME/.local/bin/appman` script.*
+
+*NOTE, it is recommended to remove apps first using the `-R` option, and then "AppMan", see also "[How are apps installed](#how-are-apps-installed)", below.*
+
+------------------------------------------------------------------------
 ## Advantages of AppMan over "AM"
 *"AppMan" is a portable script, you can use it anywhere you want and it will update itself on the spot. "AM" on the other hand has a fixed installation, and requires root privileges to be installed.*
 
