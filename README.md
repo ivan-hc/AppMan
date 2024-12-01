@@ -131,6 +131,7 @@ wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER && chmod 
   - [How to create a launcher for a local AppImage](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/launcher.md#how-to-create-a-launcher-for-a-local-appimage)
   - [How to remove the orphan launchers](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/launcher.md#how-to-remove-the-orphan-launchers)
   - [AppImages from external media](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/launcher.md#appimages-from-external-media)
+  - [Update scattered AppImages](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/launcher.md#update-scattered-appimages)
 - [Sandbox an AppImage](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/sandbox.md)
   - [How to enable a sandbox](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/sandbox.md#how-to-enable-a-sandbox)
   - [How to disable a sandbox](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/sandbox.md#how-to-disable-a-sandbox)
