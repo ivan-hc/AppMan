@@ -120,6 +120,7 @@ wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER && chmod 
 ------------------------------------------------------------------------
 - [Install applications](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/install.md)
 - [Install only AppImages](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/install-appimage.md)
+  - [Install and sandbox AppImages in one go](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/install-appimage.md#install-and-sandbox-appimages-in-one-go)
 - [Install AppImages not listed in this database but available in other github repos](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/extra.md)
 - [List the installed applications](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/files.md)
 - [List and query all the applications available on the database](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/list-and-query.md)
