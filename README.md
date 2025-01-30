@@ -190,7 +190,7 @@ wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER && chmod 
 
 ------------------------------------------------------------------------
 
-| [**ko-fi.com**](https://ko-fi.com/IvanAlexHC) | [**PayPal.me**](https://paypal.me/IvanAlexHC) | [Install "AppMan"](#installation) | [Back to "AppMan Index"](#appman-index) | [Go to "github.com/ivan-hc/AM"](https://github.com/ivan-hc/AM) |
-| - | - | - | - | - |
+| [**ko-fi.com**](https://ko-fi.com/IvanAlexHC) | [**PayPal.me**](https://paypal.me/IvanAlexHC) | [Go to "github.com/ivan-hc/AM"](https://github.com/ivan-hc/AM) |
+| - | - | - |
 
 ------------------------------------------------------------------------
