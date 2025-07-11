@@ -1,0 +1,38 @@
+name: Github Action with a cronjob trigger
+on:
+  schedule:
+    - cron: "0 1 * * 0"
+
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  sync-files:
+    name: "Run sync"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout source repository"
+        uses: actions/checkout@v4
+
+      - name: "List commits"
+        run: |
+          curl -Ls https://api.github.com/repos/ivan-hc/AM/commits | jq '.' > commits.json
+          date > last-check.txt
+
+      - name: "Push to Source"
+        run: |
+          git config --global user.name "ivan-hc"
+          git config --global user.email "noreply@github.com"
+          git add latest-release.txt
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit." >> $GITHUB_STEP_SUMMARY
+          else
+            git commit -m "Sync commits list from ivan-hc/AM"
+            git push && echo "Sync to Source succeeded" >> $GITHUB_STEP_SUMMARY
+          fi
