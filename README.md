@@ -127,6 +127,8 @@ wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER && chmod 
 - [Update all](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/update.md)
 - [Backup and restore installed apps using snapshots](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/backup-and-overwrite.md)
 - [Remove one or more applications](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/remove.md)
+- [Clone a set of programs installed from other AM and AppMan configurations](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/clone.md)
+- [Change the destination path of installed programs](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/relocate.md)
 - [Convert Type2 AppImages requiring libfuse2 to New Generation AppImages](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/nolibfuse.md)
 - [Integrate local AppImages into the menu by dragging and dropping them](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/launcher.md)
   - [How to create a launcher for a local AppImage](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/launcher.md#how-to-create-a-launcher-for-a-local-appimage)
