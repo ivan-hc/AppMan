@@ -73,6 +73,47 @@ wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER && chmod 
 *Run `appman -h` or go to "**https://github.com/ivan-hc/AM/blob/main/README.md#options**" to see all the available options.*
 
 ------------------------------------------------------------------------
+#### How to install AppMan manually
+<details>
+  <summary>Click here to expand</summary>
+As we've already seen, AppMan is portable, meaning you can use it anywhere, in any directory with read and write permissions.
+
+The basic principle is very simple: the APP-MANAGER script must be renamed "appman".
+
+Try it and believe it:
+```
+wget -q "https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER" -O ./appman && chmod a+x ./appman
+```
+However, **this approach is NOT RECOMMENDED** for various reasons, the most common being convenience:
+- the AM-INSTALLER ensures the creation of an XDG_BIN_HOME or $HOME/.local/bin directory if it doesn't already exist, so you can use it in $PATH without having to write the entire path to the script.
+- by installing it in the local $PATH, the AM-INSTALLER also takes care of its use in ZSH, if that is used instead of BASH.
+
+To install it into $PATH manually, run the following commands:
+```
+ZSHRC="${ZDOTDIR:-$HOME}/.zshrc"
+BINDIR="${XDG_BIN_HOME:-$HOME/.local/bin}"
+mkdir -p "$BINDIR"
+if ! echo $PATH | grep "$BINDIR" >/dev/null 2>&1; then 
+	if [ -e ~/.bashrc ] && ! grep 'PATH="$PATH:$BINDIR"' ~/.bashrc >/dev/null 2>&1; then
+		printf '\n%s\n' 'BINDIR="${XDG_BIN_HOME:-$HOME/.local/bin}"' >> ~/.bashrc
+		printf '\n%s\n' 'if ! echo $PATH | grep "$BINDIR" >/dev/null 2>&1; then' >> ~/.bashrc
+		printf '	export PATH="$PATH:$BINDIR"\nfi\n' >> ~/.bashrc
+	fi
+	if [ -e "$ZSHRC" ] && ! grep 'PATH="$PATH:$BINDIR"' "$ZSHRC" >/dev/null 2>&1; then
+		printf '\n%s\n' 'BINDIR="${XDG_BIN_HOME:-$HOME/.local/bin}"' >> "$ZSHRC"
+		printf '\n%s\n' 'if ! echo $PATH | grep "$BINDIR" >/dev/null 2>&1; then' >> "$ZSHRC"
+		printf '	export PATH="$PATH:$BINDIR"\nfi\n' >> "$ZSHRC"
+	fi
+fi
+wget -q "https://raw.githubusercontent.com/ivan-hc/AM/$AM_BRANCH/APP-MANAGER" -O "$BINDIR"/appman && chmod a+x "$BINDIR"/appman
+```
+The above is a "summary" (without the messages) of what the AM-INSTALLER script already does when you choose option 2 (AppMan).
+
+For more information, see https://github.com/ivan-hc/AM/issues/1830
+
+</details>
+
+------------------------------------------------------------------------
 # How to uninstall "AppMan"?
 *Since it is a portable script, you can simply remove it manually. If you used AM-INSTALLER, you simply need to remove the `$HOME/.local/bin/appman` script.*
 
