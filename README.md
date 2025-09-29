@@ -76,7 +76,7 @@ wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER && chmod 
 # How to uninstall "AppMan"?
 *Since it is a portable script, you can simply remove it manually. If you used AM-INSTALLER, you simply need to remove the `$HOME/.local/bin/appman` script.*
 
-*NOTE, it is recommended to remove apps first using the `-R` option, and then "AppMan", see also "[How are apps installed](#how-are-apps-installed)", below.*
+*NOTE, it is recommended to remove apps first using the `-R` option, and then "AppMan", see also "[How are apps installed](#how-apps-are-installed)", below.*
 
 ------------------------------------------------------------------------
 ## Advantages of AppMan over "AM"
