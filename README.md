@@ -1,6 +1,6 @@
-## "AppMan", the rootless side of "AM" to manage all your portable apps locally
+## "AppMan", the rootless side of "AM" to manage all your apps locally
 
-***NOTE: This repository is a just a guide to using the "AM" package manager without root privileges.***
+***NOTE: This repository is just a guide to using the "AM" package manager without root privileges.***
 
 ***Before reading further, please visit the "AM" repository, at https://github.com/ivan-hc/AM, to better understand AppMan and how it works.***
 
