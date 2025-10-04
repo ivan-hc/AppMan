@@ -1,5 +1,37 @@
-## "AppMan", the rootless side of "AM" to manage all your apps locally
+## "AppMan", the rootless side of "AM" to manage all your portable apps locally
+
+***NOTE: This repository is a just a guide to using the "AM" package manager without root privileges.***
+
+***Before reading further, please visit the "AM" repository, at https://github.com/ivan-hc/AM, to better understand AppMan and how it works.***
+
+[![Istantanea_2024-06-26_17-00-46 png](https://github.com/ivan-hc/AM/assets/88724353/671f5eb0-6fb6-4392-b45e-af0ea9271d9b)](https://github.com/ivan-hc/AM)
+
+[![Readme](https://img.shields.io/github/stars/ivan-hc/AM?label=%E2%AD%90&style=for-the-badge)](https://github.com/ivan-hc/AM/stargazers) [![Readme](https://img.shields.io/github/license/ivan-hc/AM?label=&style=for-the-badge)](https://github.com/ivan-hc/AM/blob/main/LICENSE)
+
+*Otherwise use this index to navigate this README.*
+
 ------------------------------------------------------------------------
+### Index
+------------------------------------------------------------------------
+
+- [What is AppMan?](#what-is-appman)
+- [What does it do?](#what-does-it-do)
+- [What is this repository?](#what-is-this-repository)
+- [Where is the source code?](#where-is-the-source-code)
+- [Where to report a problem?](#where-to-report-a-problem)
+- [How to add code?](#how-to-add-code)
+- [If "AM" and "AppMan" have the same code, why a separate repository?](#if-am-and-appman-have-the-same-code-why-a-separate-repository)
+- [How to install "AppMan"?](#how-to-install-appman)
+  - [How to uninstall "AppMan"?](#how-to-uninstall-appman)
+- [Advantages of AppMan over "AM"](#advantages-of-appman-over-am)
+- [Disadvantages of AppMan over "AM"](#disadvantages-of-appman-over-am)
+- [How apps are installed](#how-apps-are-installed)
+- [Structure of the "AppMan" installation](#structure-of-the-appman-installation)
+- [Guides and tutorials (external links)](#guides-and-tutorials-external-links)
+- [Related projects](#related-projects)
+
+------------------------------------------------------------------------
+
 *"AM"/"AppMan" is a set of scripts and modules for installing, updating, and managing AppImage packages and other portable formats, in the same way that APT manages DEBs packages, DNF the RPMs, and so on... using a large database of Shell scripts inspired by the Arch User Repository, each dedicated to an app or set of applications.*
 
 ## What is AppMan?
