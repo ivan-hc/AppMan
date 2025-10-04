@@ -50,7 +50,7 @@
 *This repository is just a guide to using "AppMan", and is specific to "AppMan".*
 
 ## Where is the source code?
-*The source code can be found at* ***[github.com/ivan-hc/AM](https://github.com/ivan-hc/AM)***
+*The source code can be found at* ***https://github.com/ivan-hc/AM***
 
 ## Where to report a problem?
 *For any Issue, go to https://github.com/ivan-hc/AM/issues*
