@@ -38,6 +38,7 @@
 - [Where to report a problem?](#where-to-report-a-problem)
 - [How to add code?](#how-to-add-code)
 - [If "AM" and "AppMan" have the same code, why a separate repository?](#if-am-and-appman-have-the-same-code-why-a-separate-repository)
+  - [History](#history)
 - [How to install "AppMan"?](#how-to-install-appman)
   - [How to uninstall "AppMan"?](#how-to-uninstall-appman)
 - [Advantages of AppMan over "AM"](#advantages-of-appman-over-am)
@@ -75,9 +76,22 @@
 ## If "AM" and "AppMan" have the same code, why a separate repository?
 *"AppMan" has been an active project since the second half of 2021, and was a completely standalone script, with an at times troubled history before allowing the birth of "AM".*
 
-*But starting with version 5, released in December 2023, the "AppMan" code merged with "AM", becoming a single script, named "[APP-MANAGER](https://github.com/ivan-hc/AM/blob/main/APP-MANAGER)", with two different behaviors depending on how it is installed and/or renamed.*
+### History
+*The first version of AppMan installed all programs in /opt/bin, then linked them to /usr/bin, and saved the launchers in /usr/share/applications. It was a mess. Given my inexperience, I disregarded the standards and LSB specifications, creating a new one. There was no shortage of criticism.*
 
-**This repository is what remains of the transition**.
+*I had to rewrite the program, but I already had many users at the time. I couldn't suddenly overturn the project.*
+
+*So I decided to archive AppMan and rewrite a new project, "AM," that respected these specifications: each program had its own dedicated directory in /opt. Initially, links and launchers remained in their positions, but were later moved to /usr/local/bin and /usr/local/share/applications, respectively. The launchers had "AM" in their names to distinguish them from other launchers of the same name.*
+
+*It was a success, especially in terms of contributors.*
+
+*One day, I received an issue requesting that apps be installed locally, without root privileges. So I decided to unarchive AppMan and fork it from AM, despite it being older. I copied the contents of APP-MANAGER, the main "AM" script, into "appman," changing the app paths and adding a prompt to allow users to customize the destination directory. Initially, these changes resulted in duplicate work, leading AppMan to be released days or weeks later than AM in an attempt to adapt the code for local use.*
+
+*A major refactoring effort was then launched, aimed at increasingly narrowing the differences between AM and AppMan.*
+
+*Finally, starting with version 5, released in December 2023, the "AppMan" code merged with "AM", becoming a single script, named "[APP-MANAGER](https://github.com/ivan-hc/AM/blob/main/APP-MANAGER)", with two different behaviors depending on how it is installed and/or renamed.*
+
+***This repository is what remains of the transition***.
 
 ------------------------------------------------------------------------
 # How to install "AppMan"?
