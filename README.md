@@ -1,14 +1,14 @@
 ## "AppMan", the rootless side of "AM" to manage all your apps locally
 *"AM"/"AppMan" is a set of scripts and modules for installing, updating, and managing AppImage packages and other portable formats, in the same way that APT manages DEBs packages, DNF the RPMs, and so on... using a large database of Shell scripts inspired by the Arch User Repository, each dedicated to an app or set of applications.*
 
-***AppMan is a redistribution of "AM" that does not require root privileges to install and manage apps.***
+***AppMan is a redistribution of "[AM](https://github.com/ivan-hc/AM)" that does not require root privileges to install and manage apps.***
 
 | [![sample.png](https://raw.githubusercontent.com/ivan-hc/AM/main/sample/sample.png)](https://github.com/ivan-hc/AM) |
 | - |
 
 [![Readme](https://img.shields.io/github/stars/ivan-hc/AM?label=%E2%AD%90&style=for-the-badge)](https://github.com/ivan-hc/AM/stargazers) [![Readme](https://img.shields.io/github/license/ivan-hc/AM?label=&style=for-the-badge)](https://github.com/ivan-hc/AM/blob/main/LICENSE)
 
-***AppMan is part of "AM"***, *so it would not be possible without the contribution of the following authors*
+***AppMan is part of "[AM](https://github.com/ivan-hc/AM)"***, *so it would not be possible without the contribution of the following authors*
 
 | <a href="https://github.com/ivan-hc/AM/graphs/contributors"><img src="https://contrib.rocks/image?repo=ivan-hc/AM" /></a> |
 | - |
