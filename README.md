@@ -93,6 +93,22 @@
 
 ***This repository is what remains of the transition***.
 
+*All the work is done at https://github.com/ivan-hc/AM, and **dozens of users have contributed to improving this program.***
+
+*Despite this, **there are still blogs and videos referencing this repository**, **which**, as I mentioned at the beginning, **is secondary to "AM"**. This doesn't do justice to the dozens of developers who have decided not only to contribute, but also to participate in the cause: making AppImages great, providing them with sandboxing, centralization, and ease of installation and updating.*
+
+*In a world where the most starred projects are the most visible, AppMan is a step backwards from the reality that "AM" has managed to become.*
+
+*It's therefore important to distinguish between "AM" and AppMan in terms of projects:*
+- *"ivan-hc/AM" is **the main project**, from which all the community work comes.*
+- *"ivan-hc/AppMan" is **merely a guide maintained by me**, as a single user, given **the insistence of many people on linking to this repository instead of the other** (and what they do is wrong).*
+
+***I want to emphasize these aspects, out of infinite respect for [my contributors to the AM repository](https://github.com/ivan-hc/AM/graphs/contributors), who deserve due recognition. And there are many of us.***
+
+*PS: I know the dual existence of these repositories is confusing, and it's worth clarifying why I continue to maintain both. I thank everyone who fell in love with AppMan, but precisely because AppMan is what it is today, let's give due credit to "[AM](https://github.com/ivan-hc/AM)," which embodies the work and passion of dozens of other developers. I don't want the small number of contributors to this repository to mislead others into thinking that all the work is done by one or two people at most.*
+
+***If you read this paragraph and enjoyed my speech, please consider giving "[AM](https://github.com/ivan-hc/AM)" a ⭐. Thank you.***
+
 ------------------------------------------------------------------------
 # How to install "AppMan"?
 *To install "AppMan" you must first install the "core" dependencies from your package manager:*
