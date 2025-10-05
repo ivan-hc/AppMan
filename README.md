@@ -101,13 +101,11 @@
 
 *It's therefore important to distinguish between "AM" and AppMan in terms of projects:*
 - *"ivan-hc/AM" is **the main project**, from which all the community work comes.*
-- *"ivan-hc/AppMan" is **merely a guide maintained by me**, as a single user, given **the insistence of many people on linking to this repository instead of the other** (and what they do is wrong).*
+- *"ivan-hc/AppMan" is **merely a guide maintained by me**, as a single user, given **the insistence of many people on linking to this repository instead of the other one***
 
 ***I want to emphasize these aspects, out of infinite respect for [my contributors to the AM repository](https://github.com/ivan-hc/AM/graphs/contributors), who deserve due recognition. And there are many of us.***
 
 *PS: I know the dual existence of these repositories is confusing, and it's worth clarifying why I continue to maintain both. I thank everyone who fell in love with AppMan, but precisely because AppMan is what it is today, let's give due credit to "[AM](https://github.com/ivan-hc/AM)," which embodies the work and passion of dozens of other developers. I don't want the small number of contributors to this repository to mislead others into thinking that all the work is done by one or two people at most.*
-
-***If you read this paragraph and enjoyed my speech, please consider giving "[AM](https://github.com/ivan-hc/AM)" a ⭐. Thank you.***
 
 ------------------------------------------------------------------------
 # How to install "AppMan"?
