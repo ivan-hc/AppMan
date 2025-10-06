@@ -77,6 +77,8 @@
 *"AppMan" has been an active project since the second half of 2021, and was a completely standalone script, with an at times troubled history before allowing the birth of "AM".*
 
 ### History
+*In the beginning, AppMan was a completely different project than the one you know today, and was intended to be used with root privileges.*
+
 *The first version of AppMan installed all programs in /opt/bin, then linked them to /usr/bin, and saved the launchers in /usr/share/applications. It was a mess. Given my inexperience, I disregarded the standards and LSB specifications, creating a new one. There was no shortage of criticism.*
 
 *I had to rewrite the program, but I already had many users at the time. I couldn't suddenly overturn the project.*
@@ -85,7 +87,15 @@
 
 *It was a success, especially in terms of contributors.*
 
-*One day, I received an issue requesting that apps be installed locally, without root privileges. So I decided to unarchive AppMan and fork it from AM, despite it being older. I copied the contents of APP-MANAGER, the main "AM" script, into "appman," changing the app paths and adding a prompt to allow users to customize the destination directory. Initially, these changes resulted in duplicate work, leading AppMan to be released days or weeks later than AM in an attempt to adapt the code for local use.*
+*One day, in "AM", someone opened an issue asking for a way to install and manage the apps locally, without root privileges.*
+
+*I had always taken a root approach to "AM" and its predecessor, but I decided to give it a try. Based on my experience at the time, **I thought it necessary to write a version of "AM" in another repository**, but **one that pointed to local paths**, chosen by the user.*
+
+*At time, AppMan had been archived for less than two years, so I decided to unarchive it to rewrite it completely on the base of my experience with "AM"! Just as "AM" was a rewrite of the original AppMan, designed to adopt a structure consistent with Linux standards, AppMan itself became a "fork" of "AM", converted for local use. I copied the contents of APP-MANAGER, the main "AM" script, into "appman," changing the app paths and adding a prompt to allow users to customize the destination directory.*
+
+*Initially, these changes resulted in duplicate work, leading each AppMan version to be released days or weeks later than AM in an attempt to adapt the code for local use.*
+
+*I had tons of repositories by now, and my workload had increased both on GitHub and in real life. I needed to simplify my life, and the best way to do that was to make AppMan and AM as similar as possible... or even one and the same.*
 
 *A major refactoring effort was then launched, aimed at increasingly narrowing the differences between AM and AppMan.*
 
