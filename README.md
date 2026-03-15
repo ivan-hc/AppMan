@@ -285,7 +285,7 @@ For more information, see https://github.com/ivan-hc/AM/issues/1830
 - [An application does not work, is old and unsupported](https://github.com/ivan-hc/AM/blob/main/docs/troubleshooting.md#an-application-does-not-work-is-old-and-unsupported)
 - [Cannot download or update an application](https://github.com/ivan-hc/AM/blob/main/docs/troubleshooting.md#cannot-download-or-update-an-application)
 - [Cannot mount and run AppImages](https://github.com/ivan-hc/AM/blob/main/docs/troubleshooting.md#cannot-mount-and-run-appimages)
-- [Checksum cannot be verified, does not match or not yet supported](https://github.com/ivan-hc/AM/blob/main/docs/troubleshooting.md#checksum-cannot-be-verified-does-not-match-or-not-yet-supported)
+- [Checksum does not match or missing verified status](https://github.com/ivan-hc/AM/blob/main/docs/troubleshooting.md#checksum-does-not-match-or-missing-verified-status)
 - [Failed to open squashfs image](https://github.com/ivan-hc/AM/blob/main/docs/troubleshooting.md#failed-to-open-squashfs-image)
 - [Spyware, malware and dangerous software](https://github.com/ivan-hc/AM/blob/main/docs/troubleshooting.md#spyware-malware-and-dangerous-software)
 - [Stop AppImage prompt to create its own launcher, desktop integration and doubled launchers](https://github.com/ivan-hc/AM/blob/main/docs/troubleshooting.md#stop-appimage-prompt-to-create-its-own-launcher-desktop-integration-and-doubled-launchers)
