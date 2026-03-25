@@ -315,6 +315,7 @@ For more information, see https://github.com/ivan-hc/AM/issues/1830
 - *[ArchImage](https://github.com/ivan-hc/ArchImage), create AppImages for all distributions using Arch Linux packages. Powered by JuNest*
 - *[Firefox for Linux scripts](https://github.com/ivan-hc/Firefox-for-Linux-scripts), easily install the official releases of Firefox for Linux*
 - *[My AppImage packages](https://github.com/ivan-hc#my-appimage-packages) the complete list of packages managed by me and available in this database*
+- *[portable2appimage](https://github.com/ivan-hc/portable2appimage), convert standalone, self-contained portable apps into AppImage packages*
 - *[Snap2AppImage](https://github.com/ivan-hc/Snap2AppImage), try to convert Snap packages to AppImages*
 
 ------------------------------------------------------------------------
