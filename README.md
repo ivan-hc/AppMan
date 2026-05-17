@@ -203,11 +203,11 @@ The basic principle is very simple: the APP-MANAGER script must be renamed "appm
 
 Try it and believe it:
 
-Using `wget`
+*Using `wget`*
 ```
 wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O ./appman && chmod a+x ./appman
 ```
-or using `curl`
+*or using `curl`*
 ```
 curl -s -Lo ./appman https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER && chmod a+x ./appman
 ```
