@@ -170,7 +170,7 @@
 ### Quick installation
 *Copy/paste the following one line command to download and run the "[AM-INSTALLER](https://github.com/ivan-hc/AM/blob/main/AM-INSTALLER)" script*
 ```
-wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER && chmod a+x ./AM-INSTALLER && ./AM-INSTALLER && rm ./AM-INSTALLER
+curl -s -Lo ./AM-INSTALLER https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER && chmod a+x ./AM-INSTALLER && ./AM-INSTALLER && rm ./AM-INSTALLER
 ```
 *...below, the screenshot of what will appear.*
 
@@ -196,7 +196,7 @@ The basic principle is very simple: the APP-MANAGER script must be renamed "appm
 
 Try it and believe it:
 ```
-wget -q "https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER" -O ./appman && chmod a+x ./appman
+curl -s -Lo ./appman https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER && chmod a+x ./appman
 ```
 However, **this approach is NOT RECOMMENDED** for various reasons, the most common being convenience:
 - the AM-INSTALLER ensures the creation of an XDG_BIN_HOME or $HOME/.local/bin directory if it doesn't already exist, so you can use it in $PATH without having to write the entire path to the script.
@@ -219,7 +219,7 @@ if ! echo $PATH | grep "$BINDIR" >/dev/null 2>&1; then
 		printf '	export PATH="$PATH:$BINDIR"\nfi\n' >> "$ZSHRC"
 	fi
 fi
-wget -q "https://raw.githubusercontent.com/ivan-hc/AM/$AM_BRANCH/APP-MANAGER" -O "$BINDIR"/appman && chmod a+x "$BINDIR"/appman
+curl -s -Lo "$BINDIR"/appman https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER && chmod a+x "$BINDIR"/appman
 ```
 The above is a "summary" (without the messages) of what the AM-INSTALLER script already does when you choose option 2 (AppMan).
 
