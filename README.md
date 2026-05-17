@@ -169,9 +169,16 @@
 
 ### Quick installation
 *Copy/paste the following one line command to download and run the "[AM-INSTALLER](https://github.com/ivan-hc/AM/blob/main/AM-INSTALLER)" script*
+
+*Using `wget`*
+```
+wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER && chmod a+x ./AM-INSTALLER && ./AM-INSTALLER && rm ./AM-INSTALLER
+```
+*or using `curl`*
 ```
 curl -s -Lo ./AM-INSTALLER https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER && chmod a+x ./AM-INSTALLER && ./AM-INSTALLER && rm ./AM-INSTALLER
 ```
+
 *...below, the screenshot of what will appear.*
 
 <img width="747" height="600" alt="installer" src="https://github.com/user-attachments/assets/f8a153e8-d410-4a7e-9e5c-b48e686547ee" />
@@ -195,9 +202,16 @@ As we've already seen, AppMan is portable, meaning you can use it anywhere, in a
 The basic principle is very simple: the APP-MANAGER script must be renamed "appman".
 
 Try it and believe it:
+
+Using `wget`
+```
+wget -q https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER -O ./appman && chmod a+x ./appman
+```
+or using `curl`
 ```
 curl -s -Lo ./appman https://raw.githubusercontent.com/ivan-hc/AM/main/APP-MANAGER && chmod a+x ./appman
 ```
+
 However, **this approach is NOT RECOMMENDED** for various reasons, the most common being convenience:
 - the AM-INSTALLER ensures the creation of an XDG_BIN_HOME or $HOME/.local/bin directory if it doesn't already exist, so you can use it in $PATH without having to write the entire path to the script.
 - by installing it in the local $PATH, the AM-INSTALLER also takes care of its use in ZSH, if that is used instead of BASH.
