@@ -181,11 +181,11 @@ curl -s -Lo ./AM-INSTALLER https://raw.githubusercontent.com/ivan-hc/AM/main/AM-
 
 *...below, the screenshot of what will appear.*
 
-<img width="747" height="600" alt="installer" src="https://raw.githubusercontent.com/ivan-hc/AM/refs/heads/main/sample/am-installer-appman.png" />
+<img width="747" height="600" alt="installer" src="https://raw.githubusercontent.com/ivan-hc/AM/refs/heads/main/sample/am-installer.png" />
 
 *Type "2" to install "AppMan", or "1" to install "[AM](https://github.com/ivan-hc/AM)". Any other key will abort the installation.*
 
-<img width="747" height="798" alt="AppMan" src="https://github.com/user-attachments/assets/99296420-f6da-4d6f-8080-e6ad03aaf0d2" />
+<img width="747" height="798" alt="AppMan" src="https://raw.githubusercontent.com/ivan-hc/AM/refs/heads/main/sample/am-installer-appman.png" />
 
 *The above script will place the command `appman` in your local "$PATH", at `~/.local/bin` (this path is the recommended one, since it allows AppMan to be updated in bulk with all other programs, using [Topgrade](https://github.com/topgrade-rs/topgrade).*
 
