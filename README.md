@@ -194,6 +194,18 @@ curl -s -Lo ./AM-INSTALLER https://raw.githubusercontent.com/ivan-hc/AM/main/AM-
 *Run `appman -h` or go to "**https://github.com/ivan-hc/AM/blob/main/README.md#options**" to see all the available options.*
 
 ------------------------------------------------------------------------
+
+NOTE, the AM-INSTALLER supports non-interactive installation via flag `-i`, `install` or `--install`. For example
+```
+./AM-INSTALLER -i am
+```
+or
+```
+./AM-INSTALLER -i appman
+```
+This will help to install AM or AppMan in an automated way.
+
+------------------------------------------------------------------------
 #### How to install AppMan manually
 <details>
   <summary>Click here to expand</summary>
