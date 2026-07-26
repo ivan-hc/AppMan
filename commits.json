@@ -1,53 +1,53 @@
 [
   {
-    "sha": "60cdb51b4fd98de8f932eb147a5ba2d26f5e8af1",
-    "node_id": "C_kwDOGZAit9oAKDYwY2RiNTFiNGZkOThkZThmOTMyZWIxNDdhNWJhMmQyNmY1ZThhZjE",
+    "sha": "c9bc10597e6f626c089b7a903e6749e6723b5888",
+    "node_id": "C_kwDOGZAit9oAKGM5YmMxMDU5N2U2ZjYyNmMwODliN2E5MDNlNjc0OWU2NzIzYjU4ODg",
     "commit": {
       "author": {
-        "name": "Vishnu",
-        "email": "5123344+vishnu350@users.noreply.github.com",
-        "date": "2026-07-18T23:48:08Z"
+        "name": "iVAN",
+        "email": "88724353+ivan-hc@users.noreply.github.com",
+        "date": "2026-07-26T01:51:16Z"
       },
       "committer": {
         "name": "GitHub",
         "email": "noreply@github.com",
-        "date": "2026-07-18T23:48:08Z"
+        "date": "2026-07-26T01:51:16Z"
       },
-      "message": "Resolved _appimage_extract: not found for st+ install script. (#2492)",
+      "message": "Update openmw, avoud \"debug\" release\n\nref https://github.com/ivan-hc/AM/issues/2520",
       "tree": {
-        "sha": "b182d1b46d44920d2940f181b4aff9d6cbd109f8",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/b182d1b46d44920d2940f181b4aff9d6cbd109f8"
+        "sha": "92f1ac935e2eefed898b900526893875cdb61edf",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/92f1ac935e2eefed898b900526893875cdb61edf"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/60cdb51b4fd98de8f932eb147a5ba2d26f5e8af1",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/c9bc10597e6f626c089b7a903e6749e6723b5888",
       "comment_count": 0,
       "verification": {
         "verified": true,
         "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqXBC4CRC1aQ7uu5UhlAAA9lQQAKqKHt3+UEy7erkRbKTKONnQ\nRn3v6gJFQ/AM+uJP3sPxreZYPyF7bBE5j2Li13DGTOfoJ8hGUPUbykkczgssB9CO\nRAAyg0NlqHRBLw7xcnI8WcJ4TWVnhybTTyk74qVzHao2cWg0u1THWyEiSM45qZJo\nuLiWcgBtR7CM/7XrTBR+3wdWfeVWFazWDGQ4Km1H8cPv7pazcMrAJJUGwU3fPQM8\nGo5CNsALDLdvrWHoz9l+vDfguPrOWHBrOqPEATrqnEi6Z/0UsZ3SKycjT3rZhIDQ\nJ93bW46NmlXlzYbGdjzvUVNUxrw08XvLaJwgWW5dKx7fcGmvVipqpsTZ7PZEv0Tf\nJQ43FfVp8MabvTRMpxWhh+VxJ9zqaEDJuQ9ViK+lQgUOj4aVzw9mxNwWGJ4YIAno\nsNUZN648DMDUhsRGLdHsI7mcXtxOeeUq0He5OXhy9BTmQvgBdA5nwc8BxZU+kFZP\nQsQ9uTnV5dqq+yjktrMQwCGbls56l4zIGFc7D907w6Dvx3CkyiVZoO1NZBT74ED5\nv7f9E1mzYAqi8uJ+NxVFHh/a0XXNQbLCXJhmnLKq5a92OkfaAUFjRRbA/i6YbUbM\nVYBdCCvUorHKUNn9UCMtXRAsQXrw/xzd1yQxOBJTuNG3QkZfuf5nKijC8Sk6N0k0\nPEx+dP+KZUC0O2hiRUmP\n=afUT\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree b182d1b46d44920d2940f181b4aff9d6cbd109f8\nparent 54bc47517cffeddaa03025806db38012de893b28\nauthor Vishnu <5123344+vishnu350@users.noreply.github.com> 1784418488 +0800\ncommitter GitHub <noreply@github.com> 1784418488 +0200\n\nResolved _appimage_extract: not found for st+ install script. (#2492)",
-        "verified_at": "2026-07-18T23:48:08Z"
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqZWgVCRC1aQ7uu5UhlAAATOkQABtf6uI0uSPh8/Yip0X3RYBB\ndMtyCCJuiLw3QIT/zndfBjZhc2NVd2LjY3feXYfvr/v5BiH3L0jyN4EUNgwwOW2p\nzZ1Y2hOgLyDxVV2ROmYuroFkAkqDArEC9F89ZchUFeFRfv1pbCBqHQddqSCmRYjL\nDOQOeHXoySltrQfFiHZi+N6uY1+7t/cff91mhRt67PE2koLBSGUZsjGPDyDEAxmz\nMTrz8es8eCiHbeKReVmVy5U5ZkZBRCCFzULJXZRTlx0cQqE8F3eINuytYLMq4wg3\nxa2hnB7pffMSodPgQ1EvFhYEqiYX6/C54JFi9LmzdGR4SkDPFnRTywE0ALTUSba/\nj/IHwEe4rxeMqhmdPFdlkqlmsdA1FwMFw3bmvJA0Fg1f1FX5LC2s28RlZUdRLqX8\niTBAxYGVldvhD2UkoAb7eEW3kAVmQRBluX/EhTZTQKGwMT+3huTdDAjQHeTiqm3w\nxNjmp/jNtr09T5x2mXzytS+3332pNSRTYZBBFzJCkReq6cVSYtdBb27QUbJv4u34\nvgbIvJPgmT+mTwu/pNudcn0qGy26pPXOSDyNkYn1+KM5FhrbT4DoQJNd/WtVHK7P\nw/tmNdt2IIxiYhDw9eBqVDsri0fVdtL0NLQ9+hkj2JV7HtGUH0rvEpZyPdZx3plH\nJetOqbj6YGRtVW6j4aG4\n=t1c3\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 92f1ac935e2eefed898b900526893875cdb61edf\nparent c1a49a6777ec0ae2869030b1dac239173535aabd\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1785030676 +0200\ncommitter GitHub <noreply@github.com> 1785030676 +0200\n\nUpdate openmw, avoud \"debug\" release\n\nref https://github.com/ivan-hc/AM/issues/2520",
+        "verified_at": "2026-07-26T01:51:17Z"
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/60cdb51b4fd98de8f932eb147a5ba2d26f5e8af1",
-    "html_url": "https://github.com/ivan-hc/AM/commit/60cdb51b4fd98de8f932eb147a5ba2d26f5e8af1",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/60cdb51b4fd98de8f932eb147a5ba2d26f5e8af1/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/c9bc10597e6f626c089b7a903e6749e6723b5888",
+    "html_url": "https://github.com/ivan-hc/AM/commit/c9bc10597e6f626c089b7a903e6749e6723b5888",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/c9bc10597e6f626c089b7a903e6749e6723b5888/comments",
     "author": {
-      "login": "vishnu350",
-      "id": 5123344,
-      "node_id": "MDQ6VXNlcjUxMjMzNDQ=",
-      "avatar_url": "https://avatars.githubusercontent.com/u/5123344?v=4",
+      "login": "ivan-hc",
+      "id": 88724353,
+      "node_id": "MDQ6VXNlcjg4NzI0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88724353?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/vishnu350",
-      "html_url": "https://github.com/vishnu350",
-      "followers_url": "https://api.github.com/users/vishnu350/followers",
-      "following_url": "https://api.github.com/users/vishnu350/following{/other_user}",
-      "gists_url": "https://api.github.com/users/vishnu350/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/vishnu350/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/vishnu350/subscriptions",
-      "organizations_url": "https://api.github.com/users/vishnu350/orgs",
-      "repos_url": "https://api.github.com/users/vishnu350/repos",
-      "events_url": "https://api.github.com/users/vishnu350/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/vishnu350/received_events",
+      "url": "https://api.github.com/users/ivan-hc",
+      "html_url": "https://github.com/ivan-hc",
+      "followers_url": "https://api.github.com/users/ivan-hc/followers",
+      "following_url": "https://api.github.com/users/ivan-hc/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ivan-hc/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ivan-hc/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ivan-hc/subscriptions",
+      "organizations_url": "https://api.github.com/users/ivan-hc/orgs",
+      "repos_url": "https://api.github.com/users/ivan-hc/repos",
+      "events_url": "https://api.github.com/users/ivan-hc/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ivan-hc/received_events",
       "type": "User",
       "user_view_type": "public",
       "site_admin": false
@@ -75,32 +75,32 @@
     },
     "parents": [
       {
-        "sha": "54bc47517cffeddaa03025806db38012de893b28",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/54bc47517cffeddaa03025806db38012de893b28",
-        "html_url": "https://github.com/ivan-hc/AM/commit/54bc47517cffeddaa03025806db38012de893b28"
+        "sha": "c1a49a6777ec0ae2869030b1dac239173535aabd",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/c1a49a6777ec0ae2869030b1dac239173535aabd",
+        "html_url": "https://github.com/ivan-hc/AM/commit/c1a49a6777ec0ae2869030b1dac239173535aabd"
       }
     ]
   },
   {
-    "sha": "54bc47517cffeddaa03025806db38012de893b28",
-    "node_id": "C_kwDOGZAit9oAKDU0YmM0NzUxN2NmZmVkZGFhMDMwMjU4MDZkYjM4MDEyZGU4OTNiMjg",
+    "sha": "c1a49a6777ec0ae2869030b1dac239173535aabd",
+    "node_id": "C_kwDOGZAit9oAKGMxYTQ5YTY3NzdlYzBhZTI4NjkwMzBiMWRhYzIzOTE3MzUzNWFhYmQ",
     "commit": {
       "author": {
         "name": "web-flow",
         "email": "noreply@github.com",
-        "date": "2026-07-18T09:59:43Z"
+        "date": "2026-07-26T01:03:56Z"
       },
       "committer": {
         "name": "web-flow",
         "email": "noreply@github.com",
-        "date": "2026-07-18T09:59:43Z"
+        "date": "2026-07-26T01:03:56Z"
       },
-      "message": "Add toolBLEx (#2491) (sync lists) [9c809be1d4f47936eb06d5651fbd6403dac0e75f]",
+      "message": "Add meron (sync lists) [d0e96e71903a84df81c784addeac8c1cf5c1d835]",
       "tree": {
-        "sha": "9a50ec255b8c430aa6d4647d60bc8013d1a46bba",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/9a50ec255b8c430aa6d4647d60bc8013d1a46bba"
+        "sha": "a1136f111b20d18964cc8001946ff62d754c5a8f",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/a1136f111b20d18964cc8001946ff62d754c5a8f"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/54bc47517cffeddaa03025806db38012de893b28",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/c1a49a6777ec0ae2869030b1dac239173535aabd",
       "comment_count": 0,
       "verification": {
         "verified": false,
@@ -110,9 +110,9 @@
         "verified_at": null
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/54bc47517cffeddaa03025806db38012de893b28",
-    "html_url": "https://github.com/ivan-hc/AM/commit/54bc47517cffeddaa03025806db38012de893b28",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/54bc47517cffeddaa03025806db38012de893b28/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/c1a49a6777ec0ae2869030b1dac239173535aabd",
+    "html_url": "https://github.com/ivan-hc/AM/commit/c1a49a6777ec0ae2869030b1dac239173535aabd",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/c1a49a6777ec0ae2869030b1dac239173535aabd/comments",
     "author": {
       "login": "web-flow",
       "id": 19864447,
@@ -157,126 +157,44 @@
     },
     "parents": [
       {
-        "sha": "9c809be1d4f47936eb06d5651fbd6403dac0e75f",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/9c809be1d4f47936eb06d5651fbd6403dac0e75f",
-        "html_url": "https://github.com/ivan-hc/AM/commit/9c809be1d4f47936eb06d5651fbd6403dac0e75f"
+        "sha": "d0e96e71903a84df81c784addeac8c1cf5c1d835",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/d0e96e71903a84df81c784addeac8c1cf5c1d835",
+        "html_url": "https://github.com/ivan-hc/AM/commit/d0e96e71903a84df81c784addeac8c1cf5c1d835"
       }
     ]
   },
   {
-    "sha": "9c809be1d4f47936eb06d5651fbd6403dac0e75f",
-    "node_id": "C_kwDOGZAit9oAKDljODA5YmUxZDRmNDc5MzZlYjA2ZDU2NTFmYmQ2NDAzZGFjMGU3NWY",
-    "commit": {
-      "author": {
-        "name": "shuvashish76",
-        "email": "sc76@tutanota.com",
-        "date": "2026-07-18T09:59:06Z"
-      },
-      "committer": {
-        "name": "GitHub",
-        "email": "noreply@github.com",
-        "date": "2026-07-18T09:59:06Z"
-      },
-      "message": "Add toolBLEx (#2491)",
-      "tree": {
-        "sha": "6af7c6ba10b2ee06e7e4a93ff5c3ac42347d5043",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/6af7c6ba10b2ee06e7e4a93ff5c3ac42347d5043"
-      },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/9c809be1d4f47936eb06d5651fbd6403dac0e75f",
-      "comment_count": 0,
-      "verification": {
-        "verified": true,
-        "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqW05qCRC1aQ7uu5UhlAAAIV8QADte9cSg021sityyZvm24gB1\nAWyDodapXodg+RhsnFcmCXO8pqtCPY7rYXS5IhwC7Lpw92W/serKVwCdQklb6Ss3\nAsv7F5ykfdfHS566bHpbLYAIfqxhw/TUnjleXRI44odK8DzZxXZGK1Fp0VU4dgjW\n7YRMj4CBPYanbAR/X/y/lTtPGi9Dy4SzjT7Yj4KdLfaMmQhH+MFwXatGYkNiPCmq\nbV6pOZDcVXsvDOfvs7RoIWSNpXuHR80Mb00kleClcmstmtgftxLaJmHmEmdlxE3e\nb4VdLwyphsmcPIRuV5mv1rhoqysKSWwwQVPkuJvE8T4a9CHt0hQ44JM4UbL0dLKR\nU5/o9+ZIT2WH7XB6Xl795iDXSdjO6Zt1+hbL+q/vm0XARzoPFuS/2vxdN1+K3U04\nAewE7SLzs4SxoszrlX57oqaKulnnG4kYBpjLcpug/tbeithEIAhiVL3R3WTmyKdB\ngy0W3C38QChRkmsZO+5K80fdZxHoAYfnxpteXLsf1ovOPztSrLytO/iIaHPzvsa+\nlDHSwVjGSzW0q+DM5BfXPBurcmmuTbTpENyAFrxgMoIQjd/IYxw91cC0zID66gQ2\nnfXnjf6+pUJdI1+ZfdLXL2srxfZmhNq6vX2eoeVqNMzvkG1JakBhi2gT4kUOI0SH\nx0c9E1GnppIjLaKqAwdv\n=PffM\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 6af7c6ba10b2ee06e7e4a93ff5c3ac42347d5043\nparent 10f0e98163173f5f01c8b02c6d76d82a05b1b6ed\nauthor shuvashish76 <sc76@tutanota.com> 1784368746 +0530\ncommitter GitHub <noreply@github.com> 1784368746 +0200\n\nAdd toolBLEx (#2491)",
-        "verified_at": "2026-07-18T09:59:07Z"
-      }
-    },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/9c809be1d4f47936eb06d5651fbd6403dac0e75f",
-    "html_url": "https://github.com/ivan-hc/AM/commit/9c809be1d4f47936eb06d5651fbd6403dac0e75f",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/9c809be1d4f47936eb06d5651fbd6403dac0e75f/comments",
-    "author": {
-      "login": "shuvashish76",
-      "id": 48226312,
-      "node_id": "MDQ6VXNlcjQ4MjI2MzEy",
-      "avatar_url": "https://avatars.githubusercontent.com/u/48226312?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/shuvashish76",
-      "html_url": "https://github.com/shuvashish76",
-      "followers_url": "https://api.github.com/users/shuvashish76/followers",
-      "following_url": "https://api.github.com/users/shuvashish76/following{/other_user}",
-      "gists_url": "https://api.github.com/users/shuvashish76/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/shuvashish76/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/shuvashish76/subscriptions",
-      "organizations_url": "https://api.github.com/users/shuvashish76/orgs",
-      "repos_url": "https://api.github.com/users/shuvashish76/repos",
-      "events_url": "https://api.github.com/users/shuvashish76/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/shuvashish76/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "10f0e98163173f5f01c8b02c6d76d82a05b1b6ed",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/10f0e98163173f5f01c8b02c6d76d82a05b1b6ed",
-        "html_url": "https://github.com/ivan-hc/AM/commit/10f0e98163173f5f01c8b02c6d76d82a05b1b6ed"
-      }
-    ]
-  },
-  {
-    "sha": "10f0e98163173f5f01c8b02c6d76d82a05b1b6ed",
-    "node_id": "C_kwDOGZAit9oAKDEwZjBlOTgxNjMxNzNmNWYwMWM4YjAyYzZkNzZkODJhMDViMWI2ZWQ",
+    "sha": "d0e96e71903a84df81c784addeac8c1cf5c1d835",
+    "node_id": "C_kwDOGZAit9oAKGQwZTk2ZTcxOTAzYTg0ZGY4MWM3ODRhZGRlYWM4YzFjZjVjMWQ4MzU",
     "commit": {
       "author": {
         "name": "iVAN",
         "email": "88724353+ivan-hc@users.noreply.github.com",
-        "date": "2026-07-18T01:36:41Z"
+        "date": "2026-07-26T01:03:15Z"
       },
       "committer": {
         "name": "GitHub",
         "email": "noreply@github.com",
-        "date": "2026-07-18T01:36:41Z"
+        "date": "2026-07-26T01:03:15Z"
       },
-      "message": "Merge pull request #2489 from ivan-hc/dev\n\nFix duplicated launchers in AppImage templates",
+      "message": "Add meron\n\nfix https://github.com/nonbili/meron",
       "tree": {
-        "sha": "0f0908146f13c5b21e807fa4d9e1db0beb7e26c3",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/0f0908146f13c5b21e807fa4d9e1db0beb7e26c3"
+        "sha": "0ccc6a6d3c1c7b20c7db799725cd4c250cb43832",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/0ccc6a6d3c1c7b20c7db799725cd4c250cb43832"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/10f0e98163173f5f01c8b02c6d76d82a05b1b6ed",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/d0e96e71903a84df81c784addeac8c1cf5c1d835",
       "comment_count": 0,
       "verification": {
         "verified": true,
         "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqWtipCRC1aQ7uu5UhlAAAyqMQAH9jMd6UAnQ7k6DkcWpQ/0we\nt9uvNxIGIgxfnM7hhwhJgcyNaAQJZuWiCx6MghbhKYal8YH8muIC61vZei8j7f58\nRT4KlVPserw06GoOLjJsGrggUq6UYM3c12G7mehBxTUeTlOya0I0rjH2S+uh3a0R\ncS0bNltvrqsPD+HdxBBvv34HSR6Wmjg2D+CB82CxMcAtM2C6rdyV1CNKjolCkY1o\nK5YBZBeJkdpCxmjcDTFJCa5rdPDwAyo1U3rDtyJHpPf9hSaDK8QTOuLpugyP6odz\nsJX3/vZaoLDlwRdPXoK2HPJJoj7QoWDMA2imGiSFzE/YYE0W+PBSNC9+7coW+3pY\nIeO9yoS2NQwO0XQvPtufISmS4QNsjvP/PV4h7yqfItzvuQvIBibsh+RnTHDXHOkl\ns/xV2ir9Vex2U+KrtGBuRE8FIfJ83YG8buVSgUhLl0zBIzE99eq2oKWqJApal0wd\nvj9g2ttWUmR5NI45BxDy1ljnSMCmL7sbzbS8Gji2DhZbfbIpLvCG+hZIkPerZf8i\n7x6y5F1wd6Gz0vnWI737egNS29wT5bmC5fDKrZfsaRP+Lzh0uvGc441RYZVel4aT\n/bLwYAQoHaN7kzoqkBs/U78YA9RkkB7oxcdLYJ9gGyn7rj9VDsWRuNRp3nv4PPf9\n0vkLqWoQ5ysUvNscFjYc\n=CKxz\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 0f0908146f13c5b21e807fa4d9e1db0beb7e26c3\nparent de92b1d18dcdbfe40e345a4ee326b8febb163fc9\nparent 5ed0ea574eebe38dff5d2bf8c704320e689fd1fd\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784338601 +0200\ncommitter GitHub <noreply@github.com> 1784338601 +0200\n\nMerge pull request #2489 from ivan-hc/dev\n\nFix duplicated launchers in AppImage templates",
-        "verified_at": "2026-07-18T01:36:41Z"
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqZVzTCRC1aQ7uu5UhlAAA6poQAKIYo9wqR4JvicvRaq8zbLVH\n/ArS6EJeWU/MLFJOd+uEdy2wIguyYw+ubVMKnb85ges+gvpz3XsXRuwuvCItqjQn\n+HMRHuWjXbcv7ACTQT5PUxqGAPJBy/4aFEe+jTdnHbsaxeXcVjpshWXGM5c8A29J\np4Asr0ZuRry0bDf/I1ZWgrWARsyzEEra8WUIQJCg2jJ4c+DHp8B2uLq7Ocf5luHd\nMjTJXrt9vKlQ3I5o01Nv1zqIZLuxqu+jDt2yvfJskYOo112DhazsY5KcFb8Bqz5R\na58UX5Gbi+NpjClB3drh86A19Uqo1MNQP69VIRVDZCg/Q7nZJ+Es0nA9/DSdiDKh\n1WqEF46U1+lPtMJGVW0j2zPBAq4//Qr5djIy4Ih2oAmRY0CswTXRaBSW4HhhB0dI\n2y2l2rPM1PKLjAedwvYuH1jcO0VWwp9rvjWIVagr3iSaH4TWWEKlIpbVV1qf87sJ\n3RJwXhgENW9YfEbPYaF+wmGR/wGQrV/EJoynl6O4IOmuz8FqJKInd7sRNkSG7FMv\novBre1yJOp1BfcQWRmTr0wi/Z4Y6CvqckCQyF4vGh7QPTWKAmouYqRD+/u9pRNKT\n8qTNkD3ZNApDl/KkfE3FSNfKcREknYQxcj9QbYo0Mln/Bj6rFOfVjze66r8u+ydc\nNA5igcJM6XohyHMLeI35\n=Hc62\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 0ccc6a6d3c1c7b20c7db799725cd4c250cb43832\nparent 4518417dff63e2842c24a57765e53a3435ad40b3\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1785027795 +0200\ncommitter GitHub <noreply@github.com> 1785027795 +0200\n\nAdd meron\n\nfix https://github.com/nonbili/meron",
+        "verified_at": "2026-07-26T01:03:16Z"
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/10f0e98163173f5f01c8b02c6d76d82a05b1b6ed",
-    "html_url": "https://github.com/ivan-hc/AM/commit/10f0e98163173f5f01c8b02c6d76d82a05b1b6ed",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/10f0e98163173f5f01c8b02c6d76d82a05b1b6ed/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/d0e96e71903a84df81c784addeac8c1cf5c1d835",
+    "html_url": "https://github.com/ivan-hc/AM/commit/d0e96e71903a84df81c784addeac8c1cf5c1d835",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/d0e96e71903a84df81c784addeac8c1cf5c1d835/comments",
     "author": {
       "login": "ivan-hc",
       "id": 88724353,
@@ -321,66 +239,61 @@
     },
     "parents": [
       {
-        "sha": "de92b1d18dcdbfe40e345a4ee326b8febb163fc9",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/de92b1d18dcdbfe40e345a4ee326b8febb163fc9",
-        "html_url": "https://github.com/ivan-hc/AM/commit/de92b1d18dcdbfe40e345a4ee326b8febb163fc9"
-      },
-      {
-        "sha": "5ed0ea574eebe38dff5d2bf8c704320e689fd1fd",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/5ed0ea574eebe38dff5d2bf8c704320e689fd1fd",
-        "html_url": "https://github.com/ivan-hc/AM/commit/5ed0ea574eebe38dff5d2bf8c704320e689fd1fd"
+        "sha": "4518417dff63e2842c24a57765e53a3435ad40b3",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/4518417dff63e2842c24a57765e53a3435ad40b3",
+        "html_url": "https://github.com/ivan-hc/AM/commit/4518417dff63e2842c24a57765e53a3435ad40b3"
       }
     ]
   },
   {
-    "sha": "5ed0ea574eebe38dff5d2bf8c704320e689fd1fd",
-    "node_id": "C_kwDOGZAit9oAKDVlZDBlYTU3NGVlYmUzOGRmZjVkMmJmOGM3MDQzMjBlNjg5ZmQxZmQ",
+    "sha": "4518417dff63e2842c24a57765e53a3435ad40b3",
+    "node_id": "C_kwDOGZAit9oAKDQ1MTg0MTdkZmY2M2UyODQyYzI0YTU3NzY1ZTUzYTM0MzVhZDQwYjM",
     "commit": {
       "author": {
-        "name": "iVAN",
-        "email": "88724353+ivan-hc@users.noreply.github.com",
-        "date": "2026-07-17T02:15:07Z"
+        "name": "Shikakiben",
+        "email": "108907095+Shikakiben@users.noreply.github.com",
+        "date": "2026-07-26T01:00:15Z"
       },
       "committer": {
         "name": "GitHub",
         "email": "noreply@github.com",
-        "date": "2026-07-17T02:15:07Z"
+        "date": "2026-07-26T01:00:15Z"
       },
-      "message": "Fix tura's duplicated launchers",
+      "message": "Update repository source for lba2-classic-community (#2521)\n\n* Sync locale files\n\n* Update lba2-classic-community\n\n* Update repository source for lba2-classic-community\n\n---------\n\nCo-authored-by: ivan-hc <noreply@github.com>",
       "tree": {
-        "sha": "0f0908146f13c5b21e807fa4d9e1db0beb7e26c3",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/0f0908146f13c5b21e807fa4d9e1db0beb7e26c3"
+        "sha": "89e7b02038a007d676d30e78eaa1a9403d445234",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/89e7b02038a007d676d30e78eaa1a9403d445234"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/5ed0ea574eebe38dff5d2bf8c704320e689fd1fd",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/4518417dff63e2842c24a57765e53a3435ad40b3",
       "comment_count": 0,
       "verification": {
         "verified": true,
         "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqWZArCRC1aQ7uu5UhlAAAYD8QAHAncKZsJ0DFT53rFBISHMZ3\npUURwtPUFq9qVHsYgqOx855eY+ejjwGIethDbOiczAaLV/adfkJWfiFuVwt9A4f6\n/fEf37+ZWIF6eY1Qlom9k5jnN0TZC+Qi63j3xf5YTSE/2HLVrx9+Tyi4l7lPM0Hk\n7G5Lu4NcmDOZLFmu1ROdFr4GEqwLgNYEclqXbZo6/0MwgxYUh54FnfXsz1VU2dHq\nj92/jyjs4zMlj1Y5EGt37PmzJzc6TDXp18V5kHMr5oFyTfsVhpj1xQePT3NGt7pE\nE9fUUIWzzWCMjCKZwOt6fb/mhhCl8sPcsY7DPyjNaauZa6ldrsOV0g3RRkanBmzC\n4t4IBJefUwoGDSdEcnM1tJ2qzcJhSWvZbnSgIUvzNFBquhMjqmXonODV7H1DeFxi\n0ytJ4Or8L29W+0lVCRxAaw+Lk2lU+EyZp2zlNu08gA/apDbSbYP0kkTs9y/zb2Zz\nnZX53t6gfCu2gNRx8x1qLP4IZ3N9gaEDVDTiVQIXxfdevfsmkLhjaoohiQlQ8Zmw\nMkAwuBD8V3oygGP1iqQTfmIO8aoA5ExbVSGKv5MMlkPtplzD2IV7aldOHRuZXzF7\ng173tLWvqvwhnyAQ0dvIrTScFoWbD0cob+8zock7W3iOMU4hPZ/04e2ZkXscPzQq\nT0MYysswcLebGxN8FCCa\n=7A1f\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 0f0908146f13c5b21e807fa4d9e1db0beb7e26c3\nparent cf50304fc627a0c4c60376fbcbfd31b31bb4736f\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784254507 +0200\ncommitter GitHub <noreply@github.com> 1784254507 +0200\n\nFix tura's duplicated launchers",
-        "verified_at": "2026-07-17T02:15:08Z"
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqZVwfCRC1aQ7uu5UhlAAA8+gQADnP+QwheQe8yBXGYYB8z7m4\n15pXq9cdvacCUMBXkDAfiMnBkFuqGT+g/u734v2Yq+DztzMME0fojYzj8J8py9jH\nUHBfr580v8Hgm8P5MjrN5EbcMvHbfluWrJKSncXjuEHu7E9rSvtK2eoV0g5vi9Dg\nzB/HPTrtfQwiBmNZW+O/Lxo5TUGy+Dbc6s8H+YAY0c9/DnfEwaXCxlEau+4YRCcL\ny+bDeWHsUS+K/U+vxdLY+5zWQf6X3asG9pL/U2sv5gIaXi7AI1VT2Nj5lHGLPMhD\nMqPlZqiDDvRc7cOLzevV1iCSGv2eDQwbItxiN+8wAvD1ZpsxFko03N6fftCKc7eG\n5q53D6OzySNNgmB26bhlzIKetIV1zZbpKZeBmET1AxpxQcBAP5YmciKRxZi4KZCr\nq5DJbtnj621ijBytCwplUraWS/+hjVHQW5B2RdY8QInBNXIHgSkE8lnDb6U0C9Pr\nvxIegD/BSDW50uJRPtnECidaVK35UIlGuySYlhuvZtLsAx5YvnEy9f50vvBwbl6W\n8QRl9qQDGOLj4wlKf23YkfB2SIS7XqHqC2PVa7AQRm+LwKO3I4sSkxmS2GnGvBcO\n0fBCxXfnO63VDsqUs0E2mWqk5ZMfT4qDzw5dSCcyEJzqGrlNlxBjkslJB5PQYVy+\nRm3v5n9FrZepBzJnVUJy\n=knrM\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 89e7b02038a007d676d30e78eaa1a9403d445234\nparent 8f06e5d61d943645d033f10b9268d1f9d35c4766\nauthor Shikakiben <108907095+Shikakiben@users.noreply.github.com> 1785027615 +0200\ncommitter GitHub <noreply@github.com> 1785027615 +0200\n\nUpdate repository source for lba2-classic-community (#2521)\n\n* Sync locale files\n\n* Update lba2-classic-community\n\n* Update repository source for lba2-classic-community\n\n---------\n\nCo-authored-by: ivan-hc <noreply@github.com>",
+        "verified_at": "2026-07-26T01:00:15Z"
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/5ed0ea574eebe38dff5d2bf8c704320e689fd1fd",
-    "html_url": "https://github.com/ivan-hc/AM/commit/5ed0ea574eebe38dff5d2bf8c704320e689fd1fd",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/5ed0ea574eebe38dff5d2bf8c704320e689fd1fd/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/4518417dff63e2842c24a57765e53a3435ad40b3",
+    "html_url": "https://github.com/ivan-hc/AM/commit/4518417dff63e2842c24a57765e53a3435ad40b3",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/4518417dff63e2842c24a57765e53a3435ad40b3/comments",
     "author": {
-      "login": "ivan-hc",
-      "id": 88724353,
-      "node_id": "MDQ6VXNlcjg4NzI0MzUz",
-      "avatar_url": "https://avatars.githubusercontent.com/u/88724353?v=4",
+      "login": "Shikakiben",
+      "id": 108907095,
+      "node_id": "U_kgDOBn3KVw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108907095?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/ivan-hc",
-      "html_url": "https://github.com/ivan-hc",
-      "followers_url": "https://api.github.com/users/ivan-hc/followers",
-      "following_url": "https://api.github.com/users/ivan-hc/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ivan-hc/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ivan-hc/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ivan-hc/subscriptions",
-      "organizations_url": "https://api.github.com/users/ivan-hc/orgs",
-      "repos_url": "https://api.github.com/users/ivan-hc/repos",
-      "events_url": "https://api.github.com/users/ivan-hc/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ivan-hc/received_events",
+      "url": "https://api.github.com/users/Shikakiben",
+      "html_url": "https://github.com/Shikakiben",
+      "followers_url": "https://api.github.com/users/Shikakiben/followers",
+      "following_url": "https://api.github.com/users/Shikakiben/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Shikakiben/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Shikakiben/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Shikakiben/subscriptions",
+      "organizations_url": "https://api.github.com/users/Shikakiben/orgs",
+      "repos_url": "https://api.github.com/users/Shikakiben/repos",
+      "events_url": "https://api.github.com/users/Shikakiben/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Shikakiben/received_events",
       "type": "User",
       "user_view_type": "public",
       "site_admin": false
@@ -408,114 +321,32 @@
     },
     "parents": [
       {
-        "sha": "cf50304fc627a0c4c60376fbcbfd31b31bb4736f",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/cf50304fc627a0c4c60376fbcbfd31b31bb4736f",
-        "html_url": "https://github.com/ivan-hc/AM/commit/cf50304fc627a0c4c60376fbcbfd31b31bb4736f"
+        "sha": "8f06e5d61d943645d033f10b9268d1f9d35c4766",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/8f06e5d61d943645d033f10b9268d1f9d35c4766",
+        "html_url": "https://github.com/ivan-hc/AM/commit/8f06e5d61d943645d033f10b9268d1f9d35c4766"
       }
     ]
   },
   {
-    "sha": "cf50304fc627a0c4c60376fbcbfd31b31bb4736f",
-    "node_id": "C_kwDOGZAit9oAKGNmNTAzMDRmYzYyN2EwYzRjNjAzNzZmYmNiZmQzMWIzMWJiNDczNmY",
-    "commit": {
-      "author": {
-        "name": "iVAN",
-        "email": "88724353+ivan-hc@users.noreply.github.com",
-        "date": "2026-07-17T02:12:08Z"
-      },
-      "committer": {
-        "name": "GitHub",
-        "email": "noreply@github.com",
-        "date": "2026-07-17T02:12:08Z"
-      },
-      "message": "Fix duplicated launchers in AppImage templates",
-      "tree": {
-        "sha": "2dbe1379a2cc05928c4df849fb8e345505eed0ac",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/2dbe1379a2cc05928c4df849fb8e345505eed0ac"
-      },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/cf50304fc627a0c4c60376fbcbfd31b31bb4736f",
-      "comment_count": 0,
-      "verification": {
-        "verified": true,
-        "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqWY94CRC1aQ7uu5UhlAAA2t0QAJRYo6vuWPfMabmVLBZQDWS5\n2DABixdTQH1RcEW2nXL6o6WzrxdzhL4uxi2H8P8JC57IY6XAMOTOSfe3/ydrW2Ol\ntDI4qj/Dzt3h2SV75dwoud/9/HmX74JEEI9Y/EynKt0LJOEMDi/4zKemCBDbr5sv\nlbz9LrGPCbuuODvJ6WNzeGF4/CihoXtWcK1kgetqORIa7dULT/9TqJd7xSl7eYIb\nFWVfsvtLTYKK971UQrBeXulT9MsaOTcJdFQos803xJ5EGNiK3fQz+bgivTaSsaR9\nUukguHldYsjghbCsrUV1pUau3JGM+tNTodtAJj/mq1PoC4qNEjTqiIbZLXFzjJl3\nXItI5wf67EwMFzzeleIFkDEqLUqAAfmBww4F0x1Uv96lKOof/jDaOyWeKOtQ5Z/Z\nXXwAND3sRE28imTdpar6k5ZwXR6JqkqslOvCdqy3TskhOmejEdxCbLVCPjYN8rFD\nwYy3/aVxjDaCqJEdNIvoxc1jKCPp5OFhiEd4WhEsAT1fn57BOv5ivdqO/I0FnvNg\neZaOdjisky1vR1nNNXtE2b1BNNSCW6b0ohWlz5unDY6MwaMP9OR56lxGnHi7yoBM\n1og1/UWvm0IU1Yn5CLMIXLvMlttCmy6twPeCIgsPu2Bunf+oPfJxTGwtlSRdFHX4\nEo0lQrEH5slPDjhylG1F\n=iX47\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 2dbe1379a2cc05928c4df849fb8e345505eed0ac\nparent de92b1d18dcdbfe40e345a4ee326b8febb163fc9\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784254328 +0200\ncommitter GitHub <noreply@github.com> 1784254328 +0200\n\nFix duplicated launchers in AppImage templates",
-        "verified_at": "2026-07-17T02:12:09Z"
-      }
-    },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/cf50304fc627a0c4c60376fbcbfd31b31bb4736f",
-    "html_url": "https://github.com/ivan-hc/AM/commit/cf50304fc627a0c4c60376fbcbfd31b31bb4736f",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/cf50304fc627a0c4c60376fbcbfd31b31bb4736f/comments",
-    "author": {
-      "login": "ivan-hc",
-      "id": 88724353,
-      "node_id": "MDQ6VXNlcjg4NzI0MzUz",
-      "avatar_url": "https://avatars.githubusercontent.com/u/88724353?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/ivan-hc",
-      "html_url": "https://github.com/ivan-hc",
-      "followers_url": "https://api.github.com/users/ivan-hc/followers",
-      "following_url": "https://api.github.com/users/ivan-hc/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ivan-hc/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ivan-hc/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ivan-hc/subscriptions",
-      "organizations_url": "https://api.github.com/users/ivan-hc/orgs",
-      "repos_url": "https://api.github.com/users/ivan-hc/repos",
-      "events_url": "https://api.github.com/users/ivan-hc/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ivan-hc/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "de92b1d18dcdbfe40e345a4ee326b8febb163fc9",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/de92b1d18dcdbfe40e345a4ee326b8febb163fc9",
-        "html_url": "https://github.com/ivan-hc/AM/commit/de92b1d18dcdbfe40e345a4ee326b8febb163fc9"
-      }
-    ]
-  },
-  {
-    "sha": "de92b1d18dcdbfe40e345a4ee326b8febb163fc9",
-    "node_id": "C_kwDOGZAit9oAKGRlOTJiMWQxOGRjZGJmZTQwZTM0NWE0ZWUzMjZiOGZlYmIxNjNmYzk",
+    "sha": "8f06e5d61d943645d033f10b9268d1f9d35c4766",
+    "node_id": "C_kwDOGZAit9oAKDhmMDZlNWQ2MWQ5NDM2NDVkMDMzZjEwYjkyNjhkMWY5ZDM1YzQ3NjY",
     "commit": {
       "author": {
         "name": "web-flow",
         "email": "noreply@github.com",
-        "date": "2026-07-16T13:07:03Z"
+        "date": "2026-07-26T00:59:05Z"
       },
       "committer": {
         "name": "web-flow",
         "email": "noreply@github.com",
-        "date": "2026-07-16T13:07:03Z"
+        "date": "2026-07-26T00:59:05Z"
       },
-      "message": "Delete shiru (sync lists) [320355cafea9472f3cfc421e98ea411943bbd965]",
+      "message": "neovide: add nightly install script (#2522) (sync lists) [c8cce6cbd3f0daef6b4fe4199c4bc97f341bea50]",
       "tree": {
-        "sha": "db360d700bc60bb9b77025acf42e7fbd3718f114",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/db360d700bc60bb9b77025acf42e7fbd3718f114"
+        "sha": "f18a145c8c4680620e97b1746df39f007c9a0209",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/f18a145c8c4680620e97b1746df39f007c9a0209"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/de92b1d18dcdbfe40e345a4ee326b8febb163fc9",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/8f06e5d61d943645d033f10b9268d1f9d35c4766",
       "comment_count": 0,
       "verification": {
         "verified": false,
@@ -525,9 +356,9 @@
         "verified_at": null
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/de92b1d18dcdbfe40e345a4ee326b8febb163fc9",
-    "html_url": "https://github.com/ivan-hc/AM/commit/de92b1d18dcdbfe40e345a4ee326b8febb163fc9",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/de92b1d18dcdbfe40e345a4ee326b8febb163fc9/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/8f06e5d61d943645d033f10b9268d1f9d35c4766",
+    "html_url": "https://github.com/ivan-hc/AM/commit/8f06e5d61d943645d033f10b9268d1f9d35c4766",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/8f06e5d61d943645d033f10b9268d1f9d35c4766/comments",
     "author": {
       "login": "web-flow",
       "id": 19864447,
@@ -572,61 +403,61 @@
     },
     "parents": [
       {
-        "sha": "320355cafea9472f3cfc421e98ea411943bbd965",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/320355cafea9472f3cfc421e98ea411943bbd965",
-        "html_url": "https://github.com/ivan-hc/AM/commit/320355cafea9472f3cfc421e98ea411943bbd965"
+        "sha": "c8cce6cbd3f0daef6b4fe4199c4bc97f341bea50",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/c8cce6cbd3f0daef6b4fe4199c4bc97f341bea50",
+        "html_url": "https://github.com/ivan-hc/AM/commit/c8cce6cbd3f0daef6b4fe4199c4bc97f341bea50"
       }
     ]
   },
   {
-    "sha": "320355cafea9472f3cfc421e98ea411943bbd965",
-    "node_id": "C_kwDOGZAit9oAKDMyMDM1NWNhZmVhOTQ3MmYzY2ZjNDIxZTk4ZWE0MTE5NDNiYmQ5NjU",
+    "sha": "c8cce6cbd3f0daef6b4fe4199c4bc97f341bea50",
+    "node_id": "C_kwDOGZAit9oAKGM4Y2NlNmNiZDNmMGRhZWY2YjRmZTQxOTljNGJjOTdmMzQxYmVhNTA",
     "commit": {
       "author": {
-        "name": "iVAN",
-        "email": "88724353+ivan-hc@users.noreply.github.com",
-        "date": "2026-07-16T13:06:25Z"
+        "name": "Marek Langiewicz",
+        "email": "marek.langiewicz@gmail.com",
+        "date": "2026-07-26T00:58:28Z"
       },
       "committer": {
         "name": "GitHub",
         "email": "noreply@github.com",
-        "date": "2026-07-16T13:06:25Z"
+        "date": "2026-07-26T00:58:28Z"
       },
-      "message": "Delete shiru\n\nRepository https://github.com/RockinChaos/Shiru unavailable due to DMCA takedown",
+      "message": "neovide: add nightly install script (#2522)",
       "tree": {
-        "sha": "5d7b51d2b0d2a99dbdbf63cc1f96796184c1415e",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/5d7b51d2b0d2a99dbdbf63cc1f96796184c1415e"
+        "sha": "69db45e12cbf08d09b87b469956b31df9e91ae96",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/69db45e12cbf08d09b87b469956b31df9e91ae96"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/320355cafea9472f3cfc421e98ea411943bbd965",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/c8cce6cbd3f0daef6b4fe4199c4bc97f341bea50",
       "comment_count": 0,
       "verification": {
         "verified": true,
         "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqWNdRCRC1aQ7uu5UhlAAA/fEQAA607Lgf1ul23cAsJo4Yef6J\n8vTKEkGbKQQ90qxS2LniEYxH2rKvIptteT4Lsu3b5iZ1qXenaCC14VdXDrdFxKG5\ndCsNmkqc5Zs5Cbela2yGysSZnI43HBSoU6kLKBSKp0jFlVqRsT6mrKqxFwIwCHHn\nmrkLLGIvkBnyTU73KDsVyvVV+X0ul/9MxW0QQRG2OiB06xYxt/axUEJG1EK9wvg7\nIr3WPxfIDPSSq70fjIspSVGoVHWVx3HU6KN2aunCAx/lB2eyLXP6R1Ac/o7eNbVc\nSBSLr40ehbekNSdnUO6Vwj2jw/qs+xjP/NAT1a7ZJcBPpy9LexA/AaUpXmlVSBc2\n6m/bpyslDtKTgxw2mUsU3O03ty/rytGFJOkJm/uyEIZuX6QisC2srul0kPtTKeh9\nUoP6gfILolHVrgOD54+AYfPxp3wh8ntkJpQzGG5YZCowyXXAuSx+qLSVYBQphTOa\n9Fb8u4t5ZXZFrGS21PIv3fefiVQzogAn5CAwC0lGjqOn2fZF4rSCd9IUG3T67wF8\nRfba3bbSGHBMQWhBN/VpI7FvZI+ey4REMiZUaBn9GXw8emTk5P+uDbY7hYIxFxTu\nkJmSG48ioOaAjN6Ru1Nq4XaeP8HOPCPR/oo0cRpqvso8TXih168mIzgrGt5GrkmO\ngu4koJAcuT28bzKm/3o7\n=WdX7\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 5d7b51d2b0d2a99dbdbf63cc1f96796184c1415e\nparent 495f11bb6588a57b1347005102e163ee0c85cc22\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784207185 +0200\ncommitter GitHub <noreply@github.com> 1784207185 +0200\n\nDelete shiru\n\nRepository https://github.com/RockinChaos/Shiru unavailable due to DMCA takedown",
-        "verified_at": "2026-07-16T13:06:26Z"
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqZVu0CRC1aQ7uu5UhlAAAaSMQAExMhzsaNdKsY6/aKthGAuFP\n9iRC21QIforoES87w4wC2XDZ2fQnX6jEo64QYpYsK6js+S+ZQVriLL+ZTlhwJXQC\nVUHF1qMGrbMHEMM3ioCPKMrGyaK5P0QGL9Y5q3V4T0isiG/BAKoG1/Q1WjQIWClf\nYfVGv16f+2oPx7vQnj772at56V6JkCgNtw8tOcN9AMyBdD2ZSKNvTOXCO6dPwa6j\nP6B1jqQT8RzmynpBcuGdICIyCa6v0ufuUHbpHi6ooU6patFYPU2offLwTUEL/CQx\nrtN0kTnJd0d50JzaCiK/qD9TvjZz7FJ8KN7l2TH59LIiei/VnnikHMEztWTm1CSe\nRmgUutZYSExJy2I0vBdLTfYTclC9JKx7CkbojmdJnMF75Yf51icH/iJRcJ5kEEbK\nkdtHE+1Ln/xcJGyDFoS24haLoo9yHBd9GY+uTLfePdqMByYp4jmEdr6frvk8Fopb\nuENaBSxC0rPMr8cI9GHxfB6tn0qVU9Zvo3YK4pTYuy/5MPaHlB9sm96tjXoKbLZj\nUwP07h6lYuPjKzQkXgjO48a54b2Lb6cllFCauSXoH4FqB4PdTxTky1Op9WhQFFjm\nIy/xgm+s5csdl5/zulEonfAJsDJs+g6RZWDBbHd1wqefdF3pfbzKTpPeTgGplCTg\nVXlQddMM7rpzYlfclZAE\n=vT5r\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 69db45e12cbf08d09b87b469956b31df9e91ae96\nparent f568d789bcc1e9b639b96744b22e602e170cb101\nauthor Marek Langiewicz <marek.langiewicz@gmail.com> 1785027508 +0200\ncommitter GitHub <noreply@github.com> 1785027508 +0200\n\nneovide: add nightly install script (#2522)",
+        "verified_at": "2026-07-26T00:58:29Z"
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/320355cafea9472f3cfc421e98ea411943bbd965",
-    "html_url": "https://github.com/ivan-hc/AM/commit/320355cafea9472f3cfc421e98ea411943bbd965",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/320355cafea9472f3cfc421e98ea411943bbd965/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/c8cce6cbd3f0daef6b4fe4199c4bc97f341bea50",
+    "html_url": "https://github.com/ivan-hc/AM/commit/c8cce6cbd3f0daef6b4fe4199c4bc97f341bea50",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/c8cce6cbd3f0daef6b4fe4199c4bc97f341bea50/comments",
     "author": {
-      "login": "ivan-hc",
-      "id": 88724353,
-      "node_id": "MDQ6VXNlcjg4NzI0MzUz",
-      "avatar_url": "https://avatars.githubusercontent.com/u/88724353?v=4",
+      "login": "mareklangiewicz",
+      "id": 324320,
+      "node_id": "MDQ6VXNlcjMyNDMyMA==",
+      "avatar_url": "https://avatars.githubusercontent.com/u/324320?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/ivan-hc",
-      "html_url": "https://github.com/ivan-hc",
-      "followers_url": "https://api.github.com/users/ivan-hc/followers",
-      "following_url": "https://api.github.com/users/ivan-hc/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ivan-hc/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ivan-hc/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ivan-hc/subscriptions",
-      "organizations_url": "https://api.github.com/users/ivan-hc/orgs",
-      "repos_url": "https://api.github.com/users/ivan-hc/repos",
-      "events_url": "https://api.github.com/users/ivan-hc/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ivan-hc/received_events",
+      "url": "https://api.github.com/users/mareklangiewicz",
+      "html_url": "https://github.com/mareklangiewicz",
+      "followers_url": "https://api.github.com/users/mareklangiewicz/followers",
+      "following_url": "https://api.github.com/users/mareklangiewicz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mareklangiewicz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mareklangiewicz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mareklangiewicz/subscriptions",
+      "organizations_url": "https://api.github.com/users/mareklangiewicz/orgs",
+      "repos_url": "https://api.github.com/users/mareklangiewicz/repos",
+      "events_url": "https://api.github.com/users/mareklangiewicz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mareklangiewicz/received_events",
       "type": "User",
       "user_view_type": "public",
       "site_admin": false
@@ -654,32 +485,32 @@
     },
     "parents": [
       {
-        "sha": "495f11bb6588a57b1347005102e163ee0c85cc22",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/495f11bb6588a57b1347005102e163ee0c85cc22",
-        "html_url": "https://github.com/ivan-hc/AM/commit/495f11bb6588a57b1347005102e163ee0c85cc22"
+        "sha": "f568d789bcc1e9b639b96744b22e602e170cb101",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/f568d789bcc1e9b639b96744b22e602e170cb101",
+        "html_url": "https://github.com/ivan-hc/AM/commit/f568d789bcc1e9b639b96744b22e602e170cb101"
       }
     ]
   },
   {
-    "sha": "495f11bb6588a57b1347005102e163ee0c85cc22",
-    "node_id": "C_kwDOGZAit9oAKDQ5NWYxMWJiNjU4OGE1N2IxMzQ3MDA1MTAyZTE2M2VlMGM4NWNjMjI",
+    "sha": "f568d789bcc1e9b639b96744b22e602e170cb101",
+    "node_id": "C_kwDOGZAit9oAKGY1NjhkNzg5YmNjMWU5YjYzOWI5Njc0NGIyMmU2MDJlMTcwY2IxMDE",
     "commit": {
       "author": {
         "name": "web-flow",
         "email": "noreply@github.com",
-        "date": "2026-07-16T12:49:20Z"
+        "date": "2026-07-26T00:56:08Z"
       },
       "committer": {
         "name": "web-flow",
         "email": "noreply@github.com",
-        "date": "2026-07-16T12:49:20Z"
+        "date": "2026-07-26T00:56:08Z"
       },
-      "message": "Add tura (sync lists) [d189bf62bf55bf9e8fc550ce8296613f6cc4834a]",
+      "message": "Remove outdated wewechat and electron-wechat items (#2523) (sync lists) [6f90b9f8256949eef6132780f00f06adf76c3cf9]",
       "tree": {
-        "sha": "ace648d3728ecbc33b3939ab40558c634e439f72",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/ace648d3728ecbc33b3939ab40558c634e439f72"
+        "sha": "f4720851ae53f118355af4d473d640a7e9c6808a",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/f4720851ae53f118355af4d473d640a7e9c6808a"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/495f11bb6588a57b1347005102e163ee0c85cc22",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/f568d789bcc1e9b639b96744b22e602e170cb101",
       "comment_count": 0,
       "verification": {
         "verified": false,
@@ -689,9 +520,9 @@
         "verified_at": null
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/495f11bb6588a57b1347005102e163ee0c85cc22",
-    "html_url": "https://github.com/ivan-hc/AM/commit/495f11bb6588a57b1347005102e163ee0c85cc22",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/495f11bb6588a57b1347005102e163ee0c85cc22/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/f568d789bcc1e9b639b96744b22e602e170cb101",
+    "html_url": "https://github.com/ivan-hc/AM/commit/f568d789bcc1e9b639b96744b22e602e170cb101",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/f568d789bcc1e9b639b96744b22e602e170cb101/comments",
     "author": {
       "login": "web-flow",
       "id": 19864447,
@@ -736,61 +567,61 @@
     },
     "parents": [
       {
-        "sha": "d189bf62bf55bf9e8fc550ce8296613f6cc4834a",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/d189bf62bf55bf9e8fc550ce8296613f6cc4834a",
-        "html_url": "https://github.com/ivan-hc/AM/commit/d189bf62bf55bf9e8fc550ce8296613f6cc4834a"
+        "sha": "6f90b9f8256949eef6132780f00f06adf76c3cf9",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/6f90b9f8256949eef6132780f00f06adf76c3cf9",
+        "html_url": "https://github.com/ivan-hc/AM/commit/6f90b9f8256949eef6132780f00f06adf76c3cf9"
       }
     ]
   },
   {
-    "sha": "d189bf62bf55bf9e8fc550ce8296613f6cc4834a",
-    "node_id": "C_kwDOGZAit9oAKGQxODliZjYyYmY1NWJmOWU4ZmM1NTBjZTgyOTY2MTNmNmNjNDgzNGE",
+    "sha": "6f90b9f8256949eef6132780f00f06adf76c3cf9",
+    "node_id": "C_kwDOGZAit9oAKDZmOTBiOWY4MjU2OTQ5ZWVmNjEzMjc4MGYwMGYwNmFkZjc2YzNjZjk",
     "commit": {
       "author": {
-        "name": "iVAN",
-        "email": "88724353+ivan-hc@users.noreply.github.com",
-        "date": "2026-07-16T12:48:43Z"
+        "name": "DtDEncryption",
+        "email": "188722311+DtDEncryption@users.noreply.github.com",
+        "date": "2026-07-26T00:55:27Z"
       },
       "committer": {
         "name": "GitHub",
         "email": "noreply@github.com",
-        "date": "2026-07-16T12:48:43Z"
+        "date": "2026-07-26T00:55:27Z"
       },
-      "message": "Add tura\n\nfix https://github.com/ivan-hc/AM/issues/2485",
+      "message": "Remove outdated \"wewechat\" and \"electron-wechat\" items (#2523)\n\n* Delete programs/x86_64/wewechat\n\n* Delete programs/x86_64/electron-wechat",
       "tree": {
-        "sha": "65ade71410b4072df78a3a9d9735c75989112da1",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/65ade71410b4072df78a3a9d9735c75989112da1"
+        "sha": "3329c4cfff5b39cc366b70298e7ac600c7f80fcb",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/3329c4cfff5b39cc366b70298e7ac600c7f80fcb"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/d189bf62bf55bf9e8fc550ce8296613f6cc4834a",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/6f90b9f8256949eef6132780f00f06adf76c3cf9",
       "comment_count": 0,
       "verification": {
         "verified": true,
         "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqWNMsCRC1aQ7uu5UhlAAAj7IQAGG+iaaDn3a2Ks6vb6VjVQIf\nc3tY797reua3eyq+fVdpPZjWhkOyBtsKYJrAhjt1H9f6ZmDt96yd1MPT5lzpKjlK\nEECAIWhzSxLnSLMsiBte1WtrH/60JPn7uCkhO2oafLMuXhdB0FcgnY5mKUTJOEjh\n++3XBRLFQOxQNXYIMVkDB+RCbgSKk9eaaU4Vts8NF88b1zEhV7JIg9hjd7Ujq5hI\n6DW6ak5evaX+iT+zRku0gdve/fbCuB0i/AXB3cLZP7zcZOeTV/qOxRFuraCE1rZl\nE25SdxhQzGAg5UimvRa3AduWmI3yzu2K4g1aj867vWHx/X5akMy5GgXQuEvf0BJe\niPmHemSN6I81Tj84dB7fMsPtp/mCSS7R+Iucn5XSeWK1ibX74+L1Fa1waKM5vO95\nK6sEptmv9vF+AJlOS/QzTyx1marSCG5vikScpgUfVHFcWqmbaZzaRgQfsSWZw07u\nWJVLxyT8tRVnkmLZkhnxT130kbiGnDUL1bpwjlfFCGcylvsiz4CnGC9daun3SzBu\nvkrqaumeTuxz6Kv57ThtWZ6UNroe2xWYxxAtHFVfONJfg4VFspZtvvNnFNPJ7xmI\nYh++3Ij4oZGgS3bHa/G8EHG90OGAY8+O2/WhmJN4x3Zit+pIAjPlN+7lYA6xhfef\nxNDemOrATjrqZq4TLIWi\n=QUkh\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 65ade71410b4072df78a3a9d9735c75989112da1\nparent c17806bf15a3744a597a57ec30ca32eefbe73688\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784206123 +0200\ncommitter GitHub <noreply@github.com> 1784206123 +0200\n\nAdd tura\n\nfix https://github.com/ivan-hc/AM/issues/2485",
-        "verified_at": "2026-07-16T12:48:44Z"
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqZVr/CRC1aQ7uu5UhlAAAcg4QAJKhSy6dpA3b0wwUdAqfb9ly\nL+iKrHeqeU6xWD8fZxYBP0FCqgWxbg2Cl4Uw5k83OiR01u7L01CKqE1qM2jTPqA+\nWRTkT6pkBcfhgNmUWmKCighI5tBAxo4M1BTAf9s7TMIko9X5Eu5oQpaa2TrkYJC5\nx5iCbTLQqJ+6s8ktrWxJdr7PRod80epHfwOotD8caPGpHoR+XI/TRy4Yxy2HttLu\nxIVnomISjWXHiwhvCBwELFUBepJMiiMfRBJk4L5+9lXewVVeyxdbaOyPntbDoDfE\nBvHCFyj4NeioRv+IVG+KGS/+TFMYNNM+oP48c3T3xIB8TQPzoVAuPKbDHCLXwWt5\n3bM1mFuJDe+q0c0g/65H8nDbGVvmmAv8QxVlmCrkAnvIwZXIWldPt6YP6KtPKWwS\nqpqPLzGrc3hLplOU1RZ+2VeKifXTkELWc6UEsTsrDUmHwcG0H9sIn0d9uBsFdyqQ\npqkqILXMwtqSiw8uuVBJnulhMUDBCJOrSqMUDAZKrC5oaDkCPRoZbjiPl6nj+LVF\nNG+oVEIFjaiWiOZ+XvIqlmW65R6aDnlyTty36jOfRslyqLJhS8+iTHIWhCJeXGZG\nge2F/+llhKLEiwGOv5uWmx0XG67n+Vk/aQunwAfJWJY30+u6qn2obs1WMrzGMvvY\nPKcb5LEuZcGusmC2FP2k\n=F8FO\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 3329c4cfff5b39cc366b70298e7ac600c7f80fcb\nparent a519528cff15cd84bc8f30c436a16e2034117dcf\nauthor DtDEncryption <188722311+DtDEncryption@users.noreply.github.com> 1785027327 -0400\ncommitter GitHub <noreply@github.com> 1785027327 +0200\n\nRemove outdated \"wewechat\" and \"electron-wechat\" items (#2523)\n\n* Delete programs/x86_64/wewechat\n\n* Delete programs/x86_64/electron-wechat",
+        "verified_at": "2026-07-26T00:55:27Z"
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/d189bf62bf55bf9e8fc550ce8296613f6cc4834a",
-    "html_url": "https://github.com/ivan-hc/AM/commit/d189bf62bf55bf9e8fc550ce8296613f6cc4834a",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/d189bf62bf55bf9e8fc550ce8296613f6cc4834a/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/6f90b9f8256949eef6132780f00f06adf76c3cf9",
+    "html_url": "https://github.com/ivan-hc/AM/commit/6f90b9f8256949eef6132780f00f06adf76c3cf9",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/6f90b9f8256949eef6132780f00f06adf76c3cf9/comments",
     "author": {
-      "login": "ivan-hc",
-      "id": 88724353,
-      "node_id": "MDQ6VXNlcjg4NzI0MzUz",
-      "avatar_url": "https://avatars.githubusercontent.com/u/88724353?v=4",
+      "login": "DtDEncryption",
+      "id": 188722311,
+      "node_id": "U_kgDOCz-shw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/188722311?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/ivan-hc",
-      "html_url": "https://github.com/ivan-hc",
-      "followers_url": "https://api.github.com/users/ivan-hc/followers",
-      "following_url": "https://api.github.com/users/ivan-hc/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ivan-hc/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ivan-hc/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ivan-hc/subscriptions",
-      "organizations_url": "https://api.github.com/users/ivan-hc/orgs",
-      "repos_url": "https://api.github.com/users/ivan-hc/repos",
-      "events_url": "https://api.github.com/users/ivan-hc/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ivan-hc/received_events",
+      "url": "https://api.github.com/users/DtDEncryption",
+      "html_url": "https://github.com/DtDEncryption",
+      "followers_url": "https://api.github.com/users/DtDEncryption/followers",
+      "following_url": "https://api.github.com/users/DtDEncryption/following{/other_user}",
+      "gists_url": "https://api.github.com/users/DtDEncryption/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/DtDEncryption/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/DtDEncryption/subscriptions",
+      "organizations_url": "https://api.github.com/users/DtDEncryption/orgs",
+      "repos_url": "https://api.github.com/users/DtDEncryption/repos",
+      "events_url": "https://api.github.com/users/DtDEncryption/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/DtDEncryption/received_events",
       "type": "User",
       "user_view_type": "public",
       "site_admin": false
@@ -818,114 +649,32 @@
     },
     "parents": [
       {
-        "sha": "c17806bf15a3744a597a57ec30ca32eefbe73688",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/c17806bf15a3744a597a57ec30ca32eefbe73688",
-        "html_url": "https://github.com/ivan-hc/AM/commit/c17806bf15a3744a597a57ec30ca32eefbe73688"
+        "sha": "a519528cff15cd84bc8f30c436a16e2034117dcf",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/a519528cff15cd84bc8f30c436a16e2034117dcf",
+        "html_url": "https://github.com/ivan-hc/AM/commit/a519528cff15cd84bc8f30c436a16e2034117dcf"
       }
     ]
   },
   {
-    "sha": "c17806bf15a3744a597a57ec30ca32eefbe73688",
-    "node_id": "C_kwDOGZAit9oAKGMxNzgwNmJmMTVhMzc0NGE1OTdhNTdlYzMwY2EzMmVlZmJlNzM2ODg",
-    "commit": {
-      "author": {
-        "name": "iVAN",
-        "email": "88724353+ivan-hc@users.noreply.github.com",
-        "date": "2026-07-16T01:12:10Z"
-      },
-      "committer": {
-        "name": "GitHub",
-        "email": "noreply@github.com",
-        "date": "2026-07-16T01:12:10Z"
-      },
-      "message": "Update linuxqq\n\ntemporarily fix https://github.com/ivan-hc/AM/issues/2483",
-      "tree": {
-        "sha": "57ff376c2e6e6db8e0848022b75893749d221753",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/57ff376c2e6e6db8e0848022b75893749d221753"
-      },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/c17806bf15a3744a597a57ec30ca32eefbe73688",
-      "comment_count": 0,
-      "verification": {
-        "verified": true,
-        "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqWC/rCRC1aQ7uu5UhlAAAeOEQAIfEYZgAHy2pWpc4N6BdHhku\npPrvMBvZPDLwsc8WSBca8rTAwL4Aohppe96+sT+0thP/p4nWqfDxXCE+Cv+RMCNw\n35w9Ya1tBUUdjlRQegHkAxAE7WNV1w1u3loDHxkTOzrs+dPXYBpLhDvHNRwKEWDR\nUqbD4gYV9gcj8Ok9tqOejaet7gcGuc69JjH8sGyeQZjnBQoOo+m1WTkb+S5IQsEi\nPsiNh5VNXNSnikTxb8V9m3Vs/zBjzDtCPDRgYjM9hDPcldkqDewbwUVbahUhAh6e\nfQ4r/4W+HHad4GS7M4tWbgAkELhX3qt7N00v/TpKAtH7Q59ab8tCj1adaJYyEMJi\nRDYI11u9YeLsfovuiJE3rpQyTGmDwmrE/VGORrSaDOpZl5r8vBq3JubJn2g29w8f\n6LJNVMOLMcOwjDJ7wl4bxati1zabRmomPSAtC0VnONjOzle1HrDMaFq6X5kGAwC8\nHQBcCR7BhoGB+xn89D4Y8Tj3NYe9HHvAB0MLgyHbVRCwalBH+9LWVOty8GS3/mUF\nwVwp1gC4C2mBx8NPueAATDhFBMcrP7osmIrzvQ1uB268TRLhoeRMph1Wm+dNL3jf\nsxeoj70MyFwaDdJd375DtEiNBub00QuI/e8Xc9Yd6ydiJuovhsTdkyWukflHx62W\nr9fGb9JyArBxQHS6nzF0\n=N1Df\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 57ff376c2e6e6db8e0848022b75893749d221753\nparent ae1be258601d5654c07ca48840f4256065193c83\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784164330 +0200\ncommitter GitHub <noreply@github.com> 1784164330 +0200\n\nUpdate linuxqq\n\ntemporarily fix https://github.com/ivan-hc/AM/issues/2483",
-        "verified_at": "2026-07-16T01:12:11Z"
-      }
-    },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/c17806bf15a3744a597a57ec30ca32eefbe73688",
-    "html_url": "https://github.com/ivan-hc/AM/commit/c17806bf15a3744a597a57ec30ca32eefbe73688",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/c17806bf15a3744a597a57ec30ca32eefbe73688/comments",
-    "author": {
-      "login": "ivan-hc",
-      "id": 88724353,
-      "node_id": "MDQ6VXNlcjg4NzI0MzUz",
-      "avatar_url": "https://avatars.githubusercontent.com/u/88724353?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/ivan-hc",
-      "html_url": "https://github.com/ivan-hc",
-      "followers_url": "https://api.github.com/users/ivan-hc/followers",
-      "following_url": "https://api.github.com/users/ivan-hc/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ivan-hc/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ivan-hc/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ivan-hc/subscriptions",
-      "organizations_url": "https://api.github.com/users/ivan-hc/orgs",
-      "repos_url": "https://api.github.com/users/ivan-hc/repos",
-      "events_url": "https://api.github.com/users/ivan-hc/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ivan-hc/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "ae1be258601d5654c07ca48840f4256065193c83",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/ae1be258601d5654c07ca48840f4256065193c83",
-        "html_url": "https://github.com/ivan-hc/AM/commit/ae1be258601d5654c07ca48840f4256065193c83"
-      }
-    ]
-  },
-  {
-    "sha": "ae1be258601d5654c07ca48840f4256065193c83",
-    "node_id": "C_kwDOGZAit9oAKGFlMWJlMjU4NjAxZDU2NTRjMDdjYTQ4ODQwZjQyNTYwNjUxOTNjODM",
+    "sha": "a519528cff15cd84bc8f30c436a16e2034117dcf",
+    "node_id": "C_kwDOGZAit9oAKGE1MTk1MjhjZmYxNWNkODRiYzhmMzBjNDM2YTE2ZTIwMzQxMTdkY2Y",
     "commit": {
       "author": {
         "name": "web-flow",
         "email": "noreply@github.com",
-        "date": "2026-07-15T10:59:24Z"
+        "date": "2026-07-25T11:19:11Z"
       },
       "committer": {
         "name": "web-flow",
         "email": "noreply@github.com",
-        "date": "2026-07-15T10:59:24Z"
+        "date": "2026-07-25T11:19:11Z"
       },
-      "message": "Update gallery-dl and add nightly build (sync lists) [118dfc6c01f3ed438a76d3ba61346a16e6d6154c]",
+      "message": "Merge pull request #2518 from DtDEncryption/patches (sync lists) [d63aedc838602e8ac112255ee190116a70cbd954]",
       "tree": {
-        "sha": "322770d58e2a4ea7410246b4df103f2a1f44d732",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/322770d58e2a4ea7410246b4df103f2a1f44d732"
+        "sha": "77185790cf1846605eccda8def2976c4e4e96cf9",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/77185790cf1846605eccda8def2976c4e4e96cf9"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/ae1be258601d5654c07ca48840f4256065193c83",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/a519528cff15cd84bc8f30c436a16e2034117dcf",
       "comment_count": 0,
       "verification": {
         "verified": false,
@@ -935,9 +684,9 @@
         "verified_at": null
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/ae1be258601d5654c07ca48840f4256065193c83",
-    "html_url": "https://github.com/ivan-hc/AM/commit/ae1be258601d5654c07ca48840f4256065193c83",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/ae1be258601d5654c07ca48840f4256065193c83/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/a519528cff15cd84bc8f30c436a16e2034117dcf",
+    "html_url": "https://github.com/ivan-hc/AM/commit/a519528cff15cd84bc8f30c436a16e2034117dcf",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/a519528cff15cd84bc8f30c436a16e2034117dcf/comments",
     "author": {
       "login": "web-flow",
       "id": 19864447,
@@ -982,44 +731,44 @@
     },
     "parents": [
       {
-        "sha": "118dfc6c01f3ed438a76d3ba61346a16e6d6154c",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/118dfc6c01f3ed438a76d3ba61346a16e6d6154c",
-        "html_url": "https://github.com/ivan-hc/AM/commit/118dfc6c01f3ed438a76d3ba61346a16e6d6154c"
+        "sha": "d63aedc838602e8ac112255ee190116a70cbd954",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/d63aedc838602e8ac112255ee190116a70cbd954",
+        "html_url": "https://github.com/ivan-hc/AM/commit/d63aedc838602e8ac112255ee190116a70cbd954"
       }
     ]
   },
   {
-    "sha": "118dfc6c01f3ed438a76d3ba61346a16e6d6154c",
-    "node_id": "C_kwDOGZAit9oAKDExOGRmYzZjMDFmM2VkNDM4YTc2ZDNiYTYxMzQ2YTE2ZTZkNjE1NGM",
+    "sha": "d63aedc838602e8ac112255ee190116a70cbd954",
+    "node_id": "C_kwDOGZAit9oAKGQ2M2FlZGM4Mzg2MDJlOGFjMTEyMjU1ZWUxOTAxMTZhNzBjYmQ5NTQ",
     "commit": {
       "author": {
         "name": "iVAN",
         "email": "88724353+ivan-hc@users.noreply.github.com",
-        "date": "2026-07-15T10:58:45Z"
+        "date": "2026-07-25T11:18:34Z"
       },
       "committer": {
         "name": "GitHub",
         "email": "noreply@github.com",
-        "date": "2026-07-15T10:58:45Z"
+        "date": "2026-07-25T11:18:34Z"
       },
-      "message": "Update gallery-dl and add nightly build\n\nfix https://github.com/ivan-hc/AM/issues/2484",
+      "message": "Merge pull request #2518 from DtDEncryption/patches\n\nAdd official WeChat AppImage",
       "tree": {
-        "sha": "a132b26136a94fa0c05e9db2d483c62d9b46e1f8",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/a132b26136a94fa0c05e9db2d483c62d9b46e1f8"
+        "sha": "2e2bd93e7a45f1c3f9f53b0994b5639856d1d194",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/2e2bd93e7a45f1c3f9f53b0994b5639856d1d194"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/118dfc6c01f3ed438a76d3ba61346a16e6d6154c",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/d63aedc838602e8ac112255ee190116a70cbd954",
       "comment_count": 0,
       "verification": {
         "verified": true,
         "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqV2flCRC1aQ7uu5UhlAAANwkQAEMM4UKRL1+toW7fWOlflJ7X\nhVfPZJTJzav3oR+VecvfL44TOT+qeAE3DGWLoTrvDJ1Pr6bUxYVox6V3yrmiVBIt\nKKyowJCtc9XVR1Y1j45xSJu73rZm0Ei6uxicbl+hbYEIz0CVQOdlFibRV4ksB9Ai\nGNL+eJwdhOiWlkvdXS4x7jZWLf5RE5FV6+cXjWwG3CgI+eC/NS6SIj0zel9kxEzd\nrRuOsvOqc69tIUnnPVeUvokKbdCoFXi69QPo0LL57Ir0Y35cJlMMVbmhYMxxihzL\n43vC2iVdT1iTiNr8PiGgnPwu7s6dcyM5ofM5e9BeWTS+xjX7hoGJNfWfqE5tkinC\nrbjQtkJOkVEUMSUAphrB+VqWiCVx/6R5B98FlW+gqcuaHPCfaOi6pw4ocTJo4891\n7szxOyWCgjY1ItVDKnkMw5RngQP1HzyFLk0HNU4Kj0p6vJtTFiYrcMpINYyzHlOp\nBy02FJKGsEQMlYOvcUoM3qa5l02+zmqKCRUo3G2ieVgLo+B0GhZIveCSkTWONBt1\nuCbVEKPFyALpiV2rbXD6ix9i4Fe2MWHrP6ChcWL+B0NXFeI9egRcP/zbbR6iZcxz\n96/EXknik5ntStpvgg2pxYqOWJNPLCPhdSygSSeP4yzRyyauRG1bWdcEHLEbXkOf\nvQ0THw79slXfhVY8sUQh\n=oHIx\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree a132b26136a94fa0c05e9db2d483c62d9b46e1f8\nparent e8fb6c4bc80a5aa019ab6059247f4339d0b04120\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784113125 +0200\ncommitter GitHub <noreply@github.com> 1784113125 +0200\n\nUpdate gallery-dl and add nightly build\n\nfix https://github.com/ivan-hc/AM/issues/2484",
-        "verified_at": "2026-07-15T10:58:46Z"
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqZJuKCRC1aQ7uu5UhlAAAvacQABvQKKzJI8LTT7y0aGRpxqBW\nNHjXJ6YUm6I2tO+BZ8RhlDVC02PB14l5WsbO3LoSuSW54wYdZ4WlvMv8LGelSKLj\nxgWdJzMKu9ld5QsC9BBR8C/0Y5z4REH9mhTvCt6ozG6drbLHtYu2opnP4tR3i97k\nFZn76SJ7jdZRToqUT33v4kahIHkYI9C6rDfCB32feLXy2VqsAKTWBfoFePopra7B\nWZBSNPJQybVTrkodVHh0+Ygt5JDsx+C4R6Zz3Oq/rPpHCpn+U282ydGRhjQcEvLA\nh/xz1yCkY1npaWSxx/x+y9RTM9nrLrnzXowthUJgVQUtSbUVPZxbXMommUjyIILc\nsuzhhcXE3EClXgplfatEQaMjBku/XmOHcZ+RLUHcLpgd3gOVwWSloC1fRAHy22bz\nIgzwLc3ynxcxkm1mfeOe7tpvLm32szIWotNBg50TKALL/cYs5TCS1SU6zK06pb9n\nbcOJlXX3GqDatTqRmwzT2NNfRYpiDD+qoVy0IhacyU16xKVDLgNBDvizsQ2o1Vw0\n1VF2X8wLO53X+DgJK83KmTeb2PAWxqKM9T2/MR92PpeivifHl0k0ZTwHUhV5uSBP\no1OzWrWNcjP09LjG+i4pZt9TRp1uyd7NIA1kMHWxpSkoI5tnWTkfucaF3yP9HkoW\nUHVfg92DyB5lQD0sodvb\n=kNXB\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 2e2bd93e7a45f1c3f9f53b0994b5639856d1d194\nparent 3509eebea7a06b39612aa57c220c5278a9ce7d16\nparent 102dfbebce38a483870465f18e116a5f3d4c385f\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784978314 +0200\ncommitter GitHub <noreply@github.com> 1784978314 +0200\n\nMerge pull request #2518 from DtDEncryption/patches\n\nAdd official WeChat AppImage",
+        "verified_at": "2026-07-25T11:18:35Z"
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/118dfc6c01f3ed438a76d3ba61346a16e6d6154c",
-    "html_url": "https://github.com/ivan-hc/AM/commit/118dfc6c01f3ed438a76d3ba61346a16e6d6154c",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/118dfc6c01f3ed438a76d3ba61346a16e6d6154c/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/d63aedc838602e8ac112255ee190116a70cbd954",
+    "html_url": "https://github.com/ivan-hc/AM/commit/d63aedc838602e8ac112255ee190116a70cbd954",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/d63aedc838602e8ac112255ee190116a70cbd954/comments",
     "author": {
       "login": "ivan-hc",
       "id": 88724353,
@@ -1064,126 +813,49 @@
     },
     "parents": [
       {
-        "sha": "e8fb6c4bc80a5aa019ab6059247f4339d0b04120",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/e8fb6c4bc80a5aa019ab6059247f4339d0b04120",
-        "html_url": "https://github.com/ivan-hc/AM/commit/e8fb6c4bc80a5aa019ab6059247f4339d0b04120"
-      }
-    ]
-  },
-  {
-    "sha": "e8fb6c4bc80a5aa019ab6059247f4339d0b04120",
-    "node_id": "C_kwDOGZAit9oAKGU4ZmI2YzRiYzgwYTVhYTAxOWFiNjA1OTI0N2Y0MzM5ZDBiMDQxMjA",
-    "commit": {
-      "author": {
-        "name": "web-flow",
-        "email": "noreply@github.com",
-        "date": "2026-07-15T10:27:00Z"
+        "sha": "3509eebea7a06b39612aa57c220c5278a9ce7d16",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/3509eebea7a06b39612aa57c220c5278a9ce7d16",
+        "html_url": "https://github.com/ivan-hc/AM/commit/3509eebea7a06b39612aa57c220c5278a9ce7d16"
       },
-      "committer": {
-        "name": "web-flow",
-        "email": "noreply@github.com",
-        "date": "2026-07-15T10:27:00Z"
-      },
-      "message": "Temporarily delete sugarizer (sync lists) [d2025ad2c6bdfd4dbe2d66cb59c7c6ec65435b18]",
-      "tree": {
-        "sha": "36497344eed8868a983a73aa105ced0d0bdd8ef7",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/36497344eed8868a983a73aa105ced0d0bdd8ef7"
-      },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/e8fb6c4bc80a5aa019ab6059247f4339d0b04120",
-      "comment_count": 0,
-      "verification": {
-        "verified": false,
-        "reason": "unsigned",
-        "signature": null,
-        "payload": null,
-        "verified_at": null
-      }
-    },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/e8fb6c4bc80a5aa019ab6059247f4339d0b04120",
-    "html_url": "https://github.com/ivan-hc/AM/commit/e8fb6c4bc80a5aa019ab6059247f4339d0b04120",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/e8fb6c4bc80a5aa019ab6059247f4339d0b04120/comments",
-    "author": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
       {
-        "sha": "d2025ad2c6bdfd4dbe2d66cb59c7c6ec65435b18",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/d2025ad2c6bdfd4dbe2d66cb59c7c6ec65435b18",
-        "html_url": "https://github.com/ivan-hc/AM/commit/d2025ad2c6bdfd4dbe2d66cb59c7c6ec65435b18"
+        "sha": "102dfbebce38a483870465f18e116a5f3d4c385f",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/102dfbebce38a483870465f18e116a5f3d4c385f",
+        "html_url": "https://github.com/ivan-hc/AM/commit/102dfbebce38a483870465f18e116a5f3d4c385f"
       }
     ]
   },
   {
-    "sha": "d2025ad2c6bdfd4dbe2d66cb59c7c6ec65435b18",
-    "node_id": "C_kwDOGZAit9oAKGQyMDI1YWQyYzZiZGZkNGRiZTJkNjZjYjU5YzdjNmVjNjU0MzViMTg",
+    "sha": "102dfbebce38a483870465f18e116a5f3d4c385f",
+    "node_id": "C_kwDOGZAit9oAKDEwMmRmYmViY2UzOGE0ODM4NzA0NjVmMThlMTE2YTVmM2Q0YzM4NWY",
     "commit": {
       "author": {
         "name": "iVAN",
         "email": "88724353+ivan-hc@users.noreply.github.com",
-        "date": "2026-07-15T10:26:21Z"
+        "date": "2026-07-25T11:16:42Z"
       },
       "committer": {
         "name": "GitHub",
         "email": "noreply@github.com",
-        "date": "2026-07-15T10:26:21Z"
+        "date": "2026-07-25T11:16:42Z"
       },
-      "message": "Temporarily delete sugarizer\n\nbroken host service",
+      "message": "Update x86_64-apps",
       "tree": {
-        "sha": "04b874e5497558c37ce8129edcf8a4ee027b97f9",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/04b874e5497558c37ce8129edcf8a4ee027b97f9"
+        "sha": "95cb56b6da6af8e689aa04c147361c549d993b54",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/95cb56b6da6af8e689aa04c147361c549d993b54"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/d2025ad2c6bdfd4dbe2d66cb59c7c6ec65435b18",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/102dfbebce38a483870465f18e116a5f3d4c385f",
       "comment_count": 0,
       "verification": {
         "verified": true,
         "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqV2BNCRC1aQ7uu5UhlAAAH+kQAAg2toz6m7GTdfOnixJEUlkf\nBmqVN3mC1qmXvV1SLRThycFHapAFWo2qWM6BDKBZBkXcjDJRIUq2+pO6JQ8bB/6d\nXUejFmY4wiSxAjGviczo/6pgjLkU5883dTQZrutFg8osDsATWJ2efeOJuDccMf8A\nVb8EyiK7lKaZv+xhfuZtqO10vNl/u7TN59LYwq18SAKAl8x3nKPzlAbskBgfNCn/\nr5kDfIw7CQ8isOPUHwTioj6TXvIgRxXfozzfnZAgwjLTLTPw4Q7qbYmuchX3gpXS\njbT4/ZPPGdIik/MTTB19LVRNUcA2Ir+l/BpOyIu6h2YzVUVu3TPr9lMNhSOZUDpV\n4+Z7fu/EIH04K/N2Fvc3KyNHC2hoRplgINlzXReGvUrnau1y1oFZmBgM8pTPwrij\nB3fpjPY5zBTyUtSkz3J+tZX7CdIB9lfZDJyzkDWxWWcs8GzLosGf6zfdoy+qR2y0\nanH3gxXWTbkkHp/mPtz8UEQSaYpm9Z4pbPSSkPqMlZ5nYBlFxeDfkFqMfptkq94O\ntt3WVmI9W18mNCCnHT3+iKKDAziSeyjfL1xxcPkUq2DQURaDMZZpkL+fgOnUKoL1\nDcNSAREZgeOxH0w6koIaJIPnTib/eNYwWBbRPGF/KyUzag2pOQ65a0UAdxTQsyFs\nuSYK4RbgGjRrb54e75yO\n=GTEL\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 04b874e5497558c37ce8129edcf8a4ee027b97f9\nparent eafe48aec5847ffbf937bc6f19aebc60fed7580a\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784111181 +0200\ncommitter GitHub <noreply@github.com> 1784111181 +0200\n\nTemporarily delete sugarizer\n\nbroken host service",
-        "verified_at": "2026-07-15T10:26:22Z"
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqZJsaCRC1aQ7uu5UhlAAAm8QQAByqDXmW1bxosGLp0M2Tskum\n0+1MMvc+cMmlTXDJc+2XSUCvbXHRDfegzIxs2rfinCcqG+SSDYx55CRXTeLz04Hq\nKRk2S7ZwCT98x9HdfT+jydgCTjeob/+Iq8Qg6f0SH6OeKBrsp4NBe/lZwqwGGK6Y\nXtxHCo9TdO04MykTIpm5EcYRBE3Jeq8Wv6Jb7aUjyr9iUxpIGonjkjpMpIMlcInU\nMfDrSyPfsPn4pRBfjn1qHeJ4KBybr617pIQV7XS14uaUbRp3Mu+KUnn+GkIu5Ga0\nQ8NzBpUyxvsUhT49Tr69OXruMcUBhWlOkQKqla7wVYaHUzcfrot0D5BfByy0u22h\nmDm//tJJyECA8yGZZULc0zB5rfEWvFJR68BE84LLOju68m3zNlUmLWL7AWchM4/m\nzT91o5X8Gd+khaUYs9mSiob9Qo1VPdlJThaYqVcOjZdVITkOA8oxJHPoK51tjCRY\nv13fFGWAU3sxv+xEoY8AKsiWJ990FqlZqpEdES6hHxVVeoEdNyEnRvseZJ2Oazlp\nTBg9ZroY0tFMFvUUwg7A8HTpyM7i+RKIvEdKry6AUfuPeLcFtG+UYeR+HYFeKGJr\nx/NTKScm/d9n30q6IwBO3ZngUzeMyVBpeTC4cv/vxQ64S45kIPRjyo4wXEsZtFWo\n1EY/cJZ1al88bKeYCSOB\n=P1Db\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 95cb56b6da6af8e689aa04c147361c549d993b54\nparent f9bcec7e226470e14a673a2fe7ab53a0ee2c56b4\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784978202 +0200\ncommitter GitHub <noreply@github.com> 1784978202 +0200\n\nUpdate x86_64-apps",
+        "verified_at": "2026-07-25T11:16:42Z"
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/d2025ad2c6bdfd4dbe2d66cb59c7c6ec65435b18",
-    "html_url": "https://github.com/ivan-hc/AM/commit/d2025ad2c6bdfd4dbe2d66cb59c7c6ec65435b18",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/d2025ad2c6bdfd4dbe2d66cb59c7c6ec65435b18/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/102dfbebce38a483870465f18e116a5f3d4c385f",
+    "html_url": "https://github.com/ivan-hc/AM/commit/102dfbebce38a483870465f18e116a5f3d4c385f",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/102dfbebce38a483870465f18e116a5f3d4c385f/comments",
     "author": {
       "login": "ivan-hc",
       "id": 88724353,
@@ -1228,126 +900,44 @@
     },
     "parents": [
       {
-        "sha": "eafe48aec5847ffbf937bc6f19aebc60fed7580a",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/eafe48aec5847ffbf937bc6f19aebc60fed7580a",
-        "html_url": "https://github.com/ivan-hc/AM/commit/eafe48aec5847ffbf937bc6f19aebc60fed7580a"
+        "sha": "f9bcec7e226470e14a673a2fe7ab53a0ee2c56b4",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/f9bcec7e226470e14a673a2fe7ab53a0ee2c56b4",
+        "html_url": "https://github.com/ivan-hc/AM/commit/f9bcec7e226470e14a673a2fe7ab53a0ee2c56b4"
       }
     ]
   },
   {
-    "sha": "eafe48aec5847ffbf937bc6f19aebc60fed7580a",
-    "node_id": "C_kwDOGZAit9oAKGVhZmU0OGFlYzU4NDdmZmJmOTM3YmM2ZjE5YWViYzYwZmVkNzU4MGE",
-    "commit": {
-      "author": {
-        "name": "web-flow",
-        "email": "noreply@github.com",
-        "date": "2026-07-14T01:48:32Z"
-      },
-      "committer": {
-        "name": "web-flow",
-        "email": "noreply@github.com",
-        "date": "2026-07-14T01:48:32Z"
-      },
-      "message": "Delete qradiolink (sync lists) [9af385ffc65d28e3c685518307237bcea682e2b6]",
-      "tree": {
-        "sha": "363a346f581aa0d0ae6ed0c4f9703ca61a81afe3",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/363a346f581aa0d0ae6ed0c4f9703ca61a81afe3"
-      },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/eafe48aec5847ffbf937bc6f19aebc60fed7580a",
-      "comment_count": 0,
-      "verification": {
-        "verified": false,
-        "reason": "unsigned",
-        "signature": null,
-        "payload": null,
-        "verified_at": null
-      }
-    },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/eafe48aec5847ffbf937bc6f19aebc60fed7580a",
-    "html_url": "https://github.com/ivan-hc/AM/commit/eafe48aec5847ffbf937bc6f19aebc60fed7580a",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/eafe48aec5847ffbf937bc6f19aebc60fed7580a/comments",
-    "author": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "9af385ffc65d28e3c685518307237bcea682e2b6",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/9af385ffc65d28e3c685518307237bcea682e2b6",
-        "html_url": "https://github.com/ivan-hc/AM/commit/9af385ffc65d28e3c685518307237bcea682e2b6"
-      }
-    ]
-  },
-  {
-    "sha": "9af385ffc65d28e3c685518307237bcea682e2b6",
-    "node_id": "C_kwDOGZAit9oAKDlhZjM4NWZmYzY1ZDI4ZTNjNjg1NTE4MzA3MjM3YmNlYTY4MmUyYjY",
+    "sha": "f9bcec7e226470e14a673a2fe7ab53a0ee2c56b4",
+    "node_id": "C_kwDOGZAit9oAKGY5YmNlYzdlMjI2NDcwZTE0YTY3M2EyZmU3YWI1M2EwZWUyYzU2YjQ",
     "commit": {
       "author": {
         "name": "iVAN",
         "email": "88724353+ivan-hc@users.noreply.github.com",
-        "date": "2026-07-14T01:47:54Z"
+        "date": "2026-07-25T11:15:43Z"
       },
       "committer": {
         "name": "GitHub",
         "email": "noreply@github.com",
-        "date": "2026-07-14T01:47:54Z"
+        "date": "2026-07-25T11:15:43Z"
       },
-      "message": "Delete qradiolink\n\nrepository https://github.com/qradiolink/qradiolink removed",
+      "message": "Create wechat",
       "tree": {
-        "sha": "5e589d2112937da42a64f9c11f7de801127f811a",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/5e589d2112937da42a64f9c11f7de801127f811a"
+        "sha": "c1e18de18a168e4975da2ca1d39b26f4cbed1422",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/c1e18de18a168e4975da2ca1d39b26f4cbed1422"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/9af385ffc65d28e3c685518307237bcea682e2b6",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/f9bcec7e226470e14a673a2fe7ab53a0ee2c56b4",
       "comment_count": 0,
       "verification": {
         "verified": true,
         "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqVZVKCRC1aQ7uu5UhlAAAweYQAIwVXFLBmPRoUTQ8ns/godeD\nahERkiVAs1XaVuNpKIji1+amO4TGrlHFNPgCiNaY5PQopJLOWt8lzpPMT7tmer6O\ncTA+2okjGhKBJUVxTj7tUIkwe12kgdPksi4r17THWN+U3d0mtkWtX8vDqqoevnRL\n9k1e1DbD9oStCMccz6tJ2Ur7413lpO/gL4y8KZwbgXzmkyOdZJjD1/EUizM8iSdz\n64jEjG5FePEA0Vriw6xEF4TJuz+7px99XIxjS5CFTjUHXXATZ6ldCjgOdtSzGx24\ntj5IHzo7MdzhDK2ezBSyFaKt4f9QzDQ7owBJTf1uiu+aPuFr6D3F9wA3+bOZZHS3\n+3kw62b6Cl4kP1PSP07SxSrHFEdlSJ2IMNr6AM84SfBR+lRtBK2ftdduPj2N1L67\nJMck4ut7NY47L2j0qG5D1rtAb4iz/n+H5AYMi4Z0rpd+89lq47dieNjz8Q048tou\nOMdlRv6xNXj0tkdBZES2hUnnCvyt4WNz6ivh7KylEJUYFSbBiPcoo7HE/CHI46Dc\ntAVLjxJSoCVTmGVSPGZz3Kfkhwo8e6AXBvJbVskofHZWvi28UROUJetnn/SEHzBh\noKPnCataQibel3v1Ly71FHD7/8eAkj+y5IzZPURbYSssd5T5VueGGelPDn4tfHji\nHpNJQz1b+Sf+lp+8yWY3\n=9pUL\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 5e589d2112937da42a64f9c11f7de801127f811a\nparent 0b18dbd60d3f67a473f5a6f73f2808eaaafc7d29\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1783993674 +0200\ncommitter GitHub <noreply@github.com> 1783993674 +0200\n\nDelete qradiolink\n\nrepository https://github.com/qradiolink/qradiolink removed",
-        "verified_at": "2026-07-14T01:47:55Z"
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqZJrfCRC1aQ7uu5UhlAAA4ogQAJg7rkhbryL1vzg0dbry2JtY\nwCrXSaAyxmnKzHqoduSWsFMjPwAgnRBUs+SzfISB8zjFNM6gFOobXs37KZ1xxhQM\nhdL12xWNj2BvQ8QJhI8JYZh7bVb3+paiDF4HbmuTb5LgNmoTKMbBzz1vCTTNBQUD\ncGLDQrZzlkLPgsR0VKgw9TS1C4zsFsyhlZNlKpk6tn/dwIYLgzeFfzNVjd4FW5XV\nuPtLatcI3Tmj4V7JmTswG/NVlVj8YzhrVyxC3IrPoDbKQH6MpSS5UkdN7zxcexKf\ntkAO34PPpvwJulx18YpUASXg4JgJFE3hfBYguuweN5+OHDbsAwxJ6ChuN7uR+k7u\nQbgxvPhRvLkPcXmCiVQ6/YsVT5EAkYFwvSwGPEwivHuks/7yfv1dGoUVuYiU5ssa\nt7Ldmsehg1m7CMJ78h3z6L971MpwWI2KL5KuEDR4Qt+is9IBgRz3IXM6YDGXRtpA\nV8+D9aailD3t8bGWm7lSmlNshrUg7Ia4UpZvz6Hn9Idrdfn3TmwZFcXO7n9gAFqr\nV3PCez3JGPEIbjLHmX7R+Yh0uwHOKAVOCZ9HtwJDq8DwaQKk3QXPxiTZIguEwiS7\nVFFw7NpYDB6h+dFohZs1f6yd/j18RKNYCBFTa/B7NtYeJy2G2lP6JAS1H9y2Gfuo\ncuXHnIa59KSmCPLZv0+g\n=iEEL\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree c1e18de18a168e4975da2ca1d39b26f4cbed1422\nparent 53678e0620cc900e548bfdaa68a05d6d1b64ec19\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784978143 +0200\ncommitter GitHub <noreply@github.com> 1784978143 +0200\n\nCreate wechat",
+        "verified_at": "2026-07-25T11:15:44Z"
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/9af385ffc65d28e3c685518307237bcea682e2b6",
-    "html_url": "https://github.com/ivan-hc/AM/commit/9af385ffc65d28e3c685518307237bcea682e2b6",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/9af385ffc65d28e3c685518307237bcea682e2b6/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/f9bcec7e226470e14a673a2fe7ab53a0ee2c56b4",
+    "html_url": "https://github.com/ivan-hc/AM/commit/f9bcec7e226470e14a673a2fe7ab53a0ee2c56b4",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/f9bcec7e226470e14a673a2fe7ab53a0ee2c56b4/comments",
     "author": {
       "login": "ivan-hc",
       "id": 88724353,
@@ -1392,44 +982,44 @@
     },
     "parents": [
       {
-        "sha": "0b18dbd60d3f67a473f5a6f73f2808eaaafc7d29",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/0b18dbd60d3f67a473f5a6f73f2808eaaafc7d29",
-        "html_url": "https://github.com/ivan-hc/AM/commit/0b18dbd60d3f67a473f5a6f73f2808eaaafc7d29"
+        "sha": "53678e0620cc900e548bfdaa68a05d6d1b64ec19",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/53678e0620cc900e548bfdaa68a05d6d1b64ec19",
+        "html_url": "https://github.com/ivan-hc/AM/commit/53678e0620cc900e548bfdaa68a05d6d1b64ec19"
       }
     ]
   },
   {
-    "sha": "0b18dbd60d3f67a473f5a6f73f2808eaaafc7d29",
-    "node_id": "C_kwDOGZAit9oAKDBiMThkYmQ2MGQzZjY3YTQ3M2Y1YTZmNzNmMjgwOGVhYWFmYzdkMjk",
+    "sha": "53678e0620cc900e548bfdaa68a05d6d1b64ec19",
+    "node_id": "C_kwDOGZAit9oAKDUzNjc4ZTA2MjBjYzkwMGU1NDhiZmRhYTY4YTA1ZDZkMWI2NGVjMTk",
     "commit": {
       "author": {
         "name": "iVAN",
         "email": "88724353+ivan-hc@users.noreply.github.com",
-        "date": "2026-07-13T22:59:33Z"
+        "date": "2026-07-25T11:14:57Z"
       },
       "committer": {
         "name": "GitHub",
         "email": "noreply@github.com",
-        "date": "2026-07-13T22:59:33Z"
+        "date": "2026-07-25T11:14:57Z"
       },
-      "message": "Update linuxqq",
+      "message": "Delete x86_64-apps",
       "tree": {
-        "sha": "19b4c0ecb9da3e05b23cde8074a2d697ef31f200",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/19b4c0ecb9da3e05b23cde8074a2d697ef31f200"
+        "sha": "f1c57a635dfd0bd96d5bb3d01a087f3e6345a4f4",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/f1c57a635dfd0bd96d5bb3d01a087f3e6345a4f4"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/0b18dbd60d3f67a473f5a6f73f2808eaaafc7d29",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/53678e0620cc900e548bfdaa68a05d6d1b64ec19",
       "comment_count": 0,
       "verification": {
         "verified": true,
         "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqVW3VCRC1aQ7uu5UhlAAAOuEQAEkd1mhh6h34aOS+g5hQFrmk\n096MBRGquIwY5hS0hFSS/oy36w1OrqMUKTWTQmgxGx4pPEO0UTC2go1JPGnRoC9S\nBLYPp6/gNmDe6zIsy65Ntmt9wx/OKERFeIVVccTzN3yESEqeRrlFRfNbGHk38Uoz\nJN7AdstDmbpXw1UAxw6hNZTrPRyjXUezgOEqcLawD05aEeAYKXwHXRriMwpSDjvG\n269QLEM80E802agnKhfJV4LRcoMOPkaR+XMo+OSyl9xUvV0V4kuraLyQsBE32BmV\n7P4rWA/rUeTHsWJX4mPg0MYP7hM0szgU5G0PrYKtsvzJW2/kh9TIP5k89FKIO6LQ\nKKppUtJphrMmCg7RhtlQLw+RpDx1FLz67ZToS4G0xV0qJwOjaS4zSuswVMacvuy1\nmH+HsBzsXlMPNFBEDP2XbwQ9ya59wF9kdD3Lab7/vrcUoMf1ZlQ0G69cSybqqFF6\nQkftpOKrcwI2Z8xu1WNg1c3TK1shBCXwOThfMARUG/ZjLrBxE+uwIlr/cmQenfIz\n3iQcECuU257aa7jvbaqnShWgPFoq17CYjPcj3004yMZeOFS0WBxDfOMKgqopP91b\nPb4x1syNOWRfv6Koz3T1w6xyqcWZ41zB058cQfcX3+LAvuX6QqSsWTPEXfvghkWz\nz5XiUhU50wovs6EV+bNr\n=nwQy\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 19b4c0ecb9da3e05b23cde8074a2d697ef31f200\nparent 08b0ce9746273a9d3e97b91b1d70b3a8bdcb0346\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1783983573 +0200\ncommitter GitHub <noreply@github.com> 1783983573 +0200\n\nUpdate linuxqq",
-        "verified_at": "2026-07-13T22:59:34Z"
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqZJqxCRC1aQ7uu5UhlAAA3CUQABSjn1GDHgOc1Es8aBS6tFi4\nQOmnZZs0uh2QmvS5gmZMSBKuZ0Zkk1OUU/nbtDSgylyreE+RZ9RiZOM/Mpf8WYoU\n1WInqYOt0JUpXGaTNE2xpt91FNckfh28KmTxsQwHLNC/57icQZNCfhG/2tZDsQ4l\nBeOkY4iCTLmJDa5PhyN1LhCrjei4+BbpNRTY06P8H8qB+NT4LqbaZwJ/fdPXZyx2\nHq4GhnNcmzFmdrhFOYpOnPOqWeSF1ZLBdMaPnBB5hyhOt1ybazD84W3H2Dw+S70H\n4KQAfU9p4CIFSB5g2JcU7IdiKNdezJG495laeCbK7xXKyqshcGSfaN4cwfhY6KMc\nZxjHSQBvXkcJos5BgAhBWgE+iX1NDUcrXHla5CrycxL/zwHJsgorUt7AIrH77jax\nLbfW5Fje5Av0dt4cVZ5Nory/0P0QQEnJQgxUi44oWSP8fV6ptl4x/LrTWssgh2xS\nsJoRVXHPOO1GFLwexyRSoaebNuj+tIzRZ5WAPmZSdGS1yI6f+24yTGOiyQPTtbk3\n9uYHlm+GrAn22YUWTU0X5SD7KfAEdBa3OCDS5Bnqm2pax7E4hEpJpxZ+PngsdehB\nOrnXBRH3/o2Ojg2OSW2anKDPjGVY6y8sM6SHomOcVcG7Qw5kt9NI4tlvjYwdAJ8g\nv4N82ZGBPYOhxcmGRgMs\n=9vtg\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree f1c57a635dfd0bd96d5bb3d01a087f3e6345a4f4\nparent a169cb8809106d0d8298dc2e4df8bfdabab5bc8e\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784978097 +0200\ncommitter GitHub <noreply@github.com> 1784978097 +0200\n\nDelete x86_64-apps",
+        "verified_at": "2026-07-25T11:14:58Z"
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/0b18dbd60d3f67a473f5a6f73f2808eaaafc7d29",
-    "html_url": "https://github.com/ivan-hc/AM/commit/0b18dbd60d3f67a473f5a6f73f2808eaaafc7d29",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/0b18dbd60d3f67a473f5a6f73f2808eaaafc7d29/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/53678e0620cc900e548bfdaa68a05d6d1b64ec19",
+    "html_url": "https://github.com/ivan-hc/AM/commit/53678e0620cc900e548bfdaa68a05d6d1b64ec19",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/53678e0620cc900e548bfdaa68a05d6d1b64ec19/comments",
     "author": {
       "login": "ivan-hc",
       "id": 88724353,
@@ -1474,208 +1064,44 @@
     },
     "parents": [
       {
-        "sha": "08b0ce9746273a9d3e97b91b1d70b3a8bdcb0346",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/08b0ce9746273a9d3e97b91b1d70b3a8bdcb0346",
-        "html_url": "https://github.com/ivan-hc/AM/commit/08b0ce9746273a9d3e97b91b1d70b3a8bdcb0346"
+        "sha": "a169cb8809106d0d8298dc2e4df8bfdabab5bc8e",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/a169cb8809106d0d8298dc2e4df8bfdabab5bc8e",
+        "html_url": "https://github.com/ivan-hc/AM/commit/a169cb8809106d0d8298dc2e4df8bfdabab5bc8e"
       }
     ]
   },
   {
-    "sha": "08b0ce9746273a9d3e97b91b1d70b3a8bdcb0346",
-    "node_id": "C_kwDOGZAit9oAKDA4YjBjZTk3NDYyNzNhOWQzZTk3YjkxYjFkNzBiM2E4YmRjYjAzNDY",
-    "commit": {
-      "author": {
-        "name": "web-flow",
-        "email": "noreply@github.com",
-        "date": "2026-07-13T09:28:29Z"
-      },
-      "committer": {
-        "name": "web-flow",
-        "email": "noreply@github.com",
-        "date": "2026-07-13T09:28:29Z"
-      },
-      "message": "Update list of archived and obsolete sources",
-      "tree": {
-        "sha": "cb397c1715cf3c6df4b0df2f4cb01f8b9ac95251",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/cb397c1715cf3c6df4b0df2f4cb01f8b9ac95251"
-      },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/08b0ce9746273a9d3e97b91b1d70b3a8bdcb0346",
-      "comment_count": 0,
-      "verification": {
-        "verified": false,
-        "reason": "unsigned",
-        "signature": null,
-        "payload": null,
-        "verified_at": null
-      }
-    },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/08b0ce9746273a9d3e97b91b1d70b3a8bdcb0346",
-    "html_url": "https://github.com/ivan-hc/AM/commit/08b0ce9746273a9d3e97b91b1d70b3a8bdcb0346",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/08b0ce9746273a9d3e97b91b1d70b3a8bdcb0346/comments",
-    "author": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "373a0099b7bea0fa8c2c5a6df6c24d226a11ea92",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/373a0099b7bea0fa8c2c5a6df6c24d226a11ea92",
-        "html_url": "https://github.com/ivan-hc/AM/commit/373a0099b7bea0fa8c2c5a6df6c24d226a11ea92"
-      }
-    ]
-  },
-  {
-    "sha": "373a0099b7bea0fa8c2c5a6df6c24d226a11ea92",
-    "node_id": "C_kwDOGZAit9oAKDM3M2EwMDk5YjdiZWEwZmE4YzJjNWE2ZGY2YzI0ZDIyNmExMWVhOTI",
-    "commit": {
-      "author": {
-        "name": "web-flow",
-        "email": "noreply@github.com",
-        "date": "2026-07-13T01:31:54Z"
-      },
-      "committer": {
-        "name": "web-flow",
-        "email": "noreply@github.com",
-        "date": "2026-07-13T01:31:54Z"
-      },
-      "message": "Add biblemultithesonofman (sync lists) [9e4a6b0ac7fba8f30f5ebdb1d063297ce0f5ff01]",
-      "tree": {
-        "sha": "281ad4bec4c743feeccd5810dec7bb7696a790c3",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/281ad4bec4c743feeccd5810dec7bb7696a790c3"
-      },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/373a0099b7bea0fa8c2c5a6df6c24d226a11ea92",
-      "comment_count": 0,
-      "verification": {
-        "verified": false,
-        "reason": "unsigned",
-        "signature": null,
-        "payload": null,
-        "verified_at": null
-      }
-    },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/373a0099b7bea0fa8c2c5a6df6c24d226a11ea92",
-    "html_url": "https://github.com/ivan-hc/AM/commit/373a0099b7bea0fa8c2c5a6df6c24d226a11ea92",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/373a0099b7bea0fa8c2c5a6df6c24d226a11ea92/comments",
-    "author": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "9e4a6b0ac7fba8f30f5ebdb1d063297ce0f5ff01",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/9e4a6b0ac7fba8f30f5ebdb1d063297ce0f5ff01",
-        "html_url": "https://github.com/ivan-hc/AM/commit/9e4a6b0ac7fba8f30f5ebdb1d063297ce0f5ff01"
-      }
-    ]
-  },
-  {
-    "sha": "9e4a6b0ac7fba8f30f5ebdb1d063297ce0f5ff01",
-    "node_id": "C_kwDOGZAit9oAKDllNGE2YjBhYzdmYmE4ZjMwZjVlYmRiMWQwNjMyOTdjZTBmNWZmMDE",
+    "sha": "a169cb8809106d0d8298dc2e4df8bfdabab5bc8e",
+    "node_id": "C_kwDOGZAit9oAKGExNjljYjg4MDkxMDZkMGQ4Mjk4ZGMyZTRkZjhiZmRhYmFiNWJjOGU",
     "commit": {
       "author": {
         "name": "iVAN",
         "email": "88724353+ivan-hc@users.noreply.github.com",
-        "date": "2026-07-13T01:31:15Z"
+        "date": "2026-07-25T11:14:12Z"
       },
       "committer": {
         "name": "GitHub",
         "email": "noreply@github.com",
-        "date": "2026-07-13T01:31:15Z"
+        "date": "2026-07-25T11:14:12Z"
       },
-      "message": "Add biblemultithesonofman\n\nfix https://github.com/ivan-hc/AM/issues/2480",
+      "message": "Delete x86_64/wechat",
       "tree": {
-        "sha": "3046229583cffc466a291d7a7f16991c1ba44cb5",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/3046229583cffc466a291d7a7f16991c1ba44cb5"
+        "sha": "0524a29804017faceb5cf4ae3156518e43560f6c",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/0524a29804017faceb5cf4ae3156518e43560f6c"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/9e4a6b0ac7fba8f30f5ebdb1d063297ce0f5ff01",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/a169cb8809106d0d8298dc2e4df8bfdabab5bc8e",
       "comment_count": 0,
       "verification": {
         "verified": true,
         "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqVD/jCRC1aQ7uu5UhlAAA+g4QAFg35CgclzY5CAKTRBMgkiHU\n2WFHT2UwE3bFFtDOO6Yq/zOjlUQrQi2BKwOZlNhxGQ0Sm6HRaFgLkYx9iNYnWQMQ\nAYlPn1xKdu+xoOZpuvZ2AWFQ/gZIxfA3nJ3xaXIS/LLL7XXLDWCJQYHUKEm4WoYl\n+ZRuUbtoyQiB3NoIh3UDtiBfyJfa2bs7h7zDopwsxOR1I3N8bUlye8j0am8tXBxE\nmqpV2ADITn3fylhTXNaOD1r3Ow4GzEVWczxOjO+Iv1rYVkExZvc3T9fh0/vhqcHt\nh8crJpnu9hXwJ3uGfAeOqOSG61QUU6B5BRFcGGNYsFU4NckeAEYbxZQhjxgg7nGn\n4wqld1xhUBsMkV1FF6nhg2u5RLgPKMfeWDFsAoakt7gsCstp+3O8b5oXsyM8PEcS\nZnATeFZhdr2JDpy7nxzQDY1re7jpbhT+aohQFde7o+x8l1Ht7iOuKGLpS7mh0OBW\nAIEqZLxQ8hF7qlAvJsKs/Ei8bUQL91f+8oqFduc//Vj0qSNSMxGHmuRPetqs8AtM\nxYbdQjYJiLNjoOcf7bRNxa0SuyTaphFeV7oQnJe6OgXrwSCVRed3+yAQUOqRQev6\nf/O7qxM0Wno/23JTu6NczwvXhcTmz/xGoMhXciDP8bVgwg6BprK5kcSVhEjWSwHT\nd64slzar5BeYKX+e/5ku\n=Ioxx\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 3046229583cffc466a291d7a7f16991c1ba44cb5\nparent 19127d63c252a047f5009fb2b8a331e0eb358b0d\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1783906275 +0200\ncommitter GitHub <noreply@github.com> 1783906275 +0200\n\nAdd biblemultithesonofman\n\nfix https://github.com/ivan-hc/AM/issues/2480",
-        "verified_at": "2026-07-13T01:31:16Z"
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqZJqECRC1aQ7uu5UhlAAAPkgQAKW5/0zgFqHguLDt4U2OE85C\nfTRR7sogHveM+3CCG0icimKjPd7PvxQolqA5U+zculk7REvJ8jX3iQjFGvde7PO0\n8TgLy6+TQpqS7gmsqq111oWxxt0bkv542+NaqzFlqNbPrwxRGKJE7w9aclLM1QMN\n5S3DMdj5P5lZEAEZVdsRZLI1jtNsCyKcqCoChXCntQoCS7yxKBMLLRQRW9ZOtGFY\nY9NEbXZiKER9+AMQhpPMj7F9ZRl69BLFq6pvR8oFJUdGIrcNbcbs0oFG4r05Q6VF\nFW2kp3W5uLwyu5rc6Tg2coJv/Okm0Z7uf2AbEX5yJQEkb1rYnJu7i1VD2A8v2M8O\nA/zA2YAi1QuD2Rqh1tfKQwGQTOxiIMuEHBzFOQGRtCttcbhcpQRDg11XK6GEHsf9\nqvrZQq3mKnu+RKW8kdJyHJeGGj5xhaeFjn6WrVCLGMxjVNMpRsV0X9v0T9L3jcv6\nrge41/vixvVy2TKvG+3eiW/j90nssQJ+UFq6BRwWl1eB4hb09DkmCqScDGYS6XVa\nyS2i7+fIWcfq4XU95pplN7jYv2lFesO4CId4dxrxJWT/YgOSva7yRNRB2K5QH7Yi\n8z++aWqo7eFQjfPJDcNEDDDYtfCRAhZ6shecdhbgg4qKejKD0dxFWuQ1TpxD47V9\n8OIA3Q+9Jt5mevSP1ZgB\n=5KjP\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 0524a29804017faceb5cf4ae3156518e43560f6c\nparent b372062a743aebaf47971473eb695778f2eb9fc6\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784978052 +0200\ncommitter GitHub <noreply@github.com> 1784978052 +0200\n\nDelete x86_64/wechat",
+        "verified_at": "2026-07-25T11:14:12Z"
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/9e4a6b0ac7fba8f30f5ebdb1d063297ce0f5ff01",
-    "html_url": "https://github.com/ivan-hc/AM/commit/9e4a6b0ac7fba8f30f5ebdb1d063297ce0f5ff01",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/9e4a6b0ac7fba8f30f5ebdb1d063297ce0f5ff01/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/a169cb8809106d0d8298dc2e4df8bfdabab5bc8e",
+    "html_url": "https://github.com/ivan-hc/AM/commit/a169cb8809106d0d8298dc2e4df8bfdabab5bc8e",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/a169cb8809106d0d8298dc2e4df8bfdabab5bc8e/comments",
     "author": {
       "login": "ivan-hc",
       "id": 88724353,
@@ -1720,32 +1146,32 @@
     },
     "parents": [
       {
-        "sha": "19127d63c252a047f5009fb2b8a331e0eb358b0d",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/19127d63c252a047f5009fb2b8a331e0eb358b0d",
-        "html_url": "https://github.com/ivan-hc/AM/commit/19127d63c252a047f5009fb2b8a331e0eb358b0d"
+        "sha": "b372062a743aebaf47971473eb695778f2eb9fc6",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/b372062a743aebaf47971473eb695778f2eb9fc6",
+        "html_url": "https://github.com/ivan-hc/AM/commit/b372062a743aebaf47971473eb695778f2eb9fc6"
       }
     ]
   },
   {
-    "sha": "19127d63c252a047f5009fb2b8a331e0eb358b0d",
-    "node_id": "C_kwDOGZAit9oAKDE5MTI3ZDYzYzI1MmEwNDdmNTAwOWZiMmI4YTMzMWUwZWIzNThiMGQ",
+    "sha": "3509eebea7a06b39612aa57c220c5278a9ce7d16",
+    "node_id": "C_kwDOGZAit9oAKDM1MDllZWJlYTdhMDZiMzk2MTJhYTU3YzIyMGM1Mjc4YTljZTdkMTY",
     "commit": {
       "author": {
         "name": "web-flow",
         "email": "noreply@github.com",
-        "date": "2026-07-13T01:25:20Z"
+        "date": "2026-07-25T10:51:52Z"
       },
       "committer": {
         "name": "web-flow",
         "email": "noreply@github.com",
-        "date": "2026-07-13T01:25:20Z"
+        "date": "2026-07-25T10:51:52Z"
       },
-      "message": "feat: Added Ascendara and AutoSubSync (#2481) (sync lists) [d9fde98d6dc92b7ddd78bab9d1f35b970df26e5c]",
+      "message": "feat: Added PaintFE (#2517) (sync lists) [5d43343c396e6db1c2965bfcf7be77c13c14d4bd]",
       "tree": {
-        "sha": "1d1f1368159bf0cad57cd4df519cdee1ca04f685",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/1d1f1368159bf0cad57cd4df519cdee1ca04f685"
+        "sha": "d593b9dedbe0d3acd4d986e51f46ddf5a5c1038e",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/d593b9dedbe0d3acd4d986e51f46ddf5a5c1038e"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/19127d63c252a047f5009fb2b8a331e0eb358b0d",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/3509eebea7a06b39612aa57c220c5278a9ce7d16",
       "comment_count": 0,
       "verification": {
         "verified": false,
@@ -1755,9 +1181,9 @@
         "verified_at": null
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/19127d63c252a047f5009fb2b8a331e0eb358b0d",
-    "html_url": "https://github.com/ivan-hc/AM/commit/19127d63c252a047f5009fb2b8a331e0eb358b0d",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/19127d63c252a047f5009fb2b8a331e0eb358b0d/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/3509eebea7a06b39612aa57c220c5278a9ce7d16",
+    "html_url": "https://github.com/ivan-hc/AM/commit/3509eebea7a06b39612aa57c220c5278a9ce7d16",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/3509eebea7a06b39612aa57c220c5278a9ce7d16/comments",
     "author": {
       "login": "web-flow",
       "id": 19864447,
@@ -1802,44 +1228,44 @@
     },
     "parents": [
       {
-        "sha": "d9fde98d6dc92b7ddd78bab9d1f35b970df26e5c",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/d9fde98d6dc92b7ddd78bab9d1f35b970df26e5c",
-        "html_url": "https://github.com/ivan-hc/AM/commit/d9fde98d6dc92b7ddd78bab9d1f35b970df26e5c"
+        "sha": "5d43343c396e6db1c2965bfcf7be77c13c14d4bd",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/5d43343c396e6db1c2965bfcf7be77c13c14d4bd",
+        "html_url": "https://github.com/ivan-hc/AM/commit/5d43343c396e6db1c2965bfcf7be77c13c14d4bd"
       }
     ]
   },
   {
-    "sha": "d9fde98d6dc92b7ddd78bab9d1f35b970df26e5c",
-    "node_id": "C_kwDOGZAit9oAKGQ5ZmRlOThkNmRjOTJiN2RkZDc4YmFiOWQxZjM1Yjk3MGRmMjZlNWM",
+    "sha": "5d43343c396e6db1c2965bfcf7be77c13c14d4bd",
+    "node_id": "C_kwDOGZAit9oAKDVkNDMzNDNjMzk2ZTZkYjFjMjk2NWJmY2Y3YmU3N2MxM2MxNGQ0YmQ",
     "commit": {
       "author": {
         "name": "Jonas A. Wendorf",
         "email": "15037703+jonasw234@users.noreply.github.com",
-        "date": "2026-07-13T01:24:50Z"
+        "date": "2026-07-25T10:51:10Z"
       },
       "committer": {
         "name": "GitHub",
         "email": "noreply@github.com",
-        "date": "2026-07-13T01:24:50Z"
+        "date": "2026-07-25T10:51:10Z"
       },
-      "message": "feat: Added Ascendara and AutoSubSync (#2481)",
+      "message": "feat: Added PaintFE (#2517)",
       "tree": {
-        "sha": "89b23e0ce0a60702090a440f432cb5aad391d161",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/89b23e0ce0a60702090a440f432cb5aad391d161"
+        "sha": "db91be3016b31247ab0a69f46d5365b7cc57bbb5",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/db91be3016b31247ab0a69f46d5365b7cc57bbb5"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/d9fde98d6dc92b7ddd78bab9d1f35b970df26e5c",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/5d43343c396e6db1c2965bfcf7be77c13c14d4bd",
       "comment_count": 0,
       "verification": {
         "verified": true,
         "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqVD5iCRC1aQ7uu5UhlAAAunkQAKSlZgHIft8O1kRBED3rBKdq\nwvzPe1SfG7YiQkrrb/GpTpLbVPsFaMPzKIm6crcS1miv9S7mKcspaGQbGCNJGvQH\nq5mnkuxcwjWVc4QoPZWLkVDJ5KpeQDx7EGFoM6kcavvWs0YDyHzCPBpWvU5/BUJ0\n6kcAZWev01oIx9+OD8mgBEhhL1NedRNXo+tnJUASWsTYYC+oWQQEWTwnN9yn8H4O\ny3oChCc5y9XaBRIb8CbRUq0mJaM5EnwDVobQLmzoFQdY7l8tKYPPOUcW9hetj060\nRSUZNLm6g3k0DHI1ARAr37zwug1ZD9v+AdYbBfJc3AW7Vcv1r9VrQEmmaStuC+kW\n6HMdwXWXbSc6KX9uyXNUAAsJB9/pNRpeZVUC/8LTvUtME3CeJhHGK+IO6dOF5k/K\n8l/BCxa1b6m3VSwlE/E0pRVe/r5uRMG16ljGmBeVZ9S/Kj0CdWwEUgcCFA5BSdVQ\nfwHprUDj0n0btuA9WSshAOUIEJI368t40gqHe61YvnPvBu10NUdmBnZWY95PyZzr\nP36COawfA0/RaRCxhSLa5IyaCMv5tjXuG31oCfRMHcaQu7Ag2xsmlTPuADwDq3TO\n0PZROVs+k46xAQZ7fGf5XjgR0KrkBVUWAg+L5rQgx9Ctz3wg/G/zHMBUcuyaoLeN\ncDHremrtOe04uE5xMOfv\n=HIM+\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 89b23e0ce0a60702090a440f432cb5aad391d161\nparent 446156219949550834ca8d575ca4491e1cc5d415\nauthor Jonas A. Wendorf <15037703+jonasw234@users.noreply.github.com> 1783905890 +0000\ncommitter GitHub <noreply@github.com> 1783905890 +0200\n\nfeat: Added Ascendara and AutoSubSync (#2481)",
-        "verified_at": "2026-07-13T01:24:50Z"
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqZJUfCRC1aQ7uu5UhlAAAKUMQAEYn/4pcvfi5yDhADWlKX6XY\nErupKjvBkvbEuHwBwwNOAraIngo3Qo1CwiQyzrWmOvXciOFi18pQePsu5J+Fq0yN\nQJiqVBxpiXRUsbbEnoEJY69NqwbSH4ud1/dXliYD2OPldznzRRhanPVXuxbNVGPI\nVDlYAMzuQwyAc+6wCLoFmdinwhUoPa/E28lIl/LtpUxZXQ85I83p8SB3p4/2+9ox\nzN2ZDIsm7Q86K1G+oAU6u4G4UP+ZF6k/cP2J1/2IVQck5nxEi0eX1s4sQ5GfJaBJ\nQ4aPuhDskBi8SJ1v9IO+d2m9NTzjVwV3oTv/xa9szR8i21TD7LQ176WFlQTUH+Mu\njsUPc+eJ5azC1zblwrx0hp3G8uJm+zVPS7oXOcSs+TLU7SpMSam/DvLa8kHqrFz7\nqK6rE+SlBXG8v5DB4u3ZseCnL957bD0mG/1wDit7cev/B3su+pHEJKOMgw4Gdl0I\n3kiOb/2Y7X+18fzjag0BAP0HnKi6besQp79Y+2kk4G388g7QG5EfCWfcjgXz0+8w\nzF+Pc0uxTutlxKiDmsgwlDdCSOHv88QCg632KDrkOBFLP1JDJllx4XX6nnek5gL5\nOLxKmUsnrHXbQdJlDlVt4Mhdhv2e8OdMSSWFNs0qsBT8KYdqaDuIbyP6FNvbzvzS\n3yJzWn7p2j/XKIkTAi07\n=7T/9\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree db91be3016b31247ab0a69f46d5365b7cc57bbb5\nparent bd44dbca9b6da4cdc29067df067bdf51d75e5742\nauthor Jonas A. Wendorf <15037703+jonasw234@users.noreply.github.com> 1784976670 +0000\ncommitter GitHub <noreply@github.com> 1784976670 +0200\n\nfeat: Added PaintFE (#2517)",
+        "verified_at": "2026-07-25T10:51:11Z"
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/d9fde98d6dc92b7ddd78bab9d1f35b970df26e5c",
-    "html_url": "https://github.com/ivan-hc/AM/commit/d9fde98d6dc92b7ddd78bab9d1f35b970df26e5c",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/d9fde98d6dc92b7ddd78bab9d1f35b970df26e5c/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/5d43343c396e6db1c2965bfcf7be77c13c14d4bd",
+    "html_url": "https://github.com/ivan-hc/AM/commit/5d43343c396e6db1c2965bfcf7be77c13c14d4bd",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/5d43343c396e6db1c2965bfcf7be77c13c14d4bd/comments",
     "author": {
       "login": "jonasw234",
       "id": 15037703,
@@ -1884,61 +1310,61 @@
     },
     "parents": [
       {
-        "sha": "446156219949550834ca8d575ca4491e1cc5d415",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/446156219949550834ca8d575ca4491e1cc5d415",
-        "html_url": "https://github.com/ivan-hc/AM/commit/446156219949550834ca8d575ca4491e1cc5d415"
+        "sha": "bd44dbca9b6da4cdc29067df067bdf51d75e5742",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/bd44dbca9b6da4cdc29067df067bdf51d75e5742",
+        "html_url": "https://github.com/ivan-hc/AM/commit/bd44dbca9b6da4cdc29067df067bdf51d75e5742"
       }
     ]
   },
   {
-    "sha": "446156219949550834ca8d575ca4491e1cc5d415",
-    "node_id": "C_kwDOGZAit9oAKDQ0NjE1NjIxOTk0OTU1MDgzNGNhOGQ1NzVjYTQ0OTFlMWNjNWQ0MTU",
+    "sha": "b372062a743aebaf47971473eb695778f2eb9fc6",
+    "node_id": "C_kwDOGZAit9oAKGIzNzIwNjJhNzQzYWViYWY0Nzk3MTQ3M2ViNjk1Nzc4ZjJlYjlmYzY",
     "commit": {
       "author": {
-        "name": "Mechamorph",
-        "email": "118144070+coyoteclan@users.noreply.github.com",
-        "date": "2026-07-12T12:52:51Z"
+        "name": "DtDEncryption",
+        "email": "188722311+DtDEncryption@users.noreply.github.com",
+        "date": "2026-07-25T09:04:40Z"
       },
       "committer": {
         "name": "GitHub",
         "email": "noreply@github.com",
-        "date": "2026-07-12T12:52:51Z"
+        "date": "2026-07-25T09:04:40Z"
       },
-      "message": "fix remove script of gping (#2478)",
+      "message": "Add official WeChat AppImage",
       "tree": {
-        "sha": "6dcce3657115ba9719f055d155360c759d571410",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/6dcce3657115ba9719f055d155360c759d571410"
+        "sha": "97c2facae876f3cb97c990f5e68b0d327ac147ac",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/97c2facae876f3cb97c990f5e68b0d327ac147ac"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/446156219949550834ca8d575ca4491e1cc5d415",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/b372062a743aebaf47971473eb695778f2eb9fc6",
       "comment_count": 0,
       "verification": {
         "verified": true,
         "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqU44jCRC1aQ7uu5UhlAAAW4IQACXsocQfrqHCAINtBChuvMo9\n6tLUQT1yPXYj4mDcd1CQ1YGA+WIMk+MACrIHDiSkvbOtnDu1A8ttX2N2POulKctN\n+FyVyskf1NDHftx533ycjq+ApqiEKSHtFuuhK4a945amg7z0Vl0W2ZfhzPXgAiLP\nkaFxdD7ieamgXeAB7GVbzdV3Odmn/rurAYAD/6Dua9m6W4dy5aChOpN91Hfr8rAf\nZKXmXStHmudFw1NdXCmrWUjWqDrfWFa6qa9ZH/jizvI63x+3c+6b1HGrnb2shrir\nZHR/EUnf0YYQPJowGXjMD7J/15DeFcUKKaLO0e0V+viZK+ID/g73xQF38U6YYgoi\nMHd9Op0LwrjshD7kUwo5v4WFNXuiI7Y/y76p7b4xGKKySZNGSsvlwXN8Iws+UNmY\nQaMgekydDdIauX5qGMEJe9hLyOo9ovBWYq5N1wlmqdngKioG2UH0fIa22rVqX3Am\nQG7jwnjL2aUy6qJ3IIhZslct6M1ZQKJeyU4Q8ZhwJcd6oKIWv7HdRoMi30mvh5aC\ntde7ywH9k5SHbBYkp1f5cJWZIKx4N6pRI8jUJyztfUOignOnCpaZuXYBBvx+/sM+\nyGiybwTM29KINnzNZ7ellOjy4foHTssot5jEbT+Guv+EsdjGERhfcfhLOAdGyRHB\nEDW0T2OrfyM+V5HvXkYm\n=RgTG\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 6dcce3657115ba9719f055d155360c759d571410\nparent 83eeb62a3e88ff11d1b62da6da13f8325e15cf83\nauthor Mechamorph <118144070+coyoteclan@users.noreply.github.com> 1783860771 +0500\ncommitter GitHub <noreply@github.com> 1783860771 +0200\n\nfix remove script of gping (#2478)",
-        "verified_at": "2026-07-12T12:52:52Z"
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqZHwpCRC1aQ7uu5UhlAAAYfEQAGPPHJ1+OuXzuxWMY9PJcEcB\nH4IvK1YN/EsbbxjhWjPalFk7CnZplkUoIPBDgc1susC3f6XBhLBzhrV9YdoDNVDV\nr/td5/d5JmUsz6Ow5hyBxLBGO3+92wc5Nv8n8YJPfiLTN6bCsrAXFbTx4N6Ka9z9\nYzgEBgDF2EeB77HrhcQkhR/qNByvJ6id8qm6HYfmfhpQwBFDsYaA7FmtwsdEMMDi\nCwSjrCyNj3IuU28vVu3qU8pmvZ7EXv75Uu1DSqwz7mOnJRnBrNmSp84BLM4t+Kd0\n9v7sNvdDg7bsfCqBndQifBmvyVnBWQkS/vGsIfffxOdggBxpiq6h2QJ2goVUiLTE\nVjmzzrL1uok5NnM/oXu6DKFXGBIAPp7ND7qxL+7UTrSaSSSdsU80nrUNXxR070SA\nR0hwjQiet28k+wy+mguZythjjegIwp0ddx48NDl+h0pubU8dZG2q02G0eB4g73Ku\nQF6yClx5reJgpv3nzJCV7Mcu+tAMTLa39GYiKUOrtuX7YLbFSft+gCA0VFWFeLSc\ndc7Vj+s/rA5P7J2tI8JDb5gTfETqKgUT3yEP8/V+k7TTJOSgNq/gi2L3OcnGKRso\nUHIMA16H6Nb6mYZ/RkHJKyIIz/7DurrREWHKgUpWR/YpiAp4AVlT3EBNvKY/A2gJ\nQSbde67d2B65oGQmwZxL\n=Gon9\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 97c2facae876f3cb97c990f5e68b0d327ac147ac\nparent bd44dbca9b6da4cdc29067df067bdf51d75e5742\nauthor DtDEncryption <188722311+DtDEncryption@users.noreply.github.com> 1784970280 +0200\ncommitter GitHub <noreply@github.com> 1784970280 +0200\n\nAdd official WeChat AppImage",
+        "verified_at": "2026-07-25T09:04:42Z"
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/446156219949550834ca8d575ca4491e1cc5d415",
-    "html_url": "https://github.com/ivan-hc/AM/commit/446156219949550834ca8d575ca4491e1cc5d415",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/446156219949550834ca8d575ca4491e1cc5d415/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/b372062a743aebaf47971473eb695778f2eb9fc6",
+    "html_url": "https://github.com/ivan-hc/AM/commit/b372062a743aebaf47971473eb695778f2eb9fc6",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/b372062a743aebaf47971473eb695778f2eb9fc6/comments",
     "author": {
-      "login": "coyoteclan",
-      "id": 118144070,
-      "node_id": "U_kgDOBwq8Rg",
-      "avatar_url": "https://avatars.githubusercontent.com/u/118144070?v=4",
+      "login": "DtDEncryption",
+      "id": 188722311,
+      "node_id": "U_kgDOCz-shw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/188722311?v=4",
       "gravatar_id": "",
-      "url": "https://api.github.com/users/coyoteclan",
-      "html_url": "https://github.com/coyoteclan",
-      "followers_url": "https://api.github.com/users/coyoteclan/followers",
-      "following_url": "https://api.github.com/users/coyoteclan/following{/other_user}",
-      "gists_url": "https://api.github.com/users/coyoteclan/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/coyoteclan/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/coyoteclan/subscriptions",
-      "organizations_url": "https://api.github.com/users/coyoteclan/orgs",
-      "repos_url": "https://api.github.com/users/coyoteclan/repos",
-      "events_url": "https://api.github.com/users/coyoteclan/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/coyoteclan/received_events",
+      "url": "https://api.github.com/users/DtDEncryption",
+      "html_url": "https://github.com/DtDEncryption",
+      "followers_url": "https://api.github.com/users/DtDEncryption/followers",
+      "following_url": "https://api.github.com/users/DtDEncryption/following{/other_user}",
+      "gists_url": "https://api.github.com/users/DtDEncryption/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/DtDEncryption/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/DtDEncryption/subscriptions",
+      "organizations_url": "https://api.github.com/users/DtDEncryption/orgs",
+      "repos_url": "https://api.github.com/users/DtDEncryption/repos",
+      "events_url": "https://api.github.com/users/DtDEncryption/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/DtDEncryption/received_events",
       "type": "User",
       "user_view_type": "public",
       "site_admin": false
@@ -1966,114 +1392,32 @@
     },
     "parents": [
       {
-        "sha": "83eeb62a3e88ff11d1b62da6da13f8325e15cf83",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/83eeb62a3e88ff11d1b62da6da13f8325e15cf83",
-        "html_url": "https://github.com/ivan-hc/AM/commit/83eeb62a3e88ff11d1b62da6da13f8325e15cf83"
+        "sha": "bd44dbca9b6da4cdc29067df067bdf51d75e5742",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/bd44dbca9b6da4cdc29067df067bdf51d75e5742",
+        "html_url": "https://github.com/ivan-hc/AM/commit/bd44dbca9b6da4cdc29067df067bdf51d75e5742"
       }
     ]
   },
   {
-    "sha": "83eeb62a3e88ff11d1b62da6da13f8325e15cf83",
-    "node_id": "C_kwDOGZAit9oAKDgzZWViNjJhM2U4OGZmMTFkMWI2MmRhNmRhMTNmODMyNWUxNWNmODM",
-    "commit": {
-      "author": {
-        "name": "David Hedlund",
-        "email": "davidhedlund@users.noreply.github.com",
-        "date": "2026-07-12T04:22:50Z"
-      },
-      "committer": {
-        "name": "GitHub",
-        "email": "noreply@github.com",
-        "date": "2026-07-12T04:22:50Z"
-      },
-      "message": "Add post-install instruction to update PATH for 'appman' (#2477)",
-      "tree": {
-        "sha": "6555194513b7d502deb5bc7f8b0e2295ead69180",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/6555194513b7d502deb5bc7f8b0e2295ead69180"
-      },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/83eeb62a3e88ff11d1b62da6da13f8325e15cf83",
-      "comment_count": 0,
-      "verification": {
-        "verified": true,
-        "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqUxaaCRC1aQ7uu5UhlAAATEMQAHDhlAty6chnNfh8/P3FgPUF\nhRKo2R+tBTKfDwkSz7CJCd7C/NFvD1mIv5C2gyn43ULRErvkfy5qIJsbsSkJKst0\nmH3pPz4YzciRV6GLZoq9gg6vnvl1ysYX/HJGBaagfnnhCai5N41n2bXfQ0xWBqIl\n55bPXpuYVYWqCumSfMGTSjRWvHxP6dURIe0zAOQqXDhTvRcECJs7WmXA1xLZkZGR\nGUFWSNWkeNdbsRQNdGlyi5+TRHOrgc4x7VXquptIBvblZ01FQMotXoh9wEURzF2n\nnz/K2FgSHHmmnqFY1NhWU/kcRnpdR131FiuxvkCRoPVefktVkoBpoQr/pZGIQI5I\nZKgCwJUPNos8N/UdEUW0Ix118Vl6Dd4ju0jsBcNUwJKGRTEFmzwEYqJWSBJjSmDv\nwMHCrg4Zuvo5cFxjAJF9GGuAIg9Ywv9JnjHXcjachbfx8Dy01vXMkI8JKQejEaYU\nZSAN+nnMMvnKNAxjog/dmGdJhIZiiz7QUx4GpKTvefEKs/9eLOodIJDNRkjr6AiH\n1CBMa+EG6T5tS36PJUE/CflQ1YjIntH9ajDi8Hr/fcanXgPJqEO1agyjyQsnbbZr\n80JzSs5BoRhKq6eiBb7vVPVhMGMceDM9H1dEb57QJ8lEMVaIvJbGdW/96K49eR0r\nla3lMyeMJtuTAMrp075g\n=e9vQ\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree 6555194513b7d502deb5bc7f8b0e2295ead69180\nparent 537a71b40de975ab881d9ab55d724da064c02e61\nauthor David Hedlund <davidhedlund@users.noreply.github.com> 1783830170 +0200\ncommitter GitHub <noreply@github.com> 1783830170 +0200\n\nAdd post-install instruction to update PATH for 'appman' (#2477)",
-        "verified_at": "2026-07-12T04:22:51Z"
-      }
-    },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/83eeb62a3e88ff11d1b62da6da13f8325e15cf83",
-    "html_url": "https://github.com/ivan-hc/AM/commit/83eeb62a3e88ff11d1b62da6da13f8325e15cf83",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/83eeb62a3e88ff11d1b62da6da13f8325e15cf83/comments",
-    "author": {
-      "login": "davidhedlund",
-      "id": 6416073,
-      "node_id": "MDQ6VXNlcjY0MTYwNzM=",
-      "avatar_url": "https://avatars.githubusercontent.com/u/6416073?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/davidhedlund",
-      "html_url": "https://github.com/davidhedlund",
-      "followers_url": "https://api.github.com/users/davidhedlund/followers",
-      "following_url": "https://api.github.com/users/davidhedlund/following{/other_user}",
-      "gists_url": "https://api.github.com/users/davidhedlund/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/davidhedlund/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/davidhedlund/subscriptions",
-      "organizations_url": "https://api.github.com/users/davidhedlund/orgs",
-      "repos_url": "https://api.github.com/users/davidhedlund/repos",
-      "events_url": "https://api.github.com/users/davidhedlund/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/davidhedlund/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "537a71b40de975ab881d9ab55d724da064c02e61",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/537a71b40de975ab881d9ab55d724da064c02e61",
-        "html_url": "https://github.com/ivan-hc/AM/commit/537a71b40de975ab881d9ab55d724da064c02e61"
-      }
-    ]
-  },
-  {
-    "sha": "537a71b40de975ab881d9ab55d724da064c02e61",
-    "node_id": "C_kwDOGZAit9oAKDUzN2E3MWI0MGRlOTc1YWI4ODFkOWFiNTVkNzI0ZGEwNjRjMDJlNjE",
+    "sha": "bd44dbca9b6da4cdc29067df067bdf51d75e5742",
+    "node_id": "C_kwDOGZAit9oAKGJkNDRkYmNhOWI2ZGE0Y2RjMjkwNjdkZjA2N2JkZjUxZDc1ZTU3NDI",
     "commit": {
       "author": {
         "name": "web-flow",
         "email": "noreply@github.com",
-        "date": "2026-07-11T02:52:49Z"
+        "date": "2026-07-25T00:33:51Z"
       },
       "committer": {
         "name": "web-flow",
         "email": "noreply@github.com",
-        "date": "2026-07-11T02:52:49Z"
+        "date": "2026-07-25T00:33:51Z"
       },
-      "message": "Add Fauxx (#2474) (sync lists) [2b5f43d9e3313c3d4d074781f80f83d62aca982c]",
+      "message": "Merge pull request #2515 from vishnu350/main (sync lists) [74d9eb4d04f914951415c81b1ba1e252f2a0256f]",
       "tree": {
-        "sha": "b1286e231b866e7c85b34118dca0bcfefd2511b8",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/b1286e231b866e7c85b34118dca0bcfefd2511b8"
+        "sha": "f1c57a635dfd0bd96d5bb3d01a087f3e6345a4f4",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/f1c57a635dfd0bd96d5bb3d01a087f3e6345a4f4"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/537a71b40de975ab881d9ab55d724da064c02e61",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/bd44dbca9b6da4cdc29067df067bdf51d75e5742",
       "comment_count": 0,
       "verification": {
         "verified": false,
@@ -2083,9 +1427,9 @@
         "verified_at": null
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/537a71b40de975ab881d9ab55d724da064c02e61",
-    "html_url": "https://github.com/ivan-hc/AM/commit/537a71b40de975ab881d9ab55d724da064c02e61",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/537a71b40de975ab881d9ab55d724da064c02e61/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/bd44dbca9b6da4cdc29067df067bdf51d75e5742",
+    "html_url": "https://github.com/ivan-hc/AM/commit/bd44dbca9b6da4cdc29067df067bdf51d75e5742",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/bd44dbca9b6da4cdc29067df067bdf51d75e5742/comments",
     "author": {
       "login": "web-flow",
       "id": 19864447,
@@ -2130,44 +1474,951 @@
     },
     "parents": [
       {
-        "sha": "2b5f43d9e3313c3d4d074781f80f83d62aca982c",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/2b5f43d9e3313c3d4d074781f80f83d62aca982c",
-        "html_url": "https://github.com/ivan-hc/AM/commit/2b5f43d9e3313c3d4d074781f80f83d62aca982c"
+        "sha": "74d9eb4d04f914951415c81b1ba1e252f2a0256f",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/74d9eb4d04f914951415c81b1ba1e252f2a0256f",
+        "html_url": "https://github.com/ivan-hc/AM/commit/74d9eb4d04f914951415c81b1ba1e252f2a0256f"
       }
     ]
   },
   {
-    "sha": "2b5f43d9e3313c3d4d074781f80f83d62aca982c",
-    "node_id": "C_kwDOGZAit9oAKDJiNWY0M2Q5ZTMzMTNjM2Q0ZDA3NDc4MWY4MGY4M2Q2MmFjYTk4MmM",
+    "sha": "74d9eb4d04f914951415c81b1ba1e252f2a0256f",
+    "node_id": "C_kwDOGZAit9oAKDc0ZDllYjRkMDRmOTE0OTUxNDE1YzgxYjFiYTFlMjUyZjJhMDI1NmY",
     "commit": {
       "author": {
-        "name": "shuvashish76",
-        "email": "sc76@tutanota.com",
-        "date": "2026-07-11T02:52:12Z"
+        "name": "iVAN",
+        "email": "88724353+ivan-hc@users.noreply.github.com",
+        "date": "2026-07-25T00:33:12Z"
       },
       "committer": {
         "name": "GitHub",
         "email": "noreply@github.com",
-        "date": "2026-07-11T02:52:12Z"
+        "date": "2026-07-25T00:33:12Z"
       },
-      "message": "Add Fauxx (#2474)",
+      "message": "Merge pull request #2515 from vishnu350/main\n\nAdded vocalinux and regress fixes.",
       "tree": {
-        "sha": "d545e714ad7beddab9c90d9be471c39cf9594335",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/d545e714ad7beddab9c90d9be471c39cf9594335"
+        "sha": "7a077e3bc1e60ab7636486199e457f36eabaf9be",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/7a077e3bc1e60ab7636486199e457f36eabaf9be"
       },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/2b5f43d9e3313c3d4d074781f80f83d62aca982c",
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/74d9eb4d04f914951415c81b1ba1e252f2a0256f",
       "comment_count": 0,
       "verification": {
         "verified": true,
         "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqUa/cCRC1aQ7uu5UhlAAAZ5AQAASJW75DZ7VThYId8j6WK8AU\nlVSPEO9T8exloD168Nvkz0DD7hxFINv26qBmP6KUdNPD6zPfby93TbJIA3wA2V+k\nGIKLwZo26Pru2uGQG5FX8oxJgfb34VcFS0DpD/V/BuMtZ2iqfLsx2lRbhnMyF61P\nxzG++MfKWLFuPofLDpHsbrlQbBcqPhR8pxhvoxjqhO6k3h8XU7vmyTrk2aWMy0D5\nqj+f0ygnEf07i69xoFy2q7/I2xEQfdvjALVld0YEmVT7dB9AQrbZVdM67E4ZS2cI\nol5AfIXiDjcH5iBY4jHKf8GI0g3S7R2LabctF155ZPtQTx4cBPtlkd3X0DWb+TM6\n4fMMo66qy8g3zXoupy3TGAyxNH6EgRiXDOSBiiJgV6cXOHQ7i4WuKIpxf4VV4+Qc\n/YnC2/JeuqWLzTWfEYK6nP1QIRbKepC4dE4xVG4XrWhsTYoRC9oekMZ+s3VnmLFx\n3j0m7XbbjjFYKXozzcKTrrJ/LhTUBj1bbrP6g0il6iW2uSZH6dxwYH3/yjaDwEIM\nUe8bCx4yptSnZsDveHFwdOlEl3RxayF1BVW+Go7e+YAbv9qQoZ8LwdSBdiYCEvAP\nP/c4tRWM7mlFSrNP7QR22O6q0BAgh3Bn9HofSkQldpW+Nn4FY4+v99tNoaWDZzuD\n95kbWDHOzXi+oJq1UaqM\n=QLFF\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree d545e714ad7beddab9c90d9be471c39cf9594335\nparent 04c407d8a193ea56ccbedea843117ce90586785c\nauthor shuvashish76 <sc76@tutanota.com> 1783738332 +0530\ncommitter GitHub <noreply@github.com> 1783738332 +0200\n\nAdd Fauxx (#2474)",
-        "verified_at": "2026-07-11T02:52:12Z"
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqZARICRC1aQ7uu5UhlAAA9SwQAKq360BG/bOGLTGaTAEEW/yW\n8LfmDxUFKumuAMKxVeGsIMIm0LiZGUkgNootRLTLi5k+8mtjU8OEW1liIXnWb4Yq\n1Xv5AJ9HS8xoL9rOXkJywPizCnSGa+p5uaCZgeiCDSxd/Zur+tT1ssv2gsbgu+2h\nXR1rJRKhi3muasOLsxCgs3Bt7libJEOtanoWhg9EA2K+EH7Q3G4Kat29tPKb6+BF\np4fKow7nKj3iM0GtrOsPmxxLexP+bnUD1k4OC0dgRFuGKMwaXnpqD7gERf7A76Qk\n+rvjvdCJ09Kbl1G5pCvMB7Z4FdDZb8RwYSEuTJKTztUOkVZ1/muqYzi9I4vJtmFl\nK3CVNQ9nsvJzAOv+l3LRDjCaGwSKKQ8e9m11nDjIrYlL4WrFIN8FZAlUzQWnQVdI\ndwOXl6QfCsceuNizH1Vw7UBNnjegAAgp+bzr/6dmnn3a6/bSr348LxAOEja8MXch\nWigKG2kKF4bMUv3ejifHTHf3Eiizr2hGcSfS6y+h+DJkoGR1NFox8DveXdwaUr1I\n0ZFG3Cje6Xm2IHydVzpW+lgtJWrCj8N9LHGEYHBH7odfsb665duWfYwrqrjf47Z3\nXmP2/V6aOdIaVEpu1Al1nxeGXBmveLbRVRiXiaFH7oauwr2kstMJVZ8tkuO2ONUh\nl2lZ9nJg3qaojpfKfAj/\n=6XmD\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 7a077e3bc1e60ab7636486199e457f36eabaf9be\nparent e6a035ab1a83b407c0857f240939957c601b6679\nparent 1f75cb58bdcd71215469a688ed5ae57c9a376efb\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784939592 +0200\ncommitter GitHub <noreply@github.com> 1784939592 +0200\n\nMerge pull request #2515 from vishnu350/main\n\nAdded vocalinux and regress fixes.",
+        "verified_at": "2026-07-25T00:33:13Z"
       }
     },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/2b5f43d9e3313c3d4d074781f80f83d62aca982c",
-    "html_url": "https://github.com/ivan-hc/AM/commit/2b5f43d9e3313c3d4d074781f80f83d62aca982c",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/2b5f43d9e3313c3d4d074781f80f83d62aca982c/comments",
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/74d9eb4d04f914951415c81b1ba1e252f2a0256f",
+    "html_url": "https://github.com/ivan-hc/AM/commit/74d9eb4d04f914951415c81b1ba1e252f2a0256f",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/74d9eb4d04f914951415c81b1ba1e252f2a0256f/comments",
+    "author": {
+      "login": "ivan-hc",
+      "id": 88724353,
+      "node_id": "MDQ6VXNlcjg4NzI0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88724353?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ivan-hc",
+      "html_url": "https://github.com/ivan-hc",
+      "followers_url": "https://api.github.com/users/ivan-hc/followers",
+      "following_url": "https://api.github.com/users/ivan-hc/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ivan-hc/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ivan-hc/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ivan-hc/subscriptions",
+      "organizations_url": "https://api.github.com/users/ivan-hc/orgs",
+      "repos_url": "https://api.github.com/users/ivan-hc/repos",
+      "events_url": "https://api.github.com/users/ivan-hc/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ivan-hc/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e6a035ab1a83b407c0857f240939957c601b6679",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/e6a035ab1a83b407c0857f240939957c601b6679",
+        "html_url": "https://github.com/ivan-hc/AM/commit/e6a035ab1a83b407c0857f240939957c601b6679"
+      },
+      {
+        "sha": "1f75cb58bdcd71215469a688ed5ae57c9a376efb",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/1f75cb58bdcd71215469a688ed5ae57c9a376efb",
+        "html_url": "https://github.com/ivan-hc/AM/commit/1f75cb58bdcd71215469a688ed5ae57c9a376efb"
+      }
+    ]
+  },
+  {
+    "sha": "1f75cb58bdcd71215469a688ed5ae57c9a376efb",
+    "node_id": "C_kwDOGZAit9oAKDFmNzVjYjU4YmRjZDcxMjE1NDY5YTY4OGVkNWFlNTdjOWEzNzZlZmI",
+    "commit": {
+      "author": {
+        "name": "iVAN",
+        "email": "88724353+ivan-hc@users.noreply.github.com",
+        "date": "2026-07-25T00:31:23Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-07-25T00:31:23Z"
+      },
+      "message": "Update vocalinux\n\nmore efficient way to get the latest release without \"latest\"",
+      "tree": {
+        "sha": "7a077e3bc1e60ab7636486199e457f36eabaf9be",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/7a077e3bc1e60ab7636486199e457f36eabaf9be"
+      },
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/1f75cb58bdcd71215469a688ed5ae57c9a376efb",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqZAPbCRC1aQ7uu5UhlAAAGQEQAFb86PtWywUIAqtJ0v9g32D4\n38Q7RdDm7EfAghjVUvqRhXypNrS6cMkBxUFNbQwEcoFp8h7kYyz1MNG2CzgJkNXG\nXnIZjBZQaoOZ1UVAd7RqFHXMcS1yBMgdRBLEgPO8CKBaeQZVZJ09ZnIeqHRVTWT2\nIC7zTYEE2ewlcsZHn0LJCa8+6ZsCvJGfhSQkiTifwz7zJmuDty9rmXO+s1x3cs/M\n9tvFz4t3QHRvZXW4xUXOA5cY0pkEwPRq7KOdnw1I24QNIVawX9IaXBcU3gdkWRGv\ncZD4X+ynktZ43Hp+XisUS05D+1Q80W4POhjezQRDxpS4Jf5ZUBLu+EQTcFlMQrGb\n+qTB9I1LuZ9+UlE00BF5jDH5V0KbCFv+z3Rp7Dg9uCvx3qSvZOo1Di6cBI3hHO8I\nlS9rz5G3AuY48LHcLKoGd2d4tGGI8vft13XGwLe5YxWu7uBsSzzoOq2SeMwt5dq1\n0lmx1MObgRHaSqAqosuZqPBJRpYasmNQ7B3/XBho/dGi2Ze96/XdFuvbF8S3LH/7\nwefSZUQihkBuWhNREVTpmWGe0GknYJxuo1MoV4fJKHUwc/IqCMj5U4NFTmljlgwP\n1V6VIGdS7o2c6+RRqHNHhWYlIxOWJkmduXdfPquArMCLfHUYNrbyrWiXDEWrEJGE\nasigEKEVuIQA/C8Ncffw\n=kYNm\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 7a077e3bc1e60ab7636486199e457f36eabaf9be\nparent 02234e120bae54cbc76a10d382e657947aa8f19f\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784939483 +0200\ncommitter GitHub <noreply@github.com> 1784939483 +0200\n\nUpdate vocalinux\n\nmore efficient way to get the latest release without \"latest\"",
+        "verified_at": "2026-07-25T00:31:24Z"
+      }
+    },
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/1f75cb58bdcd71215469a688ed5ae57c9a376efb",
+    "html_url": "https://github.com/ivan-hc/AM/commit/1f75cb58bdcd71215469a688ed5ae57c9a376efb",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/1f75cb58bdcd71215469a688ed5ae57c9a376efb/comments",
+    "author": {
+      "login": "ivan-hc",
+      "id": 88724353,
+      "node_id": "MDQ6VXNlcjg4NzI0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88724353?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ivan-hc",
+      "html_url": "https://github.com/ivan-hc",
+      "followers_url": "https://api.github.com/users/ivan-hc/followers",
+      "following_url": "https://api.github.com/users/ivan-hc/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ivan-hc/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ivan-hc/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ivan-hc/subscriptions",
+      "organizations_url": "https://api.github.com/users/ivan-hc/orgs",
+      "repos_url": "https://api.github.com/users/ivan-hc/repos",
+      "events_url": "https://api.github.com/users/ivan-hc/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ivan-hc/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "02234e120bae54cbc76a10d382e657947aa8f19f",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/02234e120bae54cbc76a10d382e657947aa8f19f",
+        "html_url": "https://github.com/ivan-hc/AM/commit/02234e120bae54cbc76a10d382e657947aa8f19f"
+      }
+    ]
+  },
+  {
+    "sha": "02234e120bae54cbc76a10d382e657947aa8f19f",
+    "node_id": "C_kwDOGZAit9oAKDAyMjM0ZTEyMGJhZTU0Y2JjNzZhMTBkMzgyZTY1Nzk0N2FhOGYxOWY",
+    "commit": {
+      "author": {
+        "name": "Vishnu",
+        "email": "5123344+vishnu350@users.noreply.github.com",
+        "date": "2026-07-24T17:14:27Z"
+      },
+      "committer": {
+        "name": "Vishnu",
+        "email": "5123344+vishnu350@users.noreply.github.com",
+        "date": "2026-07-24T17:14:27Z"
+      },
+      "message": "Added vocalinux.",
+      "tree": {
+        "sha": "b989f1f17f16180457d2908b7433af99500c840d",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/b989f1f17f16180457d2908b7433af99500c840d"
+      },
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/02234e120bae54cbc76a10d382e657947aa8f19f",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/02234e120bae54cbc76a10d382e657947aa8f19f",
+    "html_url": "https://github.com/ivan-hc/AM/commit/02234e120bae54cbc76a10d382e657947aa8f19f",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/02234e120bae54cbc76a10d382e657947aa8f19f/comments",
+    "author": {
+      "login": "vishnu350",
+      "id": 5123344,
+      "node_id": "MDQ6VXNlcjUxMjMzNDQ=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5123344?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/vishnu350",
+      "html_url": "https://github.com/vishnu350",
+      "followers_url": "https://api.github.com/users/vishnu350/followers",
+      "following_url": "https://api.github.com/users/vishnu350/following{/other_user}",
+      "gists_url": "https://api.github.com/users/vishnu350/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/vishnu350/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/vishnu350/subscriptions",
+      "organizations_url": "https://api.github.com/users/vishnu350/orgs",
+      "repos_url": "https://api.github.com/users/vishnu350/repos",
+      "events_url": "https://api.github.com/users/vishnu350/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/vishnu350/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "vishnu350",
+      "id": 5123344,
+      "node_id": "MDQ6VXNlcjUxMjMzNDQ=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5123344?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/vishnu350",
+      "html_url": "https://github.com/vishnu350",
+      "followers_url": "https://api.github.com/users/vishnu350/followers",
+      "following_url": "https://api.github.com/users/vishnu350/following{/other_user}",
+      "gists_url": "https://api.github.com/users/vishnu350/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/vishnu350/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/vishnu350/subscriptions",
+      "organizations_url": "https://api.github.com/users/vishnu350/orgs",
+      "repos_url": "https://api.github.com/users/vishnu350/repos",
+      "events_url": "https://api.github.com/users/vishnu350/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/vishnu350/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "73cadd20c4810a971d182625d26d9d667312472b",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/73cadd20c4810a971d182625d26d9d667312472b",
+        "html_url": "https://github.com/ivan-hc/AM/commit/73cadd20c4810a971d182625d26d9d667312472b"
+      }
+    ]
+  },
+  {
+    "sha": "73cadd20c4810a971d182625d26d9d667312472b",
+    "node_id": "C_kwDOGZAit9oAKDczY2FkZDIwYzQ4MTBhOTcxZDE4MjYyNWQyNmQ5ZDY2NzMxMjQ3MmI",
+    "commit": {
+      "author": {
+        "name": "Vishnu",
+        "email": "5123344+vishnu350@users.noreply.github.com",
+        "date": "2026-07-24T17:11:14Z"
+      },
+      "committer": {
+        "name": "Vishnu",
+        "email": "5123344+vishnu350@users.noreply.github.com",
+        "date": "2026-07-24T17:11:14Z"
+      },
+      "message": "Fix for cp -i alias in Fedora for regress.",
+      "tree": {
+        "sha": "7fa8200e0413b958a208939e36515f1a6362e5f8",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/7fa8200e0413b958a208939e36515f1a6362e5f8"
+      },
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/73cadd20c4810a971d182625d26d9d667312472b",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/73cadd20c4810a971d182625d26d9d667312472b",
+    "html_url": "https://github.com/ivan-hc/AM/commit/73cadd20c4810a971d182625d26d9d667312472b",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/73cadd20c4810a971d182625d26d9d667312472b/comments",
+    "author": {
+      "login": "vishnu350",
+      "id": 5123344,
+      "node_id": "MDQ6VXNlcjUxMjMzNDQ=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5123344?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/vishnu350",
+      "html_url": "https://github.com/vishnu350",
+      "followers_url": "https://api.github.com/users/vishnu350/followers",
+      "following_url": "https://api.github.com/users/vishnu350/following{/other_user}",
+      "gists_url": "https://api.github.com/users/vishnu350/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/vishnu350/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/vishnu350/subscriptions",
+      "organizations_url": "https://api.github.com/users/vishnu350/orgs",
+      "repos_url": "https://api.github.com/users/vishnu350/repos",
+      "events_url": "https://api.github.com/users/vishnu350/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/vishnu350/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "vishnu350",
+      "id": 5123344,
+      "node_id": "MDQ6VXNlcjUxMjMzNDQ=",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5123344?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/vishnu350",
+      "html_url": "https://github.com/vishnu350",
+      "followers_url": "https://api.github.com/users/vishnu350/followers",
+      "following_url": "https://api.github.com/users/vishnu350/following{/other_user}",
+      "gists_url": "https://api.github.com/users/vishnu350/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/vishnu350/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/vishnu350/subscriptions",
+      "organizations_url": "https://api.github.com/users/vishnu350/orgs",
+      "repos_url": "https://api.github.com/users/vishnu350/repos",
+      "events_url": "https://api.github.com/users/vishnu350/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/vishnu350/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e6a035ab1a83b407c0857f240939957c601b6679",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/e6a035ab1a83b407c0857f240939957c601b6679",
+        "html_url": "https://github.com/ivan-hc/AM/commit/e6a035ab1a83b407c0857f240939957c601b6679"
+      }
+    ]
+  },
+  {
+    "sha": "e6a035ab1a83b407c0857f240939957c601b6679",
+    "node_id": "C_kwDOGZAit9oAKGU2YTAzNWFiMWE4M2I0MDdjMDg1N2YyNDA5Mzk5NTdjNjAxYjY2Nzk",
+    "commit": {
+      "author": {
+        "name": "web-flow",
+        "email": "noreply@github.com",
+        "date": "2026-07-24T14:58:48Z"
+      },
+      "committer": {
+        "name": "web-flow",
+        "email": "noreply@github.com",
+        "date": "2026-07-24T14:58:48Z"
+      },
+      "message": "Add lumi-ai (sync lists) [5711f88676ac29d117e8a372aac0965762efddf4]",
+      "tree": {
+        "sha": "6dfbbfc1b5decc9124bf16706bc55feb0e2a5faf",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/6dfbbfc1b5decc9124bf16706bc55feb0e2a5faf"
+      },
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/e6a035ab1a83b407c0857f240939957c601b6679",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/e6a035ab1a83b407c0857f240939957c601b6679",
+    "html_url": "https://github.com/ivan-hc/AM/commit/e6a035ab1a83b407c0857f240939957c601b6679",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/e6a035ab1a83b407c0857f240939957c601b6679/comments",
+    "author": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "5711f88676ac29d117e8a372aac0965762efddf4",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/5711f88676ac29d117e8a372aac0965762efddf4",
+        "html_url": "https://github.com/ivan-hc/AM/commit/5711f88676ac29d117e8a372aac0965762efddf4"
+      }
+    ]
+  },
+  {
+    "sha": "5711f88676ac29d117e8a372aac0965762efddf4",
+    "node_id": "C_kwDOGZAit9oAKDU3MTFmODg2NzZhYzI5ZDExN2U4YTM3MmFhYzA5NjU3NjJlZmRkZjQ",
+    "commit": {
+      "author": {
+        "name": "iVAN",
+        "email": "88724353+ivan-hc@users.noreply.github.com",
+        "date": "2026-07-24T14:52:58Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-07-24T14:52:58Z"
+      },
+      "message": "Add lumi-ai\n\nfix https://github.com/ivan-hc/AM/issues/2513",
+      "tree": {
+        "sha": "8820a850b918731210a2aff84cad8b6ba07a8626",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/8820a850b918731210a2aff84cad8b6ba07a8626"
+      },
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/5711f88676ac29d117e8a372aac0965762efddf4",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqY3xKCRC1aQ7uu5UhlAAA1EYQABfUaopjTERVoPj4zJRIL5Jw\n18wCe33qC3UO3e7Wk3Xia8zNku+2oBrH9GXS7AZuqsFTmB4ISsB77MatQVWF7jLm\nNQERFLMu2mZqI7p5pXhMahzce+lhFBMmT8mA2qvhC7yuMEMLVJoCaQmwfMlBLBEo\nVch3Ht6Vx+ARzwlSd9Ns9x67o9+T0NS4Rack5XOkzGpLGxdhrPRoejDh9L5ytXbu\n3IpR/3GBOq92x1h1BTk2KdpcX+IO7FE82CtqMJTEySmC52S8yvvNRWwB5BoW4605\nURMcqYK9p/0Z7Tv90+rdsEvwV5eUaCCAINZnnO/w39C6oO+jeo4iVCczCzOHujQ0\n2FKy5bdmpbz83peXO6Lp5F4/pPK86/QyVaLq1hUIQGlfRDDFGznQffaOGPiRjAn5\ne3eOywYcxA8HwiZqvXQxfI6nTJ8u6euft1AdLxCPVI2Xey/bfZTh6T8YlSJG2Bv7\nz3xgUuhOMUXvkFs6Whmv4RwiBEpaww0P20y+DeDorAW7Bxp1n/wlb9ee5dadWEUA\nzREDirwpctvedZwkndskFBozZii7ArwFDR/ShbFe+D+0hVtPqxjrDBXLHAEZd9BV\nBdKzbUSlKeM2OyFsTaOlRtnBuoZfMIWKioJErg9tcpMVB7LMJ/8lMz/eNfpjIlQQ\nn5zNCgqfENAUOKuthKW0\n=Lxjo\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 8820a850b918731210a2aff84cad8b6ba07a8626\nparent 79c1f48bfe9f710611e75b89b78003529477db20\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1784904778 +0200\ncommitter GitHub <noreply@github.com> 1784904778 +0200\n\nAdd lumi-ai\n\nfix https://github.com/ivan-hc/AM/issues/2513",
+        "verified_at": "2026-07-24T14:52:59Z"
+      }
+    },
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/5711f88676ac29d117e8a372aac0965762efddf4",
+    "html_url": "https://github.com/ivan-hc/AM/commit/5711f88676ac29d117e8a372aac0965762efddf4",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/5711f88676ac29d117e8a372aac0965762efddf4/comments",
+    "author": {
+      "login": "ivan-hc",
+      "id": 88724353,
+      "node_id": "MDQ6VXNlcjg4NzI0MzUz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88724353?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/ivan-hc",
+      "html_url": "https://github.com/ivan-hc",
+      "followers_url": "https://api.github.com/users/ivan-hc/followers",
+      "following_url": "https://api.github.com/users/ivan-hc/following{/other_user}",
+      "gists_url": "https://api.github.com/users/ivan-hc/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/ivan-hc/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/ivan-hc/subscriptions",
+      "organizations_url": "https://api.github.com/users/ivan-hc/orgs",
+      "repos_url": "https://api.github.com/users/ivan-hc/repos",
+      "events_url": "https://api.github.com/users/ivan-hc/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/ivan-hc/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "79c1f48bfe9f710611e75b89b78003529477db20",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/79c1f48bfe9f710611e75b89b78003529477db20",
+        "html_url": "https://github.com/ivan-hc/AM/commit/79c1f48bfe9f710611e75b89b78003529477db20"
+      }
+    ]
+  },
+  {
+    "sha": "79c1f48bfe9f710611e75b89b78003529477db20",
+    "node_id": "C_kwDOGZAit9oAKDc5YzFmNDhiZmU5ZjcxMDYxMWU3NWI4OWI3ODAwMzUyOTQ3N2RiMjA",
+    "commit": {
+      "author": {
+        "name": "web-flow",
+        "email": "noreply@github.com",
+        "date": "2026-07-24T12:52:14Z"
+      },
+      "committer": {
+        "name": "web-flow",
+        "email": "noreply@github.com",
+        "date": "2026-07-24T12:52:14Z"
+      },
+      "message": "Remove duplicate 'calm' entry  (#2512) (sync lists) [fc7b12372925a30fb2e7b4253f7310782abb86c8]",
+      "tree": {
+        "sha": "7dc02096a69eed35bc395e963305a5524243d8b7",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/7dc02096a69eed35bc395e963305a5524243d8b7"
+      },
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/79c1f48bfe9f710611e75b89b78003529477db20",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/79c1f48bfe9f710611e75b89b78003529477db20",
+    "html_url": "https://github.com/ivan-hc/AM/commit/79c1f48bfe9f710611e75b89b78003529477db20",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/79c1f48bfe9f710611e75b89b78003529477db20/comments",
+    "author": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "fc7b12372925a30fb2e7b4253f7310782abb86c8",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/fc7b12372925a30fb2e7b4253f7310782abb86c8",
+        "html_url": "https://github.com/ivan-hc/AM/commit/fc7b12372925a30fb2e7b4253f7310782abb86c8"
+      }
+    ]
+  },
+  {
+    "sha": "fc7b12372925a30fb2e7b4253f7310782abb86c8",
+    "node_id": "C_kwDOGZAit9oAKGZjN2IxMjM3MjkyNWEzMGZiMmU3YjQyNTNmNzMxMDc4MmFiYjg2Yzg",
+    "commit": {
+      "author": {
+        "name": "luca067296",
+        "email": "luca@aster.cx",
+        "date": "2026-07-24T12:50:36Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-07-24T12:50:36Z"
+      },
+      "message": "Remove duplicate 'calm' entry  (#2512)\n\n* Remove 'calm' from x86_64-apps (duplicate)\n\nRemoved 'calm' entry from x86_64-apps list.\n\n* Delete programs/x86_64/calm (duplicate)",
+      "tree": {
+        "sha": "bdba4bf2f021803580e1517a93862959ea6fbb79",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/bdba4bf2f021803580e1517a93862959ea6fbb79"
+      },
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/fc7b12372925a30fb2e7b4253f7310782abb86c8",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqY1+cCRC1aQ7uu5UhlAAAqd8QAFmsofRFELv14lK0rrlaeA+M\ntuHZiMyiP0H4P55J+wTEX/TUcO/tnDKnoBTq8+c7E2cCTktJaQkZ8y+KjiIX6EBX\nJbpjK1dhwMJ91Rb/fz/jCsjG3dhBQD0LEnzmhKhQnZbp55dMHbyDyn6weL8tJ/u+\niT+UUlZaTzrAomzUU871HkOFpmeATU0kuE6Ys7wjDrkWPz1l+FE1UyXWdXpC9vdO\nOlPwTdb33X5IPeDuRkUtetBIwKiHRWrVc944n2pE5RM/qlRRC5vtMY1cmz81cirm\nw8+UBPGRrfh3CD2J/6eRqQKdIjX/BCcX+3DFFs42Qbtk44u9VJES9HbL1hYv9pHR\naUDGLTOL6c89iJheHFNyG7WEdUOv/IO43MrW6Hd3wwi0tCV5lvppBO4WFNJGx0CW\nSHwTZafEPMUlxEidY8S2EerE6FpK96K6U9mKjKd70VaH/q7FapulLlv831BhgOnM\n1zjRJGWz7Fczacw8eBEUhcXMR8fdwmipxojR8tmYDNLCilh9568dbI4WIS2Nem0h\nFKsT2vF/6vKB3EkmSe/o5uchbwMVm6Wnn6R1BeIoTlSukgav2Kvd3/79iuxvC/u0\nAJGdDWHJ5SOymx230v9ioJzxK44Z1g33HN3fdzRi7Yn9WP2uIbfzksN10EL037gS\n0tkySsoBMP+Mb2vRs8lO\n=usPG\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree bdba4bf2f021803580e1517a93862959ea6fbb79\nparent 0fdf533eb90d36c912ad2594968f37a776c4dabb\nauthor luca067296 <luca@aster.cx> 1784897436 +0200\ncommitter GitHub <noreply@github.com> 1784897436 +0200\n\nRemove duplicate 'calm' entry  (#2512)\n\n* Remove 'calm' from x86_64-apps (duplicate)\n\nRemoved 'calm' entry from x86_64-apps list.\n\n* Delete programs/x86_64/calm (duplicate)",
+        "verified_at": "2026-07-24T12:50:37Z"
+      }
+    },
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/fc7b12372925a30fb2e7b4253f7310782abb86c8",
+    "html_url": "https://github.com/ivan-hc/AM/commit/fc7b12372925a30fb2e7b4253f7310782abb86c8",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/fc7b12372925a30fb2e7b4253f7310782abb86c8/comments",
+    "author": {
+      "login": "luca067296",
+      "id": 306839598,
+      "node_id": "U_kgDOEkoALg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/306839598?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/luca067296",
+      "html_url": "https://github.com/luca067296",
+      "followers_url": "https://api.github.com/users/luca067296/followers",
+      "following_url": "https://api.github.com/users/luca067296/following{/other_user}",
+      "gists_url": "https://api.github.com/users/luca067296/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/luca067296/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/luca067296/subscriptions",
+      "organizations_url": "https://api.github.com/users/luca067296/orgs",
+      "repos_url": "https://api.github.com/users/luca067296/repos",
+      "events_url": "https://api.github.com/users/luca067296/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/luca067296/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "0fdf533eb90d36c912ad2594968f37a776c4dabb",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/0fdf533eb90d36c912ad2594968f37a776c4dabb",
+        "html_url": "https://github.com/ivan-hc/AM/commit/0fdf533eb90d36c912ad2594968f37a776c4dabb"
+      }
+    ]
+  },
+  {
+    "sha": "0fdf533eb90d36c912ad2594968f37a776c4dabb",
+    "node_id": "C_kwDOGZAit9oAKDBmZGY1MzNlYjkwZDM2YzkxMmFkMjU5NDk2OGYzN2E3NzZjNGRhYmI",
+    "commit": {
+      "author": {
+        "name": "web-flow",
+        "email": "noreply@github.com",
+        "date": "2026-07-24T11:29:50Z"
+      },
+      "committer": {
+        "name": "web-flow",
+        "email": "noreply@github.com",
+        "date": "2026-07-24T11:29:50Z"
+      },
+      "message": "Add calm, kudu, recordly to AM Database (#2511) (sync lists) [e4b344b6ea843461fff428678059bc9eb5b809e2]",
+      "tree": {
+        "sha": "6cef02aa8344737dbc1cd49a8794b3989790b647",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/6cef02aa8344737dbc1cd49a8794b3989790b647"
+      },
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/0fdf533eb90d36c912ad2594968f37a776c4dabb",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/0fdf533eb90d36c912ad2594968f37a776c4dabb",
+    "html_url": "https://github.com/ivan-hc/AM/commit/0fdf533eb90d36c912ad2594968f37a776c4dabb",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/0fdf533eb90d36c912ad2594968f37a776c4dabb/comments",
+    "author": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "e4b344b6ea843461fff428678059bc9eb5b809e2",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/e4b344b6ea843461fff428678059bc9eb5b809e2",
+        "html_url": "https://github.com/ivan-hc/AM/commit/e4b344b6ea843461fff428678059bc9eb5b809e2"
+      }
+    ]
+  },
+  {
+    "sha": "e4b344b6ea843461fff428678059bc9eb5b809e2",
+    "node_id": "C_kwDOGZAit9oAKGU0YjM0NGI2ZWE4NDM0NjFmZmY0Mjg2NzgwNTliYzllYjViODA5ZTI",
+    "commit": {
+      "author": {
+        "name": "luca067296",
+        "email": "luca@aster.cx",
+        "date": "2026-07-24T11:29:10Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-07-24T11:29:10Z"
+      },
+      "message": "Add calm, kudu, recordly to AM Database (#2511)\n\nAutomated via Portable Linux Apps Helper.",
+      "tree": {
+        "sha": "bcdc7e8399aa415c7d34ddacfe21ef028c73503f",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/bcdc7e8399aa415c7d34ddacfe21ef028c73503f"
+      },
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/e4b344b6ea843461fff428678059bc9eb5b809e2",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqY0yGCRC1aQ7uu5UhlAAANMoQACOnxD0yDOAL+tzEnh4VVhjt\nrAkorzgVXZHJco8TR60aY2rksSTUHPodvieY6Kf6N16Q+Feo+epcJ0x8yDM2eSZ1\nosLxtjHw03LUXOgtHsfmpWOU5QNMXeqLpsMY6wE1nMOltWXX6mUwbEeR68wzjv1X\nWH9UtFi7LmBIxvGnAm2an39L56aNZ/5GFiW1wrrPueva2vaVEjCTWrSOZv/1eCLt\nOoTtQkCv1L8kpuI/kzkGg5qF0icIl6rPAplGD+fcV9QSIM2g71aMfgGPAyrELJYz\nUPXAWAcG5sSScZ3lDZ1J0EbOT/FX27csBPYUEcL9rb8S89s+IZwBLJTp8Nm9ryuM\nkZIw6NP0/A/cv4GG7Xzc66N4Yc8Do/a/ZliXeMl1OqXz8wlqaiiUQuMywgRiKGKI\nucqxTyNrlFrDfXZatxC6SXWRlML+zTVmPHI+jf3whAhkmYcXW71Ljg8Jq1MEXSjT\nfPFjSSSZFPpElf6Ch+iYKVGwiw5kd4E2HE4EE6KTlvY4DQjRoxqBokj5YOLh1muU\n225RIdK77GE4tp3G0D+Ez326zadQNbsKVQRY2fmsjGCHwd+i/2O0pep8PyUR06ZQ\nwfVbylXBlXuv/m8v1mIh36jxseYPTNtpUaoQEgxxf/qV23pUbE4Nc73sJr+QOlUI\nW71fpEXi4W5mYRgHquFj\n=DW29\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree bcdc7e8399aa415c7d34ddacfe21ef028c73503f\nparent f49d703af525d28ba1437f5af4b0ae2c28a6cbb0\nauthor luca067296 <luca@aster.cx> 1784892550 +0200\ncommitter GitHub <noreply@github.com> 1784892550 +0200\n\nAdd calm, kudu, recordly to AM Database (#2511)\n\nAutomated via Portable Linux Apps Helper.",
+        "verified_at": "2026-07-24T11:29:11Z"
+      }
+    },
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/e4b344b6ea843461fff428678059bc9eb5b809e2",
+    "html_url": "https://github.com/ivan-hc/AM/commit/e4b344b6ea843461fff428678059bc9eb5b809e2",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/e4b344b6ea843461fff428678059bc9eb5b809e2/comments",
+    "author": {
+      "login": "luca067296",
+      "id": 306839598,
+      "node_id": "U_kgDOEkoALg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/306839598?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/luca067296",
+      "html_url": "https://github.com/luca067296",
+      "followers_url": "https://api.github.com/users/luca067296/followers",
+      "following_url": "https://api.github.com/users/luca067296/following{/other_user}",
+      "gists_url": "https://api.github.com/users/luca067296/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/luca067296/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/luca067296/subscriptions",
+      "organizations_url": "https://api.github.com/users/luca067296/orgs",
+      "repos_url": "https://api.github.com/users/luca067296/repos",
+      "events_url": "https://api.github.com/users/luca067296/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/luca067296/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "f49d703af525d28ba1437f5af4b0ae2c28a6cbb0",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/f49d703af525d28ba1437f5af4b0ae2c28a6cbb0",
+        "html_url": "https://github.com/ivan-hc/AM/commit/f49d703af525d28ba1437f5af4b0ae2c28a6cbb0"
+      }
+    ]
+  },
+  {
+    "sha": "f49d703af525d28ba1437f5af4b0ae2c28a6cbb0",
+    "node_id": "C_kwDOGZAit9oAKGY0OWQ3MDNhZjUyNWQyOGJhMTQzN2Y1YWY0YjBhZTJjMjhhNmNiYjA",
+    "commit": {
+      "author": {
+        "name": "web-flow",
+        "email": "noreply@github.com",
+        "date": "2026-07-24T11:28:23Z"
+      },
+      "committer": {
+        "name": "web-flow",
+        "email": "noreply@github.com",
+        "date": "2026-07-24T11:28:23Z"
+      },
+      "message": "Add offline-translator (#2510) (sync lists) [fc565fcc6af8f8d1d45f1ed0bea66e62a8ce1da5]",
+      "tree": {
+        "sha": "51f3df43fd6aad4b563701669731290b7ea599bd",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/51f3df43fd6aad4b563701669731290b7ea599bd"
+      },
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/f49d703af525d28ba1437f5af4b0ae2c28a6cbb0",
+      "comment_count": 0,
+      "verification": {
+        "verified": false,
+        "reason": "unsigned",
+        "signature": null,
+        "payload": null,
+        "verified_at": null
+      }
+    },
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/f49d703af525d28ba1437f5af4b0ae2c28a6cbb0",
+    "html_url": "https://github.com/ivan-hc/AM/commit/f49d703af525d28ba1437f5af4b0ae2c28a6cbb0",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/f49d703af525d28ba1437f5af4b0ae2c28a6cbb0/comments",
+    "author": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "fc565fcc6af8f8d1d45f1ed0bea66e62a8ce1da5",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/fc565fcc6af8f8d1d45f1ed0bea66e62a8ce1da5",
+        "html_url": "https://github.com/ivan-hc/AM/commit/fc565fcc6af8f8d1d45f1ed0bea66e62a8ce1da5"
+      }
+    ]
+  },
+  {
+    "sha": "fc565fcc6af8f8d1d45f1ed0bea66e62a8ce1da5",
+    "node_id": "C_kwDOGZAit9oAKGZjNTY1ZmNjNmFmOGY4ZDFkNDVmMWVkMGJlYTY2ZTYyYThjZTFkYTU",
+    "commit": {
+      "author": {
+        "name": "shuvashish76",
+        "email": "sc76@tutanota.com",
+        "date": "2026-07-24T11:27:44Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2026-07-24T11:27:44Z"
+      },
+      "message": "Add offline-translator (#2510)",
+      "tree": {
+        "sha": "1fc45e88fceab391ce36d19ed6d126427302118e",
+        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/1fc45e88fceab391ce36d19ed6d126427302118e"
+      },
+      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/fc565fcc6af8f8d1d45f1ed0bea66e62a8ce1da5",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqY0wxCRC1aQ7uu5UhlAAAEPgQAIgxe76CN9bilgylu0KGPRoo\n1zjL+In0YyYVuT9VDPUDzm1D3sQTnQiMr9slpMCPc4UbxtEarig/fajzblZSdX3P\nRSZfWEY3Km3F8f3tmmyod8TjGZHoROT885FB3MtByrd4ajwWexq0STi7I/mwVtju\nzIc6ekS2S4OTVc1ISgXUVeRjcHxIVbpXcoWebjsBUUT5FXv6iHes3d0xXWKOtqE6\nHnDPM+VyR9BtLxJG5siT7TBeswnGHTwf9UAJlNOttrEHRCkECv0O65sG2X7BC2yp\nvy2vJt99kjVtuOgU6+SNijQnobCYAPfdidGZWnKhX/t4eMKot+x3BwX7/K9lx0V7\nrGcrKtnLNUuGe6G5zZ7t4NlzyMFkcrrDHc2s6CrBlh/7r9IlhFqIv1MOM2uj6zZo\ngQccFMuNGuaGxQKqBg5ViHuEef3hIXn02+wK7Qe5P0TOJtdB75qsTOpvZlKnghIV\n8rucsExvNAOl2+Q3vV3w9/BhuFgpiDF4orKXOTQA8LsGUGHArXtVWDjaZC5Bzqx4\nhxNmjI87oquXlPxhNFr0cLDcUfO7lboUNf5tEtlROkCCjVNbpgItdWr/AdhU/ADJ\n6IDVCyvozkpaScJlDdKjyJhqMxK6ZwbD59HKgSkXQO61fZbPy2+nyaSl/uoGzyqu\nvkC3XmdAqJoW9ug1zbvu\n=u7em\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 1fc45e88fceab391ce36d19ed6d126427302118e\nparent 5b8cbb9e674140ee51f5324249f4367a1ea45023\nauthor shuvashish76 <sc76@tutanota.com> 1784892464 +0530\ncommitter GitHub <noreply@github.com> 1784892464 +0200\n\nAdd offline-translator (#2510)",
+        "verified_at": "2026-07-24T11:27:45Z"
+      }
+    },
+    "url": "https://api.github.com/repos/ivan-hc/AM/commits/fc565fcc6af8f8d1d45f1ed0bea66e62a8ce1da5",
+    "html_url": "https://github.com/ivan-hc/AM/commit/fc565fcc6af8f8d1d45f1ed0bea66e62a8ce1da5",
+    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/fc565fcc6af8f8d1d45f1ed0bea66e62a8ce1da5/comments",
     "author": {
       "login": "shuvashish76",
       "id": 48226312,
@@ -2212,255 +2463,9 @@
     },
     "parents": [
       {
-        "sha": "04c407d8a193ea56ccbedea843117ce90586785c",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/04c407d8a193ea56ccbedea843117ce90586785c",
-        "html_url": "https://github.com/ivan-hc/AM/commit/04c407d8a193ea56ccbedea843117ce90586785c"
-      }
-    ]
-  },
-  {
-    "sha": "04c407d8a193ea56ccbedea843117ce90586785c",
-    "node_id": "C_kwDOGZAit9oAKDA0YzQwN2Q4YTE5M2VhNTZjY2JlZGVhODQzMTE3Y2U5MDU4Njc4NWM",
-    "commit": {
-      "author": {
-        "name": "iVAN",
-        "email": "88724353+ivan-hc@users.noreply.github.com",
-        "date": "2026-07-11T01:23:17Z"
-      },
-      "committer": {
-        "name": "GitHub",
-        "email": "noreply@github.com",
-        "date": "2026-07-11T01:23:17Z"
-      },
-      "message": "Update am2pla-site\n\nref https://github.com/ivan-hc/AM/issues/2470#issuecomment-4935798786",
-      "tree": {
-        "sha": "c912eb6e27dcbcffbb1f3c35f69558e86be7c578",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/c912eb6e27dcbcffbb1f3c35f69558e86be7c578"
-      },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/04c407d8a193ea56ccbedea843117ce90586785c",
-      "comment_count": 0,
-      "verification": {
-        "verified": true,
-        "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqUZsFCRC1aQ7uu5UhlAAA8hoQAIszsHRPNvGBJsCku9dFrEzl\ntW8J9c/u483avpkxz8t2ySnhJGdURUQjAZf7uWcl0PqYzj05JzT3aaP7l44lBNIh\nE7neQQJMeOW1myZeS14Y1ITZLeytkozVEOFDoq8Abzjb/2r0hvH5QPfzXEtWrw0F\nD8mHnsnQ8ckjlPyGTQua8Fg5fsk2miPOo1KEunNt6kKxvKSGVJrnqUZeuV09tLwJ\n1i43rB1mdfLBAJSQ2V7kJV2O27xLXhcBU5uGfF1+JD0tafSvwGf+Ln1fZ6EA6663\nylHI2Z6xsU48npkGfR0yWNT+FzmFdYPolkCf0PuRWnJ43kn/qZ7NaqBXOM1SHT8M\n/M4TPS+aTJHWLZ2gMV4jgjXK+FRxgaoUzpAEu/Rz75Dt0WHnsLbykgX+LlmVezuf\n6w2r44Xntek5U0wHg34NHXW1kKgmSEIGK9dnJPwkJgJzb0RRrwrOFe/WS4+c17AZ\n1NvBGZ8vsUuq708ybrkFqZx95sz/4W0bgVUxU/eafxvAjLvq2bhAGKCC/4HD2lN7\n16HBrOdFpnN5nDxGFIHWzhTX8QpHTLGfM7/JwIBB+lX7kAKRZIMvlijJcYsjh0nM\nPjY/D1as+NzknG0UR2bqNIYh4+hQDfwCVxGQ5joq3JyxejaRDo/KKGOL8q8fZl44\n/90WSNpq+gG2H1ZtYMOD\n=vtYu\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree c912eb6e27dcbcffbb1f3c35f69558e86be7c578\nparent 2724861dd1a58b1cf48e9eb7695d25bff72df3af\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1783732997 +0200\ncommitter GitHub <noreply@github.com> 1783732997 +0200\n\nUpdate am2pla-site\n\nref https://github.com/ivan-hc/AM/issues/2470#issuecomment-4935798786",
-        "verified_at": "2026-07-11T01:23:18Z"
-      }
-    },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/04c407d8a193ea56ccbedea843117ce90586785c",
-    "html_url": "https://github.com/ivan-hc/AM/commit/04c407d8a193ea56ccbedea843117ce90586785c",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/04c407d8a193ea56ccbedea843117ce90586785c/comments",
-    "author": {
-      "login": "ivan-hc",
-      "id": 88724353,
-      "node_id": "MDQ6VXNlcjg4NzI0MzUz",
-      "avatar_url": "https://avatars.githubusercontent.com/u/88724353?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/ivan-hc",
-      "html_url": "https://github.com/ivan-hc",
-      "followers_url": "https://api.github.com/users/ivan-hc/followers",
-      "following_url": "https://api.github.com/users/ivan-hc/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ivan-hc/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ivan-hc/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ivan-hc/subscriptions",
-      "organizations_url": "https://api.github.com/users/ivan-hc/orgs",
-      "repos_url": "https://api.github.com/users/ivan-hc/repos",
-      "events_url": "https://api.github.com/users/ivan-hc/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ivan-hc/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "2724861dd1a58b1cf48e9eb7695d25bff72df3af",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/2724861dd1a58b1cf48e9eb7695d25bff72df3af",
-        "html_url": "https://github.com/ivan-hc/AM/commit/2724861dd1a58b1cf48e9eb7695d25bff72df3af"
-      }
-    ]
-  },
-  {
-    "sha": "2724861dd1a58b1cf48e9eb7695d25bff72df3af",
-    "node_id": "C_kwDOGZAit9oAKDI3MjQ4NjFkZDFhNThiMWNmNDhlOWViNzY5NWQyNWJmZjcyZGYzYWY",
-    "commit": {
-      "author": {
-        "name": "web-flow",
-        "email": "noreply@github.com",
-        "date": "2026-07-10T10:30:33Z"
-      },
-      "committer": {
-        "name": "web-flow",
-        "email": "noreply@github.com",
-        "date": "2026-07-10T10:30:33Z"
-      },
-      "message": "Temporary delete beeper (type1 AppImage, 2004 runtime, insecure) (sync lists) [58878218ecc95c4b383c02d52f11d5a9fc48b6fe]",
-      "tree": {
-        "sha": "a20864e3b83d636818fa5122863b13251920495d",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/a20864e3b83d636818fa5122863b13251920495d"
-      },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/2724861dd1a58b1cf48e9eb7695d25bff72df3af",
-      "comment_count": 0,
-      "verification": {
-        "verified": false,
-        "reason": "unsigned",
-        "signature": null,
-        "payload": null,
-        "verified_at": null
-      }
-    },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/2724861dd1a58b1cf48e9eb7695d25bff72df3af",
-    "html_url": "https://github.com/ivan-hc/AM/commit/2724861dd1a58b1cf48e9eb7695d25bff72df3af",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/2724861dd1a58b1cf48e9eb7695d25bff72df3af/comments",
-    "author": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "58878218ecc95c4b383c02d52f11d5a9fc48b6fe",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/58878218ecc95c4b383c02d52f11d5a9fc48b6fe",
-        "html_url": "https://github.com/ivan-hc/AM/commit/58878218ecc95c4b383c02d52f11d5a9fc48b6fe"
-      }
-    ]
-  },
-  {
-    "sha": "58878218ecc95c4b383c02d52f11d5a9fc48b6fe",
-    "node_id": "C_kwDOGZAit9oAKDU4ODc4MjE4ZWNjOTVjNGIzODNjMDJkNTJmMTFkNWE5ZmM0OGI2ZmU",
-    "commit": {
-      "author": {
-        "name": "iVAN",
-        "email": "88724353+ivan-hc@users.noreply.github.com",
-        "date": "2026-07-10T10:29:58Z"
-      },
-      "committer": {
-        "name": "GitHub",
-        "email": "noreply@github.com",
-        "date": "2026-07-10T10:29:58Z"
-      },
-      "message": "Temporary delete beeper (type1 AppImage, 2004 runtime, insecure)\n\n\"am -f\" do not see it as AppImage but as dynamic binary, the flag --appimage-extract seems to work on it, but the runtime is old, and also the file manager do not detects it as AppImage but as executable\r\n\r\nThe solution would be to update it to the new runtime... or if you don't care about security, to add it as \"portable app\"\r\n\r\nAM is now more restrictive against these packages\r\n\r\nfix https://github.com/ivan-hc/AM/issues/2473",
-      "tree": {
-        "sha": "e83fb64f4ad871eefe53bebfe94964056a03b6a9",
-        "url": "https://api.github.com/repos/ivan-hc/AM/git/trees/e83fb64f4ad871eefe53bebfe94964056a03b6a9"
-      },
-      "url": "https://api.github.com/repos/ivan-hc/AM/git/commits/58878218ecc95c4b383c02d52f11d5a9fc48b6fe",
-      "comment_count": 0,
-      "verification": {
-        "verified": true,
-        "reason": "valid",
-        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqUMmmCRC1aQ7uu5UhlAAAvqUQAF5ltVzX/omQB5/dqbMsaIxV\npAYVWejGUbhHQFq2uUfKvFkJtt/H+XFIba70g/V5ZBwG4CriYTPX8gtscc6OYgCv\nfPVc2T3uOQbaFHYQ2ysEHaNXcFDDf8HPuSU57Mt8jbq/n3KHIPCoOdzOuVVigXuD\n6jrJoKvSJM4QAnyBNPDkahTw2KPSdgLJy9ZWgZeYuOJnYY0IXfIgLfPTUzxnxrWl\nkipkNvQoj8tgh5Gp1iHCnK0KyNx3/1pD+eJPgVEB9WHg0ozBRl1RjoUlXYMtbRpc\nRunuw5JUn2jQDlCusc4uBYsxUOyYaflAFfWUd7gi1/0jHLEhjWw/SzwheuMt/7Jb\nL2MOqeD6jHJPe1/xXu2NjBvppX4sXJ8MPjM60hamYKaq8BDM5KmFJwLadw9++JiA\nqwdEmaRg5OM4pFgsN8sq6bN85heroHY8Dj7eZkpcsB0sjvgZlzz2EqobhesUJO1/\nn7LiFBe+lRoCsTjAFY3H2ZG+3S2YDzFldt0cIFFML/nc8FbVymXAoaXanhF1Cldh\nWsATT+BHK0JgMKTqKfcOF6ZBEQGL8D2GC52OT3hlfio8MkCjKUuOQRg1ailDHaZh\nFZxReg2bpSXLXIdQCo57kMX2X/qnIL3Vz8E6sV/vtY626nSzImeBhptAcRd4b1S6\nF4gPmFtOl+Rw65xtRRIN\n=Z0wy\n-----END PGP SIGNATURE-----\n",
-        "payload": "tree e83fb64f4ad871eefe53bebfe94964056a03b6a9\nparent a27c115f4422a3d15de74f9e620b51bd9a5564d1\nauthor iVAN <88724353+ivan-hc@users.noreply.github.com> 1783679398 +0200\ncommitter GitHub <noreply@github.com> 1783679398 +0200\n\nTemporary delete beeper (type1 AppImage, 2004 runtime, insecure)\n\n\"am -f\" do not see it as AppImage but as dynamic binary, the flag --appimage-extract seems to work on it, but the runtime is old, and also the file manager do not detects it as AppImage but as executable\r\n\r\nThe solution would be to update it to the new runtime... or if you don't care about security, to add it as \"portable app\"\r\n\r\nAM is now more restrictive against these packages\r\n\r\nfix https://github.com/ivan-hc/AM/issues/2473",
-        "verified_at": "2026-07-10T10:29:58Z"
-      }
-    },
-    "url": "https://api.github.com/repos/ivan-hc/AM/commits/58878218ecc95c4b383c02d52f11d5a9fc48b6fe",
-    "html_url": "https://github.com/ivan-hc/AM/commit/58878218ecc95c4b383c02d52f11d5a9fc48b6fe",
-    "comments_url": "https://api.github.com/repos/ivan-hc/AM/commits/58878218ecc95c4b383c02d52f11d5a9fc48b6fe/comments",
-    "author": {
-      "login": "ivan-hc",
-      "id": 88724353,
-      "node_id": "MDQ6VXNlcjg4NzI0MzUz",
-      "avatar_url": "https://avatars.githubusercontent.com/u/88724353?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/ivan-hc",
-      "html_url": "https://github.com/ivan-hc",
-      "followers_url": "https://api.github.com/users/ivan-hc/followers",
-      "following_url": "https://api.github.com/users/ivan-hc/following{/other_user}",
-      "gists_url": "https://api.github.com/users/ivan-hc/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/ivan-hc/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/ivan-hc/subscriptions",
-      "organizations_url": "https://api.github.com/users/ivan-hc/orgs",
-      "repos_url": "https://api.github.com/users/ivan-hc/repos",
-      "events_url": "https://api.github.com/users/ivan-hc/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/ivan-hc/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "committer": {
-      "login": "web-flow",
-      "id": 19864447,
-      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/web-flow",
-      "html_url": "https://github.com/web-flow",
-      "followers_url": "https://api.github.com/users/web-flow/followers",
-      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
-      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
-      "organizations_url": "https://api.github.com/users/web-flow/orgs",
-      "repos_url": "https://api.github.com/users/web-flow/repos",
-      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/web-flow/received_events",
-      "type": "User",
-      "user_view_type": "public",
-      "site_admin": false
-    },
-    "parents": [
-      {
-        "sha": "a27c115f4422a3d15de74f9e620b51bd9a5564d1",
-        "url": "https://api.github.com/repos/ivan-hc/AM/commits/a27c115f4422a3d15de74f9e620b51bd9a5564d1",
-        "html_url": "https://github.com/ivan-hc/AM/commit/a27c115f4422a3d15de74f9e620b51bd9a5564d1"
+        "sha": "5b8cbb9e674140ee51f5324249f4367a1ea45023",
+        "url": "https://api.github.com/repos/ivan-hc/AM/commits/5b8cbb9e674140ee51f5324249f4367a1ea45023",
+        "html_url": "https://github.com/ivan-hc/AM/commit/5b8cbb9e674140ee51f5324249f4367a1ea45023"
       }
     ]
   }
