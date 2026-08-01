@@ -14,7 +14,7 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
-        - uses: actions/download-artifact@v4.1.8
+        - uses: actions/download-artifact@v4.3.0
         - name: Get Date
           run: |
             AM_TAG="$(curl -Ls https://api.github.com/repos/ivan-hc/AM/releases/latest | jq '.' | grep "tag_name" | tr '" ' '\n' | grep [0-9])"
