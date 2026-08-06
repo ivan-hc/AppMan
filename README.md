@@ -40,6 +40,7 @@
 - [If "AM" and "AppMan" have the same code, why a separate repository?](#if-am-and-appman-have-the-same-code-why-a-separate-repository)
   - [History](#history)
 - [How to install "AppMan"?](#how-to-install-appman)
+  - [Configure AppMan](#configure-appman)
   - [How to uninstall "AppMan"?](#how-to-uninstall-appman)
 - [Advantages of AppMan over "AM"](#advantages-of-appman-over-am)
 - [Disadvantages of AppMan over "AM"](#disadvantages-of-appman-over-am)
@@ -252,6 +253,24 @@ The above is a "summary" (without the messages) of what the AM-INSTALLER script 
 For more information, see https://github.com/ivan-hc/AM/issues/1830
 
 </details>
+
+------------------------------------------------------------------------
+# Configure AppMan
+*The configuration file for the path to locally installed applications is located in `~/.config/appman` and contains the path you specified when you first launched `appman` with or without an option. No matters, AppMan needs you to know where you want to install your applications.*
+
+*When you first launch it, you will be asked to specify a path to the applications. You can specify any directory or subdirectory you want, **even outside of $HOME**, as long as it is not privileged. Even a USB stick.*
+
+*NOTE: by modifying the contents of `~/.config/appman`, you will only change the paths for any subsequent operation, while apps and modules stored in the old path will not be manageable. It is recommended to remove the apps first.*
+
+*To change locations, remove local apps, and reinstall in the new location, see the `--relocate` or `relocate` option, [here](https://github.com/ivan-hc/AM/blob/main/docs/guides-and-tutorials/relocate.md).*
+
+## Set AppMan configuration file in a non interactive way
+
+*If you haven't yet set up the configuration file and want to set the application directory non-interactively, simply add the path to the "$appman_location" variable, like this:*
+```
+appman_location=/path/to/directory appman
+```
+*NOTE: This only works if the configuration file doesn't exist.*
 
 ------------------------------------------------------------------------
 # How to uninstall "AppMan"?
