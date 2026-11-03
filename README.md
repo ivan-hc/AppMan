@@ -371,28 +371,8 @@ appman_location=/path/to/directory appman
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
 # Related projects
-#### Side Projects
-- *[amcheck](https://github.com/ivan-hc/amcheck), checks the validity of scripts in this database and monitors the availability of AppImages*
-- *[am-extras](https://github.com/ivan-hc/am-extras), lists applications from third-party databases*
 
-#### External tools and forks used in this project
-- *[aisap](https://github.com/mgord9518/aisap) and [sas](https://github.com/Samueru-sama/simple-appimage-sandbox), sandboxing solutions for AppImages, see sandboxing options above*
-- *[appimagetool](https://github.com/AppImage/appimagetool), get rid of libfuse2 from old AppImages (option `nolibfuse`) and create AppImages on the fly (see [appimage-bulder-scripts](https://github.com/ivan-hc/AM/tree/main/appimage-bulder-scripts))*
-- *[dbin](https://github.com/xplshn/dbin), the easy to use/get, suckless software distribution system, used as OCI registry client to install packages from third-party databases*
-
-#### Organizations and their affiliates that actively contribute to this project
-- *[Package Forge](https://github.com/pkgforge), Improving Package Management & Security for Linux systems*
-  - *[Dev](https://github.com/pkgforge-dev), Package Forge's Official Developer Repos*
-  - *[Community](https://github.com/pkgforge-community), Package Forge's Community Repos, Projects & their Dependencies*
-- *[Portable Linux Apps](https://github.com/Portable-Linux-Apps), Census, cataloging and distribution of AppImages and portable apps for GNU/Linux*
-
-#### My other projects
-- *[AppImaGen](https://github.com/ivan-hc/AppImaGen), easily create AppImages from Ubuntu PPAs or Debian using pkg2appimage and appimagetool*
-- *[ArchImage](https://github.com/ivan-hc/ArchImage), create AppImages for all distributions using Arch Linux packages. Powered by JuNest*
-- *[Firefox for Linux scripts](https://github.com/ivan-hc/Firefox-for-Linux-scripts), easily install the official releases of Firefox for Linux*
-- *[My AppImage packages](https://github.com/ivan-hc#my-appimage-packages) the complete list of packages managed by me and available in this database*
-- *[portable2appimage](https://github.com/ivan-hc/portable2appimage), convert standalone, self-contained portable apps into AppImage packages*
-- *[Snap2AppImage](https://github.com/ivan-hc/Snap2AppImage), try to convert Snap packages to AppImages*
+*See https://github.com/ivan-hc/AM#related-projects*
 
 ------------------------------------------------------------------------
 
